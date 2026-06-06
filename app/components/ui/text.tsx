@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 
 const sizeClasses = {
   sm: 'text-sm',
-  md: 'text-md',
+  md: 'text-base',
   lg: 'text-lg',
   xl: 'text-xl',
 }
