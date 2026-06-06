@@ -1,0 +1,24 @@
+export function Text({
+  size = 'md',
+  transform = 'none',
+  className = '',
+  children,
+}: {
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+  transform?: 'none' | 'uppercase' | 'lowercase'
+  className?: string
+  children: React.ReactNode
+}) {
+  const transformClasses = {
+    none: '',
+    uppercase: 'uppercase',
+    lowercase: 'lowercase',
+  }
+  return (
+    <p
+      className={`text-${size} max-w-lg ${transformClasses[transform]} ${className}`}
+    >
+      {children}
+    </p>
+  )
+}
