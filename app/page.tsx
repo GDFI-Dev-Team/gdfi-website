@@ -1,9 +1,20 @@
+import { Heading } from './components/ui/heading'
+import { Text } from './components/ui/text'
+import Section from './components/ui/section'
+
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
-        Hello, world from GDFI website.
-      </main>
+    <div>
+      <Section className="bg-accent-600">
+        <Heading level={1}>GDFI Website Header 1.</Heading>
+        <Text size="lg" className="font-bold">
+          This is the text that is below Header 1.
+        </Text>
+      </Section>
+
+      <Section className="bg-neutral-700 text-cyan-200">
+        <Heading level={2}>GDFI Website Header 2.</Heading>
+      </Section>
     </div>
   )
 }
