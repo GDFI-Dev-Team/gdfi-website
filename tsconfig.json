@@ -21,8 +21,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./app/*"],
-      "@/components/*": ["./app/components/*"]
+      "@/*": ["./src/app/*"],
+      "@/components/*": ["./src/components/*"]
     }
   },
   "include": [

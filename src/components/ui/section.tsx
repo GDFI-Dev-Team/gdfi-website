@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 type SectionMaxWidth = 'none' | 'full' | '2xl' | '4xl' | '5xl' | '6xl' | '7xl'
 
 const maxWidthClasses: Record<SectionMaxWidth, string> = {

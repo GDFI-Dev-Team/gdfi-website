@@ -1,6 +1,6 @@
-import { Heading } from './components/ui/heading'
-import { Text } from './components/ui/text'
-import Section from './components/ui/section'
+import { Heading } from '@/components/ui/heading'
+import { Text } from '@/components/ui/text'
+import Section from '@/components/ui/section'
 
 export default function Home() {
   return (
