@@ -212,13 +212,20 @@ export function SiteHeader() {
       >
         <div className="mx-auto w-full max-w-md">
           <div className="flex items-center justify-between gap-4">
-            <Image
-              src={LOGO_SRC}
-              alt="Guiuan Development Foundation Inc."
-              width={414}
-              height={62}
-              className="h-7 w-auto"
-            />
+            <Link
+              href="/"
+              aria-label="GDFI — home"
+              onClick={closeMobile}
+              className="flex items-center"
+            >
+              <Image
+                src={LOGO_SRC}
+                alt="Guiuan Development Foundation Inc."
+                width={414}
+                height={62}
+                className="h-7 w-auto"
+              />
+            </Link>
             <button
               type="button"
               aria-label="Close menu"
