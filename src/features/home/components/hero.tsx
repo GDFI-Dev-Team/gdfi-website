@@ -22,7 +22,7 @@ export const Hero = () => {
 
   return (
     <section
-      className="relative overflow-hidden p-16"
+      className="relative min-h-[70svh] overflow-hidden p-16 md:px-[clamp(2rem,13vw,12.5rem)]"
       aria-label="Hero section"
     >
       {heroImages.map((img, i) => {
