@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { cn } from '../../lib/utils'
 import { navLinks } from '../../lib/data'
 
@@ -36,10 +36,10 @@ export function SiteHeader() {
 
   const menuRef = useRef<HTMLDivElement>(null)
 
-  const closeMobile = () => {
+  const closeMobile = useCallback(() => {
     setMobileOpen(false)
     setOpenSubmenu(null)
-  }
+  }, [])
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`)
@@ -61,13 +61,14 @@ export function SiteHeader() {
     }
     mq.addEventListener('change', handler)
     return () => mq.removeEventListener('change', handler)
-  }, [])
+  }, [closeMobile])
 
   useEffect(() => {
-    const prevOverflow = document.body.style.overflow
-    if (mobileOpen) document.body.style.overflow = 'hidden'
+    if (!mobileOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     return () => {
-      document.body.style.overflow = prevOverflow
+      document.body.style.overflow = prev
     }
   }, [mobileOpen])
 
@@ -88,7 +89,7 @@ export function SiteHeader() {
           className={cn(
             'mx-auto grid grid-cols-[0.7fr_auto_1.5fr] items-center gap-0 rounded-4xl transition-all duration-300 ease-out md:grid-cols-[auto_1fr_auto]',
             scrolled
-              ? 'glass mt-3 w-[calc(100%_-_2rem)] max-w-3xl px-4 py-2.5 md:w-[calc(100%_-_8rem)] md:max-w-5xl md:px-6'
+              ? 'glass mt-3 w-[calc(100% - 2rem)] max-w-3xl px-4 py-2.5 md:w-[calc(100% - 8rem)] md:max-w-5xl md:px-6'
               : 'mt-0 w-full max-w-full border border-transparent bg-transparent px-5 py-4 md:px-[clamp(2rem,13vw,12.5rem)]',
           )}
         >
