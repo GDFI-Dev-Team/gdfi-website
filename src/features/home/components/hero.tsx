@@ -34,6 +34,7 @@ export const Hero = () => {
             src={`/feat-hero/${img}`}
             alt={`slideshow-${img}`}
             fill
+            sizes="100vw"
             className="object-cover"
             style={{
               opacity: isActive ? 1 : 0,
@@ -45,7 +46,7 @@ export const Hero = () => {
             loading={
               i === 0 ? undefined : isActive || isNext ? 'eager' : 'lazy'
             }
-            aria-hidden
+            aria-hidden={true}
           />
         )
       })}
