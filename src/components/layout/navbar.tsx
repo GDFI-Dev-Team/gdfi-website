@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { cn } from '../../lib/utils'
 import { navLinks } from '../../lib/data'
 
@@ -34,6 +34,8 @@ export function SiteHeader() {
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
   const pathname = usePathname()
 
+  const menuRef = useRef<HTMLDivElement>(null)
+
   const closeMobile = () => {
     setMobileOpen(false)
     setOpenSubmenu(null)
@@ -50,9 +52,32 @@ export function SiteHeader() {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    const mdBreakpoint = getComputedStyle(document.documentElement)
+      .getPropertyValue('--breakpoint-md')
+      .trim()
+    const mq = window.matchMedia(`(min-width: ${mdBreakpoint})`)
+    const handler = (e: MediaQueryListEvent) => {
+      if (e.matches) closeMobile()
+    }
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+
+  useEffect(() => {
+    const prevOverflow = document.body.style.overflow
+    if (mobileOpen) document.body.style.overflow = 'hidden'
     return () => {
-      document.body.style.overflow = ''
+      document.body.style.overflow = prevOverflow
+    }
+  }, [mobileOpen])
+
+  useEffect(() => {
+    const el = menuRef.current
+    if (!el) return
+    if (mobileOpen) {
+      el.removeAttribute('inert')
+    } else {
+      el.setAttribute('inert', '')
     }
   }, [mobileOpen])
 
@@ -198,8 +223,10 @@ export function SiteHeader() {
 
       {/* Bottom-sheet menu */}
       <div
-        role="dialog"
-        aria-modal="true"
+        ref={menuRef}
+        role={mobileOpen ? 'dialog' : undefined}
+        aria-modal={mobileOpen ? true : undefined}
+        aria-hidden={!mobileOpen}
         aria-label="Site menu"
         className={cn(
           'glass fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-white/30',
@@ -271,13 +298,13 @@ export function SiteHeader() {
               }
 
               // Accordion item — tap the row to expand its children inline.
-              const open = openSubmenu === link.label
+              const open = openSubmenu === link.href
               return (
                 <div key={link.href}>
                   <button
                     type="button"
                     aria-expanded={open}
-                    onClick={() => setOpenSubmenu(open ? null : link.label)}
+                    onClick={() => setOpenSubmenu(open ? null : link.href)}
                     className={cn(
                       rowClass,
                       'flex w-full items-center justify-between',

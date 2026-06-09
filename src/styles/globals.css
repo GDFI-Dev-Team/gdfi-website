@@ -2,9 +2,6 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* TYPOGRAPHY */
-  --font-Calibri: 'Calibri';
-
   /* COLOR PALETTE */
   /* Neutral colors(60) */
   --color-neutral-50: oklch(98.4% 0.003 247.9);
@@ -91,19 +88,6 @@
   --color-foreground: var(--foreground);
 }
 
-:root {
-  --background: var(--color-accent-50);
-  --foreground: var(--color-neutral-900);
-}
-
-/* Theme for dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--color-primary-950);
-    --foreground: var(--color-neutral-100);
-  }
-}
-
 /* Override or remove body on later iterations */
 body {
   background: var(--background);
@@ -117,6 +101,8 @@ body {
    and layered shadows with an inner glow. Reusable: apply `.glass` to any
    floating element (navbar, cards, sheets, …). */
 :root {
+  --background: var(--color-accent-50);
+  --foreground: var(--color-neutral-900);
   --glass-bg: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.18) 0%,
@@ -135,6 +121,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --background: var(--color-primary-950);
+    --foreground: var(--color-neutral-100);
     --glass-bg: linear-gradient(
       135deg,
       rgba(255, 255, 255, 0.09) 0%,
