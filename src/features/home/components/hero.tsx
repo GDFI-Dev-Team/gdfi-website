@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { Text } from '@/components/ui/text'
 import { Heading } from '@/components/ui/heading'
 
@@ -17,22 +18,37 @@ export const Hero = () => {
     return () => clearInterval(id)
   }, [])
 
+  const nextIndex = (heroIndex + 1) % heroImages.length
+
   return (
     <section
       className="relative overflow-hidden p-16"
-      aria-label="Tourism hero"
+      aria-label="Hero section"
     >
-      {heroImages.map((img, i) => (
-        <div
-          key={i}
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
-          style={{
-            backgroundImage: `url(feat-hero/${img})`,
-            opacity: i === heroIndex ? 1 : 0,
-          }}
-          aria-hidden={i !== heroIndex}
-        />
-      ))}
+      {heroImages.map((img, i) => {
+        const isActive = i === heroIndex
+        const isNext = i === nextIndex
+        return (
+          <Image
+            key={img}
+            src={`/feat-hero/${img}`}
+            alt={`slideshow-${img}`}
+            fill
+            className="object-cover"
+            style={{
+              opacity: isActive ? 1 : 0,
+              transform: isActive ? 'scale(1.2)' : 'scale(1)',
+              transition:
+                'opacity 1000ms ease-in-out, transform 6000ms ease-out',
+            }}
+            priority={i === 0}
+            loading={
+              i === 0 ? undefined : isActive || isNext ? 'eager' : 'lazy'
+            }
+            aria-hidden
+          />
+        )
+      })}
       {/* Overlay */}
       <div className="absolute inset-0 bg-background/65" />
 
