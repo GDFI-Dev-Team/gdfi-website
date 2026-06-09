@@ -13,7 +13,7 @@ const transformClasses = {
   lowercase: 'lowercase',
 }
 
-export function Text({
+export default function Text({
   size = 'md',
   transform = 'none',
   className,
