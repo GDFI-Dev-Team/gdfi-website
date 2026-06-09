@@ -22,7 +22,7 @@ export const Hero = () => {
 
   return (
     <section
-      className="relative overflow-hidden p-16"
+      className="relative min-h-[70svh] overflow-hidden py-16 px-[var(--gutter)]"
       aria-label="Hero section"
     >
       {heroImages.map((img, i) => {
@@ -54,7 +54,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-background/65" />
 
       {/* Hero section heading + text */}
-      <div className="relative z-10">
+      <div className="relative z-10 pt-24">
         <Heading>Hero</Heading>
         <Text>
           This is a sample Hero section for the GDFI website along with a
