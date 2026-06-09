@@ -5,6 +5,7 @@ interface HeadingProps {
   level?: 1 | 2 | 3
   children: React.ReactNode
   className?: string
+  id?: string
 }
 
 const headingStyles = {
@@ -13,7 +14,11 @@ const headingStyles = {
   3: 'text-xl md:text-2xl lg:text-3xl font-bold leading-relaxed',
 }
 
-export function Heading({ level = 1, children, className }: HeadingProps) {
+export default function Heading({
+  level = 1,
+  children,
+  className,
+}: HeadingProps) {
   const baseClasses = headingStyles[level]
   const combinedClasses = cn(baseClasses, className)
 

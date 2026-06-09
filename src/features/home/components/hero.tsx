@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Text } from '@/components/ui/text'
-import { Heading } from '@/components/ui/heading'
+import Text from '@/components/ui/text'
+import Heading from '@/components/ui/heading'
 
 const heroImages = ['hero-1.webp', 'hero-2.webp', 'hero-3.webp']
 
@@ -22,7 +22,7 @@ export const Hero = () => {
 
   return (
     <section
-      className="relative min-h-[70svh] overflow-hidden py-16 px-[var(--gutter)]"
+      className="relative min-h-[70svh] overflow-hidden py-16 px-(--gutter)"
       aria-label="Hero section"
     >
       {heroImages.map((img, i) => {
