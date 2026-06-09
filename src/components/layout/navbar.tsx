@@ -59,7 +59,6 @@ export function SiteHeader() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50">
-        \
         <div
           className={cn(
             'mx-auto grid grid-cols-[0.7fr_auto_1.5fr] items-center gap-0 rounded-4xl transition-all duration-300 ease-out md:grid-cols-[auto_1fr_auto]',
