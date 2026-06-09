@@ -4,29 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 import { cn } from '../../lib/utils'
 import { navLinks } from '../../lib/data'
 
 const LOGO_SRC = '/logo-images/logo_with_name_white.svg'
-
-function ChevronDown({ className }: { className?: string }) {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      className={className}
-    >
-      <path d="m6 9 6 6 6-6" />
-    </svg>
-  )
-}
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
@@ -64,7 +46,7 @@ export function SiteHeader() {
             'mx-auto grid grid-cols-[0.7fr_auto_1.5fr] items-center gap-0 rounded-4xl transition-all duration-300 ease-out md:grid-cols-[auto_1fr_auto]',
             scrolled
               ? 'glass mt-3 w-[calc(100%_-_2rem)] max-w-3xl px-4 py-2.5 md:w-[calc(100%_-_8rem)] md:max-w-5xl md:px-6'
-              : 'mt-0 w-full max-w-full border border-transparent bg-transparent px-5 py-4 md:px-[clamp(2rem,13vw,12.5rem)]',
+              : 'mt-0 w-full max-w-full border border-transparent bg-transparent py-4 px-[var(--gutter)]',
           )}
         >
           {/* Hamburger — mobile only, left */}
@@ -75,18 +57,7 @@ export function SiteHeader() {
             onClick={() => setMobileOpen(true)}
             className="col-start-1 inline-flex justify-self-start items-center justify-center rounded-lg p-2 text-foreground transition-colors hover:bg-foreground/5 md:hidden"
           >
-            <svg
-              width="26"
-              height="26"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              aria-hidden="true"
-            >
-              <path d="M3 6h18M3 12h18M3 18h18" />
-            </svg>
+            <Menu size={26} aria-hidden="true" />
           </button>
 
           {/* Logo — center on mobile, left on desktop */}
@@ -144,7 +115,10 @@ export function SiteHeader() {
                     )}
                   >
                     {link.label}
-                    <ChevronDown className="transition-transform duration-200 group-hover:rotate-180" />
+                    <ChevronDown
+                      size={16}
+                      className="transition-transform duration-200 group-hover:rotate-180"
+                    />
                   </Link>
                   <div className="invisible absolute left-0 top-full z-10 pt-2 opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                     <div className="glass min-w-60 rounded-2xl border border-white/30 p-1.5">
@@ -232,18 +206,7 @@ export function SiteHeader() {
               onClick={closeMobile}
               className="inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                aria-hidden="true"
-              >
-                <path d="M6 6l12 12M18 6L6 18" />
-              </svg>
+              <X size={24} aria-hidden="true" />
             </button>
           </div>
 
@@ -285,6 +248,7 @@ export function SiteHeader() {
                   >
                     {link.label}
                     <ChevronDown
+                      size={20}
                       className={cn(
                         'transition-transform duration-200',
                         open && 'rotate-180',
