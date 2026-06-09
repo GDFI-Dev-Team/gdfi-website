@@ -1,6 +1,7 @@
 import { Hero } from '@/features/home/components/hero'
-import { Heading } from '@/components/ui/heading'
-import { Text } from '@/components/ui/text'
+import Heading from '@/components/ui/heading'
+import Text from '@/components/ui/text'
+import WhoWeAre from '@/features/home/components/who-we-are'
 
 // Sample homepage sections — placeholder content to lay out and adjust.
 // Every section uses `px-[var(--gutter)]` so its text lines up with the
@@ -34,14 +35,15 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <WhoWeAre />
 
       {sampleSections.map((section, i) => (
         <section
           key={section.title}
           // px-[var(--gutter)] = the shared side padding (mobile/desktop set in
           // globals.css). py-* here is just vertical rhythm — tune freely.
-          className={`px-[var(--gutter)] py-16 md:py-24 ${
-            i % 2 === 1 ? 'bg-foreground/[0.03]' : ''
+          className={`px-(--gutter) py-16 md:py-24 ${
+            i % 2 === 1 ? 'bg-foreground/3' : ''
           }`}
         >
           <Heading level={2}>{section.title}</Heading>

@@ -7,6 +7,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { cn } from '../../lib/utils'
 import { navLinks } from '../../lib/data'
+import Button, { buttonBase, buttonVariants } from '../ui/button'
 
 const LOGO_SRC = '/logo-images/logo_with_name_white.svg'
 
@@ -76,15 +77,15 @@ export function SiteHeader() {
           )}
         >
           {/* Hamburger — mobile only, left */}
-          <button
-            type="button"
+          <Button
+            variant="ghost"
             aria-label="Open menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(true)}
-            className="col-start-1 inline-flex justify-self-start items-center justify-center rounded-lg p-2 text-foreground transition-colors hover:bg-foreground/5 md:hidden"
+            className="justify-self-start p-2 md:hidden"
           >
             <Menu size={26} aria-hidden="true" />
-          </button>
+          </Button>
 
           {/* Logo — center on mobile, left on desktop */}
           <Link
@@ -113,7 +114,7 @@ export function SiteHeader() {
                 'rounded-full px-3.5 py-2 text-sm font-semibold transition-colors',
                 active
                   ? 'bg-primary/10 text-primary-hover'
-                  : 'text-foreground hover:bg-foreground/5',
+                  : buttonVariants.ghost,
               )
 
               if (!link.children?.length) {
@@ -177,7 +178,9 @@ export function SiteHeader() {
           <Link
             href="/donate"
             className={cn(
-              'col-start-3 justify-self-end shrink-0 rounded-full bg-primary-400 font-semibold text-white shadow-sm transition-all duration-300 ease-out hover:bg-primary-500 active:scale-95',
+              buttonBase,
+              buttonVariants.primary,
+              'col-start-3 justify-self-end shrink-0 rounded-full font-semibold transition-all duration-300 ease-out',
               scrolled ? 'px-3.5 py-1.5 text-sm' : 'px-4 py-2 text-sm',
             )}
           >
@@ -228,14 +231,14 @@ export function SiteHeader() {
                 className="h-7 w-auto"
               />
             </Link>
-            <button
-              type="button"
+            <Button
+              variant="ghost"
               aria-label="Close menu"
               onClick={closeMobile}
-              className="inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+              className="shrink-0 rounded-full p-2 text-white/70 hover:bg-white/10 hover:text-white"
             >
               <X size={24} aria-hidden="true" />
-            </button>
+            </Button>
           </div>
 
           <nav className="mt-6 flex flex-col gap-0.5">
@@ -265,8 +268,8 @@ export function SiteHeader() {
               const open = openSubmenu === link.href
               return (
                 <div key={link.href}>
-                  <button
-                    type="button"
+                  <Button
+                    variant="ghost"
                     aria-expanded={open}
                     onClick={() => setOpenSubmenu(open ? null : link.href)}
                     className={cn(
@@ -282,7 +285,7 @@ export function SiteHeader() {
                         open && 'rotate-180',
                       )}
                     />
-                  </button>
+                  </Button>
                   {open && (
                     <div className="mt-0.5 flex flex-col gap-0.5 pl-4">
                       {link.children.map((child) => {
