@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import Text from '@/components/ui/text'
-import Heading from '@/components/ui/heading'
+import { Text } from '@/components/ui/text'
+import { Heading } from '@/components/ui/heading'
 
 const heroImages = ['hero-1.webp', 'hero-2.webp', 'hero-3.webp']
 

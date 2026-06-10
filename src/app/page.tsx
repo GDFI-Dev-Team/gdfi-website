@@ -41,7 +41,7 @@ export default function Home() {
           // px-[var(--gutter)] = the shared side padding (mobile/desktop set in
           // globals.css). py-* here is just vertical rhythm — tune freely.
           className={`px-[var(--gutter)] py-16 md:py-24 ${
-            i % 2 === 1 ? 'bg-foreground/[0.03]' : ''
+            i % 2 === 1 ? 'bg-background/[0.03]' : ''
           }`}
         >
           <Heading level={2}>{section.title}</Heading>
