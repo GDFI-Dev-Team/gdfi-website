@@ -14,7 +14,12 @@ const headingStyles = {
   3: 'text-xl md:text-2xl lg:text-3xl font-bold leading-relaxed',
 }
 
-export function Heading({ level = 1, children, className }: HeadingProps) {
+export default function Heading({
+  level = 1,
+  children,
+  className,
+  id,
+}: HeadingProps) {
   const baseClasses = headingStyles[level]
   const combinedClasses = cn(baseClasses, className)
 
@@ -22,7 +27,7 @@ export function Heading({ level = 1, children, className }: HeadingProps) {
 
   return React.createElement(
     HeadingTag,
-    { className: combinedClasses },
+    { className: combinedClasses, id },
     children,
   )
 }

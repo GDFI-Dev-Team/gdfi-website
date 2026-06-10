@@ -14,7 +14,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-primary-950 text-white/70">
+    <footer className="flex bg-primary-950 text-white/70 justify-center">
       {/* px-(--gutter): same side padding as the hero and page sections, so
           footer content aligns with the rest of the site. Set in globals.css. */}
       <div className="px-(--gutter) py-16 md:py-24">
@@ -53,14 +53,6 @@ export function Footer() {
                 </a>
               ))}
             </div>
-
-            {/* Donate — matches navbar */}
-            <Link
-              href="/donate"
-              className="mt-6 inline-flex rounded-full bg-primary-400 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 ease-out hover:bg-primary-500 active:scale-95"
-            >
-              Donate
-            </Link>
           </div>
 
           {/* Explore */}
@@ -125,12 +117,11 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-xs text-white/50 sm:flex-row">
+        <div className="flex justify-between mt-14 border-t border-white/10 pt-8 text-xs text-white/50">
           <p>
-            © {org.founded}–{new Date().getFullYear()} {org.name}. All rights
-            reserved.
+            &#169; {org.founded}–{new Date().getFullYear()} {org.name}
           </p>
-          <p>Guiuan, Eastern Samar</p>
+          <p>Terms of Service &#xb7; Privacy Policy</p>
         </div>
       </div>
     </footer>
