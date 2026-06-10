@@ -95,6 +95,7 @@ export function SiteHeader() {
           >
             <Image
               src={LOGO_SRC}
+              loading="eager"
               alt="Guiuan Development Foundation Inc."
               width={414}
               height={62}

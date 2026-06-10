@@ -1,8 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import Text from '@/components/ui/text'
-import Heading from '@/components/ui/heading'
+import Section from '@/components/ui/section'
 
 const heroImages = ['hero-1.webp', 'hero-2.webp', 'hero-3.webp']
 
@@ -21,8 +20,10 @@ export const Hero = () => {
   const nextIndex = (heroIndex + 1) % heroImages.length
 
   return (
-    <section
-      className="relative min-h-[70svh] overflow-hidden py-16 px-(--gutter)"
+    <Section
+      sectionClassName="relative min-h-[70svh] overflow-hidden"
+      divClassName="absolute inset-0"
+      maxWidth="none"
       aria-label="Hero section"
     >
       {heroImages.map((img, i) => {
@@ -34,7 +35,6 @@ export const Hero = () => {
             src={`/feat-hero/${img}`}
             alt={`slideshow-${img}`}
             fill
-            sizes="100vw"
             className="object-cover"
             style={{
               opacity: isActive ? 1 : 0,
@@ -52,15 +52,6 @@ export const Hero = () => {
       })}
       {/* Overlay */}
       <div className="absolute inset-0 bg-background/65" />
-
-      {/* Hero section heading + text */}
-      <div className="relative z-10 pt-24">
-        <Heading>Hero</Heading>
-        <Text>
-          This is a sample Hero section for the GDFI website along with a
-          Slideshow Effect.
-        </Text>
-      </div>
-    </section>
+    </Section>
   )
 }
