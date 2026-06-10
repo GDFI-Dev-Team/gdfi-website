@@ -1,7 +1,7 @@
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
-import { GOALS_TEXT } from '../constants'
+import { GOALS_TEXT } from '../data/constants'
 
 export function Goals() {
   return (

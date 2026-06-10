@@ -1,7 +1,7 @@
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
-import { CORE_VALUES_LIST } from '../constants'
+import { CORE_VALUES_LIST } from '../data/constants'
 
 export function CoreValues() {
   return (

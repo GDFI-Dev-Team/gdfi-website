@@ -1,7 +1,7 @@
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
-import { MISSION_TEXT } from '../constants'
+import { MISSION_TEXT } from '../data/constants'
 
 export function Mission() {
   return (

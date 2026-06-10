@@ -1,7 +1,7 @@
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
-import { VISION_TEXT } from '../constants'
+import { VISION_TEXT } from '../data/constants'
 
 export function Vision() {
   return (
