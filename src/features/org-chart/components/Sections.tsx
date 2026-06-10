@@ -5,7 +5,7 @@ import {
   ADMIN_AND_FINANCE,
   PROJECT_COORDINATION,
   VOLUNTEERS,
-} from '../constants'
+} from '../data/constants'
 
 function OrgSectionContainer({
   title,

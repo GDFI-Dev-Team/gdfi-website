@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { X } from 'lucide-react'
 import Text from '@/components/ui/text'
-import { Personnel } from '../constants'
+import { Personnel } from '../data/constants'
 
 export function PersonnelCard({ person }: { person: Personnel }) {
   const [isMobileModalOpen, setIsMobileModalOpen] = useState(false)
