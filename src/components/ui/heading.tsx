@@ -18,6 +18,7 @@ export default function Heading({
   level = 1,
   children,
   className,
+  id,
 }: HeadingProps) {
   const baseClasses = headingStyles[level]
   const combinedClasses = cn(baseClasses, className)
@@ -26,7 +27,7 @@ export default function Heading({
 
   return React.createElement(
     HeadingTag,
-    { className: combinedClasses },
+    { className: combinedClasses, id },
     children,
   )
 }
