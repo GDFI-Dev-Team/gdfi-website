@@ -20,7 +20,7 @@ const Partners = () => {
         {partners.map((p) => (
           <div
             key={p.name}
-            className="group flex flex-col gap-2 h-50 w-40 items-center"
+            className="group flex flex-col gap-2 h-50 w-40 items-center opacity-60 hover:opacity-100"
           >
             <div className="relative h-16 w-20 shrink-0">
               <Image
@@ -28,8 +28,7 @@ const Partners = () => {
                 alt={p.name}
                 fill
                 sizes="144px"
-                loading="eager"
-                className="object-contain opacity-60"
+                className="object-contain"
               />
             </div>
 
