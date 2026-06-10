@@ -1,6 +1,6 @@
 import { Hero } from '@/features/home/components/hero'
-import { Heading } from '@/components/ui/heading'
-import { Text } from '@/components/ui/text'
+import Heading from '@/components/ui/heading'
+import Text from '@/components/ui/text'
 
 // Sample homepage sections — placeholder content to lay out and adjust.
 // Every section uses `px-[var(--gutter)]` so its text lines up with the

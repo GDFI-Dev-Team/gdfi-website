@@ -23,7 +23,7 @@ export const navLinks: NavLink[] = [
       { label: 'Our Story', href: '/about/our-story' },
       {
         label: 'Mission, Vision & Values',
-        href: '/about/mission-vision-values',
+        href: '/about/mission-vision',
       },
       {
         label: 'Organizational Structure',
