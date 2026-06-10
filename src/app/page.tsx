@@ -2,6 +2,7 @@ import { Hero } from '@/features/home/components/hero'
 import WhoWeAre from '@/features/home/components/who-we-are'
 import OurLatestUpdates from '@/features/home/components/our-latest-updates'
 import FeaturedInterviews from '@/features/home/components/featured-interviews'
+import Partners from '@/features/home/components/partners'
 
 // Sample homepage sections — placeholder content to lay out and adjust.
 // Every section uses `px-[var(--gutter)]` so its text lines up with the
@@ -16,6 +17,7 @@ export default function Home() {
       <WhoWeAre />
       <OurLatestUpdates />
       <FeaturedInterviews />
+      <Partners />
     </>
   )
 }
