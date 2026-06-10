@@ -30,7 +30,7 @@ export default function Marquee({
         )}
         style={
           {
-            '--marquee-translate': `-${(100 / repeat).toFixed(4)}%`,
+            '--marquee-translate': `-${(100 / Math.max(1, repeat)).toFixed(4)}%`,
           } as React.CSSProperties
         }
       >

@@ -35,6 +35,7 @@ export const Hero = () => {
             src={`/feat-hero/${img}`}
             alt={`slideshow-${img}`}
             fill
+            sizes="100vw"
             className="object-cover"
             style={{
               opacity: isActive ? 1 : 0,
