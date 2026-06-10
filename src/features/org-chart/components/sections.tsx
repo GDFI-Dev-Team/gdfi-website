@@ -1,5 +1,5 @@
 import Heading from '@/components/ui/heading'
-import { PersonnelCard } from './PersonnelCard'
+import { PersonnelCard } from './personnel-card'
 import {
   BOARD_OF_TRUSTEES,
   ADMIN_AND_FINANCE,
