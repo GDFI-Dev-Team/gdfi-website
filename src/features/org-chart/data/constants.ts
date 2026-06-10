@@ -6,7 +6,7 @@ export type Personnel = {
   bio: string
 }
 
-const PLACEHOLDER_IMG = '/placeholder-avatar.webp'
+const PLACEHOLDER_IMG = '/personnel/placeholder.webp'
 const PLACEHOLDER_BIO =
   'Bio coming soon. This is a placeholder description that will be updated with the actual background, experience, and accomplishments of the team member.'
 
