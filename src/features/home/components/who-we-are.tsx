@@ -8,7 +8,7 @@ const WhoWeAre = () => {
   return (
     <Section
       aria-labelledby="who-we-are-heading"
-      divClassName="flex flex-col md:flex-row items-center gap-12 lg:gap-20 mx-auto"
+      divClassName="flex flex-col md:flex-row items-center gap-12 lg:gap-20"
     >
       <div className="w-full md:w-1/2 shrink-0">
         <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl shadow-lg">

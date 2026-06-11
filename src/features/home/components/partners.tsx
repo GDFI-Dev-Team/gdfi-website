@@ -10,7 +10,7 @@ const Partners = () => {
     <Section
       aria-labelledby="partners-heading"
       sectionClassName="bg-foreground/3"
-      divClassName="flex flex-col gap-6 mx-auto w-full"
+      divClassName="flex flex-col gap-6 w-full"
     >
       <Heading id="partners-heading" level={2} className="text-center">
         Our Partners
