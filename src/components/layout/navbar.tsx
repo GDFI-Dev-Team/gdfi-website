@@ -72,7 +72,7 @@ export function SiteHeader() {
           className={cn(
             'mx-auto grid grid-cols-[0.7fr_auto_1.5fr] items-center gap-0 rounded-4xl transition-all duration-300 ease-out md:grid-cols-[auto_1fr_auto]',
             scrolled
-              ? 'glass mt-3 w-[calc(100% - 2rem)] max-w-3xl px-4 py-2.5 md:w-[calc(100% - 8rem)] md:max-w-5xl md:px-6'
+              ? 'glass mt-3 w-[calc(100%_-_2rem)] max-w-3xl px-4 py-2.5 md:w-[calc(100%_-_8rem)] md:max-w-5xl md:px-6'
               : 'mt-0 w-full max-w-full border border-transparent bg-transparent py-4 px-(--gutter)',
           )}
         >
