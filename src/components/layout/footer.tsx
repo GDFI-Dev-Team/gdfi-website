@@ -4,6 +4,8 @@ import { Mail, MapPin } from 'lucide-react'
 import { SiFacebook, SiInstagram } from '@icons-pack/react-simple-icons'
 import { navLinks, org, socials } from '../../lib/data'
 import { ContactForm } from './contact-form'
+import Text from '../ui/text'
+import Heading from '../ui/heading'
 
 const LOGO_SRC = '/logo-images/logo_with_name_white.svg'
 
@@ -14,9 +16,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="flex bg-primary-950 text-white/70 justify-center">
-      {/* px-(--gutter): same side padding as the hero and page sections, so
-          footer content aligns with the rest of the site. Set in globals.css. */}
+    <footer className="flex bg-footer-bg text-footer-text justify-center">
       <div className="px-(--gutter) py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Brand */}
@@ -34,38 +34,42 @@ export function Footer() {
                 className="h-8 w-auto"
               />
             </Link>
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+            <Text size="sm" className="mt-5 max-w-sm text-footer-text-muted">
               {org.about}
-            </p>
+            </Text>
 
             {/* Socials */}
-            <div className="mt-6 flex items-center gap-2">
+            <ul className="mt-6 flex items-center gap-2">
               {socialLinks.map(({ label, href, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="inline-flex items-center justify-center rounded-full bg-white/5 p-2.5 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
-                >
-                  <Icon size={20} aria-hidden="true" />
-                </a>
+                <li key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="inline-flex items-center justify-center rounded-full bg-footer-surface p-2.5 text-footer-text transition-colors hover:bg-footer-surface-hover hover:text-footer-text-strong"
+                  >
+                    <Icon size={20} aria-hidden="true" />
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           {/* Explore */}
-          <nav className="lg:col-span-2" aria-label="Footer">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+          <nav className="lg:col-span-2" aria-label="Footer navigation">
+            <Heading
+              level={3}
+              className="text-sm md:text-sm lg:text-sm font-semibold uppercase tracking-wider text-footer-text-strong"
+            >
               Explore
-            </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            </Heading>
+            <ul className="mt-4 space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/70 transition-colors hover:text-white"
+                    className="text-sm text-footer-text transition-colors hover:text-footer-text-strong"
                   >
                     {link.label}
                   </Link>
@@ -76,52 +80,62 @@ export function Footer() {
 
           {/* Get in touch */}
           <div className="lg:col-span-3">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <Heading
+              level={3}
+              className="text-sm md:text-sm lg:text-sm font-semibold uppercase tracking-wider text-footer-text-strong"
+            >
               Get in touch
-            </h3>
-            <ul className="mt-4 space-y-4 text-sm">
-              <li>
-                <a
-                  href={org.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-white/70 transition-colors hover:text-white"
-                >
-                  <MapPin
-                    size={18}
-                    className="mt-0.5 shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span>{org.address}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${org.email}`}
-                  className="flex items-center gap-3 text-white/70 transition-colors hover:text-white"
-                >
-                  <Mail size={18} className="shrink-0" aria-hidden="true" />
-                  <span>{org.email}</span>
-                </a>
-              </li>
-            </ul>
+            </Heading>
+            <address className="not-italic">
+              <ul className="mt-4 space-y-4">
+                <li>
+                  <a
+                    href={org.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 text-sm text-footer-text transition-colors hover:text-footer-text-strong"
+                  >
+                    <MapPin
+                      size={18}
+                      className="mt-0.5 shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span>{org.address}</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${org.email}`}
+                    className="flex items-center gap-3 text-sm text-footer-text transition-colors hover:text-footer-text-strong"
+                  >
+                    <Mail size={18} className="shrink-0" aria-hidden="true" />
+                    <span>{org.email}</span>
+                  </a>
+                </li>
+              </ul>
+            </address>
           </div>
 
           {/* Contact us */}
           <div className="lg:col-span-3">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <Heading
+              level={3}
+              className="text-sm md:text-sm lg:text-sm font-semibold uppercase tracking-wider text-footer-text-strong"
+            >
               Contact us
-            </h3>
+            </Heading>
             <ContactForm />
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="flex justify-between mt-14 border-t border-white/10 pt-8 text-xs text-white/50">
-          <p>
+        <div className="flex justify-between mt-14 border-t border-footer-border pt-8">
+          <Text size="xs" className="text-footer-text-faint">
             &#169; {org.founded}–{new Date().getFullYear()} {org.name}
-          </p>
-          <p>Terms of Service &#xb7; Privacy Policy</p>
+          </Text>
+          <Text size="xs" className="text-footer-text-faint">
+            Terms of Service &#xb7; Privacy Policy
+          </Text>
         </div>
       </div>
     </footer>
