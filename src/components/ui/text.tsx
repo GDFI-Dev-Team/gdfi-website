@@ -1,6 +1,7 @@
 import { cn } from '../../lib/utils'
 
 const sizeClasses = {
+  xs: 'text-xs',
   sm: 'text-sm',
   md: 'text-base',
   lg: 'text-lg',
@@ -19,7 +20,7 @@ export default function Text({
   className,
   children,
 }: {
-  size?: 'sm' | 'md' | 'lg' | 'xl'
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   transform?: 'none' | 'uppercase' | 'lowercase'
   className?: string
   children: React.ReactNode
