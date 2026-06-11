@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
 import { SiteHeader } from '@/components/layout/navbar'
+import { Footer } from '@/components/layout/footer'
 
 export const metadata: Metadata = {
   title: 'GDFI',
@@ -19,7 +20,8 @@ export default function RootLayout({
           React's hydration attribute-mismatch warning. */}
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <SiteHeader />
-        {children}
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   )

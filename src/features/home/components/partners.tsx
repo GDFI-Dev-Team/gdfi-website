@@ -10,7 +10,7 @@ const Partners = () => {
     <Section
       aria-labelledby="partners-heading"
       sectionClassName="bg-foreground/3"
-      divClassName="flex flex-col gap-10"
+      divClassName="flex flex-col gap-6 mx-auto w-full"
     >
       <Heading id="partners-heading" level={2} className="text-center">
         Our Partners
@@ -20,7 +20,7 @@ const Partners = () => {
         {partners.map((p) => (
           <div
             key={p.name}
-            className="group flex flex-col gap-2 h-50 w-40 items-center opacity-60 hover:opacity-100"
+            className="group flex flex-col gap-4 w-40 items-center opacity-60 hover:opacity-100"
           >
             <div className="relative h-16 w-20 shrink-0">
               <Image
@@ -28,12 +28,13 @@ const Partners = () => {
                 alt={p.name}
                 fill
                 sizes="144px"
+                unoptimized
                 className="object-contain"
               />
             </div>
 
             <Text
-              size="sm"
+              size="xs"
               className="w-full text-center truncate cursor-default group-hover:whitespace-normal group-hover:overflow-visible"
             >
               {p.name}

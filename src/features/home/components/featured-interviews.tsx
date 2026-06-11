@@ -5,7 +5,7 @@ const FeaturedInterviews = () => {
   return (
     <Section
       aria-labelledby="featured-interviews-heading"
-      divClassName="flex flex-col gap-8 items-center justify-center"
+      divClassName="flex flex-col gap-8 items-center justify-center mx-auto"
     >
       <Heading id="featured-interviews-heading" level={2}>
         Featured Interviews
