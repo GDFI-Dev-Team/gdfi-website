@@ -115,7 +115,7 @@ export function SiteHeader() {
                 'rounded-full px-3.5 py-2 text-sm font-semibold transition-colors',
                 active
                   ? 'bg-primary/10 text-primary-hover'
-                  : buttonVariants.ghost,
+                  : 'text-white hover:bg-white/10',
               )
 
               if (!link.children?.length) {

@@ -93,6 +93,15 @@ README:
   --color-ink-strong: var(--ink-strong);
   --color-primary-hover: var(--color-primary-600);
 
+  /* Hero (always dark overlay over the slideshow) */
+  --color-hero-overlay: var(--color-primary-950);
+
+  /* Cards & accents */
+  --color-surface: var(--surface);
+  --color-accent: var(--color-accent-600);
+  --color-overlay: var(--color-primary-950);
+  --color-like: var(--color-error);
+
   /* Button */
   --color-btn-primary: var(--btn-primary);
   --color-btn-primary-hover: var(--btn-primary-hover);
@@ -117,6 +126,9 @@ README:
   /* Page chrome */
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
+
+  /* Card surface — pure white so cards lift off the tinted bands */
+  --surface: oklch(100% 0 0);
 
   /* Ink */
   --ink-strong: var(--color-neutral-900);
@@ -155,6 +167,7 @@ README:
   }
 }
 
+/* Dark mode disabled — site is always light. Re-enable by uncommenting.
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--color-primary-950);
@@ -174,6 +187,7 @@ README:
       inset 0 1px 12px rgba(255, 255, 255, 0.16);
   }
 }
+*/
 
 body {
   background: var(--background);

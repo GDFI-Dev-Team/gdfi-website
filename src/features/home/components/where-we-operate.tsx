@@ -16,12 +16,20 @@ const WhereWeOperate = () => {
   return (
     <Section
       aria-labelledby="where-we-operate-heading"
-      sectionClassName="bg-foreground/3"
       divClassName="flex flex-col gap-8"
     >
-      <Heading id="where-we-operate-heading" level={2} className="text-center">
-        Where We Operate
-      </Heading>
+      <div className="flex flex-col items-center gap-3 text-center">
+        <Text
+          size="sm"
+          transform="uppercase"
+          className="tracking-widest text-accent"
+        >
+          Our reach
+        </Text>
+        <Heading id="where-we-operate-heading" level={2}>
+          Where We Operate
+        </Heading>
+      </div>
 
       {/*
         Map area — replace this placeholder with either:
