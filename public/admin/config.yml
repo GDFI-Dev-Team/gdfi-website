@@ -3,7 +3,7 @@
 backend:
   name: github
   repo: GDFI-Dev-Team/gdfi-website
-  base_url: https://sveltia-cms-auth.raki-rarufu-dev.workers.dev
+  base_url: https://sveltia-cms-auth.raki-rarufu-dev.workers.dev # handoff CMS authentication Cloudflare worker
 media_folder: /public/media
 public_folder: /media
 
