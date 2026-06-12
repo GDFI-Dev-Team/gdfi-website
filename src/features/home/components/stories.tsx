@@ -31,7 +31,7 @@ const Stories = () => {
         {stories.map((story) => (
           <article
             key={story.slug}
-            className="group flex flex-col overflow-hidden rounded-3xl bg-surface shadow-sm transition-shadow duration-300 hover:shadow-xl"
+            className="group flex flex-col overflow-hidden rounded-xl bg-surface shadow-sm transition-shadow duration-300 hover:shadow-xl"
           >
             <div className="relative aspect-16/10 overflow-hidden">
               <Image

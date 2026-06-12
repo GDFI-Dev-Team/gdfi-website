@@ -1,11 +1,11 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { buttonBase, buttonVariants } from '@/components/ui/button'
+// import { buttonBase, buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const heroImages = ['hero-1.webp', 'hero-2.webp', 'hero-3.webp']
@@ -64,7 +64,7 @@ export const Hero = () => {
         <Text
           size="sm"
           transform="uppercase"
-          className="animate-fade-up tracking-widest text-accent"
+          className="animate-fade-up tracking-widest text-accent font-bold"
         >
           Guiuan Development Foundation, Inc.
         </Text>
@@ -72,7 +72,7 @@ export const Hero = () => {
           level={1}
           className="animate-fade-up text-white [animation-delay:100ms]"
         >
-          Thriving coasts, resilient communities
+          From ridge to reef
         </Heading>
         <Text
           size="lg"
@@ -82,6 +82,7 @@ export const Hero = () => {
           Philippines — protecting marine ecosystems and building sustainable
           coastal livelihoods.
         </Text>
+        {/*
         <div className="flex flex-wrap items-center gap-3 animate-fade-up [animation-delay:300ms]">
           <Link
             href="/donate"
@@ -103,6 +104,7 @@ export const Hero = () => {
             Learn who we are
           </Link>
         </div>
+        */}
       </div>
 
       {/* Slide indicators */}

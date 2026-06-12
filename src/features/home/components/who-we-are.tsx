@@ -14,10 +14,10 @@ const WhoWeAre = () => {
       <div className="relative w-full md:w-1/2 shrink-0">
         {/* Offset accent backdrop */}
         <div
-          className="absolute -bottom-4 -left-4 h-full w-full rounded-3xl bg-accent/15"
+          className="absolute -bottom-4 -left-4 h-full w-full rounded-xl bg-accent/15"
           aria-hidden="true"
         />
-        <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-lg">
+        <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl shadow-lg">
           <Image
             src="/feat-hero/hero-2.webp"
             alt=""

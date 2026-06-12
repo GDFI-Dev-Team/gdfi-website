@@ -35,8 +35,8 @@ const UpdateCard = ({
   <article
     className={
       featured
-        ? 'group relative overflow-hidden rounded-3xl aspect-4/3 sm:aspect-21/9'
-        : 'group relative overflow-hidden rounded-3xl aspect-4/3 sm:aspect-4/5'
+        ? 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-21/9'
+        : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-4/5'
     }
   >
     <Image

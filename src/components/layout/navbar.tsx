@@ -82,7 +82,7 @@ export function SiteHeader() {
             aria-label="Open menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(true)}
-            className="justify-self-start p-2 md:hidden"
+            className="justify-self-start p-2 text-white hover:bg-white/10 md:hidden"
           >
             <Menu size={26} aria-hidden="true" />
           </Button>

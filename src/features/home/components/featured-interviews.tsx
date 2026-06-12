@@ -22,9 +22,9 @@ const FeaturedInterviews = () => {
         </Heading>
       </div>
 
-      <div className="relative w-full max-w-4xl aspect-video overflow-hidden rounded-3xl shadow-lg">
+      <div className="relative w-full max-w-4xl aspect-video overflow-hidden rounded-xl shadow-lg">
         <iframe
-          src="https://www.youtube.com/embed/Uo9cOSJNQrQ"
+          src="https://www.youtube.com/embed/TBg5-6JbOPk"
           title="Featured interview"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
