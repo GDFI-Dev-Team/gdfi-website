@@ -13,19 +13,27 @@ const maxWidthClasses: Record<SectionMaxWidth, string> = {
 
 export default function Section({
   children,
-  className,
+  sectionClassName,
+  divClassName,
   id,
+  'aria-labelledby': ariaLabelledBy,
   maxWidth = '7xl',
 }: {
   children: React.ReactNode
-  className?: string
+  sectionClassName?: string
+  divClassName?: string
   id?: string
+  'aria-labelledby'?: string
   maxWidth?: SectionMaxWidth
 }) {
   return (
     /* Change bg-white later */
-    <section className={cn('py-12', className)} id={id}>
-      <div className={cn(maxWidthClasses[maxWidth], 'mx-auto sm:px-6 px-4')}>
+    <section
+      className={cn('px-(--gutter) py-16 md:py-24', sectionClassName)}
+      id={id}
+      aria-labelledby={ariaLabelledBy}
+    >
+      <div className={cn('mx-auto', maxWidthClasses[maxWidth], divClassName)}>
         {children}
       </div>
     </section>

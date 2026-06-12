@@ -23,7 +23,8 @@
     "paths": {
       "@/*": ["./src/app/*"],
       "@/components/*": ["./src/components/*"],
-      "@/features/*": ["./src/features/*"]
+      "@/features/*": ["./src/features/*"],
+      "@/lib/*": ["./src/lib/*"]
     }
   },
   "include": [
@@ -32,7 +33,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/components/ui/breadcrumb.tss"
   ],
   "exclude": ["node_modules"]
 }

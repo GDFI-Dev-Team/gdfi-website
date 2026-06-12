@@ -15,11 +15,8 @@ function OrgSectionContainer({
   children: React.ReactNode
 }) {
   return (
-    <div className="bg-foreground/[0.04] rounded-3xl p-6 md:p-10 lg:p-16 w-full flex flex-col items-center">
-      <Heading
-        level={2}
-        className="text-xl md:text-2xl mb-10 md:mb-16 text-center"
-      >
+    <div className="bg-foreground/4 rounded-3xl p-6 md:p-10 lg:p-16 w-full flex flex-col items-center">
+      <Heading level={2} className="mb-6 text-center">
         {title}
       </Heading>
       {children}
