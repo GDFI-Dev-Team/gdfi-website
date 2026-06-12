@@ -99,18 +99,18 @@ README:
   --color-btn-secondary: var(--btn-secondary);
 
   /* Footer (always dark/inverted surface) */
-  --color-footer-bg: var(--footer-bg);
-  --color-footer-text: var(--footer-text);
-  --color-footer-text-muted: var(--footer-text-muted);
-  --color-footer-text-strong: var(--footer-text-strong);
-  --color-footer-text-faint: var(--footer-text-faint);
-  --color-footer-text-secondary: var(--footer-text-secondary);
-  --color-footer-surface: var(--footer-surface);
-  --color-footer-surface-hover: var(--footer-surface-hover);
-  --color-footer-border: var(--footer-border);
-  --color-footer-field-border: var(--footer-field-border);
-  --color-footer-field-border-focus: var(--footer-field-border-focus);
-  --color-footer-placeholder: var(--footer-placeholder);
+  --color-footer-bg: var(--color-primary-950);
+  --color-footer-text: oklch(100% 0 0 / 70%);
+  --color-footer-text-muted: oklch(100% 0 0 / 60%);
+  --color-footer-text-strong: oklch(100% 0 0);
+  --color-footer-text-faint: oklch(100% 0 0 / 50%);
+  --color-footer-text-secondary: oklch(100% 0 0 / 80%);
+  --color-footer-surface: oklch(100% 0 0 / 5%);
+  --color-footer-surface-hover: oklch(100% 0 0 / 10%);
+  --color-footer-border: oklch(100% 0 0 / 10%);
+  --color-footer-field-border: oklch(100% 0 0 / 15%);
+  --color-footer-field-border-focus: oklch(100% 0 0 / 30%);
+  --color-footer-placeholder: oklch(100% 0 0 / 40%);
 }
 
 :root {
@@ -144,20 +144,6 @@ README:
     0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06),
     inset 0 0 0 0.5px rgba(255, 255, 255, 0.12),
     inset 0 1px 12px rgba(255, 255, 255, 0.25);
-
-  /* Footer */
-  --footer-bg: var(--color-primary-950);
-  --footer-text: oklch(100% 0 0 / 70%);
-  --footer-text-muted: oklch(100% 0 0 / 60%);
-  --footer-text-strong: oklch(100% 0 0);
-  --footer-text-faint: oklch(100% 0 0 / 50%);
-  --footer-text-secondary: oklch(100% 0 0 / 80%);
-  --footer-surface: oklch(100% 0 0 / 5%);
-  --footer-surface-hover: oklch(100% 0 0 / 10%);
-  --footer-border: oklch(100% 0 0 / 10%);
-  --footer-field-border: oklch(100% 0 0 / 15%);
-  --footer-field-border-focus: oklch(100% 0 0 / 30%);
-  --footer-placeholder: oklch(100% 0 0 / 40%);
 
   /* Layout — mobile gutter; desktop override below */
   --gutter: 1.5rem;

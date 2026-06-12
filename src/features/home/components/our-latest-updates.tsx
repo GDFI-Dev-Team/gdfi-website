@@ -7,7 +7,7 @@ const OurLatestUpdates = () => {
     <Section
       sectionClassName="bg-foreground/3"
       aria-labelledby="our-latest-updates-heading"
-      divClassName="flex flex-col gap-6 mx-auto"
+      divClassName="flex flex-col gap-6"
     >
       <Heading
         id="our-latest-updates-heading"

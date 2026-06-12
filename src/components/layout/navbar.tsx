@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { cn } from '../../lib/utils'
-import { navLinks } from '../../lib/data'
+import { navLinks } from '../../lib/navigation'
 import Button, { buttonBase, buttonVariants } from '../ui/button'
 
 const LOGO_SRC = '/logo-images/logo_with_name_white.svg'

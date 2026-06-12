@@ -18,16 +18,16 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   {
     label: 'About Us',
-    href: '/about',
+    href: '/about-us',
     children: [
-      { label: 'Our Story', href: '/about/our-story' },
+      { label: 'Our Story', href: '/about-us/our-story' },
       {
         label: 'Mission, Vision & Values',
-        href: '/about/mission-vision-values',
+        href: '/about-us/mission-vision',
       },
       {
         label: 'Organizational Structure',
-        href: '/about/organizational-structure',
+        href: '/about-us/organizational-structure',
       },
     ],
   },

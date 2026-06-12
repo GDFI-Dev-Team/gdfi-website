@@ -15,7 +15,7 @@ const fieldClass = cn(
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
     // TODO: send to backend (API route / server action) once available.
     setSubmitted(true)
@@ -60,7 +60,7 @@ export function ContactForm() {
       />
       <Button
         type="submit"
-        className="rounded-full px-4 py-2 text-sm font-semibold gap-2"
+        className="rounded-full px-4 py-2 text-sm font-semibold gap-2 transition-all duration-300 ease-out"
       >
         Send message
         <Send size={16} aria-hidden="true" />

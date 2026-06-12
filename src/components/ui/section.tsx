@@ -33,7 +33,7 @@ export default function Section({
       id={id}
       aria-labelledby={ariaLabelledBy}
     >
-      <div className={cn(maxWidthClasses[maxWidth], divClassName)}>
+      <div className={cn('mx-auto', maxWidthClasses[maxWidth], divClassName)}>
         {children}
       </div>
     </section>
