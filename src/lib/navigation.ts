@@ -35,7 +35,11 @@ export const navLinks: NavLink[] = [
   { label: 'MPAs', href: '/mpas' },
   { label: 'Research', href: '/research' },
   { label: 'News', href: '/news' },
-  { label: 'Resources', href: '/resources' },
+  {
+    label: 'Resources',
+    href: '/resources',
+    children: [{ label: 'Annual Reports', href: '/resources/annual-reports' }],
+  },
 ]
 
 /**
