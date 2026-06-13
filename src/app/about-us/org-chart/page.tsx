@@ -3,7 +3,7 @@ import {
   AdminAndFinance,
   ProjectCoordination,
   PoolOfVolunteers,
-} from '@/features/org-chart/components'
+} from '@/features/about-us/org-chart/components'
 import Section from '@/components/ui/section'
 import Banner from '@/components/ui/banner'
 
