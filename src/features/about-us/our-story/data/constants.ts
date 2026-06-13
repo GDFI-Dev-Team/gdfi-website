@@ -21,7 +21,7 @@ export const HISTORY_MILESTONES: HistoryMilestone[] = [
     year: '1988 – 1995',
     title: 'Founding and Fostering Community Stewardship',
     description:
-      'On August 30, 1988, Prof. de la Cruz officially established the Guiuan Development Foundation, Inc. (GDFI) as a non-stock, non-profit organization dedicated to empowering coastal communities and conserving natural resources. Following its SEC registration in April 1989, GDFI launched its flagship program: Community-Based Coastal Resources Management (CBCRM).\nRecognizing that true resource stewardship requires broad, interconnected action, the CBCRM program expanded significantly in 1995. Originally operating in Guiuan, Mercedes, and Salcedo, it grew to include Quinapondan, Giporlos, Balangiga, and Lawaan. Together, these seven municipalities share the critical waters of the northern Leyte Gulf.',
+      'On August 30, 1988, Prof. de la Cruz officially established the Guiuan Development Foundation, Inc. (GDFI) as a non-stock, non-profit organization dedicated to empowering coastal communities and conserving natural resources. Following its SEC registration in April 1989, GDFI launched its flagship program: Community-Based Coastal Resources Management (CBCRM).\n\nRecognizing that true resource stewardship requires broad, interconnected action, the CBCRM program expanded significantly in 1995. Originally operating in Guiuan, Mercedes, and Salcedo, it grew to include Quinapondan, Giporlos, Balangiga, and Lawaan. Together, these seven municipalities share the critical waters of the northern Leyte Gulf.',
   },
   {
     id: 'milestone-3',
