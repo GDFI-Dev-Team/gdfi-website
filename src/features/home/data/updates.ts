@@ -3,7 +3,6 @@ export type Update = {
   title: string
   date: string
   image: string
-  /* Temporary engagement numbers until updates come from a CMS/API */
   views: number
   likes: number
   readMinutes: number
@@ -16,7 +15,7 @@ export const updates: Update[] = [
     title:
       'GDFI Welcomes Tech Talents from University of the Philippines Tacloban!',
     date: 'June 5, 2026',
-    image: '/updates-images/sample2.jpg',
+    image: '/updates-images/sample2.webp',
     views: 16,
     likes: 9,
     readMinutes: 4,
@@ -25,7 +24,7 @@ export const updates: Update[] = [
     slug: 'sample1',
     title: '7 Municipalities, 1 Shared Vision for Our Coasts!',
     date: 'May 28, 2026',
-    image: '/updates-images/sample1.jpg',
+    image: '/updates-images/sample1.webp',
     views: 21,
     likes: 3,
     readMinutes: 6,
@@ -34,7 +33,7 @@ export const updates: Update[] = [
     slug: 'sample3',
     title: 'LIVE: Breaking down the "Power of Three"',
     date: 'May 11, 2026',
-    image: '/updates-images/sample3.jpg',
+    image: '/updates-images/sample3.webp',
     views: 15,
     likes: 6,
     readMinutes: 3,
@@ -43,7 +42,7 @@ export const updates: Update[] = [
     slug: 'sample4',
     title: 'To the Guardians of our Coasts: Happy Mother’s Day!',
     date: 'May 10, 2026',
-    image: '/updates-images/sample4.jpg',
+    image: '/updates-images/sample4.webp',
     views: 11,
     likes: 9,
     readMinutes: 2,
@@ -52,7 +51,7 @@ export const updates: Update[] = [
     slug: 'sample5',
     title: 'Building resilience for our coastal communities!',
     date: 'May 6, 2026',
-    image: '/updates-images/sample5.jpg',
+    image: '/updates-images/sample5.webp',
     views: 20,
     likes: 12,
     readMinutes: 5,

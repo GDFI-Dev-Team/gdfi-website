@@ -9,14 +9,14 @@ import { formatCount } from '@/lib/utils'
 import { updates, type Update } from '../data/updates'
 
 const UpdateMeta = ({ update }: { update: Update }) => (
-  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-white/75">
+  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-overlay-subtle">
     <div className="inline-flex items-center gap-1.5">
       <Eye size={16} aria-hidden="true" />
       <Text size="sm">{formatCount(update.views)}</Text>
     </div>
     <LikeButton
       count={update.likes}
-      className="text-white/75 hover:text-white"
+      className="text-on-overlay-subtle hover:text-on-overlay"
     />
     <div className="inline-flex items-center gap-1.5">
       <Clock size={16} aria-hidden="true" />
@@ -67,13 +67,13 @@ const UpdateCard = ({
       <Text
         size="xs"
         transform="uppercase"
-        className="tracking-widest text-white/70"
+        className="tracking-widest text-on-overlay-subtle"
       >
         {update.date}
       </Text>
       <Heading
         level={featured ? 3 : 4}
-        className={featured ? 'max-w-2xl text-white' : 'text-white'}
+        className={featured ? 'max-w-2xl text-on-overlay' : 'text-on-overlay'}
       >
         {update.title}
       </Heading>

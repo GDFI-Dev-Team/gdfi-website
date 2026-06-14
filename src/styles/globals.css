@@ -96,6 +96,12 @@ README:
   /* Hero (always dark overlay over the slideshow) */
   --color-hero-overlay: var(--color-primary-950);
 
+  /* Content layered over dark overlays/scrims (hero, image cards) — always light */
+  --color-on-overlay: oklch(100% 0 0);
+  --color-on-overlay-muted: oklch(100% 0 0 / 80%);
+  --color-on-overlay-subtle: oklch(100% 0 0 / 70%);
+  --color-on-overlay-faint: oklch(100% 0 0 / 40%);
+
   /* Cards & accents */
   --color-surface: var(--surface);
   --color-accent: var(--color-accent-600);

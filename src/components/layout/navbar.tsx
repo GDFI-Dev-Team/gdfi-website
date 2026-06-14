@@ -9,7 +9,32 @@ import { cn } from '../../lib/utils'
 import { navLinks } from '../../lib/navigation'
 import Button, { buttonBase, buttonVariants } from '../ui/button'
 
-const LOGO_SRC = '/logo-images/logo_with_name_dark.svg'
+const LOGO_MARK_SRC = '/logo-images/logo.svg'
+const LOGO_NAME_SRC = '/logo-images/name.svg'
+
+function BrandLogo({ priority = false }: { priority?: boolean }) {
+  return (
+    <>
+      <Image
+        src={LOGO_MARK_SRC}
+        alt=""
+        width={1630}
+        height={1421}
+        priority={priority}
+        className="h-7 w-auto"
+      />
+      {/* name.svg ships black, flip via CSS */}
+      <Image
+        src={LOGO_NAME_SRC}
+        alt=""
+        width={336}
+        height={55}
+        priority={priority}
+        className="h-7 w-auto"
+      />
+    </>
+  )
+}
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -77,17 +102,9 @@ export function SiteHeader() {
             <Link
               href="/"
               aria-label="GDFI — home"
-              className="col-start-2 flex items-center justify-self-center md:col-start-1 md:justify-self-start"
+              className="col-start-2 flex items-center gap-2 justify-self-center md:col-start-1 md:justify-self-start"
             >
-              <Image
-                src={LOGO_SRC}
-                loading="eager"
-                alt="Guiuan Development Foundation Inc."
-                width={414}
-                height={62}
-                priority
-                className="h-7 w-auto"
-              />
+              <BrandLogo priority />
             </Link>
 
             {/* Nav links — center, desktop only */}
@@ -198,15 +215,9 @@ export function SiteHeader() {
               href="/"
               aria-label="GDFI — home"
               onClick={closeMobile}
-              className="flex items-center"
+              className="flex items-center gap-2"
             >
-              <Image
-                src={LOGO_SRC}
-                alt="Guiuan Development Foundation Inc."
-                width={414}
-                height={62}
-                className="h-7 w-auto"
-              />
+              <BrandLogo />
             </Link>
             <Button
               variant="ghost"
