@@ -9,10 +9,9 @@ import { cn } from '../../lib/utils'
 import { navLinks } from '../../lib/navigation'
 import Button, { buttonBase, buttonVariants } from '../ui/button'
 
-const LOGO_SRC = '/logo-images/logo_with_name_white.svg'
+const LOGO_SRC = '/logo-images/logo_with_name_dark.svg'
 
 export function SiteHeader() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
   const pathname = usePathname()
@@ -26,13 +25,6 @@ export function SiteHeader() {
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     const mdBreakpoint = getComputedStyle(document.documentElement)
@@ -67,126 +59,114 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50">
-        <div
-          className={cn(
-            'mx-auto grid grid-cols-[0.7fr_auto_1.5fr] items-center gap-0 rounded-4xl transition-all duration-300 ease-out md:grid-cols-[auto_1fr_auto]',
-            scrolled
-              ? 'glass mt-3 w-[calc(100%_-_2rem)] max-w-3xl px-4 py-2.5 md:w-[calc(100%_-_8rem)] md:max-w-5xl md:px-6'
-              : 'mt-0 w-full max-w-full border border-transparent bg-transparent py-4 px-(--gutter)',
-          )}
-        >
-          {/* Hamburger — mobile only, left */}
-          <Button
-            variant="ghost"
-            aria-label="Open menu"
-            aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen(true)}
-            className="justify-self-start p-2 text-white hover:bg-white/10 md:hidden"
-          >
-            <Menu size={26} aria-hidden="true" />
-          </Button>
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-foreground/10 bg-white">
+        <div className="px-(--gutter) py-3 md:py-4">
+          <div className="mx-auto grid max-w-7xl grid-cols-[0.7fr_auto_1.5fr] items-center gap-0 md:grid-cols-[auto_1fr_auto]">
+            {/* Hamburger — mobile only, left */}
+            <Button
+              variant="ghost"
+              aria-label="Open menu"
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen(true)}
+              className="justify-self-start p-2 text-foreground hover:bg-foreground/5 md:hidden"
+            >
+              <Menu size={26} aria-hidden="true" />
+            </Button>
 
-          {/* Logo — center on mobile, left on desktop */}
-          <Link
-            href="/"
-            aria-label="GDFI — home"
-            className="col-start-2 flex items-center justify-self-center md:col-start-1 md:justify-self-start"
-          >
-            <Image
-              src={LOGO_SRC}
-              loading="eager"
-              alt="Guiuan Development Foundation Inc."
-              width={414}
-              height={62}
-              priority
-              className={cn(
-                'w-auto transition-all duration-300 ease-out',
-                scrolled ? 'h-6' : 'h-7',
-              )}
-            />
-          </Link>
+            {/* Logo — center on mobile, left on desktop */}
+            <Link
+              href="/"
+              aria-label="GDFI — home"
+              className="col-start-2 flex items-center justify-self-center md:col-start-1 md:justify-self-start"
+            >
+              <Image
+                src={LOGO_SRC}
+                loading="eager"
+                alt="Guiuan Development Foundation Inc."
+                width={414}
+                height={62}
+                priority
+                className="h-7 w-auto"
+              />
+            </Link>
 
-          {/* Nav links — center, desktop only */}
-          <nav className="col-start-2 hidden items-center justify-self-center md:flex md:gap-1">
-            {navLinks.map((link) => {
-              const active = isActive(link.href)
-              const triggerClass = cn(
-                'rounded-full px-3.5 py-2 text-sm font-semibold transition-colors',
-                active
-                  ? 'bg-primary/10 text-primary-hover'
-                  : 'text-white hover:bg-white/10',
-              )
-
-              if (!link.children?.length) {
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    aria-current={active ? 'page' : undefined}
-                    className={triggerClass}
-                  >
-                    {link.label}
-                  </Link>
+            {/* Nav links — center, desktop only */}
+            <nav className="col-start-2 hidden items-center justify-self-center md:flex md:gap-1">
+              {navLinks.map((link) => {
+                const active = isActive(link.href)
+                const triggerClass = cn(
+                  'rounded-full px-3.5 py-2 text-sm font-semibold transition-colors',
+                  active
+                    ? 'bg-primary/10 text-primary-hover'
+                    : 'text-foreground hover:bg-foreground/5',
                 )
-              }
 
-              return (
-                <div key={link.href} className="group relative">
-                  <Link
-                    href={link.href}
-                    aria-current={active ? 'page' : undefined}
-                    aria-haspopup="menu"
-                    className={cn(
-                      triggerClass,
-                      'inline-flex items-center gap-1',
-                    )}
-                  >
-                    {link.label}
-                    <ChevronDown
-                      size={16}
-                      className="transition-transform duration-200 group-hover:rotate-180"
-                    />
-                  </Link>
-                  <div className="invisible absolute left-0 top-full z-10 pt-2 opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <div className="glass min-w-60 rounded-2xl border border-white/30 p-1.5">
-                      {link.children.map((child) => {
-                        const childActive = isActive(child.href)
-                        return (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            aria-current={childActive ? 'page' : undefined}
-                            className={cn(
-                              'block whitespace-nowrap rounded-xl px-3.5 py-2 text-sm font-medium transition-colors',
-                              childActive
-                                ? 'bg-white/15 text-white'
-                                : 'text-white/90 hover:bg-white/10 hover:text-white',
-                            )}
-                          >
-                            {child.label}
-                          </Link>
-                        )
-                      })}
+                if (!link.children?.length) {
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      aria-current={active ? 'page' : undefined}
+                      className={triggerClass}
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                }
+
+                return (
+                  <div key={link.href} className="group relative">
+                    <Link
+                      href={link.href}
+                      aria-current={active ? 'page' : undefined}
+                      aria-haspopup="menu"
+                      className={cn(
+                        triggerClass,
+                        'inline-flex items-center gap-1',
+                      )}
+                    >
+                      {link.label}
+                      <ChevronDown size={16} />
+                    </Link>
+                    <div className="invisible absolute left-0 top-full z-10 pt-2 opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                      <div className="min-w-60 rounded-2xl border border-foreground/10 bg-white p-1.5 shadow-lg">
+                        {link.children.map((child) => {
+                          const childActive = isActive(child.href)
+                          return (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              aria-current={childActive ? 'page' : undefined}
+                              className={cn(
+                                'block whitespace-nowrap rounded-xl px-3.5 py-2 text-sm font-medium transition-colors',
+                                childActive
+                                  ? 'bg-primary/10 text-primary-hover'
+                                  : 'text-foreground hover:bg-foreground/5',
+                              )}
+                            >
+                              {child.label}
+                            </Link>
+                          )
+                        })}
+                      </div>
                     </div>
                   </div>
-                </div>
-              )
-            })}
-          </nav>
+                )
+              })}
+            </nav>
 
-          {/* Donate — right */}
-          <Link
-            href="/donate"
-            className={cn(
-              buttonBase,
-              buttonVariants.primary,
-              'col-start-3 justify-self-end shrink-0 rounded-full font-semibold transition-all duration-300 ease-out',
-              scrolled ? 'px-3.5 py-1.5 text-sm' : 'px-4 py-2 text-sm',
-            )}
-          >
-            Donate
-          </Link>
+            {/* Donate — right */}
+            <Link
+              href="/donate"
+              className={cn(
+                buttonBase,
+                buttonVariants.primary,
+                'col-start-3 shrink-0 justify-self-end rounded-full px-4 py-2 text-sm font-semibold',
+              )}
+            >
+              Donate
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -195,7 +175,7 @@ export function SiteHeader() {
         onClick={closeMobile}
         aria-hidden="true"
         className={cn(
-          'fixed inset-0 z-50 bg-ink-strong/30 backdrop-blur-sm transition-opacity duration-300',
+          'fixed inset-0 z-50 bg-ink-strong/40',
           mobileOpen ? 'opacity-100' : 'pointer-events-none opacity-0',
         )}
       />
@@ -208,12 +188,8 @@ export function SiteHeader() {
         aria-hidden={!mobileOpen}
         aria-label="Site menu"
         className={cn(
-          'glass fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-white/30',
-          'p-6',
-          'transition-transform duration-300 ease-out',
-          mobileOpen
-            ? 'translate-y-0'
-            : 'pointer-events-none translate-y-[150%]',
+          'fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-foreground/10 bg-white p-6 shadow-xl',
+          mobileOpen ? 'block' : 'pointer-events-none hidden',
         )}
       >
         <div className="mx-auto w-full max-w-md">
@@ -236,7 +212,7 @@ export function SiteHeader() {
               variant="ghost"
               aria-label="Close menu"
               onClick={closeMobile}
-              className="shrink-0 rounded-full p-2 text-white/70 hover:bg-white/10 hover:text-white"
+              className="shrink-0 rounded-full p-2 text-foreground/70 hover:bg-foreground/5 hover:text-foreground"
             >
               <X size={24} aria-hidden="true" />
             </Button>
@@ -248,8 +224,8 @@ export function SiteHeader() {
               const rowClass = cn(
                 'rounded-xl px-4 py-2 text-lg font-semibold transition-colors',
                 active
-                  ? 'bg-white/15 text-white'
-                  : 'text-white hover:bg-white/10',
+                  ? 'bg-primary/10 text-primary-hover'
+                  : 'text-foreground hover:bg-foreground/5',
               )
 
               if (!link.children?.length) {
@@ -281,10 +257,7 @@ export function SiteHeader() {
                     {link.label}
                     <ChevronDown
                       size={20}
-                      className={cn(
-                        'transition-transform duration-200',
-                        open && 'rotate-180',
-                      )}
+                      className={cn(open && 'rotate-180')}
                     />
                   </Button>
                   {open && (
@@ -299,8 +272,8 @@ export function SiteHeader() {
                             className={cn(
                               'rounded-xl px-4 py-2 text-base font-medium transition-colors',
                               childActive
-                                ? 'bg-white/15 text-white'
-                                : 'text-white/85 hover:bg-white/10 hover:text-white',
+                                ? 'bg-primary/10 text-primary-hover'
+                                : 'text-foreground hover:bg-foreground/5',
                             )}
                           >
                             {child.label}
