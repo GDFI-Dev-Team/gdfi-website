@@ -7,13 +7,19 @@ import Button from '@/components/ui/button'
 const WhoWeAre = () => {
   return (
     <Section
+      id="who-we-are"
       aria-labelledby="who-we-are-heading"
       divClassName="flex flex-col md:flex-row items-center gap-12 lg:gap-20"
     >
-      <div className="w-full md:w-1/2 shrink-0">
-        <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl shadow-lg">
+      <div className="relative w-full md:w-1/2 shrink-0">
+        {/* Offset accent backdrop */}
+        <div
+          className="absolute -bottom-4 -left-4 h-full w-full rounded-xl bg-accent/15"
+          aria-hidden="true"
+        />
+        <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl shadow-lg">
           <Image
-            src="/feat-hero/hero-1.webp"
+            src="/feat-hero/hero-2.webp"
             alt=""
             fill
             sizes="(min-width: 768px) 45vw, 100vw"
@@ -25,13 +31,21 @@ const WhoWeAre = () => {
 
       <div className="flex flex-col gap-6 flex-1 min-w-0">
         <div className="flex flex-col gap-4">
+          <Text
+            size="sm"
+            transform="uppercase"
+            className="tracking-widest text-accent"
+          >
+            Who we are
+          </Text>
           <Heading id="who-we-are-heading" level={2}>
-            Who We Are
+            Rooted in Guiuan, serving coastal communities
           </Heading>
           <Text size="lg" className="text-foreground/70 max-w-prose">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&apos;s standard dummy
-            text ever since 1966.
+            Guiuan Development Foundation, Inc. is a non-government organization
+            based in Guiuan, Eastern Samar. We work alongside fishers, women,
+            and local governments to care for the coastal ecosystems their
+            communities depend on.
           </Text>
         </div>
         <Button variant="secondary" className="self-start px-6 py-2.5">

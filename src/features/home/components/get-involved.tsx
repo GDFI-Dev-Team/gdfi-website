@@ -27,17 +27,25 @@ const GetInvolved = () => {
     <Section
       aria-labelledby="get-involved-heading"
       divClassName="flex flex-col gap-10"
-      sectionClassName="bg-foreground/3"
     >
-      <Heading id="get-involved-heading" level={2} className="text-center">
-        Get Involved
-      </Heading>
+      <div className="flex flex-col items-center gap-3 text-center">
+        <Text
+          size="sm"
+          transform="uppercase"
+          className="tracking-widest text-accent"
+        >
+          Join the mission
+        </Text>
+        <Heading id="get-involved-heading" level={2}>
+          Get Involved
+        </Heading>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {cards.map(({ Icon, label, description }) => (
           <div
             key={label}
-            className="bg-background rounded-2xl p-8 flex flex-col items-center gap-4 text-center shadow-sm"
+            className="bg-surface border border-foreground/10 rounded-3xl p-8 flex flex-col items-center gap-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             <div className="bg-btn-primary/10 p-5 rounded-full">
               <Icon

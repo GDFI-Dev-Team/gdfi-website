@@ -2,7 +2,7 @@ import React from 'react'
 import { cn } from '../../lib/utils'
 
 interface HeadingProps {
-  level?: 1 | 2 | 3
+  level?: 1 | 2 | 3 | 4
   children: React.ReactNode
   className?: string
   id?: string
@@ -12,6 +12,7 @@ const headingStyles = {
   1: 'text-3xl md:text-4xl lg:text-6xl font-bold leading-relaxed',
   2: 'text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed',
   3: 'text-xl md:text-2xl lg:text-3xl font-bold leading-relaxed',
+  4: 'text-lg md:text-xl font-bold leading-snug',
 }
 
 export default function Heading({
