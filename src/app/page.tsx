@@ -1,4 +1,4 @@
-import { Hero } from '@/features/home/components/hero'
+import { Hero } from '../features/home/components/hero'
 import WhoWeAre from '@/features/home/components/who-we-are'
 import OurLatestUpdates from '@/features/home/components/our-latest-updates'
 import FeaturedInterviews from '@/features/home/components/featured-interviews'
