@@ -18,6 +18,7 @@ export default function MissionVisionPage() {
         description="Discover the driving force behind the Guiuan Development Foundation Inc."
         imgUrl="/feat-hero/hero-3.webp"
       />
+
       <Mission />
       <Vision />
       <Goals />
