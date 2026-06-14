@@ -6,7 +6,7 @@ import { GOALS_TEXT } from '../data/constants'
 export function Goals() {
   return (
     <div className="bg-foreground/[0.03]">
-      <Section maxWidth="4xl" className="py-16 md:py-24">
+      <Section maxWidth="4xl" sectionClassName="py-16 md:py-24">
         <div className="flex flex-col items-center text-center gap-6">
           <Heading level={2}>Our Goals</Heading>
           <Text size="lg" className="leading-relaxed">

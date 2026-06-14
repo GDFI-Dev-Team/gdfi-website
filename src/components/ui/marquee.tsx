@@ -24,7 +24,7 @@ export default function Marquee({
     >
       <div
         className={cn(
-          'flex w-max gap-16 animate-marquee motion-reduce:animate-none',
+          'flex w-max gap-16 animate-marquee',
           pauseOnHover && 'hover:[animation-play-state:paused]',
           className,
         )}

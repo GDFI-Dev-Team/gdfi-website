@@ -5,7 +5,7 @@ import { CORE_VALUES_LIST } from '../data/constants'
 
 export function CoreValues() {
   return (
-    <Section maxWidth="5xl" className="py-16 md:py-24">
+    <Section maxWidth="5xl" sectionClassName="py-16 md:py-24">
       <div className="flex flex-col items-center gap-12">
         <Heading level={2} className="text-center">
           Core Values

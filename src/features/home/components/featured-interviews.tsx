@@ -1,18 +1,30 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
+import Text from '@/components/ui/text'
 
 const FeaturedInterviews = () => {
   return (
     <Section
       aria-labelledby="featured-interviews-heading"
-      divClassName="flex flex-col gap-8 items-center justify-center"
+      sectionClassName="bg-foreground/3"
+      divClassName="flex flex-col gap-10 items-center"
     >
-      <Heading id="featured-interviews-heading" level={2}>
-        Featured Interviews
-      </Heading>
-      <div className="relative w-3/4 aspect-video overflow-hidden">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <Text
+          size="sm"
+          transform="uppercase"
+          className="tracking-widest text-accent"
+        >
+          Voices from the coast
+        </Text>
+        <Heading id="featured-interviews-heading" level={2}>
+          Featured Interviews
+        </Heading>
+      </div>
+
+      <div className="relative w-full max-w-4xl aspect-video overflow-hidden rounded-xl shadow-lg">
         <iframe
-          src="https://www.youtube.com/embed/Uo9cOSJNQrQ"
+          src="https://www.youtube.com/embed/TBg5-6JbOPk"
           title="Featured interview"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

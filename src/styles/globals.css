@@ -57,7 +57,7 @@ README:
 
   /* Animations */
   --animate-fade-up: fade-up 0.5s ease-out both;
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee: marquee 60s linear infinite;
 }
 
 @keyframes marquee {
@@ -93,6 +93,15 @@ README:
   --color-ink-strong: var(--ink-strong);
   --color-primary-hover: var(--color-primary-600);
 
+  /* Hero (always dark overlay over the slideshow) */
+  --color-hero-overlay: var(--color-primary-950);
+
+  /* Cards & accents */
+  --color-surface: var(--surface);
+  --color-accent: var(--color-accent-600);
+  --color-overlay: var(--color-primary-950);
+  --color-like: var(--color-error);
+
   /* Button */
   --color-btn-primary: var(--btn-primary);
   --color-btn-primary-hover: var(--btn-primary-hover);
@@ -118,6 +127,9 @@ README:
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
 
+  /* Card surface — pure white so cards lift off the tinted bands */
+  --surface: oklch(100% 0 0);
+
   /* Ink */
   --ink-strong: var(--color-neutral-900);
   /* --ink-muted: var(--color-neutral-600); */
@@ -126,24 +138,6 @@ README:
   --btn-primary: var(--color-primary-400);
   --btn-primary-hover: var(--color-primary-500);
   --btn-secondary: var(--color-primary-400);
-
-  /* Glass effect — Apple-standard recipe:
-     translucent tinted gradient, saturated backdrop blur,
-     asymmetric light-catching edges, layered shadows + inner glow. */
-  --glass-bg: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.1) 40%,
-    rgba(230, 240, 255, 0.12) 100%
-  );
-  --glass-blur: 14px;
-  --glass-border-top: rgba(255, 255, 255, 0.6);
-  --glass-border-side: rgba(255, 255, 255, 0.4);
-  --glass-border-bottom: rgba(255, 255, 255, 0.16);
-  --glass-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06),
-    inset 0 0 0 0.5px rgba(255, 255, 255, 0.12),
-    inset 0 1px 12px rgba(255, 255, 255, 0.25);
 
   /* Layout — mobile gutter; desktop override below */
   --gutter: 1.5rem;
@@ -155,44 +149,17 @@ README:
   }
 }
 
+/* Dark mode disabled — site is always light. Re-enable by uncommenting.
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--color-primary-950);
     --foreground: var(--color-neutral-100);
-    --glass-bg: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.09) 0%,
-      rgba(255, 255, 255, 0.05) 40%,
-      rgba(230, 240, 255, 0.06) 100%
-    );
-    --glass-border-top: rgba(255, 255, 255, 0.22);
-    --glass-border-side: rgba(255, 255, 255, 0.16);
-    --glass-border-bottom: rgba(255, 255, 255, 0.06);
-    --glass-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2),
-      inset 0 0 0 0.5px rgba(255, 255, 255, 0.14),
-      inset 0 1px 12px rgba(255, 255, 255, 0.16);
   }
 }
+*/
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-display);
-}
-
-/* In the `components` layer so utility classes on a `.glass` element
-   can override these defaults. */
-@layer components {
-  .glass {
-    background-color: transparent;
-    background-image: var(--glass-bg);
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
-    backdrop-filter: blur(var(--glass-blur)) saturate(180%);
-    border-top: 0.5px solid var(--glass-border-top);
-    border-left: 0.5px solid var(--glass-border-side);
-    border-right: 0.5px solid var(--glass-border-bottom);
-    border-bottom: 0.5px solid var(--glass-border-bottom);
-    box-shadow: var(--glass-shadow);
-  }
 }

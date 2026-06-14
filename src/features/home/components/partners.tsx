@@ -12,9 +12,18 @@ const Partners = () => {
       sectionClassName="bg-foreground/3"
       divClassName="flex flex-col gap-6 w-full"
     >
-      <Heading id="partners-heading" level={2} className="text-center">
-        Our Partners
-      </Heading>
+      <div className="flex flex-col items-center gap-3 text-center">
+        <Text
+          size="sm"
+          transform="uppercase"
+          className="tracking-widest text-accent"
+        >
+          Working together
+        </Text>
+        <Heading id="partners-heading" level={2}>
+          Our Partners
+        </Heading>
+      </div>
 
       <Marquee>
         {partners.map((p) => (
