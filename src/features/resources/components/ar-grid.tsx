@@ -13,7 +13,7 @@ export default function AnnualReportGrid() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex self-end gap-4 px-4 py-3">
+      <div className="flex self-end gap-4 py-2">
         <label className="flex items-center gap-2">
           <Text size="sm" className="text-foreground/50">
             {' '}
@@ -46,13 +46,13 @@ export default function AnnualReportGrid() {
         </label>
       </div>
 
-      <div className="max-h-[48vh] overflow-y-auto pr-1">
+      <div className="max-h-[62vh] overflow-y-auto mask-[linear-gradient(to_bottom,black_calc(100%-3rem),transparent)]">
         <ul
           className="flex flex-col gap-3 list-none"
           role="listbox"
           aria-label="Annual reports"
         >
-          {Array.from({ length: 10 }).map((_, index) => (
+          {Array.from({ length: 20 }).map((_, index) => (
             <AnnualReportCard
               key={index}
               isSelected={selectedReport === index}
