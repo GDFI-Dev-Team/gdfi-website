@@ -37,3 +37,21 @@ collections:
         hint: This image will be used as the thumbnail image.
       - { label: Date, name: date, widget: datetime, type: date }
       - { label: Body, name: body, widget: richtext }
+  - name: pages
+    label: Pages
+    files:
+      - name: mission-vision
+        label: Mission and Vision
+        file: content/pages/mission-vision.md
+        fields: 
+        - { label: Description, name: description, widget: string, hint: This description is shown below the header}
+        - { label: Our Mission, name: mission, widget: text}
+        - { label: Our Vision, name: vision, widget: text}
+        - { label: Our Goals, name: goals, widget: richtext}
+        - label: Core Values 
+          name: core_values 
+          widget: list
+          field: 
+            name: core_value
+            label: Core Value
+            widget: string
