@@ -1,7 +1,4 @@
 import { Overview, HistoryTimeline } from '@/features/about-us/components'
-import Heading from '@/components/ui/heading'
-import Section from '@/components/ui/section'
-import Text from '@/components/ui/text'
 import Banner from '@/components/ui/banner'
 
 export const metadata = {
@@ -18,14 +15,6 @@ export default function OurStoryPage() {
         description="Decades of dedication to communities and ecosystems in Eastern Samar."
         imgUrl="/feat-hero/hero-1.webp"
       />
-      <Section maxWidth="5xl" sectionClassName="pb-4 pt-12 md:pb-8 text-center">
-        <Heading level={1} className="mb-4">
-          About Us
-        </Heading>
-        <Text size="xl" className="text-foreground/80 max-w-2xl mx-auto">
-          Decades of dedication to communities and ecosystems in Eastern Samar.
-        </Text>
-      </Section>
 
       <Overview />
       <HistoryTimeline />
