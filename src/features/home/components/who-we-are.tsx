@@ -2,7 +2,9 @@ import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Image from 'next/image'
-import Button from '@/components/ui/button'
+import Link from 'next/link'
+import { buttonBase, buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 const WhoWeAre = () => {
   return (
@@ -48,9 +50,17 @@ const WhoWeAre = () => {
             communities depend on.
           </Text>
         </div>
-        <Button variant="secondary" className="self-start px-6 py-2.5">
+
+        <Link
+          href="/about-us"
+          className={cn(
+            buttonBase,
+            buttonVariants.secondary,
+            'self-start px-6 py-2.5',
+          )}
+        >
           About Us
-        </Button>
+        </Link>
       </div>
     </Section>
   )
