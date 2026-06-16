@@ -46,6 +46,26 @@ collections:
         widget: string
         default: 2026 Annual Report
         hint: ex. 2026 Annual Report
+      - name: year
+        label: Year
+        widget: string
+        default: "2026"
+        hint: ex. 2026
+      - name: prepared-by
+        label: Prepared By
+        widget: string
+        required: false
+      - name: contributors
+        label: Other Key Contributors
+        widget: list
+        fields:
+          - name: name
+            label: Name
+            widget: string
+          - name: role
+            label: Role
+            widget: string
+            required: false
       - label: Annual Report
         name: annual-report
         widget: file
@@ -59,3 +79,4 @@ collections:
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/annual-reports
           default: false
+      
