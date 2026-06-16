@@ -23,23 +23,9 @@ media_libraries:
         optimize: true
 
 collections:
-  - name: test-pages
-    label: Test Pages
-    folder: content/test-pages
-    media_folder: /public/test-pages
-    fields: 
-      - { label: Title, name: title, widget: string }
-      - label: Featured Image
-        name: thumbnail
-        widget: image
-        media_libraries:
-          default: false
-        hint: This image will be used as the thumbnail image.
-      - { label: Date, name: date, widget: datetime, type: date }
-      - { label: Body, name: body, widget: richtext }
   - name: annual-reports
     label: Annual Reports
-    folder: content/files/annual-reports
+    folder: content/resources/annual-reports
     fields:
       - name: title
         label: Title 
