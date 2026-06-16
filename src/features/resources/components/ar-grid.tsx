@@ -117,7 +117,7 @@ export default function AnnualReportGrid({
 
       <div
         ref={ref}
-        className="max-h-[60vh] overflow-y-auto"
+        className="max-h-[40vh] md:max-h-[55vh] overflow-y-auto"
         style={{ maskImage }}
       >
         <ul
@@ -129,7 +129,7 @@ export default function AnnualReportGrid({
             <AnnualReportCard
               key={report.slug}
               title={report.title}
-              year={report.year}
+              prepared-by={report['prepared-by']}
               pdfUrl={report['annual-report']}
               isSelected={selectedSlug === report.slug}
               onSelect={() => handleSelect(report)}

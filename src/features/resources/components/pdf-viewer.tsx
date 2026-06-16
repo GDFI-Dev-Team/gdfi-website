@@ -11,7 +11,6 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { Document, Page, pdfjs } from 'react-pdf'
-import { cn } from '@/lib/utils'
 import { handlePagination } from '@/lib/utils'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -49,25 +48,19 @@ function PDFPlaceholder({
   )
 }
 
-function PDFLoading({ className }: { className?: string }) {
+function PDFLoading() {
   return (
     <div
-      className={cn('animate-pulse w-full', className)}
+      className="animate-pulse overflow-scroll min-h-105 flex flex-col items-center justify-center gap-4"
       aria-busy="true"
       aria-label="Loading"
     >
-      <div className="w-full rounded-xl bg-foreground/3 border border-foreground/8 flex flex-col">
-        <div className="min-h-105 flex flex-col gap-4 p-4">
-          <div className="flex-1 rounded-lg bg-foreground/8 min-h-80" />
-          <div className="flex flex-col gap-2">
-            <div className="h-3 w-full rounded bg-foreground/8" />
-            <div className="h-3 w-4/5 rounded bg-foreground/8" />
-            <div className="h-3 w-3/5 rounded bg-foreground/8" />
-          </div>
-        </div>
-        <div className="flex justify-center px-4 py-2.5 border-t border-foreground/8 rounded-b-xl">
-          <div className="h-6 w-16 rounded-md bg-foreground/8" />
-        </div>
+      <div className="p-5 rounded-2xl bg-foreground/8 border border-foreground/10">
+        <div className="w-12 h-12 rounded-lg bg-foreground/10" />
+      </div>
+      <div className="flex flex-col items-center gap-2">
+        <div className="h-3.5 w-28 rounded bg-foreground/10" />
+        <div className="h-3 w-40 rounded bg-foreground/8" />
       </div>
     </div>
   )

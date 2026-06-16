@@ -5,7 +5,7 @@ import { cn, downloadPDF } from '@/lib/utils'
 
 interface AnnualReportCardProps {
   title: string
-  year: string
+  'prepared-by': string
   pdfUrl: string
   isSelected?: boolean
   onSelect?: () => void
@@ -13,7 +13,7 @@ interface AnnualReportCardProps {
 
 export default function AnnualReportCard({
   title,
-  year,
+  'prepared-by': preparedBy,
   pdfUrl,
   isSelected = false,
   onSelect,
@@ -42,11 +42,11 @@ export default function AnnualReportCard({
       </div>
 
       <div className="flex flex-col gap-0.5 flex-1 min-w-0">
-        <Text size="xs" className="text-foreground/50">
-          {year} &#xb7; Annual Report
-        </Text>
         <Text size="sm" className="font-semibold truncate">
           {title}
+        </Text>
+        <Text size="xs" className="text-foreground/50">
+          Prepared by {preparedBy || 'Unknown'}
         </Text>
       </div>
 
