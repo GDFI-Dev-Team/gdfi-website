@@ -1,8 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, FileText } from 'lucide-react'
 import { Document, Page, pdfjs } from 'react-pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -10,17 +11,75 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url,
 ).toString()
 
-export default function PDFViewer() {
+interface PDFViewerProps {
+  file: string | null
+}
+
+export default function PDFViewer({ file }: PDFViewerProps) {
+  const [pageNumber, setPageNumber] = useState(1)
+  const [numPages, setNumPages] = useState<number | null>(null)
+  const [renderedPageNumber, setRenderedPageNumber] = useState(1)
+
+  function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
+    setNumPages(numPages)
+  }
+
+  function handlePrev() {
+    setPageNumber((p) => Math.max(1, p - 1))
+  }
+
+  function handleNext() {
+    setPageNumber((p) => Math.min(numPages ?? p, p + 1))
+  }
+
+  const isLoading = renderedPageNumber !== pageNumber
+
   return (
-    <aside className="self-center w-full">
-      <div className="rounded-xl bg-foreground/3 border border-foreground/8 flex flex-col">
+    <aside className="w-full">
+      <div className="w-full rounded-xl bg-foreground/3 border border-foreground/8 flex flex-col">
         <div className="overflow-scroll max-h-[70vh] rounded-t-xl [&_canvas]:w-full! [&_canvas]:h-auto!">
-          <Document file="/annual-reports/2023-AR.pdf">
-            <Page
-              pageNumber={3}
-              renderTextLayer={false}
-              renderAnnotationLayer={false}
-            />
+          <Document
+            file={file}
+            noData={
+              <div className="overflow-scroll min-h-105 flex flex-col items-center justify-center gap-4">
+                <div className="p-5 rounded-2xl bg-foreground/5 border border-foreground/10">
+                  <FileText
+                    size={48}
+                    className="text-foreground/25"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div className="flex flex-col items-center gap-1 text-center">
+                  <Text size="sm" className="text-foreground/50 font-medium">
+                    No report selected
+                  </Text>
+                  <Text size="xs" className="text-foreground/35">
+                    Choose a report from the list to preview
+                  </Text>
+                </div>
+              </div>
+            }
+            onLoadSuccess={onDocumentLoadSuccess}
+          >
+            <div className="relative">
+              {isLoading && (
+                <Page
+                  key={renderedPageNumber}
+                  pageNumber={renderedPageNumber}
+                  renderTextLayer={false}
+                  renderAnnotationLayer={false}
+                  className="absolute inset-0"
+                />
+              )}
+              <Page
+                key={pageNumber}
+                pageNumber={pageNumber}
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+                onRenderSuccess={() => setRenderedPageNumber(pageNumber)}
+                className={isLoading ? 'invisible' : undefined}
+              />
+            </div>
           </Document>
         </div>
 
@@ -30,6 +89,8 @@ export default function PDFViewer() {
               variant="ghost"
               className="p-1.5"
               aria-label="Previous page"
+              onClick={handlePrev}
+              disabled={pageNumber <= 1}
             >
               <ChevronLeft size={16} aria-hidden="true" />
             </Button>
@@ -37,9 +98,15 @@ export default function PDFViewer() {
               size="xs"
               className="text-foreground/50 text-center tabular-nums"
             >
-              1 / 24
+              {pageNumber} / {numPages ?? '—'}
             </Text>
-            <Button variant="ghost" className="p-1.5" aria-label="Next page">
+            <Button
+              variant="ghost"
+              className="p-1.5"
+              aria-label="Next page"
+              onClick={handleNext}
+              disabled={pageNumber >= (numPages ?? 1)}
+            >
               <ChevronRight size={16} aria-hidden="true" />
             </Button>
           </div>

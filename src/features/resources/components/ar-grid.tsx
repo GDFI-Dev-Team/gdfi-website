@@ -6,10 +6,39 @@ import AnnualReportCard from './ar-card'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
-export default function AnnualReportGrid() {
+export interface AnnualReport {
+  slug: string
+  title: string
+  year: string
+  'prepared-by': string
+  'annual-report': string
+  contributors?: { name: string; role: string }[]
+}
+
+interface AnnualReportGridProps {
+  reports: AnnualReport[]
+  onReportSelect: (pdfUrl: string) => void
+}
+
+export default function AnnualReportGrid({
+  reports,
+  onReportSelect,
+}: AnnualReportGridProps) {
   const [startYear, setStartYear] = useState('')
   const [endYear, setEndYear] = useState('')
-  const [selectedReport, setSelectedReport] = useState<number | null>(null)
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(null)
+
+  const filtered = reports.filter((r) => {
+    const y = Number(r.year)
+    if (startYear && y < Number(startYear)) return false
+    if (endYear && y > Number(endYear)) return false
+    return true
+  })
+
+  function handleSelect(report: AnnualReport) {
+    setSelectedSlug(report.slug)
+    onReportSelect(report['annual-report'])
+  }
 
   return (
     <div className="flex flex-col gap-4">
@@ -46,17 +75,20 @@ export default function AnnualReportGrid() {
         </label>
       </div>
 
-      <div className="max-h-[62vh] overflow-y-auto mask-[linear-gradient(to_bottom,black_calc(100%-3rem),transparent)]">
+      <div className="max-h-[55vh] overflow-y-auto mask-[linear-gradient(to_bottom,black_calc(100%-3rem),transparent)]">
         <ul
           className="flex flex-col gap-3 list-none"
           role="listbox"
           aria-label="Annual reports"
         >
-          {Array.from({ length: 20 }).map((_, index) => (
+          {filtered.map((report) => (
             <AnnualReportCard
-              key={index}
-              isSelected={selectedReport === index}
-              onSelect={() => setSelectedReport(index)}
+              key={report.slug}
+              title={report.title}
+              year={report.year}
+              pdfUrl={report['annual-report']}
+              isSelected={selectedSlug === report.slug}
+              onSelect={() => handleSelect(report)}
             />
           ))}
         </ul>

@@ -4,11 +4,17 @@ import { FileText, Download } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface AnnualReportCardProps {
+  title: string
+  year: string
+  pdfUrl: string
   isSelected?: boolean
   onSelect?: () => void
 }
 
 export default function AnnualReportCard({
+  title,
+  year,
+  pdfUrl,
   isSelected = false,
   onSelect,
 }: AnnualReportCardProps) {
@@ -37,22 +43,28 @@ export default function AnnualReportCard({
 
       <div className="flex flex-col gap-0.5 flex-1 min-w-0">
         <Text size="xs" className="text-foreground/50">
-          2025 &#xb7; Annual Report
+          {year} &#xb7; Annual Report
         </Text>
         <Text size="sm" className="font-semibold truncate">
-          Anchored in Community
+          {title}
         </Text>
       </div>
 
-      <Button
-        variant={isSelected ? 'primary' : 'secondary'}
-        className="px-3 py-1.5 gap-1.5 shrink-0"
+      <a
+        href={pdfUrl}
+        download
         onClick={(e) => e.stopPropagation()}
         aria-label="Download annual report"
       >
-        <Download size={14} aria-hidden="true" />
-        <Text size="xs">Download</Text>
-      </Button>
+        <Button
+          variant={isSelected ? 'primary' : 'secondary'}
+          className="px-3 py-1.5 gap-1.5 shrink-0"
+          tabIndex={-1}
+        >
+          <Download size={14} aria-hidden="true" />
+          <Text size="xs">Download</Text>
+        </Button>
+      </a>
     </li>
   )
 }
