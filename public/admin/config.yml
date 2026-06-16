@@ -37,3 +37,15 @@ collections:
         hint: This image will be used as the thumbnail image.
       - { label: Date, name: date, widget: datetime, type: date }
       - { label: Body, name: body, widget: richtext }
+  - name: files
+    label: Files
+    folder: content/files
+    fields:
+      - name: title
+        widget: hidden
+        default: Annual Reports
+      - label: Annual Reports
+        name: annual-reports
+        widget: file
+        multiple: true
+        min: 1
