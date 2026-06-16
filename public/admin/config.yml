@@ -37,15 +37,25 @@ collections:
         hint: This image will be used as the thumbnail image.
       - { label: Date, name: date, widget: datetime, type: date }
       - { label: Body, name: body, widget: richtext }
-  - name: files
-    label: Files
-    folder: content/files
+  - name: annual-reports
+    label: Annual Reports
+    folder: content/files/annual-reports
     fields:
       - name: title
-        widget: hidden
-        default: Annual Reports
-      - label: Annual Reports
-        name: annual-reports
+        label: Title 
+        widget: string
+        default: 2026 Annual Report
+        hint: ex. 2026 Annual Report
+      - label: Annual Report
+        name: annual-report
         widget: file
-        multiple: true
-        min: 1
+        max: 1
+        accept: application/pdf,.pdf
+        media_libraries: 
+          cloudflare_r2: 
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f 
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/annual-reports
+          default: false
