@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import {
   BoardOfTrustees,
   AdminAndFinance,
@@ -7,8 +8,8 @@ import {
 import Section from '@/components/ui/section'
 import Banner from '@/components/ui/banner'
 
-export const metadata = {
-  title: 'Organizational Structure | GDFI',
+export const metadata: Metadata = {
+  title: 'Organizational Structure',
   description:
     'Meet the board of trustees, project coordinators, and volunteers dedicated to the Guiuan Development Foundation Inc.',
 }

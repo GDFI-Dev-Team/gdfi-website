@@ -1,8 +1,9 @@
+import { Metadata } from 'next'
 import { Overview, HistoryTimeline } from '@/features/about-us/components'
 import Banner from '@/components/ui/banner'
 
-export const metadata = {
-  title: 'About Us | GDFI',
+export const metadata: Metadata = {
+  title: 'About Us',
   description:
     'The overview and history of the Guiuan Development Foundation Inc.',
 }

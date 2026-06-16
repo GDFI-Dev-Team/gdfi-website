@@ -4,8 +4,15 @@ import { SiteHeader } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
 
 export const metadata: Metadata = {
-  title: 'GDFI',
+  title: {
+    template: '%s | GDFI',
+    default: 'GDFI',
+  },
   description: 'Official homepage of Guiuan Development Foundation Inc.',
+  keywords: ['GDFI', 'Guiuan', 'Eastern Samar'],
+  authors: [{ name: 'Guiuan Development Foundation Inc.' }],
+  creator: 'Guiuan Development Foundation, Inc.',
+  publisher: 'Guiuan Development Foundation, Inc.',
 }
 
 export default function RootLayout({

@@ -1,11 +1,12 @@
+import type { Metadata } from 'next'
 import { Mission } from '@/features/about-us/mission-vision/components/mission'
 import { Vision } from '@/features/about-us/mission-vision/components/vision'
 import { CoreValues } from '@/features/about-us/mission-vision/components/core-values'
 import { Goals } from '@/features/about-us/mission-vision/components/goals'
 import Banner from '@/components/ui/banner'
 
-export const metadata = {
-  title: 'Mission, Vision & Values | GDFI',
+export const metadata: Metadata = {
+  title: 'Mission, Vision & Values',
   description:
     'Our commitment to biodiversity and sustainable development in Eastern Samar.',
 }
