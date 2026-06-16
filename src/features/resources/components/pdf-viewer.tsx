@@ -124,7 +124,7 @@ export default function PDFViewer({ file }: PDFViewerProps) {
               size="xs"
               className="text-foreground/50 text-center tabular-nums"
             >
-              {pageNumber} / {numPages ?? '—'}
+              {pageNumber} / {numPages ?? '1'}
             </Text>
             <Button
               variant="ghost"

@@ -1,7 +1,7 @@
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import { FileText, Download } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, downloadPDF } from '@/lib/utils'
 
 interface AnnualReportCardProps {
   title: string
@@ -50,21 +50,18 @@ export default function AnnualReportCard({
         </Text>
       </div>
 
-      <a
-        href={pdfUrl}
-        download
-        onClick={(e) => e.stopPropagation()}
+      <Button
+        variant={isSelected ? 'primary' : 'secondary'}
+        className="px-3 py-1.5 gap-1.5 shrink-0"
         aria-label="Download annual report"
+        onClick={(e) => {
+          e.stopPropagation()
+          downloadPDF(pdfUrl)
+        }}
       >
-        <Button
-          variant={isSelected ? 'primary' : 'secondary'}
-          className="px-3 py-1.5 gap-1.5 shrink-0"
-          tabIndex={-1}
-        >
-          <Download size={14} aria-hidden="true" />
-          <Text size="xs">Download</Text>
-        </Button>
-      </a>
+        <Download size={14} aria-hidden="true" />
+        <Text size="xs">Download</Text>
+      </Button>
     </li>
   )
 }
