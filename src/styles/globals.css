@@ -60,17 +60,6 @@ README:
   --animate-marquee: marquee 60s linear infinite;
 }
 
-@keyframes scroll-mask {
-  from,
-  to {
-    mask-image: linear-gradient(
-      to bottom,
-      black calc(100% - 3rem),
-      transparent
-    );
-  }
-}
-
 @keyframes marquee {
   from {
     transform: translateX(0);
