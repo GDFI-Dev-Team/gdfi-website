@@ -23,4 +23,14 @@ export function downloadPDF(url: string, filename?: string) {
   document.body.removeChild(link)
 }
 
-export default downloadPDF
+export function handlePagination(
+  direction: 'next' | 'prev',
+  setPageNumber: (updater: (p: number) => number) => void,
+  numPages: number | null,
+) {
+  if (direction === 'next') {
+    setPageNumber((p) => Math.min(numPages ?? p, p + 1))
+  } else {
+    setPageNumber((p) => Math.max(1, p - 1))
+  }
+}

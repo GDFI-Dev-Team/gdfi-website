@@ -8,9 +8,11 @@ import {
   ChevronRight,
   FileText,
   FileQuestionMark,
+  type LucideIcon,
 } from 'lucide-react'
 import { Document, Page, pdfjs } from 'react-pdf'
-import Loading from '@/components/ui/loading'
+import { cn } from '@/lib/utils'
+import { handlePagination } from '@/lib/utils'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -19,6 +21,56 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 interface PDFViewerProps {
   file: string | null
+}
+
+function PDFPlaceholder({
+  icon: Icon,
+  title,
+  description,
+}: {
+  icon: LucideIcon
+  title: string
+  description: string
+}) {
+  return (
+    <div className="overflow-scroll min-h-105 flex flex-col items-center justify-center gap-4">
+      <div className="p-5 rounded-2xl bg-foreground/5 border border-foreground/10">
+        <Icon size={48} className="text-foreground/25" aria-hidden="true" />
+      </div>
+      <div className="flex flex-col items-center gap-1 text-center">
+        <Text size="sm" className="text-foreground/50 font-medium">
+          {title}
+        </Text>
+        <Text size="xs" className="text-foreground/35">
+          {description}
+        </Text>
+      </div>
+    </div>
+  )
+}
+
+function PDFLoading({ className }: { className?: string }) {
+  return (
+    <div
+      className={cn('animate-pulse w-full', className)}
+      aria-busy="true"
+      aria-label="Loading"
+    >
+      <div className="w-full rounded-xl bg-foreground/3 border border-foreground/8 flex flex-col">
+        <div className="min-h-105 flex flex-col gap-4 p-4">
+          <div className="flex-1 rounded-lg bg-foreground/8 min-h-80" />
+          <div className="flex flex-col gap-2">
+            <div className="h-3 w-full rounded bg-foreground/8" />
+            <div className="h-3 w-4/5 rounded bg-foreground/8" />
+            <div className="h-3 w-3/5 rounded bg-foreground/8" />
+          </div>
+        </div>
+        <div className="flex justify-center px-4 py-2.5 border-t border-foreground/8 rounded-b-xl">
+          <div className="h-6 w-16 rounded-md bg-foreground/8" />
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default function PDFViewer({ file }: PDFViewerProps) {
@@ -30,14 +82,6 @@ export default function PDFViewer({ file }: PDFViewerProps) {
     setNumPages(numPages)
   }
 
-  function handlePrev() {
-    setPageNumber((p) => Math.max(1, p - 1))
-  }
-
-  function handleNext() {
-    setPageNumber((p) => Math.min(numPages ?? p, p + 1))
-  }
-
   const isLoading = renderedPageNumber !== pageNumber
 
   return (
@@ -47,43 +91,19 @@ export default function PDFViewer({ file }: PDFViewerProps) {
           <Document
             file={file}
             noData={
-              <div className="overflow-scroll min-h-105 flex flex-col items-center justify-center gap-4">
-                <div className="p-5 rounded-2xl bg-foreground/5 border border-foreground/10">
-                  <FileText
-                    size={48}
-                    className="text-foreground/25"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="flex flex-col items-center gap-1 text-center">
-                  <Text size="sm" className="text-foreground/50 font-medium">
-                    No report selected
-                  </Text>
-                  <Text size="xs" className="text-foreground/35">
-                    Choose a report from the list to preview
-                  </Text>
-                </div>
-              </div>
+              <PDFPlaceholder
+                icon={FileText}
+                title="No report selected"
+                description="Choose a report from the list to preview"
+              />
             }
-            loading={<Loading />}
+            loading={<PDFLoading />}
             error={
-              <div className="overflow-scroll min-h-105 flex flex-col items-center justify-center gap-4">
-                <div className="p-5 rounded-2xl bg-foreground/5 border border-foreground/10">
-                  <FileQuestionMark
-                    size={48}
-                    className="text-foreground/25"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="flex flex-col items-center gap-1 text-center">
-                  <Text size="sm" className="text-foreground/50 font-medium">
-                    Error loading file at this time
-                  </Text>
-                  <Text size="xs" className="text-foreground/35">
-                    Choose a different report to preview
-                  </Text>
-                </div>
-              </div>
+              <PDFPlaceholder
+                icon={FileQuestionMark}
+                title="Error loading file at this time"
+                description="Choose a different report to preview"
+              />
             }
             onLoadSuccess={onDocumentLoadSuccess}
           >
@@ -115,7 +135,7 @@ export default function PDFViewer({ file }: PDFViewerProps) {
               variant="ghost"
               className="p-1.5"
               aria-label="Previous page"
-              onClick={handlePrev}
+              onClick={() => handlePagination('prev', setPageNumber, numPages)}
               disabled={pageNumber <= 1}
             >
               <ChevronLeft size={16} aria-hidden="true" />
@@ -130,7 +150,7 @@ export default function PDFViewer({ file }: PDFViewerProps) {
               variant="ghost"
               className="p-1.5"
               aria-label="Next page"
-              onClick={handleNext}
+              onClick={() => handlePagination('next', setPageNumber, numPages)}
               disabled={pageNumber >= (numPages ?? 1)}
             >
               <ChevronRight size={16} aria-hidden="true" />
