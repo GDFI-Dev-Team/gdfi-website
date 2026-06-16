@@ -75,7 +75,7 @@ export default function AnnualReportGrid({
         </label>
       </div>
 
-      <div className="max-h-[55vh] overflow-y-auto mask-[linear-gradient(to_bottom,black_calc(100%-3rem),transparent)]">
+      <div className="max-h-[60vh] overflow-y-auto [animation-name:scroll-mask] [animation-timeline:scroll(self)]">
         <ul
           className="flex flex-col gap-3 list-none"
           role="listbox"
