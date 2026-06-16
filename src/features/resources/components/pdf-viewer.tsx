@@ -3,8 +3,14 @@
 import { useState } from 'react'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
-import { ChevronLeft, ChevronRight, FileText } from 'lucide-react'
+import {
+  ChevronLeft,
+  ChevronRight,
+  FileText,
+  FileQuestionMark,
+} from 'lucide-react'
 import { Document, Page, pdfjs } from 'react-pdf'
+import Loading from '@/components/ui/loading'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -55,6 +61,26 @@ export default function PDFViewer({ file }: PDFViewerProps) {
                   </Text>
                   <Text size="xs" className="text-foreground/35">
                     Choose a report from the list to preview
+                  </Text>
+                </div>
+              </div>
+            }
+            loading={<Loading />}
+            error={
+              <div className="overflow-scroll min-h-105 flex flex-col items-center justify-center gap-4">
+                <div className="p-5 rounded-2xl bg-foreground/5 border border-foreground/10">
+                  <FileQuestionMark
+                    size={48}
+                    className="text-foreground/25"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div className="flex flex-col items-center gap-1 text-center">
+                  <Text size="sm" className="text-foreground/50 font-medium">
+                    Error loading file at this time
+                  </Text>
+                  <Text size="xs" className="text-foreground/35">
+                    Choose a different report to preview
                   </Text>
                 </div>
               </div>
