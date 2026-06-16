@@ -49,7 +49,7 @@ const WhoWeAre = () => {
           </Text>
         </div>
         <Button variant="secondary" className="self-start px-6 py-2.5">
-          Our Story
+          About Us
         </Button>
       </div>
     </Section>
