@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+/* Enable class-based dark mode: `dark:` utilities + token overrides apply
+   whenever a `.dark` class is present on (or above) the element. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* 
 README: 
   > Source of truth for all color values. 
@@ -53,7 +57,7 @@ README:
   --color-error: oklch(57.7% 0.215 27.3);
 
   /* Typography */
-  --font-display: 'Calibri';
+  --font-display: Georgia, Cambria, 'Times New Roman', Times, serif;
 
   /* Animations */
   --animate-fade-up: fade-up 0.5s ease-out both;
@@ -92,6 +96,10 @@ README:
 
   --color-ink-strong: var(--ink-strong);
   --color-primary-hover: var(--color-primary-600);
+
+  /* Borders & focus ring */
+  --color-border: var(--border);
+  --color-ring: var(--ring);
 
   /* Hero (always dark overlay over the slideshow) */
   --color-hero-overlay: var(--color-primary-950);
@@ -140,6 +148,10 @@ README:
   --ink-strong: var(--color-neutral-900);
   /* --ink-muted: var(--color-neutral-600); */
 
+  /* Borders & focus ring */
+  --border: var(--color-neutral-200);
+  --ring: var(--color-primary-400);
+
   /* Button */
   --btn-primary: var(--color-primary-400);
   --btn-primary-hover: var(--color-primary-500);
@@ -149,23 +161,39 @@ README:
   --gutter: 1.5rem;
 }
 
+/* Dark theme — overrides the semantic role tokens above when `.dark`
+   is set on <html>. Tier-1 palette values stay the same; only the
+   role mappings flip. */
+.dark {
+  /* Match the footer's dark surface (primary-950) rather than pure black */
+  --background: var(--color-primary-950);
+  --foreground: var(--color-neutral-100);
+
+  /* Cards sit slightly above the page background */
+  --surface: var(--color-primary-900);
+
+  --ink-strong: var(--color-neutral-100);
+
+  --border: var(--color-primary-800);
+  --ring: var(--color-primary-500);
+
+  /* Brighter primaries read better on dark surfaces */
+  --btn-primary: var(--color-primary-500);
+  --btn-primary-hover: var(--color-primary-400);
+  --btn-secondary: var(--color-primary-500);
+}
+
 @media (min-width: 768px) {
   :root {
     --gutter: clamp(2rem, 13vw, 12.5rem);
   }
 }
 
-/* Dark mode disabled — site is always light. Re-enable by uncommenting.
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--color-primary-950);
-    --foreground: var(--color-neutral-100);
-  }
-}
-*/
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-display);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
