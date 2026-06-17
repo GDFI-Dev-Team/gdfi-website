@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: '/about-us/mission-vision',
     images: [
       {
-        url: '/feat-hero/hero-3.webp',
+        url: '/feat-hero/hero-3-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Ridge to reef campaign',
