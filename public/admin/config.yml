@@ -23,17 +23,35 @@ media_libraries:
         optimize: true
 
 collections:
-  - name: test-pages
-    label: Test Pages
-    folder: content/test-pages
-    media_folder: /public/test-pages
-    fields: 
-      - { label: Title, name: title, widget: string }
-      - label: Featured Image
-        name: thumbnail
-        widget: image
-        media_libraries:
+  - name: annual-reports
+    label: Annual Reports
+    folder: content/resources/annual-reports
+    fields:
+      - name: title
+        label: Title 
+        widget: string
+        default: 2026 Annual Report
+        hint: ex. 2026 Annual Report
+      - name: year
+        label: Year
+        widget: string
+        default: "2026"
+        hint: ex. 2026
+      - name: prepared-by
+        label: Prepared By
+        widget: string
+        required: false
+      - label: Annual Report
+        name: annual-report
+        widget: file
+        max: 1
+        accept: application/pdf,.pdf
+        media_libraries: 
+          cloudflare_r2: 
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f 
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/annual-reports
           default: false
-        hint: This image will be used as the thumbnail image.
-      - { label: Date, name: date, widget: datetime, type: date }
-      - { label: Body, name: body, widget: richtext }
+      

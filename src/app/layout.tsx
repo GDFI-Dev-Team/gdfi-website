@@ -30,7 +30,7 @@ export default function RootLayout({
           React's hydration attribute-mismatch warning. */}
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
       </body>
     </html>
