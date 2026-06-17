@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import {
   BoardOfTrustees,
   AdminAndFinance,
@@ -8,15 +7,9 @@ import {
 import Section from '@/components/ui/section'
 import Banner from '@/components/ui/banner'
 
-export const metadata: Metadata = {
-  title: 'Organizational Structure',
-  description:
-    'Meet the board of trustees, project coordinators, and volunteers dedicated to the Guiuan Development Foundation Inc.',
-}
-
 export default function OrganizationalStructurePage() {
   return (
-    <main className="flex-1">
+    <>
       <Banner
         title="Organizational Structure"
         description="The dedicated team and leadership driving our mission forward."
@@ -31,6 +24,6 @@ export default function OrganizationalStructurePage() {
           <PoolOfVolunteers />
         </div>
       </Section>
-    </main>
+    </>
   )
 }
