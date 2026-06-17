@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Hero } from '../features/home/components/hero'
 import WhoWeAre from '@/features/home/components/who-we-are'
 // import WhatWeDo from '@/features/home/components/what-we-do'
@@ -7,6 +8,13 @@ import OurLatestUpdates from '@/features/home/components/our-latest-updates'
 import FeaturedInterviews from '@/features/home/components/featured-interviews'
 // import GetInvolved from '@/features/home/components/get-involved'
 import Partners from '@/features/home/components/partners'
+
+export const metadata: Metadata = {
+  title: {
+    absolute: 'Guiuan Development Foundation, Inc.',
+  },
+  description: '<Some text here>',
+}
 
 // Homepage sections alternate white / tinted (`bg-foreground/3`) bands,
 // bookended by the dark hero and footer. Every section uses

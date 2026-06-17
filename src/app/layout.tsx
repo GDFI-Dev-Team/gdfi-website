@@ -4,8 +4,18 @@ import { SiteHeader } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
 
 export const metadata: Metadata = {
-  title: 'GDFI',
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+  ),
+  title: {
+    template: '%s | GDFI',
+    default: 'GDFI',
+  },
   description: 'Official homepage of Guiuan Development Foundation Inc.',
+  keywords: ['GDFI', 'Guiuan', 'Eastern Samar'],
+  authors: [{ name: 'Guiuan Development Foundation Inc.' }],
+  creator: 'Guiuan Development Foundation, Inc.',
+  publisher: 'Guiuan Development Foundation, Inc.',
 }
 
 // Runs before first paint so the saved/system theme is applied with no flash.
@@ -26,7 +36,7 @@ export default function RootLayout({
           React's hydration attribute-mismatch warning. */}
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
       </body>
     </html>

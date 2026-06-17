@@ -1,19 +1,23 @@
 import Banner from '@/components/ui/banner'
-import AnnualReportGrid from '@/features/resources/components/ar-grid'
 import Section from '@/components/ui/section'
-import PDFViewer from '@/features/resources/components/pdf-viewer'
+import AnnualReportsShell from '@/features/resources/components/ar-shell'
+import { getCollectionMarkdownData } from '@/lib/markdown'
+import { AnnualReport } from '@/features/resources/components/ar-grid'
 
-export default function News() {
+export default function AnnualReportsPage() {
+  const reports = getCollectionMarkdownData<Omit<AnnualReport, 'slug'>>(
+    'resources/annual-reports',
+  ).sort((a, b) => Number(b.year) - Number(a.year))
+
   return (
-    <main className="flex-1 bg-foreground/3">
+    <main className="flex-1 flex flex-col bg-foreground/3">
       <Banner
         title="Annual Reports"
         description="Browse and download GDFI's yearly transparency reports."
         imgUrl="/nav-item-banner-images/annual-reports.webp"
       />
-      <Section divClassName="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10">
-        <AnnualReportGrid />
-        <PDFViewer />
+      <Section>
+        <AnnualReportsShell reports={reports} />
       </Section>
     </main>
   )

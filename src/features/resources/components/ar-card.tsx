@@ -1,14 +1,20 @@
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import { FileText, Download } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, downloadPDF } from '@/lib/utils'
 
 interface AnnualReportCardProps {
+  title: string
+  'prepared-by': string
+  pdfUrl: string
   isSelected?: boolean
   onSelect?: () => void
 }
 
 export default function AnnualReportCard({
+  title,
+  'prepared-by': preparedBy,
+  pdfUrl,
   isSelected = false,
   onSelect,
 }: AnnualReportCardProps) {
@@ -36,19 +42,22 @@ export default function AnnualReportCard({
       </div>
 
       <div className="flex flex-col gap-0.5 flex-1 min-w-0">
-        <Text size="xs" className="text-foreground/50">
-          2025 &#xb7; Annual Report
-        </Text>
         <Text size="sm" className="font-semibold truncate">
-          Anchored in Community
+          {title}
+        </Text>
+        <Text size="xs" className="text-foreground/50">
+          Prepared by {preparedBy || 'Unknown'}
         </Text>
       </div>
 
       <Button
         variant={isSelected ? 'primary' : 'secondary'}
         className="px-3 py-1.5 gap-1.5 shrink-0"
-        onClick={(e) => e.stopPropagation()}
         aria-label="Download annual report"
+        onClick={(e) => {
+          e.stopPropagation()
+          downloadPDF(pdfUrl)
+        }}
       >
         <Download size={14} aria-hidden="true" />
         <Text size="xs">Download</Text>

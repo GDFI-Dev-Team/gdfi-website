@@ -13,7 +13,7 @@ export const buttonVariants: Record<ButtonVariant, string> = {
 }
 
 export const buttonBase =
-  'inline-flex items-center justify-center rounded-lg transition-colors'
+  'inline-flex items-center justify-center rounded-lg transition-colors cursor-pointer'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant
