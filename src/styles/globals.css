@@ -101,10 +101,16 @@ README:
   --color-border: var(--border);
   --color-ring: var(--ring);
 
-  /* Hero (always dark overlay over the slideshow) */
-  --color-hero-overlay: var(--color-primary-950);
+  /* Hero scrim over the slideshow — flips with theme (see :root / .dark) */
+  --color-hero-overlay: var(--hero-overlay);
 
-  /* Content layered over dark overlays/scrims (hero, image cards) — always light */
+  /* Hero text + slide dots over the scrim — flip opposite the scrim to stay legible */
+  --color-on-hero: var(--on-hero);
+  --color-on-hero-muted: var(--on-hero-muted);
+  --color-on-hero-subtle: var(--on-hero-subtle);
+  --color-on-hero-faint: var(--on-hero-faint);
+
+  /* Content over the (always-dark) image-card scrims — always light */
   --color-on-overlay: oklch(100% 0 0);
   --color-on-overlay-muted: oklch(100% 0 0 / 80%);
   --color-on-overlay-subtle: oklch(100% 0 0 / 70%);
@@ -136,10 +142,25 @@ README:
   --color-footer-placeholder: oklch(100% 0 0 / 40%);
 }
 
+/* Registered so the hero scrim colour can transition between themes — gradients
+   built from a plain custom property can't animate, a registered one can. */
+@property --hero-overlay {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
 :root {
   /* Page chrome */
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
+
+  /* Hero scrim + the text/dots over it. Light theme: dark scrim, light text. */
+  --hero-overlay: var(--color-primary-950);
+  --on-hero: oklch(100% 0 0);
+  --on-hero-muted: oklch(100% 0 0 / 80%);
+  --on-hero-subtle: oklch(100% 0 0 / 70%);
+  --on-hero-faint: oklch(100% 0 0 / 40%);
 
   /* Card surface — pure white so cards lift off the tinted bands */
   --surface: oklch(100% 0 0);
@@ -181,6 +202,13 @@ README:
   --btn-primary: var(--color-primary-500);
   --btn-primary-hover: var(--color-primary-400);
   --btn-secondary: var(--color-primary-500);
+
+  /* Hero flips: light scrim, dark (primary-950) text over it */
+  --hero-overlay: var(--color-neutral-50);
+  --on-hero: var(--color-primary-950);
+  --on-hero-muted: oklch(28.9% 0.053 248.3 / 80%);
+  --on-hero-subtle: oklch(28.9% 0.053 248.3 / 70%);
+  --on-hero-faint: oklch(28.9% 0.053 248.3 / 40%);
 }
 
 @media (min-width: 768px) {

@@ -7,7 +7,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { ChevronDown, HandHeart, Menu, X } from 'lucide-react'
 import { cn } from '../../lib/utils'
 import { navLinks } from '../../lib/navigation'
-import Button, { buttonBase, buttonVariants } from '../ui/button'
+import Button, { buttonBase } from '../ui/button'
 import Text from '../ui/text'
 import { ThemeToggle } from './theme-toggle'
 
@@ -16,14 +16,15 @@ const LOGO_MARK_SRC = '/logo-images/logo.svg'
 function BrandLogo({
   priority = false,
   scrolled = false,
+  atTop = false,
 }: {
   priority?: boolean
   scrolled?: boolean
+  atTop?: boolean
 }) {
-  // Two-line wordmark — font size shrinks when scrolled down, grows back up.
-  // First value = mobile, md: value = desktop (desktop stays pinned).
   const wordmarkLine = cn(
-    'whitespace-nowrap font-semibold text-foreground transition-all duration-500 ease-in-out',
+    'whitespace-nowrap font-semibold transition-all duration-500 ease-in-out',
+    atTop ? 'text-on-hero' : 'text-foreground',
     scrolled ? 'text-xs md:text-sm' : 'text-xs md:text-base',
   )
   return (
@@ -36,7 +37,6 @@ function BrandLogo({
         priority={priority}
         className={cn(
           'w-auto shrink-0 transition-all duration-500 ease-in-out',
-          // First value = mobile, md: value = desktop (desktop stays pinned).
           scrolled ? 'h-8 md:h-10' : 'h-10 md:h-14',
         )}
       />
@@ -52,6 +52,7 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const [atTop, setAtTop] = useState(true)
   const pathname = usePathname()
 
   const menuRef = useRef<HTMLDivElement>(null)
@@ -69,17 +70,14 @@ export function SiteHeader() {
     lastScrollY.current = window.scrollY
     const onScroll = () => {
       const y = window.scrollY
+      setAtTop(y <= 24)
       const prev = lastScrollY.current
-      // Ignore tiny movements to avoid flicker.
       if (Math.abs(y - prev) < 6) return
       if (y <= 24) {
-        // Always show the full bar near the top.
         setScrolled(false)
       } else if (y > prev) {
-        // Scrolling down → compact.
         setScrolled(true)
       } else {
-        // Scrolling up → restore immediately.
         setScrolled(false)
       }
       lastScrollY.current = y
@@ -122,36 +120,45 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-foreground/10 bg-background">
+      <header
+        className={cn(
+          'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ease-in-out',
+          atTop
+            ? 'border-transparent bg-transparent'
+            : 'border-foreground/10 bg-background',
+        )}
+      >
         <div
           className={cn(
             'px-(--gutter) transition-all duration-500 ease-in-out md:py-4',
-            // Mobile vertical padding: taller when scrolled up, shorter when down.
             scrolled ? 'py-3' : 'py-5',
           )}
         >
           <div className="mx-auto grid max-w-7xl grid-cols-[auto_auto_1fr] items-center gap-0 md:grid-cols-[auto_1fr_auto]">
-            {/* Hamburger — mobile only, left. Collapses away on scroll. */}
+            {/* Hamburger */}
             <Button
               variant="ghost"
               aria-label="Open menu"
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(true)}
               className={cn(
-                'justify-self-start overflow-hidden p-0 text-foreground transition-all duration-500 ease-in-out hover:bg-foreground/5 md:hidden',
+                'justify-self-start overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
+                atTop
+                  ? 'text-on-hero hover:bg-on-hero/10'
+                  : 'text-foreground hover:bg-foreground/5',
                 scrolled ? 'max-w-0 opacity-0' : 'mr-2 max-w-10 opacity-100',
               )}
             >
               <Menu size={26} aria-hidden="true" />
             </Button>
 
-            {/* Logo — center on mobile, left on desktop */}
+            {/* Logo */}
             <Link
               href="/"
               aria-label="GDFI — home"
               className="col-start-2 flex items-center gap-2 justify-self-start md:col-start-1 md:justify-self-start"
             >
-              <BrandLogo priority scrolled={scrolled} />
+              <BrandLogo priority scrolled={scrolled} atTop={atTop} />
             </Link>
 
             {/* Nav links — center, desktop only */}
@@ -162,7 +169,9 @@ export function SiteHeader() {
                   'rounded-full px-3.5 py-2 text-sm font-semibold transition-colors',
                   active
                     ? 'bg-primary/10 text-primary-hover'
-                    : 'text-foreground hover:bg-foreground/5',
+                    : atTop
+                      ? 'text-on-hero hover:bg-on-hero/10'
+                      : 'text-foreground hover:bg-foreground/5',
                 )
 
                 if (!link.children?.length) {
@@ -193,7 +202,14 @@ export function SiteHeader() {
                       <ChevronDown size={16} />
                     </Link>
                     <div className="invisible absolute left-0 top-full z-10 pt-2 opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                      <div className="min-w-60 rounded-2xl border border-foreground/10 bg-surface p-1.5 shadow-lg">
+                      <div
+                        className={cn(
+                          'min-w-60 rounded-2xl border p-1.5 transition-colors duration-500 ease-in-out',
+                          atTop
+                            ? 'border-on-hero/40 bg-transparent shadow-none'
+                            : 'border-foreground/10 bg-surface shadow-lg',
+                        )}
+                      >
                         {link.children.map((child) => {
                           const childActive = isActive(child.href)
                           return (
@@ -205,7 +221,9 @@ export function SiteHeader() {
                                 'block whitespace-nowrap rounded-xl px-3.5 py-2 text-sm font-medium transition-colors',
                                 childActive
                                   ? 'bg-primary/10 text-primary-hover'
-                                  : 'text-foreground hover:bg-foreground/5',
+                                  : atTop
+                                    ? 'text-on-hero hover:bg-on-hero/10'
+                                    : 'text-foreground hover:bg-foreground/5',
                               )}
                             >
                               {child.label}
@@ -221,17 +239,25 @@ export function SiteHeader() {
 
             {/* Right cluster — theme toggle + Support Us */}
             <div className="col-start-3 flex items-center gap-2 justify-self-end">
-              <ThemeToggle />
+              <ThemeToggle
+                className={cn(
+                  'transition-colors duration-500 ease-in-out',
+                  atTop
+                    ? 'border-on-hero/40 text-on-hero hover:bg-on-hero/10'
+                    : 'border-border',
+                )}
+              />
 
-              {/* Support Us. Icon-only on mobile; on desktop shows the label
-                  until scrolled, then collapses to an icon-only pill. */}
+              {/* Support Us */}
               <Link
                 href="/support-us"
                 aria-label="Support Us"
                 className={cn(
                   buttonBase,
-                  buttonVariants.primary,
-                  'inline-flex shrink-0 items-center rounded-full px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out',
+                  'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
+                  atTop
+                    ? 'border-on-hero/40 bg-transparent text-on-hero hover:bg-on-hero/10'
+                    : 'border-transparent bg-btn-primary text-white shadow-sm hover:bg-btn-primary-hover',
                   scrolled ? 'md:px-5' : 'md:px-4',
                 )}
               >
@@ -317,7 +343,7 @@ export function SiteHeader() {
                 )
               }
 
-              // Accordion item — tap the row to expand its children inline.
+              // Accordion item
               const open = openSubmenu === link.href
               return (
                 <div key={link.href}>

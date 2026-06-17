@@ -9,7 +9,7 @@ export default function News() {
       <Banner
         title="Annual Reports"
         description="Browse and download GDFI's yearly transparency reports."
-        imgUrl="/feat-hero/hero-2.webp"
+        imgUrl="/nav-item-banner-images/annual-reports.webp"
       />
       <Section divClassName="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10">
         <AnnualReportGrid />
