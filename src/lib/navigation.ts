@@ -20,9 +20,8 @@ export const navLinks: NavLink[] = [
     label: 'About Us',
     href: '/about-us',
     children: [
-      { label: 'Our Story', href: '/about-us/our-story' },
       {
-        label: 'Mission, Vision & Values',
+        label: 'Mission & Vision',
         href: '/about-us/mission-vision',
       },
       {

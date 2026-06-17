@@ -1,7 +1,14 @@
+import { Metadata } from 'next'
 import Banner from '@/components/ui/banner'
 import AnnualReportGrid from '@/features/resources/components/ar-grid'
 import Section from '@/components/ui/section'
 import PDFViewer from '@/features/resources/components/pdf-viewer'
+
+export const metadata: Metadata = {
+  title: 'Annual Reports',
+  description:
+    "Browse and download GDFI's yearly transparency reports and organizational updates.",
+}
 
 export default function News() {
   return (
