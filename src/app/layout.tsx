@@ -4,6 +4,9 @@ import { SiteHeader } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+  ),
   title: {
     template: '%s | GDFI',
     default: 'GDFI',

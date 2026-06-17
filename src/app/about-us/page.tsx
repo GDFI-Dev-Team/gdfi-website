@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'The overview and history of the Guiuan Development Foundation Inc.',
 }
 
-export default function OurStoryPage() {
+export default function AboutUsPage() {
   return (
     <main className="flex-1">
       <Banner
