@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Text from '@/components/ui/text'
 import AnnualReportCard from './ar-card'
+import { AnnualReport } from '@/resources/annual-reports/page'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
@@ -45,24 +46,13 @@ function useScrollMask<T extends HTMLElement>() {
   return { ref, maskImage: MASKS[edge] }
 }
 
-export interface AnnualReport {
-  slug: string
-  title: string
-  year: string
-  'prepared-by': string
-  'annual-report': string
-  contributors?: { name: string; role: string }[]
-}
-
-interface AnnualReportGridProps {
-  reports: AnnualReport[]
-  onReportSelect: (pdfUrl: string) => void
-}
-
 export default function AnnualReportGrid({
   reports,
   onReportSelect,
-}: AnnualReportGridProps) {
+}: {
+  reports: AnnualReport[]
+  onReportSelect: (pdfUrl: string) => void
+}) {
   const [startYear, setStartYear] = useState('')
   const [endYear, setEndYear] = useState('')
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null)

@@ -20,11 +20,17 @@ export default function ProgramCard({
   href,
 }: ProgramCard) {
   return (
-    <Link href={href} className="group block max-w-md">
+    <Link href={href} className="group block">
       <div className="relative aspect-4/3">
         <div className="absolute inset-0 rounded-lg bg-card-highlight transition-transform duration-300 group-hover:-rotate-3 group-focus-visible:rotate-2" />
         <div className="absolute inset-0 overflow-hidden rounded-lg">
-          <Image src={imageUrl} alt={title} fill className="object-cover" />
+          <Image
+            src={imageUrl}
+            alt={title}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
 
