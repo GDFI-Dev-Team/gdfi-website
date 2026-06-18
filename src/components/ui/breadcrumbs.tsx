@@ -11,19 +11,22 @@ export default function Breadcrumbs({ last }: { last: string }) {
 
   return (
     <nav aria-label="Breadcrumb" className="hidden md:block">
-      <ol className="flex flex-wrap items-center gap-1.5 text-sm text-on-hero-subtle transition-colors duration-300 ease-[ease]">
+      <ol className="flex flex-wrap items-center gap-1.5 text-sm text-text-subtle transition-colors duration-300 ease-[ease]">
         {breadcrumbs.map((breadcrumb, index) => {
           const isLast = index === breadcrumbs.length - 1
           return (
             <li key={breadcrumb.href} className="flex items-center gap-1.5">
               {isLast ? (
-                <span aria-current="page" className="font-medium text-on-hero">
+                <span
+                  aria-current="page"
+                  className="font-medium text-text-standard"
+                >
                   {last}
                 </span>
               ) : (
                 <Link
                   href={breadcrumb.href}
-                  className="transition-colors hover:text-on-hero"
+                  className="transition-colors hover:text-text-standard"
                 >
                   {breadcrumb.label}
                 </Link>
@@ -31,7 +34,7 @@ export default function Breadcrumbs({ last }: { last: string }) {
               {!isLast && (
                 <ChevronRight
                   size={14}
-                  className="text-on-hero-faint"
+                  className="text-text-faint"
                   aria-hidden="true"
                 />
               )}

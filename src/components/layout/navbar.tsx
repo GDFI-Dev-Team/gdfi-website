@@ -24,7 +24,7 @@ function BrandLogo({
 }) {
   const wordmarkLine = cn(
     'whitespace-nowrap font-semibold transition-all duration-500 ease-in-out',
-    atTop ? 'text-on-hero' : 'text-foreground',
+    atTop ? 'text-text-standard' : 'text-foreground',
     scrolled ? 'text-xs md:text-sm' : 'text-xs md:text-base',
   )
   return (
@@ -144,7 +144,7 @@ export function SiteHeader() {
               className={cn(
                 'justify-self-start overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
                 atTop
-                  ? 'text-on-hero hover:bg-on-hero/10'
+                  ? 'text-text-standard hover:bg-text-standard/10'
                   : 'text-foreground hover:bg-foreground/5',
                 scrolled ? 'max-w-0 opacity-0' : 'mr-2 max-w-10 opacity-100',
               )}
@@ -170,7 +170,7 @@ export function SiteHeader() {
                   active
                     ? 'bg-primary/10 text-primary-hover'
                     : atTop
-                      ? 'text-on-hero hover:bg-on-hero/10'
+                      ? 'text-text-standard hover:bg-text-standard/10'
                       : 'text-foreground hover:bg-foreground/5',
                 )
 
@@ -206,7 +206,7 @@ export function SiteHeader() {
                         className={cn(
                           'min-w-60 rounded-2xl border p-1.5 transition-colors duration-500 ease-in-out',
                           atTop
-                            ? 'border-on-hero/40 bg-transparent shadow-none'
+                            ? 'border-text-standard/40 bg-transparent shadow-none'
                             : 'border-foreground/10 bg-surface shadow-lg',
                         )}
                       >
@@ -222,7 +222,7 @@ export function SiteHeader() {
                                 childActive
                                   ? 'bg-primary/10 text-primary-hover'
                                   : atTop
-                                    ? 'text-on-hero hover:bg-on-hero/10'
+                                    ? 'text-text-standard hover:bg-text-standard/10'
                                     : 'text-foreground hover:bg-foreground/5',
                               )}
                             >
@@ -243,7 +243,7 @@ export function SiteHeader() {
                 className={cn(
                   'transition-colors duration-500 ease-in-out',
                   atTop
-                    ? 'border-on-hero/40 text-on-hero hover:bg-on-hero/10'
+                    ? 'border-text-standard/40 text-text-standard hover:bg-text-standard/10'
                     : 'border-border',
                 )}
               />
@@ -256,7 +256,7 @@ export function SiteHeader() {
                   buttonBase,
                   'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
                   atTop
-                    ? 'border-on-hero/40 bg-transparent text-on-hero hover:bg-on-hero/10'
+                    ? 'border-text-standard/40 bg-transparent text-text-standard hover:bg-text-standard/10'
                     : 'border-transparent bg-btn-primary text-white shadow-sm hover:bg-btn-primary-hover',
                   scrolled ? 'md:px-5' : 'md:px-4',
                 )}

@@ -51,10 +51,10 @@ README:
   --color-accent-900: oklch(43.7% 0.095 57.3);
   --color-accent-950: oklch(29.4% 0.067 56.1);
 
-  /* Status */
-  --color-success: oklch(62.7% 0.133 159.6);
-  --color-warning: oklch(66.6% 0.157 58.3);
-  --color-error: oklch(57.7% 0.215 27.3);
+  /* Status (program status badges — backed onto white text, kept dark enough for contrast) */
+  --color-completed: oklch(52% 0.13 159.6);
+  --color-ongoing: oklch(58% 0.16 58.3);
+  --color-discontinued: oklch(50% 0.19 27.3);
 
   /* Absolute */
   --color-white: oklch(100% 0 0);
@@ -124,7 +124,12 @@ README:
   --color-surface: var(--surface);
   --color-accent: var(--color-accent-600);
   --color-overlay: var(--color-primary-950);
-  --color-like: var(--color-error);
+  --color-like: var(--color-status-discontinued);
+
+  /* Program status badges */
+  --color-status-completed: var(--color-completed);
+  --color-status-ongoing: var(--color-ongoing);
+  --color-status-discontinued: var(--color-discontinued);
 
   /* Program card hover/focus border highlight */
   --color-card-highlight: var(--color-accent-200);
@@ -231,9 +236,4 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
-}
-
-/* Angled top edge used on program/feature card images and their hover frame */
-.card-clip {
-  clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
 }
