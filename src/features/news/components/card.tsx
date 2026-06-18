@@ -75,7 +75,7 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
             </Heading>
           </Link>
           <Text size="sm" className="text-foreground/60 line-clamp-3">
-            {article.excerpt}
+            {article.content}
           </Text>
         </div>
       </div>
