@@ -233,7 +233,9 @@ export function SiteHeader() {
                                 'block whitespace-nowrap rounded-xl px-3.5 py-2 text-sm font-medium transition-colors',
                                 childActive
                                   ? 'bg-primary/10 text-primary-hover'
-                                  : 'text-foreground hover:bg-foreground/5',
+                                  : atTop
+                                    ? 'text-on-hero hover:bg-on-hero/10'
+                                    : 'text-foreground hover:bg-foreground/5',
                               )}
                             >
                               {child.label}
