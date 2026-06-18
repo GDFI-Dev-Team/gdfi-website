@@ -4,6 +4,7 @@ import Section from '@/components/ui/section'
 import NewsFilterBar from '@/features/news/components/filter-bar'
 import NewsGrid from '@/features/news/components/grid'
 import { mockNewsArticles } from '@/features/news/data/mock'
+import NewsPagination from '@/features/news/components/pagination'
 
 export const metadata: Metadata = {
   title: 'News & Updates',
@@ -24,6 +25,7 @@ export default function NewsPage() {
 
       <Section sectionClassName="py-12 md:py-16">
         <NewsGrid articles={mockNewsArticles} />
+        <NewsPagination />
       </Section>
     </main>
   )
