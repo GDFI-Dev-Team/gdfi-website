@@ -36,8 +36,7 @@ const Partners = () => {
                 src={`/partners/${p.file}.webp`}
                 alt={p.name}
                 fill
-                sizes="144px"
-                unoptimized
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-contain"
               />
             </div>

@@ -63,7 +63,7 @@ const WhatWeDo = () => {
             src="/feat-hero/hero-3.webp"
             alt=""
             fill
-            sizes="(min-width: 768px) 45vw, 100vw"
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
             aria-hidden="true"
           />

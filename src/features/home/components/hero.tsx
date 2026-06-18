@@ -75,7 +75,7 @@ export const Hero = () => {
                 src={`/feat-hero/${img}`}
                 alt=""
                 fill
-                sizes="100vw"
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
                 priority={i === 0}
                 loading={i === 0 ? undefined : 'eager'}
