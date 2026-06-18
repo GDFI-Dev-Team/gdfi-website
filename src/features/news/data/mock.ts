@@ -9,6 +9,7 @@ export interface NewsArticle {
   image: string
   isVideo?: boolean
   duration?: string
+  videoUrl?: string
 }
 
 export const mockNewsArticles: NewsArticle[] = [
@@ -32,6 +33,7 @@ export const mockNewsArticles: NewsArticle[] = [
     image: '/feat-hero/hero-2.webp',
     isVideo: true,
     duration: '12:45',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
   },
   {
     id: 'news-3',
