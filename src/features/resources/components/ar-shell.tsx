@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
-import AnnualReportGrid, { AnnualReport } from './ar-grid'
+import AnnualReportGrid from './ar-grid'
+import { AnnualReport } from '@/resources/annual-reports/page'
 
 const PDFViewer = dynamic(() => import('./pdf-viewer'), { ssr: false })
 
