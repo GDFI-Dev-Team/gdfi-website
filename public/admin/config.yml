@@ -25,24 +25,23 @@ media_libraries:
 collections:
   - name: annual-reports
     label: Annual Reports
+    label_singular: Annual Report
     folder: content/resources/annual-reports
     fields:
       - name: title
         label: Title 
         widget: string
-        default: 2026 Annual Report
         hint: ex. 2026 Annual Report
       - name: year
         label: Year
         widget: string
-        default: "2026"
         hint: ex. 2026
       - name: prepared-by
         label: Prepared By
         widget: string
         required: false
-      - label: Annual Report
-        name: annual-report
+      - name: annual-report
+        label: Annual Report
         widget: file
         max: 1
         accept: application/pdf,.pdf
@@ -54,4 +53,30 @@ collections:
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/annual-reports
           default: false
+  - name: programs
+    label: Programs
+    label_singular: Program
+    folder: content/programs
+    fields:
+      - name: title
+        label: Title 
+        widget: string
+        hint: ex. Educational Assistance Program
+      - name: short-description
+        label: Short Description    
+        widget: text
+      - name: status
+        label: Status
+        widget: select
+        options: ['Completed', 'Active', 'Discontinued']
+      - name: tag
+        label: Tag
+        widget: string
+        hint: eg. Education
+      - name: featured-img
+        label: Featured Image
+        widget: file
+        max: 1
+        accept: "image/jpeg,.jpg,.jpeg"
       
+
