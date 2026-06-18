@@ -78,5 +78,6 @@ collections:
         widget: file
         max: 1
         accept: "image/jpeg,.jpg,.jpeg"
+      - name: 
       
 
