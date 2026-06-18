@@ -5,27 +5,43 @@ import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils'
-import { HeroCurve } from '@/features/home/ui/LayoutShapes'
+import { RightUpCurve } from '@/features/home/ui/LayoutShapes'
 
 const heroImages = ['hero-1.webp', 'hero-2.webp', 'hero-3.webp']
 
 export const Hero = () => {
-  // A clone of the first slide is appended so the track can keep sliding
-  // right-to-left past the last image, then silently snap back to the start.
   const slides = [...heroImages, heroImages[0]]
   const [index, setIndex] = useState(0)
   const [animate, setAnimate] = useState(true)
 
   useEffect(() => {
     if (heroImages.length < 2) return
-    const id = setInterval(() => setIndex((i) => i + 1), 5000)
-    return () => clearInterval(id)
+    let id: ReturnType<typeof setInterval> | undefined
+
+    const start = () => {
+      if (id) return
+      id = setInterval(() => setIndex((i) => i + 1), 5000)
+    }
+    const stop = () => {
+      if (id) clearInterval(id)
+      id = undefined
+    }
+
+    const onVisibility = () => {
+      if (document.hidden) stop()
+      else start()
+    }
+
+    if (!document.hidden) start()
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => {
+      stop()
+      document.removeEventListener('visibilitychange', onVisibility)
+    }
   }, [])
 
-  // When we've slid onto the clone, jump back to the real first slide with
-  // the transition disabled so the reset is invisible.
   const handleRest = () => {
-    if (index === heroImages.length) {
+    if (index >= heroImages.length) {
       setAnimate(false)
       setIndex(0)
     }
@@ -48,16 +64,15 @@ export const Hero = () => {
   return (
     <Section
       sectionClassName="relative isolate flex min-h-[80svh] overflow-hidden"
-      divClassName="flex w-full flex-col justify-center gap-8 pb-24 md:pb-32"
+      divClassName="flex w-full flex-col justify-center gap-8"
       aria-label="Hero section"
     >
-      {/* Slideshow backdrop — full-bleed behind the content */}
+      {/* Slideshow backdrop */}
       <div
         className="absolute inset-0 -z-10 overflow-hidden"
         aria-hidden="true"
       >
-        {/* Sliding track — each slide is full-width; translating the row left
-            moves images right-to-left. */}
+        {/* Sliding track */}
         <div
           className="flex h-full w-full"
           style={{
@@ -83,19 +98,14 @@ export const Hero = () => {
             </div>
           ))}
         </div>
-        {/* Overlay — darkest behind the text, easing off to the right. Fades
-            with the theme at the same 0.3s as the rest of the page.
-            Light theme uses the /90 /70 /40 stops; the light scrim (dark theme)
-            has its own opacity via the dark:*/}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-hero-overlay/90 via-hero-overlay/70 to-hero-overlay/40 transition-[--hero-overlay] duration-300 ease-[ease] dark:from-hero-overlay/90 dark:via-hero-overlay/20 dark:to-hero-overlay/5" />
-        {/* Top scrim — darkens the band behind the fixed navbar so it stays
-            legible over busy photos, fading out just past the navbar height.
-            Flips light in dark mode like the main overlay. */}
+        {/* Top scrim */}
         <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-hero-overlay/80 to-transparent transition-[--hero-overlay] duration-300 ease-[ease]" />
       </div>
 
       {/* Curved panel bridging the hero into the section below */}
-      <HeroCurve />
+      <RightUpCurve />
 
       <div className="relative z-30 flex max-w-3xl flex-col gap-5">
         <Heading

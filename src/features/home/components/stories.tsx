@@ -6,15 +6,20 @@ import { Eye } from 'lucide-react'
 import LikeButton from './like-button'
 import { formatCount } from '@/lib/utils'
 import { stories } from '../data/stories'
+import { LeftDownCurve } from '../ui/LayoutShapes'
 
 const Stories = () => {
   return (
     <Section
       aria-labelledby="stories-heading"
-      sectionClassName="bg-foreground/3"
+      sectionClassName="relative overflow-hidden bg-foreground/3 pt-28 md:pt-40"
       divClassName="flex flex-col gap-10"
     >
-      <div className="flex flex-col items-center gap-3 text-center">
+      {/* Curve bridging the white section above down into this tinted one. The
+          fill matches the section above (bg-background). */}
+      <LeftDownCurve />
+
+      <div className="flex flex-col items-end gap-3 text-right pl-16 md:pl-24">
         <Text
           size="sm"
           transform="uppercase"
