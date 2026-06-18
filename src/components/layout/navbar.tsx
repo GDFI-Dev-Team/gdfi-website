@@ -4,15 +4,29 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { ChevronDown, HandHeart, Menu, X } from 'lucide-react'
 import { cn } from '../../lib/utils'
 import { navLinks } from '../../lib/navigation'
-import Button, { buttonBase, buttonVariants } from '../ui/button'
+import Button, { buttonBase } from '../ui/button'
+import Text from '../ui/text'
+import { ThemeToggle } from './theme-toggle'
 
 const LOGO_MARK_SRC = '/logo-images/logo.svg'
-const LOGO_NAME_SRC = '/logo-images/name.svg'
 
-function BrandLogo({ priority = false }: { priority?: boolean }) {
+function BrandLogo({
+  priority = false,
+  scrolled = false,
+  atTop = false,
+}: {
+  priority?: boolean
+  scrolled?: boolean
+  atTop?: boolean
+}) {
+  const wordmarkLine = cn(
+    'whitespace-nowrap font-semibold transition-all duration-500 ease-in-out',
+    atTop ? 'text-on-hero' : 'text-foreground',
+    scrolled ? 'text-xs md:text-sm' : 'text-xs md:text-base',
+  )
   return (
     <>
       <Image
@@ -21,17 +35,15 @@ function BrandLogo({ priority = false }: { priority?: boolean }) {
         width={1630}
         height={1421}
         priority={priority}
-        className="h-7 w-auto"
+        className={cn(
+          'w-auto shrink-0 transition-all duration-500 ease-in-out',
+          scrolled ? 'h-8 md:h-10' : 'h-10 md:h-14',
+        )}
       />
-      {/* name.svg ships black, flip via CSS */}
-      <Image
-        src={LOGO_NAME_SRC}
-        alt=""
-        width={336}
-        height={55}
-        priority={priority}
-        className="h-7 w-auto"
-      />
+      <span className="flex flex-col leading-tight">
+        <Text className={wordmarkLine}>Guiuan Development</Text>
+        <Text className={wordmarkLine}>Foundation, Incorporated</Text>
+      </span>
     </>
   )
 }
@@ -39,9 +51,12 @@ function BrandLogo({ priority = false }: { priority?: boolean }) {
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
+  const [atTop, setAtTop] = useState(true)
   const pathname = usePathname()
 
   const menuRef = useRef<HTMLDivElement>(null)
+  const lastScrollY = useRef(0)
 
   const closeMobile = useCallback(() => {
     setMobileOpen(false)
@@ -50,6 +65,27 @@ export function SiteHeader() {
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`)
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY
+    const onScroll = () => {
+      const y = window.scrollY
+      setAtTop(y <= 24)
+      const prev = lastScrollY.current
+      if (Math.abs(y - prev) < 6) return
+      if (y <= 24) {
+        setScrolled(false)
+      } else if (y > prev) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+      lastScrollY.current = y
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     const mdBreakpoint = getComputedStyle(document.documentElement)
@@ -84,27 +120,45 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-foreground/10 bg-white">
-        <div className="px-(--gutter) py-3 md:py-4">
-          <div className="mx-auto grid max-w-7xl grid-cols-[0.7fr_auto_1.5fr] items-center gap-0 md:grid-cols-[auto_1fr_auto]">
-            {/* Hamburger — mobile only, left */}
+      <header
+        className={cn(
+          'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ease-in-out',
+          atTop
+            ? 'border-transparent bg-transparent'
+            : 'border-foreground/10 bg-background',
+        )}
+      >
+        <div
+          className={cn(
+            'px-(--gutter) transition-all duration-500 ease-in-out md:py-4',
+            scrolled ? 'py-3' : 'py-5',
+          )}
+        >
+          <div className="mx-auto grid max-w-7xl grid-cols-[auto_auto_1fr] items-center gap-0 md:grid-cols-[auto_1fr_auto]">
+            {/* Hamburger */}
             <Button
               variant="ghost"
               aria-label="Open menu"
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(true)}
-              className="justify-self-start p-2 text-foreground hover:bg-foreground/5 md:hidden"
+              className={cn(
+                'justify-self-start overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
+                atTop
+                  ? 'text-on-hero hover:bg-on-hero/10'
+                  : 'text-foreground hover:bg-foreground/5',
+                scrolled ? 'max-w-0 opacity-0' : 'mr-2 max-w-10 opacity-100',
+              )}
             >
               <Menu size={26} aria-hidden="true" />
             </Button>
 
-            {/* Logo — center on mobile, left on desktop */}
+            {/* Logo */}
             <Link
               href="/"
               aria-label="GDFI — home"
-              className="col-start-2 flex items-center gap-2 justify-self-center md:col-start-1 md:justify-self-start"
+              className="col-start-2 flex items-center gap-2 justify-self-start md:col-start-1 md:justify-self-start"
             >
-              <BrandLogo priority />
+              <BrandLogo priority scrolled={scrolled} atTop={atTop} />
             </Link>
 
             {/* Nav links — center, desktop only */}
@@ -115,7 +169,9 @@ export function SiteHeader() {
                   'rounded-full px-3.5 py-2 text-sm font-semibold transition-colors',
                   active
                     ? 'bg-primary/10 text-primary-hover'
-                    : 'text-foreground hover:bg-foreground/5',
+                    : atTop
+                      ? 'text-on-hero hover:bg-on-hero/10'
+                      : 'text-foreground hover:bg-foreground/5',
                 )
 
                 if (!link.children?.length) {
@@ -146,7 +202,14 @@ export function SiteHeader() {
                       <ChevronDown size={16} />
                     </Link>
                     <div className="invisible absolute left-0 top-full z-10 pt-2 opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                      <div className="min-w-60 rounded-2xl border border-foreground/10 bg-white p-1.5 shadow-lg">
+                      <div
+                        className={cn(
+                          'min-w-60 rounded-2xl border p-1.5 transition-colors duration-500 ease-in-out',
+                          atTop
+                            ? 'border-on-hero/40 bg-transparent shadow-none'
+                            : 'border-foreground/10 bg-surface shadow-lg',
+                        )}
+                      >
                         {link.children.map((child) => {
                           const childActive = isActive(child.href)
                           return (
@@ -158,7 +221,9 @@ export function SiteHeader() {
                                 'block whitespace-nowrap rounded-xl px-3.5 py-2 text-sm font-medium transition-colors',
                                 childActive
                                   ? 'bg-primary/10 text-primary-hover'
-                                  : 'text-foreground hover:bg-foreground/5',
+                                  : atTop
+                                    ? 'text-on-hero hover:bg-on-hero/10'
+                                    : 'text-foreground hover:bg-foreground/5',
                               )}
                             >
                               {child.label}
@@ -172,17 +237,43 @@ export function SiteHeader() {
               })}
             </nav>
 
-            {/* Donate — right */}
-            <Link
-              href="/donate"
-              className={cn(
-                buttonBase,
-                buttonVariants.primary,
-                'col-start-3 shrink-0 justify-self-end rounded-full px-4 py-2 text-sm font-semibold',
-              )}
-            >
-              Donate
-            </Link>
+            {/* Right cluster — theme toggle + Support Us */}
+            <div className="col-start-3 flex items-center gap-2 justify-self-end">
+              <ThemeToggle
+                className={cn(
+                  'transition-colors duration-500 ease-in-out',
+                  atTop
+                    ? 'border-on-hero/40 text-on-hero hover:bg-on-hero/10'
+                    : 'border-border',
+                )}
+              />
+
+              {/* Support Us */}
+              <Link
+                href="/support-us"
+                aria-label="Support Us"
+                className={cn(
+                  buttonBase,
+                  'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
+                  atTop
+                    ? 'border-on-hero/40 bg-transparent text-on-hero hover:bg-on-hero/10'
+                    : 'border-transparent bg-btn-primary text-white shadow-sm hover:bg-btn-primary-hover',
+                  scrolled ? 'md:px-5' : 'md:px-4',
+                )}
+              >
+                <HandHeart size={20} aria-hidden="true" />
+                <span
+                  className={cn(
+                    'hidden overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out md:inline-block md:align-middle',
+                    scrolled
+                      ? 'md:ml-0 md:max-w-0 md:opacity-0'
+                      : 'md:ml-2 md:max-w-28 md:opacity-100',
+                  )}
+                >
+                  Support Us
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -205,7 +296,7 @@ export function SiteHeader() {
         aria-hidden={!mobileOpen}
         aria-label="Site menu"
         className={cn(
-          'fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-foreground/10 bg-white p-6 shadow-xl',
+          'fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-foreground/10 bg-surface p-6 shadow-xl',
           mobileOpen ? 'block' : 'pointer-events-none hidden',
         )}
       >
@@ -252,7 +343,7 @@ export function SiteHeader() {
                 )
               }
 
-              // Accordion item — tap the row to expand its children inline.
+              // Accordion item
               const open = openSubmenu === link.href
               return (
                 <div key={link.href}>

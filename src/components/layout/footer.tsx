@@ -7,7 +7,7 @@ import { ContactForm } from './contact-form'
 import Text from '../ui/text'
 import Heading from '../ui/heading'
 
-const LOGO_SRC = '/logo-images/logo_with_name_white.svg'
+const LOGO_SRC = '/logo-images/logo.svg'
 
 const socialLinks = [
   { label: 'Facebook', href: socials.facebook, Icon: SiFacebook },
@@ -25,15 +25,29 @@ export function Footer() {
               <Link
                 href="/"
                 aria-label={`${org.shortName} — home`}
-                className="inline-flex"
+                className="inline-flex items-center gap-2"
               >
                 <Image
                   src={LOGO_SRC}
-                  alt={org.name}
-                  width={414}
-                  height={62}
-                  className="h-8 w-auto"
+                  alt=""
+                  width={1630}
+                  height={1421}
+                  className="h-12 w-auto shrink-0"
                 />
+                <span className="flex flex-col leading-tight">
+                  <Text
+                    size="sm"
+                    className="font-semibold text-footer-text-strong"
+                  >
+                    Guiuan Development
+                  </Text>
+                  <Text
+                    size="sm"
+                    className="font-semibold text-footer-text-strong"
+                  >
+                    Foundation, Incorporated
+                  </Text>
+                </span>
               </Link>
               <Text size="sm" className="mt-5 max-w-sm text-footer-text-muted">
                 {org.about}

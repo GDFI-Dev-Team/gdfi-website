@@ -14,7 +14,7 @@ export default function AnnualReportsPage() {
       <Banner
         title="Annual Reports"
         description="Browse and download GDFI's yearly transparency reports."
-        imgUrl="/feat-hero/hero-2.webp"
+        imgUrl="/nav-item-banner-images/annual-reports.webp"
       />
       <Section>
         <AnnualReportsShell reports={reports} />
