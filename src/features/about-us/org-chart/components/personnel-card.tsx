@@ -18,7 +18,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
   }, [isMobileModalOpen])
 
   return (
-    <div className="group relative flex flex-col items-center w-full max-w-[140px] mx-auto">
+    <div className="group relative flex flex-col items-center w-full max-w-140px mx-auto">
       <div className="relative w-24 h-24 md:w-28 md:h-28 mb-3 bg-foreground/10 border border-foreground/10 rounded-sm">
         <Image
           src={person.image}

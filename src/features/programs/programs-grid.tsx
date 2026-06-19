@@ -13,6 +13,7 @@ export interface Program {
   status: string
   tag: string
   'featured-img': string
+  body: string
 }
 
 interface ProgramsGridProps {
@@ -52,7 +53,7 @@ export default function ProgramsGrid({ programs }: ProgramsGridProps) {
             key={program.slug}
             title={program.title}
             description={program['short-description']}
-            imageUrl="/feat-hero/hero-2.webp"
+            imageUrl={program['featured-img']}
             status={program.status}
             href={`/programs/${program.slug}`}
           />

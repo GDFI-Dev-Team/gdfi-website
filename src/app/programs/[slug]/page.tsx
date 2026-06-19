@@ -3,8 +3,17 @@ import { notFound } from 'next/navigation'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
+import Breadcrumbs from '@/components/ui/breadcrumbs'
 import { getSingleMarkdownData } from '@/lib/markdown'
 import { Program } from '@/features/programs/programs-grid'
+import { remark } from 'remark'
+import html from 'remark-html'
+
+const statusStyles: Record<string, string> = {
+  completed: 'bg-status-completed',
+  active: 'bg-status-ongoing',
+  'on going': 'bg-status-discontinued',
+}
 
 export default async function ProgramDetailPage({
   params,
@@ -20,28 +29,44 @@ export default async function ProgramDetailPage({
     notFound()
   }
 
+  const processedContent = await remark().use(html).process(program.body)
+  const contentHtml = processedContent.toString()
+  const statusClass =
+    statusStyles[program.status.toLowerCase()] ?? 'bg-foreground/20'
+
   return (
-    <Section>
-      <div className="relative aspect-video rounded-lg overflow-hidden">
+    <Section maxWidth="4xl">
+      <Breadcrumbs last={program.title} />
+
+      <div className="relative mt-6 aspect-video overflow-hidden rounded-lg">
         <Image
-          src="/feat-hero/hero-2.webp"
+          src={program['featured-img']}
           alt={program.title}
           fill
+          sizes="(min-width: 768px) 50vw, 100vw"
           className="object-cover"
         />
       </div>
+
       <Heading level={1} className="mt-6">
         {program.title}
       </Heading>
-      <div className="flex gap-2 mt-2">
-        <Text size="sm" className="px-2 bg-foreground/20 rounded-2xl">
-          {program.status}
-        </Text>
-        <Text size="sm" className="px-2 bg-foreground/20 rounded-2xl">
-          {program.tag}
-        </Text>
+
+      <div className="flex gap-2 mt-3">
+        <span className={`px-2 rounded-2xl ${statusClass}`}>
+          <Text size="sm" className="text-on-overlay">
+            {program.status}
+          </Text>
+        </span>
+        <span className="px-2 rounded-2xl bg-foreground/20">
+          <Text size="sm">{program.tag}</Text>
+        </span>
       </div>
-      <Text className="mt-4">{program['short-description']}</Text>
+
+      <article
+        className="prose lg:prose-xl mt-8 max-w-none"
+        dangerouslySetInnerHTML={{ __html: contentHtml }}
+      />
     </Section>
   )
 }
