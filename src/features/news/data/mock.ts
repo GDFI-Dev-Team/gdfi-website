@@ -1,12 +1,16 @@
 export type NewsCategory = 'UPDATES' | 'INTERVIEWS' | 'COMMUNITY STORIES'
 
+export interface ArticleImage {
+  src: string
+  caption?: string
+}
 export interface NewsArticle {
   id: string
   title: string
   content: string
   category: NewsCategory
   date: string
-  image: string
+  images?: ArticleImage[]
   isVideo?: boolean
   duration?: string
   videoUrl?: string
@@ -45,7 +49,22 @@ export const mockNewsArticles: NewsArticle[] = [
     #EasternSamar`,
     category: 'UPDATES',
     date: 'OCT 12, 2024',
-    image: '/updates-images/sample2.webp',
+    images: [
+      {
+        src: '/feat-hero/hero-1.webp',
+        caption:
+          'Volunteer divers inspecting the newly formed coral fragments. (Courtesy of GDFI Marine Team)',
+      },
+      {
+        src: '/feat-hero/hero-2.webp',
+        caption: 'Local fishers participating in the reef monitoring workshop.',
+      },
+      {
+        src: '/feat-hero/hero-3.webp',
+        caption:
+          'A healthy patch of restored reef showing signs of returning marine life.',
+      },
+    ],
   },
   {
     id: 'news-2',
@@ -53,7 +72,12 @@ export const mockNewsArticles: NewsArticle[] = [
     content: `In this exclusive interview, we sit down with Maria Santos, a prominent community leader, to discuss the delicate balance between sustaining local fishing livelihoods and enforcing strict marine conservation policies.\n\nMaria shares her insights on how grassroots education and cooperative management are paving the way for a sustainable future. "It is not about stopping fishing," she explains, "it is about fishing smarter so our children can fish tomorrow."`,
     category: 'INTERVIEWS',
     date: 'OCT 05, 2024',
-    image: '/feat-hero/hero-2.webp',
+    images: [
+      {
+        src: '/feat-hero/hero-2.webp',
+        caption: 'Maria Santos discussing conservation policies.',
+      },
+    ],
     isVideo: true,
     duration: '12:45',
     videoUrl: 'https://www.youtube.com/embed/TBg5-6JbOPk',
@@ -64,7 +88,12 @@ export const mockNewsArticles: NewsArticle[] = [
     content: `Local high school students joined our coastal resilience team to establish a new mangrove buffer zone. Over the course of two days, over 5,000 saplings were planted along the vulnerable shorelines. These mangroves will serve as a critical natural barrier against storm surges and provide a nursery for juvenile fish.`,
     category: 'COMMUNITY STORIES',
     date: 'SEP 28, 2024',
-    image: '/feat-hero/hero-3.webp',
+    images: [
+      {
+        src: '/feat-hero/hero-3.webp',
+        caption: 'Youth volunteers planting mangrove saplings.',
+      },
+    ],
   },
   {
     id: 'news-4',
@@ -72,7 +101,12 @@ export const mockNewsArticles: NewsArticle[] = [
     content: `Following months of consultation, local authorities have officially declared thr...`,
     category: 'UPDATES',
     date: 'SEP 15, 2024',
-    image: '/updates-images/sample1.webp',
+    images: [
+      {
+        src: '/updates-images/sample1.webp',
+        caption: 'New Marine Protected Area Designations Finalized.',
+      },
+    ],
   },
   {
     id: 'news-5',
@@ -80,7 +114,12 @@ export const mockNewsArticles: NewsArticle[] = [
     content: `Interview with Dr. Aris Del Rosario, Lead Researcher`,
     category: 'INTERVIEWS',
     date: 'AUG 30, 2024',
-    image: '/updates-images/sample2.webp',
+    images: [
+      {
+        src: '/updates-images/sample2.webp',
+        caption: 'Dr. Aris Del Rosario discussing seagrass carbon sinks.',
+      },
+    ],
     isVideo: true,
     duration: '08:30',
   },
@@ -90,6 +129,11 @@ export const mockNewsArticles: NewsArticle[] = [
     content: `A recap of the recent dialogs between local government units and fisherfolk...`,
     category: 'COMMUNITY STORIES',
     date: 'AUG 12, 2024',
-    image: '/updates-images/sample3.webp',
+    images: [
+      {
+        src: '/updates-images/sample3.webp',
+        caption: 'Community members discussing sustainable fishing practices.',
+      },
+    ],
   },
 ]

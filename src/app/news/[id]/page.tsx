@@ -1,12 +1,12 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
 import { ChevronLeft } from 'lucide-react'
 import { mockNewsArticles } from '@/features/news/data/mock'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
+import ArticleImages from '@/features/news/components/article-images'
 
 export function generateStaticParams() {
   return mockNewsArticles.map((article) => ({
@@ -55,8 +55,8 @@ export default async function NewsArticlePage({
           </div>
         </header>
 
-        <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-foreground/5 mb-10 shadow-sm border border-foreground/10">
-          {article.isVideo && article.videoUrl ? (
+        {article.isVideo && article.videoUrl ? (
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-foreground/5 mb-10 shadow-sm border border-foreground/10">
             <iframe
               src={article.videoUrl}
               title={article.title}
@@ -64,17 +64,10 @@ export default async function NewsArticlePage({
               allowFullScreen
               className="absolute inset-0 w-full h-full border-0"
             />
-          ) : (
-            <Image
-              src={article.image}
-              alt={article.title}
-              fill
-              sizes="(min-width: 1024px) 896px, 100vw"
-              className="object-cover"
-              priority
-            />
-          )}
-        </div>
+          </div>
+        ) : (
+          <ArticleImages images={article.images || []} />
+        )}
 
         <article className="flex flex-col gap-6">
           {/* With Markdown/CMS, map over paragraphs or use a rich text renderer here. */}

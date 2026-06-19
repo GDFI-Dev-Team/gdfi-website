@@ -20,7 +20,7 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
         className="relative aspect-[3/2] w-full overflow-hidden block"
       >
         <Image
-          src={article.image}
+          src={article.images?.[0]?.src || '/placeholder-image.webp'}
           alt={article.title}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
