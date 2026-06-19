@@ -1,8 +1,15 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import { mockNewsArticles } from '@/features/news/data/mock'
 
 const FeaturedInterviews = () => {
+  const interview = mockNewsArticles.find(
+    (a) => a.category === 'INTERVIEWS' && a.videoUrl,
+  )
+
+  if (!interview) return null
+
   return (
     <Section
       aria-labelledby="featured-interviews-heading"
@@ -24,8 +31,8 @@ const FeaturedInterviews = () => {
 
       <div className="relative w-full max-w-4xl aspect-video overflow-hidden rounded-xl shadow-lg">
         <iframe
-          src="https://www.youtube.com/embed/TBg5-6JbOPk"
-          title="Featured interview"
+          src={interview.videoUrl}
+          title={interview.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="absolute inset-0 w-full h-full"

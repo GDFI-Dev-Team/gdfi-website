@@ -14,6 +14,9 @@ export interface NewsArticle {
   isVideo?: boolean
   duration?: string
   videoUrl?: string
+  views?: number
+  likes?: number
+  readMinutes?: number
 }
 
 export const mockNewsArticles: NewsArticle[] = [
@@ -75,6 +78,9 @@ export const mockNewsArticles: NewsArticle[] = [
         src: '/updates-images/sample7.webp',
       },
     ],
+    views: 2100,
+    likes: 342,
+    readMinutes: 6,
   },
   {
     id: 'news-2',
@@ -91,6 +97,8 @@ export const mockNewsArticles: NewsArticle[] = [
     isVideo: true,
     duration: '2:27',
     videoUrl: 'https://www.youtube.com/embed/TBg5-6JbOPk',
+    views: 1500,
+    likes: 120,
   },
   {
     id: 'news-3',
@@ -104,6 +112,8 @@ export const mockNewsArticles: NewsArticle[] = [
         caption: 'Youth volunteers planting mangrove saplings.',
       },
     ],
+    views: 3200,
+    likes: 512,
   },
   {
     id: 'news-4',
@@ -117,6 +127,9 @@ export const mockNewsArticles: NewsArticle[] = [
         caption: 'New Marine Protected Area Designations Finalized.',
       },
     ],
+    views: 1800,
+    likes: 290,
+    readMinutes: 4,
   },
   {
     id: 'news-5',
@@ -145,5 +158,8 @@ export const mockNewsArticles: NewsArticle[] = [
         caption: 'Community members discussing sustainable fishing practices.',
       },
     ],
+    views: 1100,
+    likes: 185,
+    readMinutes: 5,
   },
 ]
