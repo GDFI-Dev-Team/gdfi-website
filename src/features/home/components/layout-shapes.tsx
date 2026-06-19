@@ -5,13 +5,6 @@ const RIGHT_UP_CURVE_DESKTOP_PATH =
 const RIGHT_UP_CURVE_MOBILE_PATH =
   'M1782.511,2745.828C1834.466,2816.622 1923.32,2864.261 2088.463,2864.024L2314.12,2864.024L386.691,2864.024L386.691,2317.861L1253.726,2317.861C1402.095,2318.076 1490.768,2367.359 1579.143,2483.69L1782.511,2745.828Z'
 
-const RIGHT_DOWN_CURVE_DESKTOP_PATH = RIGHT_UP_CURVE_DESKTOP_PATH
-const RIGHT_DOWN_CURVE_MOBILE_PATH = RIGHT_UP_CURVE_MOBILE_PATH
-const LEFT_UP_CURVE_DESKTOP_PATH = RIGHT_UP_CURVE_DESKTOP_PATH
-const LEFT_UP_CURVE_MOBILE_PATH = RIGHT_UP_CURVE_MOBILE_PATH
-const LEFT_DOWN_CURVE_DESKTOP_PATH = RIGHT_UP_CURVE_DESKTOP_PATH
-const LEFT_DOWN_CURVE_MOBILE_PATH = RIGHT_UP_CURVE_MOBILE_PATH
-
 function CurveSvgs({
   flipClassName,
   desktopPath,
@@ -75,37 +68,6 @@ export function RightUpCurve() {
       flipClassName="-scale-x-100"
       desktopPath={RIGHT_UP_CURVE_DESKTOP_PATH}
       mobilePath={RIGHT_UP_CURVE_MOBILE_PATH}
-    />
-  )
-}
-
-export function RightDownCurve() {
-  return (
-    <CurveSvgs
-      edge="top"
-      flipClassName="-scale-x-100 -scale-y-100"
-      desktopPath={RIGHT_DOWN_CURVE_DESKTOP_PATH}
-      mobilePath={RIGHT_DOWN_CURVE_MOBILE_PATH}
-    />
-  )
-}
-
-export function LeftUpCurve() {
-  return (
-    <CurveSvgs
-      desktopPath={LEFT_UP_CURVE_DESKTOP_PATH}
-      mobilePath={LEFT_UP_CURVE_MOBILE_PATH}
-    />
-  )
-}
-
-export function LeftDownCurve() {
-  return (
-    <CurveSvgs
-      edge="top"
-      flipClassName="-scale-y-100"
-      desktopPath={LEFT_DOWN_CURVE_DESKTOP_PATH}
-      mobilePath={LEFT_DOWN_CURVE_MOBILE_PATH}
     />
   )
 }

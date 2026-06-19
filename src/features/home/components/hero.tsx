@@ -5,7 +5,7 @@ import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils'
-import { RightUpCurve } from '@/features/home/ui/LayoutShapes'
+import { RightUpCurve } from './layout-shapes'
 
 const heroImages = ['hero-1.webp', 'hero-2.webp', 'hero-3.webp']
 
