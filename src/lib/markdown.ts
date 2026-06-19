@@ -20,9 +20,9 @@ export function getSingleMarkdownData<T>(
   }
 
   const fileContent = fs.readFileSync(filePath, 'utf8')
-  const { data } = matter(fileContent)
+  const { data, content } = matter(fileContent)
 
-  return data as T
+  return { ...data, body: content } as T
 }
 
 /**
