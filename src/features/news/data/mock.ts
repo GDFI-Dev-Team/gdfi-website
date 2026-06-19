@@ -48,38 +48,48 @@ export const mockNewsArticles: NewsArticle[] = [
     #CoastalResilience
     #EasternSamar`,
     category: 'UPDATES',
-    date: 'OCT 12, 2024',
+    date: '5 JUNE 2026',
     images: [
       {
-        src: '/feat-hero/hero-1.webp',
+        src: '/updates-images/sample2.webp',
         caption:
-          'Volunteer divers inspecting the newly formed coral fragments. (Courtesy of GDFI Marine Team)',
+          'Group photo of the UP Tacloban interns with GDFI staff and volunteers.',
       },
       {
-        src: '/feat-hero/hero-2.webp',
-        caption: 'Local fishers participating in the reef monitoring workshop.',
+        src: '/updates-images/sample3.webp',
+        caption: 'Presentation of the proposed website interface.',
       },
       {
-        src: '/feat-hero/hero-3.webp',
+        src: '/updates-images/sample4.webp',
         caption:
-          'A healthy patch of restored reef showing signs of returning marine life.',
+          'Audience members engaging with the presentation and asking questions.',
+      },
+      {
+        src: '/updates-images/sample5.webp',
+        caption: 'UP Tacloban students and GDFI staff discussing the project.',
+      },
+      {
+        src: '/updates-images/sample6.webp',
+      },
+      {
+        src: '/updates-images/sample7.webp',
       },
     ],
   },
   {
     id: 'news-2',
-    title: 'Balancing Livelihoods and Conservation: A Community Perspective',
-    content: `In this exclusive interview, we sit down with Maria Santos, a prominent community leader, to discuss the delicate balance between sustaining local fishing livelihoods and enforcing strict marine conservation policies.\n\nMaria shares her insights on how grassroots education and cooperative management are paving the way for a sustainable future. "It is not about stopping fishing," she explains, "it is about fishing smarter so our children can fish tomorrow."`,
+    title: `Fisher Voices : The Struggles of Public Market Fish Vendors in Guiuan, Eastern Samar`,
+    content: `The story focuses on two women fish vendors (Ms. Concordia Gayoso and Ms. Rowena Sawaan) of more than 30 years at the Guiuan Public Market. Their livelihood is threatened by the continuous decrease in fish supply, decreasing variety of species and sizes. Abrupt weather change was identified as one of the main reasons for the low fish supply in the market. The increasing price from middlemen was also highlighted by the vendors as this requires them to have bigger capital.`,
     category: 'INTERVIEWS',
-    date: 'OCT 05, 2024',
+    date: '25 October 2024',
     images: [
       {
-        src: '/feat-hero/hero-2.webp',
-        caption: 'Maria Santos discussing conservation policies.',
+        src: '/thumbnails/thumbnail-1.webp',
+        caption: 'Ms. Concordia Gayoso engaging in an interview.',
       },
     ],
     isVideo: true,
-    duration: '12:45',
+    duration: '2:27',
     videoUrl: 'https://www.youtube.com/embed/TBg5-6JbOPk',
   },
   {
@@ -87,7 +97,7 @@ export const mockNewsArticles: NewsArticle[] = [
     title: 'Youth Volunteers Plant 5,000 Mangroves in Weekend Drive',
     content: `Local high school students joined our coastal resilience team to establish a new mangrove buffer zone. Over the course of two days, over 5,000 saplings were planted along the vulnerable shorelines. These mangroves will serve as a critical natural barrier against storm surges and provide a nursery for juvenile fish.`,
     category: 'COMMUNITY STORIES',
-    date: 'SEP 28, 2024',
+    date: '28 September 2024',
     images: [
       {
         src: '/feat-hero/hero-3.webp',
@@ -100,7 +110,7 @@ export const mockNewsArticles: NewsArticle[] = [
     title: 'New Marine Protected Area Designations Finalized',
     content: `Following months of consultation, local authorities have officially declared thr...`,
     category: 'UPDATES',
-    date: 'SEP 15, 2024',
+    date: '15 September 2024',
     images: [
       {
         src: '/updates-images/sample1.webp',
@@ -113,7 +123,7 @@ export const mockNewsArticles: NewsArticle[] = [
     title: 'The Science of Seagrass Carbon Sinks',
     content: `Interview with Dr. Aris Del Rosario, Lead Researcher`,
     category: 'INTERVIEWS',
-    date: 'AUG 30, 2024',
+    date: '30 August 2024',
     images: [
       {
         src: '/updates-images/sample2.webp',
@@ -128,7 +138,7 @@ export const mockNewsArticles: NewsArticle[] = [
     title: 'Townhall Discussions Pave Way for Sustainable Fishing...',
     content: `A recap of the recent dialogs between local government units and fisherfolk...`,
     category: 'COMMUNITY STORIES',
-    date: 'AUG 12, 2024',
+    date: '12 August 2024',
     images: [
       {
         src: '/updates-images/sample3.webp',
