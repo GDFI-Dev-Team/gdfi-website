@@ -73,11 +73,30 @@ collections:
         label: Tag
         widget: string
         hint: eg. Education
+        required: false
       - name: featured-img
         label: Featured Image
         widget: file
         max: 1
         accept: "image/jpeg,.jpg,.jpeg"
-      - name: 
-      
+      - name: body
+        label: Content
+        widget: markdown
+        default: |
+          ## About This Program
 
+          Write a short overview of the program here. Explain who it serves, what problem it addresses, and why it matters.
+
+          ## Goals
+
+          - Goal one
+          - Goal two
+          - Goal three
+
+          ## Impact
+
+          Describe the outcomes or results of the program so far. Include numbers or stories if available.
+
+          ## How to Get Involved
+
+          Explain how someone (a donor, volunteer, or participant) can support or join this program.
