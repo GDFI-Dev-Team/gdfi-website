@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Play } from 'lucide-react'
@@ -7,6 +10,23 @@ import { cn } from '@/lib/utils'
 import { NewsArticle } from '../data/mock'
 
 export default function NewsCard({ article }: { article: NewsArticle }) {
+  const [isHovered, setIsHovered] = useState(false)
+  const [imageIndex, setImageIndex] = useState(0)
+  const images = article.images?.length
+    ? article.images
+    : [{ src: '/placeholder-image.webp', caption: '' }]
+  const hasMultipleImages = !article.isVideo && images.length > 1
+
+  useEffect(() => {
+    if (!isHovered || !hasMultipleImages) return
+
+    const interval = setInterval(() => {
+      setImageIndex((prev) => (prev + 1) % images.length)
+    }, 1500)
+
+    return () => clearInterval(interval)
+  }, [isHovered, hasMultipleImages, images.length])
+
   const isCyanBadge =
     article.category === 'UPDATES' || article.category === 'COMMUNITY STORIES'
   const badgeClasses = isCyanBadge
@@ -14,18 +34,34 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
     : 'bg-foreground/10 text-foreground/70'
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl border border-foreground/10 bg-background shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+    <article
+      className="group flex flex-col overflow-hidden rounded-xl border border-foreground/10 bg-background shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setIsHovered(false)
+        setImageIndex(0)
+      }}
+    >
       <Link
         href={`/news/${article.id}`}
         className="relative aspect-[3/2] w-full overflow-hidden block"
       >
-        <Image
-          src={article.images?.[0]?.src || '/placeholder-image.webp'}
-          alt={article.title}
-          fill
-          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+        <div
+          className="flex h-full w-full transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${imageIndex * 100}%)` }}
+        >
+          {images.map((img, idx) => (
+            <div key={idx} className="relative h-full w-full shrink-0">
+              <Image
+                src={img.src}
+                alt={img.caption || article.title}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
 
         {article.isVideo && (
           <>
