@@ -1,4 +1,4 @@
-export type NewsCategory = 'UPDATES' | 'INTERVIEWS' | 'COMMUNITY STORIES'
+export type NewsCategory = 'UPDATES' | 'COMMUNITY STORIES'
 
 export interface ArticleImage {
   src: string
@@ -11,9 +11,6 @@ export interface NewsArticle {
   category: NewsCategory
   date: string
   images?: ArticleImage[]
-  isVideo?: boolean
-  duration?: string
-  videoUrl?: string
   views?: number
   likes?: number
   readMinutes?: number
@@ -84,24 +81,6 @@ export const mockNewsArticles: NewsArticle[] = [
   },
   {
     id: 'news-2',
-    title: `Fisher Voices : The Struggles of Public Market Fish Vendors in Guiuan, Eastern Samar`,
-    content: `The story focuses on two women fish vendors (Ms. Concordia Gayoso and Ms. Rowena Sawaan) of more than 30 years at the Guiuan Public Market. Their livelihood is threatened by the continuous decrease in fish supply, decreasing variety of species and sizes. Abrupt weather change was identified as one of the main reasons for the low fish supply in the market. The increasing price from middlemen was also highlighted by the vendors as this requires them to have bigger capital.`,
-    category: 'INTERVIEWS',
-    date: '25 October 2024',
-    images: [
-      {
-        src: '/thumbnails/thumbnail-1.webp',
-        caption: 'Ms. Concordia Gayoso engaging in an interview.',
-      },
-    ],
-    isVideo: true,
-    duration: '2:27',
-    videoUrl: 'https://www.youtube.com/embed/TBg5-6JbOPk',
-    views: 1500,
-    likes: 120,
-  },
-  {
-    id: 'news-3',
     title: 'Youth Volunteers Plant 5,000 Mangroves in Weekend Drive',
     content: `Local high school students joined our coastal resilience team to establish a new mangrove buffer zone. Over the course of two days, over 5,000 saplings were planted along the vulnerable shorelines. These mangroves will serve as a critical natural barrier against storm surges and provide a nursery for juvenile fish.`,
     category: 'COMMUNITY STORIES',
@@ -116,7 +95,7 @@ export const mockNewsArticles: NewsArticle[] = [
     likes: 512,
   },
   {
-    id: 'news-4',
+    id: 'news-3',
     title: 'New Marine Protected Area Designations Finalized',
     content: `Following months of consultation, local authorities have officially declared thr...`,
     category: 'UPDATES',
@@ -132,22 +111,7 @@ export const mockNewsArticles: NewsArticle[] = [
     readMinutes: 4,
   },
   {
-    id: 'news-5',
-    title: 'The Science of Seagrass Carbon Sinks',
-    content: `Interview with Dr. Aris Del Rosario, Lead Researcher`,
-    category: 'INTERVIEWS',
-    date: '30 August 2024',
-    images: [
-      {
-        src: '/updates-images/sample2.webp',
-        caption: 'Dr. Aris Del Rosario discussing seagrass carbon sinks.',
-      },
-    ],
-    isVideo: true,
-    duration: '08:30',
-  },
-  {
-    id: 'news-6',
+    id: 'news-4',
     title: 'Townhall Discussions Pave Way for Sustainable Fishing...',
     content: `A recap of the recent dialogs between local government units and fisherfolk...`,
     category: 'COMMUNITY STORIES',

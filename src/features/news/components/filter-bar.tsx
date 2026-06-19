@@ -28,7 +28,6 @@ export default function NewsFilterBar() {
           >
             <option value="all">All Categories</option>
             <option value="updates">Latest Updates</option>
-            <option value="interviews">Featured Interview</option>
             <option value="stories">Community Stories</option>
           </select>
 

@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Play } from 'lucide-react'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils'
@@ -15,7 +14,7 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
   const images = article.images?.length
     ? article.images
     : [{ src: '/placeholder-image.webp', caption: '' }]
-  const hasMultipleImages = !article.isVideo && images.length > 1
+  const hasMultipleImages = images.length > 1
 
   useEffect(() => {
     if (!isHovered || !hasMultipleImages) return
@@ -62,25 +61,6 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
             </div>
           ))}
         </div>
-
-        {article.isVideo && (
-          <>
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="bg-white/90 rounded-xl p-3.5 shadow-lg transition-transform duration-300 group-hover:scale-110">
-                <Play
-                  className="text-black fill-black"
-                  size={20}
-                  aria-hidden="true"
-                />
-              </div>
-            </div>
-            {article.duration && (
-              <div className="absolute bottom-3 right-3 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded-md tracking-wide">
-                {article.duration}
-              </div>
-            )}
-          </>
-        )}
       </Link>
 
       <div className="flex flex-1 flex-col gap-3 p-6">
