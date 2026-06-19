@@ -1,7 +1,11 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
-import { mockNewsArticles } from '@/features/news/data/mock'
+import {
+  getSingleMarkdownData,
+  getCollectionMarkdownData,
+} from '@/lib/markdown'
+import { NewsArticle } from '@/lib/interfaces/NewsArticle'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
@@ -9,20 +13,28 @@ import Button from '@/components/ui/button'
 import ArticleImages from '@/features/news/components/article-images'
 
 export function generateStaticParams() {
-  return mockNewsArticles.map((article) => ({
-    id: article.id,
+  const articles = getCollectionMarkdownData<NewsArticle>('news')
+  return articles.map((article) => ({
+    slug: article.slug,
   }))
 }
 
 export default async function NewsArticlePage({
   params,
 }: {
-  params: Promise<{ id: string }>
+  params: Promise<{ slug: string }>
 }) {
-  const resolvedParams = await params
-  const article = mockNewsArticles.find((a) => a.id === resolvedParams.id)
+  const { slug } = await params
 
-  if (!article) notFound()
+  let article: NewsArticle & { slug: string }
+  try {
+    article = {
+      slug,
+      ...getSingleMarkdownData<NewsArticle>('news', `${slug}.md`),
+    }
+  } catch {
+    notFound()
+  }
 
   return (
     <main className="flex-1 flex flex-col bg-background pt-24 md:pt-32">
@@ -46,7 +58,7 @@ export default async function NewsArticlePage({
 
           <div className="flex items-center gap-3 text-foreground/60 mt-2">
             <span className="font-bold text-btn-primary tracking-wider text-xs uppercase">
-              {article.category}
+              {article.news_tags[0]}
             </span>
             <span aria-hidden="true">•</span>
             <Text size="sm" className="font-medium">
@@ -55,27 +67,14 @@ export default async function NewsArticlePage({
           </div>
         </header>
 
-        {article.isVideo && article.videoUrl ? (
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-foreground/5 mb-10 shadow-sm border border-foreground/10">
-            <iframe
-              src={article.videoUrl}
-              title={article.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full border-0"
-            />
-          </div>
-        ) : (
-          <ArticleImages images={article.images || []} />
-        )}
+        <ArticleImages images={article.featured_images ?? []} />
 
         <article className="flex flex-col gap-6">
-          {/* With Markdown/CMS, map over paragraphs or use a rich text renderer here. */}
           <Text
             size="lg"
             className="leading-relaxed text-foreground/90 whitespace-pre-line"
           >
-            {article.content}
+            {article.body}
           </Text>
         </article>
       </Section>
