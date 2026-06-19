@@ -11,9 +11,6 @@ export function formatCount(count: number) {
 }
 
 // Source - https://stackoverflow.com/q/78099865
-// Posted by Haroon Ahmed, modified by community. See post 'Timeline' for change history
-// Retrieved 2026-06-16, License - CC BY-SA 4.0
-
 export function downloadPDF(url: string, filename?: string) {
   const link = document.createElement('a')
   link.href = url
@@ -23,6 +20,7 @@ export function downloadPDF(url: string, filename?: string) {
   document.body.removeChild(link)
 }
 
+// Consolidated next and prev pagination handlers
 export function handlePagination(
   direction: 'next' | 'prev',
   setPageNumber: (updater: (p: number) => number) => void,
