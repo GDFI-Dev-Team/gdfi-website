@@ -6,9 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArticleImage } from '../data/mock'
-
-export default function ArticleImages({ images }: { images: ArticleImage[] }) {
+export default function ArticleImages({ images }: { images: string[] }) {
   const [index, setIndex] = useState(0)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
@@ -53,11 +51,11 @@ export default function ArticleImages({ images }: { images: ArticleImage[] }) {
           className="flex h-full w-full transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
-          {images.map((img, i) => (
+          {images.map((src, i) => (
             <div key={i} className="relative h-full w-full shrink-0">
               <Image
-                src={img.src}
-                alt={img.caption || `Article image ${i + 1}`}
+                src={src}
+                alt={`Article image ${i + 1}`}
                 fill
                 sizes="(min-width: 1024px) 896px, 100vw"
                 className="object-cover select-none"
@@ -108,19 +106,16 @@ export default function ArticleImages({ images }: { images: ArticleImage[] }) {
         )}
       </div>
 
-      <div className="mt-3 flex justify-between items-start gap-4 px-2">
-        <Text size="sm" className="italic text-foreground/60">
-          {images[index].caption}
-        </Text>
-        {isMultiple && (
+      {isMultiple && (
+        <div className="mt-3 flex justify-end px-2">
           <Text
             size="sm"
             className="text-foreground/40 whitespace-nowrap font-medium"
           >
             {index + 1} / {images.length}
           </Text>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   )
 }
