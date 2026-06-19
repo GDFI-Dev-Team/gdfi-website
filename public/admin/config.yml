@@ -7,6 +7,9 @@ backend:
 media_folder: /public/media
 public_folder: /media
 
+slug:
+  encoding: ascii # to sanitize emojis in title
+
 media_libraries:
   # handoff later
   cloudflare_r2: 
@@ -54,4 +57,54 @@ collections:
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/annual-reports
           default: false
-      
+  - name: news
+    label: News
+    label_singular: News Article
+    folder: /content/news
+    fields:
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        multiple: true
+        hint: This image will be used as the featured image banner at the top of the post.
+        required: false
+        media_libraries:
+          cloudflare_r2: 
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f 
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/web-assets
+          default: false
+      - { label: Title, name: title, widget: string }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Date, name: date, widget: datetime, type: date }
+      - label: Status # static
+        name: status
+        widget: select
+        required: true
+        options: 
+          - Draft
+          - Published
+          - Archived
+      - label: Tags
+        name: news_tags
+        widget: relation
+        collection: news_tags
+        required: true
+        multiple: true
+        display_fields: [title]
+        search_fields: [title, description]
+      - { label: Excerpt, name: excerpt, widget: string, required: false }
+      - { label: Body, name: body, widget: richtext } 
+  - name: news_tags # separate for future additions
+    label: Tags - News
+    label_singular: News Tag
+    folder: /content/news_tags
+    fields:
+      - name: title
+        label: Title
+      - name: description
+        label: Description
+        widget: text
+        required: false
