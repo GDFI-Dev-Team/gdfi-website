@@ -7,6 +7,7 @@ type Props = {
   currentPage: number
   totalPages: number
   baseUrl: string
+  searchParamsSuffix?: string
 }
 
 function getPageNumbers(
@@ -33,10 +34,11 @@ export default function Pagination({
   currentPage,
   totalPages,
   baseUrl,
+  searchParamsSuffix = '',
 }: Props) {
   const pages = getPageNumbers(currentPage, totalPages)
-  const prevHref = `${baseUrl}/${currentPage - 1}`
-  const nextHref = `${baseUrl}/${currentPage + 1}`
+  const prevHref = `${baseUrl}/${currentPage - 1}${searchParamsSuffix}`
+  const nextHref = `${baseUrl}/${currentPage + 1}${searchParamsSuffix}`
 
   return (
     <nav
@@ -94,7 +96,7 @@ export default function Pagination({
           ) : (
             <Link
               key={page}
-              href={`${baseUrl}/${page}`}
+              href={`${baseUrl}/${page}${searchParamsSuffix}`}
               className={cn(buttonBase, buttonVariants.ghost, 'w-10 h-10 p-0')}
               aria-label={`Page ${page}`}
             >
