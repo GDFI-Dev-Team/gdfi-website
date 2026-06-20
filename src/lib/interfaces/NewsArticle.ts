@@ -1,11 +1,7 @@
-export interface NewsArticle {
-  slug: string
-  featured_images?: string[]
-  title: string
+import { BaseContent } from '@/lib/interfaces/Content'
+
+export interface NewsArticle extends BaseContent {
   author?: string
-  date: string
   status: string
   news_tags: string[]
-  excerpt?: string
-  body: string
 }
