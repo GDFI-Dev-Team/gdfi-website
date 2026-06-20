@@ -99,7 +99,7 @@ export default async function UpdatesPage({ searchParams }: PageProps) {
             currentPage={currentPage}
             totalPages={totalPages}
             // Passing the base URL ensuring query settings stay appended across clicks
-            baseUrl={`/news/page`}
+            baseUrl={`/updates/announcements/page`}
             searchParamsSuffix={querySuffix}
           />
         )}

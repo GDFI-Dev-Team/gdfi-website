@@ -21,7 +21,7 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
     <article className="group flex flex-col overflow-hidden rounded-xl border border-foreground/10 bg-background shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
       {/* Article Image Container */}
       <Link
-        href={`/news/${article.slug}`}
+        href={`/updates/announcements/${article.slug}`}
         className="relative aspect-3/2 w-full overflow-hidden block bg-foreground/5"
       >
         {/* Carousel Window */}
@@ -78,7 +78,7 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
 
         <div className="flex flex-col gap-2 mt-1">
           <Link
-            href={`/news/${article.slug}`}
+            href={`/updates/announcements/${article.slug}`}
             className="hover:underline decoration-foreground/30 underline-offset-4"
           >
             <Heading level={4} className="line-clamp-2 leading-snug">

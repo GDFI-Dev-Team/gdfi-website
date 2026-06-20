@@ -55,15 +55,15 @@ export default function NewsFilterBar() {
   }, [])
 
   return (
-    <div className="bg-foreground/3 border-b border-foreground/10 relative">
+    <div className="flex justify-around px-(--gutter) bg-foreground/3 border-b border-foreground/10">
       {/* Visual pending line indicating network/data updating state across the edge */}
       {isPending && (
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-cyan-500 animate-pulse" />
+        <div className="absolute top-0 left-0 right-0 h-2px bg-cyan-500 animate-pulse" />
       )}
 
-      <div className="mx-auto max-w-7xl px-(--gutter) py-4 flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center">
+      <div className="mx-auto max-w-7xl w-full py-4 flex flex-nowrap gap-4 items-center overflow-x-auto">
         {/* Text Search Input */}
-        <div className="relative w-full lg:max-w-sm shrink-0">
+        <div className="relative w-full max-w-sm shrink-0">
           <Search
             className="absolute left-3 top-1/2 -translate-y-1/2 text-foreground/40"
             size={18}
@@ -80,13 +80,13 @@ export default function NewsFilterBar() {
         </div>
 
         {/* Filter Select Controls */}
-        <div className="flex flex-wrap lg:flex-nowrap items-center gap-3 w-full lg:w-auto">
+        <div className="flex flex-nowrap items-center gap-3 shrink-0">
           {/* Category Selector - mocked pending the tags refactor */}
           <select
             aria-label="Filter by category"
             disabled
             defaultValue="all"
-            className={`w-full sm:w-auto cursor-not-allowed opacity-50 ${inputClasses}`}
+            className={`cursor-not-allowed opacity-50 ${inputClasses}`}
           >
             <option value="all">All Categories</option>
             <option value="updates">Latest Updates</option>
@@ -99,20 +99,20 @@ export default function NewsFilterBar() {
             aria-label="Sort order"
             value={searchParams.get('sort') || 'newest'}
             onChange={(e) => updateSearchParam('sort', e.target.value)}
-            className={`w-full sm:w-auto cursor-pointer ${inputClasses}`}
+            className={`cursor-pointer ${inputClasses}`}
           >
             <option value="newest">Newest</option>
             <option value="oldest">Oldest</option>
           </select>
 
           {/* Range Inputs for Date matching */}
-          <div className="flex items-center gap-2 w-full sm:w-auto shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
             <input
               type="date"
               aria-label="Start date"
               value={searchParams.get('start_date') || ''}
               onChange={(e) => updateSearchParam('start_date', e.target.value)}
-              className={`w-full sm:w-auto ${inputClasses}`}
+              className={inputClasses}
             />
             <span className="text-foreground/50 text-sm font-medium">to</span>
             <input
@@ -120,7 +120,7 @@ export default function NewsFilterBar() {
               aria-label="End date"
               value={searchParams.get('end_date') || ''}
               onChange={(e) => updateSearchParam('end_date', e.target.value)}
-              className={`w-full sm:w-auto ${inputClasses}`}
+              className={inputClasses}
             />
           </div>
         </div>

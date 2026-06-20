@@ -124,7 +124,7 @@ const OurLatestUpdates = () => {
         </div>
       </div>
 
-      <Link href="/news" className="self-center">
+      <Link href="/updates/announcements" className="self-center">
         <Button variant="secondary" className="px-6 py-2.5">
           See more
         </Button>
