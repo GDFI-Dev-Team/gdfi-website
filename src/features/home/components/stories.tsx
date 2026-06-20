@@ -18,9 +18,12 @@ const Stories = () => {
   return (
     <Section
       aria-labelledby="stories-heading"
-      sectionClassName="bg-foreground/3"
+      sectionClassName="relative overflow-hidden bg-foreground/3"
       divClassName="flex flex-col gap-10"
     >
+      {/* Curve bridging the white section above down into this tinted one. The
+          fill matches the section above (bg-background). */}
+
       <div className="flex flex-col items-center gap-3 text-center">
         <Text
           size="sm"
