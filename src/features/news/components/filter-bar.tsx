@@ -81,12 +81,12 @@ export default function NewsFilterBar() {
 
         {/* Filter Select Controls */}
         <div className="flex flex-wrap lg:flex-nowrap items-center gap-3 w-full lg:w-auto">
-          {/* Category Selector */}
+          {/* Category Selector - mocked pending the tags refactor */}
           <select
             aria-label="Filter by category"
-            value={searchParams.get('category') || 'all'}
-            onChange={(e) => updateSearchParam('category', e.target.value)}
-            className={`w-full sm:w-auto cursor-pointer ${inputClasses}`}
+            disabled
+            defaultValue="all"
+            className={`w-full sm:w-auto cursor-not-allowed opacity-50 ${inputClasses}`}
           >
             <option value="all">All Categories</option>
             <option value="updates">Latest Updates</option>

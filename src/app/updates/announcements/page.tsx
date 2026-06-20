@@ -22,11 +22,11 @@ interface PageProps {
 }
 
 // Convert function definition to async for safe edge processing
-export default async function NewsPage({ searchParams }: PageProps) {
+export default async function UpdatesPage({ searchParams }: PageProps) {
   // Concurrently resolve search params and read local files from R2/content disk
   const [resolvedParams, allArticles] = await Promise.all([
     searchParams,
-    getCollectionMarkdownData<NewsArticle>('news'),
+    getCollectionMarkdownData<NewsArticle>('updates/announcements'),
   ])
 
   // Extract and sanitize current routing calculations
@@ -34,29 +34,20 @@ export default async function NewsPage({ searchParams }: PageProps) {
   const currentPage = rawPage ? Math.max(1, parseInt(String(rawPage), 10)) : 1
 
   // Process data using our generic filter
-  const filteredArticles = filterAndSortCollection<NewsArticle>(
-    allArticles,
-    {
-      q: typeof resolvedParams.q === 'string' ? resolvedParams.q : undefined,
-      category:
-        typeof resolvedParams.category === 'string'
-          ? resolvedParams.category
-          : undefined,
-      sort:
-        typeof resolvedParams.sort === 'string'
-          ? resolvedParams.sort
-          : undefined,
-      start_date:
-        typeof resolvedParams.start_date === 'string'
-          ? resolvedParams.start_date
-          : undefined,
-      end_date:
-        typeof resolvedParams.end_date === 'string'
-          ? resolvedParams.end_date
-          : undefined,
-    },
-    (article) => article.news_tags, // Extract the specific news tags array
-  )
+  const filteredArticles = filterAndSortCollection<NewsArticle>(allArticles, {
+    q: typeof resolvedParams.q === 'string' ? resolvedParams.q : undefined,
+    // category filtering disabled until announcements carry a real tag field again
+    sort:
+      typeof resolvedParams.sort === 'string' ? resolvedParams.sort : undefined,
+    start_date:
+      typeof resolvedParams.start_date === 'string'
+        ? resolvedParams.start_date
+        : undefined,
+    end_date:
+      typeof resolvedParams.end_date === 'string'
+        ? resolvedParams.end_date
+        : undefined,
+  })
 
   // Calculate pagination slices against the post-filtered dataset
   const { items, totalPages } = paginateItems(
@@ -79,7 +70,7 @@ export default async function NewsPage({ searchParams }: PageProps) {
   const querySuffix = queryBackup.toString() ? `?${queryBackup.toString()}` : ''
 
   return (
-    <main className="flex-1 flex flex-col bg-foreground/[0.02]">
+    <main className="flex-1 flex flex-col bg-foreground/0.02">
       <Banner
         title="News"
         description="Stay up to date with the latest stories, interviews, and updates from GDFI."

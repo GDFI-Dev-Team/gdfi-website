@@ -16,14 +16,13 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
   const hasMultipleImages = featured_images.length > 1
 
   // Prefer excerpt for preview snippet, fall back safely to body
-  const previewText = article.excerpt || article.body
-
+  const previewText = article.body
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-foreground/10 bg-background shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
       {/* Article Image Container */}
       <Link
         href={`/news/${article.slug}`}
-        className="relative aspect-[3/2] w-full overflow-hidden block bg-foreground/5"
+        className="relative aspect-3/2 w-full overflow-hidden block bg-foreground/5"
       >
         {/* Carousel Window */}
         <div
@@ -59,25 +58,15 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
       <div className="flex flex-1 flex-col gap-3 p-6">
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap gap-1.5">
-            {article.news_tags.map((tag) => {
-              const cleanedTag = tag.toLowerCase().trim()
-              // Centralized configuration lookups replacing inline string arrays
-              const variantClass =
-                TAG_THEME_VARIANTS[cleanedTag] ||
-                'bg-foreground/10 text-foreground/70'
-
-              return (
-                <span
-                  key={tag}
-                  className={cn(
-                    'px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider whitespace-nowrap uppercase',
-                    variantClass,
-                  )}
-                >
-                  {tag}
-                </span>
-              )
-            })}
+            {/* Placeholder tag until announcements carry a real tag field again */}
+            <span
+              className={cn(
+                'px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider',
+                TAG_THEME_VARIANTS['updates'],
+              )}
+            >
+              Updates
+            </span>
           </div>
           <Text
             size="xs"

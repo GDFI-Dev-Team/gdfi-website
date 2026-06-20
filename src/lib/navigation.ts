@@ -45,7 +45,14 @@ export const navLinks: NavLink[] = [
       },
     ],
   },
-  { label: 'News', href: '/news' },
+  {
+    label: 'Updates',
+    href: '/updates',
+    children: [
+      { label: 'Announcements', href: '/updates/announcements' },
+      { label: 'Community Stories', href: '/updates/community-stories' },
+    ],
+  },
   {
     label: 'Resources',
     href: '/resources',

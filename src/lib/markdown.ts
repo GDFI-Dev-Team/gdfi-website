@@ -20,11 +20,10 @@ export function getSingleMarkdownData<T>(
   }
 
   const fileContent = fs.readFileSync(filePath, 'utf8')
-  const { data } = matter(fileContent)
+  const { data, content } = matter(fileContent)
 
-  return data as T
+  return { ...data, body: content } as T
 }
-
 /**
  * Reads, parses, and gathers an entire directory of Markdown files (e.g., Blog or News feeds).
  */
@@ -43,11 +42,12 @@ export function getCollectionMarkdownData<T>(
       const slug = fileName.replace(/\.md$/, '')
       const fullPath = path.join(directoryPath, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data } = matter(fileContents)
+      const { data, content } = matter(fileContents)
 
       return {
         slug,
         ...(data as T),
+        body: content,
       }
     })
 }

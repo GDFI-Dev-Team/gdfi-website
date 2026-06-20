@@ -14,7 +14,9 @@ import ArticleImages from '@/features/news/components/article-images'
 import { formatEdgeDate } from '@/lib/date'
 
 export function generateStaticParams() {
-  const articles = getCollectionMarkdownData<NewsArticle>('news')
+  const articles = getCollectionMarkdownData<NewsArticle>(
+    'updates/announcements',
+  )
   return articles.map((article) => ({
     slug: article.slug,
   }))
@@ -28,7 +30,10 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
   let article: NewsArticle
   try {
-    article = getSingleMarkdownData<NewsArticle>('news', `${slug}.md`)
+    article = getSingleMarkdownData<NewsArticle>(
+      'updates/announcements',
+      `${slug}.md`,
+    )
   } catch {
     notFound()
   }
@@ -54,12 +59,6 @@ export default async function NewsArticlePage({ params }: PageProps) {
           </Heading>
 
           <div className="flex items-center gap-3 text-foreground/60 mt-2">
-            <span className="font-bold text-btn-primary tracking-wider text-xs uppercase">
-              {article.news_tags && article.news_tags.length > 0
-                ? article.news_tags[0]
-                : null}
-            </span>
-            <span aria-hidden="true">•</span>
             <Text size="sm" className="font-medium">
               {formatEdgeDate(article.date)}
             </Text>

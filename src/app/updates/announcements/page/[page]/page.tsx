@@ -42,29 +42,23 @@ export default async function NewsPageRoute({
   const currentPage = Number(page)
   if (!Number.isInteger(currentPage) || currentPage < 1) notFound()
 
-  const filteredArticles = filterAndSortCollection<NewsArticle>(
-    allArticles,
-    {
-      q: typeof resolvedParams.q === 'string' ? resolvedParams.q : undefined,
-      category:
-        typeof resolvedParams.category === 'string'
-          ? resolvedParams.category
-          : undefined,
-      sort:
-        typeof resolvedParams.sort === 'string'
-          ? resolvedParams.sort
-          : undefined,
-      start_date:
-        typeof resolvedParams.start_date === 'string'
-          ? resolvedParams.start_date
-          : undefined,
-      end_date:
-        typeof resolvedParams.end_date === 'string'
-          ? resolvedParams.end_date
-          : undefined,
-    },
-    (article) => article.news_tags,
-  )
+  const filteredArticles = filterAndSortCollection<NewsArticle>(allArticles, {
+    q: typeof resolvedParams.q === 'string' ? resolvedParams.q : undefined,
+    category:
+      typeof resolvedParams.category === 'string'
+        ? resolvedParams.category
+        : undefined,
+    sort:
+      typeof resolvedParams.sort === 'string' ? resolvedParams.sort : undefined,
+    start_date:
+      typeof resolvedParams.start_date === 'string'
+        ? resolvedParams.start_date
+        : undefined,
+    end_date:
+      typeof resolvedParams.end_date === 'string'
+        ? resolvedParams.end_date
+        : undefined,
+  })
 
   const { items, totalPages } = paginateItems(
     filteredArticles,
@@ -87,7 +81,7 @@ export default async function NewsPageRoute({
   const querySuffix = queryBackup.toString() ? `?${queryBackup.toString()}` : ''
 
   return (
-    <main className="flex-1 flex flex-col bg-foreground/[0.02]">
+    <main className="flex-1 flex flex-col bg-foreground/0.02">
       <Banner
         title="News"
         description="Stay up to date with the latest stories, interviews, and updates from GDFI."
