@@ -5,6 +5,7 @@ import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils'
 import { NewsArticle } from '@/lib/interfaces/NewsArticle'
 import { FALLBACK_IMAGE, TAG_THEME_VARIANTS } from '@/config/content'
+import { formatEdgeDate } from '@/lib/date'
 
 export default function NewsCard({ article }: { article: NewsArticle }) {
   // Fallback image allocation during compilation
@@ -13,11 +14,6 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
     : [FALLBACK_IMAGE]
 
   const hasMultipleImages = featured_images.length > 1
-
-  // Safe Server-Side Date Parsing
-  const dateString = article.date
-    ? new Date(article.date).toISOString().split('T')[0]
-    : 'No Date'
 
   // Prefer excerpt for preview snippet, fall back safely to body
   const previewText = article.excerpt || article.body
@@ -87,7 +83,7 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
             size="xs"
             className="text-foreground/50 font-semibold tracking-wider"
           >
-            {dateString}
+            {formatEdgeDate(article.date)}
           </Text>
         </div>
 
