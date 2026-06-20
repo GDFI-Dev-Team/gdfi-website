@@ -4,10 +4,7 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils'
 import { NewsArticle } from '@/lib/interfaces/NewsArticle'
-
-const CYAN_TAGS = ['updates', 'community-stories']
-const FALLBACK_IMAGE =
-  'https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/web-assetsimg.webp'
+import { FALLBACK_IMAGE, TAG_THEME_VARIANTS } from '@/config/content'
 
 export default function NewsCard({ article }: { article: NewsArticle }) {
   // Fallback image allocation during compilation
@@ -37,12 +34,12 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
           className={cn(
             'flex h-full w-full transition-transform duration-700 ease-in-out',
             // If multiple images exist, slide to the second image purely on CSS group hover
-            hasMultipleImages && 'group-hover:-translate-x-100',
+            hasMultipleImages && 'group-hover:-translate-x-full',
           )}
         >
           {featured_images.map((img, idx) => (
             <div
-              key={idx}
+              key={`${article.slug}-img-${idx}`}
               className={cn(
                 'relative h-full w-full shrink-0',
                 // Limits visible DOM overflow until hovered, keeping DOM trees fast
@@ -51,7 +48,7 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
             >
               <Image
                 src={img}
-                alt={article.title}
+                alt={`${article.title} - Gallery Image ${idx + 1}`}
                 fill
                 sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -67,15 +64,18 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap gap-1.5">
             {article.news_tags.map((tag) => {
-              const isCyanBadge = CYAN_TAGS.includes(tag)
+              const cleanedTag = tag.toLowerCase().trim()
+              // Centralized configuration lookups replacing inline string arrays
+              const variantClass =
+                TAG_THEME_VARIANTS[cleanedTag] ||
+                'bg-foreground/10 text-foreground/70'
+
               return (
                 <span
                   key={tag}
                   className={cn(
-                    'px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider whitespace-nowrap',
-                    isCyanBadge
-                      ? 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300'
-                      : 'bg-foreground/10 text-foreground/70',
+                    'px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider whitespace-nowrap uppercase',
+                    variantClass,
                   )}
                 >
                   {tag}
