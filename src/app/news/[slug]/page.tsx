@@ -11,6 +11,7 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import ArticleImages from '@/features/news/components/article-images'
+import { formatEdgeDate } from '@/lib/date'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<NewsArticle>('news')
@@ -18,20 +19,16 @@ export function generateStaticParams() {
     slug: article.slug,
   }))
 }
-
-export default async function NewsArticlePage({
-  params,
-}: {
+interface PageProps {
   params: Promise<{ slug: string }>
-}) {
+}
+
+export default async function NewsArticlePage({ params }: PageProps) {
   const { slug } = await params
 
-  let article: NewsArticle & { slug: string }
+  let article: NewsArticle
   try {
-    article = {
-      slug,
-      ...getSingleMarkdownData<NewsArticle>('news', `${slug}.md`),
-    }
+    article = getSingleMarkdownData<NewsArticle>('news', `${slug}.md`)
   } catch {
     notFound()
   }
@@ -58,11 +55,13 @@ export default async function NewsArticlePage({
 
           <div className="flex items-center gap-3 text-foreground/60 mt-2">
             <span className="font-bold text-btn-primary tracking-wider text-xs uppercase">
-              {article.news_tags[0]}
+              {article.news_tags && article.news_tags.length > 0
+                ? article.news_tags[0]
+                : null}
             </span>
             <span aria-hidden="true">•</span>
             <Text size="sm" className="font-medium">
-              {article.date}
+              {formatEdgeDate(article.date)}
             </Text>
           </div>
         </header>
