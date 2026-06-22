@@ -1,5 +1,5 @@
 import Section from '@/components/ui/section'
-import NewsGrid from '@/components/ui/grid'
+import Grid from '@/components/ui/grid'
 import Pagination from '@/components/ui/pagination'
 import { Metadata } from 'next'
 import { getAnnouncementsPage } from '@/lib/announcements'
@@ -24,7 +24,7 @@ export default async function AnnouncementsPage({ searchParams }: PageProps) {
   return (
     <Section sectionClassName="py-12 md:py-16">
       {items.length > 0 ? (
-        <NewsGrid articles={items} />
+        <Grid articles={items} />
       ) : (
         <div className="text-center py-12 border border-dashed border-foreground/10 rounded-xl bg-background/50">
           <p className="text-foreground/50 text-sm font-medium">

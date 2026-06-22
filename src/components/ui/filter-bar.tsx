@@ -4,7 +4,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useTransition, useRef, useEffect } from 'react'
 import { Search } from 'lucide-react'
 
-export default function NewsFilterBar() {
+export default function FilterBar() {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()

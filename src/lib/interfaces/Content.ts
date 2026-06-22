@@ -1,6 +1,7 @@
 export interface BaseContent {
   slug: string
   title: string
+  author?: string
   date: string
   body: string
   excerpt?: string

@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import Banner from '@/components/ui/banner'
-import NewsFilterBar from '@/components/ui/filter-bar'
+import FilterBar from '@/components/ui/filter-bar'
 
 export default function AnnouncementsLayout({
   children,
@@ -17,7 +17,7 @@ export default function AnnouncementsLayout({
       <Suspense
         fallback={<div className="h-16 bg-foreground/3 animate-pulse" />}
       >
-        <NewsFilterBar />
+        <FilterBar />
       </Suspense>
       {children}
     </main>

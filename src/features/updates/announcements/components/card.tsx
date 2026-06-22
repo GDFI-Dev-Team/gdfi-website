@@ -3,11 +3,11 @@ import Link from 'next/link'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils'
-import { NewsArticle } from '@/lib/interfaces/news-article'
+import { BaseContent } from '@/lib/interfaces/content'
 import { FALLBACK_IMAGE, TAG_THEME_VARIANTS } from '@/config/content'
 import { formatEdgeDate } from '@/lib/date'
 
-export default function NewsCard({ article }: { article: NewsArticle }) {
+export default function Card({ article }: { article: BaseContent }) {
   // Fallback image allocation during compilation
   const featured_images = article.featured_images?.length
     ? article.featured_images
@@ -32,7 +32,7 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
             hasMultipleImages && 'group-hover:-translate-x-full',
           )}
         >
-          {featured_images.map((img, idx) => (
+          {featured_images.map((img: string, idx: number) => (
             <div
               key={`${article.slug}-img-${idx}`}
               className={cn(
