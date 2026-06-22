@@ -1,7 +1,7 @@
-import Link from 'next/link'
+import { cn } from '@/lib/utils'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 type Props = {
   currentPage: number
@@ -47,11 +47,7 @@ export default function Pagination({
     >
       {currentPage <= 1 ? (
         <span
-          className={cn(
-            buttonBase,
-            buttonVariants.ghost,
-            'gap-1 px-3 text-foreground/50 opacity-40 pointer-events-none',
-          )}
+          className="inline-flex items-center gap-1 mx-3 text-foreground/50 opacity-40 pointer-events-none"
           aria-disabled="true"
         >
           <ChevronLeft size={16} aria-hidden="true" />
@@ -60,11 +56,7 @@ export default function Pagination({
       ) : (
         <Link
           href={prevHref}
-          className={cn(
-            buttonBase,
-            buttonVariants.ghost,
-            'gap-1 px-3 text-foreground/50 hover:text-foreground',
-          )}
+          className="inline-flex items-center gap-1 px-3 text-foreground/50 hover:text-foreground"
           aria-label="Previous page"
         >
           <ChevronLeft size={16} aria-hidden="true" />
@@ -108,11 +100,7 @@ export default function Pagination({
 
       {currentPage >= totalPages ? (
         <span
-          className={cn(
-            buttonBase,
-            buttonVariants.ghost,
-            'gap-1 px-3 text-foreground/70 opacity-40 pointer-events-none',
-          )}
+          className="inline-flex items-center gap-1 mx-3 text-foreground/50 opacity-40 pointer-events-none"
           aria-disabled="true"
         >
           <span className="hidden sm:inline">Next</span>
@@ -121,11 +109,7 @@ export default function Pagination({
       ) : (
         <Link
           href={nextHref}
-          className={cn(
-            buttonBase,
-            buttonVariants.ghost,
-            'gap-1 px-3 text-foreground/70 hover:text-foreground',
-          )}
+          className="inline-flex items-center gap-1 px-3 text-foreground/50 hover:text-foreground"
           aria-label="Next page"
         >
           <span className="hidden sm:inline">Next</span>
