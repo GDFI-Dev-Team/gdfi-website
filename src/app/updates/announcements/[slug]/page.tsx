@@ -6,7 +6,7 @@ import {
   getCollectionMarkdownData,
 } from '@/lib/markdown'
 import { formatEdgeDate } from '@/lib/date'
-import { NewsArticle } from '@/lib/interfaces/news-article'
+import { Announcements } from '@/lib/interfaces/news-article'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
@@ -14,7 +14,7 @@ import Button from '@/components/ui/button'
 import ArticleImages from '@/features/updates/announcements/components/article-images'
 
 export function generateStaticParams() {
-  const articles = getCollectionMarkdownData<NewsArticle>(
+  const articles = getCollectionMarkdownData<Announcements>(
     'updates/announcements',
   )
   return articles.map((article) => ({
@@ -28,9 +28,9 @@ interface PageProps {
 export default async function NewsArticlePage({ params }: PageProps) {
   const { slug } = await params
 
-  let article: NewsArticle
+  let article: Announcements
   try {
-    article = getSingleMarkdownData<NewsArticle>(
+    article = getSingleMarkdownData<Announcements>(
       'updates/announcements',
       `${slug}.md`,
     )
