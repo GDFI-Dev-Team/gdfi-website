@@ -7,6 +7,25 @@ const nextConfig: NextConfig = {
       new URL('https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/**'),
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/about-us',
+        destination: '/about-us/mission-vision',
+        permanent: false,
+      },
+      {
+        source: '/updates',
+        destination: '/updates/announcements',
+        permanent: false,
+      },
+      {
+        source: '/resources',
+        destination: '/resources/annual-reports',
+        permanent: false,
+      },
+    ]
+  },
 }
 
 export default nextConfig
