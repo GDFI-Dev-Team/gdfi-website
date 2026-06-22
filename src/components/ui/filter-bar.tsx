@@ -19,18 +19,20 @@ export default function NewsFilterBar() {
   function updateSearchParam(key: string, value: string) {
     const params = new URLSearchParams(searchParams.toString())
 
-    // Reset page to 1 when a filter changes to avoid empty state
-    params.delete('page')
-
     if (value) {
       params.set(key, value)
     } else {
       params.delete(key)
     }
 
+    // Filters apply to the whole collection, not the current page, so any
+    // filter change should land on page 1 of the new result set — strip a
+    // trailing /page/<n> segment rather than keeping the current page number.
+    const basePath = pathname.replace(/\/page\/\d+$/, '')
+
     // wrap in transition to keep the UI fluid and prevent micro-freezes
     startTransition(() => {
-      router.push(`${pathname}?${params.toString()}`, { scroll: false })
+      router.push(`${basePath}?${params.toString()}`, { scroll: false })
     })
   }
 
@@ -97,7 +99,7 @@ export default function NewsFilterBar() {
           {/* Sort Order Selector */}
           <select
             aria-label="Sort order"
-            value={searchParams.get('sort') || 'newest'}
+            defaultValue={searchParams.get('sort') || 'newest'}
             onChange={(e) => updateSearchParam('sort', e.target.value)}
             className={`appearance-none cursor-pointer ${inputClasses}`}
           >
@@ -110,7 +112,7 @@ export default function NewsFilterBar() {
             <input
               type="date"
               aria-label="Start date"
-              value={searchParams.get('start_date') || ''}
+              defaultValue={searchParams.get('start_date') || ''}
               onChange={(e) => updateSearchParam('start_date', e.target.value)}
               className={inputClasses}
             />
@@ -118,7 +120,7 @@ export default function NewsFilterBar() {
             <input
               type="date"
               aria-label="End date"
-              value={searchParams.get('end_date') || ''}
+              defaultValue={searchParams.get('end_date') || ''}
               onChange={(e) => updateSearchParam('end_date', e.target.value)}
               className={inputClasses}
             />
