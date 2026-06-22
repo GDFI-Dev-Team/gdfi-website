@@ -15,7 +15,7 @@ export default function SupportUsPage() {
   return (
     <main className="flex-1 flex flex-col bg-foreground/[0.02]">
       <Banner
-        title="Support Our Mission"
+        title="Support Us"
         description="Your contribution empowers coastal communities and helps preserve the rich marine biodiversity of Eastern Samar."
         imgUrl="/feat-hero/hero-3.webp"
       />

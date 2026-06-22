@@ -1,6 +1,11 @@
 import { Landmark, Package, Info, Mail } from 'lucide-react'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import { cn } from '@/lib/utils'
+import {
+  CASH_DONATION_DETAILS,
+  IN_KIND_DONATION_DETAILS,
+} from '../data/constants'
 
 export default function SupportOptions() {
   return (
@@ -8,19 +13,17 @@ export default function SupportOptions() {
       <div className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-background p-8 md:p-10 shadow-sm">
         <div className="flex items-center gap-4">
           <div className="bg-btn-primary/10 p-4 rounded-full shrink-0">
-            {' '}
             <Landmark
               size={32}
               className="text-btn-primary"
               aria-hidden="true"
             />
           </div>
-          <Heading level={3}>Cash Donations</Heading>
+          <Heading level={3}>{CASH_DONATION_DETAILS.title}</Heading>
         </div>
 
         <Text className="text-foreground/70">
-          Your financial support directly funds our coastal resource management,
-          livelihood programs, and environmental education initiatives.
+          {CASH_DONATION_DETAILS.description}
         </Text>
 
         <div className="bg-foreground/3 rounded-2xl p-6 border border-foreground/5">
@@ -28,30 +31,23 @@ export default function SupportOptions() {
             Bank Transfer Details
           </Heading>
           <dl className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-y-3 gap-x-4 text-sm">
-            <dt className="text-foreground/60 font-medium">Bank Name</dt>
-            <dd className="font-semibold text-foreground">
-              Banco de Oro (BDO)
-            </dd>
-
-            <dt className="text-foreground/60 font-medium">Bank Address</dt>
-            <dd className="text-foreground">
-              P. Burgos St. cor. Real St., Justice Romualdez St., Tacloban City
-            </dd>
-
-            <dt className="text-foreground/60 font-medium">Account Name</dt>
-            <dd className="font-semibold text-foreground">
-              Guiuan Development Foundation, Inc.
-            </dd>
-
-            <dt className="text-foreground/60 font-medium">Account Number</dt>
-            <dd className="font-mono font-semibold text-foreground tracking-wide">
-              002920154041
-            </dd>
-
-            <dt className="text-foreground/60 font-medium">SWIFT Code</dt>
-            <dd className="font-mono font-semibold text-foreground tracking-wide">
-              BNORPHMM
-            </dd>
+            {CASH_DONATION_DETAILS.bankDetails.map((detail, index) => (
+              <div key={index} className="contents">
+                <dt className="text-foreground/60 font-medium">
+                  {detail.label}
+                </dt>
+                <dd
+                  className={cn(
+                    'text-foreground',
+                    detail.isMono
+                      ? 'font-mono font-semibold tracking-wide'
+                      : 'font-semibold',
+                  )}
+                >
+                  {detail.value}
+                </dd>
+              </div>
+            ))}
           </dl>
         </div>
 
@@ -66,22 +62,20 @@ export default function SupportOptions() {
               size="sm"
               className="font-semibold text-cyan-900 dark:text-cyan-100"
             >
-              Tax-Deductible Donations
+              {CASH_DONATION_DETAILS.taxNote.title}
             </Text>
             <Text
               size="sm"
               className="text-cyan-800 dark:text-cyan-300 leading-relaxed"
             >
-              Tax-deductible cash donations for GDFI may also be channeled
-              through Heries Funds, Myriad USA. For details, please contact
-              Brenda Doriano.
+              {CASH_DONATION_DETAILS.taxNote.description}
             </Text>
             <a
-              href="mailto:bmdoriano@yahoo.org"
+              href={`mailto:${CASH_DONATION_DETAILS.taxNote.email}`}
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-900 dark:hover:text-cyan-200 transition-colors mt-1"
             >
               <Mail size={14} aria-hidden="true" />
-              bmdoriano@yahoo.org
+              {CASH_DONATION_DETAILS.taxNote.email}
             </a>
           </div>
         </div>
@@ -96,12 +90,11 @@ export default function SupportOptions() {
               aria-hidden="true"
             />
           </div>
-          <Heading level={3}>In-Kind Donations</Heading>
+          <Heading level={3}>{IN_KIND_DONATION_DETAILS.title}</Heading>
         </div>
 
         <Text className="text-foreground/70">
-          We welcome equipment, supplies, and materials that can aid our field
-          researchers, community organizers, and local fisherfolk.
+          {IN_KIND_DONATION_DETAILS.description}
         </Text>
 
         <div className="bg-foreground/3 rounded-2xl p-6 border border-foreground/5">
@@ -109,13 +102,14 @@ export default function SupportOptions() {
             Shipping Address
           </Heading>
           <address className="not-italic flex flex-col gap-1 text-foreground/80 leading-relaxed">
-            <span className="font-semibold text-foreground">
-              Guiuan Development Foundation, Inc.
-            </span>
-            <span>Guimbaolibot Avenue, Brgy. 10</span>
-            <span>Guiuan, Eastern Samar</span>
-            <span>Philippines</span>
-            <span>Zip Code: 6809</span>
+            {IN_KIND_DONATION_DETAILS.shippingAddress.map((line, index) => (
+              <span
+                key={index}
+                className={index === 0 ? 'font-semibold text-foreground' : ''}
+              >
+                {line}
+              </span>
+            ))}
           </address>
         </div>
       </div>
