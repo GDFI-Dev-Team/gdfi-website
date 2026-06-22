@@ -1,17 +1,17 @@
-import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { ChevronLeft } from 'lucide-react'
 import {
   getSingleMarkdownData,
   getCollectionMarkdownData,
 } from '@/lib/markdown'
-import { NewsArticle } from '@/lib/interfaces/NewsArticle'
+import { formatEdgeDate } from '@/lib/date'
+import { NewsArticle } from '@/lib/interfaces/news-article'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
-import ArticleImages from '@/features/news/components/article-images'
-import { formatEdgeDate } from '@/lib/date'
+import ArticleImages from '@/features/updates/announcements/components/article-images'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<NewsArticle>(
@@ -42,13 +42,13 @@ export default async function NewsArticlePage({ params }: PageProps) {
     <main className="flex-1 flex flex-col bg-background pt-24 md:pt-32">
       <Section maxWidth="4xl" sectionClassName="py-8 md:py-12">
         <div className="mb-8">
-          <Link href="/news" className="inline-flex">
+          <Link href="/updates/announcements" className="inline-flex">
             <Button
               variant="ghost"
               className="gap-2 px-0 hover:bg-transparent hover:text-btn-primary"
             >
               <ChevronLeft size={18} aria-hidden="true" />
-              Back to News
+              Back to Announcements
             </Button>
           </Link>
         </div>
@@ -65,6 +65,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
           </div>
         </header>
 
+        {/* Array slideshow */}
         <ArticleImages images={article.featured_images ?? []} />
 
         <article className="flex flex-col gap-6">

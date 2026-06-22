@@ -1,5 +1,5 @@
-import { NewsArticle } from '@/lib/interfaces/NewsArticle' // removed useState pagination because it hurts SEO
-import NewsCard from './card'
+import { NewsArticle } from '@/lib/interfaces/news-article' // removed useState pagination because it hurts SEO
+import NewsCard from '../../features/updates/announcements/components/card'
 
 export default function NewsGrid({ articles }: { articles: NewsArticle[] }) {
   return (

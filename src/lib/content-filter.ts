@@ -1,4 +1,4 @@
-import { BaseContent } from '@/lib/interfaces/Content'
+import { BaseContent } from '@/lib/interfaces/content'
 
 interface UniversalFilterParams {
   q?: string

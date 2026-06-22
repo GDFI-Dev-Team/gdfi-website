@@ -3,12 +3,12 @@ import { Suspense } from 'react'
 import { Metadata } from 'next'
 import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
-import NewsFilterBar from '@/features/news/components/filter-bar'
-import NewsGrid from '@/features/news/components/grid'
-import Pagination from '@/features/news/components/pagination'
+import NewsFilterBar from '@/components/ui/filter-bar'
+import NewsGrid from '@/components/ui/grid'
+import Pagination from '@/components/ui/pagination'
 import { getCollectionMarkdownData } from '@/lib/markdown'
 import { paginateItems } from '@/lib/pagination'
-import { NewsArticle } from '@/lib/interfaces/NewsArticle'
+import { NewsArticle } from '@/lib/interfaces/news-article'
 import { filterAndSortCollection } from '@/lib/content-filter'
 import { CONTENT_LIMITS } from '@/config/content'
 
@@ -109,7 +109,7 @@ export default async function NewsPageRoute({
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
-            baseUrl="/news/page"
+            baseUrl="/updates/announcements/page"
             searchParamsSuffix={querySuffix}
           />
         )}

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { Eye } from 'lucide-react'
 import LikeButton from './like-button'
 import { formatCount } from '@/lib/utils'
-import { mockNewsArticles } from '@/features/news/data/mock'
+import { mockNewsArticles } from '@/features/updates/announcements/data/mock'
 
 const Stories = () => {
   const stories = mockNewsArticles.filter(

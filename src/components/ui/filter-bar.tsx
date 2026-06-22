@@ -86,7 +86,7 @@ export default function NewsFilterBar() {
             aria-label="Filter by category"
             disabled
             defaultValue="all"
-            className={`cursor-not-allowed opacity-50 ${inputClasses}`}
+            className={`appearance-none cursor-not-allowed opacity-50 ${inputClasses}`}
           >
             <option value="all">All Categories</option>
             <option value="updates">Latest Updates</option>
@@ -99,7 +99,7 @@ export default function NewsFilterBar() {
             aria-label="Sort order"
             value={searchParams.get('sort') || 'newest'}
             onChange={(e) => updateSearchParam('sort', e.target.value)}
-            className={`cursor-pointer ${inputClasses}`}
+            className={`appearance-none cursor-pointer ${inputClasses}`}
           >
             <option value="newest">Newest</option>
             <option value="oldest">Oldest</option>

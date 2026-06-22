@@ -7,7 +7,10 @@ import Link from 'next/link'
 import { Eye, Clock } from 'lucide-react'
 import LikeButton from './like-button'
 import { formatCount } from '@/lib/utils'
-import { mockNewsArticles, NewsArticle } from '@/features/news/data/mock'
+import {
+  mockNewsArticles,
+  NewsArticle,
+} from '@/features/updates/announcements/data/mock'
 
 const UpdateMeta = ({ update }: { update: NewsArticle }) => (
   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-overlay-subtle">

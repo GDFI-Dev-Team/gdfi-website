@@ -2,17 +2,17 @@ import { Metadata } from 'next'
 import { Suspense } from 'react' // fallback UI for loading
 import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
-import NewsFilterBar from '@/features/news/components/filter-bar'
-import NewsGrid from '@/features/news/components/grid'
-import Pagination from '@/features/news/components/pagination'
+import NewsFilterBar from '@/components/ui/filter-bar'
+import NewsGrid from '@/components/ui/grid'
+import Pagination from '@/components/ui/pagination'
 import { getCollectionMarkdownData } from '@/lib/markdown'
 import { paginateItems } from '@/lib/pagination'
-import { NewsArticle } from '@/lib/interfaces/NewsArticle'
+import { NewsArticle } from '@/lib/interfaces/news-article'
 import { filterAndSortCollection } from '@/lib/content-filter'
 import { CONTENT_LIMITS } from '@/config/content'
 
 export const metadata: Metadata = {
-  title: 'News & Updates',
+  title: 'Announcements',
   description:
     'Stay up to date with the latest stories, interviews, and updates from the Guiuan Development Foundation Inc.',
 }
@@ -72,7 +72,7 @@ export default async function UpdatesPage({ searchParams }: PageProps) {
   return (
     <main className="flex-1 flex flex-col bg-foreground/0.02">
       <Banner
-        title="News"
+        title="Announcements"
         description="Stay up to date with the latest stories, interviews, and updates from GDFI."
         imgUrl="/feat-hero/hero-1.webp"
       />
