@@ -61,7 +61,7 @@ export default function NewsFilterBar() {
         <div className="absolute top-0 left-0 right-0 h-2px bg-cyan-500 animate-pulse" />
       )}
 
-      <div className="mx-auto max-w-7xl w-full py-4 flex flex-nowrap gap-4 items-center overflow-x-auto">
+      <div className="mx-auto max-w-7xl w-full py-4 px-1 flex flex-nowrap gap-4 items-center overflow-x-auto">
         {/* Text Search Input */}
         <div className="relative w-full max-w-sm shrink-0">
           <Search
