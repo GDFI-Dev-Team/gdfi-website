@@ -1,4 +1,7 @@
-import { Landmark, Package, Info, Mail } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { Landmark, Package, Info, Mail, Copy, Check } from 'lucide-react'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils'
@@ -7,9 +10,51 @@ import {
   IN_KIND_DONATION_DETAILS,
 } from '../data/constants'
 
-export default function SupportOptions() {
+function CopyButton({
+  textToCopy,
+  label,
+}: {
+  textToCopy: string
+  label: string
+}) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(textToCopy)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy text: ', err)
+    }
+  }
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+    <button
+      onClick={handleCopy}
+      aria-label={copied ? `Copied ${label}` : `Copy ${label}`}
+      title={`Copy ${label}`}
+      className="p-1.5 text-foreground/40 hover:text-foreground hover:bg-foreground/10 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
+    >
+      {copied ? (
+        <Check
+          size={16}
+          className="text-green-600 dark:text-green-400"
+          aria-hidden="true"
+        />
+      ) : (
+        <Copy size={16} aria-hidden="true" />
+      )}
+    </button>
+  )
+}
+
+export default function SupportOptions() {
+  const fullShippingAddress =
+    IN_KIND_DONATION_DETAILS.shippingAddress.join('\n')
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start text-left">
       <div className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-background p-8 md:p-10 shadow-sm">
         <div className="flex items-center gap-4">
           <div className="bg-btn-primary/10 p-4 rounded-full shrink-0">
@@ -33,18 +78,26 @@ export default function SupportOptions() {
           <dl className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-y-3 gap-x-4 text-sm">
             {CASH_DONATION_DETAILS.bankDetails.map((detail, index) => (
               <div key={index} className="contents">
-                <dt className="text-foreground/60 font-medium">
+                <dt className="text-foreground/60 font-medium flex items-center">
                   {detail.label}
                 </dt>
-                <dd
-                  className={cn(
-                    'text-foreground',
-                    detail.isMono
-                      ? 'font-mono font-semibold tracking-wide'
-                      : 'font-semibold',
+                <dd className="flex items-center gap-2">
+                  <span
+                    className={cn(
+                      'text-foreground',
+                      detail.isMono
+                        ? 'font-mono font-semibold tracking-wide'
+                        : 'font-semibold',
+                    )}
+                  >
+                    {detail.value}
+                  </span>
+                  {detail.isCopyable && (
+                    <CopyButton
+                      textToCopy={detail.value}
+                      label={detail.label}
+                    />
                   )}
-                >
-                  {detail.value}
                 </dd>
               </div>
             ))}
@@ -98,9 +151,15 @@ export default function SupportOptions() {
         </Text>
 
         <div className="bg-foreground/3 rounded-2xl p-6 border border-foreground/5">
-          <Heading level={4} className="mb-4 text-lg">
-            Shipping Address
-          </Heading>
+          <div className="flex items-center justify-between mb-4">
+            <Heading level={4} className="text-lg">
+              Shipping Address
+            </Heading>
+            <CopyButton
+              textToCopy={fullShippingAddress}
+              label="Shipping Address"
+            />
+          </div>
           <address className="not-italic flex flex-col gap-1 text-foreground/80 leading-relaxed">
             {IN_KIND_DONATION_DETAILS.shippingAddress.map((line, index) => (
               <span

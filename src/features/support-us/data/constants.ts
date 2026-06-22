@@ -9,9 +9,18 @@ export const CASH_DONATION_DETAILS = {
       value:
         'P. Burgos St. cor. Real St., Justice Romualdez St., Tacloban City',
     },
-    { label: 'Account Name', value: 'Guiuan Development Foundation, Inc.' },
-    { label: 'Account Number', value: '002920154041', isMono: true },
-    { label: 'SWIFT Code', value: 'BNORPHMM', isMono: true },
+    {
+      label: 'Account Name',
+      value: 'Guiuan Development Foundation, Inc.',
+      isCopyable: true,
+    },
+    {
+      label: 'Account Number',
+      value: '002920154041',
+      isMono: true,
+      isCopyable: true,
+    },
+    { label: 'SWIFT Code', value: 'BNORPHMM', isMono: true, isCopyable: true },
   ],
   taxNote: {
     title: 'Tax-Deductible Donations',
