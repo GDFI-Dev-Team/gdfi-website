@@ -1,8 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
-import { Play } from 'lucide-react'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { VideoResource } from '../data/mock'
@@ -28,22 +26,13 @@ export default function VideoGallery({ videos }: { videos: VideoResource[] }) {
             className="group flex flex-col md:flex-row gap-6 p-4 -mx-4 rounded-2xl border border-transparent hover:border-foreground/10 hover:bg-foreground/3 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
           >
             <div className="relative w-full md:w-72 lg:w-80 aspect-video shrink-0 rounded-xl overflow-hidden bg-foreground/5 shadow-sm">
-              <Image
-                src={video.thumbnail}
-                alt={video.title}
-                fill
-                sizes="(min-width: 768px) 320px, 100vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              <iframe
+                src={`${video.videoUrl}?controls=0&modestbranding=1&showinfo=0`}
+                title={video.title}
+                className="absolute inset-0 w-full h-full border-0 pointer-events-none"
+                tabIndex={-1}
+                allowFullScreen
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
-                <div className="bg-white/90 rounded-full p-3.5 shadow-lg transition-transform duration-300 group-hover:scale-110">
-                  <Play
-                    className="text-black fill-black ml-0.5"
-                    size={24}
-                    aria-hidden="true"
-                  />
-                </div>
-              </div>
               <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded-md tracking-wide">
                 {video.duration}
               </div>

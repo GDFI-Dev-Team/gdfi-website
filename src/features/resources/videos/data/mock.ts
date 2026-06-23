@@ -5,7 +5,6 @@ export interface VideoResource {
   date: string
   duration: string
   videoUrl: string
-  thumbnail: string
 }
 
 export const mockVideos: VideoResource[] = [
@@ -17,7 +16,6 @@ export const mockVideos: VideoResource[] = [
     date: 'NOV 15, 2024',
     duration: '45:20',
     videoUrl: 'https://www.youtube.com/embed/TBg5-6JbOPk',
-    thumbnail: '/feat-hero/hero-1.webp',
   },
   {
     id: 'vid-2',
@@ -27,7 +25,6 @@ export const mockVideos: VideoResource[] = [
     date: 'OCT 22, 2024',
     duration: '1:12:05',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    thumbnail: '/feat-hero/hero-2.webp',
   },
   {
     id: 'vid-3',
@@ -37,7 +34,6 @@ export const mockVideos: VideoResource[] = [
     date: 'SEP 05, 2024',
     duration: '12:45',
     videoUrl: 'https://www.youtube.com/embed/TBg5-6JbOPk',
-    thumbnail: '/feat-hero/hero-3.webp',
   },
   {
     id: 'vid-4',
@@ -47,6 +43,5 @@ export const mockVideos: VideoResource[] = [
     date: 'AUG 18, 2024',
     duration: '18:30',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    thumbnail: '/updates-images/sample1.webp',
   },
 ]

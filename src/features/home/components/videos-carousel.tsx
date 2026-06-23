@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
-import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Button from '@/components/ui/button'
 import Heading from '@/components/ui/heading'
 import { cn } from '@/lib/utils'
@@ -88,34 +87,23 @@ export default function VideoCarousel({ videos }: { videos: VideoResource[] }) {
               }}
               aria-hidden={isHidden}
             >
-              <Image
-                src={video.thumbnail}
-                alt={video.title}
-                fill
-                sizes="(min-width: 768px) 60vw, 80vw"
-                className="object-cover select-none pointer-events-none"
-                priority={isCenter}
+              <iframe
+                src={`${video.videoUrl}?controls=0&modestbranding=1&showinfo=0`}
+                title={video.title}
+                className="absolute inset-0 w-full h-full border-0 pointer-events-none"
+                tabIndex={-1}
+                allowFullScreen
               />
 
-              <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-                <button
-                  onClick={() => isCenter && setPlayingVideo(video.videoUrl)}
-                  className={cn(
-                    'bg-white/90 rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-btn-primary/50',
-                    isCenter
-                      ? 'opacity-100 scale-100'
-                      : 'opacity-0 scale-75 pointer-events-none',
-                  )}
-                  aria-label={`Play ${video.title}`}
-                  tabIndex={isCenter ? 0 : -1}
-                >
-                  <Play
-                    className="text-black fill-black ml-1"
-                    size={28}
-                    aria-hidden="true"
-                  />
-                </button>
-              </div>
+              <button
+                onClick={() => isCenter && setPlayingVideo(video.videoUrl)}
+                className={cn(
+                  'absolute inset-0 w-full h-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-btn-primary/50 focus-visible:ring-inset',
+                  isCenter ? 'cursor-pointer' : 'pointer-events-none',
+                )}
+                aria-label={`Play ${video.title}`}
+                tabIndex={isCenter ? 0 : -1}
+              />
 
               <div className="absolute bottom-3 right-3 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded-md tracking-wide">
                 {video.duration}
