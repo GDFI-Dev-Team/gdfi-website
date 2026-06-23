@@ -18,11 +18,15 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   {
     label: 'About Us',
-    href: '/about-us',
+    href: '/about-us/mission-vision',
     children: [
       {
         label: 'Mission & Vision',
         href: '/about-us/mission-vision',
+      },
+      {
+        label: 'Overview & History',
+        href: '/about-us/overview-history',
       },
       {
         label: 'Organizational Structure',
@@ -33,7 +37,7 @@ export const navLinks: NavLink[] = [
   { label: 'Programs', href: '/programs' },
   {
     label: 'Research',
-    href: '/research',
+    href: '/research/publications',
     children: [
       {
         label: 'Publications',
@@ -45,7 +49,14 @@ export const navLinks: NavLink[] = [
       },
     ],
   },
-  { label: 'News', href: '/news' },
+  {
+    label: 'Updates',
+    href: '/updates/announcements',
+    children: [
+      { label: 'Announcements', href: '/updates/announcements' },
+      { label: 'Community Stories', href: '/updates/community-stories' },
+    ],
+  },
   {
     label: 'Resources',
     href: '/resources',
