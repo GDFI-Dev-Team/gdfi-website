@@ -46,12 +46,71 @@ collections:
         widget: file
         max: 1
         accept: application/pdf,.pdf
-        media_libraries: 
-          cloudflare_r2: 
+        media_libraries:
+          cloudflare_r2:
             access_key_id: 9c671155033e705d9900c1857e7b81cc
             bucket: sveltia-media
-            account_id: ffa0678267bca3257f3209173022c26f 
+            account_id: ffa0678267bca3257f3209173022c26f
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/annual-reports
           default: false
-      
+
+  - name: publications
+    label: Publications
+    folder: content/research/publications
+    create: true
+    slug: '{{year}}-{{slug}}'
+    summary: '{{year}} — {{title}}'
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        hint: ex. Reef Fish Biomass Recovery in Eastern Samar MPAs
+      - name: authors
+        label: Authors
+        widget: string
+        hint: Comma-separated, ex. J. Laurente, M. Dela Cruz
+      - name: year
+        label: Year
+        widget: string
+        default: "2026"
+        hint: ex. 2026
+      - name: outlet
+        label: Journal / Outlet
+        widget: string
+        required: false
+        hint: Journal, publisher, or venue, ex. Marine Pollution Bulletin
+      - name: volume
+        label: Volume / Issue
+        widget: string
+        required: false
+        hint: ex. 109(2) or 541
+      - name: pages
+        label: Pages / Article
+        widget: string
+        required: false
+        hint: ex. 744-750 or e70016
+      - name: citedBy
+        label: Cited by
+        widget: string
+        required: false
+        hint: Citation count, ex. 91
+      - name: link
+        label: External link
+        widget: string
+        required: false
+        hint: URL to the article (Google Scholar, DOI, journal page)
+      - label: PDF
+        name: pdf
+        widget: file
+        max: 1
+        required: false
+        accept: application/pdf,.pdf
+        media_libraries:
+          cloudflare_r2:
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/publications
+          default: false
