@@ -40,10 +40,11 @@ export function PersonnelCard({ person }: { person: Personnel }) {
           </Text>
 
           <div className="max-h-56 overflow-y-auto overscroll-contain pr-2">
-            <p className="text-sm leading-relaxed text-foreground/80 text-justify hyphens-auto">
+            <p className="text-sm leading-relaxed text-foreground/80 text-justify hyphens-auto whitespace-pre-line">
               {person.bio}
             </p>
           </div>
+
           <div className="absolute top-1/2 -left-4 -translate-y-1/2 border-[8px] border-transparent border-r-background drop-shadow-sm pointer-events-none" />
         </div>
       </div>
@@ -99,7 +100,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
             </div>
 
             <div className="overflow-y-auto overscroll-contain pr-2 max-h-[45vh]">
-              <Text className="text-base leading-relaxed text-foreground/90 text-justify hyphens-auto">
+              <Text className="text-base leading-relaxed text-foreground/90 text-justify hyphens-auto whitespace-pre-line">
                 {person.bio}
               </Text>
             </div>
