@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
         destination: '/resources/annual-reports',
         permanent: false,
       },
+      {
+        source: '/programs/page',
+        destination: '/programs',
+        permanent: false,
+      },
     ]
   },
 }

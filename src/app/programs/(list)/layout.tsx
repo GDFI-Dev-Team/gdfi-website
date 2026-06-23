@@ -1,9 +1,9 @@
 import { Suspense } from 'react'
 import Banner from '@/components/ui/banner'
 import FilterBar, { SearchInput } from '@/components/ui/filter-bar'
-import AnnouncementFilters from '@/features/updates/announcements/components/announcement-filters'
+import StatusFilter from '@/features/programs/status-filter'
 
-export default function AnnouncementsListLayout({
+export default function ProgramsListLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -11,16 +11,16 @@ export default function AnnouncementsListLayout({
   return (
     <>
       <Banner
-        title="Announcements"
-        description="Stay up to date with the latest stories, interviews, and updates from GDFI."
-        imgUrl="/feat-hero/hero-1.webp"
+        title="Programs"
+        description="Discover the different programs of Guiuan Development Foundation Inc. and how you can provide support."
+        imgUrl="/feat-hero/hero-2.webp"
       />
       <Suspense
         fallback={<div className="h-16 bg-foreground/3 animate-pulse" />}
       >
         <FilterBar>
-          <SearchInput placeholder="Search announcements..." />
-          <AnnouncementFilters />
+          <SearchInput placeholder="Search programs..." />
+          <StatusFilter />
         </FilterBar>
       </Suspense>
       {children}

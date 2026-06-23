@@ -1,6 +1,6 @@
 'use client'
 
-import { generateBreadcrumbs } from '@/lib/breadcrumb'
+import { generateBreadcrumbs } from '@/lib/data/breadcrumb'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'

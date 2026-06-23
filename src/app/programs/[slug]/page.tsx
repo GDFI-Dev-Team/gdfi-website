@@ -1,13 +1,13 @@
 import Image from 'next/image'
-import { notFound } from 'next/navigation'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
 import Breadcrumbs from '@/components/ui/breadcrumbs'
-import { getSingleMarkdownData } from '@/lib/markdown'
-import { Program } from '@/features/programs/programs-grid'
-import { remark } from 'remark'
 import html from 'remark-html'
+import { getSingleMarkdownData } from '@/lib/markdown'
+import { Program } from '@/lib/interfaces/content'
+import { remark } from 'remark'
+import { notFound } from 'next/navigation'
 
 const statusStyles: Record<string, string> = {
   completed: 'bg-status-completed',

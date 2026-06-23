@@ -2,15 +2,7 @@ import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
 import AnnualReportsShell from '@/features/resources/annual-reports/components/ar-shell'
 import { getCollectionMarkdownData } from '@/lib/markdown'
-
-export interface AnnualReport {
-  slug: string
-  title: string
-  year: string
-  'prepared-by': string
-  'annual-report': string
-  contributors?: { name: string; role: string }[]
-}
+import { AnnualReport } from '@/lib/interfaces/content'
 
 export default function AnnualReportsPage() {
   const reports = getCollectionMarkdownData<Omit<AnnualReport, 'slug'>>(
