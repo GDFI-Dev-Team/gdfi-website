@@ -207,7 +207,7 @@ export default function FeaturedVideoSlideshow({
                           Watch <ExternalLink className="ml-2 size-4" />
                         </Button>
                       </Link>
-                      <Link href={`/resources/video-resources/${video.slug}`}>
+                      <Link href={`/resources/videos/${video.slug}`}>
                         <Button className="px-4 py-2" variant="secondary">
                           View Details
                         </Button>

@@ -54,13 +54,13 @@ export default async function VideoResourcesSlugPage({ params }: PageProps) {
     <main className="flex-1 flex flex-col bg-background pt-24 md:pt-32">
       <Section maxWidth="4xl" sectionClassName="py-8 md:py-12">
         <div className="mb-8">
-          <Link href="/resources/video-resources" className="inline-flex">
+          <Link href="/resources/videos" className="inline-flex">
             <Button
               variant="ghost"
               className="gap-2 px-0 hover:bg-transparent hover:text-btn-primary"
             >
               <ChevronLeft size={18} aria-hidden="true" />
-              Back to Video Resources
+              Back to Videos
             </Button>
           </Link>
         </div>
