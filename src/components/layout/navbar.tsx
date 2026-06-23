@@ -8,10 +8,10 @@ import { ChevronDown, HandHeart, Menu, X } from 'lucide-react'
 import { cn } from '../../lib/utils'
 import { navLinks } from '../../lib/navigation'
 import Button, { buttonBase } from '../ui/button'
-import Text from '../ui/text'
 import { ThemeToggle } from './theme-toggle'
 
 const LOGO_MARK_SRC = '/logo-images/logo.svg'
+const NAME_MARK_SRC = '/logo-images/name.svg'
 
 function BrandLogo({
   priority = false,
@@ -22,11 +22,6 @@ function BrandLogo({
   scrolled?: boolean
   atTop?: boolean
 }) {
-  const wordmarkLine = cn(
-    'whitespace-nowrap font-semibold transition-all duration-500 ease-in-out',
-    atTop ? 'text-text-standard' : 'text-foreground',
-    scrolled ? 'text-xs md:text-sm' : 'text-xs md:text-base',
-  )
   return (
     <>
       <Image
@@ -37,13 +32,27 @@ function BrandLogo({
         priority={priority}
         className={cn(
           'w-auto shrink-0 transition-all duration-500 ease-in-out',
-          scrolled ? 'h-8 md:h-10' : 'h-10 md:h-14',
+          scrolled ? 'h-8 md:h-9 lg:h-10' : 'h-10 md:h-11 lg:h-14',
         )}
       />
-      <span className="flex flex-col leading-tight">
-        <Text className={wordmarkLine}>Guiuan Development</Text>
-        <Text className={wordmarkLine}>Foundation, Incorporated</Text>
-      </span>
+      <span
+        aria-hidden="true"
+        style={{
+          maskImage: `url(${NAME_MARK_SRC})`,
+          WebkitMaskImage: `url(${NAME_MARK_SRC})`,
+          maskRepeat: 'no-repeat',
+          WebkitMaskRepeat: 'no-repeat',
+          maskPosition: 'left center',
+          WebkitMaskPosition: 'left center',
+          maskSize: 'contain',
+          WebkitMaskSize: 'contain',
+        }}
+        className={cn(
+          'block aspect-448/76 shrink-0 transition-all duration-500 ease-in-out',
+          atTop ? 'bg-text-standard' : 'bg-foreground',
+          scrolled ? 'h-6 md:h-6 lg:h-9' : 'h-7 md:h-7 lg:h-11',
+        )}
+      />
     </>
   )
 }
@@ -130,11 +139,11 @@ export function SiteHeader() {
       >
         <div
           className={cn(
-            'px-(--gutter) transition-all duration-500 ease-in-out md:py-4',
+            'px-4 transition-all duration-500 ease-in-out md:py-4 lg:px-8',
             scrolled ? 'py-3' : 'py-5',
           )}
         >
-          <div className="mx-auto grid max-w-7xl grid-cols-[auto_auto_1fr] items-center gap-0 md:grid-cols-[auto_1fr_auto]">
+          <div className="mx-auto flex max-w-7xl items-center gap-2 md:gap-3">
             {/* Hamburger */}
             <Button
               variant="ghost"
@@ -142,11 +151,11 @@ export function SiteHeader() {
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(true)}
               className={cn(
-                'justify-self-start overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
+                'shrink-0 overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
                 atTop
                   ? 'text-text-standard hover:bg-text-standard/10'
                   : 'text-foreground hover:bg-foreground/5',
-                scrolled ? 'max-w-0 opacity-0' : 'mr-2 max-w-10 opacity-100',
+                scrolled ? 'max-w-0 opacity-0' : 'mr-1 max-w-10 opacity-100',
               )}
             >
               <Menu size={26} aria-hidden="true" />
@@ -156,19 +165,21 @@ export function SiteHeader() {
             <Link
               href="/"
               aria-label="GDFI — home"
-              className="col-start-2 flex items-center gap-2 justify-self-start md:col-start-1 md:justify-self-start"
+              className="flex shrink-0 items-center gap-2"
             >
               <BrandLogo priority scrolled={scrolled} atTop={atTop} />
             </Link>
 
             {/* Nav links — center, desktop only */}
-            <nav className="col-start-2 hidden items-center justify-self-center md:flex md:gap-1">
+            <nav className="hidden flex-1 items-center justify-center gap-0.5 md:flex lg:gap-1">
               {navLinks.map((link) => {
                 const active = isActive(link.href)
                 const triggerClass = cn(
-                  'rounded-full px-3.5 py-2 text-sm font-semibold transition-colors',
+                  'whitespace-nowrap rounded-full px-2 py-2 text-xs font-semibold transition-colors lg:px-3.5 lg:text-sm',
                   active
-                    ? 'bg-primary/10 text-primary-hover'
+                    ? atTop
+                      ? 'bg-text-standard/15 text-text-standard'
+                      : 'bg-primary/10 text-primary-hover'
                     : atTop
                       ? 'text-text-standard hover:bg-text-standard/10'
                       : 'text-foreground hover:bg-foreground/5',
@@ -206,7 +217,7 @@ export function SiteHeader() {
                         className={cn(
                           'min-w-60 rounded-2xl border p-1.5 transition-colors duration-500 ease-in-out',
                           atTop
-                            ? 'border-text-standard/40 bg-transparent shadow-none'
+                            ? 'border-text-standard/40 bg-surface/60 shadow-lg backdrop-blur-md'
                             : 'border-foreground/10 bg-surface shadow-lg',
                         )}
                       >
@@ -217,6 +228,7 @@ export function SiteHeader() {
                               key={child.href}
                               href={child.href}
                               aria-current={childActive ? 'page' : undefined}
+                              onClick={(e) => e.currentTarget.blur()}
                               className={cn(
                                 'block whitespace-nowrap rounded-xl px-3.5 py-2 text-sm font-medium transition-colors',
                                 childActive
@@ -238,7 +250,7 @@ export function SiteHeader() {
             </nav>
 
             {/* Right cluster — theme toggle + Support Us */}
-            <div className="col-start-3 flex items-center gap-2 justify-self-end">
+            <div className="ml-auto flex shrink-0 items-center gap-2">
               <ThemeToggle
                 className={cn(
                   'transition-colors duration-500 ease-in-out',
@@ -264,10 +276,10 @@ export function SiteHeader() {
                 <HandHeart size={20} aria-hidden="true" />
                 <span
                   className={cn(
-                    'hidden overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out md:inline-block md:align-middle',
+                    'hidden overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out lg:inline-block lg:align-middle',
                     scrolled
-                      ? 'md:ml-0 md:max-w-0 md:opacity-0'
-                      : 'md:ml-2 md:max-w-28 md:opacity-100',
+                      ? 'lg:ml-0 lg:max-w-0 lg:opacity-0'
+                      : 'lg:ml-2 lg:max-w-28 lg:opacity-100',
                   )}
                 >
                   Support Us

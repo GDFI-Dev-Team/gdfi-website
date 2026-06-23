@@ -1,6 +1,6 @@
 import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
-import AnnualReportsShell from '@/features/resources/components/ar-shell'
+import AnnualReportsShell from '@/features/resources/annual-reports/components/ar-shell'
 import { getCollectionMarkdownData } from '@/lib/markdown'
 
 export interface AnnualReport {

@@ -29,10 +29,11 @@ export function Footer() {
               >
                 <Image
                   src={LOGO_SRC}
-                  alt=""
+                  alt="logo"
                   width={1630}
                   height={1421}
                   className="h-12 w-auto shrink-0"
+                  loading="eager"
                 />
                 <span className="flex flex-col leading-tight">
                   <Text

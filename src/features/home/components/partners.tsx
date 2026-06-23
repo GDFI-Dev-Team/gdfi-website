@@ -9,7 +9,6 @@ const Partners = () => {
   return (
     <Section
       aria-labelledby="partners-heading"
-      sectionClassName="bg-foreground/3"
       divClassName="flex flex-col gap-6 w-full"
     >
       <div className="flex flex-col items-center gap-3 text-center">

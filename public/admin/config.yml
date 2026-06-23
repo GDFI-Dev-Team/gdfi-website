@@ -1,11 +1,12 @@
-# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
-
 backend:
   name: github
   repo: GDFI-Dev-Team/gdfi-website
   base_url: https://sveltia-cms-auth.raki-rarufu-dev.workers.dev # handoff CMS authentication Cloudflare worker
 media_folder: /public/media
 public_folder: /media
+
+slug:
+  encoding: ascii # to sanitize emojis in title
 
 media_libraries:
   # handoff later
@@ -53,6 +54,7 @@ collections:
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/annual-reports
           default: false
+
   - name: programs
     label: Programs
     label_singular: Program
@@ -85,7 +87,7 @@ collections:
         default: |
           ## About This Program
 
-          Write a short overview of the program here. Explain who it serves, what problem it addresses, and why it matters.
+          Expand the short overview of the program here. Explain who it serves, what problem it addresses, and why it matters.
 
           ## Goals
 
@@ -100,3 +102,48 @@ collections:
           ## How to Get Involved
 
           Explain how someone (a donor, volunteer, or participant) can support or join this program.
+
+  - name: announcements
+    label: Announcements
+    label_singular: Announcement
+    folder: content/updates/announcements
+    fields:
+      - label: Title, 
+        name: title, 
+        widget: string
+      - label: Author
+        name: author
+        widget: string
+        required: false
+      - label: Date
+        name: date
+        widget: datetime
+        type: date
+      - label: Excerpt
+        name: excerpt
+        widget: string
+        required: false
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        multiple: true
+        required: false
+        media_libraries:
+          cloudflare_r2: 
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f 
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/web-assets
+          default: false
+      - label: Body
+        name: body
+        widget: text
+        default: |
+          Write a short, attention-grabbing opening line that restates or expands on the title.
+
+          Give the context: what happened, who was involved, and why it matters to GDFI's mission.
+
+          Share any key details, quotes, or numbers that support the announcement.
+
+          End with a call to action or forward-looking note (e.g. how to get involved, what's next).
