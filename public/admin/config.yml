@@ -80,3 +80,34 @@ collections:
             prefix: gdfi-website-uploads/web-assets
           default: false
       - { label: Body, name: body, widget: richtext }
+  - name: videos
+    label: Videos
+    label_singular: Video
+    folder: resources/videos
+    fields: 
+      - { label: Title, name: title, widget: string }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Date, name: date, widget: datetime, type: date }
+      - label: Tags
+        name: tags
+        widget: relation
+        collection: video_tags
+        required: false
+        multiple: true
+        display_fields: [title]
+        search_fields: [title, description]
+      - { label: Excerpt, name: excerpt, widget: string, required: false }
+      - { label: Body, name: body, widget: richtext }
+      - { label: Video Link (youtube), name: video_url, widget: string }
+  - name: video_tags # separate for future additions
+    label: Tags - Videos
+    label_singular: Video Tag
+    folder: /content/video_tags
+    fields:
+      - name: title
+        label: Title
+      - name: description
+        label: Description
+        widget: text
+        required: false
+      
