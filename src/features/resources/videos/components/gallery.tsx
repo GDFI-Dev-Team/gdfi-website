@@ -1,18 +1,27 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 import { Play } from 'lucide-react'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { VideoResource } from '../data/mock'
+import VideoModal from './modal'
 
 export default function VideoGallery({ videos }: { videos: VideoResource[] }) {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
+
   return (
     <>
       <div className="flex flex-col gap-6">
         {videos.map((video) => (
           <div
             key={video.id}
+            onClick={() => setSelectedVideo(video.videoUrl)}
+            onKeyDown={(e) =>
+              (e.key === 'Enter' || e.key === ' ') &&
+              setSelectedVideo(video.videoUrl)
+            }
             role="button"
             tabIndex={0}
             aria-label={`Play ${video.title}`}
@@ -46,12 +55,14 @@ export default function VideoGallery({ videos }: { videos: VideoResource[] }) {
                   {video.date}
                 </Text>
               </div>
+
               <Heading
                 level={3}
                 className="line-clamp-2 leading-snug group-hover:text-btn-primary transition-colors"
               >
                 {video.title}
               </Heading>
+
               <Text
                 size="sm"
                 className="text-foreground/60 line-clamp-2 md:line-clamp-3 mt-1"
@@ -62,6 +73,12 @@ export default function VideoGallery({ videos }: { videos: VideoResource[] }) {
           </div>
         ))}
       </div>
+
+      <VideoModal
+        videoUrl={selectedVideo}
+        isOpen={!!selectedVideo}
+        onClose={() => setSelectedVideo(null)}
+      />
     </>
   )
 }
