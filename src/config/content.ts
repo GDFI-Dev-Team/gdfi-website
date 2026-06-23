@@ -1,7 +1,7 @@
 export const CONTENT_LIMITS = {
   news: 6,
   programs: 6,
-  videos: 6,
+  videos: 3,
 } as const
 
 export const TAG_THEME_VARIANTS: Record<string, string> = {
