@@ -9,8 +9,12 @@ export function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
 
   let currentPath = ''
   for (let i = 0; i < segments.length; i++) {
-    currentPath += `/${segments[i]}`
     const segment = segments[i]
+
+    // Pagination segments (e.g. /page/2) aren't a real navigable level
+    if (segment === 'page') break
+
+    currentPath += `/${segment}`
 
     breadcrumbs.push({
       label: segment

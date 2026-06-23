@@ -108,23 +108,23 @@ collections:
     label_singular: Announcement
     folder: content/updates/announcements
     fields:
-      - label: Title, 
-        name: title, 
+      - name: title 
+        label: Title
         widget: string
-      - label: Author
-        name: author
+      - name: author 
+        label: Author
         widget: string
         required: false
-      - label: Date
-        name: date
+      - name: date
+        label: Date
         widget: datetime
         type: date
-      - label: Excerpt
-        name: excerpt
+      - name: excerpt
+        label: Excerpt
         widget: string
         required: false
-      - label: Featured Image
-        name: featured_image
+      - name: featured_image 
+        label: Featured Image
         widget: image
         multiple: true
         required: false
@@ -136,8 +136,8 @@ collections:
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/web-assets
           default: false
-      - label: Body
-        name: body
+      - name: body 
+        label: Body
         widget: text
         default: |
           Write a short, attention-grabbing opening line that restates or expands on the title.

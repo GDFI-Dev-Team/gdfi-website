@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        source: '/updates/announcements/page',
+        destination: '/updates/announcements/',
+        permanent: false,
+      },
+      {
         source: '/resources',
         destination: '/resources/annual-reports',
         permanent: false,

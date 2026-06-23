@@ -11,7 +11,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { Document, Page, pdfjs } from 'react-pdf'
-import { handlePagination } from '@/lib/utils'
+import { handlePagination } from '@/lib/pagination'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
