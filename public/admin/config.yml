@@ -7,6 +7,9 @@ backend:
 media_folder: /public/media
 public_folder: /media
 
+slug:
+  encoding: ascii # to sanitize emojis in title
+
 media_libraries:
   # handoff later
   cloudflare_r2: 
@@ -54,4 +57,26 @@ collections:
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/annual-reports
           default: false
-      
+  - name: announcements
+    label: Announcements
+    label_singular: Announcement
+    folder: content/updates/announcements
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Date, name: date, widget: datetime, type: date }
+      - { label: Excerpt, name: excerpt, widget: string, required: false }
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        multiple: true
+        required: false
+        media_libraries:
+          cloudflare_r2: 
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f 
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/web-assets
+          default: false
+      - { label: Body, name: body, widget: richtext }
