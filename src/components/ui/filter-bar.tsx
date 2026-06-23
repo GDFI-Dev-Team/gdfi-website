@@ -4,7 +4,13 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useTransition, useRef, useEffect } from 'react'
 import { Search } from 'lucide-react'
 
-export default function FilterBar() {
+type CategoryOption = { label: string; value: string }
+
+export default function FilterBar({
+  categories,
+}: {
+  categories?: CategoryOption[]
+}) {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -83,17 +89,25 @@ export default function FilterBar() {
 
         {/* Filter Select Controls */}
         <div className="flex flex-nowrap items-center gap-3 shrink-0">
-          {/* Category Selector - mocked pending the tags refactor */}
+          {/* Category Selector */}
           <select
             aria-label="Filter by category"
-            disabled
-            defaultValue="all"
-            className={`appearance-none cursor-not-allowed opacity-50 ${inputClasses}`}
+            disabled={!categories?.length}
+            defaultValue={searchParams.get('category') || 'all'}
+            onChange={(e) =>
+              updateSearchParam(
+                'category',
+                e.target.value === 'all' ? '' : e.target.value,
+              )
+            }
+            className={`appearance-none ${!categories?.length ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} ${inputClasses}`}
           >
             <option value="all">All Categories</option>
-            <option value="updates">Latest Updates</option>
-            <option value="community-stories">Community Stories</option>
-            <option value="interview">Interviews</option>
+            {categories?.map((c) => (
+              <option key={c.value} value={c.value}>
+                {c.label}
+              </option>
+            ))}
           </select>
 
           {/* Sort Order Selector */}
