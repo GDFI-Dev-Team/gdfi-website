@@ -4,39 +4,57 @@ import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Eye, Clock } from 'lucide-react'
 import LikeButton from './like-button'
+import { Eye, Clock } from 'lucide-react'
 import { formatCount } from '@/lib/utils'
-import {
-  mockNewsArticles,
-  NewsArticle,
-} from '@/features/updates/announcements/data/mock'
+import { getAnnouncementsPage } from '@/lib/announcements'
+import { BaseContent } from '@/lib/interfaces/content'
+import { FALLBACK_IMAGE } from '@/config/content'
+import { formatEdgeDate } from '@/lib/date'
 
-const UpdateMeta = ({ update }: { update: NewsArticle }) => (
-  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-overlay-subtle">
-    <div className="inline-flex items-center gap-1.5">
-      <Eye size={16} aria-hidden="true" />
-      <Text size="sm">{formatCount(update.views || 0)}</Text>
+type Announcement = BaseContent & { slug: string }
+
+/* Stable placeholder engagement numbers until views/likes/read-time are wired to real data */
+function placeholderStats(slug: string) {
+  let hash = 0
+  for (const char of slug) hash = (hash * 31 + char.charCodeAt(0)) >>> 0
+
+  return {
+    views: 800 + (hash % 2200),
+    likes: 50 + (hash % 450),
+    readMinutes: 3 + (hash % 6),
+  }
+}
+
+const UpdateMeta = ({ update }: { update: Announcement }) => {
+  const { views, likes, readMinutes } = placeholderStats(update.slug)
+
+  return (
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-overlay-subtle">
+      <div className="inline-flex items-center gap-1.5">
+        <Eye size={16} aria-hidden="true" />
+        <Text size="sm">{formatCount(views)}</Text>
+      </div>
+      <LikeButton
+        count={likes}
+        className="text-on-overlay-subtle hover:text-on-overlay"
+      />
+      <div className="inline-flex items-center gap-1.5">
+        <Clock size={16} aria-hidden="true" />
+        <Text size="sm">{readMinutes} min read</Text>
+      </div>
     </div>
-    <LikeButton
-      count={update.likes || 0}
-      className="text-on-overlay-subtle hover:text-on-overlay"
-    />
-    <div className="inline-flex items-center gap-1.5">
-      <Clock size={16} aria-hidden="true" />
-      <Text size="sm">{update.readMinutes || 5} min read</Text>
-    </div>
-  </div>
-)
+  )
+}
 
 const UpdateCard = ({
   update,
   featured = false,
 }: {
-  update: NewsArticle
+  update: Announcement
   featured?: boolean
 }) => {
-  const imageSrc = update.images?.[0]?.src || '/feat-hero/hero-1.webp'
+  const imageSrc = update.featured_images?.[0] || FALLBACK_IMAGE
 
   return (
     <article
@@ -46,12 +64,15 @@ const UpdateCard = ({
           : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-4/5'
       }
     >
-      <Link href={`/news/${update.id}`} className="absolute inset-0 z-10">
-        <span className="sr-only">Read {update.title}</span>
+      <Link
+        href={`/updates/announcements/${update.slug}`}
+        className="absolute inset-0 z-10"
+      >
+        <span className="sr-only ">Read {update.title}</span>
       </Link>
       <Image
         src={imageSrc}
-        alt=""
+        alt={update.slug}
         fill
         sizes={
           featured
@@ -78,11 +99,15 @@ const UpdateCard = ({
           transform="uppercase"
           className="tracking-widest text-on-overlay-subtle"
         >
-          {update.date}
+          {formatEdgeDate(update.date)}
         </Text>
         <Heading
           level={featured ? 3 : 4}
-          className={featured ? 'max-w-2xl text-on-overlay' : 'text-on-overlay'}
+          className={
+            featured
+              ? 'max-w-2xl text-on-overlay'
+              : 'line-clamp-2 text-on-overlay'
+          }
         >
           {update.title}
         </Heading>
@@ -94,8 +119,9 @@ const UpdateCard = ({
   )
 }
 
-const OurLatestUpdates = () => {
-  const updates = mockNewsArticles.filter((a) => a.category === 'UPDATES')
+export default async function OurLatestUpdates() {
+  const { items } = await getAnnouncementsPage(1, {})
+  const updates = items.slice(0, 5)
   const [featured, ...rest] = updates
 
   if (!featured) return null
@@ -114,7 +140,7 @@ const OurLatestUpdates = () => {
           What&apos;s happening
         </Text>
         <Heading id="our-latest-updates-heading" level={2}>
-          Our Latest Updates
+          Latest Announcements
         </Heading>
       </div>
 
@@ -122,7 +148,7 @@ const OurLatestUpdates = () => {
         <UpdateCard update={featured} featured />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {rest.map((update) => (
-            <UpdateCard key={update.id} update={update} />
+            <UpdateCard key={update.slug} update={update} />
           ))}
         </div>
       </div>
@@ -135,5 +161,3 @@ const OurLatestUpdates = () => {
     </Section>
   )
 }
-
-export default OurLatestUpdates
