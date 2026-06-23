@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       new URL('https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/**'),
+      new URL('https://img.youtube.com/**'),
     ],
   },
   async redirects() {
