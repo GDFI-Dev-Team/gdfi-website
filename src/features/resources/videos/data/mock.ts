@@ -26,7 +26,7 @@ export const mockVideos: VideoResource[] = [
       'Full recording of the Q3 2024 webinar discussing new zoning laws, sustainable fishing practices, and the role of local government units in enforcing marine protected areas.',
     date: 'OCT 22, 2024',
     duration: '1:12:05',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     thumbnail: '/feat-hero/hero-2.webp',
   },
   {
@@ -46,7 +46,7 @@ export const mockVideos: VideoResource[] = [
       'A step-by-step training video for our new pool of volunteers. Learn the standard protocols for identifying and counting fish species along a transect line.',
     date: 'AUG 18, 2024',
     duration: '18:30',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     thumbnail: '/updates-images/sample1.webp',
   },
 ]
