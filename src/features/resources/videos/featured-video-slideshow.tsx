@@ -197,15 +197,22 @@ export default function FeaturedVideoSlideshow({
                         ))}
                     </div>
 
-                    <Link
-                      href={video.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button className="px-4 py-2" variant="primary">
-                        Watch <ExternalLink className="ml-2 size-4" />
-                      </Button>
-                    </Link>
+                    <div className="flex flex-wrap gap-3">
+                      <Link
+                        href={video.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button className="px-4 py-2" variant="primary">
+                          Watch <ExternalLink className="ml-2 size-4" />
+                        </Button>
+                      </Link>
+                      <Link href={`/resources/video-resources/${video.slug}`}>
+                        <Button className="px-4 py-2" variant="secondary">
+                          View Details
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </article>
               </div>

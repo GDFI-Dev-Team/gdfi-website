@@ -55,7 +55,10 @@ export default function VideoCard({ video }: { video: VideoContent }) {
       </Link>
 
       {/* Meta & text */}
-      <div className="flex flex-1 flex-col gap-3 p-6">
+      <Link
+        href={`/resources/video-resources/${video.slug}`}
+        className="flex flex-1 flex-col gap-3 p-6"
+      >
         <div className="flex items-center justify-between gap-2">
           <div className="flex flex-wrap gap-1.5">
             {displayTags.length > 0 ? (
@@ -82,7 +85,10 @@ export default function VideoCard({ video }: { video: VideoContent }) {
         </div>
 
         <div className="flex flex-col gap-2 mt-1">
-          <Heading level={4} className="line-clamp-2 leading-snug">
+          <Heading
+            level={4}
+            className="hover:underline decoration-foreground/30 underline-offset-4 line-clamp-2 leading-snug"
+          >
             {video.title}
           </Heading>
           {(video.excerpt && (
@@ -96,7 +102,7 @@ export default function VideoCard({ video }: { video: VideoContent }) {
               </Text>
             ))}
         </div>
-      </div>
+      </Link>
     </article>
   )
 }
