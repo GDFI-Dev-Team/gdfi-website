@@ -1,18 +1,24 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
+import { Play } from 'lucide-react'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { VideoContent } from '@/lib/interfaces/video'
 import { formatEdgeDate } from '@/lib/date'
 import VideoModal from './modal'
 
-function toEmbedUrl(url: string): string | null {
+function getYouTubeId(url: string): string | null {
   const m = url.match(
     /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
   )
-  return m ? `https://www.youtube.com/embed/${m[1]}` : null
+  return m ? m[1] : null
+}
+
+function toEmbedUrl(id: string): string {
+  return `https://www.youtube.com/embed/${id}`
 }
 
 export default function VideoGallery({
@@ -26,7 +32,11 @@ export default function VideoGallery({
     <>
       <div className="flex flex-col gap-6">
         {videos.map((video) => {
-          const embedUrl = toEmbedUrl(video.url)
+          const videoId = getYouTubeId(video.url)
+          const thumbnail = videoId
+            ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+            : null
+          const embedUrl = videoId ? toEmbedUrl(videoId) : null
 
           return (
             <div
@@ -43,19 +53,27 @@ export default function VideoGallery({
               className="group flex flex-col md:flex-row gap-6 p-4 -mx-4 rounded-2xl border border-transparent hover:border-foreground/10 hover:bg-foreground/3 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
             >
               <div className="relative w-full md:w-72 lg:w-80 aspect-video shrink-0 rounded-xl overflow-hidden bg-foreground/5 shadow-sm">
-                {embedUrl ? (
-                  <iframe
-                    src={`${embedUrl}?controls=0&modestbranding=1&showinfo=0`}
-                    title={video.title}
-                    className="absolute inset-0 w-full h-full border-0 pointer-events-none"
-                    tabIndex={-1}
-                    allowFullScreen
-                  />
+                {thumbnail ? (
+                  <>
+                    <Image
+                      src={thumbnail}
+                      alt={video.title}
+                      fill
+                      sizes="(min-width: 1024px) 320px, (min-width: 768px) 288px, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-black/60 backdrop-blur-sm ring-1 ring-white/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-black/75">
+                        <Play
+                          className="fill-white text-white ml-0.5"
+                          size={20}
+                        />
+                      </div>
+                    </div>
+                  </>
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center bg-foreground/10">
-                    <Text size="xs" className="text-foreground/40">
-                      No preview
-                    </Text>
+                    <Play className="text-foreground/30" size={32} />
                   </div>
                 )}
               </div>
