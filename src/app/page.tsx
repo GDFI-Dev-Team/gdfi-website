@@ -3,7 +3,7 @@ import { Hero } from '../features/home/components/hero'
 import WhoWeAre from '@/features/home/components/who-we-are'
 import Stories from '@/features/home/components/stories'
 import OurLatestUpdates from '@/features/home/components/our-latest-updates'
-import FeaturedInterviews from '@/features/home/components/featured-interviews'
+import FeaturedVideos from '@/features/home/components/featured-videos'
 import Partners from '@/features/home/components/partners'
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function Home() {
       <WhoWeAre />
       <Stories />
       <OurLatestUpdates />
-      <FeaturedInterviews />
+      <FeaturedVideos />
       <Partners />
     </>
   )
