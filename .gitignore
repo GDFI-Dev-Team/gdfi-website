@@ -20,6 +20,9 @@
 # production
 /build
 
+# temp folder
+/.temp/
+
 # misc
 .DS_Store
 *.pem

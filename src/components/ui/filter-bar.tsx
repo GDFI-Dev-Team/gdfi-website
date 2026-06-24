@@ -23,7 +23,9 @@ interface FilterBarContextValue {
   isPending: boolean
 }
 
-const FilterBarContext = createContext<FilterBarContextValue | null>(null)
+export const FilterBarContext = createContext<FilterBarContextValue | null>(
+  null,
+)
 
 // Lets any filter control (shared or feature-specific) read/update the
 // shared query-string state without each one re-deriving router plumbing.
@@ -159,7 +161,15 @@ export function SearchInput({
 export function ClearFilters() {
   const { searchParams, clearFilters } = useFilterBar()
 
-  const filterKeys = ['q', 'category', 'sort', 'start_date', 'end_date']
+  const filterKeys = [
+    'q',
+    'category',
+    'sort',
+    'start_date',
+    'end_date',
+    'start_year',
+    'end_year',
+  ]
   const hasActiveFilters = filterKeys.some((key) => searchParams.has(key))
 
   if (!hasActiveFilters) return null

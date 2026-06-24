@@ -8,7 +8,11 @@ interface UniversalFilterParams {
   end_date?: string
 }
 
-type FilterableContent = BaseContent & { date?: string; tags?: string[] }
+type FilterableContent = BaseContent & {
+  date?: string
+  tags?: string[]
+  body?: string
+}
 
 export function filterAndSortCollection<T extends FilterableContent>( // typescript generic T
   items: T[],
@@ -24,7 +28,7 @@ export function filterAndSortCollection<T extends FilterableContent>( // typescr
     filtered = filtered.filter(
       (item) =>
         item.title.toLowerCase().includes(query) ||
-        item.body.toLowerCase().includes(query) ||
+        (item.body?.toLowerCase().includes(query) ?? false) ||
         getTagList(item).some((t) => t.toLowerCase().includes(query)),
     )
   }

@@ -19,16 +19,15 @@ export default function ProgramsListLayout({
         description="Discover the different programs of Guiuan Development Foundation Inc. and how you can provide support."
         imgUrl="/feat-hero/hero-2.webp"
       />
-      <Suspense
-        fallback={<div className="h-16 bg-foreground/3 animate-pulse" />}
-      >
+      <Suspense>
         <FilterBar className="justify-end gap-2">
           <SearchInput placeholder="Search programs..." />
           <StatusFilter />
           <ClearFilters />
         </FilterBar>
       </Suspense>
-      <Section sectionClassName="py-12 md:py-16">{children}</Section>
+
+      <Section>{children}</Section>
     </>
   )
 }

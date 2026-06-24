@@ -29,7 +29,7 @@ export default function Section({
   return (
     /* Change bg-white later */
     <section
-      className={cn('px-(--gutter) py-16 md:py-24', sectionClassName)}
+      className={cn('px-(--gutter) py-12 md:py-16', sectionClassName)}
       id={id}
       aria-labelledby={ariaLabelledBy}
     >
