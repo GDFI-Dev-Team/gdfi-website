@@ -3,12 +3,9 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Eye } from 'lucide-react'
-import LikeButton from './like-button'
-import { formatCount } from '@/lib/utils'
 import { mockNewsArticles } from '@/features/updates/announcements/data/mock'
 
-const Stories = () => {
+export default function Stories() {
   const stories = mockNewsArticles.filter(
     (a) => a.category === 'COMMUNITY STORIES',
   )
@@ -76,17 +73,6 @@ const Stories = () => {
                 <Text className="text-foreground/70 line-clamp-2">
                   {story.content}
                 </Text>
-
-                <div className="mt-auto flex items-center justify-between border-t border-foreground/10 pt-4">
-                  <div className="inline-flex items-center gap-1.5 text-foreground/60">
-                    <Eye size={16} aria-hidden="true" />
-                    <Text size="sm">{formatCount(story.views || 0)} views</Text>
-                  </div>
-                  <LikeButton
-                    count={story.likes || 0}
-                    className="text-foreground/60 hover:text-like"
-                  />
-                </div>
               </div>
             </article>
           )
@@ -95,5 +81,3 @@ const Stories = () => {
     </Section>
   )
 }
-
-export default Stories

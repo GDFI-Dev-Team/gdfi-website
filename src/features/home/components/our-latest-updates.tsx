@@ -4,48 +4,12 @@ import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
-import LikeButton from './like-button'
-import { Eye, Clock } from 'lucide-react'
-import { formatCount } from '@/lib/utils'
 import { getAnnouncements } from '@/lib/data/announcements'
 import { ArticleContent } from '@/lib/interfaces/content'
 import { FALLBACK_IMAGE } from '@/config/content'
 import { formatEdgeDate } from '@/lib/date'
 
 type Announcement = ArticleContent
-
-/* Stable placeholder engagement numbers until views/likes/read-time are wired to real data */
-function placeholderStats(slug: string) {
-  let hash = 0
-  for (const char of slug) hash = (hash * 31 + char.charCodeAt(0)) >>> 0
-
-  return {
-    views: 800 + (hash % 2200),
-    likes: 50 + (hash % 450),
-    readMinutes: 3 + (hash % 6),
-  }
-}
-
-const UpdateMeta = ({ update }: { update: Announcement }) => {
-  const { views, likes, readMinutes } = placeholderStats(update.slug)
-
-  return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-overlay-subtle">
-      <div className="inline-flex items-center gap-1.5">
-        <Eye size={16} aria-hidden="true" />
-        <Text size="sm">{formatCount(views)}</Text>
-      </div>
-      <LikeButton
-        count={likes}
-        className="text-on-overlay-subtle hover:text-on-overlay"
-      />
-      <div className="inline-flex items-center gap-1.5">
-        <Clock size={16} aria-hidden="true" />
-        <Text size="sm">{readMinutes} min read</Text>
-      </div>
-    </div>
-  )
-}
 
 const UpdateCard = ({
   update,
@@ -106,14 +70,11 @@ const UpdateCard = ({
           className={
             featured
               ? 'max-w-2xl text-on-overlay'
-              : 'line-clamp-2 text-on-overlay'
+              : 'line-clamp-3 text-on-overlay'
           }
         >
           {update.title}
         </Heading>
-        <div className="pointer-events-auto">
-          <UpdateMeta update={update} />
-        </div>
       </div>
     </article>
   )
