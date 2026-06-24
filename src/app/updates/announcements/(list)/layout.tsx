@@ -4,7 +4,7 @@ import FilterBar, {
   SearchInput,
   ClearFilters,
 } from '@/components/ui/filter-bar'
-import AnnouncementFilters from '@/features/updates/announcements/components/announcement-filters'
+import DateFilter from '@/features/updates/announcements/components/date-filter'
 
 export default function AnnouncementsListLayout({
   children,
@@ -21,9 +21,9 @@ export default function AnnouncementsListLayout({
       <Suspense
         fallback={<div className="h-16 bg-foreground/3 animate-pulse" />}
       >
-        <FilterBar className="gap-2">
+        <FilterBar className="justify-end gap-2">
+          <DateFilter />
           <SearchInput placeholder="Search announcements..." />
-          <AnnouncementFilters />
           <ClearFilters />
         </FilterBar>
       </Suspense>

@@ -7,30 +7,6 @@ export default function AnnouncementFilters() {
 
   return (
     <div className="flex flex-nowrap items-center gap-3 shrink-0">
-      {/* Category Selector - mocked pending the tags refactor */}
-      <select
-        aria-label="Filter by category"
-        disabled
-        defaultValue="all"
-        className={`appearance-none cursor-not-allowed opacity-50 ${filterInputClasses}`}
-      >
-        <option value="all">All Categories</option>
-        <option value="updates">Latest Updates</option>
-        <option value="community-stories">Community Stories</option>
-        <option value="interview">Interviews</option>
-      </select>
-
-      {/* Sort Order Selector */}
-      <select
-        aria-label="Sort order"
-        defaultValue={searchParams.get('sort') || 'newest'}
-        onChange={(e) => updateSearchParam('sort', e.target.value)}
-        className={`appearance-none cursor-pointer ${filterInputClasses}`}
-      >
-        <option value="newest">Newest</option>
-        <option value="oldest">Oldest</option>
-      </select>
-
       {/* Range Inputs for Date matching */}
       <div className="flex items-center gap-2 shrink-0">
         <input
