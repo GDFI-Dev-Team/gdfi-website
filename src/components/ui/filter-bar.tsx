@@ -8,7 +8,8 @@ import {
   useEffect,
 } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { Search } from 'lucide-react'
+import { OctagonX, Search } from 'lucide-react'
+import Button from './button'
 import { cn } from '@/lib/utils'
 
 export const filterInputClasses =
@@ -17,6 +18,7 @@ export const filterInputClasses =
 interface FilterBarContextValue {
   searchParams: ReturnType<typeof useSearchParams>
   updateSearchParam: (key: string, value: string) => void
+  clearFilters: (keys: string[]) => void
   handleSearchChange: (text: string) => void
   isPending: boolean
 }
@@ -68,6 +70,15 @@ export default function FilterBar({
     })
   }
 
+  function clearFilters(keys: string[]) {
+    const params = new URLSearchParams(searchParams.toString())
+    keys.forEach((key) => params.delete(key))
+    const basePath = pathname.replace(/\/page\/\d+$/, '')
+    startTransition(() => {
+      router.push(`${basePath}?${params.toString()}`, { scroll: false })
+    })
+  }
+
   // immutable timeout tracking
   function handleSearchChange(text: string) {
     if (searchTimeoutRef.current) {
@@ -90,7 +101,13 @@ export default function FilterBar({
 
   return (
     <FilterBarContext.Provider
-      value={{ searchParams, updateSearchParam, handleSearchChange, isPending }}
+      value={{
+        searchParams,
+        updateSearchParam,
+        clearFilters,
+        handleSearchChange,
+        isPending,
+      }}
     >
       <div className="flex px-(--gutter) bg-foreground/3 border-b border-foreground/10">
         {/* Visual pending line indicating network/data updating state across the edge */}
@@ -140,7 +157,7 @@ export function SearchInput({
 }
 
 export function ClearFilters() {
-  const { searchParams, updateSearchParam } = useFilterBar()
+  const { searchParams, clearFilters } = useFilterBar()
 
   const filterKeys = ['q', 'category', 'sort', 'start_date', 'end_date']
   const hasActiveFilters = filterKeys.some((key) => searchParams.has(key))
@@ -148,14 +165,15 @@ export function ClearFilters() {
   if (!hasActiveFilters) return null
 
   return (
-    <button
+    <Button
       onClick={() => {
-        filterKeys.forEach((key) => updateSearchParam(key, ''))
+        clearFilters(filterKeys)
       }}
-      className="px-3 py-2.5 rounded-md border border-foreground/15 bg-background text-sm text-foreground/60 hover:text-foreground hover:border-foreground/30 transition-colors"
+      className="px-3 py-2.5 text-sm"
+      variant="ghost"
       aria-label="Clear all filters"
     >
-      Clear filters
-    </button>
+      <OctagonX className="size-5" />
+    </Button>
   )
 }
