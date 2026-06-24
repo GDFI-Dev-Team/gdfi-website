@@ -2,7 +2,7 @@
 
 import { useFilterBar, filterInputClasses } from '@/components/ui/filter-bar'
 
-export default function AnnouncementFilters() {
+export default function DateFilter() {
   const { searchParams, updateSearchParam } = useFilterBar()
 
   return (
