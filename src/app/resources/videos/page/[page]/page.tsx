@@ -2,7 +2,6 @@ import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Pagination from '@/components/ui/pagination'
 import VideoGallery from '@/features/resources/videos/video-gallery'
-import VideoSlideshow from '@/features/resources/videos/featured-video-slideshow'
 import { getAllVideos, getVideosPage } from '@/lib/videos'
 import { paginateItems } from '@/lib/pagination'
 import { CONTENT_LIMITS } from '@/config/content'
@@ -34,7 +33,6 @@ export default async function VideoResourcesPaginatedPage({
   const currentPage = Number(page)
   if (!Number.isInteger(currentPage) || currentPage < 1) notFound()
 
-  const allVideos = getAllVideos()
   const { items, totalPages, maxPage, querySuffix } = getVideosPage(
     currentPage,
     resolvedParams,
@@ -42,22 +40,8 @@ export default async function VideoResourcesPaginatedPage({
 
   if (currentPage > maxPage) notFound()
 
-  const featuredVideos = allVideos.filter((v) =>
-    v.tags?.some((t) => t.toLowerCase() === 'featured'),
-  )
-
   return (
     <>
-      {/* Featured slideshow — shown on every page for discoverability */}
-      {featuredVideos.length > 0 && (
-        <Section sectionClassName="pb-0 md:pb-0">
-          <div className="flex flex-col gap-5">
-            <Heading level={2}>Featured</Heading>
-            <VideoSlideshow videos={featuredVideos} />
-          </div>
-        </Section>
-      )}
-
       <Section>
         <div className="flex flex-col gap-8">
           <Heading level={2}>All Videos</Heading>
