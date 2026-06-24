@@ -2,7 +2,14 @@
 export interface BaseContent {
   slug: string
   title: string
-  body: string
+}
+
+export type SearchParams = Promise<{
+  [key: string]: string | string[] | undefined
+}>
+export interface PageProps {
+  params: Promise<{ page: string }>
+  searchParams: SearchParams
 }
 
 // Dated, taggable editorial content (announcements, stories, etc.)
@@ -12,6 +19,7 @@ export interface ArticleContent extends BaseContent {
   excerpt?: string
   tags?: string[] // generic array for all tags
   featured_images?: string[]
+  body: string
 }
 
 export interface Program extends BaseContent {
@@ -19,21 +27,23 @@ export interface Program extends BaseContent {
   tag: string
   'short-description': string
   'featured-img': string
+  body: string
 }
 
-export interface AnnualReport {
-  slug: string
-  title: string
+export interface AnnualReport extends BaseContent {
   year: string
   'prepared-by': string
   'annual-report': string
   contributors?: { name: string; role: string }[]
 }
 
-export type SearchParams = Promise<{
-  [key: string]: string | string[] | undefined
-}>
-export interface PageProps {
-  params: Promise<{ page: string }>
-  searchParams: SearchParams
+export interface Publication extends BaseContent {
+  authors: string
+  year: string
+  outlet?: string
+  volume?: string
+  pages?: string
+  citedBy?: string
+  link?: string
+  pdf?: string
 }

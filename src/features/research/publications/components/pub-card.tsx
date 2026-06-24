@@ -1,7 +1,7 @@
 import Text from '@/components/ui/text'
 import { ExternalLink } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import type { Publication } from './pub-list'
+import type { Publication } from '@/lib/interfaces/content'
 
 interface PublicationCardProps {
   publication: Publication
