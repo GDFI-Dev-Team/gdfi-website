@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Heart } from 'lucide-react'
-import { cn, formatCount } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 
 /* Temporary client-only like toggle until engagement is wired to an API */
 export default function LikeButton({
