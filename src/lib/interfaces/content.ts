@@ -22,6 +22,8 @@ export interface Program extends BaseContent {
 }
 
 export interface AnnualReport {
+  slug: string
+  title: string
   year: string
   'prepared-by': string
   'annual-report': string

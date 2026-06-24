@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Text from '@/components/ui/text'
 import AnnualReportCard from './ar-card'
-import { AnnualReport } from '@/resources/annual-reports/page'
+import { AnnualReport } from '@/lib/interfaces/content'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
