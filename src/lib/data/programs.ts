@@ -21,7 +21,7 @@ export async function getPrograms(
   searchParams: ProgramsSearchParams,
 ) {
   const allPrograms =
-    getCollectionMarkdownData<Omit<Program, 'slug'>>('programs')
+    await getCollectionMarkdownData<Omit<Program, 'slug'>>('programs')
 
   const filteredPrograms = filterAndSortCollection<Program>(
     allPrograms,
