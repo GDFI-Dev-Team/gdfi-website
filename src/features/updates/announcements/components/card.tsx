@@ -3,11 +3,11 @@ import Link from 'next/link'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils'
-import { BaseContent } from '@/lib/interfaces/content'
+import { ArticleContent } from '@/lib/interfaces/content'
 import { FALLBACK_IMAGE, TAG_THEME_VARIANTS } from '@/config/content'
 import { formatEdgeDate } from '@/lib/date'
 
-export default function Card({ article }: { article: BaseContent }) {
+export default function Card({ article }: { article: ArticleContent }) {
   // Fallback image allocation during compilation
   const featured_images = article.featured_images?.length
     ? article.featured_images

@@ -19,3 +19,16 @@ export function paginateItems<T>(
     totalPages,
   }
 }
+
+// Consolidated next and prev pagination handlers
+export function handlePagination(
+  direction: 'next' | 'prev',
+  setPageNumber: (updater: (p: number) => number) => void,
+  numPages: number | null,
+) {
+  if (direction === 'next') {
+    setPageNumber((p) => Math.min(numPages ?? p, p + 1))
+  } else {
+    setPageNumber((p) => Math.max(1, p - 1))
+  }
+}

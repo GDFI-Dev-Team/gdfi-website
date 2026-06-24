@@ -7,12 +7,12 @@ import Link from 'next/link'
 import LikeButton from './like-button'
 import { Eye, Clock } from 'lucide-react'
 import { formatCount } from '@/lib/utils'
-import { getAnnouncementsPage } from '@/lib/announcements'
-import { BaseContent } from '@/lib/interfaces/content'
+import { getAnnouncements } from '@/lib/data/announcements'
+import { ArticleContent } from '@/lib/interfaces/content'
 import { FALLBACK_IMAGE } from '@/config/content'
 import { formatEdgeDate } from '@/lib/date'
 
-type Announcement = BaseContent & { slug: string }
+type Announcement = ArticleContent
 
 /* Stable placeholder engagement numbers until views/likes/read-time are wired to real data */
 function placeholderStats(slug: string) {
@@ -120,7 +120,7 @@ const UpdateCard = ({
 }
 
 export default async function OurLatestUpdates() {
-  const { items } = await getAnnouncementsPage(1, {})
+  const { items } = await getAnnouncements(1, {})
   const updates = items.slice(0, 5)
   const [featured, ...rest] = updates
 

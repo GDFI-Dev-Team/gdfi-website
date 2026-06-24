@@ -13,7 +13,7 @@ export default function Banner({
 }) {
   return (
     <section
-      className="relative isolate flex min-h-80 flex-col justify-end overflow-hidden bg-cover bg-center px-(--gutter) pb-14 md:min-h-[34rem] md:pb-20"
+      className="relative isolate flex min-h-80 flex-col justify-end overflow-hidden bg-cover bg-center px-(--gutter) pb-14 md:min-h-136 md:pb-20"
       style={{ backgroundImage: `url(${imgUrl})` }}
     >
       {/* Left scrim */}
@@ -23,17 +23,17 @@ export default function Banner({
       {/* Top scrim */}
       <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-hero-overlay/80 to-transparent transition-[--hero-overlay] duration-300 ease-[ease]" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-4 [text-shadow:0_1px_3px_rgb(0_0_0_/_0.4)]">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-4 [text-shadow:0_1px_3px_rgb(0_0_0_/0.4)]">
         <Breadcrumbs last={title} />
         <Heading
           level={1}
-          className="max-w-4xl text-balance text-on-hero leading-tight transition-colors duration-300 ease-[ease]"
+          className="max-w-4xl text-balance text-text-standard leading-tight transition-colors duration-300 ease-[ease]"
         >
           {title}
         </Heading>
         <Text
           size="lg"
-          className="max-w-prose text-on-hero-muted transition-colors duration-300 ease-[ease]"
+          className="max-w-prose text-text-muted transition-colors duration-300 ease-[ease]"
         >
           {description}
         </Text>

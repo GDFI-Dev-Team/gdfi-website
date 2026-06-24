@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Announcements',
+  title: 'Programs',
   description:
-    'Stay up to date with the latest announcements from Guiuan Development Foundation Inc.',
+    'Discover the different programs of Guiuan Development Foundation Inc. and how you can provide support.',
 }
 
-export default function AnnouncementsLayout({
+export default function ProgramsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
