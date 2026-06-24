@@ -138,3 +138,24 @@ export function SearchInput({
     </div>
   )
 }
+
+export function ClearFilters() {
+  const { searchParams, updateSearchParam } = useFilterBar()
+
+  const filterKeys = ['q', 'category', 'sort', 'start_date', 'end_date']
+  const hasActiveFilters = filterKeys.some((key) => searchParams.has(key))
+
+  if (!hasActiveFilters) return null
+
+  return (
+    <button
+      onClick={() => {
+        filterKeys.forEach((key) => updateSearchParam(key, ''))
+      }}
+      className="px-3 py-2.5 rounded-md border border-foreground/15 bg-background text-sm text-foreground/60 hover:text-foreground hover:border-foreground/30 transition-colors"
+      aria-label="Clear all filters"
+    >
+      Clear filters
+    </button>
+  )
+}
