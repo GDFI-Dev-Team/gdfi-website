@@ -50,9 +50,6 @@ function CopyButton({
 }
 
 export default function SupportOptions() {
-  const fullShippingAddress =
-    IN_KIND_DONATION_DETAILS.shippingAddress.join('\n')
-
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start text-left">
       <div className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-background p-8 md:p-10 shadow-sm">
@@ -156,7 +153,7 @@ export default function SupportOptions() {
               Shipping Address
             </Heading>
             <CopyButton
-              textToCopy={fullShippingAddress}
+              textToCopy={IN_KIND_DONATION_DETAILS.copyableShippingAddress}
               label="Shipping Address"
             />
           </div>
