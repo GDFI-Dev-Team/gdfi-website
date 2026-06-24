@@ -72,7 +72,7 @@ export const org = {
   name: 'Guiuan Development Foundation, Inc.',
   shortName: 'GDFI',
   founded: 1988,
-  email: 'gdfi1988@gmail.com',
+  email: 'hello.gdfi@gmail.com',
   address: 'Guimbaolibot Avenue, Brgy. 10, Guiuan, Eastern Samar, 6809',
   mapUrl: 'https://maps.app.goo.gl/gF2VHxrbyNKbE9TA9',
   about:
