@@ -83,7 +83,7 @@ collections:
   - name: videos
     label: Videos
     label_singular: Video
-    folder: resources/videos
+    folder: content/resources/videos
     fields: 
       - { label: Title, name: title, widget: string }
       - { label: Author, name: author, widget: string, required: false }
@@ -98,7 +98,7 @@ collections:
         search_fields: [title, description]
       - { label: Excerpt, name: excerpt, widget: string, required: false }
       - { label: Body, name: body, widget: richtext }
-      - { label: Video Link (youtube), name: video_url, widget: string }
+      - { label: Video Link (youtube), name: url, widget: string }
   - name: video_tags # separate for future additions
     label: Tags - Videos
     label_singular: Video Tag

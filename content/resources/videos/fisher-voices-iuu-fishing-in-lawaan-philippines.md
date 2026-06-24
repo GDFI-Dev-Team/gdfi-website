@@ -2,7 +2,9 @@
 title: 'Fisher Voices: IUU Fishing in Lawaan, Philippines'
 author: ''
 date: 2023-01-20
-tags: []
+tags:
+  - interview
+  - featured
 excerpt: ''
 url: https://www.youtube.com/watch?v=Uo9cOSJNQrQ
 ---

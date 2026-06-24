@@ -2,7 +2,9 @@
 title: 'Fisher Voices: Efren Minguel - Lawaan, Philippines'
 author: ''
 date: 2023-01-24
-tags: []
+tags:
+  - featured
+  - interview
 excerpt: ''
 url: https://www.youtube.com/watch?v=RpLQJUfqAJs
 ---
