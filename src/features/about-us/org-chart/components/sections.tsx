@@ -84,7 +84,7 @@ export function ProjectCoordination({
 }) {
   return (
     <OrgSectionContainer title="Project Coordination">
-      <div className="flex flex-wrap justify-center gap-y-10 md:gap-y-16 gap-x-6 md:gap-x-12 w-full max-w-6xl">
+      <div className="flex flex-wrap justify-center gap-y-10 md:gap-y-16 gap-x-6 md:gap-x-12 w-full max-w-5xl">
         {personnel.map((p) => (
           <PersonnelCard key={p.id} person={p} />
         ))}
@@ -100,7 +100,7 @@ export function PoolOfVolunteers({
 }) {
   return (
     <OrgSectionContainer title="Pool of Volunteers">
-      <div className="flex flex-wrap justify-center gap-y-10 md:gap-y-16 gap-x-6 md:gap-x-12 w-full max-w-6xl">
+      <div className="flex flex-wrap justify-center gap-y-10 md:gap-y-16 gap-x-6 md:gap-x-12 w-full max-w-5xl">
         {personnel.map((p) => (
           <PersonnelCard key={p.id} person={p} />
         ))}

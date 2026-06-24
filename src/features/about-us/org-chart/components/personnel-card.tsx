@@ -18,13 +18,13 @@ export function PersonnelCard({ person }: { person: Personnel }) {
   }, [isMobileModalOpen])
 
   return (
-    <div className="group relative flex flex-col items-center w-full max-w-[140px] mx-auto">
+    <div className="group relative flex flex-col items-center w-full max-w-[160px] mx-auto">
       <div className="relative w-24 h-24 md:w-28 md:h-28 mb-3 bg-foreground/10 border border-foreground/10 rounded-sm">
         <Image
           src={person.image}
           alt={person.name}
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="(max-width: 768px) 96px, 112px"
         />
 
@@ -50,7 +50,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
       </div>
 
       <div className="text-center w-full">
-        <Text size="sm" className="font-bold leading-tight">
+        <Text size="sm" className="font-bold leading-tight whitespace-nowrap">
           {person.name}
         </Text>
         <Text
@@ -80,7 +80,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
             </button>
 
             <div className="mb-5 flex justify-center shrink-0">
-              <div className="relative w-24 h-24 bg-foreground/10 border border-foreground/10 rounded-sm">
+              <div className="relative w-24 h-24 md:w-28 md:h-28 mb-3 mx-auto shrink-0 bg-foreground/10 border border-foreground/10 rounded-sm">
                 <Image
                   src={person.image}
                   alt={person.name}
