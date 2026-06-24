@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
-
 backend:
   name: github
   repo: GDFI-Dev-Team/gdfi-website
@@ -28,24 +26,23 @@ media_libraries:
 collections:
   - name: annual-reports
     label: Annual Reports
+    label_singular: Annual Report
     folder: content/resources/annual-reports
     fields:
       - name: title
         label: Title 
         widget: string
-        default: 2026 Annual Report
         hint: ex. 2026 Annual Report
       - name: year
         label: Year
         widget: string
-        default: "2026"
         hint: ex. 2026
       - name: prepared-by
         label: Prepared By
         widget: string
         required: false
-      - label: Annual Report
-        name: annual-report
+      - name: annual-report
+        label: Annual Report
         widget: file
         max: 1
         accept: application/pdf,.pdf
@@ -57,17 +54,77 @@ collections:
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/annual-reports
           default: false
+
+  - name: programs
+    label: Programs
+    label_singular: Program
+    folder: content/programs
+    fields:
+      - name: title
+        label: Title 
+        widget: string
+        hint: ex. Educational Assistance Program
+      - name: short-description
+        label: Short Description    
+        widget: text
+      - name: status
+        label: Status
+        widget: select
+        options: ['Completed', 'Active', 'Discontinued']
+      - name: tag
+        label: Tag
+        widget: string
+        hint: eg. Education
+        required: false
+      - name: featured-img
+        label: Featured Image
+        widget: file
+        max: 1
+        accept: "image/jpeg,.jpg,.jpeg"
+      - name: body
+        label: Content
+        widget: markdown
+        default: |
+          ## About This Program
+
+          Expand the short overview of the program here. Explain who it serves, what problem it addresses, and why it matters.
+
+          ## Goals
+
+          - Goal one
+          - Goal two
+          - Goal three
+
+          ## Impact
+
+          Describe the outcomes or results of the program so far. Include numbers or stories if available.
+
+          ## How to Get Involved
+
+          Explain how someone (a donor, volunteer, or participant) can support or join this program.
+
   - name: announcements
     label: Announcements
     label_singular: Announcement
     folder: content/updates/announcements
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Author, name: author, widget: string, required: false }
-      - { label: Date, name: date, widget: datetime, type: date }
-      - { label: Excerpt, name: excerpt, widget: string, required: false }
-      - label: Featured Image
-        name: featured_image
+      - name: title 
+        label: Title
+        widget: string
+      - name: author 
+        label: Author
+        widget: string
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        type: date
+      - name: excerpt
+        label: Excerpt
+        widget: string
+        required: false
+      - name: featured_image 
+        label: Featured Image
         widget: image
         multiple: true
         required: false
@@ -79,4 +136,14 @@ collections:
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/web-assets
           default: false
-      - { label: Body, name: body, widget: richtext }
+      - name: body 
+        label: Body
+        widget: text
+        default: |
+          Write a short, attention-grabbing opening line that restates or expands on the title.
+
+          Give the context: what happened, who was involved, and why it matters to GDFI's mission.
+
+          Share any key details, quotes, or numbers that support the announcement.
+
+          End with a call to action or forward-looking note (e.g. how to get involved, what's next).
