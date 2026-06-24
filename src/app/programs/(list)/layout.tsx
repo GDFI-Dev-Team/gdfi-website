@@ -1,7 +1,8 @@
-import { Suspense } from 'react'
 import Banner from '@/components/ui/banner'
 import FilterBar, { SearchInput } from '@/components/ui/filter-bar'
 import StatusFilter from '@/features/programs/status-filter'
+import Section from '@/components/ui/section'
+import { Suspense } from 'react'
 
 export default function ProgramsListLayout({
   children,
@@ -18,12 +19,12 @@ export default function ProgramsListLayout({
       <Suspense
         fallback={<div className="h-16 bg-foreground/3 animate-pulse" />}
       >
-        <FilterBar>
+        <FilterBar className="justify-end">
           <SearchInput placeholder="Search programs..." />
           <StatusFilter />
         </FilterBar>
       </Suspense>
-      {children}
+      <Section sectionClassName="py-12 md:py-16">{children}</Section>
     </>
   )
 }

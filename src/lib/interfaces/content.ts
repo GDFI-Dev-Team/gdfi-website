@@ -28,7 +28,10 @@ export interface AnnualReport {
   contributors?: { name: string; role: string }[]
 }
 
+export type SearchParams = Promise<{
+  [key: string]: string | string[] | undefined
+}>
 export interface PageProps {
   params: Promise<{ page: string }>
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+  searchParams: SearchParams
 }

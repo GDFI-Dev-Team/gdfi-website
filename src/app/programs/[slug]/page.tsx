@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
-import Breadcrumbs from '@/components/ui/breadcrumbs'
 import html from 'remark-html'
 import { getSingleMarkdownData } from '@/lib/markdown'
 import { Program } from '@/lib/interfaces/content'
@@ -36,8 +35,6 @@ export default async function ProgramDetailPage({
 
   return (
     <Section maxWidth="4xl">
-      <Breadcrumbs last={program.title} />
-
       <div className="relative mt-6 aspect-video overflow-hidden rounded-lg">
         <Image
           src={program['featured-img']}

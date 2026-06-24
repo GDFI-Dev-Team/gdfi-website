@@ -9,6 +9,7 @@ import {
 } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Search } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 export const filterInputClasses =
   'px-3 py-2.5 rounded-md border border-foreground/15 bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-btn-primary/50 transition-shadow disabled:opacity-50'
@@ -32,7 +33,13 @@ export function useFilterBar() {
   return context
 }
 
-export default function FilterBar({ children }: { children: React.ReactNode }) {
+export default function FilterBar({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -85,13 +92,18 @@ export default function FilterBar({ children }: { children: React.ReactNode }) {
     <FilterBarContext.Provider
       value={{ searchParams, updateSearchParam, handleSearchChange, isPending }}
     >
-      <div className="flex justify-around px-(--gutter) bg-foreground/3 border-b border-foreground/10">
+      <div className="flex px-(--gutter) bg-foreground/3 border-b border-foreground/10">
         {/* Visual pending line indicating network/data updating state across the edge */}
         {isPending && (
           <div className="absolute top-0 left-0 right-0 h-2px bg-cyan-500 animate-pulse" />
         )}
 
-        <div className="mx-auto max-w-7xl w-full py-4 px-1 flex flex-nowrap gap-4 items-center overflow-x-auto">
+        <div
+          className={cn(
+            'mx-auto max-w-7xl w-full py-4 px-1 flex flex-nowrap gap-4 overflow-x-auto',
+            className,
+          )}
+        >
           {children}
         </div>
       </div>
@@ -109,7 +121,7 @@ export function SearchInput({
   const { searchParams, handleSearchChange } = useFilterBar()
 
   return (
-    <div className="relative w-full max-w-sm shrink-0">
+    <div className="relative w-60 max-w-sm shrink-0">
       <Search
         className="absolute left-3 top-1/2 -translate-y-1/2 text-foreground/40"
         size={18}
