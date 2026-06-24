@@ -12,7 +12,7 @@ const PLACEHOLDER_BIO =
 
 export const BOARD_OF_TRUSTEES: Personnel[] = [
   {
-    id: 'mt-cruz',
+    id: 'm-delacruz',
     name: 'Margarita T. de la Cruz',
     role: 'President & Executive Director',
     image: PLACEHOLDER_IMG,
@@ -21,7 +21,7 @@ export const BOARD_OF_TRUSTEES: Personnel[] = [
   {
     id: 'r-melquiades',
     name: 'Rectito Melquiades',
-    role: 'Vice President',
+    role: 'Vice–President',
     image: PLACEHOLDER_IMG,
     bio: PLACEHOLDER_BIO,
   },
@@ -113,7 +113,7 @@ export const PROJECT_COORDINATION: Personnel[] = [
   {
     id: 'l-abuda',
     name: 'Leo Abuda',
-    role: 'Monitoring, Evaluation & Learning Officer',
+    role: 'Monitoring, Evaluation, & Learning Officer',
     image: PLACEHOLDER_IMG,
     bio: PLACEHOLDER_BIO,
   },
