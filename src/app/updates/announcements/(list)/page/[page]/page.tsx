@@ -1,4 +1,3 @@
-import Section from '@/components/ui/section'
 import { notFound } from 'next/navigation'
 import { getCollectionMarkdownData } from '@/lib/markdown'
 import { paginateItems } from '@/lib/pagination'
@@ -33,13 +32,11 @@ export default async function AnnouncementsPageRoute({
   if (currentPage > maxPage) notFound()
 
   return (
-    <Section sectionClassName="py-12 md:py-16">
-      <AnnouncementsGrid
-        items={items}
-        totalPages={totalPages}
-        currentPage={currentPage}
-        querySuffix={querySuffix}
-      />
-    </Section>
+    <AnnouncementsGrid
+      items={items}
+      totalPages={totalPages}
+      currentPage={currentPage}
+      querySuffix={querySuffix}
+    />
   )
 }

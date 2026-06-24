@@ -1,5 +1,4 @@
 import { getAnnouncements } from '@/lib/data/announcements'
-import Section from '@/components/ui/section'
 import { AnnouncementsGrid } from '@/features/updates/announcements/announcements-grid'
 
 export default async function AnnouncementsPage({
@@ -13,13 +12,11 @@ export default async function AnnouncementsPage({
     resolvedParams,
   )
   return (
-    <Section sectionClassName="py-12 md:py-16">
-      <AnnouncementsGrid
-        items={items}
-        totalPages={totalPages}
-        currentPage={1}
-        querySuffix={querySuffix}
-      />
-    </Section>
+    <AnnouncementsGrid
+      items={items}
+      totalPages={totalPages}
+      currentPage={1}
+      querySuffix={querySuffix}
+    />
   )
 }
