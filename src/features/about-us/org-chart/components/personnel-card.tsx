@@ -18,14 +18,14 @@ export function PersonnelCard({ person }: { person: Personnel }) {
   }, [isMobileModalOpen])
 
   return (
-    <div className="group relative flex flex-col items-center w-full max-w-[140px] mx-auto">
+    <div className="group relative flex flex-col items-center w-full max-w-140px mx-auto">
       <div className="relative w-24 h-24 md:w-28 md:h-28 mb-3 bg-foreground/10 border border-foreground/10 rounded-sm">
         <Image
           src={person.image}
           alt={person.name}
           fill
           className="object-cover"
-          sizes="(max-width: 768px) 96px, 112px"
+          sizes="(min-width: 768px) 50vw, 100vw"
         />
 
         <div className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-4 w-64 p-4 bg-background border border-foreground/15 shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60] pointer-events-none">

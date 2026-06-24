@@ -2,7 +2,7 @@ import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
 import AnnualReportsShell from '@/features/resources/annual-reports/components/ar-shell'
 import { getCollectionMarkdownData } from '@/lib/markdown'
-import { AnnualReport } from '@/features/resources/annual-reports/components/ar-grid'
+import { AnnualReport } from '@/lib/interfaces/content'
 
 export default function AnnualReportsPage() {
   const reports = getCollectionMarkdownData<Omit<AnnualReport, 'slug'>>(

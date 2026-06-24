@@ -8,7 +8,9 @@ interface UniversalFilterParams {
   end_date?: string
 }
 
-export function filterAndSortCollection<T extends BaseContent>( // typescript generic T
+type FilterableContent = BaseContent & { date?: string; tags?: string[] }
+
+export function filterAndSortCollection<T extends FilterableContent>( // typescript generic T
   items: T[],
   params: UniversalFilterParams,
   // Callback function to handle varying tag property names across content types
@@ -38,17 +40,22 @@ export function filterAndSortCollection<T extends BaseContent>( // typescript ge
   if (params.start_date) {
     // date tracking range
     const start = new Date(params.start_date).getTime()
-    filtered = filtered.filter((item) => new Date(item.date).getTime() >= start)
+    filtered = filtered.filter(
+      (item) =>
+        item.date !== undefined && new Date(item.date).getTime() >= start,
+    )
   }
   if (params.end_date) {
     const end = new Date(params.end_date).getTime()
-    filtered = filtered.filter((item) => new Date(item.date).getTime() <= end)
+    filtered = filtered.filter(
+      (item) => item.date !== undefined && new Date(item.date).getTime() <= end,
+    )
   }
 
   filtered.sort((a, b) => {
-    // timeline sorting
-    const timeA = new Date(a.date).getTime()
-    const timeB = new Date(b.date).getTime()
+    // timeline sorting — items without a date keep their relative order
+    const timeA = a.date ? new Date(a.date).getTime() : 0
+    const timeB = b.date ? new Date(b.date).getTime() : 0
     return params.sort === 'oldest' ? timeA - timeB : timeB - timeA
   })
 

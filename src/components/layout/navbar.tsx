@@ -48,8 +48,8 @@ function BrandLogo({
           WebkitMaskSize: 'contain',
         }}
         className={cn(
-          'block aspect-[448/76] shrink-0 transition-all duration-500 ease-in-out',
-          atTop ? 'bg-on-hero' : 'bg-foreground',
+          'block aspect-448/76 shrink-0 transition-all duration-500 ease-in-out',
+          atTop ? 'bg-text-standard' : 'bg-foreground',
           scrolled ? 'h-6 md:h-6 lg:h-9' : 'h-7 md:h-7 lg:h-11',
         )}
       />
@@ -153,7 +153,7 @@ export function SiteHeader() {
               className={cn(
                 'shrink-0 overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
                 atTop
-                  ? 'text-on-hero hover:bg-on-hero/10'
+                  ? 'text-text-standard hover:bg-text-standard/10'
                   : 'text-foreground hover:bg-foreground/5',
                 scrolled ? 'max-w-0 opacity-0' : 'mr-1 max-w-10 opacity-100',
               )}
@@ -178,10 +178,10 @@ export function SiteHeader() {
                   'whitespace-nowrap rounded-full px-2 py-2 text-xs font-semibold transition-colors lg:px-3.5 lg:text-sm',
                   active
                     ? atTop
-                      ? 'bg-on-hero/15 text-on-hero'
+                      ? 'bg-text-standard/15 text-text-standard'
                       : 'bg-primary/10 text-primary-hover'
                     : atTop
-                      ? 'text-on-hero hover:bg-on-hero/10'
+                      ? 'text-text-standard hover:bg-text-standard/10'
                       : 'text-foreground hover:bg-foreground/5',
                 )
 
@@ -217,7 +217,7 @@ export function SiteHeader() {
                         className={cn(
                           'min-w-60 rounded-2xl border p-1.5 transition-colors duration-500 ease-in-out',
                           atTop
-                            ? 'border-on-hero/40 bg-surface/60 shadow-lg backdrop-blur-md'
+                            ? 'border-text-standard/40 bg-surface/60 shadow-lg backdrop-blur-md'
                             : 'border-foreground/10 bg-surface shadow-lg',
                         )}
                       >
@@ -234,7 +234,7 @@ export function SiteHeader() {
                                 childActive
                                   ? 'bg-primary/10 text-primary-hover'
                                   : atTop
-                                    ? 'text-on-hero hover:bg-on-hero/10'
+                                    ? 'text-text-standard hover:bg-text-standard/10'
                                     : 'text-foreground hover:bg-foreground/5',
                               )}
                             >
@@ -255,7 +255,7 @@ export function SiteHeader() {
                 className={cn(
                   'transition-colors duration-500 ease-in-out',
                   atTop
-                    ? 'border-on-hero/40 text-on-hero hover:bg-on-hero/10'
+                    ? 'border-text-standard/40 text-text-standard hover:bg-text-standard/10'
                     : 'border-border',
                 )}
               />
@@ -268,7 +268,7 @@ export function SiteHeader() {
                   buttonBase,
                   'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
                   atTop
-                    ? 'border-on-hero/40 bg-transparent text-on-hero hover:bg-on-hero/10'
+                    ? 'border-text-standard/40 bg-transparent text-text-standard hover:bg-text-standard/10'
                     : 'border-transparent bg-btn-primary text-white shadow-sm hover:bg-btn-primary-hover',
                   scrolled ? 'md:px-5' : 'md:px-4',
                 )}
