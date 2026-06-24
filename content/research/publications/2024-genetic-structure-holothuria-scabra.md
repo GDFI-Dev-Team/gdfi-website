@@ -5,6 +5,5 @@ year: '2024'
 outlet: 'Frontiers in Marine Science'
 volume: '11'
 pages: '1396016'
-citedBy: '4'
 link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=YZzsbNwAAAAJ&citation_for_view=YZzsbNwAAAAJ:5nxA0vEk-isC'
 ---

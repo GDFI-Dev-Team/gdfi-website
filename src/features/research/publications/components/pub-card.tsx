@@ -5,7 +5,6 @@ import type { Publication } from '@/lib/interfaces/content'
 
 interface PublicationCardProps {
   publication: Publication
-  /** Position in the list — drives the staggered fade-up reveal. */
   index?: number
 }
 
@@ -13,8 +12,7 @@ export default function PublicationCard({
   publication,
   index = 0,
 }: PublicationCardProps) {
-  const { title, authors, year, outlet, volume, pages, citedBy, link } =
-    publication
+  const { title, authors, year, outlet, volume, pages, link } = publication
 
   // Citation line: "Outlet · 14(11) · 2775–2794" — skip any missing parts.
   const citation = [outlet, volume, pages].filter(Boolean).join(' · ')
@@ -36,11 +34,6 @@ export default function PublicationCard({
         >
           {year}
         </Text>
-        {citedBy && (
-          <Text size="xs" className="text-foreground/40 tabular-nums">
-            <span className="sm:hidden">· </span>Cited by {citedBy}
-          </Text>
-        )}
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-1.5">

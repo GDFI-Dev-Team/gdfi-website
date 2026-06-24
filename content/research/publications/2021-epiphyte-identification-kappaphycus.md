@@ -5,6 +5,5 @@ year: '2021'
 outlet: 'Philipp Agric Sci'
 volume: '104(3)'
 pages: '328-336'
-citedBy: '4'
 link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=YZzsbNwAAAAJ&citation_for_view=YZzsbNwAAAAJ:WF5omc3nYNoC'
 ---

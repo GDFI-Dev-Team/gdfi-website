@@ -5,6 +5,5 @@ year: '2021'
 outlet: 'Aquaculture'
 volume: '541'
 pages: '736743'
-citedBy: '11'
 link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=YZzsbNwAAAAJ&citation_for_view=YZzsbNwAAAAJ:9yKSN-GCB0IC'
 ---

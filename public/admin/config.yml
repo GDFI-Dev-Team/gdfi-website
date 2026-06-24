@@ -90,11 +90,6 @@ collections:
         widget: string
         required: false
         hint: ex. 744-750 or e70016
-      - name: citedBy
-        label: Cited by
-        widget: string
-        required: false
-        hint: Citation count, ex. 91
       - name: link
         label: External link
         widget: string

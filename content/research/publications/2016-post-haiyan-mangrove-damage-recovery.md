@@ -5,6 +5,5 @@ year: '2016'
 outlet: 'Marine Pollution Bulletin'
 volume: '109(2)'
 pages: '744-750'
-citedBy: '91'
 link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=YZzsbNwAAAAJ&citation_for_view=YZzsbNwAAAAJ:UeHWp8X0CEIC'
 ---

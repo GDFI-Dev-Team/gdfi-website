@@ -5,6 +5,5 @@ year: '2024'
 outlet: 'Aquaculture, Fish and Fisheries'
 volume: '4(6)'
 pages: 'e70016'
-citedBy: '1'
 link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=YZzsbNwAAAAJ&citation_for_view=YZzsbNwAAAAJ:3fE2CSJIrl8C'
 ---

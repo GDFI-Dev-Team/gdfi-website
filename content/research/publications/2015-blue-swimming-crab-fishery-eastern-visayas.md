@@ -5,6 +5,5 @@ year: '2015'
 outlet: 'Philippine Journal of Natural Sciences'
 volume: '20(1)'
 pages: '25-45'
-citedBy: '13'
 link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=YZzsbNwAAAAJ&citation_for_view=YZzsbNwAAAAJ:zYLM7Y9cAGgC'
 ---

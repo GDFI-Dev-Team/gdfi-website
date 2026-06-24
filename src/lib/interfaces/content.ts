@@ -43,7 +43,6 @@ export interface Publication extends BaseContent {
   outlet?: string
   volume?: string
   pages?: string
-  citedBy?: string
   link?: string
   pdf?: string
 }
