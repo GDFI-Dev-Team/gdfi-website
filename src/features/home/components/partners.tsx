@@ -28,9 +28,8 @@ const Partners = () => {
       <Marquee>
         {partners.map((p) => {
           const containerClasses = cn(
-            'group flex flex-col gap-4 w-40 items-center opacity-60 hover:opacity-100 transition-opacity duration-300 rounded-xl p-2',
-            p.link &&
-              'cursor-pointer hover:bg-foreground/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50',
+            'cursor-pointer group flex flex-col gap-4 w-40 items-center opacity-60 hover:opacity-100 transition-opacity duration-300 rounded-xl p-2',
+            p.link,
           )
           const innerContent = (
             <>
