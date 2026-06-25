@@ -8,7 +8,7 @@ import { formatEdgeDate } from '@/lib/date'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Image from 'next/image'
-import Link from 'next/link'
+import Button from '@/components/ui/button'
 
 function getYouTubeId(url: string): string | null {
   const m = url.match(
@@ -130,13 +130,14 @@ export default function FeaturedVideoSlideshow({
                           allowFullScreen
                           className="absolute inset-0 w-full h-full border-0"
                         />
-                        <button
+                        <Button
                           onClick={() => setPlayingPos(null)}
                           aria-label="Stop video"
-                          className="absolute top-3 right-3 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm text-white hover:bg-black/80 transition-colors"
+                          variant="ghost"
+                          className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-black/70 backdrop-blur-sm text-white hover:bg-black/90 transition-all"
                         >
-                          <X size={18} />
-                        </button>
+                          <X size={20} />
+                        </Button>
                       </>
                     ) : (
                       <>
@@ -156,16 +157,16 @@ export default function FeaturedVideoSlideshow({
                         )}
 
                         {/* Scrims — matching Banner pattern */}
-                        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 via-[45%] to-transparent" />
-                        <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/10 via-[35%] to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 via-45% to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/10 via-35% to-transparent" />
 
                         {/* Centered play button */}
                         <button
                           onClick={() => setPlayingPos(i)}
                           aria-label={`Play "${video.title}"`}
-                          className="absolute inset-0 z-10 flex items-center justify-center group/play"
+                          className="cursor-pointer absolute inset-0 z-10 flex items-center justify-center hover:opacity-100 transition-opacity focus:outline-none"
                         >
-                          <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-sm ring-1 ring-white/25 transition-all duration-300 group-hover/play:scale-110 group-hover/play:bg-white/20">
+                          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/30 flex items-center justify-center hover:bg-white/40 transition-colors">
                             <Play
                               className="fill-white text-white ml-0.5"
                               size={28}
@@ -196,15 +197,6 @@ export default function FeaturedVideoSlideshow({
                                 {video.body}
                               </Text>
                             )}
-                            <div className="flex gap-3 mt-4 pointer-events-auto">
-                              <Link
-                                href={`/resources/videos/${video.slug}`}
-                                onClick={(e) => e.stopPropagation()}
-                                className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-white border border-white/25 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
-                              >
-                                View Details
-                              </Link>
-                            </div>
                           </div>
                         </div>
                       </>
@@ -219,20 +211,22 @@ export default function FeaturedVideoSlideshow({
         {/* Floating arrows — appear on hover */}
         {total > 1 && (
           <>
-            <button
+            <Button
               onClick={prev}
               aria-label="Previous featured video"
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm text-white/70 hover:text-white hover:bg-black/60 transition-all opacity-0 group-hover/slider:opacity-100"
+              variant="ghost"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm text-white hover:bg-black/80 transition-all opacity-0 group-hover/slider:opacity-100"
             >
-              <ChevronLeft size={18} />
-            </button>
-            <button
+              <ChevronLeft size={20} />
+            </Button>
+            <Button
               onClick={next}
               aria-label="Next featured video"
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm text-white/70 hover:text-white hover:bg-black/60 transition-all opacity-0 group-hover/slider:opacity-100"
+              variant="ghost"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm text-white hover:bg-black/80 transition-all opacity-0 group-hover/slider:opacity-100"
             >
-              <ChevronRight size={18} />
-            </button>
+              <ChevronRight size={20} />
+            </Button>
           </>
         )}
       </div>
