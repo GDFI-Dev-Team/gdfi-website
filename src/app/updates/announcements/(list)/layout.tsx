@@ -16,7 +16,7 @@ export default function AnnouncementsListLayout({
     <>
       <Banner
         title="Announcements"
-        description="Stay up to date with the latest stories, interviews, and updates from GDFI."
+        description="Stay connected with our ongoing efforts on the frontlines"
         imgUrl="/feat-hero/hero-1.webp"
       />
       <Suspense>
