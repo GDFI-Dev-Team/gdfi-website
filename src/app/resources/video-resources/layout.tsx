@@ -43,7 +43,7 @@ export default function VideoResourcesLayout({
         </Section>
       )}
 
-      {children}
+      <Section>{children}</Section>
     </main>
   )
 }

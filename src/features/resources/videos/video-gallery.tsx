@@ -1,107 +1,56 @@
 'use client'
 
 import { useState } from 'react'
-import { Play } from 'lucide-react'
 import { VideoContent } from '@/lib/interfaces/content'
-import { formatEdgeDate } from '@/lib/date'
-import Heading from '@/components/ui/heading'
-import Text from '@/components/ui/text'
+import VideoCard from './video-card'
 import VideoModal from './modal'
-import Image from 'next/image'
+import Pagination from '@/components/ui/pagination'
 
-function getYouTubeId(url: string): string | null {
-  const m = url.match(
-    /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
-  )
-  return m ? m[1] : null
-}
-
-function toEmbedUrl(id: string): string {
-  return `https://www.youtube.com/embed/${id}`
+interface VideoGalleryProps {
+  videos: (VideoContent & { slug: string })[]
+  totalPages: number
+  currentPage: number
+  querySuffix: string
 }
 
 export default function VideoGallery({
   videos,
-}: {
-  videos: (VideoContent & { slug: string })[]
-}) {
+  totalPages,
+  currentPage,
+  querySuffix,
+}: VideoGalleryProps) {
   const [selectedUrl, setSelectedUrl] = useState<string | null>(null)
 
   return (
     <>
-      <div className="flex flex-col gap-8">
-        {videos.map((video) => {
-          const videoId = getYouTubeId(video['youtube-link'])
-          const thumbnail = videoId
-            ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-            : null
-          const embedUrl = videoId ? toEmbedUrl(videoId) : null
+      {videos.length > 0 ? (
+        <>
+          <div className="flex flex-col gap-8">
+            {videos.map((video) => (
+              <VideoCard
+                key={video.slug}
+                video={video}
+                onPlay={setSelectedUrl}
+              />
+            ))}
+          </div>
 
-          return (
-            <div
-              key={video.slug}
-              onClick={() => embedUrl && setSelectedUrl(embedUrl)}
-              onKeyDown={(e) =>
-                (e.key === 'Enter' || e.key === ' ') &&
-                embedUrl &&
-                setSelectedUrl(embedUrl)
-              }
-              role="button"
-              tabIndex={0}
-              aria-label={`Play ${video.title}`}
-              className="group flex flex-col md:flex-row gap-6 p-6 rounded-xl border border-transparent hover:border-foreground/10 bg-foreground/3 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
-            >
-              <div className="relative w-full md:w-72 lg:w-80 aspect-video shrink-0 rounded-xl overflow-hidden bg-foreground/5 shadow-sm">
-                {thumbnail ? (
-                  <>
-                    <Image
-                      src={thumbnail}
-                      alt={video.title}
-                      fill
-                      sizes="(min-width: 1024px) 320px, (min-width: 768px) 288px, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-black/60 backdrop-blur-sm ring-1 ring-white/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-black/75">
-                        <Play
-                          className="fill-white text-white ml-0.5"
-                          size={20}
-                        />
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center bg-foreground/10">
-                    <Play className="text-foreground/30" size={32} />
-                  </div>
-                )}
-              </div>
-
-              <div className="flex flex-col justify-center gap-2 flex-1 min-w-0 py-2">
-                <Text
-                  size="xs"
-                  className="text-foreground/60 font-semibold tracking-wider"
-                >
-                  {formatEdgeDate(video.date)}
-                </Text>
-
-                <Heading
-                  level={3}
-                  className="line-clamp-2 leading-snug group-hover:text-btn-primary transition-colors"
-                >
-                  {video.title}
-                </Heading>
-
-                {video.body && (
-                  <Text size="sm" className="text-foreground/60 mt-1">
-                    {video.body}
-                  </Text>
-                )}
-              </div>
-            </div>
-          )
-        })}
-      </div>
+          {totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              baseUrl="/resources/video-resources/page"
+              searchParamsSuffix={querySuffix}
+            />
+          )}
+        </>
+      ) : (
+        <div className="text-center py-12 border border-dashed border-foreground/10 rounded-xl bg-background/50">
+          <p className="text-foreground/50 text-sm font-medium">
+            No videos match your active filter criteria.
+          </p>
+        </div>
+      )}
 
       <VideoModal
         videoUrl={selectedUrl}
