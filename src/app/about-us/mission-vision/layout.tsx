@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Mission & Vision',
+  title: {
+    absolute: 'Mission & Vision',
+  },
   description:
-    'Our commitment to biodiversity and sustainable development in Eastern Samar.',
+    'Discover the heart of our foundation and its drive to heal our environment.',
   openGraph: {
     title: 'Mission & Vision',
     description:
-      'Our commitment to biodiversity and sustainable development in Eastern Samar.',
+      'Discover the heart of our foundation and its drive to heal our environment.',
     url: '/about-us/mission-vision',
     images: [
       {
