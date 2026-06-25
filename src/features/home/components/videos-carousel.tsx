@@ -47,11 +47,12 @@ export default function VideoCarousel({ videos }: { videos: VideoContent[] }) {
   return (
     <div className="w-full flex flex-col items-center gap-8">
       <div
-        className="relative w-full h-[45vw] md:h-[34vw] max-h-[480px] flex items-center justify-center overflow-hidden"
+        className="relative w-full flex items-center justify-center overflow-hidden"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
+        <div className="invisible w-[80%] md:w-[60%] aspect-video mx-auto" />
         {displayVideos.map((video, i) => {
           let offset = i - currentIndex
           if (offset < -Math.floor(len / 2)) offset += len

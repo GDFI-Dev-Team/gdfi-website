@@ -11,7 +11,7 @@ export default function FeaturedInterviews() {
     <Section
       aria-labelledby="featured-interviews-heading"
       sectionClassName="bg-foreground/3 overflow-hidden"
-      divClassName="flex flex-col gap-10 items-center w-full max-w-full"
+      divClassName="flex flex-col gap-10 items-center"
     >
       <div className="flex flex-col items-center gap-3 text-center">
         <Text
