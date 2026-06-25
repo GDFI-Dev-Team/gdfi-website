@@ -8,6 +8,7 @@ import { getAnnouncements } from '@/lib/data/announcements'
 import { ArticleContent } from '@/lib/interfaces/content'
 import { FALLBACK_IMAGE } from '@/config/content'
 import { formatEdgeDate } from '@/lib/date'
+import { cn } from '@/lib/utils'
 
 type Announcement = ArticleContent
 
@@ -19,6 +20,7 @@ const UpdateCard = ({
   featured?: boolean
 }) => {
   const imageSrc = update.featured_images?.[0] || FALLBACK_IMAGE
+  const previewText = update.excerpt || update.body
 
   return (
     <article
@@ -47,7 +49,7 @@ const UpdateCard = ({
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-linear-to-t from-overlay/90 via-overlay/45 to-overlay/10 pointer-events-none"
+        className="absolute inset-0 bg-linear-to-t from-overlay/90 via-overlay/60 to-overlay/10 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -70,11 +72,22 @@ const UpdateCard = ({
           className={
             featured
               ? 'max-w-2xl text-on-overlay'
-              : 'line-clamp-3 text-on-overlay'
+              : 'line-clamp-2 text-on-overlay'
           }
         >
           {update.title}
         </Heading>
+        <Text
+          size="sm"
+          className={cn(
+            'text-on-overlay/80',
+            featured
+              ? 'line-clamp-2 sm:line-clamp-3 md:line-clamp-4 max-w-3xl'
+              : 'line-clamp-2',
+          )}
+        >
+          {previewText}
+        </Text>
       </div>
     </article>
   )
