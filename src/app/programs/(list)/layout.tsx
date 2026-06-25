@@ -16,7 +16,7 @@ export default function ProgramsListLayout({
     <>
       <Banner
         title="Programs"
-        description="Discover the different programs of Guiuan Development Foundation Inc. and how you can provide support."
+        description="Explore how our initiatives are breathing life back to our community"
         imgUrl="/feat-hero/hero-2.webp"
       />
       <Suspense>

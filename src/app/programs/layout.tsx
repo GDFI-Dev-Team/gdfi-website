@@ -3,7 +3,16 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Programs',
   description:
-    'Discover the different programs of Guiuan Development Foundation Inc. and how you can provide support.',
+    'Explore how our initiatives are breathing life back to our community.',
+  openGraph: {
+    title: 'Programs',
+    description:
+      'Explore how our initiatives are breathing life back to our community.',
+    url: '/programs',
+  },
+  alternates: {
+    canonical: '/programs',
+  },
 }
 
 export default function ProgramsLayout({
