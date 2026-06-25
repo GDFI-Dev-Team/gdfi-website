@@ -47,7 +47,7 @@ export default function VideoCarousel({ videos }: { videos: VideoContent[] }) {
   return (
     <div className="w-full flex flex-col items-center gap-8">
       <div
-        className="relative w-full h-[250px] sm:h-[220px] md:h-[320px] lg:h-[370px] flex items-center justify-center overflow-hidden"
+        className="relative w-full h-[45vw] md:h-[34vw] max-h-[480px] flex items-center justify-center overflow-hidden"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
