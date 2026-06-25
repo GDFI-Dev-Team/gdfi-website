@@ -20,8 +20,10 @@ export default async function VideoResourcesPage({ searchParams }: PageProps) {
 
   return (
     <Section>
-      <div className="flex flex-col gap-8">
-        <Heading level={2}>All Videos</Heading>
+      <Heading level={2} className="mb-4">
+        All Videos
+      </Heading>
+      <div className="flex flex-col">
         {items.length > 0 ? (
           <VideoGallery videos={items} />
         ) : (

@@ -34,8 +34,10 @@ export default function VideoResourcesLayout({
       {/* Featured slideshow */}
       {featuredVideos.length > 0 && (
         <Section sectionClassName="pb-0 md:pb-0">
-          <div className="flex flex-col gap-5">
-            <Heading level={2}>Featured</Heading>
+          <div className="flex flex-col">
+            <Heading level={2} className="mb-4">
+              Featured
+            </Heading>
             <FeaturedVideoSlideshow videos={featuredVideos} />
           </div>
         </Section>

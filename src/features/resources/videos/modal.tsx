@@ -34,7 +34,7 @@ export default function VideoModal({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-10"
+      className="fixed inset-0 z-100 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-10"
       onClick={onClose}
       role="dialog"
       aria-modal="true"

@@ -1,14 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import { Play } from 'lucide-react'
-import Heading from '@/components/ui/heading'
-import Text from '@/components/ui/text'
 import { VideoContent } from '@/lib/interfaces/content'
 import { formatEdgeDate } from '@/lib/date'
+import Heading from '@/components/ui/heading'
+import Text from '@/components/ui/text'
 import VideoModal from './modal'
+import Image from 'next/image'
 
 function getYouTubeId(url: string): string | null {
   const m = url.match(
@@ -30,7 +29,7 @@ export default function VideoGallery({
 
   return (
     <>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-8">
         {videos.map((video) => {
           const videoId = getYouTubeId(video['youtube-link'])
           const thumbnail = videoId
@@ -50,7 +49,7 @@ export default function VideoGallery({
               role="button"
               tabIndex={0}
               aria-label={`Play ${video.title}`}
-              className="group flex flex-col md:flex-row gap-6 p-4 -mx-4 rounded-2xl border border-transparent hover:border-foreground/10 hover:bg-foreground/3 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
+              className="group flex flex-col md:flex-row gap-6 p-6 rounded-xl border border-transparent hover:border-foreground/10 bg-foreground/3 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
             >
               <div className="relative w-full md:w-72 lg:w-80 aspect-video shrink-0 rounded-xl overflow-hidden bg-foreground/5 shadow-sm">
                 {thumbnail ? (
@@ -94,21 +93,10 @@ export default function VideoGallery({
                 </Heading>
 
                 {video.body && (
-                  <Text
-                    size="sm"
-                    className="text-foreground/60 line-clamp-2 md:line-clamp-3 mt-1"
-                  >
+                  <Text size="sm" className="text-foreground/60 mt-1">
                     {video.body}
                   </Text>
                 )}
-
-                <Link
-                  href={`/resources/videos/${video.slug}`}
-                  onClick={(e) => e.stopPropagation()}
-                  className="mt-2 text-xs font-semibold text-btn-primary underline-offset-4 hover:underline w-fit"
-                >
-                  View Details
-                </Link>
               </div>
             </div>
           )
