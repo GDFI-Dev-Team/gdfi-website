@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Mission & Vision',
-  },
+  title: 'Mission & Vision',
   description:
     'Discover the heart of our foundation and its drive to heal our environment.',
   openGraph: {
@@ -11,14 +9,6 @@ export const metadata: Metadata = {
     description:
       'Discover the heart of our foundation and its drive to heal our environment.',
     url: '/about-us/mission-vision',
-    images: [
-      {
-        url: '/feat-hero/hero-3-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Ridge to reef campaign',
-      },
-    ],
   },
   alternates: {
     canonical: '/about-us/mission-vision',

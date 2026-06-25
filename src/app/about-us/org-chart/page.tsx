@@ -12,7 +12,7 @@ export default function OrganizationalStructurePage() {
     <>
       <Banner
         title="Organizational Structure"
-        description="The dedicated team and leadership driving our mission forward."
+        description="Meet the dedicated team and leadership driving our mission forward"
         imgUrl="/feat-hero/hero-2.webp"
       />
 

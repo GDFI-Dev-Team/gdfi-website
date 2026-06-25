@@ -2,8 +2,16 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Organizational Structure',
-  description:
-    'Meet the board of trustees, project coordinators, and volunteers dedicated to the Guiuan Development Foundation Inc.',
+  description: `Meet the dedicated team and leadership driving our mission forward`,
+  openGraph: {
+    title: 'Organizational Structure',
+    description:
+      'Meet the dedicated team and leadership driving our mission forward.',
+    url: '/about-us/org-chart',
+  },
+  alternates: {
+    canonical: '/about-us/org-chart',
+  },
 }
 
 export default function OrganizationalStructureLayout({
