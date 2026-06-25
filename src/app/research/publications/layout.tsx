@@ -3,7 +3,16 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Publications',
   description:
-    'Research, studies, and findings from our work across the ridge-to-reef ecosystems of Eastern Samar.',
+    'Dive into the scientific insights that anchor our conservation strategies.',
+  openGraph: {
+    title: 'Publications',
+    description:
+      'Dive into the scientific insights that anchor our conservation strategies.',
+    url: '/research/publications',
+  },
+  alternates: {
+    canonical: '/research/publications',
+  },
 }
 
 export default function PublicationsLayout({
