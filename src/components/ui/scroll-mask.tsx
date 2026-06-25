@@ -1,8 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import AnnualReportCard from './ar-card'
-import { AnnualReport } from '@/lib/interfaces/content'
+import { useRef, useState, useEffect, ReactNode } from 'react'
 
 type ScrollEdge = 'none' | 'top' | 'bottom' | 'both'
 
@@ -43,43 +41,26 @@ function useScrollMask<T extends HTMLElement>() {
   return { ref, maskImage: MASKS[edge] }
 }
 
-export default function AnnualReportGrid({
-  reports,
-  onReportSelect,
-}: {
-  reports: AnnualReport[]
-  onReportSelect: (pdfUrl: string) => void
-}) {
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(null)
-  const { ref, maskImage } = useScrollMask<HTMLDivElement>()
+interface ScrollMaskProps {
+  children: ReactNode
+  maxHeight?: string
+  className?: string
+}
 
-  function handleSelect(report: AnnualReport) {
-    setSelectedSlug(report.slug)
-    onReportSelect(report['annual-report'])
-  }
+export default function ScrollMask({
+  children,
+  maxHeight = '60vh',
+  className = '',
+}: ScrollMaskProps) {
+  const { ref, maskImage } = useScrollMask<HTMLDivElement>()
 
   return (
     <div
       ref={ref}
-      className="max-h-[40vh] md:max-h-[55vh] overflow-y-auto"
-      style={{ maskImage }}
+      className={`overflow-y-auto ${className}`}
+      style={{ maxHeight, maskImage }}
     >
-      <ul
-        className="flex flex-col gap-3 list-none"
-        role="listbox"
-        aria-label="Annual reports"
-      >
-        {reports.map((report) => (
-          <AnnualReportCard
-            key={report.slug}
-            title={report.title}
-            prepared-by={report['prepared-by']}
-            pdfUrl={report['annual-report']}
-            isSelected={selectedSlug === report.slug}
-            onSelect={() => handleSelect(report)}
-          />
-        ))}
-      </ul>
+      {children}
     </div>
   )
 }

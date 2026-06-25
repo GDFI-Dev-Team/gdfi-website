@@ -1,9 +1,9 @@
 import Heading from '@/components/ui/heading'
 import Pagination from '@/components/ui/pagination'
 import VideoGallery from '@/features/resources/videos/video-gallery'
-import FeaturedVideoSlideshow from '@/features/resources/videos/featured-video-slideshow'
-import { getAllVideos, getVideosPage } from '@/lib/videos'
+import { getVideosPage } from '@/lib/videos'
 import { Metadata } from 'next'
+import Section from '@/components/ui/section'
 
 export const metadata: Metadata = {
   title: 'Video Resources',
@@ -16,22 +16,10 @@ interface PageProps {
 
 export default async function VideoResourcesPage({ searchParams }: PageProps) {
   const resolvedParams = await searchParams
-  const allVideos = getAllVideos()
   const { items, totalPages, querySuffix } = getVideosPage(1, resolvedParams)
 
-  const featuredVideos = allVideos.filter((v) => v.featured)
-
   return (
-    <>
-      {/* Featured slideshow */}
-      {featuredVideos.length > 0 && (
-        <div className="flex flex-col gap-5">
-          <Heading level={2}>Featured</Heading>
-          <FeaturedVideoSlideshow videos={featuredVideos} />
-        </div>
-      )}
-
-      {/* All videos */}
+    <Section>
       <div className="flex flex-col gap-8">
         <Heading level={2}>All Videos</Heading>
         {items.length > 0 ? (
@@ -48,11 +36,11 @@ export default async function VideoResourcesPage({ searchParams }: PageProps) {
           <Pagination
             currentPage={1}
             totalPages={totalPages}
-            baseUrl="/resources/videos/page"
+            baseUrl="/resources/video-resources/page"
             searchParamsSuffix={querySuffix}
           />
         )}
       </div>
-    </>
+    </Section>
   )
 }

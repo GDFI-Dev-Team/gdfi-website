@@ -6,17 +6,11 @@ import { getAllVideos, getVideosPage } from '@/lib/videos'
 import { paginateItems } from '@/lib/pagination'
 import { CONTENT_LIMITS } from '@/config/content'
 import { notFound } from 'next/navigation'
-import { Metadata } from 'next'
 
 export async function generateStaticParams() {
   const allVideos = getAllVideos()
   const { totalPages } = paginateItems(allVideos, 1, CONTENT_LIMITS.videos)
   return Array.from({ length: totalPages }, (_, i) => ({ page: String(i + 1) }))
-}
-
-export const metadata: Metadata = {
-  title: 'Video Resources',
-  description: 'Browse all videos from Guiuan Development Foundation Inc.',
 }
 
 interface PageProps {
@@ -59,7 +53,7 @@ export default async function VideoResourcesPaginatedPage({
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
-              baseUrl="/resources/videos/page"
+              baseUrl="/resources/video-resources/page"
               searchParamsSuffix={querySuffix}
             />
           )}

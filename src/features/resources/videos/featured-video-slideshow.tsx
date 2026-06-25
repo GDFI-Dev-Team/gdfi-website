@@ -1,14 +1,14 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import { ChevronLeft, ChevronRight, X, Play } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import Heading from '@/components/ui/heading'
-import Text from '@/components/ui/text'
 import { VideoContent } from '@/lib/interfaces/content'
 import { formatEdgeDate } from '@/lib/date'
+import Heading from '@/components/ui/heading'
+import Text from '@/components/ui/text'
+import Image from 'next/image'
+import Link from 'next/link'
 
 function getYouTubeId(url: string): string | null {
   const m = url.match(
