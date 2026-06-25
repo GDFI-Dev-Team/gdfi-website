@@ -8,36 +8,51 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   ),
   title: {
-    template: '%s | GDFI',
-    default: 'GDFI',
+    template: '%s | Guiuan Development Foundation Inc.',
+    default: 'Guiuan Development Foundation Inc.',
   },
   description: 'The official homepage of Guiuan Development Foundation Inc.',
-  applicationName: 'GDFI Website',
-  keywords: [
-    'GDFI',
-    'Guiuan',
-    'Eastern Samar',
-    'Eastern Visayas',
-    'Leyte',
-    'Samar',
-    'Biliran',
-    'NGO',
-  ],
-  authors: [
-    { name: 'Angela Denise Almazan' },
-    { name: 'Norman Enrico Eulin' },
-    { name: 'Adrian Raphaello Mayores' },
-    { name: 'Jade Eric Petilla' },
-  ],
+  applicationName: 'Guiuan Development Foundation Inc. Website',
   creator: 'Guiuan Development Foundation, Inc.',
   publisher: 'Guiuan Development Foundation, Inc.',
   category: 'Non-Government Organization',
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo-images/logo.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/logo-images/logo.svg',
+  },
   openGraph: {
-    title: 'Guiuan Development Foundation, Inc.',
+    title: {
+      template: '%s | Guiuan Development Foundation Inc.',
+      default: 'Guiuan Development Foundation Inc.',
+    },
     description: 'The official homepage of Guiuan Development Foundation Inc.',
-    siteName: 'GDFI',
+    siteName: 'Guiuan Development Foundation Inc.',
+    url: '/',
     locale: 'en_PH',
     type: 'website',
+    images: [
+      {
+        url: '/feat-hero/hero-3-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Guiuan Development Foundation, Inc.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: {
+      template: '%s | Guiuan Development Foundation Inc.',
+      default: 'Guiuan Development Foundation Inc.',
+    },
+    description: 'The official homepage of Guiuan Development Foundation Inc.',
+    images: ['/feat-hero/hero-3-og.jpg'],
   },
 }
 
