@@ -11,11 +11,34 @@ export const metadata: Metadata = {
     template: '%s | GDFI',
     default: 'GDFI',
   },
-  description: 'Official homepage of Guiuan Development Foundation Inc.',
-  keywords: ['GDFI', 'Guiuan', 'Eastern Samar'],
-  authors: [{ name: 'Guiuan Development Foundation Inc.' }],
+  description: 'The official homepage of Guiuan Development Foundation Inc.',
+  applicationName: 'GDFI Website',
+  keywords: [
+    'GDFI',
+    'Guiuan',
+    'Eastern Samar',
+    'Eastern Visayas',
+    'Leyte',
+    'Samar',
+    'Biliran',
+    'NGO',
+  ],
+  authors: [
+    { name: 'Angela Denise Almazan' },
+    { name: 'Norman Enrico Eulin' },
+    { name: 'Adrian Raphaello Mayores' },
+    { name: 'Jade Eric Petilla' },
+  ],
   creator: 'Guiuan Development Foundation, Inc.',
   publisher: 'Guiuan Development Foundation, Inc.',
+  category: 'Non-Government Organization',
+  openGraph: {
+    title: 'Guiuan Development Foundation, Inc.',
+    description: 'The official homepage of Guiuan Development Foundation Inc.',
+    siteName: 'GDFI',
+    locale: 'en_PH',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
