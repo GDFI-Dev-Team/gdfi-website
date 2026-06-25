@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { X } from 'lucide-react'
+import Button from '@/components/ui/button'
 
 interface VideoModalProps {
   videoUrl: string | null
@@ -44,13 +45,14 @@ export default function VideoModal({
         className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
+        <Button
           onClick={onClose}
           aria-label="Close video"
-          className="absolute top-4 right-4 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm text-white hover:bg-black/80 transition-colors"
+          variant="ghost"
+          className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-black/70 backdrop-blur-sm text-white hover:bg-black/90 transition-all"
         >
           <X size={20} />
-        </button>
+        </Button>
 
         <iframe
           src={`${videoUrl}?autoplay=1`}

@@ -107,7 +107,7 @@ export default async function OurLatestUpdates() {
 
       <div className="flex flex-col gap-6">
         <UpdateCard update={featured} featured />
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="hidden md:grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {rest.map((update) => (
             <UpdateCard key={update.slug} update={update} />
           ))}

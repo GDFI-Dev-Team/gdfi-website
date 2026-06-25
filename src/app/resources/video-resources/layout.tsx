@@ -14,8 +14,7 @@ export default function VideoResourcesLayout({
 }: {
   children: React.ReactNode
 }) {
-  const allVideos = getAllVideos()
-  const featuredVideos = allVideos.filter((v) => v.featured)
+  const featuredVideos = getAllVideos().filter((v) => v.featured)
 
   return (
     <main className="flex-1 flex flex-col bg-foreground/0.02">

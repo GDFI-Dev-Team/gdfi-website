@@ -4,10 +4,10 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
 import Button from '@/components/ui/button'
-import Heading from '@/components/ui/heading'
 import { cn } from '@/lib/utils'
-import { VideoContent } from '@/lib/interfaces/content'
 import VideoModal from '@/features/resources/videos/modal'
+import { VideoContent } from '@/lib/interfaces/content'
+import Text from '@/components/ui/text'
 
 function getYouTubeId(url: string): string | null {
   const m = url.match(
@@ -47,7 +47,7 @@ export default function VideoCarousel({ videos }: { videos: VideoContent[] }) {
   return (
     <div className="w-full flex flex-col items-center gap-8">
       <div
-        className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center overflow-hidden"
+        className="relative w-full h-[250px] sm:h-[220px] md:h-[320px] lg:h-[370px] flex items-center justify-center overflow-hidden"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -154,9 +154,9 @@ export default function VideoCarousel({ videos }: { videos: VideoContent[] }) {
       </div>
 
       <div className="flex flex-col items-center text-center max-w-2xl px-4 animate-fade-in">
-        <Heading level={3} className="mb-2">
+        <Text size="lg" className="font-semibold">
           {displayVideos[currentIndex].title}
-        </Heading>
+        </Text>
       </div>
 
       <VideoModal

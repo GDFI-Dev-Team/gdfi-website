@@ -4,14 +4,9 @@ import Text from '@/components/ui/text'
 import VideoCarousel from './videos-carousel'
 import { getAllVideos } from '@/lib/videos'
 
-const FeaturedInterviews = () => {
-  const videos = getAllVideos().filter((v) => {
-    const tags = (v.tags ?? []).map((t) => t.toLowerCase())
-    return tags.includes('featured') && tags.includes('interview')
-  })
-
-  if (videos.length === 0) return null
-
+export default function FeaturedInterviews() {
+  const featuredVideos = getAllVideos().filter((v) => v.featured)
+  if (featuredVideos.length === 0) return null
   return (
     <Section
       aria-labelledby="featured-interviews-heading"
@@ -31,9 +26,7 @@ const FeaturedInterviews = () => {
         </Heading>
       </div>
 
-      <VideoCarousel videos={videos} />
+      <VideoCarousel videos={featuredVideos} />
     </Section>
   )
 }
-
-export default FeaturedInterviews
