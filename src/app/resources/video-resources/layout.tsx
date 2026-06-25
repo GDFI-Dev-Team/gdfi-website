@@ -4,6 +4,7 @@ import FilterBar, {
   SearchInput,
   ClearFilters,
 } from '@/components/ui/filter-bar'
+import Section from '@/components/ui/section'
 
 export default function VideoResourcesLayout({
   children,
@@ -17,15 +18,14 @@ export default function VideoResourcesLayout({
         description="Browse the different videos of Guiuan Development Foundation Inc."
         imgUrl="/nav-item-banner-images/publications.webp"
       />
-      <Suspense
-        fallback={<div className="h-16 bg-foreground/3 animate-pulse" />}
-      >
+      <Suspense>
         <FilterBar className="justify-end gap-2">
           <SearchInput placeholder="Search videos..." />
           <ClearFilters />
         </FilterBar>
       </Suspense>
-      {children}
+
+      <Section>{children}</Section>
     </main>
   )
 }

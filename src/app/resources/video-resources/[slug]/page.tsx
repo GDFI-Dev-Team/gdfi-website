@@ -6,7 +6,7 @@ import {
   getCollectionMarkdownData,
 } from '@/lib/markdown'
 import { formatEdgeDate } from '@/lib/date'
-import { VideoContent } from '@/lib/interfaces/video'
+import { VideoContent } from '@/lib/interfaces/content'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
@@ -20,7 +20,9 @@ function getYouTubeId(url: string): string | null {
 }
 
 export function generateStaticParams() {
-  const videos = getCollectionMarkdownData<VideoContent>('resources/videos')
+  const videos = getCollectionMarkdownData<VideoContent>(
+    'resources/video-resources',
+  )
   return videos.map((video) => ({ slug: video.slug }))
 }
 
@@ -34,21 +36,17 @@ export default async function VideoResourcesSlugPage({ params }: PageProps) {
   let video: VideoContent
   try {
     video = getSingleMarkdownData<VideoContent>(
-      'resources/videos',
+      'resources/video-resources',
       `${slug}.md`,
     )
   } catch {
     notFound()
   }
 
-  const videoId = getYouTubeId(video.url)
+  const videoId = getYouTubeId(video['youtube-link'])
   const embedSrc = videoId
     ? `https://www.youtube.com/embed/${videoId}?rel=0`
     : null
-
-  const displayTags = (video.tags ?? []).filter(
-    (t) => t.toLowerCase() !== 'featured',
-  )
 
   return (
     <main className="flex-1 flex flex-col bg-background pt-24 md:pt-32">
@@ -74,18 +72,6 @@ export default async function VideoResourcesSlugPage({ params }: PageProps) {
             <Text size="sm" className="font-medium">
               {formatEdgeDate(video.date)}
             </Text>
-            {displayTags.length > 0 && (
-              <div className="flex flex-wrap gap-1.5">
-                {displayTags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
           </div>
         </header>
 
@@ -102,7 +88,11 @@ export default async function VideoResourcesSlugPage({ params }: PageProps) {
           </div>
         ) : (
           <div className="flex justify-start mb-8">
-            <Link href={video.url} target="_blank" rel="noopener noreferrer">
+            <Link
+              href={video['youtube-link']}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="primary" className="gap-2">
                 Watch on YouTube <ExternalLink size={16} aria-hidden="true" />
               </Button>

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { Play } from 'lucide-react'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { VideoContent } from '@/lib/interfaces/video'
+import { VideoContent } from '@/lib/interfaces/content'
 import { formatEdgeDate } from '@/lib/date'
 import VideoModal from './modal'
 
@@ -32,7 +32,7 @@ export default function VideoGallery({
     <>
       <div className="flex flex-col gap-6">
         {videos.map((video) => {
-          const videoId = getYouTubeId(video.url)
+          const videoId = getYouTubeId(video['youtube-link'])
           const thumbnail = videoId
             ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
             : null
@@ -93,12 +93,12 @@ export default function VideoGallery({
                   {video.title}
                 </Heading>
 
-                {(video.excerpt || video.body) && (
+                {video.body && (
                   <Text
                     size="sm"
                     className="text-foreground/60 line-clamp-2 md:line-clamp-3 mt-1"
                   >
-                    {video.excerpt || video.body}
+                    {video.body}
                   </Text>
                 )}
 

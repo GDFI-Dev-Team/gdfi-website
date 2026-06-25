@@ -37,3 +37,9 @@ export interface PageProps {
   params: Promise<{ page: string }>
   searchParams: SearchParams
 }
+
+export interface VideoContent extends BaseContent {
+  'youtube-link': string
+  date: string
+  featured?: boolean
+}

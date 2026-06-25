@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
 import Button from '@/components/ui/button'
 import Heading from '@/components/ui/heading'
 import { cn } from '@/lib/utils'
-import { VideoContent } from '@/lib/interfaces/video'
+import { VideoContent } from '@/lib/interfaces/content'
 import VideoModal from '@/features/resources/videos/modal'
 
 function getYouTubeId(url: string): string | null {
@@ -62,7 +62,7 @@ export default function VideoCarousel({ videos }: { videos: VideoContent[] }) {
           const isNext = offset === 1
           const isHidden = Math.abs(offset) > 1
 
-          const videoId = getYouTubeId(video.url)
+          const videoId = getYouTubeId(video['youtube-link'])
           const thumbnail = videoId
             ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
             : null

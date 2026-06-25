@@ -62,7 +62,7 @@ export const navLinks: NavLink[] = [
     href: '/resources',
     children: [
       { label: 'Annual Reports', href: '/resources/annual-reports' },
-      { label: 'Videos', href: '/resources/videos' },
+      { label: 'Video Resources', href: '/resources/video-resources' },
     ],
   },
 ]

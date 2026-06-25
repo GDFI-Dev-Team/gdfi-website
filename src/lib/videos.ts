@@ -1,7 +1,7 @@
 import { getCollectionMarkdownData } from '@/lib/markdown'
 import { paginateItems } from '@/lib/pagination'
 import { filterAndSortCollection } from '@/lib/content-filter'
-import { VideoContent } from '@/lib/interfaces/video'
+import { VideoContent } from '@/lib/interfaces/content'
 import { CONTENT_LIMITS } from '@/config/content'
 
 type SearchParams = {
@@ -13,7 +13,7 @@ function getParam(params: SearchParams, key: string) {
 }
 
 export function getAllVideos(): (VideoContent & { slug: string })[] {
-  return getCollectionMarkdownData<VideoContent>('resources/videos')
+  return getCollectionMarkdownData<VideoContent>('resources/video-resources')
 }
 
 export function getVideosPage(currentPage: number, searchParams: SearchParams) {

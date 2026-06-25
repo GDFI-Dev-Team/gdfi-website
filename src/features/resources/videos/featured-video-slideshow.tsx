@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight, X, Play } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { VideoContent } from '@/lib/interfaces/video'
+import { VideoContent } from '@/lib/interfaces/content'
 import { formatEdgeDate } from '@/lib/date'
 
 function getYouTubeId(url: string): string | null {
@@ -104,7 +104,7 @@ export default function FeaturedVideoSlideshow({
             onTransitionEnd={handleRest}
           >
             {slides.map((video, i) => {
-              const videoId = getYouTubeId(video.url)
+              const videoId = getYouTubeId(video['youtube-link'])
               const thumbnail = videoId
                 ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
                 : null
@@ -188,12 +188,12 @@ export default function FeaturedVideoSlideshow({
                             >
                               {video.title}
                             </Heading>
-                            {(video.excerpt || video.body) && (
+                            {video.body && (
                               <Text
                                 size="sm"
                                 className="text-white/75 line-clamp-2 mt-0.5 [text-shadow:0_1px_3px_rgb(0_0_0/0.4)]"
                               >
-                                {video.excerpt || video.body}
+                                {video.body}
                               </Text>
                             )}
                             <div className="flex gap-3 mt-4 pointer-events-auto">
