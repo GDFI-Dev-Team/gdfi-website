@@ -11,7 +11,11 @@ export async function generateStaticParams() {
   const articles = await getCollectionMarkdownData<ArticleContent>(
     'updates/announcements',
   )
-  const { totalPages } = paginateItems(articles, 1, CONTENT_LIMITS)
+  const { totalPages } = paginateItems(
+    articles,
+    1,
+    CONTENT_LIMITS.announcements,
+  )
   return Array.from({ length: totalPages }, (_, i) => ({ page: String(i + 1) }))
 }
 

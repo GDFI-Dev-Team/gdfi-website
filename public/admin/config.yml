@@ -174,10 +174,6 @@ collections:
         label: Date
         widget: datetime
         type: date
-      - name: excerpt
-        label: Excerpt
-        widget: string
-        required: false
       - name: featured_image 
         label: Featured Image
         widget: image
@@ -202,3 +198,28 @@ collections:
           Share any key details, quotes, or numbers that support the announcement.
 
           End with a call to action or forward-looking note (e.g. how to get involved, what's next).
+
+  - name: video-resources
+    label: Video Resources
+    label_singular: Video Resource
+    folder: content/resources/video-resources
+    fields: 
+      - label: Title
+        name: title
+        widget: string
+      - label: Featured
+        name: featured
+        widget: boolean
+        hint: Toggle for featured videos
+        default: false
+      - label: Excerpt
+        name: excerpt
+        widget: string
+        required: false
+      - label: Body
+        name: body
+        widget: richtext
+      - label: Youtube Link
+        name: youtube-link
+        widget: string
+

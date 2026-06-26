@@ -13,7 +13,18 @@ export function formatEdgeDate(dateInput: string | undefined | null): string {
       return 'No Date'
     }
 
-    return parsedDate.toISOString().split('T')[0]
+    const [year, month, day] = parsedDate
+      .toISOString()
+      .split('T')[0]
+      .split('-')
+      .map(Number)
+    return new Date(year, month - 1, day)
+      .toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
+      .toUpperCase()
   } catch {
     return 'No Date'
   }

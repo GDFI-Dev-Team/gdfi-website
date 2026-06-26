@@ -12,6 +12,13 @@ export interface PageProps {
   searchParams: SearchParams
 }
 
+export interface VideoContent extends BaseContent {
+  featured?: boolean
+  'youtube-link': string
+  date: string
+  body: string
+}
+
 // Dated, taggable editorial content (announcements, stories, etc.)
 export interface ArticleContent extends BaseContent {
   author?: string

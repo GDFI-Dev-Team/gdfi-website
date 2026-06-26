@@ -38,12 +38,15 @@ export async function getAnnouncements(
   const { items, totalPages } = paginateItems(
     filteredArticles,
     currentPage,
-    CONTENT_LIMITS,
+    CONTENT_LIMITS.announcements,
   )
 
   // Based on the full, unfiltered collection — lets callers tell "this page
   // segment doesn't exist" (404) apart from "this filter has no matches" (empty state).
-  const maxPage = Math.max(1, Math.ceil(allArticles.length / CONTENT_LIMITS))
+  const maxPage = Math.max(
+    1,
+    Math.ceil(allArticles.length / CONTENT_LIMITS.announcements),
+  )
 
   const queryBackup = new URLSearchParams()
   for (const key of ['q', 'category', 'sort', 'start_date', 'end_date']) {
