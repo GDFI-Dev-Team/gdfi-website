@@ -4,6 +4,7 @@ import Text from '@/components/ui/text'
 import Image from 'next/image'
 import Link from 'next/link'
 import { mockNewsArticles } from '@/features/updates/announcements/data/mock'
+import ShareButton from '@/components/ui/share-button'
 
 export default function Stories() {
   const stories = mockNewsArticles.filter(
@@ -18,9 +19,6 @@ export default function Stories() {
       sectionClassName="relative overflow-hidden bg-foreground/3"
       divClassName="flex flex-col gap-10"
     >
-      {/* Curve bridging the white section above down into this tinted one. The
-          fill matches the section above (bg-background). */}
-
       <div className="flex flex-col items-center gap-3 text-center">
         <Text
           size="sm"
@@ -57,13 +55,20 @@ export default function Stories() {
               </Link>
 
               <div className="flex flex-1 flex-col gap-3 p-6 md:p-8">
-                <Text
-                  size="xs"
-                  transform="uppercase"
-                  className="tracking-widest text-foreground/50"
-                >
-                  {story.date}
-                </Text>
+                <div className="flex items-center justify-between">
+                  <Text
+                    size="xs"
+                    transform="uppercase"
+                    className="tracking-widest text-foreground/50"
+                  >
+                    {story.date}
+                  </Text>
+                  <ShareButton
+                    url={`/news/${story.id}`}
+                    title={story.title}
+                    className="h-8 w-8 p-0 rounded-full text-foreground/40 hover:text-foreground hover:bg-foreground/5"
+                  />
+                </div>
                 <Link
                   href={`/news/${story.id}`}
                   className="hover:underline decoration-foreground/30 underline-offset-4"

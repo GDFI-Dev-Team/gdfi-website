@@ -9,6 +9,7 @@ import { ArticleContent } from '@/lib/interfaces/content'
 import { FALLBACK_IMAGE } from '@/config/content'
 import { formatEdgeDate } from '@/lib/date'
 import { cn } from '@/lib/utils'
+import ShareButton from '@/components/ui/share-button'
 
 type Announcement = ArticleContent
 
@@ -36,6 +37,15 @@ const UpdateCard = ({
       >
         <span className="sr-only ">Read {update.title}</span>
       </Link>
+
+      <div className="absolute top-4 right-4 z-20 pointer-events-auto">
+        <ShareButton
+          url={`/updates/announcements/${update.slug}`}
+          title={update.title}
+          className="h-9 w-9 p-0 rounded-full bg-black/40 text-white hover:bg-black/60 backdrop-blur-sm border-none"
+        />
+      </div>
+
       <Image
         src={imageSrc}
         alt={update.slug}

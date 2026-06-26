@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import VideoModal from '@/features/resources/videos/modal'
 import { VideoContent } from '@/lib/interfaces/content'
 import Text from '@/components/ui/text'
+import ShareButton from '@/components/ui/share-button'
 
 function getYouTubeId(url: string): string | null {
   const m = url.match(
@@ -154,10 +155,16 @@ export default function VideoCarousel({ videos }: { videos: VideoContent[] }) {
         </div>
       </div>
 
-      <div className="flex flex-col items-center text-center max-w-2xl px-4 animate-fade-in">
+      <div className="flex flex-col items-center text-center max-w-2xl px-4 animate-fade-in gap-4">
         <Text size="lg" className="font-semibold">
           {displayVideos[currentIndex].title}
         </Text>
+        <ShareButton
+          url="/resources/video-resources"
+          title={displayVideos[currentIndex].title}
+          showLabel
+          className="rounded-full px-5 py-2 h-auto text-sm bg-foreground/5 hover:bg-foreground/10"
+        />
       </div>
 
       <VideoModal
