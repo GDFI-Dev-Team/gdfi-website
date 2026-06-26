@@ -9,6 +9,7 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Image from 'next/image'
 import Button from '@/components/ui/button'
+import ShareButton from '@/components/ui/share-button'
 
 function getYouTubeId(url: string): string | null {
   const m = url.match(
@@ -174,8 +175,8 @@ export default function FeaturedVideoSlideshow({
                           </div>
                         </button>
 
-                        {/* Info overlay — bottom left */}
-                        <div className="absolute inset-x-0 bottom-0 z-20 px-6 py-6 md:px-10 md:py-8 pointer-events-none">
+                        {/* Info overlay — bottom */}
+                        <div className="absolute inset-x-0 bottom-0 z-20 px-6 py-6 md:px-10 md:py-8 pointer-events-none flex items-end justify-between gap-4">
                           <div className="flex flex-col gap-1.5 max-w-2xl">
                             <Text
                               size="xs"
@@ -198,6 +199,12 @@ export default function FeaturedVideoSlideshow({
                               </Text>
                             )}
                           </div>
+
+                          <ShareButton
+                            url="/resources/video-resources"
+                            title={video.title}
+                            className="h-10 w-10 shrink-0 p-0 rounded-full text-white/60 hover:text-white hover:bg-white/20 pointer-events-auto"
+                          />
                         </div>
                       </>
                     )}
