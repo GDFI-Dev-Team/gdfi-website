@@ -80,10 +80,10 @@ const UpdateCard = ({
         <Text
           size="sm"
           className={cn(
-            'text-on-overlay/80',
+            'text-on-overlay/80 max-w-3xl',
             featured
-              ? 'line-clamp-2 sm:line-clamp-3 md:line-clamp-4 max-w-3xl'
-              : 'line-clamp-2',
+              ? 'line-clamp-1 sm:line-clamp-2 md:line-clamp-3'
+              : 'line-clamp-1',
           )}
         >
           {previewText}

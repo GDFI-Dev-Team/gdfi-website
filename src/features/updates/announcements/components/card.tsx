@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import { ArticleContent } from '@/lib/interfaces/content'
 import { FALLBACK_IMAGE } from '@/config/content'
 import { formatEdgeDate } from '@/lib/date'
+import { formatReadingTime } from '@/lib/reading-time'
 
 export default function Card({ article }: { article: ArticleContent }) {
   const featured_images = article.featured_images?.length
@@ -49,14 +50,14 @@ export default function Card({ article }: { article: ArticleContent }) {
       </Link>
 
       <div className="flex flex-1 flex-col gap-3 p-6">
-        <div className="flex items-center justify-end">
-          <Text
-            size="xs"
-            className="text-foreground/50 font-semibold tracking-wider"
-          >
-            {formatEdgeDate(article.date)}
-          </Text>
-        </div>
+        <Text
+          size="xs"
+          className="text-foreground/50 font-semibold tracking-wider"
+        >
+          {formatEdgeDate(article.date)}
+          <span className="mx-1.5">&#xb7;</span>
+          {formatReadingTime(article.body)}
+        </Text>
 
         <div className="flex flex-col gap-2 mt-1">
           <Link
