@@ -1,9 +1,6 @@
 import { Suspense } from 'react'
 import Banner from '@/components/ui/banner'
-import FilterBar, {
-  SearchInput,
-  ClearFilters,
-} from '@/components/ui/filter-bar'
+import FilterBar, { SearchInput } from '@/components/ui/filter-bar'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import FeaturedVideoSlideshow from '@/features/resources/videos/featured-video-slideshow'
@@ -26,7 +23,6 @@ export default function VideoResourcesLayout({
       <Suspense>
         <FilterBar className="justify-end gap-2">
           <SearchInput placeholder="Search videos..." />
-          <ClearFilters />
         </FilterBar>
       </Suspense>
 
