@@ -1,4 +1,4 @@
-'use client' // needs this to rewrite the address bar to user input
+'use client'
 
 import {
   createContext,
@@ -27,8 +27,6 @@ export const FilterBarContext = createContext<FilterBarContextValue | null>(
   null,
 )
 
-// Lets any filter control (shared or feature-specific) read/update the
-// shared query-string state without each one re-deriving router plumbing.
 export function useFilterBar() {
   const context = useContext(FilterBarContext)
   if (!context) {
@@ -49,7 +47,6 @@ export default function FilterBar({
   const searchParams = useSearchParams()
   const [isPending, startTransition] = useTransition()
 
-  // Ref encapsulates the timeout token across successive rendering passes
   const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   function updateSearchParam(key: string, value: string) {
@@ -61,12 +58,8 @@ export default function FilterBar({
       params.delete(key)
     }
 
-    // Filters apply to the whole collection, not the current page, so any
-    // filter change should land on page 1 of the new result set — strip a
-    // trailing /page/<n> segment rather than keeping the current page number.
     const basePath = pathname.replace(/\/page\/\d+$/, '')
 
-    // wrap in transition to keep the UI fluid and prevent micro-freezes
     startTransition(() => {
       router.push(`${basePath}?${params.toString()}`, { scroll: false })
     })
@@ -81,7 +74,6 @@ export default function FilterBar({
     })
   }
 
-  // immutable timeout tracking
   function handleSearchChange(text: string) {
     if (searchTimeoutRef.current) {
       clearTimeout(searchTimeoutRef.current)
@@ -92,7 +84,6 @@ export default function FilterBar({
     }, 350)
   }
 
-  // Clear background timers instantly if user bounces from page during key entry
   useEffect(() => {
     return () => {
       if (searchTimeoutRef.current) {
@@ -111,15 +102,14 @@ export default function FilterBar({
         isPending,
       }}
     >
-      <div className="flex px-(--gutter) bg-foreground/3 border-b border-foreground/10">
-        {/* Visual pending line indicating network/data updating state across the edge */}
+      <div className="relative flex px-(--gutter) bg-foreground/3 border-b border-foreground/10">
         {isPending && (
-          <div className="absolute top-0 left-0 right-0 h-2px bg-cyan-500 animate-pulse" />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-cyan-500 animate-pulse" />
         )}
 
         <div
           className={cn(
-            'mx-auto max-w-7xl w-full py-4 px-1 flex flex-nowrap gap-4 overflow-x-auto',
+            'mx-auto max-w-7xl w-full py-4 flex flex-wrap items-center gap-3 md:gap-4',
             className,
           )}
         >
@@ -130,8 +120,6 @@ export default function FilterBar({
   )
 }
 
-// Reusable across every collection page (programs, announcements, ...) — the
-// only filter control common enough to live alongside the FilterBar shell.
 export function SearchInput({
   placeholder = 'Search...',
 }: {
@@ -140,7 +128,7 @@ export function SearchInput({
   const { searchParams, handleSearchChange } = useFilterBar()
 
   return (
-    <div className="relative w-60 max-w-sm shrink-0">
+    <div className="relative w-full sm:w-60 max-w-sm shrink-0">
       <Search
         className="absolute left-3 top-1/2 -translate-y-1/2 text-foreground/40"
         size={18}
@@ -179,11 +167,12 @@ export function ClearFilters() {
       onClick={() => {
         clearFilters(filterKeys)
       }}
-      className="px-3 py-2.5 text-sm"
+      className="px-3 py-2.5 text-sm w-full sm:w-auto flex items-center justify-center gap-2"
       variant="ghost"
       aria-label="Clear all filters"
     >
       <OctagonX className="size-5" />
+      <span className="sm:hidden font-medium">Clear Filters</span>
     </Button>
   )
 }
