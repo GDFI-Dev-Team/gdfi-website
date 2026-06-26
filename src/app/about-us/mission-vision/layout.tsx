@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: '/nav-item-banner-images/mission-vision.jpeg',
         width: 2048,
         height: 1024,
-        alt: 'Ridge to reef campaign',
+        alt: 'Guiuan Development Foundation, Inc.',
       },
     ],
   },

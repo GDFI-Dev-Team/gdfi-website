@@ -15,20 +15,23 @@ type Announcement = ArticleContent
 const UpdateCard = ({
   update,
   featured = false,
+  className,
 }: {
   update: Announcement
   featured?: boolean
+  className?: string
 }) => {
   const imageSrc = update.featured_images?.[0] || FALLBACK_IMAGE
   const previewText = update.excerpt || update.body
 
   return (
     <article
-      className={
+      className={cn(
         featured
           ? 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-21/9'
-          : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-4/5'
-      }
+          : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-4/5',
+        className,
+      )}
     >
       <Link
         href={`/updates/announcements/${update.slug}`}
@@ -81,9 +84,7 @@ const UpdateCard = ({
           size="sm"
           className={cn(
             'text-on-overlay/80 max-w-3xl',
-            featured
-              ? 'line-clamp-1 sm:line-clamp-2 md:line-clamp-3'
-              : 'line-clamp-1',
+            featured ? 'line-clamp-3' : 'line-clamp-1',
           )}
         >
           {previewText}
@@ -120,9 +121,13 @@ export default async function OurLatestUpdates() {
 
       <div className="flex flex-col gap-6">
         <UpdateCard update={featured} featured />
-        <div className="hidden md:grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {rest.map((update) => (
-            <UpdateCard key={update.slug} update={update} />
+        <div className="hidden md:grid grid-cols-2 gap-6 lg:grid-cols-4">
+          {rest.map((update, index) => (
+            <UpdateCard
+              key={update.slug}
+              update={update}
+              className={index >= 2 ? 'hidden lg:block' : ''}
+            />
           ))}
         </div>
       </div>

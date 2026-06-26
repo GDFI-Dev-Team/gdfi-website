@@ -59,8 +59,6 @@ collections:
     label: Publications
     folder: content/research/publications
     create: true
-    slug: '{{year}}-{{slug}}'
-    summary: '{{year}} — {{title}}'
     fields:
       - name: title
         label: Title
@@ -174,8 +172,8 @@ collections:
         label: Date
         widget: datetime
         type: date
-      - name: featured_image 
-        label: Featured Image
+      - name: featured_images
+        label: Featured Images
         widget: image
         multiple: true
         required: false
@@ -198,6 +196,61 @@ collections:
           Share any key details, quotes, or numbers that support the announcement.
 
           End with a call to action or forward-looking note (e.g. how to get involved, what's next).
+
+  - name: community-categories
+    label: Community Categories
+    label_singular: Community Category
+    folder: content/updates/community-categories
+    create: true
+    fields:
+      - name: name
+        label: Name
+        widget: string
+        hint: ex. Fisherfolk, Youth, Livelihood, Conservation
+
+  - name: community-stories
+    label: Community Stories
+    label_singular: Community Story
+    folder: content/updates/community-stories
+    create: true
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: tags
+        label: Categories
+        widget: relation
+        collection: community-categories
+        search_fields: [name]
+        value_field: name
+        display_fields: [name]
+        multiple: true
+        required: false
+        hint: Pulled from Community Categories — manage the list in that collection
+      - name: featured_images
+        label: Featured Images
+        widget: image
+        multiple: true
+        required: false
+        media_libraries:
+          cloudflare_r2:
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/web-assets
+          default: false
+      - name: body
+        label: Body
+        widget: text
+        default: |
+          Open with a short, vivid line that draws the reader into the story.
+
+          Introduce the community member(s) and the place at the heart of this story.
+
+          Share what changed, what was learned, or what was achieved — and why it matters to GDFI's mission.
+
+          Close with a forward-looking note or a call to action.
 
   - name: video-resources
     label: Video Resources
@@ -222,4 +275,3 @@ collections:
       - label: Youtube Link
         name: youtube-link
         widget: string
-
