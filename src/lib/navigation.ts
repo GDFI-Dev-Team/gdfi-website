@@ -30,7 +30,7 @@ export const navLinks: NavLink[] = [
       },
       {
         label: 'Organizational Structure',
-        href: '/about-us/org-chart',
+        href: '/about-us/organizational-structure',
       },
     ],
   },

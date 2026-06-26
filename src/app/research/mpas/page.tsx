@@ -7,7 +7,7 @@ export default function MpasPage() {
       <Banner
         title="Marine Protected Areas"
         description="Witness how we create underwater sanctuaries where biodiversity can flourish"
-        imgUrl="/nav-item-banner-images/mpas.webp"
+        imgUrl="/nav-item-banner-images/mission-vision.jpeg"
       />
 
       <Section>

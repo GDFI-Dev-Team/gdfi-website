@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/feat-hero/hero-3-og.jpg',
-        width: 1200,
-        height: 630,
+        url: '/feat-hero/hero-1.jpeg',
+        width: 3750,
+        height: 1969,
         alt: 'Guiuan Development Foundation, Inc.',
       },
     ],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
       default: 'Guiuan Development Foundation Inc.',
     },
     description: 'The official homepage of Guiuan Development Foundation Inc.',
-    images: ['/feat-hero/hero-3-og.jpg'],
+    images: ['/feat-hero/hero-1.jpeg'],
   },
 }
 

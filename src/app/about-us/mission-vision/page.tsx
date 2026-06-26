@@ -10,7 +10,7 @@ export default function MissionVisionPage() {
       <Banner
         title="Mission & Vision"
         description="Discover the heart of our foundation and its drive to heal our environment"
-        imgUrl="/feat-hero/hero-3.webp"
+        imgUrl="/nav-item-banner-images/mission-vision.jpeg"
       />
       <Mission />
       <Vision />

@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       'Discover the heart of our foundation and its drive to heal our environment.',
     url: '/about-us/mission-vision',
+    images: [
+      {
+        url: '/nav-item-banner-images/mission-vision.jpeg',
+        width: 2048,
+        height: 1024,
+        alt: 'Ridge to reef campaign',
+      },
+    ],
   },
   alternates: {
     canonical: '/about-us/mission-vision',

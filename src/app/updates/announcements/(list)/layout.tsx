@@ -17,7 +17,7 @@ export default function AnnouncementsListLayout({
       <Banner
         title="Announcements"
         description="Stay connected with our ongoing efforts on the frontlines"
-        imgUrl="/feat-hero/hero-1.webp"
+        imgUrl="/nav-item-banner-images/announcements.jpeg"
       />
       <Suspense>
         <FilterBar className="justify-end gap-2">

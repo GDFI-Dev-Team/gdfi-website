@@ -87,7 +87,7 @@ export const mockNewsArticles: NewsArticle[] = [
     date: '28 September 2024',
     images: [
       {
-        src: '/feat-hero/hero-3.webp',
+        src: '/feat-hero/hero-3.jpeg',
         caption: 'Youth volunteers planting mangrove saplings.',
       },
     ],

@@ -6,11 +6,11 @@ import SupportOptions from '@/features/support-us/components/support-options'
 
 export default function SupportUsPage() {
   return (
-    <main className="flex-1 flex flex-col bg-foreground/[0.02]">
+    <main className="flex-1 flex flex-col bg-foreground/0.02">
       <Banner
         title="Support Us"
         description="Stand with us to secure a sustainable future for our community and the environment"
-        imgUrl="/feat-hero/hero-3.webp"
+        imgUrl="/feat-hero/hero-3.jpeg"
       />
 
       <Section sectionClassName="py-16 md:py-24">

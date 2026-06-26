@@ -17,7 +17,7 @@ export default function ProgramsListLayout({
       <Banner
         title="Programs"
         description="Explore how our initiatives are breathing life back to our community"
-        imgUrl="/feat-hero/hero-2.webp"
+        imgUrl="/nav-item-banner-images/programs.jpeg"
       />
       <Suspense>
         <FilterBar className="justify-end gap-2">

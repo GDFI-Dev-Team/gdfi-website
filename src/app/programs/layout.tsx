@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       'Explore how our initiatives are breathing life back to our community.',
     url: '/programs',
+    images: [
+      {
+        url: '/nav-item-banner-images/programs.jpeg',
+        width: 1650,
+        height: 1100,
+        alt: 'Guiuan Development Foundation, Inc.',
+      },
+    ],
   },
   alternates: {
     canonical: '/programs',

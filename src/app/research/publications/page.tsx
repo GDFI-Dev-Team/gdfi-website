@@ -43,7 +43,7 @@ export default async function PublicationsPage({
       <Banner
         title="Publications"
         description="Dive into the scientific insights that anchor our conservation strategies"
-        imgUrl="/nav-item-banner-images/publications.webp"
+        imgUrl="/nav-item-banner-images/publications.jpeg"
       />
 
       <Suspense>

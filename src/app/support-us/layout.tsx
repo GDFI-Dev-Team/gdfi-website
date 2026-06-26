@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       'Stand with us to secure a sustainable future for our community and the environment.',
     url: '/support-us',
+    images: [
+      {
+        url: '/feat-hero/hero-3.jpeg',
+        width: 4528,
+        height: 3016,
+        alt: 'Guiuan Development Foundation, Inc.',
+      },
+    ],
   },
   alternates: {
     canonical: '/support-us',
