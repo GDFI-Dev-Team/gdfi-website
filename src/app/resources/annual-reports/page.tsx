@@ -3,7 +3,6 @@ import Section from '@/components/ui/section'
 import AnnualReportsShell from '@/features/resources/annual-reports/components/ar-shell'
 import FilterBar from '@/components/ui/filter-bar'
 import YearRangeFilter from '@/components/ui/year-range-filter'
-import { ClearFilters } from '@/components/ui/filter-bar'
 import { getCollectionMarkdownData } from '@/lib/markdown'
 import { AnnualReport } from '@/lib/interfaces/content'
 import { Suspense } from 'react'
@@ -41,7 +40,6 @@ export default async function AnnualReportsPage({
       <Suspense>
         <FilterBar className="justify-end gap-2">
           <YearRangeFilter />
-          <ClearFilters />
         </FilterBar>
       </Suspense>
 
