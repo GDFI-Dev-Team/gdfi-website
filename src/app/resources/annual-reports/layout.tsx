@@ -1,17 +1,17 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Publications',
+  title: 'Annual Reports',
   description:
-    'Dive into the scientific insights that anchor our conservation strategies.',
+    'Browse our tangible impacts through our yearly transparency reports.',
   openGraph: {
-    title: 'Publications',
+    title: 'Annual Reports',
     description:
-      'Dive into the scientific insights that anchor our conservation strategies.',
-    url: '/research/publications',
+      'Browse our tangible impacts through our yearly transparency reports.',
+    url: '/resources/annual-reports',
   },
   alternates: {
-    canonical: '/research/publications',
+    canonical: '/resources/annual-reports',
   },
 }
 

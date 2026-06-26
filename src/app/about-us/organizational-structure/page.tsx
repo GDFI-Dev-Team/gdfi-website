@@ -12,8 +12,8 @@ export default function OrganizationalStructurePage() {
     <>
       <Banner
         title="Organizational Structure"
-        description="The dedicated team and leadership driving our mission forward."
-        imgUrl="/feat-hero/hero-2.webp"
+        description="Meet the dedicated team and leadership driving our mission forward"
+        imgUrl="/nav-item-banner-images/organizational-structure.jpeg"
       />
 
       <Section sectionClassName="pb-24">

@@ -42,8 +42,8 @@ export default async function PublicationsPage({
     <>
       <Banner
         title="Publications"
-        description="Research, studies, and findings from our work across the ridge-to-reef ecosystems of Eastern Samar."
-        imgUrl="/nav-item-banner-images/publications.webp"
+        description="Dive into the scientific insights that anchor our conservation strategies"
+        imgUrl="/nav-item-banner-images/publications.jpeg"
       />
 
       <Suspense>

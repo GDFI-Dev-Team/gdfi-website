@@ -16,8 +16,8 @@ export default function AnnouncementsListLayout({
     <>
       <Banner
         title="Announcements"
-        description="Stay up to date with the latest stories, interviews, and updates from GDFI."
-        imgUrl="/feat-hero/hero-1.webp"
+        description="Stay connected with our ongoing efforts on the frontlines"
+        imgUrl="/nav-item-banner-images/announcements.jpeg"
       />
       <Suspense>
         <FilterBar className="justify-end gap-2">

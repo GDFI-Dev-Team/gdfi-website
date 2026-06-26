@@ -2,8 +2,23 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Announcements',
-  description:
-    'Stay up to date with the latest announcements from Guiuan Development Foundation Inc.',
+  description: 'Stay connected with our ongoing efforts on the frontlines.',
+  openGraph: {
+    title: 'Announcements',
+    description: 'Stay connected with our ongoing efforts on the frontlines.',
+    url: '/updates/announcements',
+    images: [
+      {
+        url: '/nav-item-banner-images/announcements.jpeg',
+        width: 2048,
+        height: 1365,
+        alt: 'Guiuan Development Foundation, Inc.',
+      },
+    ],
+  },
+  alternates: {
+    canonical: '/updates/announcements',
+  },
 }
 
 export default function AnnouncementsLayout({

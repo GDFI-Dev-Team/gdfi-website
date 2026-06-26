@@ -36,7 +36,7 @@ export default function Stories() {
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {stories.map((story) => {
-          const imageSrc = story.images?.[0]?.src || '/feat-hero/hero-3.webp'
+          const imageSrc = story.images?.[0]?.src || '/feat-hero/hero-3.jpeg'
 
           return (
             <article
