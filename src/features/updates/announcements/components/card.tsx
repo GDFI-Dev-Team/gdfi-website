@@ -7,6 +7,7 @@ import { ArticleContent } from '@/lib/interfaces/content'
 import { FALLBACK_IMAGE } from '@/config/content'
 import { formatEdgeDate } from '@/lib/date'
 import { formatReadingTime } from '@/lib/reading-time'
+import ShareButton from '@/components/ui/share-button'
 
 export default function Card({ article }: { article: ArticleContent }) {
   const featured_images = article.featured_images?.length
@@ -50,14 +51,21 @@ export default function Card({ article }: { article: ArticleContent }) {
       </Link>
 
       <div className="flex flex-1 flex-col gap-3 p-6">
-        <Text
-          size="xs"
-          className="text-foreground/50 font-semibold tracking-wider"
-        >
-          {formatEdgeDate(article.date)}
-          <span className="mx-1.5">&#xb7;</span>
-          {formatReadingTime(article.body)}
-        </Text>
+        <div className="flex items-center justify-between">
+          <Text
+            size="xs"
+            className="text-foreground/50 font-semibold tracking-wider"
+          >
+            {formatEdgeDate(article.date)}
+            <span className="mx-1.5">&#xb7;</span>
+            {formatReadingTime(article.body)}
+          </Text>
+          <ShareButton
+            url={`/updates/announcements/${article.slug}`}
+            title={article.title}
+            className="h-8 w-8 p-0 rounded-full text-foreground/40 hover:text-foreground hover:bg-foreground/10 relative z-20 pointer-events-auto"
+          />
+        </div>
 
         <div className="flex flex-col gap-2 mt-1">
           <Link

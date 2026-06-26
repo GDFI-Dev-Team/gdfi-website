@@ -12,6 +12,7 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import ArticleImages from '@/features/updates/announcements/components/article-images'
+import ShareButton from '@/components/ui/share-button'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<ArticleContent>(
@@ -57,10 +58,18 @@ export default async function AnnouncementPage({
           {article.title}
         </Heading>
 
-        <div className="flex items-center gap-3 text-foreground/60 mt-2">
-          <Text size="sm" className="font-medium">
-            {formatEdgeDate(article.date)}
-          </Text>
+        <div className="flex items-center justify-between gap-4 mt-2">
+          <div className="flex items-center gap-3 text-foreground/60">
+            <Text size="sm" className="font-medium">
+              {formatEdgeDate(article.date)}
+            </Text>
+          </div>
+          <ShareButton
+            url={`/updates/announcements/${article.slug}`}
+            title={article.title}
+            showLabel
+            className="h-9 px-4 rounded-full bg-foreground/5 hover:bg-foreground/10"
+          />
         </div>
       </header>
 
