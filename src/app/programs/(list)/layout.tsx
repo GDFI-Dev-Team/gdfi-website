@@ -1,8 +1,5 @@
 import Banner from '@/components/ui/banner'
-import FilterBar, {
-  SearchInput,
-  ClearFilters,
-} from '@/components/ui/filter-bar'
+import FilterBar, { SearchInput } from '@/components/ui/filter-bar'
 import StatusFilter from '@/features/programs/status-filter'
 import Section from '@/components/ui/section'
 import { Suspense } from 'react'
@@ -23,7 +20,6 @@ export default function ProgramsListLayout({
         <FilterBar className="justify-end gap-2">
           <SearchInput placeholder="Search programs..." />
           <StatusFilter />
-          <ClearFilters />
         </FilterBar>
       </Suspense>
 

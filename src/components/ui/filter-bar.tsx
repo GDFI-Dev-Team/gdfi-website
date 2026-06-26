@@ -8,8 +8,7 @@ import {
   useEffect,
 } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { OctagonX, Search } from 'lucide-react'
-import Button from './button'
+import { Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export const filterInputClasses =
@@ -18,7 +17,6 @@ export const filterInputClasses =
 interface FilterBarContextValue {
   searchParams: ReturnType<typeof useSearchParams>
   updateSearchParam: (key: string, value: string) => void
-  clearFilters: (keys: string[]) => void
   handleSearchChange: (text: string) => void
   isPending: boolean
 }
@@ -65,15 +63,6 @@ export default function FilterBar({
     })
   }
 
-  function clearFilters(keys: string[]) {
-    const params = new URLSearchParams(searchParams.toString())
-    keys.forEach((key) => params.delete(key))
-    const basePath = pathname.replace(/\/page\/\d+$/, '')
-    startTransition(() => {
-      router.push(`${basePath}?${params.toString()}`, { scroll: false })
-    })
-  }
-
   function handleSearchChange(text: string) {
     if (searchTimeoutRef.current) {
       clearTimeout(searchTimeoutRef.current)
@@ -97,7 +86,6 @@ export default function FilterBar({
       value={{
         searchParams,
         updateSearchParam,
-        clearFilters,
         handleSearchChange,
         isPending,
       }}
@@ -143,36 +131,5 @@ export function SearchInput({
         className={`w-full pl-10 pr-4 ${filterInputClasses} placeholder:text-foreground/40`}
       />
     </div>
-  )
-}
-
-export function ClearFilters() {
-  const { searchParams, clearFilters } = useFilterBar()
-
-  const filterKeys = [
-    'q',
-    'category',
-    'sort',
-    'start_date',
-    'end_date',
-    'start_year',
-    'end_year',
-  ]
-  const hasActiveFilters = filterKeys.some((key) => searchParams.has(key))
-
-  if (!hasActiveFilters) return null
-
-  return (
-    <Button
-      onClick={() => {
-        clearFilters(filterKeys)
-      }}
-      className="px-3 py-2.5 text-sm w-full sm:w-auto flex items-center justify-center gap-2"
-      variant="ghost"
-      aria-label="Clear all filters"
-    >
-      <OctagonX className="size-5" />
-      <span className="sm:hidden font-medium">Clear Filters</span>
-    </Button>
   )
 }

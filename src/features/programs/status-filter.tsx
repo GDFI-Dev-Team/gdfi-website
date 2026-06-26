@@ -17,12 +17,15 @@ export default function StatusFilter() {
       <select
         aria-label="Filter by status"
         defaultValue={searchParams.get('category') || 'all'}
-        onChange={(e) => updateSearchParam('category', e.target.value)}
+        onChange={(e) =>
+          updateSearchParam(
+            'category',
+            e.target.value === 'all' ? '' : e.target.value,
+          )
+        }
         className={`appearance-none cursor-pointer pr-10 w-full ${filterInputClasses}`}
       >
-        <option value="all" disabled>
-          Filter Status
-        </option>
+        <option value="all">All</option>
         {STATUS_OPTIONS.map((status) => (
           <option key={status} value={status}>
             {status}
