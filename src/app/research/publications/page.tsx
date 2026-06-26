@@ -4,7 +4,7 @@ import PublicationList from '@/features/research/publications/components/pub-lis
 import FilterBar from '@/components/ui/filter-bar'
 import { getCollectionMarkdownData } from '@/lib/markdown'
 import { Publication } from '@/lib/interfaces/content'
-import { SearchInput, ClearFilters } from '@/components/ui/filter-bar'
+import { SearchInput } from '@/components/ui/filter-bar'
 import { Suspense } from 'react'
 import YearRangeFilter from '@/components/ui/year-range-filter'
 
@@ -50,7 +50,6 @@ export default async function PublicationsPage({
         <FilterBar className="justify-end gap-2">
           <SearchInput placeholder="Search publications..." />
           <YearRangeFilter />
-          <ClearFilters />
         </FilterBar>
       </Suspense>
 
