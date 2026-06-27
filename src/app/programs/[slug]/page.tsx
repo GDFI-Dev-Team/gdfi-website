@@ -35,7 +35,7 @@ export default async function ProgramDetailPage({
 
   return (
     <Section maxWidth="4xl" sectionClassName="pt-28 md:pt-32">
-      <div className="relative mt-6 aspect-video overflow-hidden rounded-lg">
+      <div className="relative aspect-video overflow-hidden rounded-lg">
         <Image
           src={program['featured-img']}
           alt={program.title}
