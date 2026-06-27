@@ -151,7 +151,7 @@ export function SiteHeader() {
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(true)}
               className={cn(
-                'shrink-0 overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
+                'shrink-0 overflow-hidden p-0 h-11 transition-all duration-500 ease-in-out md:hidden',
                 atTop
                   ? 'text-text-standard hover:bg-text-standard/10'
                   : 'text-foreground hover:bg-foreground/5',
