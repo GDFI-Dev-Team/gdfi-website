@@ -3,7 +3,7 @@ import { getCollectionMarkdownData } from '@/lib/markdown'
 import { paginateItems } from '@/lib/pagination'
 import { ArticleContent } from '@/lib/interfaces/content'
 import { getCommunityStories } from '@/lib/data/community-stories'
-import { CommunityStoriesGrid } from '@/features/updates/community-stories/community-stories-grid'
+import { CommunityStoriesGrid } from '@/features/updates/community-stories/components/cs-grid'
 import { CONTENT_LIMITS } from '@/config/content'
 import { PageProps } from '@/lib/interfaces/content'
 

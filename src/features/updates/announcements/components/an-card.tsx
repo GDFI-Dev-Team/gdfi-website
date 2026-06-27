@@ -1,7 +1,11 @@
-import ArticleCard from '@/features/updates/components/article-card'
+import ArticleCard from '@/components/ui/article-card'
 import { ArticleContent } from '@/lib/interfaces/content'
 
-export default function Card({ article }: { article: ArticleContent }) {
+export default function AnnouncementsCard({
+  article,
+}: {
+  article: ArticleContent
+}) {
   return (
     <ArticleCard
       article={article}

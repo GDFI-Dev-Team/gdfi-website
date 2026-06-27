@@ -1,5 +1,5 @@
 import { getCommunityStories } from '@/lib/data/community-stories'
-import { CommunityStoriesGrid } from '@/features/updates/community-stories/community-stories-grid'
+import { CommunityStoriesGrid } from '@/features/updates/community-stories/components/cs-grid'
 
 export default async function CommunityStoriesPage({
   searchParams,

@@ -11,7 +11,7 @@ import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
-import ArticleImages from '@/features/updates/announcements/components/article-images'
+import ArticleImages from '@/components/ui/article-images'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<ArticleContent>(

@@ -41,7 +41,7 @@ const UpdateCard = ({
       </Link>
       <Image
         src={imageSrc}
-        alt={update.slug}
+        alt={update.title}
         fill
         sizes={
           featured

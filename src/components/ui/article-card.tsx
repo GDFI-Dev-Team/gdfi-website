@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import { ArticleContent } from '@/lib/interfaces/content'
 import { formatEdgeDate } from '@/lib/date'
 import { formatReadingTime } from '@/lib/reading-time'
-import { categoryColor } from './category-colors'
+import { categoryColor } from '../../features/updates/community-stories/data/category-colors'
 
 export default function ArticleCard({
   article,
@@ -57,7 +57,7 @@ export default function ArticleCard({
             >
               <Image
                 src={img}
-                alt={`${article.title} - Gallery Image ${idx + 1}`}
+                alt={`${article.title}`}
                 fill
                 sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -99,7 +99,7 @@ export default function ArticleCard({
           )
         )}
 
-        <div className="flex flex-col gap-2 mt-1">
+        <div className="flex flex-col gap-2">
           <Link
             href={href}
             className="hover:underline decoration-foreground/30 underline-offset-4"

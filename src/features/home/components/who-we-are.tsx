@@ -22,7 +22,7 @@ const WhoWeAre = () => {
         <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl shadow-lg">
           <Image
             src="/feat-hero/hero-2.jpeg"
-            alt=""
+            alt="Who we are thumbnail"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"

@@ -3,7 +3,7 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import Link from 'next/link'
-import Card from '@/features/updates/community-stories/components/card'
+import Card from '@/features/updates/community-stories/components/cs-card'
 import { getCommunityStories } from '@/lib/data/community-stories'
 
 export default async function Stories() {

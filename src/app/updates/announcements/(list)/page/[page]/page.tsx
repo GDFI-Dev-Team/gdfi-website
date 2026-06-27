@@ -3,7 +3,7 @@ import { getCollectionMarkdownData } from '@/lib/markdown'
 import { paginateItems } from '@/lib/pagination'
 import { ArticleContent } from '@/lib/interfaces/content'
 import { getAnnouncements } from '@/lib/data/announcements'
-import { AnnouncementsGrid } from '@/features/updates/announcements/announcements-grid'
+import { AnnouncementsGrid } from '@/features/updates/announcements/components/an-grid'
 import { CONTENT_LIMITS } from '@/config/content'
 import { PageProps } from '@/lib/interfaces/content'
 
