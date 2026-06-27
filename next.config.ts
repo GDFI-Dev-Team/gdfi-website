@@ -1,6 +1,10 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  // Whitelist device IPs for mobile testing over local network.
+  // Set ALLOWED_DEV_ORIGINS=192.168.x.x in .env.local (gitignored).
+  allowedDevOrigins:
+    process.env.ALLOWED_DEV_ORIGINS?.split(',').filter(Boolean) ?? [],
   images: {
     remotePatterns: [
       {
