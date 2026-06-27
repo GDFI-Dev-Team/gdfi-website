@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     description:
       'Witness how we create underwater sanctuaries where biodiversity can flourish.',
     url: '/research/mpas',
+    images: [
+      {
+        url: '/nav-item-banner-images/mission-vision.jpeg',
+        width: 2048,
+        height: 1024,
+        alt: 'Guiuan Development Foundation, Inc.',
+      },
+    ],
   },
   alternates: {
     canonical: '/research/mpas',
