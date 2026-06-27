@@ -1,5 +1,4 @@
 import Image from 'next/image'
-
 import Breadcrumbs from './breadcrumbs'
 import Heading from './heading'
 import Text from './text'
