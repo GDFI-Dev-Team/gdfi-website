@@ -3,7 +3,7 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import Link from 'next/link'
-import Card from '@/features/updates/community-stories/components/cs-card'
+import CommunityStoriesCard from '@/features/updates/community-stories/components/cs-card'
 import { getCommunityStories } from '@/lib/data/community-stories'
 
 export default async function Stories() {
@@ -33,7 +33,7 @@ export default async function Stories() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {stories.map((story, index) => (
-          <Card
+          <CommunityStoriesCard
             key={story.slug}
             article={story}
             className={
