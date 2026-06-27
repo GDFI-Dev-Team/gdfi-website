@@ -1,7 +1,7 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import Button from '@/components/ui/button'
+import { buttonBase, buttonVariants } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getAnnouncements } from '@/lib/data/announcements'
@@ -132,10 +132,15 @@ export default async function OurLatestUpdates() {
         </div>
       </div>
 
-      <Link href="/updates/announcements" className="self-center">
-        <Button variant="secondary" className="px-6 py-2.5">
-          See more
-        </Button>
+      <Link
+        href="/updates/announcements"
+        className={cn(
+          buttonBase,
+          buttonVariants.secondary,
+          'self-center px-6 py-2.5',
+        )}
+      >
+        See more
       </Link>
     </Section>
   )

@@ -1,10 +1,11 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import Button from '@/components/ui/button'
 import Link from 'next/link'
+import { buttonBase, buttonVariants } from '@/components/ui/button'
 import CommunityStoriesCard from '@/features/updates/community-stories/components/cs-card'
 import { getCommunityStories } from '@/lib/data/community-stories'
+import { cn } from '@/lib/utils'
 
 export default async function Stories() {
   const { items } = await getCommunityStories(1, {})
@@ -43,10 +44,15 @@ export default async function Stories() {
         ))}
       </div>
 
-      <Link href="/updates/community-stories" className="self-center">
-        <Button variant="secondary" className="px-6 py-2.5">
-          See more
-        </Button>
+      <Link
+        href="/updates/community-stories"
+        className={cn(
+          buttonBase,
+          buttonVariants.secondary,
+          'self-center px-6 py-2.5',
+        )}
+      >
+        See more
       </Link>
     </Section>
   )
