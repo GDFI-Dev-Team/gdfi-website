@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       'Browse our tangible impacts through our yearly transparency reports.',
     url: '/resources/annual-reports',
+    images: [
+      {
+        url: '/nav-item-banner-images/annual-reports.jpeg',
+        width: 1600,
+        height: 800,
+        alt: 'Guiuan Development Foundation, Inc.',
+      },
+    ],
   },
   alternates: {
     canonical: '/resources/annual-reports',

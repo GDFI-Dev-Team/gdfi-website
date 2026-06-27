@@ -63,7 +63,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
       </button>
 
       {isMobileModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/30 backdrop-blur-sm p-4 md:hidden">
+        <div className="fixed inset-0 z-100 flex items-center justify-center bg-foreground/30 backdrop-blur-sm p-4 md:hidden">
           <div className="bg-background w-full max-w-sm p-6 rounded-3xl shadow-xl relative animate-fade-up">
             <button
               onClick={() => setIsMobileModalOpen(false)}

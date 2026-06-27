@@ -15,14 +15,14 @@ import ArticleImages from '@/components/ui/article-images'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<ArticleContent>(
-    'updates/announcements',
+    'updates/community-stories',
   )
   return articles.map((article) => ({
     slug: article.slug,
   }))
 }
 
-export default async function AnnouncementPage({
+export default async function CommunityStoryPage({
   params,
 }: {
   params: Promise<{ slug: string }>
@@ -32,7 +32,7 @@ export default async function AnnouncementPage({
   let article: ArticleContent
   try {
     article = getSingleMarkdownData<ArticleContent>(
-      'updates/announcements',
+      'updates/community-stories',
       `${slug}.md`,
     )
   } catch {
@@ -40,14 +40,15 @@ export default async function AnnouncementPage({
   }
 
   return (
-    <Section maxWidth="4xl" sectionClassName="pb-8 pt-28 md:pb-12 md:pt-32">
+    <Section maxWidth="4xl" sectionClassName="py-8 md:py-12">
       <div className="mb-8">
-        <Link href="/updates/announcements" className="inline-flex">
+        <Link href="/updates/community-stories" className="inline-flex">
           <Button
             variant="ghost"
             className="gap-2 px-0 hover:bg-transparent hover:text-btn-primary"
           >
-            <ChevronLeft size={18} aria-hidden="true" /> Back to Announcements
+            <ChevronLeft size={18} aria-hidden="true" /> Back to Community
+            Stories
           </Button>
         </Link>
       </div>
@@ -57,12 +58,10 @@ export default async function AnnouncementPage({
           {article.title}
         </Heading>
 
-        <div className="flex items-center justify-between gap-4 mt-2">
-          <div className="flex items-center gap-3 text-foreground/60">
-            <Text size="sm" className="font-medium">
-              {formatEdgeDate(article.date)}
-            </Text>
-          </div>
+        <div className="flex items-center gap-3 text-foreground/60 mt-2">
+          <Text size="sm" className="font-medium">
+            {formatEdgeDate(article.date)}
+          </Text>
         </div>
       </header>
 

@@ -21,7 +21,7 @@ export default function VideoResourcesLayout({
       <Banner
         title="Video Resources"
         description="Browse the different videos of Guiuan Development Foundation Inc."
-        imgUrl="/nav-item-banner-images/publications.webp"
+        imgUrl="/nav-item-banner-images/video-resources.jpeg"
       />
       <Suspense>
         <FilterBar className="justify-end gap-2">

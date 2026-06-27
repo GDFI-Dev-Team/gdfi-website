@@ -1,11 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import { cn } from '@/lib/utils'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import Image from 'next/image'
+
 export default function ArticleImages({ images }: { images: string[] }) {
   const [index, setIndex] = useState(0)
   const [touchStart, setTouchStart] = useState<number | null>(null)

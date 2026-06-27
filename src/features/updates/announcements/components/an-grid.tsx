@@ -1,6 +1,6 @@
 import Grid from '@/components/ui/grid'
 import Pagination from '@/components/ui/pagination'
-import Card from './components/card'
+import AnnouncementsCard from './an-card'
 import { ArticleContent } from '@/lib/interfaces/content'
 
 interface AnnouncementsGridProps {
@@ -19,7 +19,7 @@ export function AnnouncementsGrid({
   return (
     <>
       {items.length > 0 ? (
-        <Grid articles={items} Card={Card} />
+        <Grid articles={items} Card={AnnouncementsCard} />
       ) : (
         <div className="text-center py-12 border border-dashed border-foreground/10 rounded-xl bg-background/50">
           <p className="text-foreground/50 text-sm font-medium">
