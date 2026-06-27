@@ -40,7 +40,7 @@ export default async function AnnouncementPage({
   }
 
   return (
-    <Section maxWidth="4xl" sectionClassName="py-8 md:py-12">
+    <Section maxWidth="4xl" sectionClassName="pb-8 pt-28 md:pb-12 md:pt-32">
       <div className="mb-8">
         <Link href="/updates/announcements" className="inline-flex">
           <Button
@@ -57,10 +57,12 @@ export default async function AnnouncementPage({
           {article.title}
         </Heading>
 
-        <div className="flex items-center gap-3 text-foreground/60 mt-2">
-          <Text size="sm" className="font-medium">
-            {formatEdgeDate(article.date)}
-          </Text>
+        <div className="flex items-center justify-between gap-4 mt-2">
+          <div className="flex items-center gap-3 text-foreground/60">
+            <Text size="sm" className="font-medium">
+              {formatEdgeDate(article.date)}
+            </Text>
+          </div>
         </div>
       </header>
 
