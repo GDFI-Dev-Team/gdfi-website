@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: '/nav-item-banner-images/annual-reports.jpeg',
         width: 1600,
         height: 800,
-        alt: 'Guiuan Development Foundation, Inc.',
+        alt: 'Browse our tangible impacts through our yearly transparency reports.',
       },
     ],
   },
