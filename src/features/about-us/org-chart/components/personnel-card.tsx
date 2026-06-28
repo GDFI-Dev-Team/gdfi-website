@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { X } from 'lucide-react'
 import Text from '@/components/ui/text'
-import { Personnel } from '../data/constants'
+import { Personnel } from '../data/types'
 import { cn } from '@/lib/utils/cn-merge'
 
 export function PersonnelCard({ person }: { person: Personnel }) {

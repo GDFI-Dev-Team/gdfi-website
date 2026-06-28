@@ -275,3 +275,113 @@ collections:
       - label: Youtube Link
         name: youtube-link
         widget: string
+
+  - name: organizational-structure
+    label: Organizational Structure
+    files:
+      - name: org-structure
+        label: Org Structure
+        file: content/about-us/organizational-structure.md
+        description: People shown on the Organizational Structure page. Drag items to reorder — the order here is the order shown on the page.
+        fields:
+          - name: board-of-trustees
+            label: Board of Trustees
+            widget: list
+            hint: Order matters — 1st is shown as President, 2nd as Vice-President, the next two as officers, and the rest as members.
+            fields:
+              - name: name
+                label: Name
+                widget: string
+              - name: role
+                label: Role
+                widget: string
+              - name: image
+                label: Photo
+                widget: image
+                media_libraries:
+                  cloudflare_r2:
+                    access_key_id: 9c671155033e705d9900c1857e7b81cc
+                    bucket: sveltia-media
+                    account_id: ffa0678267bca3257f3209173022c26f
+                    public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+                    prefix: gdfi-website-uploads/personnel
+                  default: false
+              - name: bio
+                label: Bio
+                widget: text
+                required: false
+          - name: admin-and-finance
+            label: Admin and Finance
+            widget: list
+            fields:
+              - name: name
+                label: Name
+                widget: string
+              - name: role
+                label: Role
+                widget: string
+              - name: image
+                label: Photo
+                widget: image
+                media_libraries:
+                  cloudflare_r2:
+                    access_key_id: 9c671155033e705d9900c1857e7b81cc
+                    bucket: sveltia-media
+                    account_id: ffa0678267bca3257f3209173022c26f
+                    public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+                    prefix: gdfi-website-uploads/personnel
+                  default: false
+              - name: bio
+                label: Bio
+                widget: text
+                required: false
+          - name: project-coordination
+            label: Project Coordination
+            widget: list
+            fields:
+              - name: name
+                label: Name
+                widget: string
+              - name: role
+                label: Role
+                widget: string
+              - name: image
+                label: Photo
+                widget: image
+                media_libraries:
+                  cloudflare_r2:
+                    access_key_id: 9c671155033e705d9900c1857e7b81cc
+                    bucket: sveltia-media
+                    account_id: ffa0678267bca3257f3209173022c26f
+                    public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+                    prefix: gdfi-website-uploads/personnel
+                  default: false
+              - name: bio
+                label: Bio
+                widget: text
+                required: false
+          - name: pool-of-volunteers
+            label: Pool of VolunteerŽ
+            widget: list
+            fields:
+              - name: name
+                label: Name
+                widget: string
+              - name: role
+                label: Role
+                widget: string
+              - name: image
+                label: Photo
+                widget: image
+                media_libraries:
+                  cloudflare_r2:
+                    access_key_id: 9c671155033e705d9900c1857e7b81cc
+                    bucket: sveltia-media
+                    account_id: ffa0678267bca3257f3209173022c26f
+                    public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+                    prefix: gdfi-website-uploads/personnel
+                  default: false
+              - name: bio
+                label: Bio
+                widget: text
+                required: false
