@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 import { RightUpCurve } from './layout-shapes'
 
 const heroImages = ['hero-1.jpeg', 'hero-2.jpeg', 'hero-3.jpeg']

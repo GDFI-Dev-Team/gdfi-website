@@ -10,7 +10,7 @@ import {
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { OctagonX, Search } from 'lucide-react'
 import Button from './button'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 export const filterInputClasses =
   'px-3 py-2.5 rounded-md border border-foreground/15 bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-btn-primary/50 transition-shadow disabled:opacity-50'
@@ -152,7 +152,6 @@ export function ClearFilters() {
   const filterKeys = [
     'q',
     'category',
-    'sort',
     'start_date',
     'end_date',
     'start_year',

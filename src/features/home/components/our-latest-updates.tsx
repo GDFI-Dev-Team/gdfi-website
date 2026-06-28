@@ -1,27 +1,25 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { buttonBase, buttonVariants } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getAnnouncements } from '@/lib/data/announcements'
-import { ArticleContent } from '@/lib/interfaces/content'
-import { FALLBACK_IMAGE } from '@/config/content'
-import { formatEdgeDate } from '@/lib/date'
-import { cn } from '@/lib/utils'
-
-type Announcement = ArticleContent
+import { buttonBase, buttonVariants } from '@/components/ui/button'
+import { getAnnouncements } from '@/lib/content/announcements'
+import { ArticleContent } from '@/lib/content/types'
+import { formatEdgeDate } from '@/lib/utils/date'
+import { cn } from '@/lib/utils/cn-merge'
 
 const UpdateCard = ({
   update,
   featured = false,
   className,
 }: {
-  update: Announcement
+  update: ArticleContent
   featured?: boolean
   className?: string
 }) => {
-  const imageSrc = update.featured_images?.[0] || FALLBACK_IMAGE
+  const imageSrc =
+    update.featured_images?.[0] || '/nav-item-banner-images/announcements.jpeg'
   const previewText = update.excerpt || update.body
 
   return (

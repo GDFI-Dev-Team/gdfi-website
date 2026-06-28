@@ -1,7 +1,7 @@
 import Text from '@/components/ui/text'
 import PublicationCard from './pub-card'
 import ScrollMask from '@/components/ui/scroll-mask'
-import { Publication } from '@/lib/interfaces/content'
+import { Publication } from '@/lib/content/types'
 
 export default function PublicationList({
   publications,

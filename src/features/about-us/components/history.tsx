@@ -6,7 +6,7 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
 import { HISTORY_MILESTONES, HistoryMilestone } from '../data/constants'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 function TimelineItem({
   milestone,

@@ -1,4 +1,4 @@
-import { getPrograms } from '@/lib/data/programs'
+import { getPrograms } from '@/lib/content/programs'
 import { ProgramsGrid } from '@/features/programs/programs-grid'
 
 export default async function ProgramsPage({

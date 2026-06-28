@@ -1,5 +1,5 @@
 // src/components/ui/marquee.tsx
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 export default function Marquee({
   children,

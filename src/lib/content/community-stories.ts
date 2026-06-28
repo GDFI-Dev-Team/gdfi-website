@@ -1,4 +1,4 @@
-import { CONTENT_LIMITS } from '@/config/content'
+import { CONTENT_LIMITS } from '@/lib/content/pagination'
 import { getArticleCollectionPage } from './collection'
 
 type CommunityStoriesSearchParams = {

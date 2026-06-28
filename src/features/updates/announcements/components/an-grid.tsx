@@ -1,7 +1,7 @@
 import Grid from '@/components/ui/grid'
 import Pagination from '@/components/ui/pagination'
 import AnnouncementsCard from './an-card'
-import { ArticleContent } from '@/lib/interfaces/content'
+import { ArticleContent } from '@/lib/content/types'
 
 interface AnnouncementsGridProps {
   items: ArticleContent[]

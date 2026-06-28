@@ -1,20 +1,10 @@
-export type NavChild = {
-  label: string
-  href: string
-}
-
 export type NavLink = {
   label: string
   href: string
-  /** Optional dropdown / sub-menu items. Empty or omitted = a plain link. */
-  children?: NavChild[]
+  children?: { label: string; href: string }[]
 }
 
-/**
- * Primary navigation. These are placeholder hrefs — point them at real
- * routes as the pages get built. Give any item a `children` array to turn
- * it into a dropdown (desktop) / accordion (mobile).
- */
+/* Primary navigation. Give any item a `children` array to turn it into a dropdown (desktop) / accordion (mobile) */
 export const navLinks: NavLink[] = [
   {
     label: 'About Us',

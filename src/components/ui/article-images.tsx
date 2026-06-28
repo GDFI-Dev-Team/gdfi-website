@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'

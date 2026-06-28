@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { AnnualReport } from '@/lib/interfaces/content'
+import { AnnualReport } from '@/lib/content/types'
 import dynamic from 'next/dynamic'
 import AnnualReportGrid from './ar-grid'
 
