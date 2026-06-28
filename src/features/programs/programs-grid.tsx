@@ -1,7 +1,7 @@
 import Grid from '@/components/ui/grid'
 import Pagination from '@/components/ui/pagination'
 import ProgramCard from './program-card'
-import { Program } from '@/lib/interfaces/content'
+import { Program } from '@/lib/content/types'
 
 interface ProgramsGridProps {
   items: Program[]

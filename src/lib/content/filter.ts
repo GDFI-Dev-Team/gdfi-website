@@ -1,9 +1,8 @@
-import { BaseContent } from '@/lib/interfaces/content'
+import { BaseContent } from '@/lib/content/types'
 
 interface UniversalFilterParams {
   q?: string
   category?: string
-  sort?: string
   start_date?: string
   end_date?: string
 }
@@ -14,7 +13,7 @@ type FilterableContent = BaseContent & {
   body?: string
 }
 
-export function filterAndSortCollection<T extends FilterableContent>( // typescript generic T
+export function filterCollection<T extends FilterableContent>(
   items: T[],
   params: UniversalFilterParams,
   // Callback function to handle varying tag property names across content types
@@ -55,13 +54,6 @@ export function filterAndSortCollection<T extends FilterableContent>( // typescr
       (item) => item.date !== undefined && new Date(item.date).getTime() <= end,
     )
   }
-
-  filtered.sort((a, b) => {
-    // timeline sorting — items without a date keep their relative order
-    const timeA = a.date ? new Date(a.date).getTime() : 0
-    const timeB = b.date ? new Date(b.date).getTime() : 0
-    return params.sort === 'oldest' ? timeA - timeB : timeB - timeA
-  })
 
   return filtered
 }

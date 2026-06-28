@@ -1,5 +1,4 @@
-// Estimates reading time for article body content.
-
+// Utility for estimating reading time for article body content.
 const WORDS_PER_MINUTE = 200
 
 /**
@@ -24,11 +23,4 @@ function countWords(content: string | undefined | null): number {
 export function getReadingTime(content: string | undefined | null): number {
   const wordCount = countWords(content)
   return Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE))
-}
-
-/**
- * Returns a display-ready reading time label, e.g. "3 min read".
- */
-export function formatReadingTime(content: string | undefined | null): string {
-  return `${getReadingTime(content)} min read`
 }

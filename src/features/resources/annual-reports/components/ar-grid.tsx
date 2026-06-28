@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import AnnualReportCard from './ar-card'
-import { AnnualReport } from '@/lib/interfaces/content'
+import { AnnualReport } from '@/lib/content/types'
 
 type ScrollEdge = 'none' | 'top' | 'bottom' | 'both'
 

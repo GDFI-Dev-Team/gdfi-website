@@ -6,7 +6,7 @@ import FilterBar, {
 } from '@/components/ui/filter-bar'
 import SelectFilter from '@/components/ui/select-filter'
 import Section from '@/components/ui/section'
-import { getCommunityCategories } from '@/lib/data/community-categories'
+import { getCommunityCategories } from '@/lib/content/community-categories'
 
 export default function CommunityStoriesListLayout({
   children,

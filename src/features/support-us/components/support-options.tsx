@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Landmark, Package, Info, Mail, Copy, Check } from 'lucide-react'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 import {
   CASH_DONATION_DETAILS,
   IN_KIND_DONATION_DETAILS,

@@ -53,3 +53,7 @@ export interface Publication extends BaseContent {
   link?: string
   pdf?: string
 }
+
+export interface CommunityCategory {
+  name: string
+}

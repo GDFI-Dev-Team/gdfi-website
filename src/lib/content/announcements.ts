@@ -1,8 +1,8 @@
-import { getCollectionMarkdownData } from '@/lib/markdown'
-import { paginateItems } from '@/lib/pagination'
-import { filterAndSortCollection } from '@/lib/content-filter'
-import { ArticleContent } from '../interfaces/content'
-import { CONTENT_LIMITS } from '@/config/content'
+import { getCollectionMarkdownData } from '@/lib/content/markdown'
+import { paginateItems } from '@/lib/content/pagination'
+import { filterCollection } from '@/lib/content/filter'
+import { ArticleContent } from './types'
+import { CONTENT_LIMITS } from '@/lib/content/pagination'
 
 type AnnouncementsSearchParams = {
   [key: string]: string | string[] | undefined
@@ -20,20 +20,15 @@ export async function getAnnouncements(
   currentPage: number,
   searchParams: AnnouncementsSearchParams,
 ) {
-  const allArticles = await getCollectionMarkdownData<ArticleContent>(
+  const allArticles = getCollectionMarkdownData<ArticleContent>(
     'updates/announcements',
   )
 
-  const filteredArticles = filterAndSortCollection<ArticleContent>(
-    allArticles,
-    {
-      q: getParam(searchParams, 'q'),
-      category: getParam(searchParams, 'category'),
-      sort: getParam(searchParams, 'sort'),
-      start_date: getParam(searchParams, 'start_date'),
-      end_date: getParam(searchParams, 'end_date'),
-    },
-  )
+  const filteredArticles = filterCollection<ArticleContent>(allArticles, {
+    q: getParam(searchParams, 'q'),
+    start_date: getParam(searchParams, 'start_date'),
+    end_date: getParam(searchParams, 'end_date'),
+  })
 
   const { items, totalPages } = paginateItems(
     filteredArticles,
@@ -49,7 +44,7 @@ export async function getAnnouncements(
   )
 
   const queryBackup = new URLSearchParams()
-  for (const key of ['q', 'category', 'sort', 'start_date', 'end_date']) {
+  for (const key of ['q', 'start_date', 'end_date']) {
     const value = getParam(searchParams, key)
     if (value) queryBackup.set(key, value)
   }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import { ArrowUpRight } from 'lucide-react'
-import { Program } from '@/lib/interfaces/content'
+import { Program } from '@/lib/content/types'
 
 const statusStyles: Record<string, string> = {
   completed: 'bg-status-completed',

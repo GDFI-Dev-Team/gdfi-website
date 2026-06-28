@@ -1,13 +1,13 @@
-import { getCollectionMarkdownData } from '@/lib/markdown'
-import { paginateItems } from '@/lib/pagination'
-import { filterAndSortCollection } from '@/lib/content-filter'
-import { ArticleContent } from '../interfaces/content'
+import { getCollectionMarkdownData } from '@/lib/content/markdown'
+import { paginateItems } from '@/lib/content/pagination'
+import { filterCollection } from '@/lib/content/filter'
+import { ArticleContent } from './types'
 
 type CollectionSearchParams = {
   [key: string]: string | string[] | undefined
 }
 
-const FILTER_KEYS = ['q', 'category', 'sort', 'start_date', 'end_date'] as const
+const FILTER_KEYS = ['q', 'category'] as const
 
 function getParam(params: CollectionSearchParams, key: string) {
   return typeof params[key] === 'string' ? (params[key] as string) : undefined
@@ -15,7 +15,7 @@ function getParam(params: CollectionSearchParams, key: string) {
 
 /**
  * Loads, filters, sorts, and paginates a markdown article collection. Shared by
- * every dated-article listing (announcements, community stories, …) so filtering,
+ * every dated-article listing (announcements, community stories) so filtering,
  * pagination, and query-string preservation stay identical across them.
  */
 export async function getArticleCollectionPage(
@@ -26,16 +26,10 @@ export async function getArticleCollectionPage(
 ) {
   const allArticles = getCollectionMarkdownData<ArticleContent>(subfolder)
 
-  const filteredArticles = filterAndSortCollection<ArticleContent>(
-    allArticles,
-    {
-      q: getParam(searchParams, 'q'),
-      category: getParam(searchParams, 'category'),
-      sort: getParam(searchParams, 'sort'),
-      start_date: getParam(searchParams, 'start_date'),
-      end_date: getParam(searchParams, 'end_date'),
-    },
-  )
+  const filteredArticles = filterCollection<ArticleContent>(allArticles, {
+    q: getParam(searchParams, 'q'),
+    category: getParam(searchParams, 'category'),
+  })
 
   const { items, totalPages } = paginateItems(
     filteredArticles,

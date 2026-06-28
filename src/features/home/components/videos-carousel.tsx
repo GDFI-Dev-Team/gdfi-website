@@ -4,9 +4,9 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
 import Button from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 import VideoModal from '@/features/resources/videos/modal'
-import { VideoContent } from '@/lib/interfaces/content'
+import { VideoContent } from '@/lib/content/types'
 import Text from '@/components/ui/text'
 
 function getYouTubeId(url: string): string | null {

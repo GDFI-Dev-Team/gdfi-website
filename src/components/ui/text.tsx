@@ -1,4 +1,4 @@
-import { cn } from '../../lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 const sizeClasses = {
   xs: 'text-xs',

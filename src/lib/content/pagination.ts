@@ -1,3 +1,12 @@
+// Per-collection page sizes, consumed by paginateItems and the paginated route
+// segments. Keep in sync with the collections in this folder.
+export const CONTENT_LIMITS = {
+  announcements: 6,
+  communityStories: 6,
+  programs: 6,
+  videos: 3,
+} as const
+
 /**
  * Slices an array of items for the active page and calculates the total pages.
  */
