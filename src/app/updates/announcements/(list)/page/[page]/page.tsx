@@ -3,7 +3,7 @@ import { getCollectionMarkdownData } from '@/lib/markdown'
 import { paginateItems } from '@/lib/pagination'
 import { ArticleContent } from '@/lib/interfaces/content'
 import { getAnnouncements } from '@/lib/data/announcements'
-import { AnnouncementsGrid } from '@/features/updates/announcements/announcements-grid'
+import { AnnouncementsGrid } from '@/features/updates/announcements/components/an-grid'
 import { CONTENT_LIMITS } from '@/config/content'
 import { PageProps } from '@/lib/interfaces/content'
 
@@ -11,7 +11,11 @@ export async function generateStaticParams() {
   const articles = await getCollectionMarkdownData<ArticleContent>(
     'updates/announcements',
   )
-  const { totalPages } = paginateItems(articles, 1, CONTENT_LIMITS)
+  const { totalPages } = paginateItems(
+    articles,
+    1,
+    CONTENT_LIMITS.announcements,
+  )
   return Array.from({ length: totalPages }, (_, i) => ({ page: String(i + 1) }))
 }
 

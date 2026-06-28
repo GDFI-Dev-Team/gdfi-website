@@ -1,12 +1,16 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import VideoCarousel from './videos-carousel'
+import { getAllVideos } from '@/lib/videos'
 
-const FeaturedInterviews = () => {
+export default function FeaturedInterviews() {
+  const featuredVideos = getAllVideos().filter((v) => v.featured)
+  if (featuredVideos.length === 0) return null
   return (
     <Section
       aria-labelledby="featured-interviews-heading"
-      sectionClassName="bg-foreground/3"
+      sectionClassName="bg-foreground/3 overflow-hidden"
       divClassName="flex flex-col gap-10 items-center"
     >
       <div className="flex flex-col items-center gap-3 text-center">
@@ -22,17 +26,7 @@ const FeaturedInterviews = () => {
         </Heading>
       </div>
 
-      <div className="relative w-full max-w-4xl aspect-video overflow-hidden rounded-xl shadow-lg">
-        <iframe
-          src="https://www.youtube.com/embed/TBg5-6JbOPk"
-          title="Featured interview"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="absolute inset-0 w-full h-full"
-        />
-      </div>
+      <VideoCarousel videos={featuredVideos} />
     </Section>
   )
 }
-
-export default FeaturedInterviews

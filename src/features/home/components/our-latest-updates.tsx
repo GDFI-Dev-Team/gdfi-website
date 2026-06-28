@@ -1,32 +1,37 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import Button from '@/components/ui/button'
+import { buttonBase, buttonVariants } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getAnnouncements } from '@/lib/data/announcements'
 import { ArticleContent } from '@/lib/interfaces/content'
 import { FALLBACK_IMAGE } from '@/config/content'
 import { formatEdgeDate } from '@/lib/date'
+import { cn } from '@/lib/utils'
 
 type Announcement = ArticleContent
 
 const UpdateCard = ({
   update,
   featured = false,
+  className,
 }: {
   update: Announcement
   featured?: boolean
+  className?: string
 }) => {
   const imageSrc = update.featured_images?.[0] || FALLBACK_IMAGE
+  const previewText = update.excerpt || update.body
 
   return (
     <article
-      className={
+      className={cn(
         featured
           ? 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-21/9'
-          : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-4/5'
-      }
+          : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-4/5',
+        className,
+      )}
     >
       <Link
         href={`/updates/announcements/${update.slug}`}
@@ -36,7 +41,7 @@ const UpdateCard = ({
       </Link>
       <Image
         src={imageSrc}
-        alt={update.slug}
+        alt={update.title}
         fill
         sizes={
           featured
@@ -47,7 +52,7 @@ const UpdateCard = ({
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-linear-to-t from-overlay/90 via-overlay/45 to-overlay/10 pointer-events-none"
+        className="absolute inset-0 bg-linear-to-t from-overlay/90 via-overlay/60 to-overlay/10 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -70,11 +75,20 @@ const UpdateCard = ({
           className={
             featured
               ? 'max-w-2xl text-on-overlay'
-              : 'line-clamp-3 text-on-overlay'
+              : 'line-clamp-2 text-on-overlay'
           }
         >
           {update.title}
         </Heading>
+        <Text
+          size="sm"
+          className={cn(
+            'text-on-overlay/80 max-w-3xl',
+            featured ? 'line-clamp-3' : 'line-clamp-1',
+          )}
+        >
+          {previewText}
+        </Text>
       </div>
     </article>
   )
@@ -107,17 +121,26 @@ export default async function OurLatestUpdates() {
 
       <div className="flex flex-col gap-6">
         <UpdateCard update={featured} featured />
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {rest.map((update) => (
-            <UpdateCard key={update.slug} update={update} />
+        <div className="hidden md:grid grid-cols-2 gap-6 lg:grid-cols-4">
+          {rest.map((update, index) => (
+            <UpdateCard
+              key={update.slug}
+              update={update}
+              className={index >= 2 ? 'hidden lg:block' : ''}
+            />
           ))}
         </div>
       </div>
 
-      <Link href="/updates/announcements" className="self-center">
-        <Button variant="secondary" className="px-6 py-2.5">
-          See more
-        </Button>
+      <Link
+        href="/updates/announcements"
+        className={cn(
+          buttonBase,
+          buttonVariants.secondary,
+          'self-center px-6 py-2.5',
+        )}
+      >
+        See more
       </Link>
     </Section>
   )

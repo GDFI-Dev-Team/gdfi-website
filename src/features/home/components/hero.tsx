@@ -7,7 +7,7 @@ import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils'
 import { RightUpCurve } from './layout-shapes'
 
-const heroImages = ['hero-1.webp', 'hero-2.webp', 'hero-3.webp']
+const heroImages = ['hero-1.jpeg', 'hero-2.jpeg', 'hero-3.jpeg']
 
 export const Hero = () => {
   const slides = [...heroImages, heroImages[0]]
@@ -88,7 +88,7 @@ export const Hero = () => {
             >
               <Image
                 src={`/feat-hero/${img}`}
-                alt=""
+                alt={`Hero slideshow image ${i + 1}`}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"

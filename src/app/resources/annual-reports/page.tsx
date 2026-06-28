@@ -34,8 +34,8 @@ export default async function AnnualReportsPage({
     <main className="flex-1 flex flex-col bg-foreground/3">
       <Banner
         title="Annual Reports"
-        description="Browse and download GDFI's yearly transparency reports."
-        imgUrl="/nav-item-banner-images/annual-reports.webp"
+        description="Browse our tangible impacts through our yearly transparency reports"
+        imgUrl="/nav-item-banner-images/annual-reports.jpeg"
       />
 
       <Suspense>

@@ -3,9 +3,14 @@ import FilterBar, {
   SearchInput,
   ClearFilters,
 } from '@/components/ui/filter-bar'
-import StatusFilter from '@/features/programs/status-filter'
+import SelectFilter from '@/components/ui/select-filter'
 import Section from '@/components/ui/section'
 import { Suspense } from 'react'
+
+const STATUS_OPTIONS = ['Completed', 'Active', 'Discontinued'].map((s) => ({
+  label: s,
+  value: s,
+}))
 
 export default function ProgramsListLayout({
   children,
@@ -16,13 +21,18 @@ export default function ProgramsListLayout({
     <>
       <Banner
         title="Programs"
-        description="Discover the different programs of Guiuan Development Foundation Inc. and how you can provide support."
-        imgUrl="/feat-hero/hero-2.webp"
+        description="Explore how our initiatives are breathing life back to our community"
+        imgUrl="/nav-item-banner-images/programs.jpeg"
       />
       <Suspense>
         <FilterBar className="justify-end gap-2">
           <SearchInput placeholder="Search programs..." />
-          <StatusFilter />
+          <SelectFilter
+            paramKey="category"
+            options={STATUS_OPTIONS}
+            placeholder="Filter Status"
+            label="Filter by status"
+          />
           <ClearFilters />
         </FilterBar>
       </Suspense>

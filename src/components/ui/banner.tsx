@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Breadcrumbs from './breadcrumbs'
 import Heading from './heading'
 import Text from './text'
@@ -12,10 +13,15 @@ export default function Banner({
   description: string
 }) {
   return (
-    <section
-      className="relative isolate flex min-h-80 flex-col justify-end overflow-hidden bg-cover bg-center px-(--gutter) pb-14 md:min-h-136 md:pb-20"
-      style={{ backgroundImage: `url(${imgUrl})` }}
-    >
+    <section className="relative isolate flex min-h-80 flex-col justify-end overflow-hidden px-(--gutter) pb-14 md:min-h-136 md:pb-20">
+      <Image
+        src={imgUrl}
+        alt={title}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+      />
       {/* Left scrim */}
       <div className="absolute inset-0 bg-linear-to-r from-hero-overlay/80 via-hero-overlay/30 via-25% to-transparent to-50% transition-[--hero-overlay] duration-300 ease-[ease] dark:from-hero-overlay/80 dark:via-hero-overlay/40" />
       {/* Bottom scrim */}
