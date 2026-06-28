@@ -4,7 +4,7 @@ import Text from '@/components/ui/text'
 import Image from 'next/image'
 import Link from 'next/link'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 const WhoWeAre = () => {
   return (
@@ -21,10 +21,10 @@ const WhoWeAre = () => {
         />
         <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl shadow-lg">
           <Image
-            src="/feat-hero/hero-2.webp"
-            alt=""
+            src="/feat-hero/hero-2.jpeg"
+            alt="Who we are thumbnail"
             fill
-            sizes="(min-width: 768px) 45vw, 100vw"
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
             aria-hidden="true"
           />

@@ -1,68 +1,35 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import Button from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
-import LikeButton from './like-button'
-import { Eye, Clock } from 'lucide-react'
-import { formatCount } from '@/lib/utils'
-import { getAnnouncementsPage } from '@/lib/announcements'
-import { BaseContent } from '@/lib/interfaces/content'
-import { FALLBACK_IMAGE } from '@/config/content'
-import { formatEdgeDate } from '@/lib/date'
-
-type Announcement = BaseContent & { slug: string }
-
-/* Stable placeholder engagement numbers until views/likes/read-time are wired to real data */
-function placeholderStats(slug: string) {
-  let hash = 0
-  for (const char of slug) hash = (hash * 31 + char.charCodeAt(0)) >>> 0
-
-  return {
-    views: 800 + (hash % 2200),
-    likes: 50 + (hash % 450),
-    readMinutes: 3 + (hash % 6),
-  }
-}
-
-const UpdateMeta = ({ update }: { update: Announcement }) => {
-  const { views, likes, readMinutes } = placeholderStats(update.slug)
-
-  return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-overlay-subtle">
-      <div className="inline-flex items-center gap-1.5">
-        <Eye size={16} aria-hidden="true" />
-        <Text size="sm">{formatCount(views)}</Text>
-      </div>
-      <LikeButton
-        count={likes}
-        className="text-on-overlay-subtle hover:text-on-overlay"
-      />
-      <div className="inline-flex items-center gap-1.5">
-        <Clock size={16} aria-hidden="true" />
-        <Text size="sm">{readMinutes} min read</Text>
-      </div>
-    </div>
-  )
-}
+import { buttonBase, buttonVariants } from '@/components/ui/button'
+import { getAnnouncements } from '@/lib/content/announcements'
+import { ArticleContent } from '@/lib/content/types'
+import { formatEdgeDate } from '@/lib/utils/date'
+import { cn } from '@/lib/utils/cn-merge'
 
 const UpdateCard = ({
   update,
   featured = false,
+  className,
 }: {
-  update: Announcement
+  update: ArticleContent
   featured?: boolean
+  className?: string
 }) => {
-  const imageSrc = update.featured_images?.[0] || FALLBACK_IMAGE
+  const imageSrc =
+    update.featured_images?.[0] || '/nav-item-banner-images/announcements.jpeg'
+  const previewText = update.excerpt || update.body
 
   return (
     <article
-      className={
+      className={cn(
         featured
           ? 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-21/9'
-          : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-4/5'
-      }
+          : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-4/5',
+        className,
+      )}
     >
       <Link
         href={`/updates/announcements/${update.slug}`}
@@ -72,7 +39,7 @@ const UpdateCard = ({
       </Link>
       <Image
         src={imageSrc}
-        alt={update.slug}
+        alt={update.title}
         fill
         sizes={
           featured
@@ -83,7 +50,7 @@ const UpdateCard = ({
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-linear-to-t from-overlay/90 via-overlay/45 to-overlay/10 pointer-events-none"
+        className="absolute inset-0 bg-linear-to-t from-overlay/90 via-overlay/60 to-overlay/10 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -111,16 +78,22 @@ const UpdateCard = ({
         >
           {update.title}
         </Heading>
-        <div className="pointer-events-auto">
-          <UpdateMeta update={update} />
-        </div>
+        <Text
+          size="sm"
+          className={cn(
+            'text-on-overlay/80 max-w-3xl',
+            featured ? 'line-clamp-3' : 'line-clamp-1',
+          )}
+        >
+          {previewText}
+        </Text>
       </div>
     </article>
   )
 }
 
 export default async function OurLatestUpdates() {
-  const { items } = await getAnnouncementsPage(1, {})
+  const { items } = await getAnnouncements(1, {})
   const updates = items.slice(0, 5)
   const [featured, ...rest] = updates
 
@@ -146,17 +119,26 @@ export default async function OurLatestUpdates() {
 
       <div className="flex flex-col gap-6">
         <UpdateCard update={featured} featured />
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {rest.map((update) => (
-            <UpdateCard key={update.slug} update={update} />
+        <div className="hidden md:grid grid-cols-2 gap-6 lg:grid-cols-4">
+          {rest.map((update, index) => (
+            <UpdateCard
+              key={update.slug}
+              update={update}
+              className={index >= 2 ? 'hidden lg:block' : ''}
+            />
           ))}
         </div>
       </div>
 
-      <Link href="/updates/announcements" className="self-center">
-        <Button variant="secondary" className="px-6 py-2.5">
-          See more
-        </Button>
+      <Link
+        href="/updates/announcements"
+        className={cn(
+          buttonBase,
+          buttonVariants.secondary,
+          'self-center px-6 py-2.5',
+        )}
+      >
+        See more
       </Link>
     </Section>
   )

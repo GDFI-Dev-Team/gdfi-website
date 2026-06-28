@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'

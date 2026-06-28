@@ -1,7 +1,8 @@
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 import { FileText, Download } from 'lucide-react'
-import { cn, downloadPDF } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
+import { downloadPDF } from '@/lib/utils/download'
 
 interface AnnualReportCardProps {
   title: string

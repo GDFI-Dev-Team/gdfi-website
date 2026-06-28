@@ -1,6 +1,25 @@
-import { Suspense } from 'react'
-import Banner from '@/components/ui/banner'
-import FilterBar from '@/components/ui/filter-bar'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Announcements',
+  description: 'Stay connected with our ongoing efforts on the frontlines.',
+  openGraph: {
+    title: 'Announcements',
+    description: 'Stay connected with our ongoing efforts on the frontlines.',
+    url: '/updates/announcements',
+    images: [
+      {
+        url: '/nav-item-banner-images/announcements.jpeg',
+        width: 2048,
+        height: 1365,
+        alt: 'Guiuan Development Foundation, Inc.',
+      },
+    ],
+  },
+  alternates: {
+    canonical: '/updates/announcements',
+  },
+}
 
 export default function AnnouncementsLayout({
   children,
@@ -8,18 +27,6 @@ export default function AnnouncementsLayout({
   children: React.ReactNode
 }>) {
   return (
-    <main className="flex-1 flex flex-col bg-foreground/0.02">
-      <Banner
-        title="Announcements"
-        description="Stay up to date with the latest stories, interviews, and updates from GDFI."
-        imgUrl="/feat-hero/hero-1.webp"
-      />
-      <Suspense
-        fallback={<div className="h-16 bg-foreground/3 animate-pulse" />}
-      >
-        <FilterBar />
-      </Suspense>
-      {children}
-    </main>
+    <main className="flex-1 flex flex-col bg-foreground/0.02">{children}</main>
   )
 }

@@ -8,14 +8,52 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   ),
   title: {
-    template: '%s | GDFI',
-    default: 'GDFI',
+    template: '%s | Guiuan Development Foundation Inc.',
+    default: 'Guiuan Development Foundation Inc.',
   },
-  description: 'Official homepage of Guiuan Development Foundation Inc.',
-  keywords: ['GDFI', 'Guiuan', 'Eastern Samar'],
-  authors: [{ name: 'Guiuan Development Foundation Inc.' }],
+  description: 'The official homepage of Guiuan Development Foundation Inc.',
+  applicationName: 'Guiuan Development Foundation Inc. Website',
   creator: 'Guiuan Development Foundation, Inc.',
   publisher: 'Guiuan Development Foundation, Inc.',
+  category: 'Non-Government Organization',
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo-images/logo.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/logo-images/logo.svg',
+  },
+  openGraph: {
+    title: {
+      template: '%s | Guiuan Development Foundation Inc.',
+      default: 'Guiuan Development Foundation Inc.',
+    },
+    description: 'The official homepage of Guiuan Development Foundation Inc.',
+    siteName: 'Guiuan Development Foundation Inc.',
+    url: '/',
+    locale: 'en_PH',
+    type: 'website',
+    images: [
+      {
+        url: '/feat-hero/hero-1.jpeg',
+        width: 3750,
+        height: 1969,
+        alt: 'Guiuan Development Foundation, Inc.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: {
+      template: '%s | Guiuan Development Foundation Inc.',
+      default: 'Guiuan Development Foundation Inc.',
+    },
+    description: 'The official homepage of Guiuan Development Foundation Inc.',
+    images: ['/feat-hero/hero-1.jpeg'],
+  },
 }
 
 export default function RootLayout({

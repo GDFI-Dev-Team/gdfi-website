@@ -1,10 +1,8 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import Text from '@/components/ui/text'
 import AnnualReportCard from './ar-card'
-
-const CURRENT_YEAR = new Date().getFullYear()
+import { AnnualReport } from '@/lib/content/types'
 
 type ScrollEdge = 'none' | 'top' | 'bottom' | 'both'
 
@@ -45,35 +43,15 @@ function useScrollMask<T extends HTMLElement>() {
   return { ref, maskImage: MASKS[edge] }
 }
 
-export interface AnnualReport {
-  slug: string
-  title: string
-  year: string
-  'prepared-by': string
-  'annual-report': string
-  contributors?: { name: string; role: string }[]
-}
-
-interface AnnualReportGridProps {
-  reports: AnnualReport[]
-  onReportSelect: (pdfUrl: string) => void
-}
-
 export default function AnnualReportGrid({
   reports,
   onReportSelect,
-}: AnnualReportGridProps) {
-  const [startYear, setStartYear] = useState('')
-  const [endYear, setEndYear] = useState('')
+}: {
+  reports: AnnualReport[]
+  onReportSelect: (pdfUrl: string) => void
+}) {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null)
   const { ref, maskImage } = useScrollMask<HTMLDivElement>()
-
-  const filtered = reports.filter((r) => {
-    const y = Number(r.year)
-    if (startYear && y < Number(startYear)) return false
-    if (endYear && y > Number(endYear)) return false
-    return true
-  })
 
   function handleSelect(report: AnnualReport) {
     setSelectedSlug(report.slug)
@@ -81,62 +59,27 @@ export default function AnnualReportGrid({
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex self-end gap-4 py-2">
-        <label className="flex items-center gap-2">
-          <Text size="sm" className="text-foreground/50">
-            {' '}
-            From{' '}
-          </Text>
-          <input
-            type="number"
-            min={2000}
-            max={CURRENT_YEAR}
-            placeholder="YYYY"
-            value={startYear}
-            onChange={(e) => setStartYear(e.target.value)}
-            className="w-20 border border-foreground/15 rounded-lg px-2 py-1 text-sm bg-background text-foreground"
-          />
-        </label>
-        <label className="flex items-center gap-2">
-          <Text size="sm" className="text-foreground/50">
-            {' '}
-            To{' '}
-          </Text>
-          <input
-            type="number"
-            min={2000}
-            max={CURRENT_YEAR}
-            placeholder="YYYY"
-            value={endYear}
-            onChange={(e) => setEndYear(e.target.value)}
-            className="w-20 border border-foreground/15 rounded-lg px-2 py-1 text-sm bg-background text-foreground"
-          />
-        </label>
-      </div>
-
-      <div
-        ref={ref}
-        className="max-h-[40vh] md:max-h-[55vh] overflow-y-auto"
-        style={{ maskImage }}
+    <div
+      ref={ref}
+      className="max-h-[40vh] md:max-h-[55vh] overflow-y-auto"
+      style={{ maskImage }}
+    >
+      <ul
+        className="flex flex-col gap-3 list-none"
+        role="listbox"
+        aria-label="Annual reports"
       >
-        <ul
-          className="flex flex-col gap-3 list-none"
-          role="listbox"
-          aria-label="Annual reports"
-        >
-          {filtered.map((report) => (
-            <AnnualReportCard
-              key={report.slug}
-              title={report.title}
-              prepared-by={report['prepared-by']}
-              pdfUrl={report['annual-report']}
-              isSelected={selectedSlug === report.slug}
-              onSelect={() => handleSelect(report)}
-            />
-          ))}
-        </ul>
-      </div>
+        {reports.map((report) => (
+          <AnnualReportCard
+            key={report.slug}
+            title={report.title}
+            prepared-by={report['prepared-by']}
+            pdfUrl={report['annual-report']}
+            isSelected={selectedSlug === report.slug}
+            onSelect={() => handleSelect(report)}
+          />
+        ))}
+      </ul>
     </div>
   )
 }

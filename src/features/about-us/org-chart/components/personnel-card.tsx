@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { X } from 'lucide-react'
 import Text from '@/components/ui/text'
 import { Personnel } from '../data/constants'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 export function PersonnelCard({ person }: { person: Personnel }) {
   const [isMobileModalOpen, setIsMobileModalOpen] = useState(false)
@@ -26,7 +26,6 @@ export function PersonnelCard({ person }: { person: Personnel }) {
     if (!cardRef.current) return
     const rect = cardRef.current.getBoundingClientRect()
     const spaceOnRight = window.innerWidth - rect.right
-
     if (spaceOnRight < 400) setTooltipDirection('left')
     else setTooltipDirection('right')
   }
@@ -35,7 +34,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
     <div
       ref={cardRef}
       onPointerEnter={handlePointerEnter}
-      className="group relative flex flex-col items-center w-full max-w-[140px] mx-auto"
+      className="group relative flex flex-col items-center w-full max-w-140px mx-auto"
     >
       <div className="relative w-24 h-24 md:w-28 md:h-28 mb-3 shrink-0">
         <div className="absolute inset-0 bg-background border border-foreground/10 rounded-2xl p-1.5 md:p-2 shadow-sm transition-shadow duration-300 group-hover:shadow-md">
@@ -52,7 +51,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
 
         <div
           className={cn(
-            'hidden md:flex flex-col absolute top-1/2 -translate-y-1/2 w-64 lg:w-80 xl:w-96 p-5 lg:p-6 bg-background border border-foreground/15 shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60] pointer-events-auto',
+            'hidden md:flex flex-col absolute top-1/2 -translate-y-1/2 w-64 lg:w-80 xl:w-96 p-5 lg:p-6 bg-background border border-foreground/15 shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-60 pointer-events-auto',
             tooltipDirection === 'right' ? 'left-full ml-4' : 'right-full mr-4',
           )}
         >
@@ -74,7 +73,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
 
           <div
             className={cn(
-              'absolute top-1/2 -translate-y-1/2 border-[8px] border-transparent drop-shadow-sm pointer-events-none',
+              'absolute top-1/2 -translate-y-1/2 border-8px border-transparent drop-shadow-sm pointer-events-none',
               tooltipDirection === 'right'
                 ? '-left-4 border-r-background'
                 : '-right-4 border-l-background',
@@ -103,7 +102,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
       </button>
 
       {isMobileModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/30 backdrop-blur-sm p-4 md:hidden">
+        <div className="fixed inset-0 z-100 flex items-center justify-center bg-foreground/30 backdrop-blur-sm p-4 md:hidden">
           <div className="bg-background w-full max-w-[90vw] sm:max-w-md p-6 sm:p-8 rounded-3xl shadow-xl relative animate-fade-up flex flex-col max-h-[85vh]">
             <button
               onClick={() => setIsMobileModalOpen(false)}

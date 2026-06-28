@@ -4,10 +4,10 @@ import Image from 'next/image'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 import { RightUpCurve } from './layout-shapes'
 
-const heroImages = ['hero-1.webp', 'hero-2.webp', 'hero-3.webp']
+const heroImages = ['hero-1.jpeg', 'hero-2.jpeg', 'hero-3.jpeg']
 
 export const Hero = () => {
   const slides = [...heroImages, heroImages[0]]
@@ -88,9 +88,9 @@ export const Hero = () => {
             >
               <Image
                 src={`/feat-hero/${img}`}
-                alt=""
+                alt={`Hero slideshow image ${i + 1}`}
                 fill
-                sizes="100vw"
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
                 priority={i === 0}
                 loading={i === 0 ? undefined : 'eager'}
@@ -110,13 +110,13 @@ export const Hero = () => {
       <div className="relative z-30 flex max-w-3xl flex-col gap-5">
         <Heading
           level={1}
-          className="animate-fade-up text-on-hero transition-colors duration-300 ease-[ease] [animation-delay:100ms]"
+          className="animate-fade-up text-text-standard transition-colors duration-300 ease-[ease] [animation-delay:100ms]"
         >
           From ridge to reef
         </Heading>
         <Text
           size="lg"
-          className="max-w-prose animate-fade-up text-on-hero-muted transition-colors duration-300 ease-[ease] [animation-delay:200ms]"
+          className="max-w-prose animate-fade-up text-text-muted transition-colors duration-300 ease-[ease] [animation-delay:200ms]"
         >
           We work hand-in-hand with fishing communities across Eastern Samar,
           Philippines — protecting marine ecosystems and building sustainable
@@ -136,8 +136,8 @@ export const Hero = () => {
             className={cn(
               'h-1.5 cursor-pointer rounded-full transition-all duration-300',
               i === activeIndex
-                ? 'w-8 bg-on-hero'
-                : 'w-4 bg-on-hero-faint hover:bg-on-hero-subtle',
+                ? 'w-8 bg-text-standard'
+                : 'w-4 bg-text-faint hover:bg-text-subtle',
             )}
           />
         ))}

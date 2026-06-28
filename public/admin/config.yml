@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
-
 backend:
   name: github
   repo: GDFI-Dev-Team/gdfi-website
@@ -28,46 +26,154 @@ media_libraries:
 collections:
   - name: annual-reports
     label: Annual Reports
+    label_singular: Annual Report
     folder: content/resources/annual-reports
     fields:
       - name: title
         label: Title 
         widget: string
-        default: 2026 Annual Report
         hint: ex. 2026 Annual Report
       - name: year
         label: Year
         widget: string
-        default: "2026"
         hint: ex. 2026
       - name: prepared-by
         label: Prepared By
         widget: string
         required: false
-      - label: Annual Report
-        name: annual-report
+      - name: annual-report
+        label: Annual Report
         widget: file
         max: 1
         accept: application/pdf,.pdf
-        media_libraries: 
-          cloudflare_r2: 
+        media_libraries:
+          cloudflare_r2:
             access_key_id: 9c671155033e705d9900c1857e7b81cc
             bucket: sveltia-media
-            account_id: ffa0678267bca3257f3209173022c26f 
+            account_id: ffa0678267bca3257f3209173022c26f
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/annual-reports
           default: false
+
+  - name: publications
+    label: Publications
+    folder: content/research/publications
+    create: true
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        hint: ex. Reef Fish Biomass Recovery in Eastern Samar MPAs
+      - name: authors
+        label: Authors
+        widget: string
+        hint: Comma-separated, ex. J. Laurente, M. Dela Cruz
+      - name: year
+        label: Year
+        widget: string
+        default: "2026"
+        hint: ex. 2026
+      - name: outlet
+        label: Journal / Outlet
+        widget: string
+        required: false
+        hint: Journal, publisher, or venue, ex. Marine Pollution Bulletin
+      - name: volume
+        label: Volume / Issue
+        widget: string
+        required: false
+        hint: ex. 109(2) or 541
+      - name: pages
+        label: Pages / Article
+        widget: string
+        required: false
+        hint: ex. 744-750 or e70016
+      - name: link
+        label: External link
+        widget: string
+        required: false
+        hint: URL to the article (Google Scholar, DOI, journal page)
+      - label: PDF
+        name: pdf
+        widget: file
+        max: 1
+        required: false
+        accept: application/pdf,.pdf
+        media_libraries:
+          cloudflare_r2:
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/publications
+          default: false
+
+  - name: programs
+    label: Programs
+    label_singular: Program
+    folder: content/programs
+    fields:
+      - name: title
+        label: Title 
+        widget: string
+        hint: ex. Educational Assistance Program
+      - name: short-description
+        label: Short Description    
+        widget: text
+      - name: status
+        label: Status
+        widget: select
+        options: ['Completed', 'Active', 'Discontinued']
+      - name: tag
+        label: Tag
+        widget: string
+        hint: eg. Education
+        required: false
+      - name: featured-img
+        label: Featured Image
+        widget: file
+        max: 1
+        accept: "image/jpeg,.jpg,.jpeg"
+      - name: body
+        label: Content
+        widget: markdown
+        default: |
+          ## About This Program
+
+          Expand the short overview of the program here. Explain who it serves, what problem it addresses, and why it matters.
+
+          ## Goals
+
+          - Goal one
+          - Goal two
+          - Goal three
+
+          ## Impact
+
+          Describe the outcomes or results of the program so far. Include numbers or stories if available.
+
+          ## How to Get Involved
+
+          Explain how someone (a donor, volunteer, or participant) can support or join this program.
+
   - name: announcements
     label: Announcements
     label_singular: Announcement
     folder: content/updates/announcements
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Author, name: author, widget: string, required: false }
-      - { label: Date, name: date, widget: datetime, type: date }
-      - { label: Excerpt, name: excerpt, widget: string, required: false }
-      - label: Featured Image
-        name: featured_image
+      - name: title 
+        label: Title
+        widget: string
+      - name: author 
+        label: Author
+        widget: string
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        type: date
+      - name: featured_images
+        label: Featured Images
         widget: image
         multiple: true
         required: false
@@ -79,4 +185,93 @@ collections:
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
             prefix: gdfi-website-uploads/web-assets
           default: false
-      - { label: Body, name: body, widget: richtext }
+      - name: body 
+        label: Body
+        widget: text
+        default: |
+          Write a short, attention-grabbing opening line that restates or expands on the title.
+
+          Give the context: what happened, who was involved, and why it matters to GDFI's mission.
+
+          Share any key details, quotes, or numbers that support the announcement.
+
+          End with a call to action or forward-looking note (e.g. how to get involved, what's next).
+
+  - name: community-categories
+    label: Community Categories
+    label_singular: Community Category
+    folder: content/updates/community-categories
+    create: true
+    fields:
+      - name: name
+        label: Name
+        widget: string
+        hint: ex. Fisherfolk, Youth, Livelihood, Conservation
+
+  - name: community-stories
+    label: Community Stories
+    label_singular: Community Story
+    folder: content/updates/community-stories
+    create: true
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: tags
+        label: Categories
+        widget: relation
+        collection: community-categories
+        search_fields: [name]
+        value_field: name
+        display_fields: [name]
+        multiple: true
+        required: false
+        hint: Pulled from Community Categories — manage the list in that collection
+      - name: featured_images
+        label: Featured Images
+        widget: image
+        multiple: true
+        required: false
+        media_libraries:
+          cloudflare_r2:
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/web-assets
+          default: false
+      - name: body
+        label: Body
+        widget: text
+        default: |
+          Open with a short, vivid line that draws the reader into the story.
+
+          Introduce the community member(s) and the place at the heart of this story.
+
+          Share what changed, what was learned, or what was achieved — and why it matters to GDFI's mission.
+
+          Close with a forward-looking note or a call to action.
+
+  - name: video-resources
+    label: Video Resources
+    label_singular: Video Resource
+    folder: content/resources/video-resources
+    fields: 
+      - label: Title
+        name: title
+        widget: string
+      - label: Featured
+        name: featured
+        widget: boolean
+        hint: Toggle for featured videos
+        default: false
+      - label: Excerpt
+        name: excerpt
+        widget: string
+        required: false
+      - label: Body
+        name: body
+        widget: richtext
+      - label: Youtube Link
+        name: youtube-link
+        widget: string

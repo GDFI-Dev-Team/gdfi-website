@@ -1,4 +1,4 @@
-import { cn } from '../../lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 type SectionMaxWidth = 'none' | 'full' | '2xl' | '4xl' | '5xl' | '6xl' | '7xl'
 
 const maxWidthClasses: Record<SectionMaxWidth, string> = {
@@ -29,7 +29,7 @@ export default function Section({
   return (
     /* Change bg-white later */
     <section
-      className={cn('px-(--gutter) py-16 md:py-24', sectionClassName)}
+      className={cn('px-(--gutter) py-12 md:py-16', sectionClassName)}
       id={id}
       aria-labelledby={ariaLabelledBy}
     >

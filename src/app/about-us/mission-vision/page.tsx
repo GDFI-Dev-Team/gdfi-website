@@ -9,8 +9,8 @@ export default function MissionVisionPage() {
     <>
       <Banner
         title="Mission & Vision"
-        description="Discover the driving force behind the Guiuan Development Foundation Inc."
-        imgUrl="/feat-hero/hero-3.webp"
+        description="Discover the heart of our foundation and its drive to heal our environment"
+        imgUrl="/nav-item-banner-images/mission-vision.jpeg"
       />
       <Mission />
       <Vision />

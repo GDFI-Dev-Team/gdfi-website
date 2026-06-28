@@ -3,18 +3,18 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Mission & Vision',
   description:
-    'Our commitment to biodiversity and sustainable development in Eastern Samar.',
+    'Discover the heart of our foundation and its drive to heal our environment.',
   openGraph: {
     title: 'Mission & Vision',
     description:
-      'Our commitment to biodiversity and sustainable development in Eastern Samar.',
+      'Discover the heart of our foundation and its drive to heal our environment.',
     url: '/about-us/mission-vision',
     images: [
       {
-        url: '/feat-hero/hero-3-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Ridge to reef campaign',
+        url: '/nav-item-banner-images/mission-vision.jpeg',
+        width: 2048,
+        height: 1024,
+        alt: 'Guiuan Development Foundation, Inc.',
       },
     ],
   },
