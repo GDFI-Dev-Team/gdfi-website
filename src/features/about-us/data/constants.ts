@@ -33,22 +33,4 @@ export const HISTORY_MILESTONES: HistoryMilestone[] = [
     description:
       'For 18 years, GDFI laid the groundwork through intensive community organizing, establishing marine sanctuaries, and promoting environmental education. In 2006, this grassroots empowerment evolved into structural policy when GDFI initiated the formation of the Alliance of Seven Municipalities for Integrated Coastal Zone Management (A7 for ICZM). This landmark alliance successfully engaged Local Government Units (LGUs) to take a major, collaborative role in protecting and managing their shared waters.',
   },
-  {
-    id: 'milestone-4',
-    year: 'time',
-    title: 'label',
-    description: 'Some description...',
-  },
-  {
-    id: 'milestone-5',
-    year: 'time',
-    title: 'label',
-    description: 'Some description...',
-  },
-  {
-    id: 'milestone-6',
-    year: 'time',
-    title: 'label',
-    description: 'Some description...',
-  },
 ]
