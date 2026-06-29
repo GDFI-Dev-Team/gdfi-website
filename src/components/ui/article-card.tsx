@@ -33,7 +33,7 @@ export default function ArticleCard({
   return (
     <article
       className={cn(
-        'group flex flex-col overflow-hidden rounded-xl shadow-sm transition-all duration-300 border border-foreground/10 bg-background hover:shadow-md hover:-translate-y-1',
+        'group flex flex-col h-full overflow-hidden rounded-xl shadow-sm transition-all duration-300 border border-foreground/10 bg-background hover:shadow-md hover:-translate-y-1',
         className,
       )}
     >
@@ -41,9 +41,9 @@ export default function ArticleCard({
         href={href}
         className="relative w-full overflow-hidden block bg-foreground/5 aspect-3/2"
       >
-        <div
+        <figure
           className={cn(
-            'flex h-full w-full transition-transform duration-700 ease-in-out',
+            'flex h-full w-full m-0 transition-transform duration-700 ease-in-out',
             hasMultipleImages && 'group-hover:-translate-x-full',
           )}
         >
@@ -65,26 +65,26 @@ export default function ArticleCard({
               />
             </div>
           ))}
-        </div>
+        </figure>
       </Link>
 
       <div className="flex flex-1 flex-col gap-3 p-6">
         {showDate ? (
-          <Text
-            size="xs"
-            className="text-foreground/50 font-semibold tracking-wider"
+          <time
+            dateTime={new Date(article.date).toISOString()}
+            className="text-xs text-foreground/50 font-semibold tracking-wider block"
           >
             {formatEdgeDate(article.date)}
             <span className="mx-1.5">&#xb7;</span>
             {getReadingTime(article.body)} min. read
-          </Text>
+          </time>
         ) : (
           categories.length > 0 && (
-            <div className="flex flex-wrap gap-3">
+            <ul className="flex flex-wrap gap-3 list-none p-0 m-0">
               {categories.map((category) => {
                 const color = categoryColor(category)
                 return (
-                  <span
+                  <li
                     key={category}
                     className="rounded-full px-3 py-1.5"
                     style={{ backgroundColor: color.bg, color: color.text }}
@@ -92,10 +92,10 @@ export default function ArticleCard({
                     <Text size="xs" className="font-semibold tracking-wide">
                       {category}
                     </Text>
-                  </span>
+                  </li>
                 )
               })}
-            </div>
+            </ul>
           )
         )}
 
