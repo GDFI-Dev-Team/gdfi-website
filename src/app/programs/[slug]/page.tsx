@@ -35,35 +35,39 @@ export default async function ProgramDetailPage({
 
   return (
     <Section maxWidth="4xl" sectionClassName="pt-28 md:pt-32">
-      <div className="relative aspect-video overflow-hidden rounded-lg">
-        <Image
-          src={program['featured-img']}
-          alt={program.title}
-          fill
-          sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-cover"
+      <article>
+        <header>
+          <figure className="relative aspect-video overflow-hidden rounded-lg m-0">
+            <Image
+              src={program['featured-img']}
+              alt={program.title}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </figure>
+
+          <Heading level={1} className="mt-6">
+            {program.title}
+          </Heading>
+
+          <div className="flex gap-2 mt-3">
+            <span className={`px-2 rounded-2xl ${statusClass}`}>
+              <Text size="sm" className="text-on-overlay">
+                {program.status}
+              </Text>
+            </span>
+            <span className="px-2 rounded-2xl bg-foreground/20">
+              <Text size="sm">{program.tag}</Text>
+            </span>
+          </div>
+        </header>
+
+        <div
+          className="prose lg:prose-xl mt-8 max-w-none"
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
-      </div>
-
-      <Heading level={1} className="mt-6">
-        {program.title}
-      </Heading>
-
-      <div className="flex gap-2 mt-3">
-        <span className={`px-2 rounded-2xl ${statusClass}`}>
-          <Text size="sm" className="text-on-overlay">
-            {program.status}
-          </Text>
-        </span>
-        <span className="px-2 rounded-2xl bg-foreground/20">
-          <Text size="sm">{program.tag}</Text>
-        </span>
-      </div>
-
-      <article
-        className="prose lg:prose-xl mt-8 max-w-none"
-        dangerouslySetInnerHTML={{ __html: contentHtml }}
-      />
+      </article>
     </Section>
   )
 }
