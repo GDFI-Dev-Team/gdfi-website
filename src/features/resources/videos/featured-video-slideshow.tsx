@@ -201,7 +201,7 @@ export default function FeaturedVideoSlideshow({
                           </div>
 
                           <ShareButton
-                            url="/resources/video-resources"
+                            url={video['youtube-link']}
                             title={video.title}
                             className="h-10 w-10 shrink-0 p-0 rounded-full text-white/60 hover:text-white hover:bg-white/20 pointer-events-auto"
                           />

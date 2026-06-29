@@ -160,7 +160,7 @@ export default function VideoCarousel({ videos }: { videos: VideoContent[] }) {
           {displayVideos[currentIndex].title}
         </Text>
         <ShareButton
-          url="/resources/video-resources"
+          url={displayVideos[currentIndex]['youtube-link']}
           title={displayVideos[currentIndex].title}
           showLabel
           className="rounded-full px-5 py-2 h-auto text-sm bg-foreground/5 hover:bg-foreground/10"

@@ -75,7 +75,7 @@ export default function VideoCard({
             {formatEdgeDate(video.date)}
           </Text>
           <ShareButton
-            url="/resources/video-resources"
+            url={video['youtube-link']}
             title={video.title}
             className="h-8 w-8 p-0 rounded-full text-foreground/40 hover:text-foreground hover:bg-foreground/10 z-10 relative"
           />
