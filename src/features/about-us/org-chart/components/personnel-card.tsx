@@ -34,9 +34,9 @@ export function PersonnelCard({ person }: { person: Personnel }) {
     <div
       ref={cardRef}
       onPointerEnter={handlePointerEnter}
-      className="group relative flex flex-col items-center w-full max-w-140px mx-auto"
+      className="group relative flex w-full items-center gap-3 rounded-xl p-2 transition-colors hover:bg-foreground/5"
     >
-      <div className="relative w-24 h-24 md:w-28 md:h-28 mb-3 shrink-0">
+      <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0">
         <div className="absolute inset-0 bg-background border border-foreground/10 rounded-2xl p-1.5 md:p-2 shadow-sm transition-shadow duration-300 group-hover:shadow-md">
           <div className="relative w-full h-full rounded-xl overflow-hidden bg-foreground/5">
             <Image
@@ -48,55 +48,55 @@ export function PersonnelCard({ person }: { person: Personnel }) {
             />
           </div>
         </div>
-
-        <div
-          className={cn(
-            'hidden md:flex flex-col absolute top-1/2 -translate-y-1/2 w-64 lg:w-80 xl:w-96 p-5 lg:p-6 bg-background border border-foreground/15 shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-60 pointer-events-auto',
-            tooltipDirection === 'right' ? 'left-full ml-4' : 'right-full mr-4',
-          )}
-        >
-          <Text size="sm" className="font-bold mb-1 lg:text-base xl:text-lg">
-            {person.name}
-          </Text>
-          <Text
-            size="sm"
-            className="italic text-foreground/70 text-xs lg:text-sm mb-3 pb-3 border-b border-foreground/10"
-          >
-            {person.role}
-          </Text>
-
-          <div className="max-h-[40vh] overflow-y-auto overscroll-contain pr-2">
-            <p className="text-sm lg:text-base leading-relaxed text-foreground/80 text-justify hyphens-auto whitespace-pre-line">
-              {person.bio}
-            </p>
-          </div>
-
-          <div
-            className={cn(
-              'absolute top-1/2 -translate-y-1/2 border-8px border-transparent drop-shadow-sm pointer-events-none',
-              tooltipDirection === 'right'
-                ? '-left-4 border-r-background'
-                : '-right-4 border-l-background',
-            )}
-          />
-        </div>
       </div>
 
-      <div className="text-center w-full mt-1">
-        <Text size="sm" className="font-bold leading-tight">
+      <div className="min-w-0 flex-1">
+        <Text size="sm" className="font-bold leading-tight break-words">
           {person.name}
         </Text>
         <Text
           size="sm"
-          className="italic text-foreground/70 text-xs mt-1 leading-tight"
+          className="italic text-foreground/70 text-xs mt-1 leading-tight break-words"
         >
           {person.role}
         </Text>
       </div>
 
+      <div
+        className={cn(
+          'hidden md:flex flex-col absolute top-1/2 -translate-y-1/2 w-64 lg:w-80 xl:w-96 p-5 lg:p-6 bg-background border border-foreground/15 shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-60 pointer-events-auto',
+          tooltipDirection === 'right' ? 'left-full ml-4' : 'right-full mr-4',
+        )}
+      >
+        <Text size="sm" className="font-bold mb-1 lg:text-base xl:text-lg">
+          {person.name}
+        </Text>
+        <Text
+          size="sm"
+          className="italic text-foreground/70 text-xs lg:text-sm mb-3 pb-3 border-b border-foreground/10"
+        >
+          {person.role}
+        </Text>
+
+        <div className="max-h-[40vh] overflow-y-auto overscroll-contain pr-2">
+          <p className="text-sm lg:text-base leading-relaxed text-foreground/80 text-justify hyphens-auto whitespace-pre-line">
+            {person.bio}
+          </p>
+        </div>
+
+        <div
+          className={cn(
+            'absolute top-1/2 -translate-y-1/2 border-8px border-transparent drop-shadow-sm pointer-events-none',
+            tooltipDirection === 'right'
+              ? '-left-4 border-r-background'
+              : '-right-4 border-l-background',
+          )}
+        />
+      </div>
+
       <button
         onClick={() => setIsMobileModalOpen(true)}
-        className="md:hidden mt-3 px-4 py-1.5 rounded-full bg-foreground/5 text-foreground hover:bg-foreground/10 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
+        className="md:hidden shrink-0 px-4 py-1.5 rounded-full bg-foreground/5 text-foreground hover:bg-foreground/10 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
       >
         Bio
       </button>
