@@ -6,6 +6,7 @@ import {
   useTransition,
   useRef,
   useEffect,
+  useState,
 } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { OctagonX, Search } from 'lucide-react'
@@ -13,7 +14,7 @@ import Button from './button'
 import { cn } from '@/lib/utils'
 
 export const filterInputClasses =
-  'px-3 py-2.5 rounded-md border border-foreground/15 bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-btn-primary/50 transition-shadow disabled:opacity-50'
+  'h-11 px-3 rounded-lg border border-border bg-surface text-sm text-foreground shadow-sm transition-colors placeholder:text-foreground/40 hover:border-foreground/25 focus:outline-none focus:border-btn-primary focus:ring-2 focus:ring-btn-primary/30 disabled:opacity-50'
 
 interface FilterBarContextValue {
   searchParams: ReturnType<typeof useSearchParams>
@@ -102,14 +103,14 @@ export default function FilterBar({
         isPending,
       }}
     >
-      <div className="relative flex px-(--gutter) bg-foreground/3 border-b border-foreground/10">
+      <div className="relative flex px-(--gutter)">
         {isPending && (
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-cyan-500 animate-pulse" />
         )}
 
         <div
           className={cn(
-            'mx-auto max-w-7xl w-full py-4 flex flex-wrap items-center gap-3 md:gap-4',
+            'mx-auto max-w-7xl w-full py-3 md:py-4 flex flex-wrap items-center gap-2 md:gap-4',
             className,
           )}
         >
@@ -126,6 +127,17 @@ export function SearchInput({
   placeholder?: string
 }) {
   const { searchParams, handleSearchChange } = useFilterBar()
+  const paramValue = searchParams.get('q') || ''
+  const [value, setValue] = useState(paramValue)
+  const [prevParam, setPrevParam] = useState(paramValue)
+
+  // Controlled so external param changes (Clear Filters, browser back) reflect
+  // back into the field — `defaultValue` only ever set the initial value. Synced
+  // during render rather than in an effect to avoid a cascading re-render.
+  if (paramValue !== prevParam) {
+    setPrevParam(paramValue)
+    setValue(paramValue)
+  }
 
   return (
     <div className="relative w-full sm:w-60 max-w-sm shrink-0">
@@ -136,11 +148,14 @@ export function SearchInput({
       />
       <input
         type="text"
-        defaultValue={searchParams.get('q') || ''}
-        onChange={(e) => handleSearchChange(e.target.value)}
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value)
+          handleSearchChange(e.target.value)
+        }}
         placeholder={placeholder}
         aria-label={placeholder}
-        className={`w-full pl-10 pr-4 ${filterInputClasses} placeholder:text-foreground/40`}
+        className={cn(filterInputClasses, 'w-full pl-10 pr-4')}
       />
     </div>
   )
@@ -167,12 +182,12 @@ export function ClearFilters() {
       onClick={() => {
         clearFilters(filterKeys)
       }}
-      className="px-3 py-2.5 text-sm w-full sm:w-auto flex items-center justify-center gap-2"
+      className="h-11 w-11 shrink-0 p-0 flex items-center justify-center"
       variant="ghost"
       aria-label="Clear all filters"
+      title="Clear all filters"
     >
       <OctagonX className="size-5" />
-      <span className="sm:hidden font-medium">Clear Filters</span>
     </Button>
   )
 }

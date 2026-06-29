@@ -11,12 +11,15 @@ import { cn } from '@/lib/utils'
 function TimelineItem({
   milestone,
   isEven,
+  isToggled,
+  onToggle,
 }: {
   milestone: HistoryMilestone
   isEven: boolean
+  isToggled: boolean
+  onToggle: () => void
 }) {
   const [isHovered, setIsHovered] = useState(false)
-  const [isToggled, setIsToggled] = useState(false)
   const isOpen = isHovered || isToggled
 
   return (
@@ -24,7 +27,7 @@ function TimelineItem({
       className="relative flex w-full group mb-12 last:mb-0 cursor-pointer"
       onPointerEnter={(e) => e.pointerType === 'mouse' && setIsHovered(true)}
       onPointerLeave={(e) => e.pointerType === 'mouse' && setIsHovered(false)}
-      onClick={() => setIsToggled((prev) => !prev)}
+      onClick={onToggle}
     >
       <div
         className={cn(
@@ -88,6 +91,9 @@ function TimelineItem({
 }
 
 export function HistoryTimeline() {
+  // Only one milestone stays expanded at a time — opening another closes it.
+  const [openId, setOpenId] = useState<string | null>(null)
+
   return (
     <div className="bg-foreground/[0.02]">
       <Section maxWidth="5xl" sectionClassName="py-16 md:py-24">
@@ -104,6 +110,12 @@ export function HistoryTimeline() {
                 key={milestone.id}
                 milestone={milestone}
                 isEven={i % 2 === 0}
+                isToggled={openId === milestone.id}
+                onToggle={() =>
+                  setOpenId((prev) =>
+                    prev === milestone.id ? null : milestone.id,
+                  )
+                }
               />
             ))}
           </div>

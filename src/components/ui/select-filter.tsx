@@ -22,7 +22,7 @@ export default function SelectFilter({
   const { searchParams, updateSearchParam } = useFilterBar()
 
   return (
-    <div className={cn('relative w-full sm:w-auto shrink-0', className)}>
+    <div className={cn('relative flex-1 sm:w-auto sm:flex-none', className)}>
       <ChevronDown
         className="absolute right-3 top-1/2 -translate-y-1/2 text-foreground/40 pointer-events-none"
         size={18}

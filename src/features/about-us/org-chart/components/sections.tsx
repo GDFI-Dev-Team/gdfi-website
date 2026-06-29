@@ -5,6 +5,7 @@ import {
   ADMIN_AND_FINANCE,
   PROJECT_COORDINATION,
   VOLUNTEERS,
+  Personnel,
 } from '../data/constants'
 
 function OrgSectionContainer({
@@ -15,8 +16,8 @@ function OrgSectionContainer({
   children: React.ReactNode
 }) {
   return (
-    <div className="bg-foreground/4 rounded-3xl p-6 md:p-10 lg:p-16 w-full flex flex-col items-center">
-      <Heading level={2} className="mb-6 text-center">
+    <div className="w-full rounded-xl border border-border bg-surface/60 p-4 md:p-10 lg:p-14">
+      <Heading level={2} className="mb-6 text-center md:mb-12">
         {title}
       </Heading>
       {children}
@@ -24,29 +25,37 @@ function OrgSectionContainer({
   )
 }
 
+/* Horizontal person rows that wrap and stay centered — an incomplete last
+   row centers its items instead of left-aligning (flex + justify-center). */
+function PeopleGrid({
+  people,
+  maxWidth = 'max-w-5xl',
+}: {
+  people: Personnel[]
+  maxWidth?: string
+}) {
+  return (
+    <div
+      className={`mx-auto flex w-full flex-wrap justify-center gap-x-6 gap-y-2 md:gap-y-4 ${maxWidth}`}
+    >
+      {people.map((p) => (
+        <div key={p.id} className="w-full sm:w-64 md:w-72">
+          <PersonnelCard person={p} />
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export function BoardOfTrustees() {
-  const tier1 = BOARD_OF_TRUSTEES[0] // President
-  const tier2 = BOARD_OF_TRUSTEES[1] // Vice Preseidnt
-  const tier3 = BOARD_OF_TRUSTEES.slice(2, 4) // Secretary & Treasurer
-  const tier4 = BOARD_OF_TRUSTEES.slice(4, 8) // 4 Other Members
+  const leadership = BOARD_OF_TRUSTEES.slice(0, 2) // President & Vice President
+  const rest = BOARD_OF_TRUSTEES.slice(2, 8) // Officers & Members
 
   return (
     <OrgSectionContainer title="Board of Trustees">
-      <div className="flex flex-col items-center gap-10 md:gap-14 w-full">
-        <PersonnelCard person={tier1} />
-        <PersonnelCard person={tier2} />
-
-        <div className="flex w-full justify-around max-w-3xl px-4">
-          {tier3.map((p) => (
-            <PersonnelCard key={p.id} person={p} />
-          ))}
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 w-full max-w-5xl">
-          {tier4.map((p) => (
-            <PersonnelCard key={p.id} person={p} />
-          ))}
-        </div>
+      <div className="flex w-full flex-col items-center gap-6 md:gap-8">
+        <PeopleGrid people={leadership} maxWidth="max-w-3xl" />
+        <PeopleGrid people={rest} />
       </div>
     </OrgSectionContainer>
   )
@@ -55,59 +64,23 @@ export function BoardOfTrustees() {
 export function AdminAndFinance() {
   return (
     <OrgSectionContainer title="Admin and Finance">
-      <div className="flex flex-col md:flex-row justify-between items-start gap-8 w-full max-w-5xl">
-        {ADMIN_AND_FINANCE.map((p) => (
-          <PersonnelCard key={p.id} person={p} />
-        ))}
-      </div>
+      <PeopleGrid people={ADMIN_AND_FINANCE} />
     </OrgSectionContainer>
   )
 }
 
 export function ProjectCoordination() {
-  const row1 = PROJECT_COORDINATION.slice(0, 5) // First 5
-  const row2 = PROJECT_COORDINATION.slice(5, 8) // Last 3
-
   return (
     <OrgSectionContainer title="Project Coordination">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 md:gap-y-16 gap-x-4 w-full max-w-6xl">
-        {row1.map((p) => (
-          <div key={p.id} className="col-span-1">
-            <PersonnelCard person={p} />
-          </div>
-        ))}
-        <div className="col-span-1 md:col-start-2">
-          <PersonnelCard person={row2[0]} />
-        </div>
-        <div className="col-span-1 md:col-start-3">
-          <PersonnelCard person={row2[1]} />
-        </div>
-        <div className="col-span-1 md:col-start-4">
-          <PersonnelCard person={row2[2]} />
-        </div>
-      </div>
+      <PeopleGrid people={PROJECT_COORDINATION} />
     </OrgSectionContainer>
   )
 }
 
 export function PoolOfVolunteers() {
-  const row1 = VOLUNTEERS.slice(0, 5) // First 5
-  const row2 = VOLUNTEERS.slice(5, 9) // Last 4
-
   return (
     <OrgSectionContainer title="Pool of Volunteers">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 md:gap-y-16 gap-x-4 w-full max-w-6xl">
-        {row1.map((p) => (
-          <div key={p.id} className="col-span-1">
-            <PersonnelCard person={p} />
-          </div>
-        ))}
-        {row2.map((p) => (
-          <div key={p.id} className="col-span-1">
-            <PersonnelCard person={p} />
-          </div>
-        ))}
-      </div>
+      <PeopleGrid people={VOLUNTEERS} />
     </OrgSectionContainer>
   )
 }

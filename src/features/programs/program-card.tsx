@@ -18,23 +18,24 @@ export default function ProgramCard({
 }) {
   const statusClass =
     statusStyles[program.status.toLowerCase()] ?? 'bg-primary-600'
+  const href = `/programs/${program.slug}`
 
   return (
-    <Link href={`/programs/${program.slug}`} className="group block">
-      <div className="relative aspect-4/3">
-        <div className="absolute inset-0 rounded-lg bg-card-highlight transition-transform duration-300 group-hover:-rotate-3 group-focus-visible:rotate-2" />
-        <div className="absolute inset-0 overflow-hidden rounded-lg">
-          <Image
-            src={program['featured-img']}
-            alt={program.title}
-            sizes="(min-width: 768px) 50vw, 100vw"
-            fill
-            className="object-cover"
-          />
-        </div>
-      </div>
+    <article className="group flex flex-col overflow-hidden rounded-xl border border-foreground/10 bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+      <Link
+        href={href}
+        className="relative block aspect-4/3 w-full overflow-hidden bg-foreground/5"
+      >
+        <Image
+          src={program['featured-img']}
+          alt={program.title}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      </Link>
 
-      <div className="flex flex-col gap-2 mt-4">
+      <div className="flex flex-1 flex-col gap-2 p-6">
         <div className="flex gap-2 justify-start">
           <div className={`px-2 ${statusClass} text-center rounded-2xl`}>
             <Text size="sm" className="text-on-overlay">
@@ -46,17 +47,24 @@ export default function ProgramCard({
           </div>
         </div>
 
-        <div className="flex items-end justify-between gap-3">
-          <Heading
-            level={3}
-            className="line-clamp-2 text-xl md:text-xl lg:text-2xl tracking-wider"
+        <div className="flex items-start justify-between gap-3">
+          <Link
+            href={href}
+            className="hover:underline decoration-foreground/30 underline-offset-4"
           >
-            {program.title}
-          </Heading>
-          <ArrowUpRight className="size-10 shrink-0" />
+            <Heading
+              level={3}
+              className="line-clamp-2 text-xl md:text-xl lg:text-2xl tracking-wider"
+            >
+              {program.title}
+            </Heading>
+          </Link>
+          <ArrowUpRight className="size-8 shrink-0 text-foreground/60 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </div>
-        <Text>{program['short-description']}</Text>
+        <Text className="text-foreground/60">
+          {program['short-description']}
+        </Text>
       </div>
-    </Link>
+    </article>
   )
 }

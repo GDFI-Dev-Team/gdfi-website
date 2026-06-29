@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
 import { Send } from 'lucide-react'
 import { cn } from '../../lib/utils'
-import Text from '../ui/text'
 import Button from '../ui/button'
 
 const fieldClass = cn(
@@ -12,42 +10,37 @@ const fieldClass = cn(
   'focus:border-footer-field-border-focus focus:bg-footer-surface-hover focus:outline-none',
 )
 
+// Messages are routed to GDFI's shared inbox; the project lead is cc'd.
+const MAIL_TO = 'hello.gdfi@gmail.com'
+const MAIL_CC = 'leoabuda.gdfi@gmail.com'
+
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // TODO: send to backend (API route / server action) once available.
-    setSubmitted(true)
-  }
 
-  if (submitted) {
-    return (
-      <Text
-        size="sm"
-        className="mt-4 rounded-lg border border-footer-field-border bg-footer-surface px-3 py-4 text-footer-text-secondary"
-      >
-        Thanks for reaching out — we&apos;ll get back to you soon.
-      </Text>
-    )
+    const form = e.currentTarget
+    const subject = (form.elements.namedItem('subject') as HTMLInputElement)
+      .value
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement)
+      .value
+
+    const url =
+      `mailto:${MAIL_TO}` +
+      `?cc=${encodeURIComponent(MAIL_CC)}` +
+      `&subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(message)}`
+
+    window.location.href = url
   }
 
   return (
     <form onSubmit={handleSubmit} className="mt-4 space-y-3">
       <input
         type="text"
-        name="name"
+        name="subject"
         required
-        placeholder="Your name"
-        aria-label="Your name"
-        className={fieldClass}
-      />
-      <input
-        type="email"
-        name="email"
-        required
-        placeholder="Your email"
-        aria-label="Your email"
+        placeholder="Subject"
+        aria-label="Subject"
         className={fieldClass}
       />
       <textarea
@@ -60,9 +53,9 @@ export function ContactForm() {
       />
       <Button
         type="submit"
-        className="rounded-full px-4 py-2 text-sm font-semibold gap-2 transition-all duration-300 ease-out"
+        className="gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ease-out"
       >
-        Send message
+        Send via email
         <Send size={16} aria-hidden="true" />
       </Button>
     </form>
