@@ -40,11 +40,6 @@ const nextConfig: NextConfig = {
         destination: '/programs',
         permanent: false,
       },
-      {
-        source: '/research',
-        destination: '/research/publications',
-        permanent: false,
-      },
     ]
   },
 }

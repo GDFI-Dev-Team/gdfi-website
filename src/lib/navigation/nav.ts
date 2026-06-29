@@ -25,20 +25,7 @@ export const navLinks: NavLink[] = [
     ],
   },
   { label: 'Programs', href: '/programs' },
-  {
-    label: 'Research',
-    href: '/research/publications',
-    children: [
-      {
-        label: 'Publications',
-        href: '/research/publications',
-      },
-      {
-        label: 'Marine Protected Areas',
-        href: '/research/mpas',
-      },
-    ],
-  },
+  { label: 'Research', href: '/research' },
   {
     label: 'Updates',
     href: '/updates/announcements',
