@@ -20,7 +20,7 @@ function TimelineItem({
   const isOpen = isHovered || isToggled
 
   return (
-    <div
+    <li
       className="relative flex w-full group mb-12 last:mb-0 cursor-pointer"
       onPointerEnter={(e) => e.pointerType === 'mouse' && setIsHovered(true)}
       onPointerLeave={(e) => e.pointerType === 'mouse' && setIsHovered(false)}
@@ -55,9 +55,12 @@ function TimelineItem({
             : 'md:pl-16 md:ml-auto md:text-left',
         )}
       >
-        <Text size="xl" className="font-bold text-foreground transition-colors">
+        <time
+          dateTime={milestone.year}
+          className="block text-xl font-bold text-foreground transition-colors"
+        >
           {milestone.year}
-        </Text>
+        </time>
         <Heading level={3} className="text-xl md:text-2xl mt-1 mb-2">
           {milestone.title}
         </Heading>
@@ -83,7 +86,7 @@ function TimelineItem({
           </div>
         </div>
       </div>
-    </div>
+    </li>
   )
 }
 
@@ -96,9 +99,12 @@ export function HistoryTimeline() {
         </Heading>
 
         <div className="relative w-full max-w-4xl mx-auto">
-          <div className="absolute top-2 bottom-0 w-0.5 bg-foreground/15 left-[14px] -translate-x-1/2 md:left-1/2" />
+          <div
+            className="absolute top-2 bottom-0 w-0.5 bg-foreground/15 left-[14px] -translate-x-1/2 md:left-1/2"
+            aria-hidden="true"
+          />
 
-          <div className="flex flex-col w-full">
+          <ol className="flex flex-col w-full list-none p-0 m-0">
             {HISTORY_MILESTONES.map((milestone, i) => (
               <TimelineItem
                 key={milestone.id}
@@ -106,7 +112,7 @@ export function HistoryTimeline() {
                 isEven={i % 2 === 0}
               />
             ))}
-          </div>
+          </ol>
         </div>
       </Section>
     </div>
