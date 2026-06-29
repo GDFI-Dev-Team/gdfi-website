@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import ArticleDetail from '@/components/ui/article-detail'
 import {
@@ -5,12 +6,35 @@ import {
   getCollectionMarkdownData,
 } from '@/lib/content/markdown'
 import { ArticleContent } from '@/lib/content/types'
+import { buildArticleMetadata } from '@/lib/content/metadata'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<ArticleContent>(
     'updates/announcements',
   )
   return articles.map((article) => ({ slug: article.slug }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+
+  try {
+    const article = getSingleMarkdownData<ArticleContent>(
+      'updates/announcements',
+      `${slug}.md`,
+    )
+    return buildArticleMetadata(
+      article,
+      `/updates/announcements/${slug}`,
+      '/nav-item-banner-images/announcements.jpeg',
+    )
+  } catch {
+    return {}
+  }
 }
 
 export default async function AnnouncementPage({
