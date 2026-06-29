@@ -110,7 +110,7 @@ export default function FilterBar({
 
         <div
           className={cn(
-            'mx-auto max-w-7xl w-full py-3 md:py-4 flex flex-wrap items-center gap-2 md:gap-4',
+            'mx-auto max-w-7xl w-full pt-3 md:pt-4 flex flex-wrap items-center gap-2 md:gap-4',
             className,
           )}
         >
