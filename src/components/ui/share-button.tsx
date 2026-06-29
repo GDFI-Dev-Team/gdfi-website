@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { Share2, Link2, Check } from 'lucide-react'
-import { SiFacebook, SiInstagram, SiX } from '@icons-pack/react-simple-icons'
+import { SiFacebook, SiX } from '@icons-pack/react-simple-icons'
 import { cn } from '@/lib/utils/cn-merge'
 
 const MENU_WIDTH = 176 // w-44
@@ -31,11 +31,18 @@ export default function ShareButton({
   const menuRef = useRef<HTMLDivElement>(null)
 
   const getUrl = useCallback((): string => {
-    const raw =
-      url ?? (typeof window !== 'undefined' ? window.location.href : '')
-    if (typeof window === 'undefined') return raw
-    if (raw.startsWith('http')) return raw
-    return `${window.location.origin}${raw.startsWith('/') ? '' : '/'}${raw}`
+    const base = (
+      process.env.NEXT_PUBLIC_APP_URL ||
+      (typeof window !== 'undefined' ? window.location.origin : '')
+    ).replace(/\/$/, '')
+
+    // An explicit absolute URL is used as-is.
+    if (url?.startsWith('http')) return url
+
+    // Otherwise build from a path: the url prop if given, else current page.
+    const path =
+      url ?? (typeof window !== 'undefined' ? window.location.pathname : '/')
+    return `${base}${path.startsWith('/') ? '' : '/'}${path}`
   }, [url])
 
   const positionMenu = useCallback(() => {
@@ -76,25 +83,25 @@ export default function ShareButton({
 
   const handleClick = async (e: React.MouseEvent) => {
     e.preventDefault()
-    e.stopPropagation()
     if (navigator.share) {
       try {
         await navigator.share({ title, text, url: getUrl() })
         return
       } catch (err) {
         if ((err as Error).name === 'AbortError') return
-        // non-abort error — fall through to dropdown
       }
     }
     setOpen((o) => !o)
   }
 
-  const copyToClipboard = async (e: React.MouseEvent) => {
-    e.stopPropagation()
+  const copyToClipboard = async () => {
     await navigator.clipboard.writeText(getUrl())
     setCopied(true)
-    setOpen(false)
-    setTimeout(() => setCopied(false), 2000)
+
+    setTimeout(() => {
+      setCopied(false)
+      setOpen(false)
+    }, 2000)
   }
 
   const platformLinks = [
@@ -105,7 +112,7 @@ export default function ShareButton({
         `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getUrl())}`,
     },
     {
-      label: 'X',
+      label: 'X (Twitter)',
       Icon: SiX,
       href: () =>
         `https://twitter.com/intent/tweet?url=${encodeURIComponent(getUrl())}&text=${encodeURIComponent(title)}`,
@@ -117,7 +124,6 @@ export default function ShareButton({
       ref={menuRef}
       style={menuStyle}
       className="rounded-xl border border-foreground/10 bg-background shadow-lg overflow-hidden py-1"
-      onClick={(e) => e.stopPropagation()}
     >
       {platformLinks.map(({ label, Icon, href }) => (
         <a
@@ -125,22 +131,13 @@ export default function ShareButton({
           href={href()}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
           className="flex items-center gap-2.5 px-3 py-2 text-sm text-foreground/70 hover:bg-foreground/5 hover:text-foreground transition-colors"
         >
           <Icon size={15} aria-hidden />
           {label}
         </a>
       ))}
-      {/* Instagram has no web share URL — copies link for user to paste */}
-      <button
-        onClick={copyToClipboard}
-        className="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-foreground/70 hover:bg-foreground/5 hover:text-foreground transition-colors"
-      >
-        <SiInstagram size={15} aria-hidden />
-        Instagram
-      </button>
-      <div className="my-1 border-t border-foreground/10" />
+
       <button
         onClick={copyToClipboard}
         className="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-foreground/70 hover:bg-foreground/5 hover:text-foreground transition-colors"
@@ -156,7 +153,7 @@ export default function ShareButton({
   )
 
   return (
-    <div className="relative" onClick={(e) => e.stopPropagation()}>
+    <div onClick={(e) => e.stopPropagation()}>
       <button
         ref={buttonRef}
         onClick={handleClick}

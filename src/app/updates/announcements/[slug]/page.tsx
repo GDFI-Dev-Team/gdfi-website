@@ -1,3 +1,9 @@
+import Link from 'next/link'
+import Section from '@/components/ui/section'
+import Heading from '@/components/ui/heading'
+import Text from '@/components/ui/text'
+import ShareButton from '@/components/ui/share-button'
+import ArticleImages from '@/components/ui/article-images'
 import { notFound } from 'next/navigation'
 import { ChevronLeft } from 'lucide-react'
 import {
@@ -6,21 +12,14 @@ import {
 } from '@/lib/content/markdown'
 import { formatEdgeDate } from '@/lib/utils/date'
 import { ArticleContent } from '@/lib/content/types'
-import Link from 'next/link'
-import Section from '@/components/ui/section'
-import Heading from '@/components/ui/heading'
-import Text from '@/components/ui/text'
-import Button from '@/components/ui/button'
-import ShareButton from '@/components/ui/share-button'
-import ArticleImages from '@/components/ui/article-images'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils/cn-merge'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<ArticleContent>(
     'updates/announcements',
   )
-  return articles.map((article) => ({
-    slug: article.slug,
-  }))
+  return articles.map((article) => ({ slug: article.slug }))
 }
 
 export default async function AnnouncementPage({
@@ -43,13 +42,14 @@ export default async function AnnouncementPage({
   return (
     <Section maxWidth="4xl" sectionClassName="pb-8 pt-28 md:pb-12 md:pt-32">
       <div className="mb-8">
-        <Link href="/updates/announcements" className="inline-flex">
-          <Button
-            variant="ghost"
-            className="gap-2 px-0 hover:bg-transparent hover:text-btn-primary"
-          >
-            <ChevronLeft size={18} aria-hidden="true" /> Back to Announcements
-          </Button>
+        <Link
+          href="/updates/announcements"
+          className={cn(
+            buttonVariants.ghost,
+            'hover:bg-transparent hover:text-btn-primary',
+          )}
+        >
+          <ChevronLeft size={18} aria-hidden="true" /> Back to Announcements
         </Link>
       </div>
 

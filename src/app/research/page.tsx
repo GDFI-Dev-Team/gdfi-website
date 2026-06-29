@@ -1,6 +1,6 @@
 import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
-import PublicationList from '@/features/research/publications/components/pub-list'
+import PublicationList from '@/features/research/components/pub-list'
 import FilterBar from '@/components/ui/filter-bar'
 import { getCollectionMarkdownData } from '@/lib/content/markdown'
 import { Publication } from '@/lib/content/types'

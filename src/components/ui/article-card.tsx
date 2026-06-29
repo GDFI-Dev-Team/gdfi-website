@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import ShareButton from '@/components/ui/share-button'
 import { cn } from '@/lib/utils/cn-merge'
 import { ArticleContent } from '@/lib/content/types'
 import { formatEdgeDate } from '@/lib/utils/date'
@@ -33,10 +34,18 @@ export default function ArticleCard({
   return (
     <article
       className={cn(
-        'group flex flex-col overflow-hidden rounded-xl shadow-sm transition-all duration-300 border border-foreground/10 bg-background hover:shadow-md hover:-translate-y-1',
+        'group relative flex flex-col overflow-hidden rounded-xl shadow-sm transition-all duration-300 border border-foreground/10 bg-background hover:shadow-md hover:-translate-y-1',
         className,
       )}
     >
+      <div className="absolute top-4 right-4 z-20">
+        <ShareButton
+          url={href}
+          title={article.title}
+          className="h-9 w-9 p-0 rounded-full bg-black/40 text-white hover:bg-black/60 backdrop-blur-sm border-none"
+        />
+      </div>
+
       <Link
         href={href}
         className="relative w-full overflow-hidden block bg-foreground/5 aspect-3/2"
