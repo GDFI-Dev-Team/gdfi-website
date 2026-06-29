@@ -10,7 +10,7 @@ export default function SupportUsPage() {
       <Banner
         title="Support Us"
         description="Stand with us to secure a sustainable future for our community and the environment"
-        imgUrl="/feat-hero/hero-3.jpeg"
+        imgUrl="/nav-item-banner-images/support-us.jpeg"
       />
 
       <Section sectionClassName="py-16 md:py-24">

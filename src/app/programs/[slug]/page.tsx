@@ -3,8 +3,8 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
 import html from 'remark-html'
-import { getSingleMarkdownData } from '@/lib/markdown'
-import { Program } from '@/lib/interfaces/content'
+import { getSingleMarkdownData } from '@/lib/content/markdown'
+import { Program } from '@/lib/content/types'
 import { remark } from 'remark'
 import { notFound } from 'next/navigation'
 
@@ -34,8 +34,8 @@ export default async function ProgramDetailPage({
     statusStyles[program.status.toLowerCase()] ?? 'bg-foreground/20'
 
   return (
-    <Section maxWidth="4xl">
-      <div className="relative mt-6 aspect-video overflow-hidden rounded-lg">
+    <Section maxWidth="4xl" sectionClassName="pt-28 md:pt-32">
+      <div className="relative aspect-video overflow-hidden rounded-lg">
         <Image
           src={program['featured-img']}
           alt={program.title}

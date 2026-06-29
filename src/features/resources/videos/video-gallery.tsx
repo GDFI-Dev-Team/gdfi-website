@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { VideoContent } from '@/lib/interfaces/content'
+import { VideoContent } from '@/lib/content/types'
 import VideoCard from './video-card'
 import VideoModal from './modal'
 import Pagination from '@/components/ui/pagination'

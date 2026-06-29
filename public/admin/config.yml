@@ -2,8 +2,8 @@ backend:
   name: github
   repo: GDFI-Dev-Team/gdfi-website
   base_url: https://sveltia-cms-auth.raki-rarufu-dev.workers.dev # handoff CMS authentication Cloudflare worker
+
 media_folder: /public/media
-public_folder: /media
 
 slug:
   encoding: ascii # to sanitize emojis in title
@@ -59,8 +59,6 @@ collections:
     label: Publications
     folder: content/research/publications
     create: true
-    slug: '{{year}}-{{slug}}'
-    summary: '{{year}} — {{title}}'
     fields:
       - name: title
         label: Title
@@ -174,8 +172,8 @@ collections:
         label: Date
         widget: datetime
         type: date
-      - name: featured_image 
-        label: Featured Image
+      - name: featured_images
+        label: Featured Images
         widget: image
         multiple: true
         required: false
@@ -198,6 +196,59 @@ collections:
           Share any key details, quotes, or numbers that support the announcement.
 
           End with a call to action or forward-looking note (e.g. how to get involved, what's next).
+
+  - name: community-categories
+    label: Community Categories
+    label_singular: Community Category
+    folder: content/updates/community-categories
+    create: true
+    fields:
+      - name: name
+        label: Name
+        widget: string
+        hint: ex. Fisherfolk, Youth, Livelihood, Conservation
+
+  - name: community-stories
+    label: Community Stories
+    label_singular: Community Story
+    folder: content/updates/community-stories
+    create: true
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: tags
+        label: Categories
+        widget: relation
+        collection: community-categories
+        value_field: name
+        multiple: true
+        required: false
+        hint: Pulled from Community Categories — manage the list in that collection
+      - name: featured_images
+        label: Featured Images
+        widget: image
+        multiple: true
+        required: false
+        media_libraries:
+          cloudflare_r2:
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/web-assets
+          default: false
+      - name: body
+        label: Body
+        widget: text
+        default: |
+          Open with a short, vivid line that draws the reader into the story.
+
+          Introduce the community member(s) and the place at the heart of this story.
+
+          Share what changed, what was learned, or what was achieved — and why it matters to GDFI's mission.
+
+          Close with a forward-looking note or a call to action.
 
   - name: video-resources
     label: Video Resources
@@ -223,3 +274,56 @@ collections:
         name: youtube-link
         widget: string
 
+  - name: org-structures
+    label: Org Structures
+    label_singular: Org Structure
+    folder: content/about-us/org-structures
+    create: true
+    identifier_field: name
+    fields:
+      - name: name
+        label: Name
+        widget: string
+        hint: ex. Board of Trustees, Admin and Finance, Project Coordination, Pool of Volunteers
+
+  - name: personnel
+    label: Personnel
+    label_singular: Person
+    folder: content/about-us/personnel
+    create: true
+    fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: role
+        label: Role
+        widget: string
+        hint: ex. President & Executive Director
+      - name: structure
+        label: Structure
+        widget: relation
+        collection: org-structures
+        value_field: name
+        hint: Pulled from Org Structures — manage the list in that collection
+      - name: order
+        label: Order
+        widget: number
+        value_type: int
+        default: 1
+        hint: Position within the structure (1 = first). In Board of Trustees, 1 = President, 2 = Vice-President, 3–4 = officers, 5+ = members.
+      - name: image
+        label: Photo
+        widget: image
+        required: false
+        media_libraries:
+          cloudflare_r2:
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/personnel
+          default: false
+      - name: bio
+        label: Bio
+        widget: text
+        required: false

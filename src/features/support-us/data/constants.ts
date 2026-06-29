@@ -39,6 +39,7 @@ export const IN_KIND_DONATION_DETAILS = {
     'Guimbaolibot Avenue, Brgy. 10',
     'Guiuan, Eastern Samar',
     'Philippines',
-    'Zip Code: 6809',
+    '6809',
   ],
+  copyableShippingAddress: `Guiuan Development Foundation, Inc., Guimbaolibot Avenue, Brgy. 10, Guiuan, Eastern Samar, Philippines, 6809`,
 }

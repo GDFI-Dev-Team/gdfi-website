@@ -1,15 +1,15 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import Image from 'next/image'
 import Link from 'next/link'
-import { mockNewsArticles } from '@/features/updates/announcements/data/mock'
-import ShareButton from '@/components/ui/share-button'
+import CommunityStoriesCard from '@/features/updates/community-stories/components/cs-card'
+import { buttonBase, buttonVariants } from '@/components/ui/button'
+import { getCommunityStories } from '@/lib/content/community-stories'
+import { cn } from '@/lib/utils/cn-merge'
 
-export default function Stories() {
-  const stories = mockNewsArticles.filter(
-    (a) => a.category === 'COMMUNITY STORIES',
-  )
+export default async function Stories() {
+  const { items } = await getCommunityStories(1, {})
+  const stories = items.slice(0, 3)
 
   if (stories.length === 0) return null
 
@@ -32,57 +32,28 @@ export default function Stories() {
         </Heading>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {stories.map((story) => {
-          const imageSrc = story.images?.[0]?.src || '/feat-hero/hero-3.jpeg'
-
-          return (
-            <article
-              key={story.id}
-              className="group flex flex-col overflow-hidden rounded-xl bg-surface shadow-sm transition-shadow duration-300 hover:shadow-xl"
-            >
-              <Link
-                href={`/news/${story.id}`}
-                className="relative aspect-16/10 overflow-hidden block"
-              >
-                <Image
-                  src={imageSrc}
-                  alt={story.title}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </Link>
-
-              <div className="flex flex-1 flex-col gap-3 p-6 md:p-8">
-                <div className="flex items-center justify-between">
-                  <Text
-                    size="xs"
-                    transform="uppercase"
-                    className="tracking-widest text-foreground/50"
-                  >
-                    {story.date}
-                  </Text>
-                  <ShareButton
-                    url={`/news/${story.id}`}
-                    title={story.title}
-                    className="h-8 w-8 p-0 rounded-full text-foreground/40 hover:text-foreground hover:bg-foreground/5"
-                  />
-                </div>
-                <Link
-                  href={`/news/${story.id}`}
-                  className="hover:underline decoration-foreground/30 underline-offset-4"
-                >
-                  <Heading level={3}>{story.title}</Heading>
-                </Link>
-                <Text className="text-foreground/70 line-clamp-2">
-                  {story.content}
-                </Text>
-              </div>
-            </article>
-          )
-        })}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {stories.map((story, index) => (
+          <CommunityStoriesCard
+            key={story.slug}
+            article={story}
+            className={
+              index >= 2 ? 'hidden lg:flex' : index >= 1 ? 'hidden md:flex' : ''
+            }
+          />
+        ))}
       </div>
+
+      <Link
+        href="/updates/community-stories"
+        className={cn(
+          buttonBase,
+          buttonVariants.secondary,
+          'self-center px-6 py-2.5',
+        )}
+      >
+        See more
+      </Link>
     </Section>
   )
 }

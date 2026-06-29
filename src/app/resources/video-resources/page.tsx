@@ -1,6 +1,6 @@
 import Heading from '@/components/ui/heading'
 import VideoGallery from '@/features/resources/videos/video-gallery'
-import { getVideosPage } from '@/lib/videos'
+import { getVideosPage } from '@/lib/content/videos'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

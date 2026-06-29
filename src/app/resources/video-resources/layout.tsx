@@ -7,7 +7,7 @@ import FilterBar, {
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import FeaturedVideoSlideshow from '@/features/resources/videos/featured-video-slideshow'
-import { getAllVideos } from '@/lib/videos'
+import { getAllVideos } from '@/lib/content/videos'
 
 export default function VideoResourcesLayout({
   children,
@@ -21,7 +21,7 @@ export default function VideoResourcesLayout({
       <Banner
         title="Video Resources"
         description="Browse the different videos of Guiuan Development Foundation Inc."
-        imgUrl="/nav-item-banner-images/publications.webp"
+        imgUrl="/nav-item-banner-images/video-resources.jpeg"
       />
       <Suspense>
         <FilterBar className="justify-end gap-2">

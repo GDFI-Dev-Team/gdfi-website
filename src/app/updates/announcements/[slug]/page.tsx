@@ -3,16 +3,16 @@ import { ChevronLeft } from 'lucide-react'
 import {
   getSingleMarkdownData,
   getCollectionMarkdownData,
-} from '@/lib/markdown'
-import { formatEdgeDate } from '@/lib/date'
-import { ArticleContent } from '@/lib/interfaces/content'
+} from '@/lib/content/markdown'
+import { formatEdgeDate } from '@/lib/utils/date'
+import { ArticleContent } from '@/lib/content/types'
 import Link from 'next/link'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
-import ArticleImages from '@/features/updates/announcements/components/article-images'
 import ShareButton from '@/components/ui/share-button'
+import ArticleImages from '@/components/ui/article-images'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<ArticleContent>(
@@ -41,7 +41,7 @@ export default async function AnnouncementPage({
   }
 
   return (
-    <Section maxWidth="4xl" sectionClassName="py-8 md:py-12">
+    <Section maxWidth="4xl" sectionClassName="pb-8 pt-28 md:pb-12 md:pt-32">
       <div className="mb-8">
         <Link href="/updates/announcements" className="inline-flex">
           <Button

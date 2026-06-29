@@ -4,20 +4,16 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { Share2, Link2, Check } from 'lucide-react'
 import { SiFacebook, SiInstagram, SiX } from '@icons-pack/react-simple-icons'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 const MENU_WIDTH = 176 // w-44
 const MENU_HEIGHT = 196 // approximate — used only for open-direction decision
 
 interface ShareButtonProps {
-  /** URL to share. Relative paths are resolved to absolute. Defaults to current page URL. */
   url?: string
   title: string
-  /** Optional description passed to navigator.share on supported browsers. */
   text?: string
-  /** Show a "Share" label next to the icon. Renders as a pill button. */
   showLabel?: boolean
-  /** Applied to the trigger button element. */
   className?: string
 }
 

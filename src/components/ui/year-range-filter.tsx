@@ -1,7 +1,7 @@
 'use client'
 
 import { useFilterBar, filterInputClasses } from './filter-bar'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 const CURRENT_YEAR = new Date().getFullYear()
 

@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       'Dive into the scientific insights that anchor our conservation strategies.',
     url: '/research/publications',
+    images: [
+      {
+        url: '/nav-item-banner-images/publications.jpeg',
+        width: 2048,
+        height: 1024,
+        alt: 'Dive into the scientific insights that anchor our conservation strategies.',
+      },
+    ],
   },
   alternates: {
     canonical: '/research/publications',

@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { ChevronDown, HandHeart, Menu, X } from 'lucide-react'
-import { cn } from '../../lib/utils'
-import { navLinks } from '../../lib/navigation'
+import { cn } from '@/lib/utils/cn-merge'
+import { navLinks } from '@/lib/navigation/nav'
 import Button, { buttonBase } from '../ui/button'
 import { ThemeToggle } from './theme-toggle'
 
@@ -127,12 +127,19 @@ export function SiteHeader() {
     }
   }, [mobileOpen])
 
+  const isProgramPost =
+    pathname.startsWith('/programs/') && !pathname.includes('/page/')
+  const isUpdatesPost =
+    pathname.startsWith('/updates/') && !pathname.includes('/page/')
+  const forceSolidNav = isProgramPost || isUpdatesPost
+  const isTransparent = atTop && !forceSolidNav
+
   return (
     <>
       <header
         className={cn(
           'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ease-in-out',
-          atTop
+          isTransparent
             ? 'border-transparent bg-transparent'
             : 'border-foreground/10 bg-background',
         )}
@@ -152,7 +159,7 @@ export function SiteHeader() {
               onClick={() => setMobileOpen(true)}
               className={cn(
                 'shrink-0 overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
-                atTop
+                isTransparent
                   ? 'text-text-standard hover:bg-text-standard/10'
                   : 'text-foreground hover:bg-foreground/5',
                 scrolled ? 'max-w-0 opacity-0' : 'mr-1 max-w-10 opacity-100',
@@ -167,7 +174,7 @@ export function SiteHeader() {
               aria-label="GDFI — home"
               className="flex shrink-0 items-center gap-2"
             >
-              <BrandLogo priority scrolled={scrolled} atTop={atTop} />
+              <BrandLogo priority scrolled={scrolled} atTop={isTransparent} />
             </Link>
 
             {/* Nav links — center, desktop only */}
@@ -177,10 +184,10 @@ export function SiteHeader() {
                 const triggerClass = cn(
                   'whitespace-nowrap rounded-full px-2 py-2 text-xs font-semibold transition-colors lg:px-3.5 lg:text-sm',
                   active
-                    ? atTop
+                    ? isTransparent
                       ? 'bg-text-standard/15 text-text-standard'
                       : 'bg-primary/10 text-primary-hover'
-                    : atTop
+                    : isTransparent
                       ? 'text-text-standard hover:bg-text-standard/10'
                       : 'text-foreground hover:bg-foreground/5',
                 )
@@ -216,7 +223,7 @@ export function SiteHeader() {
                       <div
                         className={cn(
                           'min-w-60 rounded-2xl border p-1.5 transition-colors duration-500 ease-in-out',
-                          atTop
+                          isTransparent
                             ? 'border-text-standard/40 bg-surface/60 shadow-lg backdrop-blur-md'
                             : 'border-foreground/10 bg-surface shadow-lg',
                         )}
@@ -233,7 +240,7 @@ export function SiteHeader() {
                                 'block whitespace-nowrap rounded-xl px-3.5 py-2 text-sm font-medium transition-colors',
                                 childActive
                                   ? 'bg-primary/10 text-primary-hover'
-                                  : atTop
+                                  : isTransparent
                                     ? 'text-text-standard hover:bg-text-standard/10'
                                     : 'text-foreground hover:bg-foreground/5',
                               )}
@@ -254,7 +261,7 @@ export function SiteHeader() {
               <ThemeToggle
                 className={cn(
                   'transition-colors duration-500 ease-in-out',
-                  atTop
+                  isTransparent
                     ? 'border-text-standard/40 text-text-standard hover:bg-text-standard/10'
                     : 'border-border',
                 )}
@@ -267,7 +274,7 @@ export function SiteHeader() {
                 className={cn(
                   buttonBase,
                   'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
-                  atTop
+                  isTransparent
                     ? 'border-text-standard/40 bg-transparent text-text-standard hover:bg-text-standard/10'
                     : 'border-transparent bg-btn-primary text-white shadow-sm hover:bg-btn-primary-hover',
                   scrolled ? 'md:px-5' : 'md:px-4',

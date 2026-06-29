@@ -1,8 +1,8 @@
 'use client'
 
 import { Play } from 'lucide-react'
-import { VideoContent } from '@/lib/interfaces/content'
-import { formatEdgeDate } from '@/lib/date'
+import { VideoContent } from '@/lib/content/types'
+import { formatEdgeDate } from '@/lib/utils/date'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Image from 'next/image'

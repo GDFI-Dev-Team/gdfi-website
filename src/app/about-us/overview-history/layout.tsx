@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         url: '/nav-item-banner-images/overview-history.jpeg',
         width: 2048,
         height: 1536,
-        alt: 'Guiuan Development Foundation, Inc.',
+        alt: 'Trace our journey from a humble grassroots initiative in 1988 to a region-wide movement.',
       },
     ],
   },
