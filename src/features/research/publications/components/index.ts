@@ -1,3 +1,3 @@
 export { default as PublicationList } from './pub-list'
 export { default as PublicationCard } from './pub-card'
-export type { Publication } from '@/lib/interfaces/content'
+export type { Publication } from '@/lib/content/types'

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         url: '/nav-item-banner-images/announcements.jpeg',
         width: 2048,
         height: 1365,
-        alt: 'Guiuan Development Foundation, Inc.',
+        alt: 'Stay connected with our ongoing efforts on the frontlines.',
       },
     ],
   },

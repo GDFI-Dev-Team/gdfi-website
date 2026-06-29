@@ -1,7 +1,7 @@
 import Grid from '@/components/ui/grid'
 import Pagination from '@/components/ui/pagination'
 import CommunityStoriesCard from './cs-card'
-import { ArticleContent } from '@/lib/interfaces/content'
+import { ArticleContent } from '@/lib/content/types'
 
 interface CommunityStoriesGridProps {
   items: ArticleContent[]

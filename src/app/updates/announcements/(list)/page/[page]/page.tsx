@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation'
-import { getCollectionMarkdownData } from '@/lib/markdown'
-import { paginateItems } from '@/lib/pagination'
-import { ArticleContent } from '@/lib/interfaces/content'
-import { getAnnouncements } from '@/lib/data/announcements'
+import { getCollectionMarkdownData } from '@/lib/content/markdown'
+import { paginateItems } from '@/lib/content/pagination'
+import { ArticleContent } from '@/lib/content/types'
+import { getAnnouncements } from '@/lib/content/announcements'
 import { AnnouncementsGrid } from '@/features/updates/announcements/components/an-grid'
-import { CONTENT_LIMITS } from '@/config/content'
-import { PageProps } from '@/lib/interfaces/content'
+import { CONTENT_LIMITS } from '@/lib/content/pagination'
+import { PageProps } from '@/lib/content/types'
 
 export async function generateStaticParams() {
   const articles = await getCollectionMarkdownData<ArticleContent>(

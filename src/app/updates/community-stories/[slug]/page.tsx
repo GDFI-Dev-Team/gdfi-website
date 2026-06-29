@@ -3,9 +3,9 @@ import { ChevronLeft } from 'lucide-react'
 import {
   getSingleMarkdownData,
   getCollectionMarkdownData,
-} from '@/lib/markdown'
-import { formatEdgeDate } from '@/lib/date'
-import { ArticleContent } from '@/lib/interfaces/content'
+} from '@/lib/content/markdown'
+import { formatEdgeDate } from '@/lib/utils/date'
+import { ArticleContent } from '@/lib/content/types'
 import Link from 'next/link'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'

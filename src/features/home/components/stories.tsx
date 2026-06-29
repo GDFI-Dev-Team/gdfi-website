@@ -4,8 +4,8 @@ import Text from '@/components/ui/text'
 import Link from 'next/link'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
 import CommunityStoriesCard from '@/features/updates/community-stories/components/cs-card'
-import { getCommunityStories } from '@/lib/data/community-stories'
-import { cn } from '@/lib/utils'
+import { getCommunityStories } from '@/lib/content/community-stories'
+import { cn } from '@/lib/utils/cn-merge'
 
 export default async function Stories() {
   const { items } = await getCommunityStories(1, {})

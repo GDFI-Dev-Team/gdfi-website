@@ -1,4 +1,4 @@
-import { getCommunityStories } from '@/lib/data/community-stories'
+import { getCommunityStories } from '@/lib/content/community-stories'
 import { CommunityStoriesGrid } from '@/features/updates/community-stories/components/cs-grid'
 
 export default async function CommunityStoriesPage({

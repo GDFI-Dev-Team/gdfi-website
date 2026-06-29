@@ -2,10 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { cn } from '@/lib/utils'
-import { ArticleContent } from '@/lib/interfaces/content'
-import { formatEdgeDate } from '@/lib/date'
-import { formatReadingTime } from '@/lib/reading-time'
+import { cn } from '@/lib/utils/cn-merge'
+import { ArticleContent } from '@/lib/content/types'
+import { formatEdgeDate } from '@/lib/utils/date'
+import { getReadingTime } from '@/lib/content/reading-time'
 import { categoryColor } from '../../features/updates/community-stories/data/category-colors'
 
 export default function ArticleCard({
@@ -76,7 +76,7 @@ export default function ArticleCard({
           >
             {formatEdgeDate(article.date)}
             <span className="mx-1.5">&#xb7;</span>
-            {formatReadingTime(article.body)}
+            {getReadingTime(article.body)} min. read
           </Text>
         ) : (
           categories.length > 0 && (

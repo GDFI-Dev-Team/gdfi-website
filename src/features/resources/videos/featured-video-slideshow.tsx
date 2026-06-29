@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight, X, Play } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { VideoContent } from '@/lib/interfaces/content'
-import { formatEdgeDate } from '@/lib/date'
+import { cn } from '@/lib/utils/cn-merge'
+import { VideoContent } from '@/lib/content/types'
+import { formatEdgeDate } from '@/lib/utils/date'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Image from 'next/image'

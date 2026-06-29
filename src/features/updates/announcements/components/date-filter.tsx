@@ -1,7 +1,7 @@
 'use client'
 
 import { useFilterBar, filterInputClasses } from '@/components/ui/filter-bar'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 export default function DateFilter() {
   const { searchParams, updateSearchParam } = useFilterBar()

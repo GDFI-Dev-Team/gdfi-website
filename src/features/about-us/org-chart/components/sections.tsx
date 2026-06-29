@@ -1,11 +1,6 @@
 import Heading from '@/components/ui/heading'
 import { PersonnelCard } from './personnel-card'
-import {
-  BOARD_OF_TRUSTEES,
-  ADMIN_AND_FINANCE,
-  PROJECT_COORDINATION,
-  VOLUNTEERS,
-} from '../data/constants'
+import { Personnel } from '../data/types'
 
 function OrgSectionContainer({
   title,
@@ -24,88 +19,68 @@ function OrgSectionContainer({
   )
 }
 
-export function BoardOfTrustees() {
-  const tier1 = BOARD_OF_TRUSTEES[0] // President
-  const tier2 = BOARD_OF_TRUSTEES[1] // Vice Preseidnt
-  const tier3 = BOARD_OF_TRUSTEES.slice(2, 4) // Secretary & Treasurer
-  const tier4 = BOARD_OF_TRUSTEES.slice(4, 8) // 4 Other Members
+export function BoardOfTrustees({ personnel }: { personnel: Personnel[] }) {
+  const president = personnel[0]
+  const vicePresident = personnel[1]
+  const officers = personnel.slice(2, 4)
+  const members = personnel.slice(4)
 
   return (
     <OrgSectionContainer title="Board of Trustees">
       <div className="flex flex-col items-center gap-10 md:gap-14 w-full">
-        <PersonnelCard person={tier1} />
-        <PersonnelCard person={tier2} />
+        {president && <PersonnelCard person={president} />}
+        {vicePresident && <PersonnelCard person={vicePresident} />}
 
-        <div className="flex w-full justify-around max-w-3xl px-4">
-          {tier3.map((p) => (
-            <PersonnelCard key={p.id} person={p} />
-          ))}
-        </div>
+        {officers.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 w-full max-w-3xl px-4">
+            {officers.map((p, i) => (
+              <PersonnelCard key={`${p.name}-${i}`} person={p} />
+            ))}
+          </div>
+        )}
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 w-full max-w-5xl">
-          {tier4.map((p) => (
-            <PersonnelCard key={p.id} person={p} />
-          ))}
-        </div>
+        {members.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 w-full max-w-5xl">
+            {members.map((p, i) => (
+              <PersonnelCard key={`${p.name}-${i}`} person={p} />
+            ))}
+          </div>
+        )}
       </div>
     </OrgSectionContainer>
   )
 }
 
-export function AdminAndFinance() {
+export function AdminAndFinance({ personnel }: { personnel: Personnel[] }) {
   return (
     <OrgSectionContainer title="Admin and Finance">
-      <div className="flex flex-col md:flex-row justify-between items-start gap-8 w-full max-w-5xl">
-        {ADMIN_AND_FINANCE.map((p) => (
-          <PersonnelCard key={p.id} person={p} />
+      <div className="flex flex-wrap justify-center items-start gap-8 md:gap-12 w-full max-w-5xl">
+        {personnel.map((p, i) => (
+          <PersonnelCard key={`${p.name}-${i}`} person={p} />
         ))}
       </div>
     </OrgSectionContainer>
   )
 }
 
-export function ProjectCoordination() {
-  const row1 = PROJECT_COORDINATION.slice(0, 5) // First 5
-  const row2 = PROJECT_COORDINATION.slice(5, 8) // Last 3
-
+export function ProjectCoordination({ personnel }: { personnel: Personnel[] }) {
   return (
     <OrgSectionContainer title="Project Coordination">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 md:gap-y-16 gap-x-4 w-full max-w-6xl">
-        {row1.map((p) => (
-          <div key={p.id} className="col-span-1">
-            <PersonnelCard person={p} />
-          </div>
+      <div className="flex flex-wrap justify-center gap-y-10 md:gap-y-16 gap-x-6 md:gap-x-12 w-full max-w-5xl">
+        {personnel.map((p, i) => (
+          <PersonnelCard key={`${p.name}-${i}`} person={p} />
         ))}
-        <div className="col-span-1 md:col-start-2">
-          <PersonnelCard person={row2[0]} />
-        </div>
-        <div className="col-span-1 md:col-start-3">
-          <PersonnelCard person={row2[1]} />
-        </div>
-        <div className="col-span-1 md:col-start-4">
-          <PersonnelCard person={row2[2]} />
-        </div>
       </div>
     </OrgSectionContainer>
   )
 }
 
-export function PoolOfVolunteers() {
-  const row1 = VOLUNTEERS.slice(0, 5) // First 5
-  const row2 = VOLUNTEERS.slice(5, 9) // Last 4
-
+export function PoolOfVolunteers({ personnel }: { personnel: Personnel[] }) {
   return (
     <OrgSectionContainer title="Pool of Volunteers">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 md:gap-y-16 gap-x-4 w-full max-w-6xl">
-        {row1.map((p) => (
-          <div key={p.id} className="col-span-1">
-            <PersonnelCard person={p} />
-          </div>
-        ))}
-        {row2.map((p) => (
-          <div key={p.id} className="col-span-1">
-            <PersonnelCard person={p} />
-          </div>
+      <div className="flex flex-wrap justify-center gap-y-10 md:gap-y-16 gap-x-6 md:gap-x-12 w-full max-w-5xl">
+        {personnel.map((p, i) => (
+          <PersonnelCard key={`${p.name}-${i}`} person={p} />
         ))}
       </div>
     </OrgSectionContainer>

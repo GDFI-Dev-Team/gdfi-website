@@ -4,8 +4,8 @@ import AnnualReportsShell from '@/features/resources/annual-reports/components/a
 import FilterBar from '@/components/ui/filter-bar'
 import YearRangeFilter from '@/components/ui/year-range-filter'
 import { ClearFilters } from '@/components/ui/filter-bar'
-import { getCollectionMarkdownData } from '@/lib/markdown'
-import { AnnualReport } from '@/lib/interfaces/content'
+import { getCollectionMarkdownData } from '@/lib/content/markdown'
+import { AnnualReport } from '@/lib/content/types'
 import { Suspense } from 'react'
 
 export default async function AnnualReportsPage({

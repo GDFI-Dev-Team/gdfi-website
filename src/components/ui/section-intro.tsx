@@ -1,6 +1,6 @@
 import Heading from './heading'
 import Text from './text'
-import { cn } from '../../lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 /**
  * The eyebrow + heading pair that introduces a homepage section.

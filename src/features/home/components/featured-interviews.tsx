@@ -2,7 +2,7 @@ import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import VideoCarousel from './videos-carousel'
-import { getAllVideos } from '@/lib/videos'
+import { getAllVideos } from '@/lib/content/videos'
 
 export default function FeaturedInterviews() {
   const featuredVideos = getAllVideos().filter((v) => v.featured)

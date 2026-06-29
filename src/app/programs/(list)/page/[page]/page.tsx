@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
-import { getPrograms } from '@/lib/data/programs'
-import { PageProps } from '@/lib/interfaces/content'
+import { getPrograms } from '@/lib/content/programs'
+import { PageProps } from '@/lib/content/types'
 import { ProgramsGrid } from '@/features/programs/programs-grid'
 
 export async function generateStaticParams() {
