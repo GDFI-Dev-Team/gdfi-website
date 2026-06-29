@@ -3,6 +3,7 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Image from 'next/image'
 import Link from 'next/link'
+import ShareButton from '@/components/ui/share-button'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
 import { getAnnouncements } from '@/lib/content/announcements'
 import { ArticleContent } from '@/lib/content/types'
@@ -37,6 +38,15 @@ const UpdateCard = ({
       >
         <span className="sr-only ">Read {update.title}</span>
       </Link>
+
+      <div className="absolute top-4 right-4 z-20 pointer-events-auto">
+        <ShareButton
+          url={`/updates/announcements/${update.slug}`}
+          title={update.title}
+          className="h-9 w-9 p-0 rounded-full bg-black/40 text-white hover:bg-black/60 backdrop-blur-sm border-none"
+        />
+      </div>
+
       <Image
         src={imageSrc}
         alt={update.title}

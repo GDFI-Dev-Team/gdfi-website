@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getPublications } from '@/lib/content/publications'
 import { PageProps } from '@/lib/content/types'
-import PublicationResults from '@/features/research/publications/components/pub-results'
+import PublicationResults from '@/features/research/components/pub-results'
 
 export function generateStaticParams() {
   const { maxPage } = getPublications(1, {})

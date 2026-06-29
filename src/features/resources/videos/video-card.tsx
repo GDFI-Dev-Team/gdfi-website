@@ -6,6 +6,7 @@ import { formatEdgeDate } from '@/lib/utils/date'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Image from 'next/image'
+import ShareButton from '@/components/ui/share-button'
 
 function getYouTubeId(url: string): string | null {
   const m = url.match(
@@ -66,12 +67,19 @@ export default function VideoCard({
       </div>
 
       <div className="flex flex-col justify-center gap-2 flex-1 min-w-0 py-2">
-        <Text
-          size="xs"
-          className="text-foreground/60 font-semibold tracking-wider"
-        >
-          {formatEdgeDate(video.date)}
-        </Text>
+        <div className="flex items-center justify-between gap-2">
+          <Text
+            size="xs"
+            className="text-foreground/60 font-semibold tracking-wider"
+          >
+            {formatEdgeDate(video.date)}
+          </Text>
+          <ShareButton
+            url={video['youtube-link']}
+            title={video.title}
+            className="h-8 w-8 p-0 rounded-full text-foreground/40 hover:text-foreground hover:bg-foreground/10 z-10 relative"
+          />
+        </div>
 
         <Heading
           level={3}
