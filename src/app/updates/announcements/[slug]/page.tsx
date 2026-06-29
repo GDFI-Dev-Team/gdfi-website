@@ -52,30 +52,34 @@ export default async function AnnouncementPage({
         </Link>
       </div>
 
-      <header className="flex flex-col gap-4 mb-8">
-        <Heading level={1} className="text-balance leading-tight">
-          {article.title}
-        </Heading>
+      <article>
+        <header className="flex flex-col gap-4 mb-8">
+          <Heading level={1} className="text-balance leading-tight">
+            {article.title}
+          </Heading>
 
-        <div className="flex items-center justify-between gap-4 mt-2">
-          <div className="flex items-center gap-3 text-foreground/60">
-            <Text size="sm" className="font-medium">
-              {formatEdgeDate(article.date)}
-            </Text>
+          <div className="flex items-center justify-between gap-4 mt-2">
+            <div className="flex items-center gap-3 text-foreground/60">
+              <time
+                dateTime={new Date(article.date).toISOString()}
+                className="text-sm font-medium block"
+              >
+                {formatEdgeDate(article.date)}
+              </time>
+            </div>
           </div>
+        </header>
+
+        <ArticleImages images={article.featured_images ?? []} />
+
+        <div className="flex flex-col gap-6">
+          <Text
+            size="lg"
+            className="leading-relaxed text-foreground/90 whitespace-pre-line"
+          >
+            {article.body}
+          </Text>
         </div>
-      </header>
-
-      {/* Array slideshow */}
-      <ArticleImages images={article.featured_images ?? []} />
-
-      <article className="flex flex-col gap-6">
-        <Text
-          size="lg"
-          className="leading-relaxed text-foreground/90 whitespace-pre-line"
-        >
-          {article.body}
-        </Text>
       </article>
     </Section>
   )
