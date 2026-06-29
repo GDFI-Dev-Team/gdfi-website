@@ -21,7 +21,11 @@ export default function FeaturedInterviews() {
         >
           Voices from the coast
         </Text>
-        <Heading id="featured-interviews-heading" level={2}>
+        <Heading
+          id="featured-interviews-heading"
+          level={2}
+          className="text-xl md:text-3xl lg:text-4xl"
+        >
           Featured Interviews
         </Heading>
       </div>

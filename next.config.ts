@@ -17,7 +17,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/about-us',
-        destination: '/about-us/mission-vision',
+        destination: '/about-us/our-purpose',
+        permanent: false,
+      },
+      {
+        source: '/get-involved',
+        destination: '/get-involved/careers-and-internships',
         permanent: false,
       },
       {
@@ -32,12 +37,65 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/resources',
-        destination: '/resources/annual-reports',
+        destination: '/resources/research-and-publications',
+        permanent: false,
+      },
+      {
+        source: '/resources/research-and-publications/page',
+        destination: '/resources/research-and-publications',
+        permanent: false,
+      },
+      // Back-compat for the old /research URLs (publications moved into Resources)
+      {
+        source: '/research',
+        destination: '/resources/research-and-publications',
+        permanent: false,
+      },
+      {
+        source: '/research/publications',
+        destination: '/resources/research-and-publications',
+        permanent: false,
+      },
+      {
+        source: '/research/publications/page',
+        destination: '/resources/research-and-publications',
+        permanent: false,
+      },
+      {
+        source: '/research/publications/page/:page',
+        destination: '/resources/research-and-publications/page/:page',
+        permanent: false,
+      },
+      {
+        source: '/our-works',
+        destination: '/our-works/programs-and-projects',
+        permanent: false,
+      },
+      {
+        source: '/our-works/programs-and-projects/page',
+        destination: '/our-works/programs-and-projects',
+        permanent: false,
+      },
+      // Back-compat for the old /programs URLs (order matters: page routes
+      // must precede the catch-all :slug rule)
+      {
+        source: '/programs',
+        destination: '/our-works/programs-and-projects',
         permanent: false,
       },
       {
         source: '/programs/page',
-        destination: '/programs',
+        destination: '/our-works/programs-and-projects',
+        permanent: false,
+      },
+      {
+        source: '/programs/page/:page',
+        destination: '/our-works/programs-and-projects/page/:page',
+        permanent: false,
+      },
+      {
+        source: '/programs/:slug',
+        destination: '/our-works/programs-and-projects/:slug',
         permanent: false,
       },
     ]

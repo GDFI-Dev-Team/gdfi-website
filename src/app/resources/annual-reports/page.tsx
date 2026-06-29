@@ -35,11 +35,11 @@ export default async function AnnualReportsPage({
       <Banner
         title="Annual Reports"
         description="Browse our tangible impacts through our yearly transparency reports"
-        imgUrl="/nav-item-banner-images/annual-reports.jpeg"
+        imgUrl="/nav-item-banner-images/annual-reports.webp"
       />
 
       <Suspense>
-        <FilterBar className="justify-end gap-2">
+        <FilterBar className="flex-nowrap justify-end gap-2">
           <YearRangeFilter />
           <ClearFilters />
         </FilterBar>

@@ -128,7 +128,8 @@ export function SiteHeader() {
   }, [mobileOpen])
 
   const isProgramPost =
-    pathname.startsWith('/programs/') && !pathname.includes('/page/')
+    pathname.startsWith('/our-works/programs-and-projects/') &&
+    !pathname.includes('/page/')
   const isUpdatesPost =
     pathname.startsWith('/updates/') && !pathname.includes('/page/')
   const forceSolidNav = isProgramPost || isUpdatesPost
@@ -151,7 +152,6 @@ export function SiteHeader() {
           )}
         >
           <div className="mx-auto flex max-w-7xl items-center gap-2 md:gap-3">
-            {/* Hamburger */}
             <Button
               variant="ghost"
               aria-label="Open menu"
@@ -168,7 +168,6 @@ export function SiteHeader() {
               <Menu size={26} aria-hidden="true" />
             </Button>
 
-            {/* Logo */}
             <Link
               href="/"
               aria-label="GDFI — home"
@@ -177,7 +176,6 @@ export function SiteHeader() {
               <BrandLogo priority scrolled={scrolled} atTop={isTransparent} />
             </Link>
 
-            {/* Nav links — center, desktop only */}
             <nav className="hidden flex-1 items-center justify-center gap-0.5 md:flex lg:gap-1">
               {navLinks.map((link) => {
                 const active = isActive(link.href)
@@ -256,7 +254,6 @@ export function SiteHeader() {
               })}
             </nav>
 
-            {/* Right cluster — theme toggle + Support Us */}
             <div className="ml-auto flex shrink-0 items-center gap-2">
               <ThemeToggle
                 className={cn(
@@ -267,7 +264,6 @@ export function SiteHeader() {
                 )}
               />
 
-              {/* Support Us */}
               <Link
                 href="/support-us"
                 aria-label="Support Us"
@@ -297,7 +293,6 @@ export function SiteHeader() {
         </div>
       </header>
 
-      {/* Backdrop */}
       <div
         onClick={closeMobile}
         aria-hidden="true"
@@ -307,7 +302,6 @@ export function SiteHeader() {
         )}
       />
 
-      {/* Bottom-sheet menu */}
       <div
         ref={menuRef}
         role={mobileOpen ? 'dialog' : undefined}

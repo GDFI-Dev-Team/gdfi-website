@@ -23,7 +23,7 @@ export default function CommunityStoriesListLayout({
       <Banner
         title="Community Stories"
         description="Hear the voices of the coastal communities at the heart of our mission"
-        imgUrl="/nav-item-banner-images/community-stories.jpeg"
+        imgUrl="/nav-item-banner-images/community-stories.webp"
       />
       <Suspense>
         <FilterBar className="justify-end gap-2">

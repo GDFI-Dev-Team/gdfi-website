@@ -27,7 +27,11 @@ export default async function Stories() {
         >
           Stories from the field
         </Text>
-        <Heading id="stories-heading" level={2}>
+        <Heading
+          id="stories-heading"
+          level={2}
+          className="text-xl md:text-3xl lg:text-4xl"
+        >
           Community Stories
         </Heading>
       </div>
@@ -49,7 +53,7 @@ export default async function Stories() {
         className={cn(
           buttonBase,
           buttonVariants.secondary,
-          'self-center px-6 py-2.5',
+          'self-center px-4 py-2 text-sm md:px-6 md:py-2.5 md:text-base',
         )}
       >
         See more

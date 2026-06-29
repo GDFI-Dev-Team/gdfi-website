@@ -30,7 +30,7 @@ export async function generateMetadata({
     return buildArticleMetadata(
       article,
       `/updates/community-stories/${slug}`,
-      '/nav-item-banner-images/community-stories.jpeg',
+      '/nav-item-banner-images/community-stories.webp',
     )
   } catch {
     return {}

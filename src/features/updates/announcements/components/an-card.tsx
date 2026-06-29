@@ -11,7 +11,7 @@ export default function AnnouncementsCard({
       article={article}
       basePath="/updates/announcements"
       showDate
-      fallbackImgUrl="/nav-item-banner-images/announcements.jpeg"
+      fallbackImgUrl="/nav-item-banner-images/announcements.webp"
     />
   )
 }

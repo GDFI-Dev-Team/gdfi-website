@@ -13,8 +13,9 @@ import { OctagonX, Search } from 'lucide-react'
 import Button from './button'
 import { cn } from '@/lib/utils/cn-merge'
 
-export const filterInputClasses =
-  'h-11 px-3 rounded-lg border border-border bg-surface text-sm text-foreground shadow-sm transition-colors placeholder:text-foreground/40 hover:border-foreground/25 focus:outline-none focus:border-btn-primary focus:ring-2 focus:ring-btn-primary/30 disabled:opacity-50'
+export const filterRadius = 'rounded-md'
+
+export const filterInputClasses = `h-9 px-3 text-xs md:h-11 md:px-3.5 md:text-sm ${filterRadius} border border-border bg-surface text-foreground shadow-sm transition-all placeholder:text-foreground/40 hover:border-foreground/30 hover:shadow focus:outline-none focus:border-btn-primary focus:ring-2 focus:ring-btn-primary/25 disabled:opacity-50`
 
 interface FilterBarContextValue {
   searchParams: ReturnType<typeof useSearchParams>
@@ -140,10 +141,9 @@ export function SearchInput({
   }
 
   return (
-    <div className="relative w-full sm:w-60 max-w-sm shrink-0">
+    <div className="relative min-w-0 flex-1 sm:w-60 sm:max-w-sm sm:flex-none">
       <Search
-        className="absolute left-3 top-1/2 -translate-y-1/2 text-foreground/40"
-        size={18}
+        className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-foreground/40 md:left-4 md:size-[18px]"
         aria-hidden="true"
       />
       <input
@@ -155,7 +155,7 @@ export function SearchInput({
         }}
         placeholder={placeholder}
         aria-label={placeholder}
-        className={cn(filterInputClasses, 'w-full pl-10 pr-4')}
+        className={cn(filterInputClasses, 'w-full pl-9 pr-4 md:pl-11 md:pr-5')}
       />
     </div>
   )
@@ -181,12 +181,12 @@ export function ClearFilters() {
       onClick={() => {
         clearFilters(filterKeys)
       }}
-      className="h-11 w-11 shrink-0 p-0 flex items-center justify-center"
+      className="h-9 w-9 shrink-0 p-0 flex items-center justify-center md:h-11 md:w-11"
       variant="ghost"
       aria-label="Clear all filters"
       title="Clear all filters"
     >
-      <OctagonX className="size-5" />
+      <OctagonX className="size-4 md:size-5" />
     </Button>
   )
 }

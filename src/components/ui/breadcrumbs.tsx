@@ -4,14 +4,28 @@ import { generateBreadcrumbs } from '@/lib/navigation/breadcrumb'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
+import { cn } from '@/lib/utils/cn-merge'
 
-export default function Breadcrumbs({ last }: { last: string }) {
+export default function Breadcrumbs({
+  last,
+  className,
+}: {
+  last: string
+  /** Override visibility / text size, e.g. "block text-xs md:text-sm". */
+  className?: string
+}) {
   const pathname = usePathname()
   const breadcrumbs = generateBreadcrumbs(pathname)
 
   return (
-    <nav aria-label="Breadcrumb" className="hidden md:block">
-      <ol className="flex flex-wrap items-center gap-1.5 text-sm text-text-subtle transition-colors duration-300 ease-[ease]">
+    <nav
+      aria-label="Breadcrumb"
+      className={cn(
+        'hidden text-sm text-text-subtle transition-colors duration-300 ease-[ease] md:block',
+        className,
+      )}
+    >
+      <ol className="flex flex-wrap items-center gap-1.5">
         {breadcrumbs.map((breadcrumb, index) => {
           const isLast = index === breadcrumbs.length - 1
           return (

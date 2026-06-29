@@ -4,6 +4,12 @@ export const OVERVIEW_TEXT = `During the 1980s, the coastal municipalities of so
   
   Recognizing that true resource stewardship requires broad, interconnected action, the CBCRM program expanded significantly in 1995. Originally operating in Guiuan, Mercedes, and Salcedo, it grew to include Quinapondan, Giporlos, Balangiga, and Lawaan. Together, these seven municipalities share the critical waters of the northern Leyte Gulf.`
 
+export const OVERVIEW_STATS = [
+  { value: '1988', label: 'Founded in Eastern Samar' },
+  { value: '7', label: 'Coastal municipalities' },
+  { value: '40K', label: 'Residents served' },
+]
+
 export type HistoryMilestone = {
   id: string
   year: string

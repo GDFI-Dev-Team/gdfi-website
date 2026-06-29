@@ -20,7 +20,7 @@ const UpdateCard = ({
   className?: string
 }) => {
   const imageSrc =
-    update.featured_images?.[0] || '/nav-item-banner-images/announcements.jpeg'
+    update.featured_images?.[0] || '/nav-item-banner-images/announcements.webp'
   const previewText = update.excerpt || update.body
 
   return (
@@ -122,7 +122,11 @@ export default async function OurLatestUpdates() {
         >
           What&apos;s happening
         </Text>
-        <Heading id="our-latest-updates-heading" level={2}>
+        <Heading
+          id="our-latest-updates-heading"
+          level={2}
+          className="text-xl md:text-3xl lg:text-4xl"
+        >
           Latest Announcements
         </Heading>
       </div>
@@ -145,7 +149,7 @@ export default async function OurLatestUpdates() {
         className={cn(
           buttonBase,
           buttonVariants.secondary,
-          'self-center px-6 py-2.5',
+          'self-center px-4 py-2 text-sm md:px-6 md:py-2.5 md:text-base',
         )}
       >
         See more

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: '/resources/annual-reports',
     images: [
       {
-        url: '/nav-item-banner-images/annual-reports.jpeg',
+        url: '/nav-item-banner-images/annual-reports.webp',
         width: 1600,
         height: 800,
         alt: 'Browse our tangible impacts through our yearly transparency reports.',

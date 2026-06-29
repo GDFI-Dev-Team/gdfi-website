@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
-import { useFilterBar } from './filter-bar'
+import { useEffect, useRef, useState } from 'react'
+import { CalendarRange, ChevronDown } from 'lucide-react'
+import { useFilterBar, filterInputClasses } from './filter-bar'
 import { cn } from '@/lib/utils/cn-merge'
 
 const CURRENT_YEAR = new Date().getFullYear()
@@ -11,17 +12,19 @@ interface YearRangeFilterProps {
   maxYear?: number
 }
 
-// Transparent fields sit inside one bordered, shared-focus group below.
 const yearInputClasses =
-  'h-11 w-full sm:w-20 bg-transparent px-3 text-sm text-center tabular-nums text-foreground placeholder:text-foreground/40 focus:outline-none disabled:opacity-50 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
+  'text-center tabular-nums [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
 
 export default function YearRangeFilter({
   minYear = 2000,
   maxYear = CURRENT_YEAR,
 }: YearRangeFilterProps) {
-  const { searchParams, updateSearchParam } = useFilterBar()
+  const { searchParams, updateSearchParam, clearFilters } = useFilterBar()
   const startParam = searchParams.get('start_year') || ''
   const endParam = searchParams.get('end_year') || ''
+
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
 
   // Controlled so Clear Filters / browser navigation reset the fields. Synced
   // during render rather than in an effect to avoid a cascading re-render.
@@ -35,42 +38,102 @@ export default function YearRangeFilter({
     setEnd(endParam)
   }
 
+  const hasYears = Boolean(startParam || endParam)
+
+  useEffect(() => {
+    if (!open) return
+    const onDown = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
   return (
-    <div className="flex flex-1 items-stretch rounded-lg border border-border bg-surface shadow-sm transition-colors hover:border-foreground/25 focus-within:border-btn-primary focus-within:ring-2 focus-within:ring-btn-primary/30 sm:w-auto sm:flex-none">
-      <input
-        type="number"
-        inputMode="numeric"
-        min={minYear}
-        max={maxYear}
-        placeholder="From"
-        aria-label="Start year"
-        value={start}
-        onChange={(e) => {
-          setStart(e.target.value)
-          updateSearchParam('start_year', e.target.value)
-        }}
-        className={cn(yearInputClasses, 'flex-1 rounded-l-lg')}
-      />
-      <span
-        className="flex select-none items-center px-1 text-sm text-foreground/40"
-        aria-hidden="true"
+    <div ref={ref} className="relative shrink-0">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-haspopup="dialog"
+        aria-label="Filter by year range"
+        className={cn(
+          filterInputClasses,
+          'flex items-center gap-1.5 md:gap-2',
+          hasYears && 'border-btn-primary text-btn-primary',
+        )}
       >
-        –
-      </span>
-      <input
-        type="number"
-        inputMode="numeric"
-        min={minYear}
-        max={maxYear}
-        placeholder="To"
-        aria-label="End year"
-        value={end}
-        onChange={(e) => {
-          setEnd(e.target.value)
-          updateSearchParam('end_year', e.target.value)
-        }}
-        className={cn(yearInputClasses, 'flex-1 rounded-r-lg')}
-      />
+        <CalendarRange className="size-4 md:size-[18px]" aria-hidden="true" />
+        <span>Year{hasYears ? ' ·' : ''}</span>
+        <ChevronDown
+          className={cn(
+            'size-4 transition-transform md:size-[18px]',
+            open && 'rotate-180',
+          )}
+          aria-hidden="true"
+        />
+      </button>
+
+      {open && (
+        <div
+          role="dialog"
+          aria-label="Year range"
+          className="absolute right-0 z-50 mt-2 w-60 rounded-lg border border-border bg-surface p-3 shadow-lg"
+        >
+          <p className="mb-2 text-xs font-semibold text-foreground/60">
+            Filter by year
+          </p>
+          <div className="flex items-center gap-2">
+            <input
+              type="number"
+              inputMode="numeric"
+              min={minYear}
+              max={maxYear}
+              placeholder="From"
+              aria-label="Start year"
+              value={start}
+              onChange={(e) => {
+                setStart(e.target.value)
+                updateSearchParam('start_year', e.target.value)
+              }}
+              className={cn(filterInputClasses, yearInputClasses, 'w-full')}
+            />
+            <span className="text-foreground/40" aria-hidden="true">
+              –
+            </span>
+            <input
+              type="number"
+              inputMode="numeric"
+              min={minYear}
+              max={maxYear}
+              placeholder="To"
+              aria-label="End year"
+              value={end}
+              onChange={(e) => {
+                setEnd(e.target.value)
+                updateSearchParam('end_year', e.target.value)
+              }}
+              className={cn(filterInputClasses, yearInputClasses, 'w-full')}
+            />
+          </div>
+          {hasYears && (
+            <button
+              type="button"
+              onClick={() => clearFilters(['start_year', 'end_year'])}
+              className="mt-3 text-xs font-medium text-btn-primary hover:underline"
+            >
+              Clear years
+            </button>
+          )}
+        </div>
+      )}
     </div>
   )
 }

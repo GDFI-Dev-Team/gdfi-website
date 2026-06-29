@@ -7,7 +7,7 @@ export default function OverviewHistoryPage() {
       <Banner
         title="Overview & History"
         description="Trace our journey from a humble grassroots initiative to a region-wide movement"
-        imgUrl="/nav-item-banner-images/overview-history.jpeg"
+        imgUrl="/nav-item-banner-images/overview-history.webp"
       />
 
       <Overview />

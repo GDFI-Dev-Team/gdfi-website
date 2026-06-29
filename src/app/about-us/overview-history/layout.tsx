@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: '/about-us/overview-history',
     images: [
       {
-        url: '/nav-item-banner-images/overview-history.jpeg',
+        url: '/nav-item-banner-images/overview-history.webp',
         width: 2048,
         height: 1536,
         alt: 'Trace our journey from a humble grassroots initiative in 1988 to a region-wide movement.',

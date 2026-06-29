@@ -1,4 +1,3 @@
-import Grid from '@/components/ui/grid'
 import Pagination from '@/components/ui/pagination'
 import ProgramCard from './program-card'
 import { Program } from '@/lib/content/types'
@@ -19,7 +18,11 @@ export function ProgramsGrid({
   return (
     <>
       {items.length > 0 ? (
-        <Grid articles={items} Card={ProgramCard} />
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 md:gap-6 lg:gap-8">
+          {items.map((program) => (
+            <ProgramCard key={program.slug} article={program} />
+          ))}
+        </div>
       ) : (
         <div className="text-center py-12 border border-dashed border-foreground/10 rounded-xl bg-background/50">
           <p className="text-foreground/50 text-sm font-medium">
@@ -32,7 +35,7 @@ export function ProgramsGrid({
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
-          baseUrl="/programs/page"
+          baseUrl="/our-works/programs-and-projects/page"
           searchParamsSuffix={querySuffix}
         />
       )}

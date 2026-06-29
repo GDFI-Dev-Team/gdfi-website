@@ -34,6 +34,12 @@ export interface Program extends BaseContent {
   tag: string
   'short-description': string
   'featured-img': string
+  /** ISO date used to order programs by recency (hero + grid). */
+  date: string
+  /** Partner organisations / partnership type. */
+  partners?: string
+  /** Human-readable project timeline, e.g. "Aug 2018 – 2023". */
+  timeline?: string
   body: string
 }
 

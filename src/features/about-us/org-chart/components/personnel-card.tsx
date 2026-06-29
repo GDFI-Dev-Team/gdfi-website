@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import { X } from 'lucide-react'
 import Text from '@/components/ui/text'
@@ -30,34 +31,39 @@ export function PersonnelCard({ person }: { person: Personnel }) {
     else setTooltipDirection('right')
   }
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      setIsMobileModalOpen(true)
+    }
+  }
+
   return (
     <div
       ref={cardRef}
       onPointerEnter={handlePointerEnter}
-      className="group relative flex w-full items-center gap-3 rounded-xl p-2 transition-colors hover:bg-foreground/5"
+      onClick={() => setIsMobileModalOpen(true)}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label={`View bio of ${person.name}`}
+      className="group relative flex w-full cursor-pointer flex-col items-center gap-2 rounded-xl p-3 text-center transition-colors hover:bg-foreground/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:flex-row md:gap-5 md:p-4 md:text-left"
     >
-      <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0">
-        <div className="absolute inset-0 bg-background border border-foreground/10 rounded-2xl p-1.5 md:p-2 shadow-sm transition-shadow duration-300 group-hover:shadow-md">
-          <div className="relative w-full h-full rounded-xl overflow-hidden bg-foreground/5">
-            <Image
-              src={person.image}
-              alt={person.name}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 84px, 96px"
-            />
-          </div>
-        </div>
+      <div className="relative size-16 shrink-0 overflow-hidden rounded-full bg-foreground/5 ring-1 ring-foreground/10 transition-shadow duration-300 group-hover:ring-accent/40 md:size-28">
+        <Image
+          src={person.image}
+          alt={person.name}
+          fill
+          className="scale-98 object-contain"
+          sizes="(max-width: 768px) 64px, 112px"
+        />
       </div>
 
-      <div className="min-w-0 flex-1">
-        <Text size="sm" className="font-bold leading-tight break-words">
+      <div className="w-full min-w-0 md:flex-1">
+        <Text className="text-sm font-bold leading-tight break-words md:text-lg">
           {person.name}
         </Text>
-        <Text
-          size="sm"
-          className="italic text-foreground/70 text-xs mt-1 leading-tight break-words"
-        >
+        <Text className="text-xs italic text-foreground/70 mt-0.5 leading-tight break-words md:mt-1 md:text-base">
           {person.role}
         </Text>
       </div>
@@ -94,53 +100,55 @@ export function PersonnelCard({ person }: { person: Personnel }) {
         />
       </div>
 
-      <button
-        onClick={() => setIsMobileModalOpen(true)}
-        className="md:hidden shrink-0 px-4 py-1.5 rounded-full bg-foreground/5 text-foreground hover:bg-foreground/10 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
-      >
-        Bio
-      </button>
-
-      {isMobileModalOpen && (
-        <div className="fixed inset-0 z-100 flex items-center justify-center bg-foreground/30 backdrop-blur-sm p-4 md:hidden">
-          <div className="bg-background w-full max-w-[90vw] sm:max-w-md p-6 sm:p-8 rounded-3xl shadow-xl relative animate-fade-up flex flex-col max-h-[85vh]">
-            <button
-              onClick={() => setIsMobileModalOpen(false)}
-              className="absolute top-4 right-4 p-2 bg-foreground/5 rounded-full text-foreground/70 hover:text-foreground hover:bg-foreground/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
-              aria-label="Close bio"
+      {isMobileModalOpen &&
+        createPortal(
+          <div
+            onClick={(e) => {
+              e.stopPropagation()
+              setIsMobileModalOpen(false)
+            }}
+            className="fixed inset-0 z-100 flex items-center justify-center bg-foreground/30 backdrop-blur-sm p-4"
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="bg-background w-full max-w-[800vw] sm:max-w-md p-6 sm:p-8 rounded-3xl shadow-xl relative animate-fade-up flex flex-col max-h-[85vh]"
             >
-              <X size={20} />
-            </button>
+              <button
+                onClick={() => setIsMobileModalOpen(false)}
+                className="absolute top-4 right-4 p-2 bg-foreground/5 rounded-full text-foreground/70 hover:text-foreground hover:bg-foreground/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
+                aria-label="Close bio"
+              >
+                <X size={20} />
+              </button>
 
-            <div className="shrink-0 flex flex-col items-center">
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 mb-4 bg-background border border-foreground/10 rounded-2xl p-1.5 sm:p-2 shadow-sm">
-                <div className="relative w-full h-full rounded-xl overflow-hidden bg-foreground/5">
+              <div className="shrink-0 flex flex-col items-center">
+                <div className="relative mb-4 size-20 overflow-hidden rounded-full bg-foreground/5 ring-1 ring-foreground/10 sm:size-24">
                   <Image
                     src={person.image}
                     alt={person.name}
                     fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 84px, 96px"
+                    className="scale-90 object-contain"
+                    sizes="(max-width: 640px) 80px, 96px"
                   />
                 </div>
+
+                <Text className="font-bold text-center text-lg">
+                  {person.name}
+                </Text>
+                <Text className="italic text-center text-sm sm:text-base text-foreground/70 mb-4 pb-4 border-b border-foreground/10 w-full">
+                  {person.role}
+                </Text>
               </div>
 
-              <Text className="font-bold text-center text-lg">
-                {person.name}
-              </Text>
-              <Text className="italic text-center text-sm sm:text-base text-foreground/70 mb-4 pb-4 border-b border-foreground/10 w-full">
-                {person.role}
-              </Text>
+              <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-2">
+                <Text className="text-sm sm:text-base leading-relaxed text-foreground/90 text-justify hyphens-auto whitespace-pre-line">
+                  {person.bio}
+                </Text>
+              </div>
             </div>
-
-            <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-2">
-              <Text className="text-sm sm:text-base leading-relaxed text-foreground/90 text-justify hyphens-auto whitespace-pre-line">
-                {person.bio}
-              </Text>
-            </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </div>
   )
 }

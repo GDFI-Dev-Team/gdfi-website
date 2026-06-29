@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: '/about-us/org-chart',
     images: [
       {
-        url: '/nav-item-banner-images/organizational-structure.jpeg',
+        url: '/nav-item-banner-images/organizational-structure.webp',
         width: 2048,
         height: 1364,
         alt: 'Meet the dedicated team and leadership driving our mission forward.',

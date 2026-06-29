@@ -56,7 +56,7 @@ collections:
           default: false
 
   - name: publications
-    label: Publications
+    label: Research & Publications
     folder: content/research/publications
     create: true
     fields:
@@ -109,17 +109,24 @@ collections:
           default: false
 
   - name: programs
-    label: Programs
-    label_singular: Program
+    label: Programs & Projects
+    label_singular: Program / Project
     folder: content/programs
     fields:
       - name: title
-        label: Title 
+        label: Title
         widget: string
         hint: ex. Educational Assistance Program
       - name: short-description
-        label: Short Description    
+        label: Short Description
         widget: text
+      - name: date
+        label: Date
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+        hint: Used to order entries — the 5 most recent are featured in the hero.
       - name: status
         label: Status
         widget: select
@@ -129,11 +136,21 @@ collections:
         widget: string
         hint: eg. Education
         required: false
+      - name: partners
+        label: Partners / Type
+        widget: text
+        required: false
+        hint: Partner organisations and partnership type.
+      - name: timeline
+        label: Timeline
+        widget: string
+        required: false
+        hint: eg. Aug 2018 – 2023
       - name: featured-img
         label: Featured Image
         widget: file
         max: 1
-        accept: "image/jpeg,.jpg,.jpeg"
+        accept: "image/jpeg,.jpg,.jpeg,image/png,.png,image/webp,.webp"
       - name: body
         label: Content
         widget: markdown

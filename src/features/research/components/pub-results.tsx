@@ -23,7 +23,7 @@ export default function PublicationResults({
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
-          baseUrl="/research/publications/page"
+          baseUrl="/resources/research-and-publications/page"
           searchParamsSuffix={querySuffix}
         />
       )}

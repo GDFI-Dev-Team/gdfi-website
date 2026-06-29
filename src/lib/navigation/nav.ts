@@ -8,11 +8,11 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   {
     label: 'About Us',
-    href: '/about-us/mission-vision',
+    href: '/about-us/our-purpose',
     children: [
       {
-        label: 'Mission & Vision',
-        href: '/about-us/mission-vision',
+        label: 'Our Purpose',
+        href: '/about-us/our-purpose',
       },
       {
         label: 'Overview & History',
@@ -24,8 +24,20 @@ export const navLinks: NavLink[] = [
       },
     ],
   },
-  { label: 'Programs', href: '/programs' },
-  { label: 'Research', href: '/research' },
+  {
+    label: 'Our Works',
+    href: '/our-works/programs-and-projects',
+    children: [
+      {
+        label: 'Core Programs & Projects',
+        href: '/our-works/programs-and-projects',
+      },
+      {
+        label: 'Marine Protected Areas (MPAs)',
+        href: '/our-works/mpas',
+      },
+    ],
+  },
   {
     label: 'Updates',
     href: '/updates/announcements',
@@ -36,10 +48,33 @@ export const navLinks: NavLink[] = [
   },
   {
     label: 'Resources',
-    href: '/resources',
+    href: '/resources/research-and-publications',
     children: [
-      { label: 'Annual Reports', href: '/resources/annual-reports' },
-      { label: 'Video Resources', href: '/resources/video-resources' },
+      {
+        label: 'Research and Publications',
+        href: '/resources/research-and-publications',
+      },
+      {
+        label: 'Annual & Financial Reports',
+        href: '/resources/annual-reports',
+      },
+      { label: 'Videos & Media', href: '/resources/video-resources' },
+    ],
+  },
+  { label: 'Awards & Recognitions', href: '/awards-and-recognitions' },
+  {
+    label: 'Get Involved',
+    href: '/get-involved/careers-and-internships',
+    children: [
+      {
+        label: 'Careers & Internships',
+        href: '/get-involved/careers-and-internships',
+      },
+      {
+        label: 'Volunteer Opportunities',
+        href: '/get-involved/volunteer-opportunities',
+      },
+      { label: 'Contact Us', href: '/get-involved/contact-us' },
     ],
   },
 ]

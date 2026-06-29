@@ -21,7 +21,7 @@ export default function VideoResourcesLayout({
       <Banner
         title="Video Resources"
         description="Browse the different videos of Guiuan Development Foundation Inc."
-        imgUrl="/nav-item-banner-images/video-resources.jpeg"
+        imgUrl="/nav-item-banner-images/video-resources.webp"
       />
       <Suspense>
         <FilterBar className="justify-end gap-2">
@@ -30,7 +30,6 @@ export default function VideoResourcesLayout({
         </FilterBar>
       </Suspense>
 
-      {/* Featured slideshow */}
       {featuredVideos.length > 0 && (
         <Section sectionClassName="pb-0 md:pb-0">
           <div className="flex flex-col">

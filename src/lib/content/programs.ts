@@ -12,6 +12,17 @@ function getParam(params: ProgramsSearchParams, key: string) {
   return typeof params[key] === 'string' ? (params[key] as string) : undefined
 }
 
+function byRecency(a: Program, b: Program) {
+  const aTime = a.date ? new Date(a.date).getTime() : 0
+  const bTime = b.date ? new Date(b.date).getTime() : 0
+  return bTime - aTime
+}
+
+export function getRecentPrograms(limit = 5): Program[] {
+  const all = getCollectionMarkdownData<Omit<Program, 'slug'>>('programs')
+  return (all as Program[]).sort(byRecency).slice(0, limit)
+}
+
 /**
  * Shared by the page-1 route and /page/[page] route so filtering, pagination,
  * and query-string preservation stay in sync between them.
@@ -30,7 +41,7 @@ export async function getPrograms(
       category: getParam(searchParams, 'category'),
     },
     (program) => [program.status],
-  )
+  ).sort(byRecency)
 
   const { items, totalPages } = paginateItems(
     filteredPrograms,

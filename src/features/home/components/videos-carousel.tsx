@@ -156,7 +156,7 @@ export default function VideoCarousel({ videos }: { videos: VideoContent[] }) {
       </div>
 
       <div className="flex flex-col items-center text-center max-w-2xl px-4 animate-fade-in gap-4">
-        <Text size="lg" className="font-semibold">
+        <Text className="text-base font-semibold md:text-lg">
           {displayVideos[currentIndex].title}
         </Text>
         <ShareButton
