@@ -28,6 +28,7 @@ export default async function CommunityStoryPage({
       'updates/community-stories',
       `${slug}.md`,
     )
+    article.slug = slug
   } catch {
     notFound()
   }

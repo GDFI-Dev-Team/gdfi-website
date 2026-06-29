@@ -26,6 +26,7 @@ export default async function AnnouncementPage({
       'updates/announcements',
       `${slug}.md`,
     )
+    article.slug = slug
   } catch {
     notFound()
   }

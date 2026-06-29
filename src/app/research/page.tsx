@@ -2,11 +2,11 @@ import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
 import PublicationList from '@/features/research/components/pub-list'
 import FilterBar from '@/components/ui/filter-bar'
+import YearRangeFilter from '@/components/ui/year-range-filter'
 import { getCollectionMarkdownData } from '@/lib/content/markdown'
 import { Publication } from '@/lib/content/types'
 import { SearchInput, ClearFilters } from '@/components/ui/filter-bar'
 import { Suspense } from 'react'
-import YearRangeFilter from '@/components/ui/year-range-filter'
 
 export default async function PublicationsPage({
   searchParams,
