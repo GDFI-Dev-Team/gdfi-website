@@ -11,18 +11,18 @@ export function CoreValues() {
           Core Values
         </Heading>
 
-        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6">
+        <ul className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6 list-none p-0 m-0">
           {CORE_VALUES_LIST.map((value, index) => (
-            <div
+            <li
               key={index}
               className="flex items-center justify-center rounded-2xl border border-foreground/10 bg-background p-8 text-center shadow-sm transition-colors hover:bg-foreground/[0.02]"
             >
               <Text size="lg" className="font-semibold">
                 {value}
               </Text>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </Section>
   )
