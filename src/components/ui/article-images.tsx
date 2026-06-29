@@ -41,7 +41,7 @@ export default function ArticleImages({ images }: { images: string[] }) {
   }
 
   return (
-    <div className="flex flex-col w-full mb-10">
+    <figure className="flex flex-col w-full mb-10 m-0">
       <div
         className="relative w-full aspect-video rounded-2xl overflow-hidden bg-foreground/5 shadow-sm border border-foreground/10 group"
         onTouchStart={isMultiple ? onTouchStart : undefined}
@@ -108,15 +108,15 @@ export default function ArticleImages({ images }: { images: string[] }) {
       </div>
 
       {isMultiple && (
-        <div className="mt-3 flex justify-end px-2">
+        <figcaption className="mt-3 flex justify-end px-2">
           <Text
             size="sm"
             className="text-foreground/40 whitespace-nowrap font-medium"
           >
             {index + 1} / {images.length}
           </Text>
-        </div>
+        </figcaption>
       )}
-    </div>
+    </figure>
   )
 }
