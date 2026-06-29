@@ -41,9 +41,9 @@ const GetInvolved = () => {
         </Heading>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 list-none p-0 m-0">
         {cards.map(({ Icon, label, description }) => (
-          <div
+          <li
             key={label}
             className="bg-surface border border-foreground/10 rounded-3xl p-8 flex flex-col items-center gap-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
@@ -59,9 +59,9 @@ const GetInvolved = () => {
               <Heading level={3}>{label}</Heading>
               <Text className="text-foreground/60">{description}</Text>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   )
 }
