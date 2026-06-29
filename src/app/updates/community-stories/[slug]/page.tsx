@@ -4,7 +4,6 @@ import {
   getSingleMarkdownData,
   getCollectionMarkdownData,
 } from '@/lib/content/markdown'
-import { formatEdgeDate } from '@/lib/utils/date'
 import { ArticleContent } from '@/lib/content/types'
 import Link from 'next/link'
 import Section from '@/components/ui/section'
@@ -53,28 +52,23 @@ export default async function CommunityStoryPage({
         </Link>
       </div>
 
-      <header className="flex flex-col gap-4 mb-8">
-        <Heading level={1} className="text-balance leading-tight">
-          {article.title}
-        </Heading>
+      <article>
+        <header className="flex flex-col gap-4 mb-8">
+          <Heading level={1} className="text-balance leading-tight">
+            {article.title}
+          </Heading>
+        </header>
 
-        <div className="flex items-center gap-3 text-foreground/60 mt-2">
-          <Text size="sm" className="font-medium">
-            {formatEdgeDate(article.date)}
+        <ArticleImages images={article.featured_images ?? []} />
+
+        <div className="flex flex-col gap-6">
+          <Text
+            size="lg"
+            className="leading-relaxed text-foreground/90 whitespace-pre-line"
+          >
+            {article.body}
           </Text>
         </div>
-      </header>
-
-      {/* Array slideshow */}
-      <ArticleImages images={article.featured_images ?? []} />
-
-      <article className="flex flex-col gap-6">
-        <Text
-          size="lg"
-          className="leading-relaxed text-foreground/90 whitespace-pre-line"
-        >
-          {article.body}
-        </Text>
       </article>
     </Section>
   )
