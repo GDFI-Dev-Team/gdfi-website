@@ -1,0 +1,79 @@
+export type NavLink = {
+  label: string
+  href: string
+  children?: { label: string; href: string }[]
+}
+
+/* Primary navigation. Give any item a `children` array to turn it into a dropdown (desktop) / accordion (mobile) */
+export const navLinks: NavLink[] = [
+  {
+    label: 'About Us',
+    href: '/about-us/mission-vision',
+    children: [
+      {
+        label: 'Mission & Vision',
+        href: '/about-us/mission-vision',
+      },
+      {
+        label: 'Overview & History',
+        href: '/about-us/overview-history',
+      },
+      {
+        label: 'Organizational Structure',
+        href: '/about-us/organizational-structure',
+      },
+    ],
+  },
+  { label: 'Programs', href: '/programs' },
+  {
+    label: 'Research',
+    href: '/research/publications',
+    children: [
+      {
+        label: 'Publications',
+        href: '/research/publications',
+      },
+      {
+        label: 'Marine Protected Areas',
+        href: '/research/mpas',
+      },
+    ],
+  },
+  {
+    label: 'Updates',
+    href: '/updates/announcements',
+    children: [
+      { label: 'Announcements', href: '/updates/announcements' },
+      { label: 'Community Stories', href: '/updates/community-stories' },
+    ],
+  },
+  {
+    label: 'Resources',
+    href: '/resources',
+    children: [
+      { label: 'Annual Reports', href: '/resources/annual-reports' },
+      { label: 'Video Resources', href: '/resources/video-resources' },
+    ],
+  },
+]
+
+/**
+ * Organization details — single source of truth for contact info shown in
+ * the footer (and reusable elsewhere). Adjust `founded` / `about` as needed.
+ */
+export const org = {
+  name: 'Guiuan Development Foundation, Inc.',
+  shortName: 'GDFI',
+  founded: 1988,
+  email: 'hello.gdfi@gmail.com',
+  address: 'Guimbaolibot Avenue, Brgy. 10, Guiuan, Eastern Samar, 6809',
+  mapUrl: 'https://maps.app.goo.gl/gF2VHxrbyNKbE9TA9',
+  about:
+    'A community-rooted foundation advancing sustainable development and coastal resource management across Eastern Samar.',
+}
+
+/** Social profile URLs. Icons are paired in the footer component. */
+export const socials = {
+  facebook: 'https://www.facebook.com/gdfi1988',
+  instagram: 'https://www.instagram.com/hello.gdfi',
+}

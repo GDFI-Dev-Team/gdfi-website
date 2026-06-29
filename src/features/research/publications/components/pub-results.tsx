@@ -1,6 +1,6 @@
 import PublicationList from './pub-list'
 import Pagination from '@/components/ui/pagination'
-import { Publication } from '@/lib/interfaces/content'
+import { Publication } from '@/lib/content/types'
 
 interface PublicationResultsProps {
   publications: Publication[]

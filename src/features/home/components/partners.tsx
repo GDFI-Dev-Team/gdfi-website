@@ -4,7 +4,7 @@ import Marquee from '@/components/ui/marquee'
 import Image from 'next/image'
 import Text from '@/components/ui/text'
 import { partners } from '../data/partners'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 const Partners = () => {
   return (

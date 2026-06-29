@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
-import { getPublications } from '@/lib/data/publications'
-import { PageProps } from '@/lib/interfaces/content'
+import { getPublications } from '@/lib/content/publications'
+import { PageProps } from '@/lib/content/types'
 import PublicationResults from '@/features/research/publications/components/pub-results'
 
 export function generateStaticParams() {

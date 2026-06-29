@@ -2,7 +2,7 @@
 
 import { useCallback, useSyncExternalStore } from 'react'
 import { Moon, Sun } from 'lucide-react'
-import { cn } from '../../lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 /**
  * The current theme lives in the `dark` class on <html>, applied by the

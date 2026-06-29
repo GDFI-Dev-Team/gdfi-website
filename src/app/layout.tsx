@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: '/feat-hero/hero-1.jpeg',
         width: 3750,
         height: 1969,
-        alt: 'Guiuan Development Foundation, Inc.',
+        alt: 'The official homepage of Guiuan Development Foundation Inc.',
       },
     ],
   },

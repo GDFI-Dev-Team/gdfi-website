@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation'
-import { getCollectionMarkdownData } from '@/lib/markdown'
-import { paginateItems } from '@/lib/pagination'
-import { ArticleContent } from '@/lib/interfaces/content'
-import { getCommunityStories } from '@/lib/data/community-stories'
+import { getCollectionMarkdownData } from '@/lib/content/markdown'
+import { paginateItems } from '@/lib/content/pagination'
+import { ArticleContent } from '@/lib/content/types'
+import { getCommunityStories } from '@/lib/content/community-stories'
 import { CommunityStoriesGrid } from '@/features/updates/community-stories/components/cs-grid'
-import { CONTENT_LIMITS } from '@/config/content'
-import { PageProps } from '@/lib/interfaces/content'
+import { CONTENT_LIMITS } from '@/lib/content/pagination'
+import { PageProps } from '@/lib/content/types'
 
 export async function generateStaticParams() {
   const articles = await getCollectionMarkdownData<ArticleContent>(

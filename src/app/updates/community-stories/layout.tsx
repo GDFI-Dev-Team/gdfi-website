@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: '/nav-item-banner-images/community-stories.jpeg',
         width: 2048,
         height: 1536,
-        alt: 'Guiuan Development Foundation, Inc.',
+        alt: 'Hear the voices of the coastal communities at the heart of our mission.',
       },
     ],
   },

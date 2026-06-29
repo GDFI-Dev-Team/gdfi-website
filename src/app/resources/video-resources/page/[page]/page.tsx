@@ -1,8 +1,8 @@
 import Heading from '@/components/ui/heading'
 import VideoGallery from '@/features/resources/videos/video-gallery'
-import { getAllVideos, getVideosPage } from '@/lib/videos'
-import { paginateItems } from '@/lib/pagination'
-import { CONTENT_LIMITS } from '@/config/content'
+import { getAllVideos, getVideosPage } from '@/lib/content/videos'
+import { paginateItems } from '@/lib/content/pagination'
+import { CONTENT_LIMITS } from '@/lib/content/pagination'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {

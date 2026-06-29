@@ -12,7 +12,10 @@ export function Overview() {
           <Heading level={2} className="mb-6">
             Overview
           </Heading>
-          <Text size="lg" className="leading-relaxed text-foreground/90">
+          <Text
+            size="lg"
+            className="leading-relaxed text-foreground/90 whitespace-pre-line"
+          >
             {OVERVIEW_TEXT}
           </Text>
         </div>

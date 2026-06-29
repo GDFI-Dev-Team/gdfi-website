@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     url: '/support-us',
     images: [
       {
-        url: '/feat-hero/hero-3.jpeg',
-        width: 4528,
-        height: 3016,
-        alt: 'Guiuan Development Foundation, Inc.',
+        url: '/nav-item-banner-images/support-us.jpeg',
+        width: 1280,
+        height: 854,
+        alt: 'Stand with us to secure a sustainable future for our community and the environment.',
       },
     ],
   },

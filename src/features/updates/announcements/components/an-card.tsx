@@ -1,5 +1,5 @@
 import ArticleCard from '@/components/ui/article-card'
-import { ArticleContent } from '@/lib/interfaces/content'
+import { ArticleContent } from '@/lib/content/types'
 
 export default function AnnouncementsCard({
   article,

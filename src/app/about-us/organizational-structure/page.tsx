@@ -4,10 +4,13 @@ import {
   ProjectCoordination,
   PoolOfVolunteers,
 } from '@/features/about-us/org-chart/components'
+import { getOrgStructure } from '@/lib/content/org-structure'
 import Section from '@/components/ui/section'
 import Banner from '@/components/ui/banner'
 
 export default function OrganizationalStructurePage() {
+  const org = getOrgStructure()
+
   return (
     <>
       <Banner
@@ -18,10 +21,10 @@ export default function OrganizationalStructurePage() {
 
       <Section sectionClassName="pb-24">
         <div className="flex flex-col gap-16 md:gap-24 w-full">
-          <BoardOfTrustees />
-          <AdminAndFinance />
-          <ProjectCoordination />
-          <PoolOfVolunteers />
+          <BoardOfTrustees personnel={org.boardOfTrustees} />
+          <AdminAndFinance personnel={org.adminAndFinance} />
+          <ProjectCoordination personnel={org.projectCoordination} />
+          <PoolOfVolunteers personnel={org.poolOfVolunteers} />
         </div>
       </Section>
     </>

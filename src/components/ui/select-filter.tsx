@@ -2,7 +2,7 @@
 
 import { ChevronDown } from 'lucide-react'
 import { useFilterBar, filterInputClasses } from './filter-bar'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils/cn-merge'
 
 interface SelectFilterProps {
   paramKey: string
