@@ -32,7 +32,7 @@ export default function VideoCard({
   const embedUrl = videoId ? toEmbedUrl(videoId) : null
 
   return (
-    <div
+    <article
       onClick={() => embedUrl && onPlay(embedUrl)}
       onKeyDown={(e) =>
         (e.key === 'Enter' || e.key === ' ') && embedUrl && onPlay(embedUrl)
@@ -42,7 +42,7 @@ export default function VideoCard({
       aria-label={`Play ${video.title}`}
       className="group flex flex-col md:flex-row gap-6 p-6 rounded-xl border border-transparent hover:border-foreground/10 bg-foreground/3 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
     >
-      <div className="relative w-full md:w-72 lg:w-80 aspect-video shrink-0 rounded-xl overflow-hidden bg-foreground/5 shadow-sm">
+      <figure className="relative w-full md:w-72 lg:w-80 aspect-video shrink-0 rounded-xl overflow-hidden bg-foreground/5 shadow-sm m-0">
         {thumbnail ? (
           <>
             <Image
@@ -63,15 +63,15 @@ export default function VideoCard({
             <Play className="text-foreground/30" size={32} />
           </div>
         )}
-      </div>
+      </figure>
 
       <div className="flex flex-col justify-center gap-2 flex-1 min-w-0 py-2">
-        <Text
-          size="xs"
-          className="text-foreground/60 font-semibold tracking-wider"
+        <time
+          dateTime={new Date(video.date).toISOString()}
+          className="text-xs text-foreground/60 font-semibold tracking-wider block"
         >
           {formatEdgeDate(video.date)}
-        </Text>
+        </time>
 
         <Heading
           level={3}
@@ -86,6 +86,6 @@ export default function VideoCard({
           </Text>
         )}
       </div>
-    </div>
+    </article>
   )
 }
