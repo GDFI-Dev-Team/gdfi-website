@@ -2,7 +2,7 @@ import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import SupportOptions from '@/features/support-us/components/support-options'
+import SupportOptions from '@/features/get-involved/components/support-options'
 
 export default function SupportUsPage() {
   return (

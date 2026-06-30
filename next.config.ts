@@ -21,11 +21,6 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
-        source: '/get-involved',
-        destination: '/get-involved/careers-and-internships',
-        permanent: false,
-      },
-      {
         source: '/updates',
         destination: '/updates/announcements',
         permanent: false,

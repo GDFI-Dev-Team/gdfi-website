@@ -265,8 +265,8 @@ export function SiteHeader() {
               />
 
               <Link
-                href="/support-us"
-                aria-label="Support Us"
+                href="/get-involved"
+                aria-label="Get Involved"
                 className={cn(
                   buttonBase,
                   'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
@@ -285,7 +285,7 @@ export function SiteHeader() {
                       : 'lg:ml-2 lg:max-w-28 lg:opacity-100',
                   )}
                 >
-                  Support Us
+                  Get Involved
                 </span>
               </Link>
             </div>

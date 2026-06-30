@@ -14,7 +14,7 @@ const staticPaths = [
   '/research',
   '/resources/annual-reports',
   '/resources/video-resources',
-  '/support-us',
+  '/get-involved',
   '/updates/announcements',
   '/updates/community-stories',
 ]

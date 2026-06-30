@@ -62,21 +62,6 @@ export const navLinks: NavLink[] = [
     ],
   },
   { label: 'Awards & Recognitions', href: '/awards-and-recognitions' },
-  {
-    label: 'Get Involved',
-    href: '/get-involved/careers-and-internships',
-    children: [
-      {
-        label: 'Careers & Internships',
-        href: '/get-involved/careers-and-internships',
-      },
-      {
-        label: 'Volunteer Opportunities',
-        href: '/get-involved/volunteer-opportunities',
-      },
-      { label: 'Contact Us', href: '/get-involved/contact-us' },
-    ],
-  },
 ]
 
 /**
