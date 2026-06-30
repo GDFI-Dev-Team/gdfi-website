@@ -39,7 +39,7 @@ export default function VideoGallery({
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
-              baseUrl="/resources/video-resources/page"
+              baseUrl="/resources/video-and-media-resources/page"
               searchParamsSuffix={querySuffix}
             />
           )}

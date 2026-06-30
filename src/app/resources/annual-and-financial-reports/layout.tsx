@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: 'Annual Reports',
     description:
       'Browse our tangible impacts through our yearly transparency reports.',
-    url: '/resources/annual-reports',
+    url: '/resources/annual-and-financial-reports',
     images: [
       {
-        url: '/nav-item-banner-images/annual-reports.webp',
+        url: '/nav-item-banner-images/annual-and-financial-reports.webp',
         width: 1600,
         height: 800,
         alt: 'Browse our tangible impacts through our yearly transparency reports.',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: '/resources/annual-reports',
+    canonical: '/resources/annual-and-financial-reports',
   },
 }
 

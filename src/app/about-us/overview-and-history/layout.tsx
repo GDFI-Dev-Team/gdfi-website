@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     title: 'Overview & History',
     description:
       'Trace our journey from a humble grassroots initiative in 1988 to a region-wide movement.',
-    url: '/about-us/overview-history',
+    url: '/about-us/overview-and-history',
     images: [
       {
-        url: '/nav-item-banner-images/overview-history.webp',
+        url: '/nav-item-banner-images/overview-and-history.webp',
         width: 2048,
         height: 1536,
         alt: 'Trace our journey from a humble grassroots initiative in 1988 to a region-wide movement.',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: '/about-us/overview-history',
+    canonical: '/about-us/overview-and-history',
   },
 }
 

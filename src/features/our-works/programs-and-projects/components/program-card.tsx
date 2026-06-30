@@ -22,7 +22,7 @@ export default function ProgramCard({
       article={article}
       basePath="/our-works/programs-and-projects"
       variant="programs"
-      fallbackImgUrl="/nav-item-banner-images/programs.webp"
+      fallbackImgUrl="/nav-item-banner-images/programs-and-projects.webp"
       status={program.status}
       dateRange={program.timeline}
     />

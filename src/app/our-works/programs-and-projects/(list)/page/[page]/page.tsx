@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getPrograms } from '@/lib/content/programs'
 import { PageProps } from '@/lib/content/types'
-import { ProgramsGrid } from '@/features/programs/programs-grid'
+import { ProgramsGrid } from '@/features/our-works/programs-and-projects/components/programs-grid'
 
 export async function generateStaticParams() {
   const { maxPage } = await getPrograms(1, {})

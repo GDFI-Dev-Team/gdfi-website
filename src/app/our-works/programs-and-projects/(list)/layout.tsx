@@ -22,7 +22,7 @@ export default function ProgramsAndProjectsListLayout({
       <Banner
         title="Core Programs & Projects"
         description="Explore how our initiatives are breathing life back to our community"
-        imgUrl="/nav-item-banner-images/programs.webp"
+        imgUrl="/nav-item-banner-images/programs-and-projects.webp"
       />
       <Suspense>
         <FilterBar className="flex-nowrap justify-end gap-2">

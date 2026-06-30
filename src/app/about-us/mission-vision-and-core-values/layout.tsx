@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: 'Our Purpose',
     description:
       'Discover the heart of our foundation and its drive to heal our environment.',
-    url: '/about-us/our-purpose',
+    url: '/about-us/mission-vision-and-core-values',
     images: [
       {
-        url: '/nav-item-banner-images/our-purpose.webp',
+        url: '/nav-item-banner-images/mission-vision-and-core-values.webp',
         width: 2048,
         height: 1024,
         alt: 'Discover the heart of our foundation and its drive to heal our environment.',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: '/about-us/our-purpose',
+    canonical: '/about-us/mission-vision-and-core-values',
   },
 }
 

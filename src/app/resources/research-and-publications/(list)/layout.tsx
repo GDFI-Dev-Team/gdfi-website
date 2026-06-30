@@ -17,7 +17,7 @@ export default function ResearchAndPublicationsListLayout({
       <Banner
         title="Research & Publications"
         description="Dive into the scientific insights that anchor our conservation strategies"
-        imgUrl="/nav-item-banner-images/publications.webp"
+        imgUrl="/nav-item-banner-images/research-and-publications.webp"
       />
 
       <Suspense>

@@ -35,7 +35,7 @@ export default async function AnnualReportsPage({
       <Banner
         title="Annual Reports"
         description="Browse our tangible impacts through our yearly transparency reports"
-        imgUrl="/nav-item-banner-images/annual-reports.webp"
+        imgUrl="/nav-item-banner-images/annual-and-financial-reports.webp"
       />
 
       <Suspense>

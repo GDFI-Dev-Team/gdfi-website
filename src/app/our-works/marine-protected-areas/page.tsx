@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: 'Marine Protected Areas (MPAs)',
     description:
       'Safeguarding marine biodiversity through community-managed Marine Protected Areas.',
-    url: '/our-works/mpas',
+    url: '/our-works/marine-protected-areas',
     images: [
       {
-        url: '/nav-item-banner-images/mpas.webp',
+        url: '/nav-item-banner-images/marine-protected-areas.webp',
         width: 1650,
         height: 1100,
         alt: 'Marine Protected Areas (MPAs)',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: '/our-works/mpas',
+    canonical: '/our-works/marine-protected-areas',
   },
 }
 
@@ -30,7 +30,7 @@ export default function MpasPage() {
       <Banner
         title="Marine Protected Areas (MPAs)"
         description="Safeguarding marine biodiversity through community-managed Marine Protected Areas"
-        imgUrl="/nav-item-banner-images/mpas.webp"
+        imgUrl="/nav-item-banner-images/marine-protected-areas.webp"
       />
     </>
   )

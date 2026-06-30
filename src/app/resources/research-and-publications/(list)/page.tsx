@@ -1,5 +1,5 @@
 import { getPublications } from '@/lib/content/publications'
-import PublicationResults from '@/features/research/components/pub-results'
+import PublicationResults from '@/features/resources/research-and-publications/components/pub-results'
 
 export default async function PublicationsPage({
   searchParams,

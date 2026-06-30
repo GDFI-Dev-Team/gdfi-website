@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: '/resources/research-and-publications',
     images: [
       {
-        url: '/nav-item-banner-images/publications.webp',
+        url: '/nav-item-banner-images/research-and-publications.webp',
         width: 2048,
         height: 1024,
         alt: 'Dive into the scientific insights that anchor our conservation strategies.',
