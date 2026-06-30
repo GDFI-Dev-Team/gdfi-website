@@ -27,7 +27,9 @@ function programToArticle(program: Program): ArticleContent {
 }
 
 export function generateStaticParams() {
-  return getCollectionMarkdownData<Program>('programs').map((p) => ({
+  return getCollectionMarkdownData<Program>(
+    'our-works/programs-and-projects',
+  ).map((p) => ({
     slug: p.slug,
   }))
 }
@@ -40,7 +42,10 @@ export async function generateMetadata({
   const { slug } = await params
 
   try {
-    const program = getSingleMarkdownData<Program>('programs', `${slug}.md`)
+    const program = getSingleMarkdownData<Program>(
+      'our-works/programs-and-projects',
+      `${slug}.md`,
+    )
     program.slug = slug
     return buildArticleMetadata(
       programToArticle(program),
@@ -61,7 +66,10 @@ export default async function ProgramDetailPage({
 
   let program: Program
   try {
-    program = getSingleMarkdownData<Program>('programs', `${slug}.md`)
+    program = getSingleMarkdownData<Program>(
+      'our-works/programs-and-projects',
+      `${slug}.md`,
+    )
     program.slug = slug
   } catch {
     notFound()

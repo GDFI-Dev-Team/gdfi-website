@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Our Purpose',
+  title: 'Mission, Vision & Core Values',
   description:
     'Discover the heart of our foundation and its drive to heal our environment.',
   openGraph: {
-    title: 'Our Purpose',
+    title: 'Mission, Vision & Core Values',
     description:
       'Discover the heart of our foundation and its drive to heal our environment.',
     url: '/about-us/mission-vision-and-core-values',

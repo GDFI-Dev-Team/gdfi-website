@@ -31,7 +31,9 @@ function byRecency(a: Program, b: Program) {
 }
 
 export function getRecentPrograms(limit = 5): Program[] {
-  const all = getCollectionMarkdownData<Omit<Program, 'slug'>>('programs')
+  const all = getCollectionMarkdownData<Omit<Program, 'slug'>>(
+    'our-works/programs-and-projects',
+  )
   return (all as Program[]).sort(byRecency).slice(0, limit)
 }
 
@@ -43,8 +45,9 @@ export async function getPrograms(
   currentPage: number,
   searchParams: ProgramsSearchParams,
 ) {
-  const allPrograms =
-    getCollectionMarkdownData<Omit<Program, 'slug'>>('programs')
+  const allPrograms = getCollectionMarkdownData<Omit<Program, 'slug'>>(
+    'our-works/programs-and-projects',
+  )
 
   const filteredPrograms = filterCollection<Program>(
     allPrograms,

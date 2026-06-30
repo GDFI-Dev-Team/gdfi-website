@@ -4,7 +4,7 @@ import { getVideosPage } from '@/lib/content/videos'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Video Resources',
+  title: 'Video & Media Resources',
   description: 'Browse all videos from Guiuan Development Foundation Inc.',
 }
 

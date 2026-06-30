@@ -19,7 +19,7 @@ export default function VideoResourcesLayout({
   return (
     <main className="flex-1 flex flex-col bg-foreground/0.02">
       <Banner
-        title="Video Resources"
+        title="Video & Media Resources"
         description="Browse the different videos of Guiuan Development Foundation Inc."
         imgUrl="/nav-item-banner-images/video-and-media-resources.webp"
       />

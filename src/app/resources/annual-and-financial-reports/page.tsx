@@ -15,7 +15,7 @@ export default async function AnnualReportsPage({
 }) {
   const resolvedParams = await searchParams
   const reports = getCollectionMarkdownData<Omit<AnnualReport, 'slug'>>(
-    'resources/annual-reports',
+    'resources/annual-and-financial-reports',
   ).sort((a, b) => Number(b.year) - Number(a.year))
 
   const startYear = (resolvedParams.start_year as string) || ''
@@ -33,7 +33,7 @@ export default async function AnnualReportsPage({
   return (
     <main className="flex-1 flex flex-col bg-foreground/3">
       <Banner
-        title="Annual Reports"
+        title="Annual & Financial Reports"
         description="Browse our tangible impacts through our yearly transparency reports"
         imgUrl="/nav-item-banner-images/annual-and-financial-reports.webp"
       />

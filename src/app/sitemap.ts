@@ -22,7 +22,10 @@ const staticPaths = [
 
 // Slug detail routes
 const collections = [
-  { subfolder: 'programs', basePath: '/our-works/programs-and-projects' },
+  {
+    subfolder: 'our-works/programs-and-projects',
+    basePath: '/our-works/programs-and-projects',
+  },
   { subfolder: 'updates/announcements', basePath: '/updates/announcements' },
   {
     subfolder: 'updates/community-stories',

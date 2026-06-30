@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Annual Reports',
+  title: 'Annual & Financial Reports',
   description:
     'Browse our tangible impacts through our yearly transparency reports.',
   openGraph: {
-    title: 'Annual Reports',
+    title: 'Annual & Financial Reports',
     description:
       'Browse our tangible impacts through our yearly transparency reports.',
     url: '/resources/annual-and-financial-reports',
