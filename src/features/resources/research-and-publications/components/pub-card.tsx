@@ -1,5 +1,5 @@
 import Text from '@/components/ui/text'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, FileText } from 'lucide-react'
 import { cn } from '@/lib/utils/cn-merge'
 import type { Publication } from '@/lib/content/types'
 
@@ -12,7 +12,7 @@ export default function PublicationCard({
   publication,
   index = 0,
 }: PublicationCardProps) {
-  const { title, authors, year, outlet, volume, pages, link } = publication
+  const { title, authors, year, outlet, volume, pages, link, pdf } = publication
 
   // Citation line: "Outlet · 14(11) · 2775–2794" — skip any missing parts.
   const citation = [outlet, volume, pages].filter(Boolean).join(' · ')
@@ -53,22 +53,43 @@ export default function PublicationCard({
         )}
       </div>
 
-      {link && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`View article: ${title}`}
-          className={cn(
-            'inline-flex shrink-0 items-center gap-1.5 self-start rounded-lg py-1.5 text-btn-primary outline-none sm:px-3',
-            'transition-colors hover:bg-btn-primary/8 focus-visible:ring-2 focus-visible:ring-btn-primary/50',
+      {(link || pdf) && (
+        <div className="flex shrink-0 flex-col items-start gap-1 self-start">
+          {pdf && (
+            <a
+              href={pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View PDF: ${title}`}
+              className={cn(
+                'inline-flex items-center gap-1.5 rounded-lg py-1.5 text-btn-primary outline-none sm:px-3',
+                'transition-colors hover:bg-btn-primary/8 focus-visible:ring-2 focus-visible:ring-btn-primary/50',
+              )}
+            >
+              <FileText size={14} aria-hidden="true" />
+              <Text size="xs" className="font-medium">
+                PDF
+              </Text>
+            </a>
           )}
-        >
-          <Text size="xs" className="font-medium">
-            View article
-          </Text>
-          <ExternalLink size={14} aria-hidden="true" />
-        </a>
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View article: ${title}`}
+              className={cn(
+                'inline-flex items-center gap-1.5 rounded-lg py-1.5 text-btn-primary outline-none sm:px-3',
+                'transition-colors hover:bg-btn-primary/8 focus-visible:ring-2 focus-visible:ring-btn-primary/50',
+              )}
+            >
+              <ExternalLink size={14} aria-hidden="true" />
+              <Text size="xs" className="font-medium">
+                Article
+              </Text>
+            </a>
+          )}
+        </div>
       )}
     </li>
   )

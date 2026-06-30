@@ -27,7 +27,7 @@ collections:
   - name: annual-reports
     label: Annual Reports
     label_singular: Annual Report
-    folder: content/resources/annual-reports
+    folder: content/resources/annual-and-financial-reports
     fields:
       - name: title
         label: Title 
@@ -57,7 +57,7 @@ collections:
 
   - name: publications
     label: Research & Publications
-    folder: content/research/publications
+    folder: content/resources/research-and-publications
     create: true
     fields:
       - name: title
@@ -111,7 +111,7 @@ collections:
   - name: programs
     label: Programs & Projects
     label_singular: Program / Project
-    folder: content/programs
+    folder: content/our-works/programs-and-projects
     fields:
       - name: title
         label: Title
@@ -270,7 +270,7 @@ collections:
   - name: video-resources
     label: Video Resources
     label_singular: Video Resource
-    folder: content/resources/video-resources
+    folder: content/resources/video-and-media-resources
     fields: 
       - label: Title
         name: title
@@ -294,7 +294,7 @@ collections:
   - name: org-structures
     label: Org Structures
     label_singular: Org Structure
-    folder: content/about-us/org-structures
+    folder: content/about-us/organizational-structure
     create: true
     identifier_field: name
     fields:
