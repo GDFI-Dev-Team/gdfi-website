@@ -11,7 +11,7 @@ import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 
-export const Hero = ({ programs }: { programs: Program[] }) => {
+export default function Hero({ programs }: { programs: Program[] }) {
   // Duplicate the first slide so the track can loop seamlessly back to the start.
   const slides = programs.length > 1 ? [...programs, programs[0]] : programs
   const [index, setIndex] = useState(0)

@@ -6,7 +6,7 @@ import Text from '@/components/ui/text'
 import { partners } from '../data/partners'
 import { cn } from '@/lib/utils/cn-merge'
 
-const Partners = () => {
+export default function WorkingTogether() {
   return (
     <Section
       aria-labelledby="partners-heading"
@@ -80,5 +80,3 @@ const Partners = () => {
     </Section>
   )
 }
-
-export default Partners

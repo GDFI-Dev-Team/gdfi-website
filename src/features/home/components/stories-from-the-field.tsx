@@ -7,12 +7,11 @@ import { buttonBase, buttonVariants } from '@/components/ui/button'
 import { getCommunityStories } from '@/lib/content/community-stories'
 import { cn } from '@/lib/utils/cn-merge'
 
-export default async function Stories() {
+export default async function StoriesFromTheField() {
   const { items } = await getCommunityStories(1, {})
   const stories = items.slice(0, 3)
 
   if (stories.length === 0) return null
-
   return (
     <Section
       aria-labelledby="stories-heading"

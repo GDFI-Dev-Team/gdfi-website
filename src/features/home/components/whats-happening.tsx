@@ -102,7 +102,7 @@ const UpdateCard = ({
   )
 }
 
-export default async function OurLatestUpdates() {
+export default async function WhatsHapenning() {
   const { items } = await getAnnouncements(1, {})
   const updates = items.slice(0, 5)
   const [featured, ...rest] = updates

@@ -4,7 +4,7 @@ import Text from '@/components/ui/text'
 import VideoCarousel from './videos-carousel'
 import { getAllVideos } from '@/lib/content/videos'
 
-export default function FeaturedInterviews() {
+export default function VoicesFromTheCoast() {
   const featuredVideos = getAllVideos().filter((v) => v.featured)
   if (featuredVideos.length === 0) return null
   return (

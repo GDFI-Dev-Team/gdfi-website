@@ -40,7 +40,7 @@ const pillars = [
   },
 ]
 
-export default function OurCorePillars() {
+export default function WhatWeDo() {
   return (
     <Section sectionClassName="bg-surface">
       <div className="mb-8 flex flex-col items-center text-center md:mb-12">
