@@ -6,14 +6,14 @@ import WhatsHapenning from '@/features/home/components/whats-happening'
 import VoicesFromTheCoast from '@/features/home/components/voices-from-the-coast'
 import Partners from '@/features/home/components/working-together'
 import CallToAction from '@/features/home/components/call-to-action'
-import { getRecentPrograms } from '@/lib/content/programs'
+import { getFeaturedPrograms } from '@/lib/content/programs'
 
 export default function Home() {
-  const recentPrograms = getRecentPrograms(5)
+  const featuredPrograms = getFeaturedPrograms(5)
 
   return (
     <>
-      <Hero programs={recentPrograms} />
+      <Hero programs={featuredPrograms} />
       <OurImpact />
       <OurCorePillars />
       <StoriesFromTheField />

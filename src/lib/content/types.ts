@@ -31,6 +31,8 @@ export interface ArticleContent extends BaseContent {
 
 export interface Program extends BaseContent {
   status: string
+  /** When true, the program appears in the homepage hero slideshow. */
+  featured?: boolean
   tag: string
   'short-description': string
   'featured-img': string

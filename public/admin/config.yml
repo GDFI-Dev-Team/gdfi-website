@@ -52,7 +52,7 @@ collections:
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
-            prefix: gdfi-website-uploads/annual-reports
+            prefix: gdfi-website-uploads/annual-and-financial-reports
           default: false
 
   - name: publications
@@ -105,7 +105,7 @@ collections:
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
-            prefix: gdfi-website-uploads/publications
+            prefix: gdfi-website-uploads/research-and-publications
           default: false
 
   - name: programs
@@ -131,6 +131,11 @@ collections:
         label: Status
         widget: select
         options: ['Completed', 'Active', 'Discontinued']
+      - name: featured
+        label: Featured
+        widget: boolean
+        default: false
+        hint: Toggle to feature this program in the homepage hero slideshow.
       - name: tag
         label: Tag
         widget: string
@@ -151,6 +156,14 @@ collections:
         widget: file
         max: 1
         accept: "image/jpeg,.jpg,.jpeg,image/png,.png,image/webp,.webp"
+        media_libraries:
+          cloudflare_r2:
+            access_key_id: 9c671155033e705d9900c1857e7b81cc
+            bucket: sveltia-media
+            account_id: ffa0678267bca3257f3209173022c26f
+            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            prefix: gdfi-website-uploads/programs-and-projects
+          default: false
       - name: body
         label: Content
         widget: markdown
@@ -200,17 +213,27 @@ collections:
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f 
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
-            prefix: gdfi-website-uploads/web-assets
+            prefix: gdfi-website-uploads/announcements
           default: false
-      - name: body 
+      - name: body
         label: Body
-        widget: text
+        widget: markdown
         default: |
+          ## Overview
+
           Write a short, attention-grabbing opening line that restates or expands on the title.
+
+          ## What Happened
 
           Give the context: what happened, who was involved, and why it matters to GDFI's mission.
 
-          Share any key details, quotes, or numbers that support the announcement.
+          ## Key Details
+
+          - Detail, quote, or number one
+          - Detail, quote, or number two
+          - Detail, quote, or number three
+
+          ## What's Next
 
           End with a call to action or forward-looking note (e.g. how to get involved, what's next).
 
@@ -253,17 +276,25 @@ collections:
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f
             public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
-            prefix: gdfi-website-uploads/web-assets
+            prefix: gdfi-website-uploads/community-stories
           default: false
       - name: body
         label: Body
-        widget: text
+        widget: markdown
         default: |
+          ## The Story
+
           Open with a short, vivid line that draws the reader into the story.
+
+          ## Who & Where
 
           Introduce the community member(s) and the place at the heart of this story.
 
+          ## What Changed
+
           Share what changed, what was learned, or what was achieved — and why it matters to GDFI's mission.
+
+          ## Looking Ahead
 
           Close with a forward-looking note or a call to action.
 

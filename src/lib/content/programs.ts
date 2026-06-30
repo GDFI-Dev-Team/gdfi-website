@@ -38,6 +38,21 @@ export function getRecentPrograms(limit = 5): Program[] {
 }
 
 /**
+ * Programs flagged `featured: true` in the CMS — drives the homepage hero
+ * slideshow. Falls back to the most recent programs if none are flagged, so the
+ * hero is never empty. Ordered by recency, capped at `limit`.
+ */
+export function getFeaturedPrograms(limit = 5): Program[] {
+  const all = getCollectionMarkdownData<Omit<Program, 'slug'>>(
+    'our-works/programs-and-projects',
+  ) as Program[]
+
+  const featured = all.filter((program) => program.featured).sort(byRecency)
+
+  return (featured.length > 0 ? featured : all.sort(byRecency)).slice(0, limit)
+}
+
+/**
  * Shared by the page-1 route and /page/[page] route so filtering, pagination,
  * and query-string preservation stay in sync between them.
  */
