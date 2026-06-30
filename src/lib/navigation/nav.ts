@@ -8,15 +8,15 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   {
     label: 'About Us',
-    href: '/about-us/mission-vision-corevalues',
+    href: '/about-us/mission-vision-and-core-values',
     children: [
       {
         label: 'Overview & History',
-        href: '/about-us/overview-history',
+        href: '/about-us/overview-and-history',
       },
       {
         label: 'Mission, Vision & Core Values',
-        href: '/about-us/mission-vision-corevalues',
+        href: '/about-us/mission-vision-and-core-values',
       },
       {
         label: 'Organizational Structure',
@@ -34,7 +34,7 @@ export const navLinks: NavLink[] = [
       },
       {
         label: 'Marine Protected Areas (MPAs)',
-        href: '/our-works/mpas',
+        href: '/our-works/marine-protected-areas',
       },
     ],
   },
@@ -56,25 +56,12 @@ export const navLinks: NavLink[] = [
       },
       {
         label: 'Annual & Financial Reports',
-        href: '/resources/annual-reports',
-      },
-      { label: 'Video Resources', href: '/resources/video-resources' },
-    ],
-  },
-  { label: 'Awards & Recognitions', href: '/awards-and-recognitions' },
-  {
-    label: 'Get Involved',
-    href: '/get-involved/careers-and-internships',
-    children: [
-      {
-        label: 'Careers & Internships',
-        href: '/get-involved/careers-and-internships',
+        href: '/resources/annual-and-financial-reports',
       },
       {
-        label: 'Volunteer Opportunities',
-        href: '/get-involved/volunteer-opportunities',
+        label: 'Video & Media Resources',
+        href: '/resources/video-and-media-resources',
       },
-      { label: 'Contact Us', href: '/get-involved/contact-us' },
     ],
   },
 ]

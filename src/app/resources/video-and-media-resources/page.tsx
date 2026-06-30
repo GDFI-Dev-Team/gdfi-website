@@ -1,5 +1,5 @@
 import Heading from '@/components/ui/heading'
-import VideoGallery from '@/features/resources/videos/video-gallery'
+import VideoGallery from '@/features/resources/video-and-media-resources/components/video-gallery'
 import { getVideosPage } from '@/lib/content/videos'
 import { Metadata } from 'next'
 

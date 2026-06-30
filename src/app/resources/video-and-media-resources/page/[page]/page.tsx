@@ -1,5 +1,5 @@
 import Heading from '@/components/ui/heading'
-import VideoGallery from '@/features/resources/videos/video-gallery'
+import VideoGallery from '@/features/resources/video-and-media-resources/components/video-gallery'
 import { getAllVideos, getVideosPage } from '@/lib/content/videos'
 import { paginateItems } from '@/lib/content/pagination'
 import { CONTENT_LIMITS } from '@/lib/content/pagination'

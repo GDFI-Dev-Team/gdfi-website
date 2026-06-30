@@ -6,7 +6,7 @@ import FilterBar, {
 } from '@/components/ui/filter-bar'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
-import FeaturedVideoSlideshow from '@/features/resources/videos/featured-video-slideshow'
+import FeaturedVideoSlideshow from '@/features/resources/video-and-media-resources/components/featured-video-slideshow'
 import { getAllVideos } from '@/lib/content/videos'
 
 export default function VideoResourcesLayout({
