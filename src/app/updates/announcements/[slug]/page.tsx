@@ -4,6 +4,7 @@ import ArticleDetail from '@/components/ui/article-detail'
 import {
   getSingleMarkdownData,
   getCollectionMarkdownData,
+  markdownToHtml,
 } from '@/lib/content/markdown'
 import { ArticleContent } from '@/lib/content/types'
 import { buildArticleMetadata } from '@/lib/content/metadata'
@@ -55,12 +56,15 @@ export default async function AnnouncementPage({
     notFound()
   }
 
+  const bodyHtml = await markdownToHtml(article.body)
+
   return (
     <ArticleDetail
       article={article}
       basePath="/updates/announcements"
       backLabel="Back to Announcements"
-      showDate
+      variant="announcements"
+      bodyHtml={bodyHtml}
     />
   )
 }

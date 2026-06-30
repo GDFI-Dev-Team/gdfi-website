@@ -8,6 +8,18 @@ type ProgramsSearchParams = {
   [key: string]: string | string[] | undefined
 }
 
+const STATUS_STYLES: Record<string, string> = {
+  completed: 'bg-status-completed',
+  active: 'bg-status-ongoing',
+  discontinued: 'bg-status-discontinued',
+  'on going': 'bg-status-discontinued',
+}
+
+/** Role-token background class for a program's status pill. */
+export function statusClass(status: string): string {
+  return STATUS_STYLES[status.toLowerCase()] ?? 'bg-primary-600'
+}
+
 function getParam(params: ProgramsSearchParams, key: string) {
   return typeof params[key] === 'string' ? (params[key] as string) : undefined
 }

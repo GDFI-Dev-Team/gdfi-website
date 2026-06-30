@@ -8,6 +8,7 @@ import { buttonBase, buttonVariants } from '@/components/ui/button'
 import { getAnnouncements } from '@/lib/content/announcements'
 import { ArticleContent } from '@/lib/content/types'
 import { formatEdgeDate } from '@/lib/utils/date'
+import { toPlainText } from '@/lib/content/markdown'
 import { cn } from '@/lib/utils/cn-merge'
 
 const UpdateCard = ({
@@ -21,7 +22,7 @@ const UpdateCard = ({
 }) => {
   const imageSrc =
     update.featured_images?.[0] || '/nav-item-banner-images/announcements.webp'
-  const previewText = update.excerpt || update.body
+  const previewText = update.excerpt?.trim() || toPlainText(update.body)
 
   return (
     <article

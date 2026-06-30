@@ -12,6 +12,7 @@ export default function CommunityStoriesCard({
     <ArticleCard
       article={article}
       basePath="/updates/community-stories"
+      variant="stories"
       fallbackImgUrl="/nav-item-banner-images/community-stories.webp"
       className={className}
     />

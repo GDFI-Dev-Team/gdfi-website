@@ -6,7 +6,7 @@ import { useFilterBar, filterInputClasses } from '@/components/ui/filter-bar'
 import { cn } from '@/lib/utils/cn-merge'
 
 export default function DateFilter() {
-  const { searchParams, updateSearchParam, clearFilters } = useFilterBar()
+  const { searchParams, updateSearchParam } = useFilterBar()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -81,15 +81,6 @@ export default function DateFilter() {
               className={cn(filterInputClasses, 'w-full')}
             />
           </div>
-          {hasDates && (
-            <button
-              type="button"
-              onClick={() => clearFilters(['start_date', 'end_date'])}
-              className="mt-3 text-xs font-medium text-btn-primary hover:underline"
-            >
-              Clear dates
-            </button>
-          )}
         </div>
       )}
     </div>

@@ -4,6 +4,7 @@ import ArticleDetail from '@/components/ui/article-detail'
 import {
   getSingleMarkdownData,
   getCollectionMarkdownData,
+  markdownToHtml,
 } from '@/lib/content/markdown'
 import { ArticleContent } from '@/lib/content/types'
 import { buildArticleMetadata } from '@/lib/content/metadata'
@@ -55,11 +56,15 @@ export default async function CommunityStoryPage({
     notFound()
   }
 
+  const bodyHtml = await markdownToHtml(article.body)
+
   return (
     <ArticleDetail
       article={article}
       basePath="/updates/community-stories"
       backLabel="Back to Community Stories"
+      variant="stories"
+      bodyHtml={bodyHtml}
     />
   )
 }
