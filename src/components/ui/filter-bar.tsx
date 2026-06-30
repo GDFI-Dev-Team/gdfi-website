@@ -167,6 +167,7 @@ export function ClearFilters() {
   const filterKeys = [
     'q',
     'category',
+    'tag',
     'start_date',
     'end_date',
     'start_year',

@@ -75,7 +75,7 @@ export default function ArticleDetail({
                 </span>
               )}
               {categories[0] && (
-                <Tag label={categories[0]} variant="article" tone="neutral" />
+                <Tag label={categories[0]} variant="article" tone="category" />
               )}
             </div>
           ) : categories.length > 0 ? (

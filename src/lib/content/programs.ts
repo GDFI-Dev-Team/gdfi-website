@@ -4,6 +4,26 @@ import { filterCollection } from '@/lib/content/filter'
 import { Program } from './types'
 import { CONTENT_LIMITS } from '@/lib/content/pagination'
 
+type NamedEntry = { name: string }
+
+/** Sorted, deduped list of names from a small name-only relation collection. */
+function getNames(subfolder: string): string[] {
+  return getCollectionMarkdownData<NamedEntry>(subfolder)
+    .map((entry) => entry.name)
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b))
+}
+
+/** Program tag options — maintained in the CMS `program-categories` collection. */
+export function getProgramCategories(): string[] {
+  return getNames('our-works/program-categories')
+}
+
+/** Program status options — maintained in the CMS `program-statuses` collection. */
+export function getProgramStatuses(): string[] {
+  return getNames('our-works/program-statuses')
+}
+
 type ProgramsSearchParams = {
   [key: string]: string | string[] | undefined
 }
@@ -64,6 +84,10 @@ export async function getPrograms(
     'our-works/programs-and-projects',
   )
 
+  // `category` filters by status; `tag` is a separate axis filtering by the
+  // program's category pill. Status search-matching is handled by filterCollection.
+  const tag = getParam(searchParams, 'tag')?.toLowerCase()
+
   const filteredPrograms = filterCollection<Program>(
     allPrograms,
     {
@@ -71,7 +95,9 @@ export async function getPrograms(
       category: getParam(searchParams, 'category'),
     },
     (program) => [program.status],
-  ).sort(byRecency)
+  )
+    .filter((program) => !tag || program.tag?.toLowerCase() === tag)
+    .sort(byRecency)
 
   const { items, totalPages } = paginateItems(
     filteredPrograms,
@@ -87,7 +113,7 @@ export async function getPrograms(
   )
 
   const queryBackup = new URLSearchParams()
-  for (const key of ['q', 'category']) {
+  for (const key of ['q', 'category', 'tag']) {
     const value = getParam(searchParams, key)
     if (value) queryBackup.set(key, value)
   }

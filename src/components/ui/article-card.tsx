@@ -113,7 +113,7 @@ export default function ArticleCard({
               </span>
             )}
             {categories[0] && (
-              <Tag label={categories[0]} variant="card" tone="neutral" />
+              <Tag label={categories[0]} variant="card" tone="category" />
             )}
           </div>
         ) : (

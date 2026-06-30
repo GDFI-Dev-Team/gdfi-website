@@ -1,6 +1,6 @@
 import Text from '@/components/ui/text'
 import { cn } from '@/lib/utils/cn-merge'
-import { categoryColor } from '@/features/updates/community-stories/data/category-colors'
+import { categoryColor } from '@/lib/utils/category-colors'
 
 // Sizing variants:
 //   card    — compact pill for use inside cards (community stories, programs)

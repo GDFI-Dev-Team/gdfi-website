@@ -129,8 +129,10 @@ collections:
         hint: Used to order entries — the 5 most recent are featured in the hero.
       - name: status
         label: Status
-        widget: select
-        options: ['Completed', 'Active', 'Discontinued']
+        widget: relation
+        collection: program-statuses
+        value_field: name
+        hint: Pulled from Program Statuses — manage the list in that collection
       - name: featured
         label: Featured
         widget: boolean
@@ -138,9 +140,11 @@ collections:
         hint: Toggle to feature this program in the homepage hero slideshow.
       - name: tag
         label: Tag
-        widget: string
-        hint: eg. Education
+        widget: relation
+        collection: program-categories
+        value_field: name
         required: false
+        hint: Pulled from Program Categories — manage the list in that collection
       - name: partners
         label: Partners / Type
         widget: text
@@ -185,6 +189,30 @@ collections:
           ## How to Get Involved
 
           Explain how someone (a donor, volunteer, or participant) can support or join this program.
+
+  - name: program-categories
+    label: Program Categories
+    label_singular: Program Category
+    folder: content/our-works/program-categories
+    create: true
+    identifier_field: name
+    fields:
+      - name: name
+        label: Name
+        widget: string
+        hint: ex. Governance, Conservation, Research, MPA, Livelihood
+
+  - name: program-statuses
+    label: Program Statuses
+    label_singular: Program Status
+    folder: content/our-works/program-statuses
+    create: true
+    identifier_field: name
+    fields:
+      - name: name
+        label: Name
+        widget: string
+        hint: ex. Active, Completed, Discontinued
 
   - name: announcements
     label: Announcements
