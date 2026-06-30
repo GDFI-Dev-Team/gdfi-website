@@ -13,14 +13,15 @@ function OrgSection({
   children: React.ReactNode
 }) {
   return (
-    <div className={tinted ? 'bg-foreground/[0.02]' : undefined}>
-      <Section maxWidth="6xl" sectionClassName="py-14 md:py-20">
-        <div className="mb-10 text-center md:mb-14">
-          <Heading level={2}>{title}</Heading>
-        </div>
-        {children}
-      </Section>
-    </div>
+    <Section
+      maxWidth="6xl"
+      sectionClassName={tinted ? 'bg-foreground/[0.02]' : undefined}
+    >
+      <div className="mb-10 text-center md:mb-14">
+        <Heading level={2}>{title}</Heading>
+      </div>
+      {children}
+    </Section>
   )
 }
 

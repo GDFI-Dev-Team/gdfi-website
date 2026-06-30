@@ -38,7 +38,7 @@ export default function Banner({
         <Heading
           level={1}
           className={cn(
-            'max-w-4xl text-balance text-3xl text-text-standard leading-tight transition-colors duration-300 ease-[ease] md:text-4xl lg:text-6xl',
+            'text-balance text-3xl text-text-standard leading-tight transition-colors duration-300 ease-[ease] md:text-4xl lg:text-6xl',
             titleClassName,
           )}
         >

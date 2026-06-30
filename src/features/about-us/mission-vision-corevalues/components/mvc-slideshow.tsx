@@ -1,13 +1,13 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils/cn-merge'
+import Image from 'next/image'
 
 const AUTO_ADVANCE_MS = 6000
 
-export default function MissionSlideshow({
+export default function MVCSlideshow({
   images,
   alt = '',
   className,

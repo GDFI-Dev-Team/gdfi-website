@@ -26,9 +26,6 @@ export const GOALS = [
   },
 ]
 
-export const GOALS_OUTCOME =
-  'Then eventually, this will lead towards sustainability of income and diversification of livelihoods in the community.'
-
 export const CORE_VALUES = [
   {
     label: 'Participation & partnership',

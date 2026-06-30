@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/about-us',
-        destination: '/about-us/our-purpose',
+        destination: '/about-us/overview-history',
         permanent: false,
       },
       {
