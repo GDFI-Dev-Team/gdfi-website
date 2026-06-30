@@ -3,25 +3,22 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { org } from '@/lib/navigation/nav'
 
-export default function StatPage() {
-  const years = new Date().getFullYear() - org.founded
-
+export default function OurImpact() {
   const stats = [
-    { value: `${years}+`, label: 'Years of Legacy' },
+    { value: `35+`, label: 'Years of Legacy' },
     { value: '7', label: 'Coastal Municipalities' },
-    { value: '145', label: 'Hectares of Mangroves Protected' },
-    { value: '32', label: 'Locally Managed MPAs' },
+    { value: '18', label: 'Hectares of Mangroves Protected' },
+    { value: '25', label: 'Locally Managed MPAs' },
   ]
 
   return (
     <Section sectionClassName="py-12 md:py-16">
       <div className="mb-8 flex flex-col items-center text-center md:mb-12">
         <Text
-          size="sm"
+          size="lg"
           transform="uppercase"
-          className="mb-2 tracking-widest text-accent"
+          className="mb-2 tracking-widest text-accent font-semibold"
         >
           Our Impact
         </Text>

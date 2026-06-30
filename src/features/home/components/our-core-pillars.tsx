@@ -42,49 +42,42 @@ const pillars = [
 
 export default function OurCorePillars() {
   return (
-    <section className="bg-surface">
-      <Section divClassName="flex flex-col gap-8 md:flex-row md:items-center md:gap-12 lg:gap-20">
-        <div className="text-center md:w-1/5 md:text-right">
-          <Text
-            size="sm"
-            transform="uppercase"
-            className="mb-2 tracking-widest text-accent md:mb-3"
-          >
-            What we do
-          </Text>
-          <Heading
-            level={2}
-            className="text-xl leading-[1.1] md:text-3xl lg:text-4xl"
-          >
-            Our <br className="hidden md:inline" />
-            Core <br className="hidden md:inline" />
-            Pillars
-          </Heading>
-        </div>
+    <Section sectionClassName="bg-surface">
+      <div className="mb-8 flex flex-col items-center text-center md:mb-12">
+        <Text
+          size="lg"
+          transform="uppercase"
+          className="mb-2 tracking-widest text-accent font-semibold"
+        >
+          What we do
+        </Text>
+        <Heading level={2} className="text-xl md:text-3xl lg:text-4xl">
+          Our Core Pillars
+        </Heading>
+      </div>
 
-        <div className="flex flex-1 flex-col gap-8 md:gap-12">
-          {pillars.map((pillar) => (
-            <div
-              key={pillar.title}
-              className="flex items-center gap-4 md:gap-6"
-            >
-              <span
-                aria-hidden="true"
-                className="size-24 shrink-0 text-foreground sm:size-50 md:size-35 [&>svg]:block [&>svg]:size-full"
-                dangerouslySetInnerHTML={{ __html: pillar.icon }}
-              />
-              <div className="min-w-0">
-                <Heading level={4} className="text-base md:text-xl">
-                  {pillar.title}
-                </Heading>
-                <Text className="mt-1 text-xs text-foreground/70 md:mt-2 md:text-base">
-                  {pillar.desc}
-                </Text>
-              </div>
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:gap-10">
+        {pillars.map((pillar) => (
+          <div
+            key={pillar.title}
+            className="group flex flex-col items-center rounded-2xl border border-border p-6 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg md:p-8"
+          >
+            <span
+              aria-hidden="true"
+              className="flex size-16 shrink-0 items-center justify-center rounded-full bg-accent/30 text-foreground/30 transition-colors duration-200 md:size-20 [&>svg]:block [&>svg]:size-9 md:[&>svg]:size-11"
+              dangerouslySetInnerHTML={{ __html: pillar.icon }}
+            />
+            <div className="mt-4 min-w-0 md:mt-5">
+              <Heading level={4} className="text-base md:text-xl">
+                {pillar.title}
+              </Heading>
+              <Text className="mt-2 text-sm text-foreground/70 md:text-base">
+                {pillar.desc}
+              </Text>
             </div>
-          ))}
-        </div>
-      </Section>
-    </section>
+          </div>
+        ))}
+      </div>
+    </Section>
   )
 }

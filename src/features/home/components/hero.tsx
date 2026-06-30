@@ -1,15 +1,15 @@
 'use client'
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import Section from '@/components/ui/section'
-import Heading from '@/components/ui/heading'
-import Text from '@/components/ui/text'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils/cn-merge'
 import { RightUpCurve } from './layout-shapes'
 import { Program } from '@/lib/content/types'
+import Image from 'next/image'
+import Link from 'next/link'
+import Section from '@/components/ui/section'
+import Heading from '@/components/ui/heading'
+import Text from '@/components/ui/text'
 
 export const Hero = ({ programs }: { programs: Program[] }) => {
   // Duplicate the first slide so the track can loop seamlessly back to the start.
@@ -67,7 +67,7 @@ export const Hero = ({ programs }: { programs: Program[] }) => {
 
   return (
     <Section
-      sectionClassName="relative isolate flex min-h-[80svh] overflow-hidden"
+      sectionClassName="relative isolate flex min-h-[70svh] overflow-hidden pt-20 md:min-h-[80svh] md:pt-28 lg:pt-32"
       divClassName="flex w-full flex-col justify-center gap-8"
       aria-label="Hero section"
     >
@@ -113,14 +113,6 @@ export const Hero = ({ programs }: { programs: Program[] }) => {
           key={active.slug}
           className="relative z-30 flex max-w-3xl flex-col gap-5"
         >
-          {active.tag && (
-            <Text
-              size="sm"
-              className="animate-fade-up font-semibold uppercase tracking-wider text-text-standard/80"
-            >
-              {active.tag}
-            </Text>
-          )}
           <Heading
             level={1}
             className="animate-fade-up text-2xl text-text-standard leading-tight transition-colors duration-300 ease-[ease] [animation-delay:100ms] md:text-4xl lg:text-6xl"

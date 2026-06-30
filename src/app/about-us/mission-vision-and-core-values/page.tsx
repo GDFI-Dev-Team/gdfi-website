@@ -1,6 +1,6 @@
-import { MissionVisionCoreValues } from '@/features/about-us/mission-vision-corevalues/components/mission-vision'
-import { CoreValues } from '@/features/about-us/mission-vision-corevalues/components/core-values'
-import { Goals } from '@/features/about-us/mission-vision-corevalues/components/goals'
+import { MissionVisionCoreValues } from '@/features/about-us/mission-vision-and-core-values/components/mission-vision'
+import { CoreValues } from '@/features/about-us/mission-vision-and-core-values/components/core-values'
+import { Goals } from '@/features/about-us/mission-vision-and-core-values/components/goals'
 import Banner from '@/components/ui/banner'
 
 export default function OurPurposePage() {

@@ -15,9 +15,9 @@ export default function FeaturedInterviews() {
     >
       <div className="flex flex-col items-center gap-3 text-center">
         <Text
-          size="sm"
+          size="lg"
           transform="uppercase"
-          className="tracking-widest text-accent"
+          className="tracking-widest text-accent font-semibold"
         >
           Voices from the coast
         </Text>
