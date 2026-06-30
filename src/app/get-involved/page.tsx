@@ -2,27 +2,23 @@ import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import CareersSection from '@/features/get-involved/components/careers-section'
 import SupportOptions from '@/features/get-involved/components/support-options'
 
-export default function SupportUsPage() {
+export default function GetInvolvedPage() {
   return (
-    <main className="flex-1 flex flex-col bg-foreground/0.02">
+    <>
       <Banner
-        title="Support Us"
-        description="Stand with us to secure a sustainable future for our community and the environment"
-        imgUrl="/nav-item-banner-images/support-us.webp"
+        title="Get Involved"
+        description="Join our journey to protect and restore the marine heritage of Eastern Visayas"
+        imgUrl="/nav-item-banner-images/support-us.jpeg"
       />
+
+      <CareersSection />
 
       <Section sectionClassName="py-16 md:py-24">
         <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
-          <Text
-            size="sm"
-            transform="uppercase"
-            className="tracking-widest text-accent font-semibold"
-          >
-            Make an impact
-          </Text>
-          <Heading level={2}>Every contribution makes a difference</Heading>
+          <Heading level={2}>Support Us</Heading>
           <Text size="lg" className="text-foreground/70">
             Whether through financial support or in-kind contributions, your
             generosity allows us to continue our ridge-to-reef conservation
@@ -32,6 +28,6 @@ export default function SupportUsPage() {
 
         <SupportOptions />
       </Section>
-    </main>
+    </>
   )
 }
