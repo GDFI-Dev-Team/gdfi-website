@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/about-us',
-        destination: '/about-us/mission-vision',
+        destination: '/about-us/overview-and-history',
         permanent: false,
       },
       {
@@ -32,12 +32,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/resources',
-        destination: '/resources/annual-reports',
+        destination: '/resources/research-and-publications',
         permanent: false,
       },
       {
-        source: '/programs/page',
-        destination: '/programs',
+        source: '/resources/research-and-publications/page',
+        destination: '/resources/research-and-publications',
+        permanent: false,
+      },
+      {
+        source: '/our-works',
+        destination: '/our-works/programs-and-projects',
+        permanent: false,
+      },
+      {
+        source: '/our-works/programs-and-projects/page',
+        destination: '/our-works/programs-and-projects',
         permanent: false,
       },
     ]

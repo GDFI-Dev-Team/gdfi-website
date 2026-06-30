@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: '/support-us',
     images: [
       {
-        url: '/nav-item-banner-images/support-us.jpeg',
+        url: '/nav-item-banner-images/support-us.webp',
         width: 1280,
         height: 854,
         alt: 'Stand with us to secure a sustainable future for our community and the environment.',

@@ -22,10 +22,14 @@ export default function SelectFilter({
   const { searchParams, updateSearchParam } = useFilterBar()
 
   return (
-    <div className={cn('relative w-full sm:w-auto shrink-0', className)}>
+    <div
+      className={cn(
+        'relative min-w-0 flex-1 sm:w-auto sm:flex-none',
+        className,
+      )}
+    >
       <ChevronDown
-        className="absolute right-3 top-1/2 -translate-y-1/2 text-foreground/40 pointer-events-none"
-        size={18}
+        className="absolute right-3 top-1/2 size-4 -translate-y-1/2 text-foreground/40 pointer-events-none md:right-4 md:size-[18px]"
         aria-hidden="true"
       />
       <select
@@ -34,7 +38,7 @@ export default function SelectFilter({
         onChange={(e) => updateSearchParam(paramKey, e.target.value)}
         className={cn(
           filterInputClasses,
-          'w-full appearance-none cursor-pointer pr-10',
+          'w-full appearance-none cursor-pointer pr-9 md:pr-11',
         )}
       >
         <option value="all" disabled>

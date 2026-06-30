@@ -22,7 +22,7 @@ export default function Heading({
   id,
 }: HeadingProps) {
   const baseClasses = headingStyles[level]
-  const combinedClasses = cn(baseClasses, className)
+  const combinedClasses = cn('font-display', baseClasses, className)
 
   const HeadingTag = `h${level}`
 

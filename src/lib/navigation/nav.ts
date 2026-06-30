@@ -8,15 +8,15 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   {
     label: 'About Us',
-    href: '/about-us/mission-vision',
+    href: '/about-us/mission-vision-and-core-values',
     children: [
       {
-        label: 'Mission & Vision',
-        href: '/about-us/mission-vision',
+        label: 'Overview & History',
+        href: '/about-us/overview-and-history',
       },
       {
-        label: 'Overview & History',
-        href: '/about-us/overview-history',
+        label: 'Mission, Vision & Core Values',
+        href: '/about-us/mission-vision-and-core-values',
       },
       {
         label: 'Organizational Structure',
@@ -24,8 +24,20 @@ export const navLinks: NavLink[] = [
       },
     ],
   },
-  { label: 'Programs', href: '/programs' },
-  { label: 'Research', href: '/research' },
+  {
+    label: 'Our Works',
+    href: '/our-works/programs-and-projects',
+    children: [
+      {
+        label: 'Core Programs & Projects',
+        href: '/our-works/programs-and-projects',
+      },
+      {
+        label: 'Marine Protected Areas (MPAs)',
+        href: '/our-works/marine-protected-areas',
+      },
+    ],
+  },
   {
     label: 'Updates',
     href: '/updates/announcements',
@@ -36,10 +48,20 @@ export const navLinks: NavLink[] = [
   },
   {
     label: 'Resources',
-    href: '/resources',
+    href: '/resources/research-and-publications',
     children: [
-      { label: 'Annual Reports', href: '/resources/annual-reports' },
-      { label: 'Video Resources', href: '/resources/video-resources' },
+      {
+        label: 'Research & Publications',
+        href: '/resources/research-and-publications',
+      },
+      {
+        label: 'Annual & Financial Reports',
+        href: '/resources/annual-and-financial-reports',
+      },
+      {
+        label: 'Video & Media Resources',
+        href: '/resources/video-and-media-resources',
+      },
     ],
   },
 ]

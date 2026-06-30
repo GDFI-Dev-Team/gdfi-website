@@ -7,13 +7,14 @@ const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
 // Pagination views left-out
 const staticPaths = [
   '/',
-  '/about-us/overview-history',
-  '/about-us/mission-vision',
+  '/about-us/overview-and-history',
+  '/about-us/mission-vision-and-core-values',
   '/about-us/organizational-structure',
-  '/programs',
-  '/research',
-  '/resources/annual-reports',
-  '/resources/video-resources',
+  '/our-works/programs-and-projects',
+  '/our-works/marine-protected-areas',
+  '/resources/research-and-publications',
+  '/resources/annual-and-financial-reports',
+  '/resources/video-and-media-resources',
   '/support-us',
   '/updates/announcements',
   '/updates/community-stories',
@@ -21,7 +22,10 @@ const staticPaths = [
 
 // Slug detail routes
 const collections = [
-  { subfolder: 'programs', basePath: '/programs' },
+  {
+    subfolder: 'our-works/programs-and-projects',
+    basePath: '/our-works/programs-and-projects',
+  },
   { subfolder: 'updates/announcements', basePath: '/updates/announcements' },
   {
     subfolder: 'updates/community-stories',

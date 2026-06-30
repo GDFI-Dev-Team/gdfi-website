@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { ArticleContent } from './types'
+import { toPlainText } from './markdown'
 
 /**
  * Builds dynamic, per-article SEO metadata (title, description, canonical,
@@ -17,8 +18,9 @@ export function buildArticleMetadata(
 ): Metadata {
   const { title, excerpt, body, featured_images, author, date } = article
 
-  // Many articles have an empty excerpt — fall back to the start of the body.
-  const description = excerpt?.trim() || body.trim().slice(0, 160)
+  // Many articles have an empty excerpt — fall back to the start of the body,
+  // stripped of Markdown so raw `#`/`**` markup doesn't leak into meta tags.
+  const description = excerpt?.trim() || toPlainText(body).slice(0, 160)
   const image = featured_images?.[0] || fallbackImage
   const authorName = author?.trim() || undefined
 
