@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { Suspense } from 'react'
 import Banner from '@/components/ui/banner'
 import FilterBar, {
@@ -8,6 +9,29 @@ import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import FeaturedVideoSlideshow from '@/features/resources/video-and-media-resources/components/featured-video-slideshow'
 import { getAllVideos } from '@/lib/content/videos'
+
+export const metadata: Metadata = {
+  title: 'Video & Media Resources',
+  description:
+    'Browse the different videos of Guiuan Development Foundation Inc.',
+  openGraph: {
+    title: 'Video & Media Resources',
+    description:
+      'Browse the different videos of Guiuan Development Foundation Inc.',
+    url: '/resources/video-and-media-resources',
+    images: [
+      {
+        url: '/nav-item-banner-images/video-and-media-resources.webp',
+        width: 2048,
+        height: 1536,
+        alt: 'Browse the different videos of Guiuan Development Foundation Inc.',
+      },
+    ],
+  },
+  alternates: {
+    canonical: '/resources/video-and-media-resources',
+  },
+}
 
 export default function VideoResourcesLayout({
   children,

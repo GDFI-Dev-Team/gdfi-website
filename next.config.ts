@@ -50,6 +50,11 @@ const nextConfig: NextConfig = {
         destination: '/our-works/programs-and-projects',
         permanent: false,
       },
+      {
+        source: '/resources/video-and-media-resources/page',
+        destination: '/resources/video-and-media-resources',
+        permanent: false,
+      },
     ]
   },
 }
