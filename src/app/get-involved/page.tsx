@@ -2,7 +2,8 @@ import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import CareersSection from '@/features/get-involved/components/careers-section'
+import Careers from '@/features/get-involved/components/careers'
+import Volunteers from '@/features/get-involved/components/volunteers'
 import SupportOptions from '@/features/get-involved/components/support-options'
 
 export default function GetInvolvedPage() {
@@ -11,10 +12,11 @@ export default function GetInvolvedPage() {
       <Banner
         title="Get Involved"
         description="Join our journey to protect and restore the marine heritage of Eastern Visayas"
-        imgUrl="/nav-item-banner-images/support-us.jpeg"
+        imgUrl="/nav-item-banner-images/support-us.webp"
       />
 
-      <CareersSection />
+      <Careers />
+      <Volunteers />
 
       <Section sectionClassName="py-16 md:py-24">
         <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">

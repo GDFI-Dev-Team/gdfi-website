@@ -5,7 +5,7 @@ import { buttonBase, buttonVariants } from '@/components/ui/button'
 import Section from '@/components/ui/section'
 import { cn } from '@/lib/utils/cn-merge'
 
-export default function CareersSection() {
+export default function Careers() {
   return (
     <Section divClassName="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <figure className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-lg m-0">
