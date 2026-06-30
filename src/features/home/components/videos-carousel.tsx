@@ -1,14 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
-import Button from '@/components/ui/button'
 import { cn } from '@/lib/utils/cn-merge'
-import VideoModal from '@/features/resources/videos/modal'
 import { VideoContent } from '@/lib/content/types'
 import Text from '@/components/ui/text'
 import ShareButton from '@/components/ui/share-button'
+import Image from 'next/image'
+import VideoModal from '@/features/resources/video-and-media-resources/components/modal'
+import Button from '@/components/ui/button'
 
 function getYouTubeId(url: string): string | null {
   const m = url.match(

@@ -10,7 +10,7 @@ export default function AnnouncementsCard({
     <ArticleCard
       article={article}
       basePath="/updates/announcements"
-      showDate
+      variant="announcements"
       fallbackImgUrl="/nav-item-banner-images/announcements.webp"
     />
   )

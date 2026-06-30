@@ -3,23 +3,34 @@ import Link from 'next/link'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import ShareButton from '@/components/ui/share-button'
+import { Tag, TagList } from '@/components/ui/tag'
 import { cn } from '@/lib/utils/cn-merge'
 import { ArticleContent } from '@/lib/content/types'
 import { formatEdgeDate } from '@/lib/utils/date'
 import { getReadingTime } from '@/lib/content/reading-time'
-import { categoryColor } from '../../features/updates/community-stories/data/category-colors'
+import { toPlainText } from '@/lib/content/markdown'
+import { statusClass } from '@/lib/content/programs'
+import { CalendarDays } from 'lucide-react'
+
+export type ArticleVariant = 'announcements' | 'stories' | 'programs'
 
 export default function ArticleCard({
   article,
   basePath,
-  showDate = false,
+  variant = 'stories',
   fallbackImgUrl,
+  status,
+  dateRange,
   className,
 }: {
   article: ArticleContent
   basePath: string
-  showDate?: boolean
+  variant?: ArticleVariant
   fallbackImgUrl: string
+  /** Programs only — status pill label (e.g. "Active"). */
+  status?: string
+  /** Programs only — date range shown below the title (e.g. "2025 – ongoing"). */
+  dateRange?: string
   className?: string
 }) {
   const href = `${basePath}/${article.slug}`
@@ -29,7 +40,7 @@ export default function ArticleCard({
     : [fallbackImgUrl]
 
   const hasMultipleImages = featured_images.length > 1
-  const previewText = article.body
+  const previewText = article.excerpt?.trim() || toPlainText(article.body)
 
   return (
     <article
@@ -78,7 +89,7 @@ export default function ArticleCard({
       </Link>
 
       <div className="flex flex-1 flex-col gap-2 p-3 md:gap-3 md:p-6">
-        {showDate ? (
+        {variant === 'announcements' ? (
           <Text
             size="xs"
             className="text-foreground/50 font-semibold tracking-wider"
@@ -87,25 +98,26 @@ export default function ArticleCard({
             <span className="mx-1.5">&#xb7;</span>
             {getReadingTime(article.body)} min. read
           </Text>
+        ) : variant === 'programs' ? (
+          <div className="flex flex-wrap gap-1.5 md:gap-3">
+            {status && (
+              <span
+                className={cn(
+                  'rounded-full px-2 py-0.5 md:px-3 md:py-1.5',
+                  statusClass(status),
+                )}
+              >
+                <Text size="xs" className="text-on-overlay">
+                  {status}
+                </Text>
+              </span>
+            )}
+            {categories[0] && (
+              <Tag label={categories[0]} variant="card" tone="category" />
+            )}
+          </div>
         ) : (
-          categories.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 md:gap-3">
-              {categories.map((category) => {
-                const color = categoryColor(category)
-                return (
-                  <span
-                    key={category}
-                    className="rounded-full px-2 py-0.5 md:px-3 md:py-1.5"
-                    style={{ backgroundColor: color.bg, color: color.text }}
-                  >
-                    <Text size="xs" className="font-semibold tracking-wide">
-                      {category}
-                    </Text>
-                  </span>
-                )
-              })}
-            </div>
-          )
+          <TagList tags={categories} variant="card" />
         )}
 
         <div className="flex flex-col gap-1 md:gap-2">
@@ -120,6 +132,16 @@ export default function ArticleCard({
               {article.title}
             </Heading>
           </Link>
+
+          {variant === 'programs' && dateRange && (
+            <div className="flex items-center gap-1.5 text-foreground/55">
+              <CalendarDays className="size-4 shrink-0" aria-hidden="true" />
+              <Text size="sm" className="text-xs md:text-sm">
+                {dateRange}
+              </Text>
+            </div>
+          )}
+
           <Text
             size="sm"
             className="line-clamp-2 text-xs text-foreground/60 md:line-clamp-3 md:text-sm"

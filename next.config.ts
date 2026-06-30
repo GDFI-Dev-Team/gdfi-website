@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/about-us',
-        destination: '/about-us/our-purpose',
+        destination: '/about-us/overview-and-history',
         permanent: false,
       },
       {
@@ -40,27 +40,6 @@ const nextConfig: NextConfig = {
         destination: '/resources/research-and-publications',
         permanent: false,
       },
-      // Back-compat for the old /research URLs (publications moved into Resources)
-      {
-        source: '/research',
-        destination: '/resources/research-and-publications',
-        permanent: false,
-      },
-      {
-        source: '/research/publications',
-        destination: '/resources/research-and-publications',
-        permanent: false,
-      },
-      {
-        source: '/research/publications/page',
-        destination: '/resources/research-and-publications',
-        permanent: false,
-      },
-      {
-        source: '/research/publications/page/:page',
-        destination: '/resources/research-and-publications/page/:page',
-        permanent: false,
-      },
       {
         source: '/our-works',
         destination: '/our-works/programs-and-projects',
@@ -71,26 +50,9 @@ const nextConfig: NextConfig = {
         destination: '/our-works/programs-and-projects',
         permanent: false,
       },
-      // Back-compat for the old /programs URLs (order matters: page routes
-      // must precede the catch-all :slug rule)
       {
-        source: '/programs',
-        destination: '/our-works/programs-and-projects',
-        permanent: false,
-      },
-      {
-        source: '/programs/page',
-        destination: '/our-works/programs-and-projects',
-        permanent: false,
-      },
-      {
-        source: '/programs/page/:page',
-        destination: '/our-works/programs-and-projects/page/:page',
-        permanent: false,
-      },
-      {
-        source: '/programs/:slug',
-        destination: '/our-works/programs-and-projects/:slug',
+        source: '/resources/video-and-media-resources/page',
+        destination: '/resources/video-and-media-resources',
         permanent: false,
       },
     ]

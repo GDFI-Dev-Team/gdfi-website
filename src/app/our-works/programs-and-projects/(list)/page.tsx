@@ -1,5 +1,5 @@
 import { getPrograms } from '@/lib/content/programs'
-import { ProgramsGrid } from '@/features/programs/programs-grid'
+import { ProgramsGrid } from '@/features/our-works/programs-and-projects/components/programs-grid'
 
 export default async function ProgramsPage({
   searchParams,

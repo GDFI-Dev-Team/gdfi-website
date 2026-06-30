@@ -8,15 +8,15 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   {
     label: 'About Us',
-    href: '/about-us/our-purpose',
+    href: '/about-us/mission-vision-and-core-values',
     children: [
       {
-        label: 'Our Purpose',
-        href: '/about-us/our-purpose',
+        label: 'Overview & History',
+        href: '/about-us/overview-and-history',
       },
       {
-        label: 'Overview & History',
-        href: '/about-us/overview-history',
+        label: 'Mission, Vision & Core Values',
+        href: '/about-us/mission-vision-and-core-values',
       },
       {
         label: 'Organizational Structure',
@@ -34,7 +34,7 @@ export const navLinks: NavLink[] = [
       },
       {
         label: 'Marine Protected Areas (MPAs)',
-        href: '/our-works/mpas',
+        href: '/our-works/marine-protected-areas',
       },
     ],
   },
@@ -51,17 +51,19 @@ export const navLinks: NavLink[] = [
     href: '/resources/research-and-publications',
     children: [
       {
-        label: 'Research and Publications',
+        label: 'Research & Publications',
         href: '/resources/research-and-publications',
       },
       {
         label: 'Annual & Financial Reports',
-        href: '/resources/annual-reports',
+        href: '/resources/annual-and-financial-reports',
       },
-      { label: 'Videos & Media', href: '/resources/video-resources' },
+      {
+        label: 'Video & Media Resources',
+        href: '/resources/video-and-media-resources',
+      },
     ],
   },
-  { label: 'Awards & Recognitions', href: '/awards-and-recognitions' },
 ]
 
 /**

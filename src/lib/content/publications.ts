@@ -19,7 +19,7 @@ export function getPublications(
   searchParams: PublicationsSearchParams,
 ) {
   const allPublications = getCollectionMarkdownData<Omit<Publication, 'slug'>>(
-    'research/publications',
+    'resources/research-and-publications',
   ).sort((a, b) => Number(b.year) - Number(a.year))
 
   const q = (getParam(searchParams, 'q') || '').trim().toLowerCase()

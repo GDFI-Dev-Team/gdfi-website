@@ -3,7 +3,7 @@ import {
   AdminAndFinance,
   ProjectCoordination,
   PoolOfVolunteers,
-} from '@/features/about-us/org-chart/components'
+} from '@/features/about-us/organizational-structure/components'
 import { getOrgStructure } from '@/lib/content/org-structure'
 import Banner from '@/components/ui/banner'
 

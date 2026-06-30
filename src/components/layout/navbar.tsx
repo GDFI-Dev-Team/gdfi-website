@@ -132,7 +132,8 @@ export function SiteHeader() {
   }, [mobileOpen])
 
   const isProgramPost =
-    pathname.startsWith('/programs/') && !pathname.includes('/page/')
+    pathname.startsWith('/our-works/programs-and-projects/') &&
+    !pathname.includes('/page/')
   const isUpdatesPost =
     pathname.startsWith('/updates/') && !pathname.includes('/page/')
   const forceSolidNav = isProgramPost || isUpdatesPost

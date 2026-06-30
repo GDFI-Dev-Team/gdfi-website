@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: '/our-works/programs-and-projects',
     images: [
       {
-        url: '/nav-item-banner-images/programs.webp',
+        url: '/nav-item-banner-images/programs-and-projects.webp',
         width: 1650,
         height: 1100,
         alt: 'Explore how our initiatives are breathing life back to our community.',
