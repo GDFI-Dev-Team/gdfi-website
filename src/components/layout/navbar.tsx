@@ -51,9 +51,7 @@ function BrandLogo({
         }}
         className={cn(
           'block aspect-[448/76] shrink-0 transition-all duration-500 ease-in-out',
-          atTop && !isMobileMenu
-            ? 'bg-text-standard'
-            : 'bg-yellow-950 dark:bg-yellow-50',
+          atTop && !isMobileMenu ? 'bg-text-standard' : 'bg-header-ink',
           scrolled ? 'h-6 md:h-6 lg:h-9' : 'h-7 md:h-7 lg:h-11',
         )}
       />
@@ -146,7 +144,7 @@ export function SiteHeader() {
           'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ease-in-out',
           isTransparent
             ? 'border-transparent bg-transparent'
-            : 'border-yellow-500/20 bg-yellow-400 dark:bg-yellow-500',
+            : 'border-header-border bg-header-bg',
         )}
       >
         <div
@@ -165,7 +163,7 @@ export function SiteHeader() {
                 'shrink-0 overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
                 isTransparent
                   ? 'text-text-standard hover:bg-text-standard/10'
-                  : 'text-yellow-950 dark:text-yellow-50 hover:bg-yellow-950/10 dark:hover:bg-yellow-50/10',
+                  : 'text-header-ink hover:bg-header-ink/10',
                 scrolled ? 'max-w-0 opacity-0' : 'mr-1 max-w-10 opacity-100',
               )}
             >
@@ -188,10 +186,10 @@ export function SiteHeader() {
                   active
                     ? isTransparent
                       ? 'bg-text-standard/15 text-text-standard'
-                      : 'bg-yellow-950/10 dark:bg-yellow-50/10 text-yellow-950 dark:text-yellow-50'
+                      : 'bg-header-ink/10 text-header-ink'
                     : isTransparent
                       ? 'text-text-standard hover:bg-text-standard/10'
-                      : 'text-yellow-950 dark:text-yellow-50 hover:bg-yellow-950/5 dark:hover:bg-yellow-50/5',
+                      : 'text-header-ink hover:bg-header-ink/5',
                 )
 
                 if (!link.children?.length) {
@@ -227,7 +225,7 @@ export function SiteHeader() {
                           'min-w-60 rounded-2xl border p-1.5 transition-colors duration-500 ease-in-out',
                           isTransparent
                             ? 'border-text-standard/40 bg-surface/60 shadow-lg backdrop-blur-md'
-                            : 'border-yellow-500/20 bg-yellow-400 dark:bg-yellow-500 shadow-lg',
+                            : 'border-header-border bg-header-bg shadow-lg',
                         )}
                       >
                         {link.children.map((child) => {
@@ -243,10 +241,10 @@ export function SiteHeader() {
                                 childActive
                                   ? isTransparent
                                     ? 'bg-primary/10 text-primary-hover'
-                                    : 'bg-yellow-950/10 dark:bg-yellow-50/10 text-yellow-950 dark:text-yellow-50'
+                                    : 'bg-header-ink/10 text-header-ink'
                                   : isTransparent
                                     ? 'text-text-standard hover:bg-text-standard/10'
-                                    : 'text-yellow-950 dark:text-yellow-50 hover:bg-yellow-950/5 dark:hover:bg-yellow-50/5',
+                                    : 'text-header-ink hover:bg-header-ink/5',
                               )}
                             >
                               {child.label}
@@ -266,7 +264,7 @@ export function SiteHeader() {
                   'transition-colors duration-500 ease-in-out',
                   isTransparent
                     ? 'border-text-standard/40 text-text-standard hover:bg-text-standard/10'
-                    : 'border-yellow-950/20 dark:border-yellow-50/20 text-yellow-950 dark:text-yellow-50 hover:bg-yellow-950/5 dark:hover:bg-yellow-50/5',
+                    : 'border-header-ink/20 text-header-ink hover:bg-header-ink/5',
                 )}
               />
 
@@ -278,7 +276,7 @@ export function SiteHeader() {
                   'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
                   isTransparent
                     ? 'border-text-standard/40 bg-transparent text-text-standard hover:bg-text-standard/10'
-                    : 'border-transparent bg-yellow-950 dark:bg-yellow-50 text-yellow-400 dark:text-yellow-900 shadow-sm hover:bg-yellow-900 dark:hover:bg-yellow-100',
+                    : 'border-transparent bg-header-ink text-header-bg shadow-sm hover:bg-header-ink-hover',
                   scrolled ? 'md:px-5' : 'md:px-4',
                 )}
               >
@@ -315,7 +313,7 @@ export function SiteHeader() {
         aria-hidden={!mobileOpen}
         aria-label="Site menu"
         className={cn(
-          'fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-yellow-500/20 bg-yellow-400 dark:bg-yellow-500 p-6 shadow-xl',
+          'fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-header-border bg-header-bg p-6 shadow-xl',
           mobileOpen ? 'block' : 'pointer-events-none hidden',
         )}
       >
@@ -333,7 +331,7 @@ export function SiteHeader() {
               variant="ghost"
               aria-label="Close menu"
               onClick={closeMobile}
-              className="shrink-0 rounded-full p-2 text-yellow-950/70 dark:text-yellow-50/70 hover:bg-yellow-950/5 dark:hover:bg-yellow-50/5 hover:text-yellow-950 dark:hover:text-yellow-50"
+              className="shrink-0 rounded-full p-2 text-header-ink/70 hover:bg-header-ink/5 hover:text-header-ink"
             >
               <X size={24} aria-hidden="true" />
             </Button>
@@ -345,8 +343,8 @@ export function SiteHeader() {
               const rowClass = cn(
                 'rounded-xl px-4 py-2 text-lg font-semibold transition-colors',
                 active
-                  ? 'bg-yellow-950/10 dark:bg-yellow-50/10 text-yellow-950 dark:text-yellow-50'
-                  : 'text-yellow-950 dark:text-yellow-50 hover:bg-yellow-950/5 dark:hover:bg-yellow-50/5',
+                  ? 'bg-header-ink/10 text-header-ink'
+                  : 'text-header-ink hover:bg-header-ink/5',
               )
 
               if (!link.children?.length) {
@@ -393,8 +391,8 @@ export function SiteHeader() {
                             className={cn(
                               'rounded-xl px-4 py-2 text-base font-medium transition-colors',
                               childActive
-                                ? 'bg-yellow-950/10 dark:bg-yellow-50/10 text-yellow-950 dark:text-yellow-50'
-                                : 'text-yellow-950 dark:text-yellow-50 hover:bg-yellow-950/5 dark:hover:bg-yellow-50/5',
+                                ? 'bg-header-ink/10 text-header-ink'
+                                : 'text-header-ink hover:bg-header-ink/5',
                             )}
                           >
                             {child.label}
