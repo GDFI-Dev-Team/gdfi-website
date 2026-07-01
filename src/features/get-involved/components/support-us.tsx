@@ -52,15 +52,16 @@ function CopyButton({
 
 export default function SupportOptions() {
   return (
-    <Section sectionClassName="py-16 md:py-24">
+    <Section>
       <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
         <Heading level={2}>Support Us</Heading>
-        <Text size="lg" className="text-foreground/70">
+        <Text size="lg" className="leading-relaxed text-foreground/80">
           Whether through financial support or in-kind contributions, your
           generosity allows us to continue our ridge-to-reef conservation
           efforts.
         </Text>
       </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start text-left">
         <div className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-background p-8 md:p-10 shadow-sm">
           <div className="flex items-center gap-4">
@@ -71,10 +72,12 @@ export default function SupportOptions() {
                 aria-hidden="true"
               />
             </div>
-            <Heading level={3}>{CASH_DONATION_DETAILS.title}</Heading>
+            <Heading level={3} className="text-foreground/80">
+              {CASH_DONATION_DETAILS.title}
+            </Heading>
           </div>
 
-          <Text className="text-foreground/70">
+          <Text className="text-foreground/80">
             {CASH_DONATION_DETAILS.description}
           </Text>
 
@@ -150,10 +153,12 @@ export default function SupportOptions() {
                 aria-hidden="true"
               />
             </div>
-            <Heading level={3}>{IN_KIND_DONATION_DETAILS.title}</Heading>
+            <Heading level={3} className="text-foreground/80">
+              {IN_KIND_DONATION_DETAILS.title}
+            </Heading>
           </div>
 
-          <Text className="text-foreground/70">
+          <Text className="text-foreground/80">
             {IN_KIND_DONATION_DETAILS.description}
           </Text>
 

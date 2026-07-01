@@ -6,12 +6,6 @@ export const OVERVIEW_STATS = [
   { value: '40K', label: 'Residents served' },
 ]
 
-export const OVERVIEW_STATS = [
-  { value: '1988', label: 'Founded in Eastern Samar' },
-  { value: '7', label: 'Coastal municipalities' },
-  { value: '40K', label: 'Residents served' },
-]
-
 export type HistoryMilestone = {
   id: string
   year: string

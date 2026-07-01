@@ -7,11 +7,10 @@ import { cn } from '@/lib/utils/cn-merge'
 
 export default function Careers() {
   return (
-    <Section sectionClassName="py-16 md:py-24">
-      <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
-        <Heading level={2}>Careers & Internships</Heading>
-      </div>
-
+    <Section>
+      <Heading className="mb-8 text-center md:mb-12" level={2}>
+        Careers & Internships
+      </Heading>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <figure className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-lg m-0">
           <Image

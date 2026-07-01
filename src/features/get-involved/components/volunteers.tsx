@@ -1,17 +1,17 @@
 import Image from 'next/image'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
-import { buttonBase, buttonVariants } from '@/components/ui/button'
 import Section from '@/components/ui/section'
+import { buttonBase, buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils/cn-merge'
 import { socials } from '@/lib/navigation/nav'
 
 export default function Volunteers() {
   return (
-    <Section sectionClassName="bg-foreground/5 py-16 md:py-24">
-      <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
-        <Heading level={2}>Volunteer Opportunities</Heading>
-      </div>
+    <Section sectionClassName="bg-foreground/[0.02]">
+      <Heading className="mb-8 text-center md:mb-12" level={2}>
+        Volunteer Opportunities
+      </Heading>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div className="flex flex-col gap-6 order-2 lg:order-1">
