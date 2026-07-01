@@ -8,7 +8,7 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   {
     label: 'About Us',
-    href: '/about-us/mission-vision-and-core-values',
+    href: '/about-us/overview-and-history',
     children: [
       {
         label: 'Overview & History',

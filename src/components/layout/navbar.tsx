@@ -133,7 +133,9 @@ export function SiteHeader() {
     pathname.startsWith('/our-works/programs-and-projects/') &&
     !pathname.includes('/page/')
   const isUpdatesPost =
-    pathname.startsWith('/updates/') && !pathname.includes('/page/')
+    (pathname.startsWith('/updates/announcements/') ||
+      pathname.startsWith('/updates/community-stories/')) &&
+    !pathname.includes('/page/')
   const forceSolidNav = isProgramPost || isUpdatesPost
   const isTransparent = atTop && !forceSolidNav
 
