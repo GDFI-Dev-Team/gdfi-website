@@ -8,7 +8,6 @@ import { ChevronDown, HandHeart, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils/cn-merge'
 import { navLinks } from '@/lib/navigation/nav'
 import Button, { buttonBase } from '../ui/button'
-import { ThemeToggle } from './theme-toggle'
 
 const LOGO_MARK_SRC = '/logo-images/logo.svg'
 const NAME_MARK_SRC = '/logo-images/name.svg'
@@ -52,7 +51,7 @@ function BrandLogo({
         className={cn(
           'block aspect-[448/76] shrink-0 transition-all duration-500 ease-in-out',
           atTop && !isMobileMenu ? 'bg-text-standard' : 'bg-header-ink',
-          scrolled ? 'h-6 md:h-6 lg:h-9' : 'h-7 md:h-7 lg:h-11',
+          scrolled ? 'h-5 sm:h-6 lg:h-9' : 'h-6 sm:h-7 lg:h-11',
         )}
       />
     </>
@@ -260,21 +259,12 @@ export function SiteHeader() {
             </nav>
 
             <div className="ml-auto flex shrink-0 items-center gap-2">
-              <ThemeToggle
-                className={cn(
-                  'transition-colors duration-500 ease-in-out',
-                  isTransparent
-                    ? 'border-text-standard/40 text-text-standard hover:bg-text-standard/10'
-                    : 'border-header-ink/20 text-header-ink hover:bg-header-ink/5',
-                )}
-              />
-
               <Link
                 href="/get-involved"
                 aria-label="Get Involved"
                 className={cn(
                   buttonBase,
-                  'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
+                  'inline-flex shrink-0 items-center rounded-full border px-3 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95 sm:px-4',
                   isTransparent
                     ? 'border-text-standard/40 bg-transparent text-text-standard hover:bg-text-standard/10'
                     : 'border-transparent bg-header-ink text-header-bg shadow-sm hover:bg-header-ink-hover',
