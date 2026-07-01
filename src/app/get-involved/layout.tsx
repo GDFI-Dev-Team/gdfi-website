@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Support Us',
+  title: 'Get Involved',
   description:
     'Stand with us to secure a sustainable future for our community and the environment.',
   openGraph: {
-    title: 'Support Us',
+    title: 'Get Involved',
     description:
       'Stand with us to secure a sustainable future for our community and the environment.',
-    url: '/support-us',
+    url: '/get-involved',
     images: [
       {
         url: '/nav-item-banner-images/support-us.webp',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: '/support-us',
+    canonical: '/get-involved',
   },
 }
 

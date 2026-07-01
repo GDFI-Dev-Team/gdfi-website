@@ -28,8 +28,8 @@ const UpdateCard = ({
     <article
       className={cn(
         featured
-          ? 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-21/9'
-          : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-4/5',
+          ? 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-[21/9]'
+          : 'group relative overflow-hidden rounded-xl aspect-4/3 sm:aspect-[4/5]',
         className,
       )}
     >
@@ -48,18 +48,20 @@ const UpdateCard = ({
         />
       </div>
 
-      <Image
-        src={imageSrc}
-        alt={update.title}
-        fill
-        sizes={
-          featured
-            ? '(min-width: 1280px) 1280px, 100vw'
-            : '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw'
-        }
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-        aria-hidden="true"
-      />
+      <figure className="absolute inset-0 m-0">
+        <Image
+          src={imageSrc}
+          alt={update.title}
+          fill
+          sizes={
+            featured
+              ? '(min-width: 1280px) 1280px, 100vw'
+              : '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw'
+          }
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          aria-hidden="true"
+        />
+      </figure>
       <div
         className="absolute inset-0 bg-linear-to-t from-overlay/90 via-overlay/60 to-overlay/10 pointer-events-none"
         aria-hidden="true"
@@ -72,13 +74,12 @@ const UpdateCard = ({
             : 'absolute inset-x-0 bottom-0 flex flex-col gap-2.5 p-6 pointer-events-none'
         }
       >
-        <Text
-          size="xs"
-          transform="uppercase"
-          className="tracking-widest text-on-overlay-subtle"
+        <time
+          dateTime={new Date(update.date).toISOString()}
+          className="text-xs uppercase tracking-widest text-on-overlay-subtle block"
         >
           {formatEdgeDate(update.date)}
-        </Text>
+        </time>
         <Heading
           level={featured ? 3 : 4}
           className={
@@ -134,15 +135,19 @@ export default async function WhatsHapenning() {
 
       <div className="flex flex-col gap-6">
         <UpdateCard update={featured} featured />
-        <div className="hidden md:grid grid-cols-2 gap-6 lg:grid-cols-4">
+        <ul className="hidden md:grid grid-cols-2 gap-6 lg:grid-cols-4 list-none p-0 m-0">
           {rest.map((update, index) => (
-            <UpdateCard
+            <li
               key={update.slug}
-              update={update}
-              className={index >= 2 ? 'hidden lg:block' : ''}
-            />
+              className={cn(
+                'flex flex-col',
+                index >= 2 ? 'hidden lg:flex' : '',
+              )}
+            >
+              <UpdateCard update={update} className="h-full w-full" />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <Link
