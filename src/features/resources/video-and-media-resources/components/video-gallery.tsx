@@ -25,15 +25,13 @@ export default function VideoGallery({
     <>
       {videos.length > 0 ? (
         <>
-          <div className="flex flex-col gap-8">
+          <ul className="flex flex-col gap-8 list-none p-0 m-0">
             {videos.map((video) => (
-              <VideoCard
-                key={video.slug}
-                video={video}
-                onPlay={setSelectedUrl}
-              />
+              <li key={video.slug} className="flex flex-col">
+                <VideoCard video={video} onPlay={setSelectedUrl} />
+              </li>
             ))}
-          </div>
+          </ul>
 
           {totalPages > 1 && (
             <Pagination

@@ -43,7 +43,7 @@ export function Tag({
   return (
     <span
       className={cn(
-        'rounded-full',
+        'inline-flex items-center rounded-full',
         sizeStyles[variant],
         tone === 'neutral' && 'bg-foreground/10 text-foreground',
         className,
@@ -72,11 +72,19 @@ export function TagList({
 }) {
   if (tags.length === 0) return null
   return (
-    <div className={cn('flex flex-wrap', listGap[variant], className)}>
+    <ul
+      className={cn(
+        'flex flex-wrap list-none p-0 m-0',
+        listGap[variant],
+        className,
+      )}
+    >
       {tags.map((tag) => (
-        <Tag key={tag} label={tag} variant={variant} tone={tone} />
+        <li key={tag}>
+          <Tag label={tag} variant={variant} tone={tone} />
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 
