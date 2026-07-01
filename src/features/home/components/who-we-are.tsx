@@ -14,14 +14,13 @@ const WhoWeAre = () => {
       divClassName="flex flex-col md:flex-row items-center gap-12 lg:gap-20"
     >
       <div className="relative w-full md:w-1/2 shrink-0">
-        {/* Offset accent backdrop */}
         <div
           className="absolute -bottom-4 -left-4 h-full w-full rounded-xl bg-accent/15"
           aria-hidden="true"
         />
         <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl shadow-lg">
           <Image
-            src="/feat-hero/hero-2.jpeg"
+            src="/about-us/our-purpose/slideshow/1.webp"
             alt="Who we are thumbnail"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
@@ -40,10 +39,14 @@ const WhoWeAre = () => {
           >
             Who we are
           </Text>
-          <Heading id="who-we-are-heading" level={2}>
+          <Heading
+            id="who-we-are-heading"
+            level={2}
+            className="text-xl md:text-3xl lg:text-4xl"
+          >
             Rooted in Guiuan, serving coastal communities
           </Heading>
-          <Text size="lg" className="text-foreground/70 max-w-prose">
+          <Text className="text-base md:text-lg text-foreground/70 max-w-prose">
             Guiuan Development Foundation, Inc. is a non-government organization
             based in Guiuan, Eastern Samar. We work alongside fishers, women,
             and local governments to care for the coastal ecosystems their
@@ -56,7 +59,7 @@ const WhoWeAre = () => {
           className={cn(
             buttonBase,
             buttonVariants.secondary,
-            'self-start px-6 py-2.5',
+            'self-start px-4 py-2 text-sm md:px-6 md:py-2.5 md:text-base',
           )}
         >
           About Us

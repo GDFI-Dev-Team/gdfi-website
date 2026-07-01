@@ -2,23 +2,35 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import ShareButton from '@/components/ui/share-button'
+import { Tag, TagList } from '@/components/ui/tag'
 import { cn } from '@/lib/utils/cn-merge'
 import { ArticleContent } from '@/lib/content/types'
 import { formatEdgeDate } from '@/lib/utils/date'
 import { getReadingTime } from '@/lib/content/reading-time'
-import { categoryColor } from '../../features/updates/community-stories/data/category-colors'
+import { toPlainText } from '@/lib/content/markdown'
+import { statusClass } from '@/lib/content/programs'
+import { CalendarDays } from 'lucide-react'
+
+export type ArticleVariant = 'announcements' | 'stories' | 'programs'
 
 export default function ArticleCard({
   article,
   basePath,
-  showDate = false,
+  variant = 'stories',
   fallbackImgUrl,
+  status,
+  dateRange,
   className,
 }: {
   article: ArticleContent
   basePath: string
-  showDate?: boolean
+  variant?: ArticleVariant
   fallbackImgUrl: string
+  /** Programs only — status pill label (e.g. "Active"). */
+  status?: string
+  /** Programs only — date range shown below the title (e.g. "2025 – ongoing"). */
+  dateRange?: string
   className?: string
 }) {
   const href = `${basePath}/${article.slug}`
@@ -28,15 +40,23 @@ export default function ArticleCard({
     : [fallbackImgUrl]
 
   const hasMultipleImages = featured_images.length > 1
-  const previewText = article.body
+  const previewText = article.excerpt?.trim() || toPlainText(article.body)
 
   return (
     <article
       className={cn(
-        'group flex flex-col h-full overflow-hidden rounded-xl shadow-sm transition-all duration-300 border border-foreground/10 bg-background hover:shadow-md hover:-translate-y-1',
+        'group relative flex flex-col h-full overflow-hidden rounded-xl shadow-sm transition-all duration-300 border border-foreground/10 bg-background hover:shadow-md hover:-translate-y-1',
         className,
       )}
     >
+      <div className="absolute top-2 right-2 z-20 md:top-4 md:right-4">
+        <ShareButton
+          url={href}
+          title={article.title}
+          className="h-7 w-7 p-0 rounded-full bg-black/40 text-white hover:bg-black/60 backdrop-blur-sm border-none md:h-9 md:w-9"
+        />
+      </div>
+
       <Link
         href={href}
         className="relative w-full overflow-hidden block bg-foreground/5 aspect-3/2"
@@ -68,8 +88,8 @@ export default function ArticleCard({
         </figure>
       </Link>
 
-      <div className="flex flex-1 flex-col gap-3 p-6">
-        {showDate ? (
+      <div className="flex flex-1 flex-col gap-2 p-3 md:gap-3 md:p-6">
+        {variant === 'announcements' ? (
           <time
             dateTime={new Date(article.date).toISOString()}
             className="text-xs text-foreground/50 font-semibold tracking-wider block"
@@ -78,37 +98,54 @@ export default function ArticleCard({
             <span className="mx-1.5">&#xb7;</span>
             {getReadingTime(article.body)} min. read
           </time>
+        ) : variant === 'programs' ? (
+          <div className="flex flex-wrap gap-1.5 md:gap-3">
+            {status && (
+              <span
+                className={cn(
+                  'rounded-full px-2 py-0.5 md:px-3 md:py-1.5',
+                  statusClass(status),
+                )}
+              >
+                <Text size="xs" className="text-on-overlay">
+                  {status}
+                </Text>
+              </span>
+            )}
+            {categories[0] && (
+              <Tag label={categories[0]} variant="card" tone="category" />
+            )}
+          </div>
         ) : (
-          categories.length > 0 && (
-            <ul className="flex flex-wrap gap-3 list-none p-0 m-0">
-              {categories.map((category) => {
-                const color = categoryColor(category)
-                return (
-                  <li
-                    key={category}
-                    className="rounded-full px-3 py-1.5"
-                    style={{ backgroundColor: color.bg, color: color.text }}
-                  >
-                    <Text size="xs" className="font-semibold tracking-wide">
-                      {category}
-                    </Text>
-                  </li>
-                )
-              })}
-            </ul>
-          )
+          <TagList tags={categories} variant="card" />
         )}
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1 md:gap-2">
           <Link
             href={href}
             className="hover:underline decoration-foreground/30 underline-offset-4"
           >
-            <Heading level={4} className="line-clamp-2 leading-snug">
+            <Heading
+              level={4}
+              className="line-clamp-2 text-sm leading-snug md:text-lg lg:text-xl"
+            >
               {article.title}
             </Heading>
           </Link>
-          <Text size="sm" className="text-foreground/60 line-clamp-3">
+
+          {variant === 'programs' && dateRange && (
+            <div className="flex items-center gap-1.5 text-foreground/55">
+              <CalendarDays className="size-4 shrink-0" aria-hidden="true" />
+              <Text size="sm" className="text-xs md:text-sm">
+                {dateRange}
+              </Text>
+            </div>
+          )}
+
+          <Text
+            size="sm"
+            className="line-clamp-2 text-xs text-foreground/60 md:line-clamp-3 md:text-sm"
+          >
             {previewText}
           </Text>
         </div>

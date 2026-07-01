@@ -17,10 +17,12 @@ function BrandLogo({
   priority = false,
   scrolled = false,
   atTop = false,
+  isMobileMenu = false,
 }: {
   priority?: boolean
   scrolled?: boolean
   atTop?: boolean
+  isMobileMenu?: boolean
 }) {
   return (
     <>
@@ -48,8 +50,8 @@ function BrandLogo({
           WebkitMaskSize: 'contain',
         }}
         className={cn(
-          'block aspect-448/76 shrink-0 transition-all duration-500 ease-in-out',
-          atTop ? 'bg-text-standard' : 'bg-foreground',
+          'block aspect-[448/76] shrink-0 transition-all duration-500 ease-in-out',
+          atTop && !isMobileMenu ? 'bg-text-standard' : 'bg-header-ink',
           scrolled ? 'h-6 md:h-6 lg:h-9' : 'h-7 md:h-7 lg:h-11',
         )}
       />
@@ -128,7 +130,8 @@ export function SiteHeader() {
   }, [mobileOpen])
 
   const isProgramPost =
-    pathname.startsWith('/programs/') && !pathname.includes('/page/')
+    pathname.startsWith('/our-works/programs-and-projects/') &&
+    !pathname.includes('/page/')
   const isUpdatesPost =
     pathname.startsWith('/updates/') && !pathname.includes('/page/')
   const forceSolidNav = isProgramPost || isUpdatesPost
@@ -141,7 +144,7 @@ export function SiteHeader() {
           'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ease-in-out',
           isTransparent
             ? 'border-transparent bg-transparent'
-            : 'border-foreground/10 bg-background',
+            : 'border-header-border bg-header-bg',
         )}
       >
         <div
@@ -151,7 +154,6 @@ export function SiteHeader() {
           )}
         >
           <div className="mx-auto flex max-w-7xl items-center gap-2 md:gap-3">
-            {/* Hamburger */}
             <Button
               variant="ghost"
               aria-label="Open menu"
@@ -161,14 +163,13 @@ export function SiteHeader() {
                 'shrink-0 overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
                 isTransparent
                   ? 'text-text-standard hover:bg-text-standard/10'
-                  : 'text-foreground hover:bg-foreground/5',
+                  : 'text-header-ink hover:bg-header-ink/10',
                 scrolled ? 'max-w-0 opacity-0' : 'mr-1 max-w-10 opacity-100',
               )}
             >
               <Menu size={26} aria-hidden="true" />
             </Button>
 
-            {/* Logo */}
             <Link
               href="/"
               aria-label="GDFI — home"
@@ -177,7 +178,6 @@ export function SiteHeader() {
               <BrandLogo priority scrolled={scrolled} atTop={isTransparent} />
             </Link>
 
-            {/* Nav links — center, desktop only */}
             <nav className="hidden flex-1 items-center justify-center gap-0.5 md:flex lg:gap-1">
               {navLinks.map((link) => {
                 const active = isActive(link.href)
@@ -186,10 +186,10 @@ export function SiteHeader() {
                   active
                     ? isTransparent
                       ? 'bg-text-standard/15 text-text-standard'
-                      : 'bg-primary/10 text-primary-hover'
+                      : 'bg-header-ink/10 text-header-ink'
                     : isTransparent
                       ? 'text-text-standard hover:bg-text-standard/10'
-                      : 'text-foreground hover:bg-foreground/5',
+                      : 'text-header-ink hover:bg-header-ink/5',
                 )
 
                 if (!link.children?.length) {
@@ -225,7 +225,7 @@ export function SiteHeader() {
                           'min-w-60 rounded-2xl border p-1.5 transition-colors duration-500 ease-in-out',
                           isTransparent
                             ? 'border-text-standard/40 bg-surface/60 shadow-lg backdrop-blur-md'
-                            : 'border-foreground/10 bg-surface shadow-lg',
+                            : 'border-header-border bg-header-bg shadow-lg',
                         )}
                       >
                         {link.children.map((child) => {
@@ -239,10 +239,12 @@ export function SiteHeader() {
                               className={cn(
                                 'block whitespace-nowrap rounded-xl px-3.5 py-2 text-sm font-medium transition-colors',
                                 childActive
-                                  ? 'bg-primary/10 text-primary-hover'
+                                  ? isTransparent
+                                    ? 'bg-primary/10 text-primary-hover'
+                                    : 'bg-header-ink/10 text-header-ink'
                                   : isTransparent
                                     ? 'text-text-standard hover:bg-text-standard/10'
-                                    : 'text-foreground hover:bg-foreground/5',
+                                    : 'text-header-ink hover:bg-header-ink/5',
                               )}
                             >
                               {child.label}
@@ -256,27 +258,25 @@ export function SiteHeader() {
               })}
             </nav>
 
-            {/* Right cluster — theme toggle + Support Us */}
             <div className="ml-auto flex shrink-0 items-center gap-2">
               <ThemeToggle
                 className={cn(
                   'transition-colors duration-500 ease-in-out',
                   isTransparent
                     ? 'border-text-standard/40 text-text-standard hover:bg-text-standard/10'
-                    : 'border-border',
+                    : 'border-header-ink/20 text-header-ink hover:bg-header-ink/5',
                 )}
               />
 
-              {/* Support Us */}
               <Link
-                href="/support-us"
-                aria-label="Support Us"
+                href="/get-involved"
+                aria-label="Get Involved"
                 className={cn(
                   buttonBase,
                   'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
                   isTransparent
                     ? 'border-text-standard/40 bg-transparent text-text-standard hover:bg-text-standard/10'
-                    : 'border-transparent bg-btn-primary text-white shadow-sm hover:bg-btn-primary-hover',
+                    : 'border-transparent bg-header-ink text-header-bg shadow-sm hover:bg-header-ink-hover',
                   scrolled ? 'md:px-5' : 'md:px-4',
                 )}
               >
@@ -289,7 +289,7 @@ export function SiteHeader() {
                       : 'lg:ml-2 lg:max-w-28 lg:opacity-100',
                   )}
                 >
-                  Support Us
+                  Get Involved
                 </span>
               </Link>
             </div>
@@ -297,7 +297,6 @@ export function SiteHeader() {
         </div>
       </header>
 
-      {/* Backdrop */}
       <div
         onClick={closeMobile}
         aria-hidden="true"
@@ -307,7 +306,6 @@ export function SiteHeader() {
         )}
       />
 
-      {/* Bottom-sheet menu */}
       <div
         ref={menuRef}
         role={mobileOpen ? 'dialog' : undefined}
@@ -315,7 +313,7 @@ export function SiteHeader() {
         aria-hidden={!mobileOpen}
         aria-label="Site menu"
         className={cn(
-          'fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-foreground/10 bg-surface p-6 shadow-xl',
+          'fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-header-border bg-header-bg p-6 shadow-xl',
           mobileOpen ? 'block' : 'pointer-events-none hidden',
         )}
       >
@@ -327,13 +325,13 @@ export function SiteHeader() {
               onClick={closeMobile}
               className="flex items-center gap-2"
             >
-              <BrandLogo />
+              <BrandLogo isMobileMenu />
             </Link>
             <Button
               variant="ghost"
               aria-label="Close menu"
               onClick={closeMobile}
-              className="shrink-0 rounded-full p-2 text-foreground/70 hover:bg-foreground/5 hover:text-foreground"
+              className="shrink-0 rounded-full p-2 text-header-ink/70 hover:bg-header-ink/5 hover:text-header-ink"
             >
               <X size={24} aria-hidden="true" />
             </Button>
@@ -345,8 +343,8 @@ export function SiteHeader() {
               const rowClass = cn(
                 'rounded-xl px-4 py-2 text-lg font-semibold transition-colors',
                 active
-                  ? 'bg-primary/10 text-primary-hover'
-                  : 'text-foreground hover:bg-foreground/5',
+                  ? 'bg-header-ink/10 text-header-ink'
+                  : 'text-header-ink hover:bg-header-ink/5',
               )
 
               if (!link.children?.length) {
@@ -393,8 +391,8 @@ export function SiteHeader() {
                             className={cn(
                               'rounded-xl px-4 py-2 text-base font-medium transition-colors',
                               childActive
-                                ? 'bg-primary/10 text-primary-hover'
-                                : 'text-foreground hover:bg-foreground/5',
+                                ? 'bg-header-ink/10 text-header-ink'
+                                : 'text-header-ink hover:bg-header-ink/5',
                             )}
                           >
                             {child.label}

@@ -10,7 +10,7 @@ export default function Grid<T extends { slug: string }>({
   Card,
 }: GridProps<T>) {
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 list-none p-0 m-0">
+    <ul className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 md:gap-6 lg:gap-8 list-none p-0 m-0">
       {articles.map((article) => (
         <li key={article.slug} className="flex flex-col">
           <Card article={article} />

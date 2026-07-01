@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: 'Organizational Structure',
     description:
       'Meet the dedicated team and leadership driving our mission forward.',
-    url: '/about-us/org-chart',
+    url: '/about-us/organizational-structure',
     images: [
       {
-        url: '/nav-item-banner-images/organizational-structure.jpeg',
+        url: '/nav-item-banner-images/organizational-structure.webp',
         width: 2048,
         height: 1364,
         alt: 'Meet the dedicated team and leadership driving our mission forward.',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: '/about-us/org-chart',
+    canonical: '/about-us/organizational-structure',
   },
 }
 
