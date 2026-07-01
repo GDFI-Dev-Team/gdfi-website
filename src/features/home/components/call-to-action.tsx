@@ -20,12 +20,12 @@ export default function CallToAction() {
         Join us in securing resilient coasts and empowered communities.
       </Heading>
 
-      <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4">
+      <div className="flex w-full flex-row gap-3 sm:w-auto sm:gap-4">
         <Link
           href="/support-us"
           className={cn(
             buttonBase,
-            'bg-on-overlay px-6 py-3 text-sm text-cta shadow-sm transition-colors hover:bg-on-overlay/90 active:scale-95 md:text-base',
+            'flex-1 bg-on-overlay px-2 py-3 text-xs leading-tight text-cta shadow-sm transition-colors hover:bg-on-overlay/90 active:scale-95 sm:flex-none sm:px-6 sm:text-sm md:text-base',
           )}
         >
           Partner/Volunteer With Us
@@ -34,7 +34,7 @@ export default function CallToAction() {
           href="/resources/annual-and-financial-reports"
           className={cn(
             buttonBase,
-            'border border-on-overlay/40 px-6 py-3 text-sm text-on-overlay transition-colors hover:bg-on-overlay/10 active:scale-95 md:text-base',
+            'flex-1 border border-on-overlay/40 px-2 py-3 text-xs leading-tight text-on-overlay transition-colors hover:bg-on-overlay/10 active:scale-95 sm:flex-none sm:px-6 sm:text-sm md:text-base',
           )}
         >
           View Our Reports
