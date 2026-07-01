@@ -34,7 +34,9 @@ function BrandLogo({
         priority={priority}
         className={cn(
           'w-auto shrink-0 transition-all duration-500 ease-in-out',
-          scrolled ? 'h-8 md:h-9 lg:h-10' : 'h-10 md:h-11 lg:h-14',
+          scrolled
+            ? 'h-7 sm:h-8 md:h-9 lg:h-10'
+            : 'h-8 sm:h-10 md:h-11 lg:h-14',
         )}
       />
       <span
@@ -52,7 +54,7 @@ function BrandLogo({
         className={cn(
           'block aspect-[448/76] shrink-0 transition-all duration-500 ease-in-out',
           atTop && !isMobileMenu ? 'bg-text-standard' : 'bg-header-ink',
-          scrolled ? 'h-6 md:h-6 lg:h-9' : 'h-7 md:h-7 lg:h-11',
+          scrolled ? 'h-4 sm:h-6 md:h-6 lg:h-9' : 'h-5 sm:h-7 md:h-7 lg:h-11',
         )}
       />
     </>
@@ -153,20 +155,20 @@ export function SiteHeader() {
             scrolled ? 'py-3' : 'py-5',
           )}
         >
-          <div className="mx-auto flex max-w-7xl items-center gap-2 md:gap-3">
+          <div className="mx-auto flex max-w-7xl items-center gap-1 sm:gap-2 md:gap-3">
             <Button
               variant="ghost"
               aria-label="Open menu"
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(true)}
               className={cn(
-                'shrink-0 p-0 transition-colors duration-500 ease-in-out md:hidden mr-1 w-10',
+                'shrink-0 p-0 transition-colors duration-500 ease-in-out md:hidden mr-1 w-9 sm:w-10',
                 isTransparent
                   ? 'text-text-standard hover:bg-text-standard/10'
                   : 'text-header-ink hover:bg-header-ink/10',
               )}
             >
-              <Menu size={26} aria-hidden="true" />
+              <Menu className="size-5 sm:size-6" aria-hidden="true" />
             </Button>
 
             <Link
@@ -257,10 +259,10 @@ export function SiteHeader() {
               })}
             </nav>
 
-            <div className="ml-auto flex shrink-0 items-center gap-2">
+            <div className="ml-auto flex shrink-0 items-center gap-1 sm:gap-2">
               <ThemeToggle
                 className={cn(
-                  'transition-colors duration-500 ease-in-out',
+                  'size-9 sm:size-10 transition-colors duration-500 ease-in-out',
                   isTransparent
                     ? 'border-text-standard/40 text-text-standard hover:bg-text-standard/10'
                     : 'border-header-ink/20 text-header-ink hover:bg-header-ink/5',
@@ -272,14 +274,15 @@ export function SiteHeader() {
                 aria-label="Get Involved"
                 className={cn(
                   buttonBase,
-                  'inline-flex shrink-0 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
+                  'inline-flex shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95',
+                  'size-9 sm:size-10 lg:h-auto lg:w-auto lg:px-4 lg:py-2',
                   isTransparent
                     ? 'border-text-standard/40 bg-transparent text-text-standard hover:bg-text-standard/10'
                     : 'border-transparent bg-header-ink text-header-bg shadow-sm hover:bg-header-ink-hover',
-                  scrolled ? 'md:px-5' : 'md:px-4',
+                  scrolled ? 'lg:px-5' : 'lg:px-4',
                 )}
               >
-                <HandHeart size={20} aria-hidden="true" />
+                <HandHeart className="size-4 sm:size-5" aria-hidden="true" />
                 <span
                   className={cn(
                     'hidden overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out lg:inline-block lg:align-middle',
