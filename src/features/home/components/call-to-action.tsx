@@ -25,7 +25,7 @@ export default function CallToAction() {
           href="/support-us"
           className={cn(
             buttonBase,
-            'flex-1 bg-on-overlay px-2 py-3 text-xs leading-tight text-cta shadow-sm transition-colors hover:bg-on-overlay/90 active:scale-95 sm:flex-none sm:px-6 sm:text-sm md:text-base',
+            'flex-1 text-balance px-3 py-2.5 text-xs leading-tight text-cta bg-on-overlay shadow-sm hover:bg-on-overlay/90 active:scale-95 sm:flex-none sm:px-6 sm:py-3 sm:text-sm md:text-base',
           )}
         >
           Partner/Volunteer With Us
@@ -34,7 +34,7 @@ export default function CallToAction() {
           href="/resources/annual-and-financial-reports"
           className={cn(
             buttonBase,
-            'flex-1 border border-on-overlay/40 px-2 py-3 text-xs leading-tight text-on-overlay transition-colors hover:bg-on-overlay/10 active:scale-95 sm:flex-none sm:px-6 sm:text-sm md:text-base',
+            'flex-1 text-balance px-3 py-2.5 text-xs leading-tight text-on-overlay border border-on-overlay/40 hover:bg-on-overlay/10 active:scale-95 sm:flex-none sm:px-6 sm:py-3 sm:text-sm md:text-base',
           )}
         >
           View Our Reports
