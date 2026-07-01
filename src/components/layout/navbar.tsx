@@ -160,11 +160,10 @@ export function SiteHeader() {
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(true)}
               className={cn(
-                'shrink-0 overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
+                'shrink-0 p-0 transition-colors duration-500 ease-in-out md:hidden mr-1 w-10',
                 isTransparent
                   ? 'text-text-standard hover:bg-text-standard/10'
                   : 'text-header-ink hover:bg-header-ink/10',
-                scrolled ? 'max-w-0 opacity-0' : 'mr-1 max-w-10 opacity-100',
               )}
             >
               <Menu size={26} aria-hidden="true" />
