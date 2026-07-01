@@ -1,13 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
-import Button from '@/components/ui/button'
 import { cn } from '@/lib/utils/cn-merge'
-import VideoModal from '@/features/resources/videos/modal'
 import { VideoContent } from '@/lib/content/types'
 import Text from '@/components/ui/text'
+import ShareButton from '@/components/ui/share-button'
+import Image from 'next/image'
+import VideoModal from '@/features/resources/video-and-media-resources/components/modal'
+import Button from '@/components/ui/button'
 
 function getYouTubeId(url: string): string | null {
   const m = url.match(
@@ -154,10 +156,16 @@ export default function VideoCarousel({ videos }: { videos: VideoContent[] }) {
         </div>
       </div>
 
-      <div className="flex flex-col items-center text-center max-w-2xl px-4 animate-fade-in">
-        <Text size="lg" className="font-semibold">
+      <div className="flex flex-col items-center text-center max-w-2xl px-4 animate-fade-in gap-4">
+        <Text className="text-base font-semibold md:text-lg">
           {displayVideos[currentIndex].title}
         </Text>
+        <ShareButton
+          url={displayVideos[currentIndex]['youtube-link']}
+          title={displayVideos[currentIndex].title}
+          showLabel
+          className="rounded-full px-5 py-2 h-auto text-sm bg-foreground/5 hover:bg-foreground/10"
+        />
       </div>
 
       <VideoModal

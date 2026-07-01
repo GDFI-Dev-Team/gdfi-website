@@ -43,7 +43,7 @@ export default function ArticleImages({ images }: { images: string[] }) {
   return (
     <figure className="flex flex-col w-full mb-10 m-0">
       <div
-        className="relative w-full aspect-video rounded-2xl overflow-hidden bg-foreground/5 shadow-sm border border-foreground/10 group"
+        className="relative w-full aspect-video rounded-xl overflow-hidden bg-foreground/5 shadow-sm border border-foreground/10 group"
         onTouchStart={isMultiple ? onTouchStart : undefined}
         onTouchMove={isMultiple ? onTouchMove : undefined}
         onTouchEnd={isMultiple ? onTouchEnd : undefined}

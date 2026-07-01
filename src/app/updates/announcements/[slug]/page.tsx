@@ -1,25 +1,41 @@
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { ChevronLeft } from 'lucide-react'
+import ArticleDetail from '@/components/ui/article-detail'
 import {
   getSingleMarkdownData,
   getCollectionMarkdownData,
+  markdownToHtml,
 } from '@/lib/content/markdown'
-import { formatEdgeDate } from '@/lib/utils/date'
 import { ArticleContent } from '@/lib/content/types'
-import Link from 'next/link'
-import Section from '@/components/ui/section'
-import Heading from '@/components/ui/heading'
-import Text from '@/components/ui/text'
-import Button from '@/components/ui/button'
-import ArticleImages from '@/components/ui/article-images'
+import { buildArticleMetadata } from '@/lib/content/metadata'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<ArticleContent>(
     'updates/announcements',
   )
-  return articles.map((article) => ({
-    slug: article.slug,
-  }))
+  return articles.map((article) => ({ slug: article.slug }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+
+  try {
+    const article = getSingleMarkdownData<ArticleContent>(
+      'updates/announcements',
+      `${slug}.md`,
+    )
+    return buildArticleMetadata(
+      article,
+      `/updates/announcements/${slug}`,
+      '/nav-item-banner-images/announcements.webp',
+    )
+  } catch {
+    return {}
+  }
 }
 
 export default async function AnnouncementPage({
@@ -35,52 +51,20 @@ export default async function AnnouncementPage({
       'updates/announcements',
       `${slug}.md`,
     )
+    article.slug = slug
   } catch {
     notFound()
   }
 
+  const bodyHtml = await markdownToHtml(article.body)
+
   return (
-    <Section maxWidth="4xl" sectionClassName="pb-8 pt-28 md:pb-12 md:pt-32">
-      <div className="mb-8">
-        <Link href="/updates/announcements" className="inline-flex">
-          <Button
-            variant="ghost"
-            className="gap-2 px-0 hover:bg-transparent hover:text-btn-primary"
-          >
-            <ChevronLeft size={18} aria-hidden="true" /> Back to Announcements
-          </Button>
-        </Link>
-      </div>
-
-      <article>
-        <header className="flex flex-col gap-4 mb-8">
-          <Heading level={1} className="text-balance leading-tight">
-            {article.title}
-          </Heading>
-
-          <div className="flex items-center justify-between gap-4 mt-2">
-            <div className="flex items-center gap-3 text-foreground/60">
-              <time
-                dateTime={new Date(article.date).toISOString()}
-                className="text-sm font-medium block"
-              >
-                {formatEdgeDate(article.date)}
-              </time>
-            </div>
-          </div>
-        </header>
-
-        <ArticleImages images={article.featured_images ?? []} />
-
-        <div className="flex flex-col gap-6">
-          <Text
-            size="lg"
-            className="leading-relaxed text-foreground/90 whitespace-pre-line"
-          >
-            {article.body}
-          </Text>
-        </div>
-      </article>
-    </Section>
+    <ArticleDetail
+      article={article}
+      basePath="/updates/announcements"
+      backLabel="Back to Announcements"
+      variant="announcements"
+      bodyHtml={bodyHtml}
+    />
   )
 }

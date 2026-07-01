@@ -43,23 +43,23 @@ export default function Pagination({
   return (
     <nav
       aria-label="Pagination"
-      className="flex items-center justify-center gap-1 mt-12 md:mt-16"
+      className="flex items-center justify-center gap-0.5 mt-8 md:gap-1 md:mt-16"
     >
       {currentPage <= 1 ? (
         <span
-          className="inline-flex items-center gap-1 mx-3 text-foreground/50 opacity-40 pointer-events-none"
+          className="inline-flex items-center gap-1 mx-1 text-xs text-foreground/50 opacity-40 pointer-events-none md:mx-3 md:text-base"
           aria-disabled="true"
         >
-          <ChevronLeft size={16} aria-hidden="true" />
+          <ChevronLeft className="size-3.5 md:size-4" aria-hidden="true" />
           <span className="hidden sm:inline">Prev</span>
         </span>
       ) : (
         <Link
           href={prevHref}
-          className="inline-flex items-center gap-1 px-3 text-foreground/50 hover:text-foreground"
+          className="inline-flex items-center gap-1 px-1 text-xs text-foreground/50 hover:text-foreground md:px-3 md:text-base"
           aria-label="Previous page"
         >
-          <ChevronLeft size={16} aria-hidden="true" />
+          <ChevronLeft className="size-3.5 md:size-4" aria-hidden="true" />
           <span className="hidden sm:inline">Prev</span>
         </Link>
       )}
@@ -79,7 +79,7 @@ export default function Pagination({
               className={cn(
                 buttonBase,
                 buttonVariants.primary,
-                'w-10 h-10 p-0',
+                'w-6 h-6 p-0 text-xs md:w-10 md:h-10 md:text-base',
               )}
               aria-current="page"
             >
@@ -89,7 +89,11 @@ export default function Pagination({
             <Link
               key={page}
               href={`${baseUrl}/${page}${searchParamsSuffix}`}
-              className={cn(buttonBase, buttonVariants.ghost, 'w-10 h-10 p-0')}
+              className={cn(
+                buttonBase,
+                buttonVariants.ghost,
+                'w-6 h-6 p-0 text-xs md:w-10 md:h-10 md:text-base',
+              )}
               aria-label={`Page ${page}`}
             >
               {page}
@@ -100,20 +104,20 @@ export default function Pagination({
 
       {currentPage >= totalPages ? (
         <span
-          className="inline-flex items-center gap-1 mx-3 text-foreground/50 opacity-40 pointer-events-none"
+          className="inline-flex items-center gap-1 mx-1 text-xs text-foreground/50 opacity-40 pointer-events-none md:mx-3 md:text-base"
           aria-disabled="true"
         >
           <span className="hidden sm:inline">Next</span>
-          <ChevronRight size={16} aria-hidden="true" />
+          <ChevronRight className="size-3.5 md:size-4" aria-hidden="true" />
         </span>
       ) : (
         <Link
           href={nextHref}
-          className="inline-flex items-center gap-1 px-3 text-foreground/50 hover:text-foreground"
+          className="inline-flex items-center gap-1 px-1 text-xs text-foreground/50 hover:text-foreground md:px-3 md:text-base"
           aria-label="Next page"
         >
           <span className="hidden sm:inline">Next</span>
-          <ChevronRight size={16} aria-hidden="true" />
+          <ChevronRight className="size-3.5 md:size-4" aria-hidden="true" />
         </Link>
       )}
     </nav>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: '/updates/community-stories',
     images: [
       {
-        url: '/nav-item-banner-images/community-stories.jpeg',
+        url: '/nav-item-banner-images/community-stories.webp',
         width: 2048,
         height: 1536,
         alt: 'Hear the voices of the coastal communities at the heart of our mission.',

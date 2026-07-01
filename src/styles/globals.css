@@ -60,7 +60,8 @@ README:
   --color-white: oklch(100% 0 0);
 
   /* Typography */
-  --font-display: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 
   /* Animations */
   --animate-fade-up: fade-up 0.5s ease-out both;
@@ -123,7 +124,12 @@ README:
   /* Cards & accents */
   --color-surface: var(--surface);
   --color-accent: var(--color-accent-600);
+  /* Brand teal used as a secondary highlight (e.g. core-pillar icon badges) */
+  --color-brand: var(--brand);
   --color-overlay: var(--color-primary-950);
+  /* Bold branded CTA band — sits between light content and the near-black
+     footer, so it must read as a distinct (lighter, saturated) teal zone */
+  --color-cta: var(--color-primary-800);
   --color-like: var(--color-status-discontinued);
 
   /* Program status badges */
@@ -181,6 +187,9 @@ README:
   --ink-strong: var(--color-neutral-900);
   /* --ink-muted: var(--color-neutral-600); */
 
+  /* Brand teal highlight */
+  --brand: var(--color-primary-600);
+
   /* Borders & focus ring */
   --border: var(--color-neutral-200);
   --ring: var(--color-primary-400);
@@ -207,6 +216,9 @@ README:
 
   --ink-strong: var(--color-neutral-100);
 
+  /* Brighter teal reads better on dark surfaces */
+  --brand: var(--color-primary-400);
+
   --border: var(--color-primary-800);
   --ring: var(--color-primary-500);
 
@@ -232,7 +244,7 @@ README:
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
