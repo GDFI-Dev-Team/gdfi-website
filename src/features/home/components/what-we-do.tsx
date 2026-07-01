@@ -42,7 +42,7 @@ const pillars = [
 
 export default function WhatWeDo() {
   return (
-    <Section sectionClassName="bg-surface">
+    <Section sectionClassName="bg-surface overflow-hidden">
       <div className="mb-8 flex flex-col items-center text-center md:mb-12">
         <Text
           size="lg"
@@ -56,11 +56,11 @@ export default function WhatWeDo() {
         </Heading>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:gap-10">
+      <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 max-sm:-mx-(--gutter) max-sm:px-(--gutter) sm:grid sm:grid-cols-3 sm:gap-8 md:gap-10 sm:overflow-visible sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {pillars.map((pillar) => (
           <div
             key={pillar.title}
-            className="group flex flex-col items-center rounded-2xl border border-border p-6 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg md:p-8"
+            className="group flex flex-col items-center rounded-2xl border border-border p-6 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg md:p-8 shrink-0 w-[85vw] max-w-[340px] snap-start sm:w-auto sm:max-w-none sm:shrink"
           >
             <span
               aria-hidden="true"
