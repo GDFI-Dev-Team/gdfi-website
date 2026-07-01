@@ -2,7 +2,7 @@ import { getCollectionMarkdownData } from '@/lib/content/markdown'
 import {
   Personnel,
   PersonnelEntry,
-} from '@/features/about-us/org-chart/data/types'
+} from '@/features/about-us/organizational-structure/data/types'
 
 const PLACEHOLDER_IMG = '/personnel/placeholder.webp'
 

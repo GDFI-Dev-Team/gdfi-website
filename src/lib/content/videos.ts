@@ -13,7 +13,9 @@ function getParam(params: SearchParams, key: string) {
 }
 
 export function getAllVideos(): (VideoContent & { slug: string })[] {
-  return getCollectionMarkdownData<VideoContent>('resources/video-resources')
+  return getCollectionMarkdownData<VideoContent>(
+    'resources/video-and-media-resources',
+  )
 }
 
 export function getVideosPage(currentPage: number, searchParams: SearchParams) {

@@ -4,6 +4,7 @@ export const CONTENT_LIMITS = {
   announcements: 6,
   communityStories: 6,
   programs: 6,
+  publications: 10,
   videos: 3,
 } as const
 

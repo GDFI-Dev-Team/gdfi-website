@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     url: '/updates/announcements',
     images: [
       {
-        url: '/nav-item-banner-images/announcements.jpeg',
+        url: '/nav-item-banner-images/announcements.webp',
         width: 2048,
         height: 1365,
         alt: 'Stay connected with our ongoing efforts on the frontlines.',

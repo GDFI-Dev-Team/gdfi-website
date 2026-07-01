@@ -1,7 +1,21 @@
 import type { Metadata } from 'next'
+import { Montserrat, Lato } from 'next/font/google'
 import '../styles/globals.css'
 import { SiteHeader } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+})
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -62,7 +76,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`h-full antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${lato.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       {/* suppressHydrationWarning: browser extensions (Grammarly, ColorZilla,
           etc.) inject attributes onto <body> after SSR, which otherwise trips
           React's hydration attribute-mismatch warning. */}

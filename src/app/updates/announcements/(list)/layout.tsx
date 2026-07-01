@@ -17,12 +17,12 @@ export default function AnnouncementsListLayout({
       <Banner
         title="Announcements"
         description="Stay connected with our ongoing efforts on the frontlines"
-        imgUrl="/nav-item-banner-images/announcements.jpeg"
+        imgUrl="/nav-item-banner-images/announcements.webp"
       />
       <Suspense>
-        <FilterBar className="justify-end gap-2">
-          <DateFilter />
+        <FilterBar className="flex-nowrap justify-end gap-2">
           <SearchInput placeholder="Search announcements..." />
+          <DateFilter />
           <ClearFilters />
         </FilterBar>
       </Suspense>
