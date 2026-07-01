@@ -56,11 +56,11 @@ export default function WhatWeDo() {
         </Heading>
       </div>
 
-      <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 max-sm:-mx-(--gutter) max-sm:px-(--gutter) sm:grid sm:grid-cols-3 sm:gap-8 md:gap-10 sm:overflow-visible sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-6 max-sm:-mx-(--gutter) max-sm:px-[10%] sm:grid sm:grid-cols-3 sm:gap-8 md:gap-10 sm:overflow-visible sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {pillars.map((pillar) => (
           <div
             key={pillar.title}
-            className="group flex flex-col items-center rounded-2xl border border-border p-6 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg md:p-8 shrink-0 w-[85vw] max-w-[340px] snap-start sm:w-auto sm:max-w-none sm:shrink"
+            className="group flex w-[80%] max-w-sm shrink-0 snap-center flex-col items-center rounded-2xl border border-border p-6 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg sm:w-auto sm:max-w-none sm:shrink md:p-8"
           >
             <span
               aria-hidden="true"
