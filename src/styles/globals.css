@@ -47,7 +47,7 @@
   --color-accent-900: oklch(43.7% 0.095 57.3);
   --color-accent-950: oklch(29.4% 0.067 56.1);
 
-  /* Status (program status badges — backed onto white text, kept dark enough for contrast) */
+  /* Status (program status badges — backed onto white text) */
   --color-completed: oklch(52% 0.13 159.6);
   --color-ongoing: oklch(58% 0.16 58.3);
   --color-discontinued: oklch(50% 0.19 27.3);
@@ -114,7 +114,7 @@
 
   /* Cards & accents */
   --color-surface: var(--surface);
-  --color-accent: var(--color-accent-600);
+  --color-accent: var(--accent);
   /* Brand teal used as a secondary highlight (e.g. core-pillar icon badges) */
   --color-brand: var(--brand);
   --color-overlay: var(--color-primary-950);
@@ -130,9 +130,18 @@
   --color-header-border: oklch(from var(--color-accent-950) l c h / 12%);
 
   /* Program status badges */
-  --color-status-completed: var(--color-completed);
-  --color-status-ongoing: var(--color-ongoing);
-  --color-status-discontinued: var(--color-discontinued);
+  --color-status-completed: var(
+    --color-status-completed-override,
+    var(--color-completed)
+  );
+  --color-status-ongoing: var(
+    --color-status-ongoing-override,
+    var(--color-ongoing)
+  );
+  --color-status-discontinued: var(
+    --color-status-discontinued-override,
+    var(--color-discontinued)
+  );
 
   /* Button */
   --color-btn-primary: var(--btn-primary);
@@ -183,7 +192,8 @@
      accent-400 so the mark reads on it; theme-independent */
   --header-bg: oklch(95% 0.1 100);
 
-  /* Brand teal highlight */
+  /* Applying dynamic accent & brand */
+  --accent: var(--color-accent-600);
   --brand: var(--color-primary-600);
 
   /* Borders & focus ring */
@@ -212,16 +222,23 @@
 
   --ink-strong: var(--color-neutral-100);
 
-  /* Brighter teal reads better on dark surfaces */
+  /* Applying dynamic accent & brand - Lighter for dark mode */
+  --accent: var(--color-accent-400);
   --brand: var(--color-primary-400);
 
-  --border: var(--color-primary-800);
-  --ring: var(--color-primary-500);
+  /* Borders & focus ring - Lightened border for better definition */
+  --border: var(--color-primary-700);
+  --ring: var(--color-primary-400);
 
-  /* Brighter primaries read better on dark surfaces */
-  --btn-primary: var(--color-primary-500);
-  --btn-primary-hover: var(--color-primary-400);
-  --btn-secondary: var(--color-primary-500);
+  /* Button - Primary needs to contrast against white text, Secondary against dark background */
+  --btn-primary: var(--color-primary-700);
+  --btn-primary-hover: var(--color-primary-600);
+  --btn-secondary: var(--color-primary-400);
+
+  /* Status Badges - Darkened to L=42% */
+  --color-status-completed-override: oklch(42% 0.13 159.6);
+  --color-status-ongoing-override: oklch(42% 0.16 58.3);
+  --color-status-discontinued-override: oklch(42% 0.19 27.3);
 
   /* Hero flips: light scrim, dark (primary-950) text over it */
   --hero-overlay: var(--color-neutral-50);
