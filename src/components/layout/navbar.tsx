@@ -162,11 +162,10 @@ export function SiteHeader() {
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(true)}
               className={cn(
-                'shrink-0 overflow-hidden p-0 transition-all duration-500 ease-in-out md:hidden',
+                'shrink-0 p-0 transition-colors duration-500 ease-in-out md:hidden mr-1 w-10',
                 isTransparent
                   ? 'text-text-standard hover:bg-text-standard/10'
                   : 'text-header-ink hover:bg-header-ink/10',
-                scrolled ? 'max-w-0 opacity-0' : 'mr-1 max-w-10 opacity-100',
               )}
             >
               <Menu size={26} aria-hidden="true" />
@@ -315,12 +314,13 @@ export function SiteHeader() {
         aria-hidden={!mobileOpen}
         aria-label="Site menu"
         className={cn(
-          'fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-header-border bg-header-bg p-6 shadow-xl',
-          mobileOpen ? 'block' : 'pointer-events-none hidden',
+          'fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-50 rounded-2xl border border-header-border bg-header-bg p-5 sm:p-6 shadow-xl',
+          'max-h-[calc(100dvh-env(safe-area-inset-bottom)-1.5rem)] flex-col',
+          mobileOpen ? 'flex' : 'pointer-events-none hidden',
         )}
       >
-        <div className="mx-auto w-full max-w-md">
-          <div className="flex items-center justify-between gap-4">
+        <div className="mx-auto flex w-full max-w-md flex-col min-h-0">
+          <div className="flex shrink-0 items-center justify-between gap-4">
             <Link
               href="/"
               aria-label="GDFI — home"
@@ -339,11 +339,11 @@ export function SiteHeader() {
             </Button>
           </div>
 
-          <nav className="mt-6 flex flex-col gap-0.5">
+          <nav className="mt-4 sm:mt-6 flex flex-col gap-0.5 overflow-y-auto overscroll-contain pb-2">
             {navLinks.map((link) => {
               const active = isActive(link.href)
               const rowClass = cn(
-                'rounded-xl px-4 py-2 text-lg font-semibold transition-colors',
+                'rounded-xl px-4 py-2 text-lg font-semibold transition-colors shrink-0',
                 active
                   ? 'bg-header-ink/10 text-header-ink'
                   : 'text-header-ink hover:bg-header-ink/5',
@@ -365,7 +365,7 @@ export function SiteHeader() {
               // Accordion item
               const open = openSubmenu === link.href
               return (
-                <div key={link.href}>
+                <div key={link.href} className="shrink-0">
                   <Button
                     variant="ghost"
                     aria-expanded={open}
@@ -378,7 +378,10 @@ export function SiteHeader() {
                     {link.label}
                     <ChevronDown
                       size={20}
-                      className={cn(open && 'rotate-180')}
+                      className={cn(
+                        'transition-transform duration-200',
+                        open && 'rotate-180',
+                      )}
                     />
                   </Button>
                   {open && (
