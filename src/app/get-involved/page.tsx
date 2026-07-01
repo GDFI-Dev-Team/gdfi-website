@@ -9,7 +9,7 @@ export default function GetInvolvedPage() {
       <Banner
         title="Get Involved"
         description="Join our journey to protect and restore the marine heritage of Eastern Visayas"
-        imgUrl="/nav-item-banner-images/support-us.webp"
+        imgUrl="/nav-item-banner-images/get-involved.webp"
       />
 
       <Careers />

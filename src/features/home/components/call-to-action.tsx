@@ -22,7 +22,7 @@ export default function CallToAction() {
 
       <div className="flex w-full flex-row gap-3 sm:w-auto sm:gap-4">
         <Link
-          href="/support-us"
+          href="/get-involved"
           className={cn(
             buttonBase,
             'flex-1 bg-on-overlay px-2 py-3 text-xs leading-tight text-cta shadow-sm transition-colors hover:bg-on-overlay/90 active:scale-95 sm:flex-none sm:px-6 sm:text-sm md:text-base',
