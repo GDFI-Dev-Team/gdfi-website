@@ -1469,6 +1469,11 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "7 Municipalities, 1 Shared Vision for Our Coasts!",
       "author": "",
       "date": "2026-05-28T00:00:00.000Z",
+      "featured_images": [
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/05-28-2026-1.webp",
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/05-28-2026-2.webp",
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/05-28-2026-3.webp"
+      ],
       "excerpt": "",
       "body": "\n7 Municipalities, 1 Shared Vision for Our Coasts!\n\nOur marine resources don't recognize borders, which is why coordinated action is key!\n\nOrganized by Guiuan Development Foundation, Inc. and Rare Philippines, the A7 for ICZM, composed of the municipalities of Lawaan, Balangiga, Giporlos, Quinapondan, Salcedo, Mercedes, and Guiuan, is holding its First Executive Committee Meeting (EXECOM) for 2026 to strengthen inter-municipal collaboration and protect our coastal ecosystems.\n\nFrom reviewing mangrove stewardship and seagrass reserves to tackling IUU fishing, our local government units are working hard to protect the livelihoods of our coastal communities.\n\nA major milestone of this EXECOM includes formalizing key partnerships through a Memorandum of Agreement (MOA) signing with:\n\nProvincial Government of Eastern Samar\n\nDENR-VIII\n\nProvincial PNP\n\nUniversity of the Philippines Tacloban College\n\nBy harmonizing our policies and uniting our efforts, we're building a stronger, more climate-resilient Eastern Samar.\n"
     },
@@ -1488,6 +1493,9 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "Empowering coastal communities and fostering climate-smart marine governance",
       "author": "",
       "date": "2026-06-08T00:00:00.000Z",
+      "featured_images": [
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-08-2026.webp"
+      ],
       "excerpt": "",
       "body": "\nGuiuan Development Foundation, Inc.commits to empowering coastal communities and fostering climate-smart marine governance through our community-led Assessment and Management Training, ensuring that local ocean action is truly inclusive and accessible to everyone, including persons with disabilities.\n\nThis World Oceans Day, we are proud to be part of the COAST Facility, a UK-funded programme supporting more resilient coastal ecosystems and stronger, more sustainable blue economies.\n\nThe programme is helping to drive practical solutions across key areas of ocean resilience, from strengthening marine protected and locally managed areas, to advancing blue carbon and nature-based solutions, to supporting sustainable fisheries, aquaculture, and coastal livelihoods.\n\nCentral to this work is partnership. COAST brings together communities, local organisations, governments, researchers, and private sector actors to co-create solutions that link ocean health with economic opportunity.\n\nWe look forward to continuing this journey and to sharing more of our work and impact.\n"
     },
@@ -1496,6 +1504,11 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "GDFI Welcomes Tech Talents from UP!",
       "author": "",
       "date": "2026-06-05T00:00:00.000Z",
+      "featured_images": [
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-1.webp",
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-2.webp",
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-3.webp"
+      ],
       "excerpt": "",
       "body": "\nGDFI Welcomes Tech Talents from University of the Philippines Tacloban!\n\nThe times are changing, and everything is going digital!\n\nFor an NGO like the Guiuan Development Foundation, Inc. (GDFI), keeping up with this shift is crucial.\n\nSpreading environmental awareness, showcasing community impact, and sharing our conservation stories now rely heavily on a strong digital presence.\n\nThat is why—more than ever—the world of conservation needs the power of Computer Science!\n\nWe are thrilled to officially welcome our student-trainees from the University of the Philippines Tacloban, pursuing their BS in Computer Science!\n\nThese brilliant interns are taking on a massive role during their time with us: building GDFI’s official digital home.\n\nBy bridging tech and environmental advocacy, these tech-for-good pioneers are equipping us with the modern tools we need to scale our operations, elevate our publicity, and amplify our awareness campaigns globally.\n\nThis is a huge contribution to our mission. We are incredibly excited to see how their technical skills, codes, and algorithms will translate into stronger waves of coastal conservation and community resilience across Eastern Samar!\n\nWelcome to the team, UP Tacloban Interns!\n\nLet’s build a more digitally empowered and climate-resilient future together.\n"
     },
@@ -1504,6 +1517,9 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "Happy World Environment Day!",
       "author": "",
       "date": "2026-06-05T00:00:00.000Z",
+      "featured_images": [
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-4.webp"
+      ],
       "excerpt": "",
       "body": "\nHappy World Environment Day from GDFI!\n\nFor nearly four decades, Guiuan Development Foundation, Inc. has been working hand-in-hand with local communities, LGUs, and partners to restore what has been degraded, protect our wild marine stocks, and build a climate-resilient Eastern Visayas.\n\nBut conservation isn't a job for just one organization—it takes an entire community.\n\nToday, let’s renew our commitment to protecting our shared home.\n\nWhether it's practicing proper waste management, planting a mangrove, or supporting sustainable fishing, every small action ripples into a wave of change.\n\nTogether, let's protect our coasts, secure our livelihoods, and nurture our future!\n"
     },
@@ -1525,6 +1541,11 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "Through the lens of the next generation",
       "author": "",
       "date": "2026-06-09T00:00:00.000Z",
+      "featured_images": [
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-09-2026-1.webp",
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-09-2026-2.webp",
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-09-2026-3.webp"
+      ],
       "excerpt": "",
       "body": "\nThrough the lens of the next generation.\n\nCheck out these incredible underwater glimpses of the corals and giant clams thriving at the Bagonbanua Island Marine Reserve!\n\nTo keep a close eye on our marine ecosystems, quick status checks and underwater photography are vital tools for our conservation teams.\n\nThese stunning shots were captured by Armandt, one of our passionate young observers and conservationists-in-training.\n\nSeeing the next generation dive into marine protection gives us immense hope for the future of our oceans.\n\nWant the youth in your community to learn about marine biodiversity firsthand?\n\nBagonbanua is a fantastic living classroom! We highly encourage educational and learning visits for young people.\n\nInterested? Coordinate directly with the Guiuan Development Foundation, Inc. (GDFI) to plan a meaningful learning visit.\n"
     }
