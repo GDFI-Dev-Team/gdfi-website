@@ -4,6 +4,11 @@ type Partner = {
   link?: string
 }
 
+export type Award = {
+  name: string
+  file: string
+}
+
 export const partners: Partner[] = [
   {
     name: 'Australian Centre for International Agricultural Research',
@@ -47,4 +52,27 @@ export const partners: Partner[] = [
     link: 'https://icsc.ngo/',
   },
   { name: 'RARE, INC.', file: 'RARE', link: 'https://rare.org/' },
+]
+
+export const awards: Award[] = [
+  {
+    name: 'Champion of the Sea Awards',
+    file: 'award',
+  },
+  {
+    name: 'LGU Salcedo Institutional Recognition (2018)',
+    file: 'award',
+  },
+  {
+    name: 'Best Managed MPA Competition Prizes',
+    file: 'award',
+  },
+  {
+    name: '3rd Prize – Regional Booth Competition (2018)',
+    file: 'award',
+  },
+  {
+    name: 'Global Development Aid of the Year Award Shortlist (2019)',
+    file: 'award',
+  },
 ]
