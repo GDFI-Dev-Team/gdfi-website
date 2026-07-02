@@ -85,9 +85,11 @@ function transformSvg(raw) {
 }
 
 const icons = {}
-for (let n = 1; n <= 3; n++) {
-  const file = join(ICONS_DIR, `${n}.svg`)
-  if (existsSync(file)) icons[n] = transformSvg(readFileSync(file, 'utf8'))
+if (existsSync(ICONS_DIR)) {
+  for (const file of readdirSync(ICONS_DIR).filter((f) => f.endsWith('.svg')).sort()) {
+    const stem = file.replace(/\.svg$/, '')
+    icons[stem] = transformSvg(readFileSync(join(ICONS_DIR, file), 'utf8'))
+  }
 }
 
 writeFileSync(
