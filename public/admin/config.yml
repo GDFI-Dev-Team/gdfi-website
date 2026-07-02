@@ -235,13 +235,14 @@ collections:
         widget: image
         multiple: true
         required: false
+        max: 3
         media_libraries:
-          cloudflare_r2: 
+          cloudflare_r2:
             access_key_id: 58f952949c842bc47dd2ca54dc5fcbda
             bucket: gdfi-website-media
-            account_id: 43ce1490f852bc888767b4c461a386ed 
+            account_id: 43ce1490f852bc888767b4c461a386ed
             public_url: https://cdn.gdfi1988.org
-            prefix: gdfi-website-uploads/announcements
+            prefix: gdfi-website-uploads/announcements/
           default: false
       - name: body
         label: Body
@@ -298,6 +299,7 @@ collections:
         widget: image
         multiple: true
         required: false
+        max: 3
         media_libraries:
           cloudflare_r2:
             access_key_id: 58f952949c842bc47dd2ca54dc5fcbda

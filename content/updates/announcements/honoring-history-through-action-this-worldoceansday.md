@@ -2,6 +2,10 @@
 title: 'Honoring history through action this #WorldOceansDay!'
 author: ''
 date: 2026-06-11
+featured_images:
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-11-2026-1.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-11-2026-2.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-11-2026-3.webp
 excerpt: ''
 ---
 
