@@ -3,6 +3,8 @@ import { getPrograms } from '@/lib/content/programs'
 import { PageProps } from '@/lib/content/types'
 import { ProgramsGrid } from '@/features/our-works/programs-and-projects/components/programs-grid'
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   const { maxPage } = await getPrograms(1, {})
   return Array.from({ length: maxPage }, (_, i) => ({ page: String(i + 1) }))

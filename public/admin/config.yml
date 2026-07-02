@@ -11,10 +11,10 @@ slug:
 media_libraries:
   # handoff later
   cloudflare_r2: 
-    access_key_id: 9c671155033e705d9900c1857e7b81cc
-    bucket: sveltia-media
-    account_id: ffa0678267bca3257f3209173022c26f 
-    public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+    access_key_id: 58f952949c842bc47dd2ca54dc5fcbda
+    bucket: gdfi-website-media
+    account_id: 43ce1490f852bc888767b4c461a386ed 
+    public_url: https://cdn.gdfi1988.org
     prefix: gdfi-website-uploads/
   all:
     transformations:
@@ -48,10 +48,10 @@ collections:
         accept: application/pdf,.pdf
         media_libraries:
           cloudflare_r2:
-            access_key_id: 9c671155033e705d9900c1857e7b81cc
-            bucket: sveltia-media
-            account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            access_key_id: 58f952949c842bc47dd2ca54dc5fcbda
+            bucket: gdfi-website-media
+            account_id: 43ce1490f852bc888767b4c461a386ed
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/annual-and-financial-reports
           default: false
 
@@ -101,10 +101,10 @@ collections:
         accept: application/pdf,.pdf
         media_libraries:
           cloudflare_r2:
-            access_key_id: 9c671155033e705d9900c1857e7b81cc
-            bucket: sveltia-media
-            account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            access_key_id: 58f952949c842bc47dd2ca54dc5fcbda
+            bucket: gdfi-website-media
+            account_id: 43ce1490f852bc888767b4c461a386ed
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/research-and-publications
           default: false
 
@@ -162,10 +162,10 @@ collections:
         accept: "image/jpeg,.jpg,.jpeg,image/png,.png,image/webp,.webp"
         media_libraries:
           cloudflare_r2:
-            access_key_id: 9c671155033e705d9900c1857e7b81cc
-            bucket: sveltia-media
-            account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            access_key_id: 58f952949c842bc47dd2ca54dc5fcbda
+            bucket: gdfi-website-media
+            account_id: 43ce1490f852bc888767b4c461a386ed
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/programs-and-projects
           default: false
       - name: body
@@ -235,13 +235,14 @@ collections:
         widget: image
         multiple: true
         required: false
+        max: 3
         media_libraries:
-          cloudflare_r2: 
-            access_key_id: 9c671155033e705d9900c1857e7b81cc
-            bucket: sveltia-media
-            account_id: ffa0678267bca3257f3209173022c26f 
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
-            prefix: gdfi-website-uploads/announcements
+          cloudflare_r2:
+            access_key_id: 58f952949c842bc47dd2ca54dc5fcbda
+            bucket: gdfi-website-media
+            account_id: 43ce1490f852bc888767b4c461a386ed
+            public_url: https://cdn.gdfi1988.org
+            prefix: gdfi-website-uploads/announcements/
           default: false
       - name: body
         label: Body
@@ -298,12 +299,13 @@ collections:
         widget: image
         multiple: true
         required: false
+        max: 3
         media_libraries:
           cloudflare_r2:
-            access_key_id: 9c671155033e705d9900c1857e7b81cc
-            bucket: sveltia-media
-            account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            access_key_id: 58f952949c842bc47dd2ca54dc5fcbda
+            bucket: gdfi-website-media
+            account_id: 43ce1490f852bc888767b4c461a386ed
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/community-stories
           default: false
       - name: body
@@ -393,10 +395,10 @@ collections:
         required: false
         media_libraries:
           cloudflare_r2:
-            access_key_id: 9c671155033e705d9900c1857e7b81cc
-            bucket: sveltia-media
-            account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            access_key_id: 58f952949c842bc47dd2ca54dc5fcbda
+            bucket: gdfi-website-media
+            account_id: 43ce1490f852bc888767b4c461a386ed
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/personnel
           default: false
       - name: bio

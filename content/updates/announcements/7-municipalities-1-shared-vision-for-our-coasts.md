@@ -2,6 +2,10 @@
 title: 7 Municipalities, 1 Shared Vision for Our Coasts!
 author: ''
 date: 2026-05-28
+featured_images:
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/05-28-2026-1.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/05-28-2026-2.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/05-28-2026-3.webp
 excerpt: ''
 ---
 

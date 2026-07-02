@@ -3,7 +3,7 @@ name: Maylyn Pagatpatan
 role: Project Coordinator
 structure: Project Coordination
 order: 4
-image: /personnel/m-pagatpatan.webp
+image: https://cdn.gdfi1988.org/gdfi-website-uploads/personnel/m-pagatpatan.webp
 bio: >-
   As Project Coordinator, she helps plan, coordinate, and oversee projects that
   support environmental conservation, climate resilience, and community
