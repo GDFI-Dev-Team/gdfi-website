@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "bundle-content": "node scripts/bundle-content.mjs",
+    "dev": "node scripts/bundle-content.mjs && next dev",
+    "build": "node scripts/bundle-content.mjs && next build",
+    "preview": "node scripts/bundle-content.mjs && opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "node scripts/bundle-content.mjs && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "node scripts/bundle-content.mjs && opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
@@ -18,7 +23,7 @@
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.17.0",
     "next": "16.2.7",
-    "pdfjs-dist": "^6.1.200",
+    "pdfjs-dist": "5.4.296",
     "react": "19.2.4",
     "react-date-picker": "^12.0.2",
     "react-dom": "19.2.4",
@@ -28,6 +33,7 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.1",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",
@@ -40,7 +46,8 @@
     "lint-staged": "^17.0.7",
     "prettier": "^3.8.3",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.105.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

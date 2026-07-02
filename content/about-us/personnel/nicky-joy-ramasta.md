@@ -3,7 +3,6 @@ name: Nicky Joy Ramasta
 role: Training Assistant
 structure: Project Coordination
 order: 8
-image: /personnel/placeholder.webp
 bio: >-
   Raised on a small island in Salcedo, Eastern Samar, Nicky Joy Ramasta is a
   Training Assistant dedicated to community development, environmental

@@ -23,6 +23,13 @@ export async function getAnnouncements(
   const allArticles = getCollectionMarkdownData<ArticleContent>(
     'updates/announcements',
   )
+    .slice()
+    // Newest first by `date`; entries without a date sort to the end.
+    .sort((a, b) => {
+      const aTime = a.date ? new Date(a.date).getTime() : -Infinity
+      const bTime = b.date ? new Date(b.date).getTime() : -Infinity
+      return bTime - aTime
+    })
 
   const filteredArticles = filterCollection<ArticleContent>(allArticles, {
     q: getParam(searchParams, 'q'),

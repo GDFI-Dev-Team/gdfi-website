@@ -5,6 +5,8 @@ import { paginateItems } from '@/lib/content/pagination'
 import { CONTENT_LIMITS } from '@/lib/content/pagination'
 import { notFound } from 'next/navigation'
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   const allVideos = getAllVideos()
   const { totalPages } = paginateItems(allVideos, 1, CONTENT_LIMITS.videos)

@@ -3,6 +3,8 @@ import { getPublications } from '@/lib/content/publications'
 import { PageProps } from '@/lib/content/types'
 import PublicationResults from '@/features/resources/research-and-publications/components/pub-results'
 
+export const dynamicParams = false
+
 export function generateStaticParams() {
   const { maxPage } = getPublications(1, {})
   return Array.from({ length: maxPage }, (_, i) => ({ page: String(i + 1) }))
