@@ -6,8 +6,8 @@ import { Share2, Link2, Check } from 'lucide-react'
 import { SiFacebook, SiX } from '@icons-pack/react-simple-icons'
 import { cn } from '@/lib/utils/cn-merge'
 
-const MENU_WIDTH = 176 // w-44
-const MENU_HEIGHT = 196 // approximate — used only for open-direction decision
+const MENU_WIDTH = 176
+const MENU_HEIGHT = 196
 
 interface ShareButtonProps {
   url?: string
@@ -36,10 +36,8 @@ export default function ShareButton({
       (typeof window !== 'undefined' ? window.location.origin : '')
     ).replace(/\/$/, '')
 
-    // An explicit absolute URL is used as-is.
     if (url?.startsWith('http')) return url
 
-    // Otherwise build from a path: the url prop if given, else current page.
     const path =
       url ?? (typeof window !== 'undefined' ? window.location.pathname : '/')
     return `${base}${path.startsWith('/') ? '' : '/'}${path}`
@@ -121,6 +119,9 @@ export default function ShareButton({
 
   const menu = open && (
     <div
+      id="share-menu"
+      role="menu"
+      aria-orientation="vertical"
       ref={menuRef}
       style={menuStyle}
       className="rounded-xl border border-foreground/10 bg-background shadow-lg overflow-hidden py-1"
@@ -131,6 +132,7 @@ export default function ShareButton({
           href={href()}
           target="_blank"
           rel="noopener noreferrer"
+          role="menuitem"
           className="flex items-center gap-2.5 px-3 py-2 text-sm text-foreground/70 hover:bg-foreground/5 hover:text-foreground transition-colors"
         >
           <Icon size={15} aria-hidden />
@@ -140,6 +142,7 @@ export default function ShareButton({
 
       <button
         onClick={copyToClipboard}
+        role="menuitem"
         className="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-foreground/70 hover:bg-foreground/5 hover:text-foreground transition-colors"
       >
         {copied ? (
@@ -159,6 +162,8 @@ export default function ShareButton({
         onClick={handleClick}
         aria-label="Share"
         aria-expanded={open}
+        aria-haspopup="menu"
+        aria-controls={open ? 'share-menu' : undefined}
         className={cn(
           'flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50',
           showLabel
@@ -167,7 +172,7 @@ export default function ShareButton({
           className,
         )}
       >
-        <Share2 size={15} />
+        <Share2 size={15} aria-hidden="true" />
         {showLabel && <span>Share</span>}
       </button>
       {typeof document !== 'undefined' && createPortal(menu, document.body)}
