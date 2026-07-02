@@ -3,7 +3,7 @@ name: Imelda Naing
 role: Cashier
 structure: Admin and Finance
 order: 1
-image: /personnel/i-naing.webp
+image: https://cdn.gdfi1988.org/gdfi-website-uploads/personnel/i-naing.webp
 bio: >-
   Imelda is the Office Cashier at GDFI, where she manages daily financial
   transactions, keeps records organized, and ensures that funds are handled

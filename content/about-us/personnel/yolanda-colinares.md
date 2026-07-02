@@ -3,7 +3,7 @@ name: Yolanda Colinares
 role: Admin Asst. & Bookkeeper
 structure: Admin and Finance
 order: 3
-image: /personnel/y-colinares.webp
+image: https://cdn.gdfi1988.org/gdfi-website-uploads/personnel/y-colinares.webp
 bio: >-
   Yolly is the Finance Assistant and Bookkeeper of GDFI, she keeps the finances
   steady for an organization dedicated to protecting our oceans. Her daily work

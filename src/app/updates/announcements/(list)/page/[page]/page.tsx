@@ -7,6 +7,8 @@ import { AnnouncementsGrid } from '@/features/updates/announcements/components/a
 import { CONTENT_LIMITS } from '@/lib/content/pagination'
 import { PageProps } from '@/lib/content/types'
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   const articles = await getCollectionMarkdownData<ArticleContent>(
     'updates/announcements',

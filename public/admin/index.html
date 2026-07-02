@@ -3,7 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="robots" content="noindex" />
-    <title>Sveltia CMS</title>
+    <title>GDFI CMS</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script>
+      new MutationObserver(() => {
+        const t = document.title.replace(/Sveltia CMS/g, 'GDFI CMS')
+        if (t !== document.title) document.title = t
+      }).observe(document.querySelector('title'), { childList: true })
+    </script>
   </head>
   <body>
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>

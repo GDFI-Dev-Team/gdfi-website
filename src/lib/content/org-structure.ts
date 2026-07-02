@@ -4,7 +4,10 @@ import {
   PersonnelEntry,
 } from '@/features/about-us/organizational-structure/data/types'
 
-const PLACEHOLDER_IMG = '/personnel/placeholder.webp'
+const PLACEHOLDER_IMG =
+  'https://cdn.gdfi1988.org/gdfi-website-uploads/personnel/placeholder.webp'
+const PLACEHOLDER_BIO =
+  'Bio coming soon. This is a placeholder description that will be updated with the actual background, experience, and accomplishments of the team member.'
 
 /**
  * Section names as they appear in the Org Structures collection. Personnel are
@@ -23,7 +26,7 @@ function toPersonnel(entry: PersonnelEntry): Personnel {
     name: entry.name,
     role: entry.role,
     image: entry.image || PLACEHOLDER_IMG,
-    bio: entry.bio ?? '',
+    bio: entry.bio?.trim() || PLACEHOLDER_BIO,
   }
 }
 

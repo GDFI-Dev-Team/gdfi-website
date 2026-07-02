@@ -2,6 +2,8 @@
 title: Celebrating Philippine Independence Day
 author: ''
 date: 2026-06-12
+featured_images:
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-12-26.webp
 excerpt: ''
 ---
 

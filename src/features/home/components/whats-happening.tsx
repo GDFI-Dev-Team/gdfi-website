@@ -58,6 +58,7 @@ const UpdateCard = ({
               ? '(min-width: 1280px) 1280px, 100vw'
               : '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw'
           }
+          loading="eager"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           aria-hidden="true"
         />

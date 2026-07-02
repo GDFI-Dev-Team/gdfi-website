@@ -2,6 +2,10 @@
 title: GDFI Welcomes Tech Talents from UP!
 author: ''
 date: 2026-06-05
+featured_images:
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-1.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-2.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-3.webp
 excerpt: ''
 ---
 

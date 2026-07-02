@@ -2,6 +2,8 @@
 title: Happy World Environment Day!
 author: ''
 date: 2026-06-05
+featured_images:
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-4.webp
 excerpt: ''
 ---
 

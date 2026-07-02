@@ -2,6 +2,8 @@
 title: Empowering coastal communities and fostering climate-smart marine governance
 author: ''
 date: 2026-06-08
+featured_images:
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-08-2026.webp
 excerpt: ''
 ---
 

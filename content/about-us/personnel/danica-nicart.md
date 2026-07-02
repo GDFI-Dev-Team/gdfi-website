@@ -3,7 +3,7 @@ name: Danica Nicart
 role: Project Field Assistant
 structure: Project Coordination
 order: 6
-image: /personnel/d-nicart.webp
+image: https://cdn.gdfi1988.org/gdfi-website-uploads/personnel/d-nicart.webp
 bio: >-
   As Project Field Assistant, she supports the implementation of environment
   conservation and community development projects by assisting in field
