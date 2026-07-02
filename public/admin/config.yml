@@ -14,7 +14,7 @@ media_libraries:
     access_key_id: 9c671155033e705d9900c1857e7b81cc
     bucket: sveltia-media
     account_id: ffa0678267bca3257f3209173022c26f 
-    public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+    public_url: https://cdn.gdfi1988.org
     prefix: gdfi-website-uploads/
   all:
     transformations:
@@ -51,7 +51,7 @@ collections:
             access_key_id: 9c671155033e705d9900c1857e7b81cc
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/annual-and-financial-reports
           default: false
 
@@ -104,7 +104,7 @@ collections:
             access_key_id: 9c671155033e705d9900c1857e7b81cc
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/research-and-publications
           default: false
 
@@ -165,7 +165,7 @@ collections:
             access_key_id: 9c671155033e705d9900c1857e7b81cc
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/programs-and-projects
           default: false
       - name: body
@@ -240,7 +240,7 @@ collections:
             access_key_id: 9c671155033e705d9900c1857e7b81cc
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f 
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/announcements
           default: false
       - name: body
@@ -303,7 +303,7 @@ collections:
             access_key_id: 9c671155033e705d9900c1857e7b81cc
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/community-stories
           default: false
       - name: body
@@ -396,7 +396,7 @@ collections:
             access_key_id: 9c671155033e705d9900c1857e7b81cc
             bucket: sveltia-media
             account_id: ffa0678267bca3257f3209173022c26f
-            public_url: https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev
+            public_url: https://cdn.gdfi1988.org
             prefix: gdfi-website-uploads/personnel
           default: false
       - name: bio

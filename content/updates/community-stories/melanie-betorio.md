@@ -4,7 +4,7 @@ tags:
   - Fisherfolk
   - Women
 featured_images:
-  - https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/community-stories/melanie.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/melanie.webp
 ---
 
 The fisherman’s life is no joke, it doubles the risk to your life, especially if the weather is bad and when your engine is having trouble. I am Melanie Betorio, living on the island of Trinidad Tubabao. Fishing is what we count on to survive.

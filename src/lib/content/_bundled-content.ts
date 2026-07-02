@@ -1135,7 +1135,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "2017 Annual Report",
       "year": "2017",
       "prepared-by": "",
-      "annual-report": "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/annual-reports/2017-AR.pdf",
+      "annual-report": "https://cdn.gdfi1988.org/gdfi-website-uploads/annual-reports/2017-AR.pdf",
       "body": ""
     },
     {
@@ -1143,7 +1143,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "2018 Annual Report",
       "year": "2018",
       "prepared-by": "Janine T. Villamor",
-      "annual-report": "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/annual-reports/2018-AR.pdf",
+      "annual-report": "https://cdn.gdfi1988.org/gdfi-website-uploads/annual-reports/2018-AR.pdf",
       "body": ""
     },
     {
@@ -1151,7 +1151,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "2019 Annual Report",
       "year": "2019",
       "prepared-by": "",
-      "annual-report": "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/annual-reports/2019-AR.pdf",
+      "annual-report": "https://cdn.gdfi1988.org/gdfi-website-uploads/annual-reports/2019-AR.pdf",
       "body": ""
     },
     {
@@ -1159,7 +1159,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "2020 Annual Report",
       "year": "2020",
       "prepared-by": "",
-      "annual-report": "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/annual-reports/2020-AR.pdf",
+      "annual-report": "https://cdn.gdfi1988.org/gdfi-website-uploads/annual-reports/2020-AR.pdf",
       "body": ""
     },
     {
@@ -1167,7 +1167,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "2021 Annual Report",
       "year": "2021",
       "prepared-by": "Janine L. VIllamor",
-      "annual-report": "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/annual-reports/2021-AR.pdf",
+      "annual-report": "https://cdn.gdfi1988.org/gdfi-website-uploads/annual-reports/2021-AR.pdf",
       "body": ""
     },
     {
@@ -1175,7 +1175,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "2022 Annual Report",
       "year": "2022",
       "prepared-by": "Janine L. Villamor",
-      "annual-report": "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/annual-reports/2022-AR.pdf",
+      "annual-report": "https://cdn.gdfi1988.org/gdfi-website-uploads/annual-reports/2022-AR.pdf",
       "body": ""
     },
     {
@@ -1183,7 +1183,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "2023 Annual Report",
       "year": "2023",
       "prepared-by": "Janine L. Villamor",
-      "annual-report": "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/annual-reports/2023-AR.pdf",
+      "annual-report": "https://cdn.gdfi1988.org/gdfi-website-uploads/annual-reports/2023-AR.pdf",
       "body": ""
     },
     {
@@ -1191,7 +1191,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "2024 Annual Report",
       "year": "2024",
       "prepared-by": "Joyce T. Laurente",
-      "annual-report": "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/annual-reports/2024-AR.pdf",
+      "annual-report": "https://cdn.gdfi1988.org/gdfi-website-uploads/annual-reports/2024-AR.pdf",
       "body": ""
     },
     {
@@ -1199,7 +1199,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "title": "2025 Annual Report",
       "year": "2025",
       "prepared-by": "Leo Abuda",
-      "annual-report": "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/annual-reports/2025-AR.pdf",
+      "annual-report": "https://cdn.gdfi1988.org/gdfi-website-uploads/annual-reports/2025-AR.pdf",
       "body": ""
     }
   ],
@@ -1583,7 +1583,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "Fisherfolk"
       ],
       "featured_images": [
-        "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/community-stories/aljen.webp"
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/aljen.webp"
       ],
       "body": "\nI am Aljen Alamodin. I am twenty years old. A young fisherman, son of a fishing couple, Antonio Alamodin and Susan Alamodin. When my siblings and I were young, we were trained in our parents' work [fishing]. They showed us that diligence and perseverance are the secret to rising in life.\n\nBecause I got married early and have a child, I go out to sea with my parents to fish in order to provide for my family.\n\nIn fishing, I saw that I would have enough income to support my family and that perseverance and planning are the secret to success, and not dependent on the type of work you have.\n\nWe don’t catch a lot all the time – there are days when our catch is just enough to serve as our food for the day and we are not able to sell anything\n\nSince I am young, I still have a lot to learn. I still have a lot to learn about making a living, especially in fishing. So I was glad to have the Hub in our town. This is a big thing for our fishermen because we will learn a lot about new technologies that will help our livelihood, especially among the youth. Because they say “Youth is Hope.” I also want to convey to the youth who are losing hope and those that married and had families at an early age, that there are nothing can stop us from lifting our lives, you only need perseverance and diligence.\n"
     },
@@ -1627,7 +1627,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "Women"
       ],
       "featured_images": [
-        "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/community-stories/melanie.webp"
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/melanie.webp"
       ],
       "body": "\nThe fisherman’s life is no joke, it doubles the risk to your life, especially if the weather is bad and when your engine is having trouble. I am Melanie Betorio, living on the island of Trinidad Tubabao. Fishing is what we count on to survive.\n\nIn today’s era we are affected by poverty and by the pandemic going on in the world, especially when fish and crab catches are scarce or very small. It is difficult to budget if the daily income is minimal, especially for family needs, such as food and my children's educational supplies. So even if the weather is bad, we will be patient and go to sea to afford family expenses.\n\nAnother big impact on our fishermen is the relentless illegal fishing that is destroying marine resources. Because of this, we catch very little. We also have the fear of our nets being stolen, as they are our primary source of income. Another challenge for us is the rising price of commodities, especially fuel which often costs more than our income. But despite all this, we will continue to work for our family.\n"
     },
@@ -1638,7 +1638,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "Fisherfolk"
       ],
       "featured_images": [
-        "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/community-stories/saturnino.webp"
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/saturnino.webp"
       ],
       "body": "\nI am Saturnino Lumagbas, a fisherman on the island of Trinidad Tubabao. I am raising my family alone because my wife has passed away.\nOur life, as a fisherman, is occasionally on the brink of death. Because at sea we are sometimes hit by bad weather like heavy rain and stormy weather.\nSometimes even when the weather is bad we still continue to sail because our family needs something to eat every day. Even if our life depends on it, we will still have to sail for our family.\n\nAnd when we look at it – sometimes our boats got damaged and our engines have problems, especially if they have been used for a long time, and we can't go home right away, especially if no one can see and help us. But even though we are experiencing such hardship and trials, we will continue in our work and will not be overcome by the difficulties of life. For our family is what gives us strength. Life as a fisherman is very hard, sometimes our income is not enough to provide for the family's needs.\n\nShow love for your father and be like us, for we sacrifice a lot for our family and children. We should not be ashamed of our livelihood but we should be proud of it because this supports us to live.\n"
     },
@@ -1650,7 +1650,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "Women"
       ],
       "featured_images": [
-        "https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/community-stories/susan.webp"
+        "https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/susan.webp"
       ],
       "body": "\nI am Susan Alamodin, fifty-nine years old, living in Bangaray San Pedro, Quinapondan Eastern Samar. I am a female fisherman and the women’s leader of our association. I am proud of my career as a fisherman. Every day I go with my husband and son to the sea to provide for our daily food and other necessities. What we catch are squid, shrimp, danggit [also known as rabbitfish] and sometimes we also catch crabs. In the few years we have been fishing there are days that we catch a lot but there are days when we have none. But we have to try every day for our family.\n\nWhat my husband and son do at sea, I can do too. I can tolerate the heat and cold for my family. My role is not limited to accompanying my husband and son to the sea, I also process our danggits so that we could sell them at a higher price and increase our income. Because I am also a leader in the women's association in our area, I also teach fish processing to help their families. I give time to teach and provide extra knowledge to working-women to help their husbands.\n\nI wish I could share my story, especially with women – that we can do whatever men can do, especially in employment. Women and men should be treated equally. I believe and I will prove that a woman can do what a man can do.\n"
     }

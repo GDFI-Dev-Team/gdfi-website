@@ -3,7 +3,7 @@ title: Saturnino Lumagbas
 tags:
   - Fisherfolk
 featured_images:
-  - https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/community-stories/saturnino.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/saturnino.webp
 ---
 
 I am Saturnino Lumagbas, a fisherman on the island of Trinidad Tubabao. I am raising my family alone because my wife has passed away.

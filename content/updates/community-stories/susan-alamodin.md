@@ -4,7 +4,7 @@ tags:
   - Fisherfolk
   - Women
 featured_images:
-  - https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/community-stories/susan.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/susan.webp
 ---
 
 I am Susan Alamodin, fifty-nine years old, living in Bangaray San Pedro, Quinapondan Eastern Samar. I am a female fisherman and the women’s leader of our association. I am proud of my career as a fisherman. Every day I go with my husband and son to the sea to provide for our daily food and other necessities. What we catch are squid, shrimp, danggit [also known as rabbitfish] and sometimes we also catch crabs. In the few years we have been fishing there are days that we catch a lot but there are days when we have none. But we have to try every day for our family.

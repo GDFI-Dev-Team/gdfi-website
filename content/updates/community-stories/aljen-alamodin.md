@@ -3,7 +3,7 @@ title: Aljen Alamodin
 tags:
   - Fisherfolk
 featured_images:
-  - https://pub-a32043e692ef4f1f91a01e5573fd355d.r2.dev/gdfi-website-uploads/community-stories/aljen.webp
+  - https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/aljen.webp
 ---
 
 I am Aljen Alamodin. I am twenty years old. A young fisherman, son of a fishing couple, Antonio Alamodin and Susan Alamodin. When my siblings and I were young, we were trained in our parents' work [fishing]. They showed us that diligence and perseverance are the secret to rising in life.
