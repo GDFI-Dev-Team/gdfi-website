@@ -7,6 +7,8 @@ import { CommunityStoriesGrid } from '@/features/updates/community-stories/compo
 import { CONTENT_LIMITS } from '@/lib/content/pagination'
 import { PageProps } from '@/lib/content/types'
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   const articles = await getCollectionMarkdownData<ArticleContent>(
     'updates/community-stories',

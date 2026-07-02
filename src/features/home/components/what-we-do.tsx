@@ -1,40 +1,21 @@
-import fs from 'fs'
-import path from 'path'
+import { pillarsIcons } from './_bundled-icons'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 
-/**
- * Inline the pillar SVGs so they adapt to the theme toggle: drop the baked-in
- * white background and swap the navy artwork to `currentColor`, which then
- * inherits the icon container's text color (and flips on dark/light).
- */
-function loadIcon(n: number) {
-  const file = path.join(
-    process.cwd(),
-    'public',
-    'our-core-pillars',
-    `${n}.svg`,
-  )
-  return fs
-    .readFileSync(file, 'utf8')
-    .replaceAll('fill="#ffffff"', 'fill="none"')
-    .replaceAll('#142d44', 'currentColor')
-}
-
 const pillars = [
   {
-    icon: loadIcon(1),
+    icon: pillarsIcons[1],
     title: 'Coastal Resource Management',
     desc: 'Marine sanctuaries, data-driven assessments, and species restoration.',
   },
   {
-    icon: loadIcon(2),
+    icon: pillarsIcons[2],
     title: 'Mangrove Ecosystem Protection',
     desc: 'Community-led rehabilitation, mapping, and climate resilience training.',
   },
   {
-    icon: loadIcon(3),
+    icon: pillarsIcons[3],
     title: 'Adaptive & Inclusive Governance',
     desc: 'Strengthening local policies and building equitable partnerships.',
   },
