@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Banner from '@/components/ui/banner'
+import MpaShowcase from '@/features/marine-protected-areas/components/mpa-showcase'
 
 export const metadata: Metadata = {
   title: 'Marine Protected Areas (MPAs)',
@@ -32,6 +33,7 @@ export default function MpasPage() {
         description="Safeguarding marine biodiversity through community-managed Marine Protected Areas"
         imgUrl="/nav-item-banner-images/marine-protected-areas.webp"
       />
+      <MpaShowcase />
     </>
   )
 }
