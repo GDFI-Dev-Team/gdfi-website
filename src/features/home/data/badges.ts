@@ -7,6 +7,8 @@ type Partner = {
 export type Award = {
   name: string
   file: string
+  description: string
+  link?: string
 }
 
 export const partners: Partner[] = [
@@ -58,21 +60,26 @@ export const awards: Award[] = [
   {
     name: 'Champion of the Sea Awards',
     file: 'award',
+    description: `Initiated during GDFI's 35th anniversary, this major institutional recognition honors grassroots local leaders, fishers, and advocates for outstanding commitment to locally led climate action and marine biodiversity conservation.`,
   },
   {
     name: 'LGU Salcedo Institutional Recognition (2018)',
     file: 'award',
+    description: `GDFI was formally recognized by the Local Government Unit of Salcedo, Eastern Samar, for its unwavering support as a vital partner in providing basic services and driving sustainable development goals for local communities.`,
   },
   {
     name: 'Best Managed MPA Competition Prizes',
     file: 'award',
+    description: `Through long-standing coastal management advocacy, multiple Marine Protected Areas (MPAs) trained and supported by GDFI have consistently won top prizes and recognition during the annual regional Fisherfolk Day celebrations.`,
   },
   {
     name: '3rd Prize – Regional Booth Competition (2018)',
     file: 'award',
+    description: `GDFI's community partners won third prize in a regional exhibition, highlighting zero-waste management and sustainability by creating innovative eco-friendly packaging from recycled materials.`,
   },
   {
     name: 'Global Development Aid of the Year Award Shortlist (2019)',
     file: 'award',
+    description: `GDFI's Executive Director, Margarita Dela Cruz, and the foundation's climate-resilient initiatives have been globally cited by international bodies like the Global Environment Facility (GEF) for pioneering framework models in disaster recovery and community coastal preservation.`,
   },
 ]
