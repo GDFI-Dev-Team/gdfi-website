@@ -3,7 +3,7 @@ name: 'Teresito Padit, Jr.'
 role: Field Assistant/Driver
 structure: Project Coordination
 order: 7
-image: /personnel/t-padit.webp
+image: https://cdn.gdfi1988.org/gdfi-website-uploads/personnel/t-padit.webp
 bio: >-
   As a Driver/Field Assistant, he supports field activities by safely
   transporting staff and materials, assisting with community outreach, and

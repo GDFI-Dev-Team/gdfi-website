@@ -3,7 +3,7 @@ name: Leo Abuda
 role: 'Monitoring, Evaluation, & Learning Officer'
 structure: Project Coordination
 order: 3
-image: /personnel/l-abuda.webp
+image: https://cdn.gdfi1988.org/gdfi-website-uploads/personnel/l-abuda.webp
 bio: >-
   Raised on a small fishing island in Guiuan, Eastern Samar, Leo is a
   Monitoring, Evaluation, and Learning (MEL) Officer dedicated to community-led
