@@ -41,7 +41,12 @@ export default function ArticleImages({ images }: { images: string[] }) {
   }
 
   return (
-    <figure className="flex flex-col w-full mb-10 m-0">
+    <figure
+      className="flex flex-col w-full mb-10 m-0"
+      role="group"
+      aria-roledescription="carousel"
+      aria-label="Article images"
+    >
       <div
         className="relative w-full aspect-video rounded-xl overflow-hidden bg-foreground/5 shadow-sm border border-foreground/10 group"
         onTouchStart={isMultiple ? onTouchStart : undefined}
@@ -53,7 +58,14 @@ export default function ArticleImages({ images }: { images: string[] }) {
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {images.map((src, i) => (
-            <div key={i} className="relative h-full w-full shrink-0">
+            <div
+              key={i}
+              className="relative h-full w-full shrink-0"
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`Image ${i + 1} of ${images.length}`}
+              aria-hidden={i !== index}
+            >
               <Image
                 src={src}
                 alt={`Article image ${i + 1}`}
@@ -76,7 +88,7 @@ export default function ArticleImages({ images }: { images: string[] }) {
                 onClick={prevSlide}
                 aria-label="Previous image"
               >
-                <ChevronLeft size={20} />
+                <ChevronLeft size={20} aria-hidden="true" />
               </Button>
               <Button
                 variant="secondary"
@@ -84,7 +96,7 @@ export default function ArticleImages({ images }: { images: string[] }) {
                 onClick={nextSlide}
                 aria-label="Next image"
               >
-                <ChevronRight size={20} />
+                <ChevronRight size={20} aria-hidden="true" />
               </Button>
             </div>
 
@@ -94,6 +106,7 @@ export default function ArticleImages({ images }: { images: string[] }) {
                   key={i}
                   onClick={() => setIndex(i)}
                   aria-label={`Go to slide ${i + 1}`}
+                  aria-current={i === index ? 'true' : 'false'}
                   className={cn(
                     'h-1.5 rounded-full transition-all duration-300',
                     i === index
@@ -112,6 +125,7 @@ export default function ArticleImages({ images }: { images: string[] }) {
           <Text
             size="sm"
             className="text-foreground/40 whitespace-nowrap font-medium"
+            aria-live="polite"
           >
             {index + 1} / {images.length}
           </Text>
