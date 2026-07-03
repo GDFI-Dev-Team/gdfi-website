@@ -4,7 +4,7 @@ import OurCorePillars from '@/features/home/components/what-we-do'
 import StoriesFromTheField from '@/features/home/components/stories-from-the-field'
 import WhatsHapenning from '@/features/home/components/whats-happening'
 import VoicesFromTheCoast from '@/features/home/components/voices-from-the-coast'
-import Partners from '@/features/home/components/working-together'
+import Partners from '@/features/home/components/trust-badges'
 import CallToAction from '@/features/home/components/call-to-action'
 import { getFeaturedPrograms } from '@/lib/content/programs'
 

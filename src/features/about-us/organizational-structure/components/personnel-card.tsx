@@ -107,9 +107,12 @@ export function PersonnelCard({ person }: { person: Personnel }) {
               e.stopPropagation()
               setIsMobileModalOpen(false)
             }}
+            role="presentation"
             className="fixed inset-0 z-100 flex items-center justify-center bg-foreground/30 backdrop-blur-sm p-4"
           >
             <div
+              role="dialog"
+              aria-modal="true"
               onClick={(e) => e.stopPropagation()}
               className="bg-background w-full max-w-[800vw] sm:max-w-md p-6 sm:p-8 rounded-3xl shadow-xl relative animate-fade-up flex flex-col max-h-[85vh]"
             >
@@ -118,7 +121,7 @@ export function PersonnelCard({ person }: { person: Personnel }) {
                 className="absolute top-4 right-4 p-2 bg-foreground/5 rounded-full text-foreground/70 hover:text-foreground hover:bg-foreground/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-primary/50"
                 aria-label="Close bio"
               >
-                <X size={20} />
+                <X size={20} aria-hidden="true" />
               </button>
 
               <div className="shrink-0 flex flex-col items-center">
