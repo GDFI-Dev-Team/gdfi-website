@@ -267,7 +267,7 @@ export function SiteHeader() {
                   'inline-flex shrink-0 items-center rounded-full border px-3 py-2 text-sm font-semibold transition-all duration-500 ease-in-out active:scale-95 sm:px-4',
                   isTransparent
                     ? 'border-text-standard/40 bg-transparent text-text-standard hover:bg-text-standard/10'
-                    : 'border-transparent bg-header-ink text-header-bg shadow-sm hover:bg-header-ink-hover',
+                    : 'border-transparent bg-btn-primary text-white shadow-sm hover:bg-btn-primary-hover',
                   scrolled ? 'md:px-5' : 'md:px-4',
                 )}
               >
