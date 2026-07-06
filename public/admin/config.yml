@@ -24,9 +24,9 @@ media_libraries:
         optimize: true
 
 collections:
-  - name: annual-reports
-    label: Annual Reports
-    label_singular: Annual Report
+  - name: annual-and-financial-reports
+    label: Annual & Financial Reports
+    label_singular: Annual & Financial Report
     folder: content/resources/annual-and-financial-reports
     fields:
       - name: title
