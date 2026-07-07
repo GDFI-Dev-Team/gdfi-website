@@ -1,6 +1,6 @@
 import { getCollectionMarkdownData } from '@/lib/content/markdown'
 import { paginateItems, CONTENT_LIMITS } from '@/lib/content/pagination'
-import { Publication } from './types'
+import { Publication } from '@/lib/content/types'
 
 type PublicationsSearchParams = {
   [key: string]: string | string[] | undefined

@@ -2,7 +2,6 @@ export const MISSION_TEXT =
   'In partnership with the upland and coastal communities in Eastern Samar, we commit to protect and conserve biodiversity and natural resources for sustainable development.'
 
 export const MISSION_VISION_IMAGES = [
-  'https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/a7-mpa-monitoring-team.webp',
   'https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-rehabilitation.webp',
   'https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-restoration.webp',
   'https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-tree-planting-balangiga.webp',

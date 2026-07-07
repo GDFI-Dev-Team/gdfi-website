@@ -61,6 +61,13 @@ export interface CommunityCategory {
   name: string
 }
 
+// A single "Our Impact" stat tile — a big accent number/value plus its caption.
+export interface ImpactStat {
+  value: string
+  label: string
+  order?: number
+}
+
 export type BadgeType = 'award' | 'partner'
 export interface Badge {
   name: string
@@ -68,4 +75,20 @@ export interface Badge {
   logo: string
   description?: string
   link?: string
+}
+
+export type Personnel = {
+  name: string
+  role: string
+  image: string
+  bio: string
+}
+
+export type PersonnelEntry = {
+  name: string
+  role: string
+  structure?: string
+  order?: number
+  image?: string
+  bio?: string
 }

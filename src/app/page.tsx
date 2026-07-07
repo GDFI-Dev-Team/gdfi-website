@@ -6,7 +6,7 @@ import WhatsHapenning from '@/features/home/components/whats-happening'
 import VoicesFromTheCoast from '@/features/home/components/voices-from-the-coast'
 import Partners from '@/features/home/components/trust-badges'
 import CallToAction from '@/features/home/components/call-to-action'
-import { getFeaturedPrograms } from '@/lib/content/programs'
+import { getFeaturedPrograms } from '@/features/our-works/programs-and-projects/data/programs'
 
 export default function Home() {
   const featuredPrograms = getFeaturedPrograms(5)

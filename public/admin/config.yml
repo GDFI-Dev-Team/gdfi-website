@@ -66,6 +66,28 @@ collections:
         required: false
         hint: URL opened from the modal's "Visit Page" button.
 
+  - name: our-impact
+    label: Our Impact Stats
+    label_singular: Impact Stat
+    folder: content/home/our-impact
+    create: true
+    identifier_field: label
+    fields:
+      - name: value
+        label: Value
+        widget: string
+        hint: The big number, ex. 35+, 7, 18. Shown large in the accent color.
+      - name: label
+        label: Label
+        widget: string
+        hint: Caption under the value, ex. Years of Legacy, Coastal Municipalities
+      - name: order
+        label: Order
+        widget: number
+        value_type: int
+        default: 1
+        hint: Left-to-right position (1 = first).
+
   - name: annual-and-financial-reports
     label: Annual & Financial Reports
     label_singular: Annual & Financial Report

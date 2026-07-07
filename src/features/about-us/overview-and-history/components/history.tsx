@@ -2,7 +2,10 @@
 
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import { HISTORY_MILESTONES, HistoryMilestone } from '../data/constants'
+import {
+  HISTORY_MILESTONES,
+  HistoryMilestone,
+} from '../data/overview-and-history'
 import { cn } from '@/lib/utils/cn-merge'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'

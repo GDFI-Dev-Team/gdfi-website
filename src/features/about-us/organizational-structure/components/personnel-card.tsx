@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import { X } from 'lucide-react'
 import Text from '@/components/ui/text'
-import { Personnel } from '../data/types'
+import { Personnel } from '@/lib/content/types'
 import { cn } from '@/lib/utils/cn-merge'
 
 export function PersonnelCard({ person }: { person: Personnel }) {

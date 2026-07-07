@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getPublications } from '@/lib/content/publications'
+import { getPublications } from '@/features/resources/research-and-publications/data/publications'
 import { PageProps } from '@/lib/content/types'
 import PublicationResults from '@/features/resources/research-and-publications/components/pub-results'
 

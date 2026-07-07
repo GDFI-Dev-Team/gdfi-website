@@ -3,7 +3,7 @@ import Heading from '@/components/ui/heading'
 import Marquee from '@/components/ui/marquee'
 import Text from '@/components/ui/text'
 import BadgeCard from './badge-card'
-import { getBadges } from '@/lib/content/badges'
+import { getBadges } from '@/features/home/data/badges'
 
 export default function TrustBadges() {
   const badges = getBadges()

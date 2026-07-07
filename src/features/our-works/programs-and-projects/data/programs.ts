@@ -1,7 +1,7 @@
 import { getCollectionMarkdownData } from '@/lib/content/markdown'
 import { paginateItems } from '@/lib/content/pagination'
 import { filterCollection } from '@/lib/content/filter'
-import { Program } from './types'
+import { Program } from '@/lib/content/types'
 import { CONTENT_LIMITS } from '@/lib/content/pagination'
 
 type NamedEntry = { name: string }

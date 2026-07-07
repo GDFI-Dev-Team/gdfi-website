@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getPrograms } from '@/lib/content/programs'
+import { getPrograms } from '@/features/our-works/programs-and-projects/data/programs'
 import { PageProps } from '@/lib/content/types'
 import { ProgramsGrid } from '@/features/our-works/programs-and-projects/components/programs-grid'
 

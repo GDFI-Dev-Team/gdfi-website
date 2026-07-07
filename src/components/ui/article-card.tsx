@@ -10,7 +10,7 @@ import { ArticleContent } from '@/lib/content/types'
 import { formatEdgeDate } from '@/lib/utils/date'
 import { getReadingTime } from '@/lib/content/reading-time'
 import { toPlainText } from '@/lib/content/markdown'
-import { statusClass } from '@/lib/content/programs'
+import { statusClass } from '@/features/our-works/programs-and-projects/data/programs'
 
 export type ArticleVariant = 'announcements' | 'stories' | 'programs'
 

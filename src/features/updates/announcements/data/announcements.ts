@@ -1,7 +1,7 @@
 import { getCollectionMarkdownData } from '@/lib/content/markdown'
 import { paginateItems } from '@/lib/content/pagination'
 import { filterCollection } from '@/lib/content/filter'
-import { ArticleContent } from './types'
+import { ArticleContent } from '@/lib/content/types'
 import { CONTENT_LIMITS } from '@/lib/content/pagination'
 
 type AnnouncementsSearchParams = {

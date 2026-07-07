@@ -4,7 +4,7 @@ import Text from '@/components/ui/text'
 import Link from 'next/link'
 import CommunityStoriesCard from '@/features/updates/community-stories/components/cs-card'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
-import { getCommunityStories } from '@/lib/content/community-stories'
+import { getCommunityStories } from '@/features/updates/community-stories/data/community-stories'
 import { cn } from '@/lib/utils/cn-merge'
 
 export default async function StoriesFromTheField() {

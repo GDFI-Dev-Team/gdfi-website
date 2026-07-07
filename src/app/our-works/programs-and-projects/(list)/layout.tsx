@@ -9,7 +9,7 @@ import { Suspense } from 'react'
 import {
   getProgramStatuses,
   getProgramCategories,
-} from '@/lib/content/programs'
+} from '@/features/our-works/programs-and-projects/data/programs'
 
 export default function ProgramsAndProjectsListLayout({
   children,

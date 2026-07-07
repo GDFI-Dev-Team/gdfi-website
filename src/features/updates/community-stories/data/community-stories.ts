@@ -1,5 +1,5 @@
 import { CONTENT_LIMITS } from '@/lib/content/pagination'
-import { getArticleCollectionPage } from './collection'
+import { getArticleCollectionPage } from '@/lib/content/collection'
 
 type CommunityStoriesSearchParams = {
   [key: string]: string | string[] | undefined

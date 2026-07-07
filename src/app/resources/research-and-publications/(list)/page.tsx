@@ -1,4 +1,4 @@
-import { getPublications } from '@/lib/content/publications'
+import { getPublications } from '@/features/resources/research-and-publications/data/publications'
 import PublicationResults from '@/features/resources/research-and-publications/components/pub-results'
 
 export default async function PublicationsPage({

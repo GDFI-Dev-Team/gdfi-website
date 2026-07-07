@@ -1,5 +1,5 @@
 import { getCollectionMarkdownData } from '@/lib/content/markdown'
-import { CommunityCategory } from './types'
+import { CommunityCategory } from '@/lib/content/types'
 
 export function getCommunityCategories(): string[] {
   return getCollectionMarkdownData<CommunityCategory>(

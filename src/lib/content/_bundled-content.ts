@@ -402,6 +402,36 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "body": ""
     }
   ],
+  "home/our-impact": [
+    {
+      "slug": "coastal-municipalities",
+      "value": "7",
+      "label": "Coastal Municipalities",
+      "order": 2,
+      "body": ""
+    },
+    {
+      "slug": "hectares-of-mangroves-protected",
+      "value": "18",
+      "label": "Hectares of Mangroves Protected",
+      "order": 3,
+      "body": ""
+    },
+    {
+      "slug": "locally-managed-mpas",
+      "value": "25",
+      "label": "Locally Managed MPAs",
+      "order": 4,
+      "body": ""
+    },
+    {
+      "slug": "years-of-legacy",
+      "value": "35+",
+      "label": "Years of Legacy",
+      "order": 1,
+      "body": ""
+    }
+  ],
   "our-works/program-categories": [
     {
       "slug": "capacity-building",

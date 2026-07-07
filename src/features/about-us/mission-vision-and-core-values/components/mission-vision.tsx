@@ -5,7 +5,7 @@ import {
   MISSION_TEXT,
   VISION_TEXT,
   MISSION_VISION_IMAGES,
-} from '../data/constants'
+} from '../data/mission-vision-and-core-values'
 import MVCSlideshow from './mvc-slideshow'
 
 export function MissionVisionCoreValues() {

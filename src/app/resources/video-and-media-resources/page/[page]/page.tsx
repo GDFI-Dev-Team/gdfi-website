@@ -1,6 +1,9 @@
 import Heading from '@/components/ui/heading'
 import VideoGallery from '@/features/resources/video-and-media-resources/components/video-gallery'
-import { getAllVideos, getVideosPage } from '@/lib/content/videos'
+import {
+  getAllVideos,
+  getVideosPage,
+} from '@/features/resources/video-and-media-resources/data/videos'
 import { paginateItems } from '@/lib/content/pagination'
 import { CONTENT_LIMITS } from '@/lib/content/pagination'
 import { notFound } from 'next/navigation'

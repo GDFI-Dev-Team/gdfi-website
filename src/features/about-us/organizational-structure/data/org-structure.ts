@@ -1,8 +1,5 @@
 import { getCollectionMarkdownData } from '@/lib/content/markdown'
-import {
-  Personnel,
-  PersonnelEntry,
-} from '@/features/about-us/organizational-structure/data/types'
+import { Personnel, PersonnelEntry } from '@/lib/content/types'
 
 const PLACEHOLDER_IMG =
   'https://cdn.gdfi1988.org/gdfi-website-uploads/personnel/placeholder.webp'

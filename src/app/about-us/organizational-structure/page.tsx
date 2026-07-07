@@ -4,7 +4,7 @@ import {
   ProjectCoordination,
   PoolOfVolunteers,
 } from '@/features/about-us/organizational-structure/components'
-import { getOrgStructure } from '@/lib/content/org-structure'
+import { getOrgStructure } from '@/features/about-us/organizational-structure/data/org-structure'
 import Banner from '@/components/ui/banner'
 
 export default function OrganizationalStructurePage() {
