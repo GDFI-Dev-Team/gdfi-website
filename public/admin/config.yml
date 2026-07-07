@@ -3,6 +3,19 @@ backend:
   repo: GDFI-Dev-Team/gdfi-website
   base_url: https://sveltia-cms-auth.raki-rarufu-dev.workers.dev # handoff CMS authentication Cloudflare worker
 
+  commit_messages:
+    create: 'content: create {{collection}} "{{slug}}"'
+    update: 'content: update {{collection}} "{{slug}}"'
+    delete: 'content: delete {{collection}} "{{slug}}"'
+    uploadMedia: 'content: upload media "{{path}}"'
+    deleteMedia: 'content: delete media "{{path}}"'
+
+app_title: GDFI Content Management System
+
+logo:
+  src: https://gdfi1988.org/logo-images/logo-footer.svg
+  show_in_header: true
+
 media_folder: /public/media
 
 slug:
