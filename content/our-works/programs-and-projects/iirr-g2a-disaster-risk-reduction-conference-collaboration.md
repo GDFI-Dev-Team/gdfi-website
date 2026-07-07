@@ -5,7 +5,7 @@ status: 'Completed'
 tag: 'Disaster Resilience'
 partners: 'NGOs – International Institute of Rural Reconstruction (IIRR) and Give2Asia.'
 timeline: 'March 7 – 10, 2017'
-featured-img: '/programs-and-projects/8.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/fisherfolk-day-2025-in-giporlos-eastern-samar.webp
 ---
 
 ## Overview

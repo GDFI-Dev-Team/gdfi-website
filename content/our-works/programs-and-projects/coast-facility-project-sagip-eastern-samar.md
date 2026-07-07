@@ -6,7 +6,7 @@ featured: true
 tag: 'Governance'
 partners: 'International Partner – COAST Facility Philippines.'
 timeline: '2025 – ongoing'
-featured-img: '/programs-and-projects/4.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/law-enforcement-summit.webp
 ---
 
 ## Overview

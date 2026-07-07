@@ -6,7 +6,7 @@ featured: true
 tag: 'MPA'
 partners: 'NGA – Department of Environment and Natural Resources – Guiuan Marine Reserve Protected Landscape Seascape (DENR-GMRPLS).'
 timeline: 'Active during 2023'
-featured-img: '/programs-and-projects/6.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/a7-mpa-monitoring-team.webp
 ---
 
 ## Overview

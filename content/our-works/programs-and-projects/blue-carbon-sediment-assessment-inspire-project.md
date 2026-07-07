@@ -5,7 +5,7 @@ status: 'Active'
 tag: 'Climate'
 partners: 'NGO – Institute for Climate and Sustainable Cities (ICSC).'
 timeline: 'Active during 2023'
-featured-img: '/programs-and-projects/9.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-assessment-in-dolores-eastern-samar.webp
 ---
 
 ## Overview

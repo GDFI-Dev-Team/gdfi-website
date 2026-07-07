@@ -5,7 +5,7 @@ status: 'Completed'
 tag: 'Livelihood'
 partners: 'NGO – Give2Asia (G2A).'
 timeline: '2018 – 2019'
-featured-img: '/programs-and-projects/7.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-rehabilitation.webp
 ---
 
 ## Overview

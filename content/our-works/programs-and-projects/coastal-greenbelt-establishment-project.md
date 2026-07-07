@@ -6,7 +6,7 @@ featured: true
 tag: 'Conservation'
 partners: 'Academic Institution – University of the Philippines Visayas Tacloban College (UPVTC).'
 timeline: 'Active throughout 2017 and 2019'
-featured-img: '/programs-and-projects/7.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-restoration.webp
 ---
 
 ## Overview

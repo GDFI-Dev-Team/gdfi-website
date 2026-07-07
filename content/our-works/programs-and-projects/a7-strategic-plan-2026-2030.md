@@ -5,7 +5,7 @@ status: 'Active'
 tag: 'Governance'
 partners: 'Inter-LGU Alliance – The Alliance of Seven (A7): Guiuan, Mercedes, Salcedo, Quinapondan, Giporlos, Balangiga, and Lawaan.'
 timeline: '2025 – ongoing (plan covers 2026–2030)'
-featured-img: '/programs-and-projects/1.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/a7-for-izcm-execom-and-mo-signing.webp
 ---
 
 ## Overview

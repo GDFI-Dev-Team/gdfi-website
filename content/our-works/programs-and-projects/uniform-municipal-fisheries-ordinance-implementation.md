@@ -5,7 +5,7 @@ status: 'Active'
 tag: 'Governance'
 partners: 'Inter-LGU Alliance, NGO, and Academic Consortium – A7 Municipalities, SeasPOC, Academe, BFAR, and the Provincial Government of Eastern Samar.'
 timeline: 'Continuous through 2023'
-featured-img: '/programs-and-projects/8.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/law-enforcement-summit.webp
 ---
 
 ## Overview

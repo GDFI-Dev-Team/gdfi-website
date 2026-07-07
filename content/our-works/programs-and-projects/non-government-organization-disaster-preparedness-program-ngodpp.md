@@ -5,7 +5,7 @@ status: 'Completed'
 tag: 'Disaster Resilience'
 partners: 'NGO – Give2Asia.'
 timeline: 'Highlighted in 2019'
-featured-img: '/programs-and-projects/6.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-tree-planting-balangiga.webp
 ---
 
 ## Overview

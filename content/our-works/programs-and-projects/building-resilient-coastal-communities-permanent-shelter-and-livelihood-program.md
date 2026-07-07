@@ -5,7 +5,7 @@ status: 'Completed'
 tag: 'Livelihood'
 partners: 'NGO – Give2Asia (G2A).'
 timeline: '2014 – March 2017'
-featured-img: '/programs-and-projects/10.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-tree-planting-balangiga.webp
 ---
 
 ## Overview

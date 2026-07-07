@@ -6,7 +6,7 @@ featured: true
 tag: 'Governance'
 partners: 'NGA & LGUs – BFAR via its FishCORAL Project, with the LGUs of Lawaan, Balangiga, Giporlos, Quinapondan, Salcedo, Mercedes, and Guiuan.'
 timeline: 'Re-activation 2017, ordinance overhauls through 2019'
-featured-img: '/programs-and-projects/9.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/a7-for-izcm-execom-and-mo-signing.webp
 ---
 
 ## Overview

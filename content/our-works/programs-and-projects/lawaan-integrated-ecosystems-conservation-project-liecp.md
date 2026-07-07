@@ -6,7 +6,7 @@ featured: true
 tag: 'Conservation'
 partners: 'NGOs & NGA – UNDP-GEF (SGP5), Foundation for the Philippine Environment (FPE), and DENR.'
 timeline: 'September 2016 – May 2018'
-featured-img: '/programs-and-projects/6.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-rehabilitation.webp
 ---
 
 ## Overview

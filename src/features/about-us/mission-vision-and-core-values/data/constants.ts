@@ -2,10 +2,10 @@ export const MISSION_TEXT =
   'In partnership with the upland and coastal communities in Eastern Samar, we commit to protect and conserve biodiversity and natural resources for sustainable development.'
 
 export const MISSION_VISION_IMAGES = [
-  '/about-us/mission-vision-and-core-values/slideshow/1.webp',
-  '/about-us/mission-vision-and-core-values/slideshow/2.webp',
-  '/about-us/mission-vision-and-core-values/slideshow/3.webp',
-  '/about-us/mission-vision-and-core-values/slideshow/4.webp',
+  'https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/a7-mpa-monitoring-team.webp',
+  'https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-rehabilitation.webp',
+  'https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-restoration.webp',
+  'https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-tree-planting-balangiga.webp',
 ]
 
 export const VISION_TEXT =
@@ -29,18 +29,18 @@ export const GOALS = [
 export const CORE_VALUES = [
   {
     label: 'Participation & partnership',
-    icon: '/about-us/mission-vision-and-core-values/core-values/cv1.svg',
+    icon: '/core-values/cv1.svg',
   },
   {
     label: 'Integrity & transparency',
-    icon: '/about-us/mission-vision-and-core-values/core-values/cv2.svg',
+    icon: '/core-values/cv2.svg',
   },
   {
     label: 'Complementation & collaboration',
-    icon: '/about-us/mission-vision-and-core-values/core-values/cv3.svg',
+    icon: '/core-values/cv3.svg',
   },
   {
     label: 'Passion to development work & volunteerism',
-    icon: '/about-us/mission-vision-and-core-values/core-values/cv4.svg',
+    icon: '/core-values/cv4.svg',
   },
 ]

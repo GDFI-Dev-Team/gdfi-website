@@ -5,7 +5,7 @@ status: 'Active'
 tag: 'Partnership'
 partners: 'International Partner – Myriad USA.'
 timeline: '2025 – ongoing'
-featured-img: '/programs-and-projects/7.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/fisherfolk-day-2025-in-giporlos-eastern-samar.webp
 ---
 
 ## Overview

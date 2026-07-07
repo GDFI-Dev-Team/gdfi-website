@@ -35,8 +35,9 @@ export default function ArticleCard({
 }) {
   const href = `${basePath}/${article.slug}`
   const categories = article.tags ?? []
-  const featured_images = article.featured_images?.length
-    ? article.featured_images
+  const providedImages = article.featured_images?.filter(Boolean) ?? []
+  const featured_images = providedImages.length
+    ? providedImages
     : [fallbackImgUrl]
 
   const hasMultipleImages = featured_images.length > 1

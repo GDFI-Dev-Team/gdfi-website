@@ -5,7 +5,7 @@ status: 'Active'
 tag: 'Education'
 partners: 'NGO – Eskwela Haiyan.'
 timeline: 'Started 2015, runs continuously'
-featured-img: '/programs-and-projects/9.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/fisherfolk-day-2025-in-giporlos-eastern-samar.webp
 ---
 
 ## Overview

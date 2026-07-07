@@ -5,7 +5,7 @@ status: 'Active'
 tag: 'Fisheries'
 partners: 'NGO – Environmental Defense Fund (EDF).'
 timeline: 'Active during 2023'
-featured-img: '/programs-and-projects/10.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/fisherfolk-day-2025-in-giporlos-eastern-samar.webp
 ---
 
 ## Overview

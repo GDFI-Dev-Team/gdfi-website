@@ -5,7 +5,7 @@ status: 'Active'
 tag: 'Education'
 partners: 'NGO / Individual Donors – Give2Asia (G2A) & Private Sponsors.'
 timeline: 'Continuous since 2014'
-featured-img: '/programs-and-projects/7.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/fisherfolk-day-2025-in-giporlos-eastern-samar.webp
 ---
 
 ## Overview

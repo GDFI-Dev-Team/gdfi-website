@@ -5,7 +5,7 @@ status: 'Active'
 tag: 'MPA'
 partners: 'NGO – Juan and Isabel Zapanta Foundation, Inc. (JIZFI).'
 timeline: 'Continuous endowment'
-featured-img: '/programs-and-projects/6.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/training-on-marine-protected-area-monitoring.webp
 ---
 
 ## Overview

@@ -5,7 +5,7 @@ status: 'Active'
 tag: 'Conservation'
 partners: 'International Funding Partner – Canada Fund for Local Initiatives (CFLI).'
 timeline: '2025 – ongoing'
-featured-img: '/programs-and-projects/3.webp'
+featured-img: https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-rehabilitation.webp
 ---
 
 ## Overview
