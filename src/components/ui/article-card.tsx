@@ -91,7 +91,9 @@ export default function ArticleCard({
       <div className="flex flex-1 flex-col gap-2 p-3 md:gap-3 md:p-6">
         {variant === 'announcements' ? (
           <time
-            dateTime={new Date(article.date).toISOString()}
+            dateTime={
+              article.date ? new Date(article.date).toISOString() : undefined
+            }
             className="text-xs text-foreground/50 font-semibold tracking-wider block"
           >
             {formatEdgeDate(article.date)}

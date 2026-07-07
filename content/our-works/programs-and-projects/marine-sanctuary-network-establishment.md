@@ -1,7 +1,6 @@
 ---
 title: 'Marine Sanctuary Network Establishment'
 short-description: "DENR-GMRPLS spearheaded the establishment of a Network of Marine Sanctuaries in the GMRPLS area. GDFI was designated as a member of the Research and Development committee for the Network's official management body."
-date: '2023-08-01'
 status: 'Active'
 featured: true
 tag: 'MPA'

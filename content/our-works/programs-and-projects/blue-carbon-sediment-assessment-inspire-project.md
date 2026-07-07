@@ -1,7 +1,6 @@
 ---
 title: 'Blue Carbon Sediment Assessment (INSPIRE Project)'
 short-description: 'Under the INSPIRE Project for Inclusive Growth and Regenerative Ecosystems and the MAP-ELCA project, GDFI partnered with ICSC to map and assess blue carbon sediment stock (carbon stored in mangroves and seagrasses) in selected areas of Guiuan, Salcedo, Mercedes, Paranas, and Samar to mitigate climate change.'
-date: '2023-09-01'
 status: 'Active'
 tag: 'Climate'
 partners: 'NGO – Institute for Climate and Sustainable Cities (ICSC).'

@@ -1,7 +1,6 @@
 ---
 title: 'Myriad USA Donor Funding Partnership'
 short-description: "Partners with GDFI to facilitate international, US tax-deductible donor funding for the foundation's marine conservation and educational sponsorship programs."
-date: '2025-01-15'
 status: 'Active'
 tag: 'Partnership'
 partners: 'International Partner – Myriad USA.'

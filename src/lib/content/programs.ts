@@ -44,32 +44,23 @@ function getParam(params: ProgramsSearchParams, key: string) {
   return typeof params[key] === 'string' ? (params[key] as string) : undefined
 }
 
-function byRecency(a: Program, b: Program) {
-  const aTime = a.date ? new Date(a.date).getTime() : 0
-  const bTime = b.date ? new Date(b.date).getTime() : 0
-  return bTime - aTime
-}
-
-export function getRecentPrograms(limit = 5): Program[] {
-  const all = getCollectionMarkdownData<Omit<Program, 'slug'>>(
-    'our-works/programs-and-projects',
-  )
-  return (all as Program[]).sort(byRecency).slice(0, limit)
+function byTitle(a: Program, b: Program) {
+  return a.title.localeCompare(b.title)
 }
 
 /**
  * Programs flagged `featured: true` in the CMS — drives the homepage hero
- * slideshow. Falls back to the most recent programs if none are flagged, so the
- * hero is never empty. Ordered by recency, capped at `limit`.
+ * slideshow. Falls back to all programs if none are flagged, so the hero is
+ * never empty. Ordered alphabetically by title, capped at `limit`.
  */
 export function getFeaturedPrograms(limit = 5): Program[] {
   const all = getCollectionMarkdownData<Omit<Program, 'slug'>>(
     'our-works/programs-and-projects',
   ) as Program[]
 
-  const featured = all.filter((program) => program.featured).sort(byRecency)
+  const featured = all.filter((program) => program.featured).sort(byTitle)
 
-  return (featured.length > 0 ? featured : all.sort(byRecency)).slice(0, limit)
+  return (featured.length > 0 ? featured : all.sort(byTitle)).slice(0, limit)
 }
 
 /**
@@ -97,7 +88,7 @@ export async function getPrograms(
     (program) => [program.status],
   )
     .filter((program) => !tag || program.tag?.toLowerCase() === tag)
-    .sort(byRecency)
+    .sort(byTitle)
 
   const { items, totalPages } = paginateItems(
     filteredPrograms,

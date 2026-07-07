@@ -24,6 +24,48 @@ media_libraries:
         optimize: true
 
 collections:
+  - name: badges
+    label: Badges
+    label_singular: Badge
+    folder: content/home/badges
+    create: true
+    identifier_field: name
+    fields:
+      - name: name
+        label: Name
+        widget: string
+        hint: ex. Give2Asia, Champion of the Sea Awards
+      - name: type
+        label: Type
+        widget: select
+        default: partner
+        options:
+          - { label: Partner, value: partner }
+          - { label: Award, value: award }
+        hint: Awards are grouped first in the marquee, then partners.
+      - name: logo
+        label: Logo
+        widget: image
+        hint: Square/transparent logo works best.
+        media_libraries:
+          cloudflare_r2:
+            access_key_id: 58f952949c842bc47dd2ca54dc5fcbda
+            bucket: gdfi-website-media
+            account_id: 43ce1490f852bc888767b4c461a386ed
+            public_url: https://cdn.gdfi1988.org
+            prefix: gdfi-website-uploads/badges
+          default: false
+      - name: description
+        label: Description
+        widget: text
+        required: false
+        hint: Shown in the badge's modal.
+      - name: link
+        label: External link
+        widget: string
+        required: false
+        hint: URL opened from the modal's "Visit Page" button.
+
   - name: annual-and-financial-reports
     label: Annual & Financial Reports
     label_singular: Annual & Financial Report
@@ -120,13 +162,6 @@ collections:
       - name: short-description
         label: Short Description
         widget: text
-      - name: date
-        label: Date
-        widget: datetime
-        date_format: 'YYYY-MM-DD'
-        time_format: false
-        picker_utc: true
-        hint: Used to order entries — the 5 most recent are featured in the hero.
       - name: status
         label: Status
         widget: relation

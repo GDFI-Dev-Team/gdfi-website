@@ -76,7 +76,9 @@ const UpdateCard = ({
         }
       >
         <time
-          dateTime={new Date(update.date).toISOString()}
+          dateTime={
+            update.date ? new Date(update.date).toISOString() : undefined
+          }
           className="text-xs uppercase tracking-widest text-on-overlay-subtle block"
         >
           {formatEdgeDate(update.date)}

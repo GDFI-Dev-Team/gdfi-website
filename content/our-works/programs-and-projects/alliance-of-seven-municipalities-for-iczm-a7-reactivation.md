@@ -1,7 +1,6 @@
 ---
 title: 'Alliance of Seven Municipalities for ICZM (A7) Reactivation'
 short-description: 'GDFI facilitated the review, revision, and ongoing integration of a Uniform Municipal Fisheries Ordinance (MFO) across seven local government units to harmonize marine resource governance across 24 MPAs in the northern Leyte Gulf.'
-date: '2019-01-01'
 status: 'Active'
 featured: true
 tag: 'Governance'

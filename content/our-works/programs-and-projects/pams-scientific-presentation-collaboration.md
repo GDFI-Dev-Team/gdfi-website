@@ -1,7 +1,6 @@
 ---
 title: 'PAMS Scientific Presentation Collaboration'
 short-description: 'GDFI research staff presented two scientific papers regarding sandfish/sea cucumber movement and sediment alterations during the 14th National PAMS Symposium in Nasugbu, Batangas.'
-date: '2017-07-13'
 status: 'Completed'
 tag: 'Research'
 partners: 'Academic/Scientific Association – Philippine Association of Marine Sciences (PAMS).'

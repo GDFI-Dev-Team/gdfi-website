@@ -1,7 +1,6 @@
 ---
 title: 'Non-Government Organization Disaster Preparedness Program (NGODPP)'
 short-description: 'Provided solar-powered radio communications systems, sirens, community drills, and a seaworthy passenger/cargo boat launched on August 30, 2019, to improve emergency logistics for the isolated island of Suluan.'
-date: '2019-08-30'
 status: 'Completed'
 tag: 'Disaster Resilience'
 partners: 'NGO – Give2Asia.'
