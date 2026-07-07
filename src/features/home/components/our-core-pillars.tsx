@@ -1,4 +1,4 @@
-import { pillarsIcons } from './_bundled-icons'
+import { pillarsIcons } from '../data/_bundled-icons'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'

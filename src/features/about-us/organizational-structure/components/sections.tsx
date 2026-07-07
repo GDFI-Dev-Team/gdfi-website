@@ -1,7 +1,7 @@
 import Heading from '@/components/ui/heading'
 import Section from '@/components/ui/section'
 import { PersonnelCard } from './personnel-card'
-import { Personnel } from '../data/types'
+import { Personnel } from '@/lib/content/types'
 
 function OrgSection({
   title,

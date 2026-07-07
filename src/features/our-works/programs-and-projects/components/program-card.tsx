@@ -11,7 +11,6 @@ export default function ProgramCard({
   const article: ArticleContent = {
     slug: program.slug,
     title: program.title,
-    date: program.date,
     body: program['short-description'],
     featured_images: [program['featured-img']],
     tags: program.tag ? [program.tag] : [],
