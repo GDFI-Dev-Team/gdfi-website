@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils/cn-merge'
 import {
   CASH_DONATION_DETAILS,
   IN_KIND_DONATION_DETAILS,
-} from '../data/constants'
+} from '../data/donations'
 
 function CopyButton({
   textToCopy,

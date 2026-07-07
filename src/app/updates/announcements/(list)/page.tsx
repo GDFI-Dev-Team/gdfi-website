@@ -1,4 +1,4 @@
-import { getAnnouncements } from '@/lib/content/announcements'
+import { getAnnouncements } from '@/features/updates/announcements/data/announcements'
 import { AnnouncementsGrid } from '@/features/updates/announcements/components/an-grid'
 
 export default async function AnnouncementsPage({

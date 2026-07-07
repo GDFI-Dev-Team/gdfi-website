@@ -22,7 +22,7 @@ export interface VideoContent extends BaseContent {
 // Dated, taggable editorial content (announcements, stories, etc.)
 export interface ArticleContent extends BaseContent {
   author?: string
-  date: string
+  date?: string
   excerpt?: string
   tags?: string[] // generic array for all tags
   featured_images?: string[]
@@ -31,16 +31,11 @@ export interface ArticleContent extends BaseContent {
 
 export interface Program extends BaseContent {
   status: string
-  /** When true, the program appears in the homepage hero slideshow. */
   featured?: boolean
   tag: string
   'short-description': string
   'featured-img': string
-  /** ISO date used to order programs by recency (hero + grid). */
-  date: string
-  /** Partner organisations / partnership type. */
   partners?: string
-  /** Human-readable project timeline, e.g. "Aug 2018 – 2023". */
   timeline?: string
   body: string
 }
@@ -64,4 +59,36 @@ export interface Publication extends BaseContent {
 
 export interface CommunityCategory {
   name: string
+}
+
+// A single "Our Impact" stat tile — a big accent number/value plus its caption.
+export interface ImpactStat {
+  value: string
+  label: string
+  order?: number
+}
+
+export type BadgeType = 'award' | 'partner'
+export interface Badge {
+  name: string
+  type: BadgeType
+  logo: string
+  description?: string
+  link?: string
+}
+
+export type Personnel = {
+  name: string
+  role: string
+  image: string
+  bio: string
+}
+
+export type PersonnelEntry = {
+  name: string
+  role: string
+  structure?: string
+  order?: number
+  image?: string
+  bio?: string
 }

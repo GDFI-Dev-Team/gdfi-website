@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Section from '@/components/ui/section'
-import { OVERVIEW_TEXT } from '../data/constants'
+import { OVERVIEW_TEXT } from '../data/overview-and-history'
 
 export function Overview() {
   return (

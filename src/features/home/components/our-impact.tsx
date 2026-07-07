@@ -1,16 +1,10 @@
-'use client'
-
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import { getImpactStats } from '@/features/home/data/impact'
 
 export default function OurImpact() {
-  const stats = [
-    { value: `35+`, label: 'Years of Legacy' },
-    { value: '7', label: 'Coastal Municipalities' },
-    { value: '18', label: 'Hectares of Mangroves Protected' },
-    { value: '25', label: 'Locally Managed MPAs' },
-  ]
+  const stats = getImpactStats()
 
   return (
     <Section sectionClassName="py-12 md:py-16">
@@ -27,7 +21,12 @@ export default function OurImpact() {
         </Heading>
       </div>
 
-      <div className="grid grid-cols-4 gap-x-2 md:gap-8">
+      <div
+        className="grid gap-x-2 md:gap-8"
+        style={{
+          gridTemplateColumns: `repeat(${stats.length}, minmax(0, 1fr))`,
+        }}
+      >
         {stats.map((stat) => (
           <div
             key={stat.label}

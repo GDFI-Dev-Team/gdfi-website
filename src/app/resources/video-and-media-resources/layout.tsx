@@ -8,7 +8,7 @@ import FilterBar, {
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import FeaturedVideoSlideshow from '@/features/resources/video-and-media-resources/components/featured-video-slideshow'
-import { getAllVideos } from '@/lib/content/videos'
+import { getAllVideos } from '@/features/resources/video-and-media-resources/data/videos'
 
 export const metadata: Metadata = {
   title: 'Video & Media Resources',

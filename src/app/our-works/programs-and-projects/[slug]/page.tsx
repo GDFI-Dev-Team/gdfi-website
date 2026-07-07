@@ -18,7 +18,6 @@ function programToArticle(program: Program): ArticleContent {
   return {
     slug: program.slug,
     title: program.title,
-    date: program.date,
     excerpt: program['short-description'],
     body: program.body,
     featured_images: [program['featured-img']],

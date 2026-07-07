@@ -11,7 +11,7 @@ import { Tag, TagList } from '@/components/ui/tag'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
 import { formatEdgeDate } from '@/lib/utils/date'
 import { getReadingTime } from '@/lib/content/reading-time'
-import { statusClass } from '@/lib/content/programs'
+import { statusClass } from '@/features/our-works/programs-and-projects/data/programs'
 import { ArticleContent } from '@/lib/content/types'
 import { cn } from '@/lib/utils/cn-merge'
 

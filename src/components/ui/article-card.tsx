@@ -10,7 +10,7 @@ import { ArticleContent } from '@/lib/content/types'
 import { formatEdgeDate } from '@/lib/utils/date'
 import { getReadingTime } from '@/lib/content/reading-time'
 import { toPlainText } from '@/lib/content/markdown'
-import { statusClass } from '@/lib/content/programs'
+import { statusClass } from '@/features/our-works/programs-and-projects/data/programs'
 
 export type ArticleVariant = 'announcements' | 'stories' | 'programs'
 
@@ -35,8 +35,9 @@ export default function ArticleCard({
 }) {
   const href = `${basePath}/${article.slug}`
   const categories = article.tags ?? []
-  const featured_images = article.featured_images?.length
-    ? article.featured_images
+  const providedImages = article.featured_images?.filter(Boolean) ?? []
+  const featured_images = providedImages.length
+    ? providedImages
     : [fallbackImgUrl]
 
   const hasMultipleImages = featured_images.length > 1
@@ -91,7 +92,9 @@ export default function ArticleCard({
       <div className="flex flex-1 flex-col gap-2 p-3 md:gap-3 md:p-6">
         {variant === 'announcements' ? (
           <time
-            dateTime={new Date(article.date).toISOString()}
+            dateTime={
+              article.date ? new Date(article.date).toISOString() : undefined
+            }
             className="text-xs text-foreground/50 font-semibold tracking-wider block"
           >
             {formatEdgeDate(article.date)}

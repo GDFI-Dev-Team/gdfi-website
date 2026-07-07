@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ShareButton from '@/components/ui/share-button'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
-import { getAnnouncements } from '@/lib/content/announcements'
+import { getAnnouncements } from '@/features/updates/announcements/data/announcements'
 import { ArticleContent } from '@/lib/content/types'
 import { formatEdgeDate } from '@/lib/utils/date'
 import { toPlainText } from '@/lib/content/markdown'
@@ -76,7 +76,9 @@ const UpdateCard = ({
         }
       >
         <time
-          dateTime={new Date(update.date).toISOString()}
+          dateTime={
+            update.date ? new Date(update.date).toISOString() : undefined
+          }
           className="text-xs uppercase tracking-widest text-on-overlay-subtle block"
         >
           {formatEdgeDate(update.date)}

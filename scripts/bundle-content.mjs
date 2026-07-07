@@ -5,7 +5,7 @@
  * content without `fs` (not available in Cloudflare Workers V8).
  *
  * Also bundles public SVG assets that are inlined by server components
- * (e.g. the core-pillar icons) into src/features/home/components/_bundled-icons.ts.
+ * (e.g. the core-pillar icons) into src/features/home/data/_bundled-icons.ts.
  *
  * Runs automatically before `next build` / `next dev`.
  * Re-run manually with `pnpm bundle-content` after editing content in dev.
@@ -22,7 +22,7 @@ const CONTENT_DIR = join(ROOT, 'content')
 const OUTPUT = join(ROOT, 'src/lib/content/_bundled-content.ts')
 const ICONS_OUTPUT = join(
   ROOT,
-  'src/features/home/components/_bundled-icons.ts',
+  'src/features/home/data/_bundled-icons.ts',
 )
 
 // ── Markdown content ────────────────────────────────────────────────────────
@@ -104,5 +104,5 @@ export const pillarsIcons: Record<number, string> = ${JSON.stringify(icons, null
   'utf8',
 )
 console.log(
-  `bundled ${Object.keys(icons).length} pillar icons → src/features/home/components/_bundled-icons.ts`,
+  `bundled ${Object.keys(icons).length} pillar icons → src/features/home/data/_bundled-icons.ts`,
 )
