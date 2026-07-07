@@ -34,7 +34,7 @@ const project = ([lon, lat]) => [lon * k, -lat] // y flipped for screen space
 const islandPts = islandRings.flat().map(project)
 let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity
 for (const [x, y] of islandPts) { minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y) }
-const PAD = 0.06
+// const PAD = 0.06
 const spanX = maxX - minX, spanY = maxY - minY
 const W = 1000
 const scale = W / spanX
