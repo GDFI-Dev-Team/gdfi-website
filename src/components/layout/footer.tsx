@@ -7,7 +7,7 @@ import { ContactForm } from './contact-form'
 import Text from '../ui/text'
 import Heading from '../ui/heading'
 
-const LOGO_SRC = '/logo-images/logo.svg'
+const LOGO_SRC = '/logo-images/logo-footer.svg'
 
 const socialLinks = [
   { label: 'Facebook', href: socials.facebook, Icon: SiFacebook },
