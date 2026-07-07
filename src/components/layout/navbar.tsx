@@ -14,12 +14,10 @@ const NAME_MARK_SRC = '/logo-images/name.svg'
 
 function BrandLogo({
   priority = false,
-  scrolled = false,
   atTop = false,
   isMobileMenu = false,
 }: {
   priority?: boolean
-  scrolled?: boolean
   atTop?: boolean
   isMobileMenu?: boolean
 }) {
@@ -27,14 +25,12 @@ function BrandLogo({
     <>
       <Image
         src={LOGO_MARK_SRC}
-        alt=""
+        alt="Guiuan Development Foundation Inc. Logo"
         width={1630}
         height={1421}
         priority={priority}
-        className={cn(
-          'w-auto shrink-0 transition-all duration-500 ease-in-out',
-          scrolled ? 'h-8 md:h-9 lg:h-10' : 'h-10 md:h-11 lg:h-14',
-        )}
+        className="h-10 w-auto shrink-0 md:h-11 lg:h-14"
+        loading="eager"
       />
       <span
         aria-hidden="true"
@@ -49,9 +45,8 @@ function BrandLogo({
           WebkitMaskSize: 'contain',
         }}
         className={cn(
-          'block aspect-[448/76] shrink-0 transition-all duration-500 ease-in-out',
+          'block aspect-448/76 h-6 shrink-0 transition-colors duration-500 ease-in-out sm:h-7 lg:h-11',
           atTop && !isMobileMenu ? 'bg-text-standard' : 'bg-header-ink',
-          scrolled ? 'h-5 sm:h-6 lg:h-9' : 'h-6 sm:h-7 lg:h-11',
         )}
       />
     </>
@@ -175,7 +170,7 @@ export function SiteHeader() {
               aria-label="GDFI — home"
               className="flex shrink-0 items-center gap-2"
             >
-              <BrandLogo priority scrolled={scrolled} atTop={isTransparent} />
+              <BrandLogo priority atTop={isTransparent} />
             </Link>
 
             <nav className="hidden flex-1 items-center justify-center gap-0.5 md:flex lg:gap-1">
