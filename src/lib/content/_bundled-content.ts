@@ -350,7 +350,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Local Government Units – Alliance of Seven Municipalities (Lawaan, Balangiga, Giporlos, Quinapondan, Salcedo, Mercedes, and Guiuan).",
       "timeline": "March 08, 2023",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nAn inter-LGU alliance meeting held at the Rosvenil Hotel in Tacloban City to review financial status, annual dues, contributions, and proposed 2023 activities. The meeting marked a transition in leadership, selecting Mayor Kwan as the new chairperson of the alliance.\r\n"
+      "body": "\n## Overview\n\nAn inter-LGU alliance meeting held at the Rosvenil Hotel in Tacloban City to review financial status, annual dues, contributions, and proposed 2023 activities. The meeting marked a transition in leadership, selecting Mayor Kwan as the new chairperson of the alliance.\n"
     },
     {
       "slug": "a7-marine-protected-area-mpa-monitoring-team",
@@ -362,7 +362,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Local communities across the Alliance of Seven (A7) municipalities.",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/2.webp",
-      "body": "\r\n## Overview\r\n\r\nPartnered directly with local communities to train 28 representatives to systematically track coral reef, seagrass, and mangrove health across the A7 marine protected areas.\r\n"
+      "body": "\n## Overview\n\nPartnered directly with local communities to train 28 representatives to systematically track coral reef, seagrass, and mangrove health across the A7 marine protected areas.\n"
     },
     {
       "slug": "a7-strategic-plan-2026-2030",
@@ -374,7 +374,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Inter-LGU Alliance – The Alliance of Seven (A7): Guiuan, Mercedes, Salcedo, Quinapondan, Giporlos, Balangiga, and Lawaan.",
       "timeline": "2025 – ongoing (plan covers 2026–2030)",
       "featured-img": "/programs-and-projects/1.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI acts as a core partner and technical driver for the Alliance of Seven coastal municipalities sharing the northern Leyte Gulf. GDFI facilitated the creation of the A7 Strategic Plan for 2026–2030 to unify regional fisheries management across the seven LGUs.\r\n"
+      "body": "\n## Overview\n\nGDFI acts as a core partner and technical driver for the Alliance of Seven coastal municipalities sharing the northern Leyte Gulf. GDFI facilitated the creation of the A7 Strategic Plan for 2026–2030 to unify regional fisheries management across the seven LGUs.\n"
     },
     {
       "slug": "alliance-of-seven-municipalities-for-iczm-a7-reactivation",
@@ -387,7 +387,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGA & LGUs – BFAR via its FishCORAL Project, with the LGUs of Lawaan, Balangiga, Giporlos, Quinapondan, Salcedo, Mercedes, and Guiuan.",
       "timeline": "Re-activation 2017, ordinance overhauls through 2019",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI facilitated the review, revision, and ongoing integration of a Uniform Municipal Fisheries Ordinance (MFO) across seven local government units to harmonize marine resource governance across 24 MPAs in the northern Leyte Gulf.\r\n"
+      "body": "\n## Overview\n\nGDFI facilitated the review, revision, and ongoing integration of a Uniform Municipal Fisheries Ordinance (MFO) across seven local government units to harmonize marine resource governance across 24 MPAs in the northern Leyte Gulf.\n"
     },
     {
       "slug": "bagonbanua-training-and-research-station-fund-campaign",
@@ -399,7 +399,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Various Individual Donors.",
       "timeline": "Active campaign during 2023",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI mobilized resources from individual donors for a fundraising campaign aimed at rebuilding the Bagonbanua Training and Research Station, originally destroyed by Typhoon Haiyan. The station is intended to provide hands-on training in coastal resource assessment and monitoring for students, researchers, and study groups.\r\n"
+      "body": "\n## Overview\n\nGDFI mobilized resources from individual donors for a fundraising campaign aimed at rebuilding the Bagonbanua Training and Research Station, originally destroyed by Typhoon Haiyan. The station is intended to provide hands-on training in coastal resource assessment and monitoring for students, researchers, and study groups.\n"
     },
     {
       "slug": "blue-carbon-sediment-assessment-inspire-project",
@@ -411,7 +411,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Institute for Climate and Sustainable Cities (ICSC).",
       "timeline": "Active during 2023",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nUnder the INSPIRE Project for Inclusive Growth and Regenerative Ecosystems and the MAP-ELCA project, GDFI partnered with ICSC to map and assess blue carbon sediment stock (carbon stored in mangroves and seagrasses) in selected areas of Guiuan, Salcedo, Mercedes, Paranas, and Samar to mitigate climate change.\r\n"
+      "body": "\n## Overview\n\nUnder the INSPIRE Project for Inclusive Growth and Regenerative Ecosystems and the MAP-ELCA project, GDFI partnered with ICSC to map and assess blue carbon sediment stock (carbon stored in mangroves and seagrasses) in selected areas of Guiuan, Salcedo, Mercedes, Paranas, and Samar to mitigate climate change.\n"
     },
     {
       "slug": "building-resilient-coastal-communities-permanent-shelter-and-livelihood-program",
@@ -423,7 +423,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Give2Asia (G2A).",
       "timeline": "2014 – March 2017",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nProvided 48 permanent concrete houses to families living in high-risk areas on Maliwaliw Island, Salcedo. It also funded a Level 3 potable water system and an ongoing wild-bee restoration / bee-keeping livelihood project.\r\n"
+      "body": "\n## Overview\n\nProvided 48 permanent concrete houses to families living in high-risk areas on Maliwaliw Island, Salcedo. It also funded a Level 3 potable water system and an ongoing wild-bee restoration / bee-keeping livelihood project.\n"
     },
     {
       "slug": "building-resilient-coastal-communities-strengthening-gains-of-rehabilitation",
@@ -435,7 +435,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Give2Asia (G2A).",
       "timeline": "2018 – 2019",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nFocus turned toward creating financial resilience for families via supporting women's economic livelihood groups, including agro-aqua trade fairs, community stores, and livestock production.\r\n"
+      "body": "\n## Overview\n\nFocus turned toward creating financial resilience for families via supporting women's economic livelihood groups, including agro-aqua trade fairs, community stores, and livestock production.\n"
     },
     {
       "slug": "canada-fund-for-local-initiatives-cfli-mangrove-rehabilitation",
@@ -447,7 +447,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "International Funding Partner – Canada Fund for Local Initiatives (CFLI).",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/3.webp",
-      "body": "\r\n## Overview\r\n\r\nPartnered on projects aimed at climate change adaptation and governance. This collaboration directly funded the community-led rehabilitation of 18 hectares of mangroves across Maliwaliw Island, Bungtod, and Balangiga.\r\n"
+      "body": "\n## Overview\n\nPartnered on projects aimed at climate change adaptation and governance. This collaboration directly funded the community-led rehabilitation of 18 hectares of mangroves across Maliwaliw Island, Bungtod, and Balangiga.\n"
     },
     {
       "slug": "children-s-learning-resource-centre-and-fiscal-sponsorship",
@@ -459,7 +459,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO / Individual Donors – Give2Asia (G2A) & Private Sponsors.",
       "timeline": "Continuous since 2014",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nMaintained operations of the Children's Learning Resource Centre at the G2A-Salcedo Village. GDFI also utilized individual donor funds to provide ongoing educational sponsorship for island-community college and Senior High School students.\r\n"
+      "body": "\n## Overview\n\nMaintained operations of the Children's Learning Resource Centre at the G2A-Salcedo Village. GDFI also utilized individual donor funds to provide ongoing educational sponsorship for island-community college and Senior High School students.\n"
     },
     {
       "slug": "coast-facility-project-sagip-eastern-samar",
@@ -472,7 +472,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "International Partner – COAST Facility Philippines.",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/4.webp",
-      "body": "\r\n## Overview\r\n\r\nPartnered on Project SAGIP-Eastern Samar, an initiative comprising five workstreams focused on ecosystem restoration, inclusive governance, economic empowerment, and strengthening local fisherfolk associations.\r\n"
+      "body": "\n## Overview\n\nPartnered on Project SAGIP-Eastern Samar, an initiative comprising five workstreams focused on ecosystem restoration, inclusive governance, economic empowerment, and strengthening local fisherfolk associations.\n"
     },
     {
       "slug": "coastal-greenbelt-establishment-project",
@@ -485,7 +485,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Academic Institution – University of the Philippines Visayas Tacloban College (UPVTC).",
       "timeline": "Active throughout 2017 and 2019",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nDisplaced families moving to the G2A village left vacant coastal spaces where around 1,000 beach trees and bamboos were planted to create a greenbelt buffer against future typhoons and storm surges.\r\n"
+      "body": "\n## Overview\n\nDisplaced families moving to the G2A village left vacant coastal spaces where around 1,000 beach trees and bamboos were planted to create a greenbelt buffer against future typhoons and storm surges.\n"
     },
     {
       "slug": "endowment-fund-for-bantay-dagat-marine-protected-areas-mpas",
@@ -497,7 +497,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Juan and Isabel Zapanta Foundation, Inc. (JIZFI).",
       "timeline": "Continuous endowment, established 2017",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nJIZFI provided a ₱1.0M endowment fund to GDFI. The accrued income is strictly used to pay insurance premiums and cover capacity-building expenses for GDFI-Bantay Dagat and MPA volunteers.\r\n"
+      "body": "\n## Overview\n\nJIZFI provided a ₱1.0M endowment fund to GDFI. The accrued income is strictly used to pay insurance premiums and cover capacity-building expenses for GDFI-Bantay Dagat and MPA volunteers.\n"
     },
     {
       "slug": "eskwela-haiyan-eh-scholarship-program",
@@ -509,7 +509,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Eskwela Haiyan.",
       "timeline": "Started 2015, runs continuously",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nA scholarship program helping underprivileged children affected by Typhoon Haiyan stay in school. It provides financial allowances of ₱12,000/year for high school students and ₱5,000 to ₱8,000/semester for state college students.\r\n"
+      "body": "\n## Overview\n\nA scholarship program helping underprivileged children affected by Typhoon Haiyan stay in school. It provides financial allowances of ₱12,000/year for high school students and ₱5,000 to ₱8,000/semester for state college students.\n"
     },
     {
       "slug": "expansion-and-diversification-of-production-and-management-systems-of-sea-cucumbers",
@@ -521,7 +521,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGA & Academic Institutions – ACIAR, James Cook University, USC Australia, UP-MSI, SEAFDEC, MSU Naawan, and BFAR-8.",
       "timeline": "April 2013 – July 2018",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nA research project aimed at developing commercial-scale hatchery and grow-out technologies for the sandfish (Holothuria scabra), adapting systems to social, institutional, and bio-physical settings. It established a 5-hectare sea ranch in Maliwaliw Island.\r\n"
+      "body": "\n## Overview\n\nA research project aimed at developing commercial-scale hatchery and grow-out technologies for the sandfish (Holothuria scabra), adapting systems to social, institutional, and bio-physical settings. It established a 5-hectare sea ranch in Maliwaliw Island.\n"
     },
     {
       "slug": "first-national-biodiversity-congress-input",
@@ -533,7 +533,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGA – Department of Environment and Natural Resources (DENR).",
       "timeline": "May 22 – 24, 2017",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI presented biophysical assessment data on Lawaan ecosystems and Philippine Cockatoo sightings on Homonhon Island to urge policymakers to declare critical habitats or expand protected seascapes.\r\n"
+      "body": "\n## Overview\n\nGDFI presented biophysical assessment data on Lawaan ecosystems and Philippine Cockatoo sightings on Homonhon Island to urge policymakers to declare critical habitats or expand protected seascapes.\n"
     },
     {
       "slug": "icsc-community-based-forest-management-collaboration",
@@ -545,7 +545,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Institute for Climate and Sustainable Cities (ICSC).",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nCollaborated on data collection and policy analysis regarding Community-Based Forest Management Areas (CBFMAs) and local coastal ecosystems.\r\n"
+      "body": "\n## Overview\n\nCollaborated on data collection and policy analysis regarding Community-Based Forest Management Areas (CBFMAs) and local coastal ecosystems.\n"
     },
     {
       "slug": "iirr-g2a-disaster-risk-reduction-conference-collaboration",
@@ -557,7 +557,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGOs – International Institute of Rural Reconstruction (IIRR) and Give2Asia.",
       "timeline": "March 7 – 10, 2017",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI participated in this conference held at IIRR, Cavite, and the Asian Institute of Management (AIM) to share experiences and learn best practices for building disaster-resilient coastal communities across Asian countries.\r\n"
+      "body": "\n## Overview\n\nGDFI participated in this conference held at IIRR, Cavite, and the Asian Institute of Management (AIM) to share experiences and learn best practices for building disaster-resilient coastal communities across Asian countries.\n"
     },
     {
       "slug": "increasing-technical-skills-supporting-community-based-sea-cucumber-production-phase-2",
@@ -569,7 +569,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Academic & International Research Institutions / NGAs – ACIAR, University of the Sunshine Coast (USC), James Cook University, UP-MSI, SEAFDEC, MSU Naawan, BFAR-VIII, and local POs.",
       "timeline": "August 2018 – 2023",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nFollow-up phase targeted at scaling up technical skills, expanding community-based sea cucumber farming, and improving culture methods inside sea pen nurseries across Vietnam and the Philippines. The 5-year Phase 2 concluded in 2023.\r\n"
+      "body": "\n## Overview\n\nFollow-up phase targeted at scaling up technical skills, expanding community-based sea cucumber farming, and improving culture methods inside sea pen nurseries across Vietnam and the Philippines. The 5-year Phase 2 concluded in 2023.\n"
     },
     {
       "slug": "laboratory-analysis-partnership-uptc",
@@ -581,7 +581,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Academic Institution – University of the Philippines Tacloban College (UPTC).",
       "timeline": "Continuous partnership",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nUPTC continues to provide GDFI researchers access to its laboratory facilities and equipment, allowing sediment and biofilm samples gathered during field work to be processed and analyzed.\r\n"
+      "body": "\n## Overview\n\nUPTC continues to provide GDFI researchers access to its laboratory facilities and equipment, allowing sediment and biofilm samples gathered during field work to be processed and analyzed.\n"
     },
     {
       "slug": "lawaan-integrated-ecosystems-conservation-project-liecp",
@@ -594,7 +594,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGOs & NGA – UNDP-GEF (SGP5), Foundation for the Philippine Environment (FPE), and DENR.",
       "timeline": "September 2016 – May 2018",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nAdopting a ridge-to-reef framework to build community climate resilience and safeguard Lawaan's biodiversity. GDFI also sponsored the field research expenses of BS Biology graduating students from UPVTC in 2017 and 2018.\r\n"
+      "body": "\n## Overview\n\nAdopting a ridge-to-reef framework to build community climate resilience and safeguard Lawaan's biodiversity. GDFI also sponsored the field research expenses of BS Biology graduating students from UPVTC in 2017 and 2018.\n"
     },
     {
       "slug": "marine-sanctuary-network-establishment",
@@ -607,7 +607,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGA – Department of Environment and Natural Resources – Guiuan Marine Reserve Protected Landscape Seascape (DENR-GMRPLS).",
       "timeline": "Active during 2023",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nDENR-GMRPLS spearheaded the establishment of a Network of Marine Sanctuaries in the GMRPLS area. GDFI was designated as a member of the Research and Development committee for the Network's official management body.\r\n"
+      "body": "\n## Overview\n\nDENR-GMRPLS spearheaded the establishment of a Network of Marine Sanctuaries in the GMRPLS area. GDFI was designated as a member of the Research and Development committee for the Network's official management body.\n"
     },
     {
       "slug": "mpa-networking-and-fisherfolk-day-celebration",
@@ -619,7 +619,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGAs – DA-Philippine Rural Development Project (DA-PRDP) and BFAR FishCORAL.",
       "timeline": "September 18, 2019",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nCoordinated an alliance-wide event hosted by LGU Quinapondan to honor local fishers and judge the \"Best Managed MPA\" competition. DA-PRDP contributed engine raffle items and funding for the marine sanctuary network infrastructure.\r\n"
+      "body": "\n## Overview\n\nCoordinated an alliance-wide event hosted by LGU Quinapondan to honor local fishers and judge the \"Best Managed MPA\" competition. DA-PRDP contributed engine raffle items and funding for the marine sanctuary network infrastructure.\n"
     },
     {
       "slug": "mpa-volunteer-insurance-and-capacity-building-endowment",
@@ -631,7 +631,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Juan and Isabel Zapanta Foundation, Inc. (JIZFI).",
       "timeline": "Continuous endowment",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nThe interest income generated from the PhP1.0M endowment fund originally donated by JIZFI continues to support insurance coverage and capacity building for GDFI's active MPA and Bantay Dagat volunteers across 24 marine sanctuaries.\r\n"
+      "body": "\n## Overview\n\nThe interest income generated from the PhP1.0M endowment fund originally donated by JIZFI continues to support insurance coverage and capacity building for GDFI's active MPA and Bantay Dagat volunteers across 24 marine sanctuaries.\n"
     },
     {
       "slug": "myriad-usa-donor-funding-partnership",
@@ -643,7 +643,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "International Partner – Myriad USA.",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nPartners with GDFI to facilitate international, US tax-deductible donor funding for the foundation's marine conservation and educational sponsorship programs.\r\n"
+      "body": "\n## Overview\n\nPartners with GDFI to facilitate international, US tax-deductible donor funding for the foundation's marine conservation and educational sponsorship programs.\n"
     },
     {
       "slug": "non-government-organization-disaster-preparedness-program-ngodpp",
@@ -655,7 +655,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Give2Asia.",
       "timeline": "Highlighted in 2019",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nProvided solar-powered radio communications systems, sirens, community drills, and a seaworthy passenger/cargo boat launched on August 30, 2019, to improve emergency logistics for the isolated island of Suluan.\r\n"
+      "body": "\n## Overview\n\nProvided solar-powered radio communications systems, sirens, community drills, and a seaworthy passenger/cargo boat launched on August 30, 2019, to improve emergency logistics for the isolated island of Suluan.\n"
     },
     {
       "slug": "pams-scientific-presentation-collaboration",
@@ -667,7 +667,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Academic/Scientific Association – Philippine Association of Marine Sciences (PAMS).",
       "timeline": "July 13 – 15, 2017",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI research staff presented two scientific papers regarding sandfish/sea cucumber movement and sediment alterations during the 14th National PAMS Symposium in Nasugbu, Batangas.\r\n"
+      "body": "\n## Overview\n\nGDFI research staff presented two scientific papers regarding sandfish/sea cucumber movement and sediment alterations during the 14th National PAMS Symposium in Nasugbu, Batangas.\n"
     },
     {
       "slug": "rare-philippines-capacity-building-collaboration",
@@ -679,7 +679,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Rare Philippines.",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/5.webp",
-      "body": "\r\n## Overview\r\n\r\nCollaborated on capacity-building programs, specifically co-leading the intensive training for the A7 MPA Monitoring Team to improve community-led fisheries management.\r\n"
+      "body": "\n## Overview\n\nCollaborated on capacity-building programs, specifically co-leading the intensive training for the A7 MPA Monitoring Team to improve community-led fisheries management.\n"
     },
     {
       "slug": "regional-sandfish-research-project",
@@ -691,7 +691,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGAs & LGUs – BFAR Region VIII, NFRDI-Guiuan, Guiuan Marine Fisheries Development Center (GMFDC), and the LGUs of Salcedo, Mercedes, and Guiuan.",
       "timeline": "Continuous partnership",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nBFAR-8 and its attached institutes (NFRDI and GMFDC) remain key collaborative research partners with GDFI on its active sandfish research initiatives alongside municipal fishers in Eastern Samar.\r\n"
+      "body": "\n## Overview\n\nBFAR-8 and its attached institutes (NFRDI and GMFDC) remain key collaborative research partners with GDFI on its active sandfish research initiatives alongside municipal fishers in Eastern Samar.\n"
     },
     {
       "slug": "small-scale-fishers-ssf-hub-engagement",
@@ -703,7 +703,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Environmental Defense Fund (EDF).",
       "timeline": "Active during 2023",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nEDF became an official partner of GDFI to support holistic fisheries management planning within the A7 for ICZM areas. Through EDF's Small Scale Fishers (SSF) Hub, the project facilitated cross-border interaction and knowledge sharing between municipal fishers in the A7 communities and international fishers.\r\n"
+      "body": "\n## Overview\n\nEDF became an official partner of GDFI to support holistic fisheries management planning within the A7 for ICZM areas. Through EDF's Small Scale Fishers (SSF) Hub, the project facilitated cross-border interaction and knowledge sharing between municipal fishers in the A7 communities and international fishers.\n"
     },
     {
       "slug": "uniform-municipal-fisheries-ordinance-implementation",
@@ -715,7 +715,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Inter-LGU Alliance, NGO, and Academic Consortium – A7 Municipalities, SeasPOC, Academe, BFAR, and the Provincial Government of Eastern Samar.",
       "timeline": "Continuous through 2023",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nThe alliance continued working toward passing and enforcing a Uniform Municipal Fisheries Ordinance to govern municipal waters across 7 municipalities, harmonizing coastal programs with national agencies like BFAR and DA-PRDP across 24 MPAs.\r\n"
+      "body": "\n## Overview\n\nThe alliance continued working toward passing and enforcing a Uniform Municipal Fisheries Ordinance to govern municipal waters across 7 municipalities, harmonizing coastal programs with national agencies like BFAR and DA-PRDP across 24 MPAs.\n"
     }
   ],
   "programs": [
@@ -729,7 +729,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Local Government Units – Alliance of Seven Municipalities (Lawaan, Balangiga, Giporlos, Quinapondan, Salcedo, Mercedes, and Guiuan).",
       "timeline": "March 08, 2023",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nAn inter-LGU alliance meeting held at the Rosvenil Hotel in Tacloban City to review financial status, annual dues, contributions, and proposed 2023 activities. The meeting marked a transition in leadership, selecting Mayor Kwan as the new chairperson of the alliance.\r\n"
+      "body": "\n## Overview\n\nAn inter-LGU alliance meeting held at the Rosvenil Hotel in Tacloban City to review financial status, annual dues, contributions, and proposed 2023 activities. The meeting marked a transition in leadership, selecting Mayor Kwan as the new chairperson of the alliance.\n"
     },
     {
       "slug": "a7-marine-protected-area-mpa-monitoring-team",
@@ -741,7 +741,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Local communities across the Alliance of Seven (A7) municipalities.",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/2.webp",
-      "body": "\r\n## Overview\r\n\r\nPartnered directly with local communities to train 28 representatives to systematically track coral reef, seagrass, and mangrove health across the A7 marine protected areas.\r\n"
+      "body": "\n## Overview\n\nPartnered directly with local communities to train 28 representatives to systematically track coral reef, seagrass, and mangrove health across the A7 marine protected areas.\n"
     },
     {
       "slug": "a7-strategic-plan-2026-2030",
@@ -753,7 +753,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Inter-LGU Alliance – The Alliance of Seven (A7): Guiuan, Mercedes, Salcedo, Quinapondan, Giporlos, Balangiga, and Lawaan.",
       "timeline": "2025 – ongoing (plan covers 2026–2030)",
       "featured-img": "/programs-and-projects/1.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI acts as a core partner and technical driver for the Alliance of Seven coastal municipalities sharing the northern Leyte Gulf. GDFI facilitated the creation of the A7 Strategic Plan for 2026–2030 to unify regional fisheries management across the seven LGUs.\r\n"
+      "body": "\n## Overview\n\nGDFI acts as a core partner and technical driver for the Alliance of Seven coastal municipalities sharing the northern Leyte Gulf. GDFI facilitated the creation of the A7 Strategic Plan for 2026–2030 to unify regional fisheries management across the seven LGUs.\n"
     },
     {
       "slug": "alliance-of-seven-municipalities-for-iczm-a7-reactivation",
@@ -765,7 +765,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGA & LGUs – BFAR via its FishCORAL Project, with the LGUs of Lawaan, Balangiga, Giporlos, Quinapondan, Salcedo, Mercedes, and Guiuan.",
       "timeline": "Re-activation 2017, ordinance overhauls through 2019",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI facilitated the review, revision, and ongoing integration of a Uniform Municipal Fisheries Ordinance (MFO) across seven local government units to harmonize marine resource governance across 24 MPAs in the northern Leyte Gulf.\r\n"
+      "body": "\n## Overview\n\nGDFI facilitated the review, revision, and ongoing integration of a Uniform Municipal Fisheries Ordinance (MFO) across seven local government units to harmonize marine resource governance across 24 MPAs in the northern Leyte Gulf.\n"
     },
     {
       "slug": "bagonbanua-training-and-research-station-fund-campaign",
@@ -777,7 +777,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Various Individual Donors.",
       "timeline": "Active campaign during 2023",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI mobilized resources from individual donors for a fundraising campaign aimed at rebuilding the Bagonbanua Training and Research Station, originally destroyed by Typhoon Haiyan. The station is intended to provide hands-on training in coastal resource assessment and monitoring for students, researchers, and study groups.\r\n"
+      "body": "\n## Overview\n\nGDFI mobilized resources from individual donors for a fundraising campaign aimed at rebuilding the Bagonbanua Training and Research Station, originally destroyed by Typhoon Haiyan. The station is intended to provide hands-on training in coastal resource assessment and monitoring for students, researchers, and study groups.\n"
     },
     {
       "slug": "blue-carbon-sediment-assessment-inspire-project",
@@ -789,7 +789,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Institute for Climate and Sustainable Cities (ICSC).",
       "timeline": "Active during 2023",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nUnder the INSPIRE Project for Inclusive Growth and Regenerative Ecosystems and the MAP-ELCA project, GDFI partnered with ICSC to map and assess blue carbon sediment stock (carbon stored in mangroves and seagrasses) in selected areas of Guiuan, Salcedo, Mercedes, Paranas, and Samar to mitigate climate change.\r\n"
+      "body": "\n## Overview\n\nUnder the INSPIRE Project for Inclusive Growth and Regenerative Ecosystems and the MAP-ELCA project, GDFI partnered with ICSC to map and assess blue carbon sediment stock (carbon stored in mangroves and seagrasses) in selected areas of Guiuan, Salcedo, Mercedes, Paranas, and Samar to mitigate climate change.\n"
     },
     {
       "slug": "building-resilient-coastal-communities-permanent-shelter-and-livelihood-program",
@@ -801,7 +801,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Give2Asia (G2A).",
       "timeline": "2014 – March 2017",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nProvided 48 permanent concrete houses to families living in high-risk areas on Maliwaliw Island, Salcedo. It also funded a Level 3 potable water system and an ongoing wild-bee restoration / bee-keeping livelihood project.\r\n"
+      "body": "\n## Overview\n\nProvided 48 permanent concrete houses to families living in high-risk areas on Maliwaliw Island, Salcedo. It also funded a Level 3 potable water system and an ongoing wild-bee restoration / bee-keeping livelihood project.\n"
     },
     {
       "slug": "building-resilient-coastal-communities-strengthening-gains-of-rehabilitation",
@@ -813,7 +813,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Give2Asia (G2A).",
       "timeline": "2018 – 2019",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nFocus turned toward creating financial resilience for families via supporting women's economic livelihood groups, including agro-aqua trade fairs, community stores, and livestock production.\r\n"
+      "body": "\n## Overview\n\nFocus turned toward creating financial resilience for families via supporting women's economic livelihood groups, including agro-aqua trade fairs, community stores, and livestock production.\n"
     },
     {
       "slug": "canada-fund-for-local-initiatives-cfli-mangrove-rehabilitation",
@@ -825,7 +825,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "International Funding Partner – Canada Fund for Local Initiatives (CFLI).",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/3.webp",
-      "body": "\r\n## Overview\r\n\r\nPartnered on projects aimed at climate change adaptation and governance. This collaboration directly funded the community-led rehabilitation of 18 hectares of mangroves across Maliwaliw Island, Bungtod, and Balangiga.\r\n"
+      "body": "\n## Overview\n\nPartnered on projects aimed at climate change adaptation and governance. This collaboration directly funded the community-led rehabilitation of 18 hectares of mangroves across Maliwaliw Island, Bungtod, and Balangiga.\n"
     },
     {
       "slug": "children-s-learning-resource-centre-and-fiscal-sponsorship",
@@ -837,7 +837,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO / Individual Donors – Give2Asia (G2A) & Private Sponsors.",
       "timeline": "Continuous since 2014",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nMaintained operations of the Children's Learning Resource Centre at the G2A-Salcedo Village. GDFI also utilized individual donor funds to provide ongoing educational sponsorship for island-community college and Senior High School students.\r\n"
+      "body": "\n## Overview\n\nMaintained operations of the Children's Learning Resource Centre at the G2A-Salcedo Village. GDFI also utilized individual donor funds to provide ongoing educational sponsorship for island-community college and Senior High School students.\n"
     },
     {
       "slug": "coast-facility-project-sagip-eastern-samar",
@@ -849,7 +849,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "International Partner – COAST Facility Philippines.",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/4.webp",
-      "body": "\r\n## Overview\r\n\r\nPartnered on Project SAGIP-Eastern Samar, an initiative comprising five workstreams focused on ecosystem restoration, inclusive governance, economic empowerment, and strengthening local fisherfolk associations.\r\n"
+      "body": "\n## Overview\n\nPartnered on Project SAGIP-Eastern Samar, an initiative comprising five workstreams focused on ecosystem restoration, inclusive governance, economic empowerment, and strengthening local fisherfolk associations.\n"
     },
     {
       "slug": "coastal-greenbelt-establishment-project",
@@ -861,7 +861,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Academic Institution – University of the Philippines Visayas Tacloban College (UPVTC).",
       "timeline": "Active throughout 2017 and 2019",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nDisplaced families moving to the G2A village left vacant coastal spaces where around 1,000 beach trees and bamboos were planted to create a greenbelt buffer against future typhoons and storm surges.\r\n"
+      "body": "\n## Overview\n\nDisplaced families moving to the G2A village left vacant coastal spaces where around 1,000 beach trees and bamboos were planted to create a greenbelt buffer against future typhoons and storm surges.\n"
     },
     {
       "slug": "endowment-fund-for-bantay-dagat-marine-protected-areas-mpas",
@@ -873,7 +873,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Juan and Isabel Zapanta Foundation, Inc. (JIZFI).",
       "timeline": "Continuous endowment, established 2017",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nJIZFI provided a ₱1.0M endowment fund to GDFI. The accrued income is strictly used to pay insurance premiums and cover capacity-building expenses for GDFI-Bantay Dagat and MPA volunteers.\r\n"
+      "body": "\n## Overview\n\nJIZFI provided a ₱1.0M endowment fund to GDFI. The accrued income is strictly used to pay insurance premiums and cover capacity-building expenses for GDFI-Bantay Dagat and MPA volunteers.\n"
     },
     {
       "slug": "eskwela-haiyan-eh-scholarship-program",
@@ -885,7 +885,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Eskwela Haiyan.",
       "timeline": "Started 2015, runs continuously",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nA scholarship program helping underprivileged children affected by Typhoon Haiyan stay in school. It provides financial allowances of ₱12,000/year for high school students and ₱5,000 to ₱8,000/semester for state college students.\r\n"
+      "body": "\n## Overview\n\nA scholarship program helping underprivileged children affected by Typhoon Haiyan stay in school. It provides financial allowances of ₱12,000/year for high school students and ₱5,000 to ₱8,000/semester for state college students.\n"
     },
     {
       "slug": "expansion-and-diversification-of-production-and-management-systems-of-sea-cucumbers",
@@ -897,7 +897,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGA & Academic Institutions – ACIAR, James Cook University, USC Australia, UP-MSI, SEAFDEC, MSU Naawan, and BFAR-8.",
       "timeline": "April 2013 – July 2018",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nA research project aimed at developing commercial-scale hatchery and grow-out technologies for the sandfish (Holothuria scabra), adapting systems to social, institutional, and bio-physical settings. It established a 5-hectare sea ranch in Maliwaliw Island.\r\n"
+      "body": "\n## Overview\n\nA research project aimed at developing commercial-scale hatchery and grow-out technologies for the sandfish (Holothuria scabra), adapting systems to social, institutional, and bio-physical settings. It established a 5-hectare sea ranch in Maliwaliw Island.\n"
     },
     {
       "slug": "first-national-biodiversity-congress-input",
@@ -909,7 +909,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGA – Department of Environment and Natural Resources (DENR).",
       "timeline": "May 22 – 24, 2017",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI presented biophysical assessment data on Lawaan ecosystems and Philippine Cockatoo sightings on Homonhon Island to urge policymakers to declare critical habitats or expand protected seascapes.\r\n"
+      "body": "\n## Overview\n\nGDFI presented biophysical assessment data on Lawaan ecosystems and Philippine Cockatoo sightings on Homonhon Island to urge policymakers to declare critical habitats or expand protected seascapes.\n"
     },
     {
       "slug": "icsc-community-based-forest-management-collaboration",
@@ -921,7 +921,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Institute for Climate and Sustainable Cities (ICSC).",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nCollaborated on data collection and policy analysis regarding Community-Based Forest Management Areas (CBFMAs) and local coastal ecosystems.\r\n"
+      "body": "\n## Overview\n\nCollaborated on data collection and policy analysis regarding Community-Based Forest Management Areas (CBFMAs) and local coastal ecosystems.\n"
     },
     {
       "slug": "iirr-g2a-disaster-risk-reduction-conference-collaboration",
@@ -933,7 +933,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGOs – International Institute of Rural Reconstruction (IIRR) and Give2Asia.",
       "timeline": "March 7 – 10, 2017",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI participated in this conference held at IIRR, Cavite, and the Asian Institute of Management (AIM) to share experiences and learn best practices for building disaster-resilient coastal communities across Asian countries.\r\n"
+      "body": "\n## Overview\n\nGDFI participated in this conference held at IIRR, Cavite, and the Asian Institute of Management (AIM) to share experiences and learn best practices for building disaster-resilient coastal communities across Asian countries.\n"
     },
     {
       "slug": "increasing-technical-skills-supporting-community-based-sea-cucumber-production-phase-2",
@@ -945,7 +945,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Academic & International Research Institutions / NGAs – ACIAR, University of the Sunshine Coast (USC), James Cook University, UP-MSI, SEAFDEC, MSU Naawan, BFAR-VIII, and local POs.",
       "timeline": "August 2018 – 2023",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nFollow-up phase targeted at scaling up technical skills, expanding community-based sea cucumber farming, and improving culture methods inside sea pen nurseries across Vietnam and the Philippines. The 5-year Phase 2 concluded in 2023.\r\n"
+      "body": "\n## Overview\n\nFollow-up phase targeted at scaling up technical skills, expanding community-based sea cucumber farming, and improving culture methods inside sea pen nurseries across Vietnam and the Philippines. The 5-year Phase 2 concluded in 2023.\n"
     },
     {
       "slug": "laboratory-analysis-partnership-uptc",
@@ -957,7 +957,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Academic Institution – University of the Philippines Tacloban College (UPTC).",
       "timeline": "Continuous partnership",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nUPTC continues to provide GDFI researchers access to its laboratory facilities and equipment, allowing sediment and biofilm samples gathered during field work to be processed and analyzed.\r\n"
+      "body": "\n## Overview\n\nUPTC continues to provide GDFI researchers access to its laboratory facilities and equipment, allowing sediment and biofilm samples gathered during field work to be processed and analyzed.\n"
     },
     {
       "slug": "lawaan-integrated-ecosystems-conservation-project-liecp",
@@ -969,7 +969,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGOs & NGA – UNDP-GEF (SGP5), Foundation for the Philippine Environment (FPE), and DENR.",
       "timeline": "September 2016 – May 2018",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nAdopting a ridge-to-reef framework to build community climate resilience and safeguard Lawaan's biodiversity. GDFI also sponsored the field research expenses of BS Biology graduating students from UPVTC in 2017 and 2018.\r\n"
+      "body": "\n## Overview\n\nAdopting a ridge-to-reef framework to build community climate resilience and safeguard Lawaan's biodiversity. GDFI also sponsored the field research expenses of BS Biology graduating students from UPVTC in 2017 and 2018.\n"
     },
     {
       "slug": "marine-sanctuary-network-establishment",
@@ -981,7 +981,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGA – Department of Environment and Natural Resources – Guiuan Marine Reserve Protected Landscape Seascape (DENR-GMRPLS).",
       "timeline": "Active during 2023",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nDENR-GMRPLS spearheaded the establishment of a Network of Marine Sanctuaries in the GMRPLS area. GDFI was designated as a member of the Research and Development committee for the Network's official management body.\r\n"
+      "body": "\n## Overview\n\nDENR-GMRPLS spearheaded the establishment of a Network of Marine Sanctuaries in the GMRPLS area. GDFI was designated as a member of the Research and Development committee for the Network's official management body.\n"
     },
     {
       "slug": "mpa-networking-and-fisherfolk-day-celebration",
@@ -993,7 +993,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGAs – DA-Philippine Rural Development Project (DA-PRDP) and BFAR FishCORAL.",
       "timeline": "September 18, 2019",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nCoordinated an alliance-wide event hosted by LGU Quinapondan to honor local fishers and judge the \"Best Managed MPA\" competition. DA-PRDP contributed engine raffle items and funding for the marine sanctuary network infrastructure.\r\n"
+      "body": "\n## Overview\n\nCoordinated an alliance-wide event hosted by LGU Quinapondan to honor local fishers and judge the \"Best Managed MPA\" competition. DA-PRDP contributed engine raffle items and funding for the marine sanctuary network infrastructure.\n"
     },
     {
       "slug": "mpa-volunteer-insurance-and-capacity-building-endowment",
@@ -1005,7 +1005,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Juan and Isabel Zapanta Foundation, Inc. (JIZFI).",
       "timeline": "Continuous endowment",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nThe interest income generated from the PhP1.0M endowment fund originally donated by JIZFI continues to support insurance coverage and capacity building for GDFI's active MPA and Bantay Dagat volunteers across 24 marine sanctuaries.\r\n"
+      "body": "\n## Overview\n\nThe interest income generated from the PhP1.0M endowment fund originally donated by JIZFI continues to support insurance coverage and capacity building for GDFI's active MPA and Bantay Dagat volunteers across 24 marine sanctuaries.\n"
     },
     {
       "slug": "myriad-usa-donor-funding-partnership",
@@ -1017,7 +1017,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "International Partner – Myriad USA.",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/7.webp",
-      "body": "\r\n## Overview\r\n\r\nPartners with GDFI to facilitate international, US tax-deductible donor funding for the foundation's marine conservation and educational sponsorship programs.\r\n"
+      "body": "\n## Overview\n\nPartners with GDFI to facilitate international, US tax-deductible donor funding for the foundation's marine conservation and educational sponsorship programs.\n"
     },
     {
       "slug": "non-government-organization-disaster-preparedness-program-ngodpp",
@@ -1029,7 +1029,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Give2Asia.",
       "timeline": "Highlighted in 2019",
       "featured-img": "/programs-and-projects/6.webp",
-      "body": "\r\n## Overview\r\n\r\nProvided solar-powered radio communications systems, sirens, community drills, and a seaworthy passenger/cargo boat launched on August 30, 2019, to improve emergency logistics for the isolated island of Suluan.\r\n"
+      "body": "\n## Overview\n\nProvided solar-powered radio communications systems, sirens, community drills, and a seaworthy passenger/cargo boat launched on August 30, 2019, to improve emergency logistics for the isolated island of Suluan.\n"
     },
     {
       "slug": "pams-scientific-presentation-collaboration",
@@ -1041,7 +1041,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Academic/Scientific Association – Philippine Association of Marine Sciences (PAMS).",
       "timeline": "July 13 – 15, 2017",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nGDFI research staff presented two scientific papers regarding sandfish/sea cucumber movement and sediment alterations during the 14th National PAMS Symposium in Nasugbu, Batangas.\r\n"
+      "body": "\n## Overview\n\nGDFI research staff presented two scientific papers regarding sandfish/sea cucumber movement and sediment alterations during the 14th National PAMS Symposium in Nasugbu, Batangas.\n"
     },
     {
       "slug": "rare-philippines-capacity-building-collaboration",
@@ -1053,7 +1053,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Rare Philippines.",
       "timeline": "2025 – ongoing",
       "featured-img": "/programs-and-projects/5.webp",
-      "body": "\r\n## Overview\r\n\r\nCollaborated on capacity-building programs, specifically co-leading the intensive training for the A7 MPA Monitoring Team to improve community-led fisheries management.\r\n"
+      "body": "\n## Overview\n\nCollaborated on capacity-building programs, specifically co-leading the intensive training for the A7 MPA Monitoring Team to improve community-led fisheries management.\n"
     },
     {
       "slug": "regional-sandfish-research-project",
@@ -1065,7 +1065,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGAs & LGUs – BFAR Region VIII, NFRDI-Guiuan, Guiuan Marine Fisheries Development Center (GMFDC), and the LGUs of Salcedo, Mercedes, and Guiuan.",
       "timeline": "Continuous partnership",
       "featured-img": "/programs-and-projects/9.webp",
-      "body": "\r\n## Overview\r\n\r\nBFAR-8 and its attached institutes (NFRDI and GMFDC) remain key collaborative research partners with GDFI on its active sandfish research initiatives alongside municipal fishers in Eastern Samar.\r\n"
+      "body": "\n## Overview\n\nBFAR-8 and its attached institutes (NFRDI and GMFDC) remain key collaborative research partners with GDFI on its active sandfish research initiatives alongside municipal fishers in Eastern Samar.\n"
     },
     {
       "slug": "small-scale-fishers-ssf-hub-engagement",
@@ -1077,7 +1077,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "NGO – Environmental Defense Fund (EDF).",
       "timeline": "Active during 2023",
       "featured-img": "/programs-and-projects/10.webp",
-      "body": "\r\n## Overview\r\n\r\nEDF became an official partner of GDFI to support holistic fisheries management planning within the A7 for ICZM areas. Through EDF's Small Scale Fishers (SSF) Hub, the project facilitated cross-border interaction and knowledge sharing between municipal fishers in the A7 communities and international fishers.\r\n"
+      "body": "\n## Overview\n\nEDF became an official partner of GDFI to support holistic fisheries management planning within the A7 for ICZM areas. Through EDF's Small Scale Fishers (SSF) Hub, the project facilitated cross-border interaction and knowledge sharing between municipal fishers in the A7 communities and international fishers.\n"
     },
     {
       "slug": "uniform-municipal-fisheries-ordinance-implementation",
@@ -1089,7 +1089,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "partners": "Inter-LGU Alliance, NGO, and Academic Consortium – A7 Municipalities, SeasPOC, Academe, BFAR, and the Provincial Government of Eastern Samar.",
       "timeline": "Continuous through 2023",
       "featured-img": "/programs-and-projects/8.webp",
-      "body": "\r\n## Overview\r\n\r\nThe alliance continued working toward passing and enforcing a Uniform Municipal Fisheries Ordinance to govern municipal waters across 7 municipalities, harmonizing coastal programs with national agencies like BFAR and DA-PRDP across 24 MPAs.\r\n"
+      "body": "\n## Overview\n\nThe alliance continued working toward passing and enforcing a Uniform Municipal Fisheries Ordinance to govern municipal waters across 7 municipalities, harmonizing coastal programs with national agencies like BFAR and DA-PRDP across 24 MPAs.\n"
     }
   ],
   "resources/annual-and-financial-reports": [
@@ -1413,7 +1413,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "date": "2023-01-24T00:00:00.000Z",
       "featured": true,
       "youtube-link": "https://www.youtube.com/watch?v=RpLQJUfqAJs",
-      "body": "\r\nEfren Minguel speaks to his experience as a guard in the Lawaan Sanctuary\r\n"
+      "body": "\nEfren Minguel speaks to his experience as a guard in the Lawaan Sanctuary\n"
     },
     {
       "slug": "fisher-voices-iuu-fishing-in-lawaan-philippines",
@@ -1421,14 +1421,14 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "date": "2023-01-20T00:00:00.000Z",
       "featured": true,
       "youtube-link": "https://www.youtube.com/watch?v=Uo9cOSJNQrQ",
-      "body": "\r\nSmall-scale fishers discuss the negative impacts of IUU fishing and how their communities are working to address it.\r\n"
+      "body": "\nSmall-scale fishers discuss the negative impacts of IUU fishing and how their communities are working to address it.\n"
     },
     {
       "slug": "fisher-voices-marilou-abanador-maliwaliw-philippines",
       "title": "Fisher Voices: Marilou Abanador - Maliwaliw, Philippines",
       "date": "2023-01-24T00:00:00.000Z",
       "youtube-link": "https://www.youtube.com/watch?v=jmKpULHddbM",
-      "body": "\r\nSeaweed farming is impacted by climate change\r\n"
+      "body": "\nSeaweed farming is impacted by climate change\n"
     },
     {
       "slug": "fisher-voices-michael-lumagbas-guiuan-e-samar-philippines",
@@ -1436,7 +1436,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "date": "2023-01-24T00:00:00.000Z",
       "featured": true,
       "youtube-link": "https://www.youtube.com/watch?v=PqYtehopYqs&list=PLVtL65z3DnF9fwC67klr_kqB5d30dNwQ3&index=5",
-      "body": "\r\nMichael Lumagbas talks about his experience with crab fishing and providing for his family\r\n"
+      "body": "\nMichael Lumagbas talks about his experience with crab fishing and providing for his family\n"
     },
     {
       "slug": "fisher-voices-the-struggles-of-public-market-fish-vendors-in-guiuan-eastern-samar",
@@ -1444,7 +1444,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "date": "2022-10-25T00:00:00.000Z",
       "featured": true,
       "youtube-link": "https://www.youtube.com/watch?v=TBg5-6JbOPk",
-      "body": "\r\nThe story focuses on two women fish vendors (Ms. Concordia Gayoso and Ms. Rowena Sawaan) of more than 30 years at the Guiuan Public Market. Their livelihood is threatened by the continuous decrease in fish supply, decreasing variety of species and sizes. Abrupt weather change was identified as one of the main reasons for the low fish supply in the market. The increasing price from middlemen was also highlighted by the vendors as this requires them to have bigger capital.\r\n\r\nVideo and interview provided by Guiuan Development Foundation Inc. (GDFI). Learn more about their work here.\r\n"
+      "body": "\nThe story focuses on two women fish vendors (Ms. Concordia Gayoso and Ms. Rowena Sawaan) of more than 30 years at the Guiuan Public Market. Their livelihood is threatened by the continuous decrease in fish supply, decreasing variety of species and sizes. Abrupt weather change was identified as one of the main reasons for the low fish supply in the market. The increasing price from middlemen was also highlighted by the vendors as this requires them to have bigger capital.\n\nVideo and interview provided by Guiuan Development Foundation Inc. (GDFI). Learn more about their work here.\n"
     },
     {
       "slug": "gdfi-clams-seeding-in-cansarigan-marine-sanctuary",
@@ -1452,7 +1452,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "date": "2022-10-25T00:00:00.000Z",
       "featured": true,
       "youtube-link": "https://www.youtube.com/watch?v=3VmhpIywzkc",
-      "body": "\r\nAs GDFI celebrates its 34th Founding Anniversary, a giant clan resource enhancement activity was conducted on August 31, 2022. GDFI in partnership with the Bureau of Fisheries and Aquatic Resources, released 100 giant clams (Tridacna derasa) in Canigaran Fish and Marine Sanctuary, Salcedo, Eastern Samar. Bantay Dagat and LGU representatives attended and helped in the seeding activity. This is just one of the 4 sanctuaries included in the giant clam dispersal during GDFI’s anniversary celebration. A total of 500 clams were released in the Municipalities of Guiuan, Salcedo, and Quinapondan.\r\n"
+      "body": "\nAs GDFI celebrates its 34th Founding Anniversary, a giant clan resource enhancement activity was conducted on August 31, 2022. GDFI in partnership with the Bureau of Fisheries and Aquatic Resources, released 100 giant clams (Tridacna derasa) in Canigaran Fish and Marine Sanctuary, Salcedo, Eastern Samar. Bantay Dagat and LGU representatives attended and helped in the seeding activity. This is just one of the 4 sanctuaries included in the giant clam dispersal during GDFI’s anniversary celebration. A total of 500 clams were released in the Municipalities of Guiuan, Salcedo, and Quinapondan.\n"
     },
     {
       "slug": "juvenile-sandfish-monitoring-in-maliwaliw-island-gdfi",
@@ -1460,7 +1460,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "date": "2022-10-25T00:00:00.000Z",
       "featured": true,
       "youtube-link": "https://www.youtube.com/watch?v=5AFfKPdLNyA",
-      "body": "\r\nAn informational video on the sandfish (Holothuria scabra) research project funded by the Australian Center for International Agricultural Research (ACIAR) implemented by the Guiuan Development Foundation, Inc (GDFI) in Maliwaliw, Island, Philippines.\r\n"
+      "body": "\nAn informational video on the sandfish (Holothuria scabra) research project funded by the Australian Center for International Agricultural Research (ACIAR) implemented by the Guiuan Development Foundation, Inc (GDFI) in Maliwaliw, Island, Philippines.\n"
     }
   ],
   "updates/announcements": [
@@ -1475,7 +1475,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/05-28-2026-3.webp"
       ],
       "excerpt": "",
-      "body": "\r\n7 Municipalities, 1 Shared Vision for Our Coasts!\r\n\r\nOur marine resources don't recognize borders, which is why coordinated action is key!\r\n\r\nOrganized by Guiuan Development Foundation, Inc. and Rare Philippines, the A7 for ICZM, composed of the municipalities of Lawaan, Balangiga, Giporlos, Quinapondan, Salcedo, Mercedes, and Guiuan, is holding its First Executive Committee Meeting (EXECOM) for 2026 to strengthen inter-municipal collaboration and protect our coastal ecosystems.\r\n\r\nFrom reviewing mangrove stewardship and seagrass reserves to tackling IUU fishing, our local government units are working hard to protect the livelihoods of our coastal communities.\r\n\r\nA major milestone of this EXECOM includes formalizing key partnerships through a Memorandum of Agreement (MOA) signing with:\r\n\r\nProvincial Government of Eastern Samar\r\n\r\nDENR-VIII\r\n\r\nProvincial PNP\r\n\r\nUniversity of the Philippines Tacloban College\r\n\r\nBy harmonizing our policies and uniting our efforts, we're building a stronger, more climate-resilient Eastern Samar.\r\n"
+      "body": "\n7 Municipalities, 1 Shared Vision for Our Coasts!\n\nOur marine resources don't recognize borders, which is why coordinated action is key!\n\nOrganized by Guiuan Development Foundation, Inc. and Rare Philippines, the A7 for ICZM, composed of the municipalities of Lawaan, Balangiga, Giporlos, Quinapondan, Salcedo, Mercedes, and Guiuan, is holding its First Executive Committee Meeting (EXECOM) for 2026 to strengthen inter-municipal collaboration and protect our coastal ecosystems.\n\nFrom reviewing mangrove stewardship and seagrass reserves to tackling IUU fishing, our local government units are working hard to protect the livelihoods of our coastal communities.\n\nA major milestone of this EXECOM includes formalizing key partnerships through a Memorandum of Agreement (MOA) signing with:\n\nProvincial Government of Eastern Samar\n\nDENR-VIII\n\nProvincial PNP\n\nUniversity of the Philippines Tacloban College\n\nBy harmonizing our policies and uniting our efforts, we're building a stronger, more climate-resilient Eastern Samar.\n"
     },
     {
       "slug": "celebrating-philippine-independence-day",
@@ -1486,7 +1486,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-12-26.webp"
       ],
       "excerpt": "",
-      "body": "\r\nToday, as we celebrate Philippine Independence Day, we look beyond our history books and focus on the future of our nation.\r\n\r\nFor us at GDFI, true freedom and self-reliance flow from a healthy, thriving environment.\r\n\r\nA country cannot be fully secure if its coastal communities struggle with declining fish catches, or if its islands are left vulnerable to climate change without the natural protection of healthy mangrove belts and watersheds.\r\n\r\nTrue independence is realized when local communities are empowered with the knowledge, legal frameworks, and tools to guard their own ecosystems—from the ridge to the reef.\r\n\r\nBy protecting our marine sanctuaries, restoring our forests, and managing our resources sustainably, we are practicing active patriotism.\r\n\r\nWe are ensuring that the wealth of our land and seas remains healthy and bountiful for generations of Filipinos to come.\r\n\r\nLet us honor our freedom by protecting the nature that sustains us.\r\n\r\nMaligayang Araw ng Kasarinlan mula sa Guiuan Development Foundation, Inc.\r\n"
+      "body": "\nToday, as we celebrate Philippine Independence Day, we look beyond our history books and focus on the future of our nation.\n\nFor us at GDFI, true freedom and self-reliance flow from a healthy, thriving environment.\n\nA country cannot be fully secure if its coastal communities struggle with declining fish catches, or if its islands are left vulnerable to climate change without the natural protection of healthy mangrove belts and watersheds.\n\nTrue independence is realized when local communities are empowered with the knowledge, legal frameworks, and tools to guard their own ecosystems—from the ridge to the reef.\n\nBy protecting our marine sanctuaries, restoring our forests, and managing our resources sustainably, we are practicing active patriotism.\n\nWe are ensuring that the wealth of our land and seas remains healthy and bountiful for generations of Filipinos to come.\n\nLet us honor our freedom by protecting the nature that sustains us.\n\nMaligayang Araw ng Kasarinlan mula sa Guiuan Development Foundation, Inc.\n"
     },
     {
       "slug": "empowering-coastal-communities-and-fostering-climate-smart-marine-governance",
@@ -1497,7 +1497,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-08-2026.webp"
       ],
       "excerpt": "",
-      "body": "\r\nGuiuan Development Foundation, Inc.commits to empowering coastal communities and fostering climate-smart marine governance through our community-led Assessment and Management Training, ensuring that local ocean action is truly inclusive and accessible to everyone, including persons with disabilities.\r\n\r\nThis World Oceans Day, we are proud to be part of the COAST Facility, a UK-funded programme supporting more resilient coastal ecosystems and stronger, more sustainable blue economies.\r\n\r\nThe programme is helping to drive practical solutions across key areas of ocean resilience, from strengthening marine protected and locally managed areas, to advancing blue carbon and nature-based solutions, to supporting sustainable fisheries, aquaculture, and coastal livelihoods.\r\n\r\nCentral to this work is partnership. COAST brings together communities, local organisations, governments, researchers, and private sector actors to co-create solutions that link ocean health with economic opportunity.\r\n\r\nWe look forward to continuing this journey and to sharing more of our work and impact.\r\n"
+      "body": "\nGuiuan Development Foundation, Inc.commits to empowering coastal communities and fostering climate-smart marine governance through our community-led Assessment and Management Training, ensuring that local ocean action is truly inclusive and accessible to everyone, including persons with disabilities.\n\nThis World Oceans Day, we are proud to be part of the COAST Facility, a UK-funded programme supporting more resilient coastal ecosystems and stronger, more sustainable blue economies.\n\nThe programme is helping to drive practical solutions across key areas of ocean resilience, from strengthening marine protected and locally managed areas, to advancing blue carbon and nature-based solutions, to supporting sustainable fisheries, aquaculture, and coastal livelihoods.\n\nCentral to this work is partnership. COAST brings together communities, local organisations, governments, researchers, and private sector actors to co-create solutions that link ocean health with economic opportunity.\n\nWe look forward to continuing this journey and to sharing more of our work and impact.\n"
     },
     {
       "slug": "gdfi-welcomes-tech-talents-from-up",
@@ -1510,7 +1510,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-3.webp"
       ],
       "excerpt": "",
-      "body": "\r\nGDFI Welcomes Tech Talents from University of the Philippines Tacloban!\r\n\r\nThe times are changing, and everything is going digital!\r\n\r\nFor an NGO like the Guiuan Development Foundation, Inc. (GDFI), keeping up with this shift is crucial.\r\n\r\nSpreading environmental awareness, showcasing community impact, and sharing our conservation stories now rely heavily on a strong digital presence.\r\n\r\nThat is why—more than ever—the world of conservation needs the power of Computer Science!\r\n\r\nWe are thrilled to officially welcome our student-trainees from the University of the Philippines Tacloban, pursuing their BS in Computer Science!\r\n\r\nThese brilliant interns are taking on a massive role during their time with us: building GDFI’s official digital home.\r\n\r\nBy bridging tech and environmental advocacy, these tech-for-good pioneers are equipping us with the modern tools we need to scale our operations, elevate our publicity, and amplify our awareness campaigns globally.\r\n\r\nThis is a huge contribution to our mission. We are incredibly excited to see how their technical skills, codes, and algorithms will translate into stronger waves of coastal conservation and community resilience across Eastern Samar!\r\n\r\nWelcome to the team, UP Tacloban Interns!\r\n\r\nLet’s build a more digitally empowered and climate-resilient future together.\r\n"
+      "body": "\nGDFI Welcomes Tech Talents from University of the Philippines Tacloban!\n\nThe times are changing, and everything is going digital!\n\nFor an NGO like the Guiuan Development Foundation, Inc. (GDFI), keeping up with this shift is crucial.\n\nSpreading environmental awareness, showcasing community impact, and sharing our conservation stories now rely heavily on a strong digital presence.\n\nThat is why—more than ever—the world of conservation needs the power of Computer Science!\n\nWe are thrilled to officially welcome our student-trainees from the University of the Philippines Tacloban, pursuing their BS in Computer Science!\n\nThese brilliant interns are taking on a massive role during their time with us: building GDFI’s official digital home.\n\nBy bridging tech and environmental advocacy, these tech-for-good pioneers are equipping us with the modern tools we need to scale our operations, elevate our publicity, and amplify our awareness campaigns globally.\n\nThis is a huge contribution to our mission. We are incredibly excited to see how their technical skills, codes, and algorithms will translate into stronger waves of coastal conservation and community resilience across Eastern Samar!\n\nWelcome to the team, UP Tacloban Interns!\n\nLet’s build a more digitally empowered and climate-resilient future together.\n"
     },
     {
       "slug": "happy-world-environment-day",
@@ -1521,7 +1521,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-05-2026-4.webp"
       ],
       "excerpt": "",
-      "body": "\r\nHappy World Environment Day from GDFI!\r\n\r\nFor nearly four decades, Guiuan Development Foundation, Inc. has been working hand-in-hand with local communities, LGUs, and partners to restore what has been degraded, protect our wild marine stocks, and build a climate-resilient Eastern Visayas.\r\n\r\nBut conservation isn't a job for just one organization—it takes an entire community.\r\n\r\nToday, let’s renew our commitment to protecting our shared home.\r\n\r\nWhether it's practicing proper waste management, planting a mangrove, or supporting sustainable fishing, every small action ripples into a wave of change.\r\n\r\nTogether, let's protect our coasts, secure our livelihoods, and nurture our future!\r\n"
+      "body": "\nHappy World Environment Day from GDFI!\n\nFor nearly four decades, Guiuan Development Foundation, Inc. has been working hand-in-hand with local communities, LGUs, and partners to restore what has been degraded, protect our wild marine stocks, and build a climate-resilient Eastern Visayas.\n\nBut conservation isn't a job for just one organization—it takes an entire community.\n\nToday, let’s renew our commitment to protecting our shared home.\n\nWhether it's practicing proper waste management, planting a mangrove, or supporting sustainable fishing, every small action ripples into a wave of change.\n\nTogether, let's protect our coasts, secure our livelihoods, and nurture our future!\n"
     },
     {
       "slug": "honoring-history-through-action-this-worldoceansday",
@@ -1534,7 +1534,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-11-2026-3.webp"
       ],
       "excerpt": "",
-      "body": "\r\nHonoring history through action this #WorldOceansDay!\r\n\r\nDid you know that Bagonbanwa Island Marine Reserve and Fish Sanctuary in Guiuan, Eastern Samar, is the very first Marine Protected Area (MPA) established in Eastern Visayas?\r\n\r\nCovering 28 hectares, this unique island is home to a \"triple alliance\" of coastal ecosystems: mangroves, seagrass beds, and coral reefs.\r\n\r\nWhen the Guiuan Development Foundation, Inc. (GDFI) established the MPA back in 1990, the marine life here was heavily degraded by blast, dynamite, and cyanide fishing. Where others saw destruction, GDFI saw an opportunity for rehabilitation.\r\n\r\nTrue enough, in just five years, a sanctuary once described by renowned marine scientist Dr. Angel Alcala as “sterile” was completely teaming with life—proving that when we give nature a chance, it bounces back.\r\n\r\nFor years, Bagonbanwa served as a bustling hub for coastal resource trainings, scientific research, eco-tourism, and student internships, accommodating up to 50 people. Tragically, in 2013, Super Typhoon Haiyan utterly destroyed the island’s field station, buildings, water systems, and wharf.\r\n\r\nThis World Oceans Day, we returned to Bagonbanwa Island.\r\n\r\nTo honor its legacy and protect its future, our team conducted a coastal clean-up activity. Keeping our sanctuaries free from marine debris is a vital step in maintaining the ocean resilience we’ve fought so hard to build over the last three decades.\r\n\r\nBut we can't do it alone.\r\n\r\nTo fully restore our Bagonbanwa Field Station so it can continue inspiring the younger generation about sustainable fishing and environmental protection, we need your help.\r\n\r\nBe part of the restoration. Partner with us, support our initiatives, or coordinate your next learning visit by messaging GDFI directly.\r\n\r\nTogether, let's bring back a better field station for the future of our seas!\r\n"
+      "body": "\nHonoring history through action this #WorldOceansDay!\n\nDid you know that Bagonbanwa Island Marine Reserve and Fish Sanctuary in Guiuan, Eastern Samar, is the very first Marine Protected Area (MPA) established in Eastern Visayas?\n\nCovering 28 hectares, this unique island is home to a \"triple alliance\" of coastal ecosystems: mangroves, seagrass beds, and coral reefs.\n\nWhen the Guiuan Development Foundation, Inc. (GDFI) established the MPA back in 1990, the marine life here was heavily degraded by blast, dynamite, and cyanide fishing. Where others saw destruction, GDFI saw an opportunity for rehabilitation.\n\nTrue enough, in just five years, a sanctuary once described by renowned marine scientist Dr. Angel Alcala as “sterile” was completely teaming with life—proving that when we give nature a chance, it bounces back.\n\nFor years, Bagonbanwa served as a bustling hub for coastal resource trainings, scientific research, eco-tourism, and student internships, accommodating up to 50 people. Tragically, in 2013, Super Typhoon Haiyan utterly destroyed the island’s field station, buildings, water systems, and wharf.\n\nThis World Oceans Day, we returned to Bagonbanwa Island.\n\nTo honor its legacy and protect its future, our team conducted a coastal clean-up activity. Keeping our sanctuaries free from marine debris is a vital step in maintaining the ocean resilience we’ve fought so hard to build over the last three decades.\n\nBut we can't do it alone.\n\nTo fully restore our Bagonbanwa Field Station so it can continue inspiring the younger generation about sustainable fishing and environmental protection, we need your help.\n\nBe part of the restoration. Partner with us, support our initiatives, or coordinate your next learning visit by messaging GDFI directly.\n\nTogether, let's bring back a better field station for the future of our seas!\n"
     },
     {
       "slug": "through-the-lens-of-the-next-generation",
@@ -1547,7 +1547,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
         "https://cdn.gdfi1988.org/gdfi-website-uploads/announcements/06-09-2026-3.webp"
       ],
       "excerpt": "",
-      "body": "\r\nThrough the lens of the next generation.\r\n\r\nCheck out these incredible underwater glimpses of the corals and giant clams thriving at the Bagonbanua Island Marine Reserve!\r\n\r\nTo keep a close eye on our marine ecosystems, quick status checks and underwater photography are vital tools for our conservation teams.\r\n\r\nThese stunning shots were captured by Armandt, one of our passionate young observers and conservationists-in-training.\r\n\r\nSeeing the next generation dive into marine protection gives us immense hope for the future of our oceans.\r\n\r\nWant the youth in your community to learn about marine biodiversity firsthand?\r\n\r\nBagonbanua is a fantastic living classroom! We highly encourage educational and learning visits for young people.\r\n\r\nInterested? Coordinate directly with the Guiuan Development Foundation, Inc. (GDFI) to plan a meaningful learning visit.\r\n"
+      "body": "\nThrough the lens of the next generation.\n\nCheck out these incredible underwater glimpses of the corals and giant clams thriving at the Bagonbanua Island Marine Reserve!\n\nTo keep a close eye on our marine ecosystems, quick status checks and underwater photography are vital tools for our conservation teams.\n\nThese stunning shots were captured by Armandt, one of our passionate young observers and conservationists-in-training.\n\nSeeing the next generation dive into marine protection gives us immense hope for the future of our oceans.\n\nWant the youth in your community to learn about marine biodiversity firsthand?\n\nBagonbanua is a fantastic living classroom! We highly encourage educational and learning visits for young people.\n\nInterested? Coordinate directly with the Guiuan Development Foundation, Inc. (GDFI) to plan a meaningful learning visit.\n"
     }
   ],
   "updates/community-categories": [
@@ -1577,7 +1577,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "featured_images": [
         "https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/a-alamodin.webp"
       ],
-      "body": "\r\nI am Aljen Alamodin. I am twenty years old. A young fisherman, son of a fishing couple, Antonio Alamodin and Susan Alamodin. When my siblings and I were young, we were trained in our parents' work [fishing]. They showed us that diligence and perseverance are the secret to rising in life.\r\n\r\nBecause I got married early and have a child, I go out to sea with my parents to fish in order to provide for my family.\r\n\r\nIn fishing, I saw that I would have enough income to support my family and that perseverance and planning are the secret to success, and not dependent on the type of work you have.\r\n\r\nWe don’t catch a lot all the time – there are days when our catch is just enough to serve as our food for the day and we are not able to sell anything\r\n\r\nSince I am young, I still have a lot to learn. I still have a lot to learn about making a living, especially in fishing. So I was glad to have the Hub in our town. This is a big thing for our fishermen because we will learn a lot about new technologies that will help our livelihood, especially among the youth. Because they say “Youth is Hope.” I also want to convey to the youth who are losing hope and those that married and had families at an early age, that there are nothing can stop us from lifting our lives, you only need perseverance and diligence.\r\n"
+      "body": "\nI am Aljen Alamodin. I am twenty years old. A young fisherman, son of a fishing couple, Antonio Alamodin and Susan Alamodin. When my siblings and I were young, we were trained in our parents' work [fishing]. They showed us that diligence and perseverance are the secret to rising in life.\n\nBecause I got married early and have a child, I go out to sea with my parents to fish in order to provide for my family.\n\nIn fishing, I saw that I would have enough income to support my family and that perseverance and planning are the secret to success, and not dependent on the type of work you have.\n\nWe don’t catch a lot all the time – there are days when our catch is just enough to serve as our food for the day and we are not able to sell anything\n\nSince I am young, I still have a lot to learn. I still have a lot to learn about making a living, especially in fishing. So I was glad to have the Hub in our town. This is a big thing for our fishermen because we will learn a lot about new technologies that will help our livelihood, especially among the youth. Because they say “Youth is Hope.” I also want to convey to the youth who are losing hope and those that married and had families at an early age, that there are nothing can stop us from lifting our lives, you only need perseverance and diligence.\n"
     },
     {
       "slug": "analyn-calicoy-quiminales",
@@ -1585,7 +1585,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "tags": [
         "Women"
       ],
-      "body": "\r\nI am Analyn Calicoy Quiminales, a fisher and a member of the Handicraft Group. When my son was still young, I just stayed at home to take care of him. But when he grew up, I started helping my husband in fishing. Then when I got pregnant again, I am just staying at home as a plain house wife with no source of income. When I became a member of the Handicraft group, I observed that I am always busy. The extra time before that I used to watch television and sleep, is now being used to work to become more productive.\r\n\r\nAt first when, Ma’am Marge asked us to choose the group we want to join, it has always been in my mind to join Handicraft group, because of my interest in arts. When I watch television, design and handicraft products always catch my attention. I even made Christmas Tree decorations out of the old clothes of my baby instead of buying new plastic flowers for Php10.00 each. During the trade fair, the most challenging part was the bad weather condition. Each of us, has to make one “banig” for the trade fair. So we decided to pick a lot of “bariw” leaves to be used as the material for our “banig”. However, due to the rainy weather, we were not able to dry the leaves. The raw materials darken because of the moisture and some even grew molds. To save the materials, we decided to dye the leaves to make bags. We were able to make a few but most of the materials were thrown away. It was heartbreaking and sad, because we already invested so much time, effort and money. But then and there, we were able to come up with an idea to make shell crafts. We asked for permission from Ma’am Marge and then looked for washed off shells in the shore. We were careful in picking the shells, as not to use endangered ones and even small ones. Despite that, by all truth, my groupmates were scared about the huge capital that we have. They even wanted to give it back because they were not confident that we will succeed. But I told them, that with, we will be able to succeed one day. With the biggest amount given to us among all the groups, I told them that we also have the biggest chance to make more products. But among everything, I am most grateful to GDFI and G2A, because if not for them, we will not have a stronger and better house than we had before. I am also thankful that their generosity did not stop on the housing project but extended to provide as livelihood opportunities which are now giving us extra income to support our families.\r\n"
+      "body": "\nI am Analyn Calicoy Quiminales, a fisher and a member of the Handicraft Group. When my son was still young, I just stayed at home to take care of him. But when he grew up, I started helping my husband in fishing. Then when I got pregnant again, I am just staying at home as a plain house wife with no source of income. When I became a member of the Handicraft group, I observed that I am always busy. The extra time before that I used to watch television and sleep, is now being used to work to become more productive.\n\nAt first when, Ma’am Marge asked us to choose the group we want to join, it has always been in my mind to join Handicraft group, because of my interest in arts. When I watch television, design and handicraft products always catch my attention. I even made Christmas Tree decorations out of the old clothes of my baby instead of buying new plastic flowers for Php10.00 each. During the trade fair, the most challenging part was the bad weather condition. Each of us, has to make one “banig” for the trade fair. So we decided to pick a lot of “bariw” leaves to be used as the material for our “banig”. However, due to the rainy weather, we were not able to dry the leaves. The raw materials darken because of the moisture and some even grew molds. To save the materials, we decided to dye the leaves to make bags. We were able to make a few but most of the materials were thrown away. It was heartbreaking and sad, because we already invested so much time, effort and money. But then and there, we were able to come up with an idea to make shell crafts. We asked for permission from Ma’am Marge and then looked for washed off shells in the shore. We were careful in picking the shells, as not to use endangered ones and even small ones. Despite that, by all truth, my groupmates were scared about the huge capital that we have. They even wanted to give it back because they were not confident that we will succeed. But I told them, that with, we will be able to succeed one day. With the biggest amount given to us among all the groups, I told them that we also have the biggest chance to make more products. But among everything, I am most grateful to GDFI and G2A, because if not for them, we will not have a stronger and better house than we had before. I am also thankful that their generosity did not stop on the housing project but extended to provide as livelihood opportunities which are now giving us extra income to support our families.\n"
     },
     {
       "slug": "lilybeth-tebrero",
@@ -1593,7 +1593,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "tags": [
         "Women"
       ],
-      "body": "\r\nI am Lilybeth Tebrero, a member of the Herbal Group. We are not direct beneficiaries of the Give2Asia Housing Project in Maliwaliw Island, but my parents were. When my father passed away in November 2018, we became the beneficiaries of his housing unit. Our original house is within the 40km danger zone at Sitio Kabarasan. We are one of the 3 remaining families at the coastal area with concrete houses. I have 8 children, and we needed a minimum space to fit all of them comfortably. My husband is a teacher at the barangay elementary school. Although we have a regular source of income it was not enough for us to transfer right away to the village because we did not have enough savings to build an extension. During rainy season, we usually transfer to the G2A Village, but normally we still live at our old house. During the Typhoon Ursula, we were supposed to transfer to the G2A Village before landfall, but we were pre-occupied preparing food before we evacuate. The typhoon landed while we were still in Kabarasan, we saw how the water rose as we run towards the village. We saw our windows shattered and the water entering our house. We were running with the water already increasing up to our knees. When we reached the elementary school, we decided to go inside since the wind was so strong and we couldn’t proceed to the village anymore. At the evacuation center, we observed that it was not resilient enough to withstand stronger typhoons. The windows were broken, and the ceilings are dripping with water. After the typhoon, when we transferred to the Village, we observed that only the front window of our house was damaged. At that point, my husband and I regretted, we knew better, we were both trained and were able to attend the trainings given by GDFI, but still we chose convenience over safety. While we were evacuating, our children were crying, they were traumatized because of what we experienced. Right there and then, we decided to transfer as soon as possible to the village. We transferred what we saved from our house to the village and we will slowly construct an extension.” Lilybeth and Chris shared their story to other residents still living in coastal areas. Lilybeth said “We learned our lessons the hard way, we risked the lives of our children over convenience and attachment to our old house. We are thankful to G2A and GDFI for the housing grant that we are now living in. We are thankful that it was not too late to actually do the right thing.\r\n"
+      "body": "\nI am Lilybeth Tebrero, a member of the Herbal Group. We are not direct beneficiaries of the Give2Asia Housing Project in Maliwaliw Island, but my parents were. When my father passed away in November 2018, we became the beneficiaries of his housing unit. Our original house is within the 40km danger zone at Sitio Kabarasan. We are one of the 3 remaining families at the coastal area with concrete houses. I have 8 children, and we needed a minimum space to fit all of them comfortably. My husband is a teacher at the barangay elementary school. Although we have a regular source of income it was not enough for us to transfer right away to the village because we did not have enough savings to build an extension. During rainy season, we usually transfer to the G2A Village, but normally we still live at our old house. During the Typhoon Ursula, we were supposed to transfer to the G2A Village before landfall, but we were pre-occupied preparing food before we evacuate. The typhoon landed while we were still in Kabarasan, we saw how the water rose as we run towards the village. We saw our windows shattered and the water entering our house. We were running with the water already increasing up to our knees. When we reached the elementary school, we decided to go inside since the wind was so strong and we couldn’t proceed to the village anymore. At the evacuation center, we observed that it was not resilient enough to withstand stronger typhoons. The windows were broken, and the ceilings are dripping with water. After the typhoon, when we transferred to the Village, we observed that only the front window of our house was damaged. At that point, my husband and I regretted, we knew better, we were both trained and were able to attend the trainings given by GDFI, but still we chose convenience over safety. While we were evacuating, our children were crying, they were traumatized because of what we experienced. Right there and then, we decided to transfer as soon as possible to the village. We transferred what we saved from our house to the village and we will slowly construct an extension.” Lilybeth and Chris shared their story to other residents still living in coastal areas. Lilybeth said “We learned our lessons the hard way, we risked the lives of our children over convenience and attachment to our old house. We are thankful to G2A and GDFI for the housing grant that we are now living in. We are thankful that it was not too late to actually do the right thing.\n"
     },
     {
       "slug": "lourdes-basilides",
@@ -1601,7 +1601,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "tags": [
         "Women"
       ],
-      "body": "\r\nI am Lourdes Basilides a widow with 4 children. Currently I used to live with my son and grandchild and his family.\r\n\r\nG2A and GDFI greatly helped our family specially that I have thyroid problem for a long time now. It was so hard for me as a mother to depend on my children for food and medicine. After Super Typhoon Yolanda, we were one of the families who lost all their properties including houses. The only livelihood I know since I was child is fishing, so when I was advised by the doctor to stop, I was devastated. I am thankful to G2A and GDFI for giving us a house and an opportunity to earn even at home.\r\n\r\nBefore, I already knew how to process Bariw and make bags and “banig” (mats) out of it. However, it was hard for me to produce in volume because of my condition. When G2A and GDFI supported women with trainings on Handicraft Production, I was so happy. I thought to myself that, at least if I could earn some money, I could help my children in our expenses specially my medication. After the trainings, I\r\nactively participated in our small livelihood project. We process bariw during mid-day and bake bread (the local way) in the morning and afternoon. Because of the trainings given by GDFI, we were able to grow our capital. For the past 2 years, I am proud to say that through the opportunity given to us I was able to buy a new bamboo sala set, glass jalousies for my windows, and buy my regular medication. I was able to give some small amounts to my children and grandchildren as well. When I thought I was a burden to my family already, the women’s livelihood helped me to earn despite my condition.\r\n\r\nDuring the lockdown, the pandemic gave way to an opportunity for us to sew and sell facemasks, while we continue selling bread and offering sewing services. Our group was able to share out almost 10k for each of us from our sales in mask production. The masks distributed by G2A and GDFI were made by our group. I felt good being productive at my age,\r\nbeing able to help during the pandemic and by not being a burden to my family anymore. I saved some of my shares from our small livelihood and hopefully soon, I would be able to undergo operation for my thyroid with the help of my family. From a widow who still support her son and grandchild, I am forever thankful to G2A and GDFI for the opportunity and support they provided us.\r\n"
+      "body": "\nI am Lourdes Basilides a widow with 4 children. Currently I used to live with my son and grandchild and his family.\n\nG2A and GDFI greatly helped our family specially that I have thyroid problem for a long time now. It was so hard for me as a mother to depend on my children for food and medicine. After Super Typhoon Yolanda, we were one of the families who lost all their properties including houses. The only livelihood I know since I was child is fishing, so when I was advised by the doctor to stop, I was devastated. I am thankful to G2A and GDFI for giving us a house and an opportunity to earn even at home.\n\nBefore, I already knew how to process Bariw and make bags and “banig” (mats) out of it. However, it was hard for me to produce in volume because of my condition. When G2A and GDFI supported women with trainings on Handicraft Production, I was so happy. I thought to myself that, at least if I could earn some money, I could help my children in our expenses specially my medication. After the trainings, I\nactively participated in our small livelihood project. We process bariw during mid-day and bake bread (the local way) in the morning and afternoon. Because of the trainings given by GDFI, we were able to grow our capital. For the past 2 years, I am proud to say that through the opportunity given to us I was able to buy a new bamboo sala set, glass jalousies for my windows, and buy my regular medication. I was able to give some small amounts to my children and grandchildren as well. When I thought I was a burden to my family already, the women’s livelihood helped me to earn despite my condition.\n\nDuring the lockdown, the pandemic gave way to an opportunity for us to sew and sell facemasks, while we continue selling bread and offering sewing services. Our group was able to share out almost 10k for each of us from our sales in mask production. The masks distributed by G2A and GDFI were made by our group. I felt good being productive at my age,\nbeing able to help during the pandemic and by not being a burden to my family anymore. I saved some of my shares from our small livelihood and hopefully soon, I would be able to undergo operation for my thyroid with the help of my family. From a widow who still support her son and grandchild, I am forever thankful to G2A and GDFI for the opportunity and support they provided us.\n"
     },
     {
       "slug": "marilou-abanador",
@@ -1609,7 +1609,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "tags": [
         "Women"
       ],
-      "body": "\r\nI am Marilou Abanador, a G2A Villager and member of the Herbal Group. The coming of the Typhoon Ursula tested the capacity of the village and even the individual families to mitigate the effects of the hazard to our properties. The trainings, seminars and workshops came in handy while preparing for the typhoon. The initial report from the radio, said the intensity of the typhoon is only signal #2, which is usually a non-destructive level of wind and rain.\r\n\r\nDespite these initial reports from radios and National Disaster Risk Reduction Management Council alert messages the actual intensty of the typhoon when it re-routed and landed in Salcedo was already in category 3. Most of the families outside the village, were confident and busy with the preparation for Christmas eve. But my husband and I, focused on preparing for the typhoon. We secured our motorboat, tied it inside the mangrove area and detached the engine. My husband covered and nailed our windows with ply woods to protect us from the entry of wind and rain. He also cut the branches of our fruit trees to avoid falling branches hitting our roof, and to avoid the trees from being uprooted.”\r\n\r\nAccording to Marilou, some of the residents who saw them preparing for the typhoon days before landfall, laughed at them by being overly prepared. “People were laughing at us, but we believe that in times of calamity, there is no harm by being overly-prepared”. After the typhoon, their house was hardly damaged, their extension needed minimal repair and their motorboat was saved.\r\n"
+      "body": "\nI am Marilou Abanador, a G2A Villager and member of the Herbal Group. The coming of the Typhoon Ursula tested the capacity of the village and even the individual families to mitigate the effects of the hazard to our properties. The trainings, seminars and workshops came in handy while preparing for the typhoon. The initial report from the radio, said the intensity of the typhoon is only signal #2, which is usually a non-destructive level of wind and rain.\n\nDespite these initial reports from radios and National Disaster Risk Reduction Management Council alert messages the actual intensty of the typhoon when it re-routed and landed in Salcedo was already in category 3. Most of the families outside the village, were confident and busy with the preparation for Christmas eve. But my husband and I, focused on preparing for the typhoon. We secured our motorboat, tied it inside the mangrove area and detached the engine. My husband covered and nailed our windows with ply woods to protect us from the entry of wind and rain. He also cut the branches of our fruit trees to avoid falling branches hitting our roof, and to avoid the trees from being uprooted.”\n\nAccording to Marilou, some of the residents who saw them preparing for the typhoon days before landfall, laughed at them by being overly prepared. “People were laughing at us, but we believe that in times of calamity, there is no harm by being overly-prepared”. After the typhoon, their house was hardly damaged, their extension needed minimal repair and their motorboat was saved.\n"
     },
     {
       "slug": "melanie-betorio",
@@ -1621,7 +1621,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "featured_images": [
         "https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/m-betorio.webp"
       ],
-      "body": "\r\nThe fisherman’s life is no joke, it doubles the risk to your life, especially if the weather is bad and when your engine is having trouble. I am Melanie Betorio, living on the island of Trinidad Tubabao. Fishing is what we count on to survive.\r\n\r\nIn today’s era we are affected by poverty and by the pandemic going on in the world, especially when fish and crab catches are scarce or very small. It is difficult to budget if the daily income is minimal, especially for family needs, such as food and my children's educational supplies. So even if the weather is bad, we will be patient and go to sea to afford family expenses.\r\n\r\nAnother big impact on our fishermen is the relentless illegal fishing that is destroying marine resources. Because of this, we catch very little. We also have the fear of our nets being stolen, as they are our primary source of income. Another challenge for us is the rising price of commodities, especially fuel which often costs more than our income. But despite all this, we will continue to work for our family.\r\n"
+      "body": "\nThe fisherman’s life is no joke, it doubles the risk to your life, especially if the weather is bad and when your engine is having trouble. I am Melanie Betorio, living on the island of Trinidad Tubabao. Fishing is what we count on to survive.\n\nIn today’s era we are affected by poverty and by the pandemic going on in the world, especially when fish and crab catches are scarce or very small. It is difficult to budget if the daily income is minimal, especially for family needs, such as food and my children's educational supplies. So even if the weather is bad, we will be patient and go to sea to afford family expenses.\n\nAnother big impact on our fishermen is the relentless illegal fishing that is destroying marine resources. Because of this, we catch very little. We also have the fear of our nets being stolen, as they are our primary source of income. Another challenge for us is the rising price of commodities, especially fuel which often costs more than our income. But despite all this, we will continue to work for our family.\n"
     },
     {
       "slug": "saturnino-lumagbas",
@@ -1632,7 +1632,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "featured_images": [
         "https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/s-lumagbas.webp"
       ],
-      "body": "\r\nI am Saturnino Lumagbas, a fisherman on the island of Trinidad Tubabao. I am raising my family alone because my wife has passed away.\r\nOur life, as a fisherman, is occasionally on the brink of death. Because at sea we are sometimes hit by bad weather like heavy rain and stormy weather.\r\nSometimes even when the weather is bad we still continue to sail because our family needs something to eat every day. Even if our life depends on it, we will still have to sail for our family.\r\n\r\nAnd when we look at it – sometimes our boats got damaged and our engines have problems, especially if they have been used for a long time, and we can't go home right away, especially if no one can see and help us. But even though we are experiencing such hardship and trials, we will continue in our work and will not be overcome by the difficulties of life. For our family is what gives us strength. Life as a fisherman is very hard, sometimes our income is not enough to provide for the family's needs.\r\n\r\nShow love for your father and be like us, for we sacrifice a lot for our family and children. We should not be ashamed of our livelihood but we should be proud of it because this supports us to live.\r\n"
+      "body": "\nI am Saturnino Lumagbas, a fisherman on the island of Trinidad Tubabao. I am raising my family alone because my wife has passed away.\nOur life, as a fisherman, is occasionally on the brink of death. Because at sea we are sometimes hit by bad weather like heavy rain and stormy weather.\nSometimes even when the weather is bad we still continue to sail because our family needs something to eat every day. Even if our life depends on it, we will still have to sail for our family.\n\nAnd when we look at it – sometimes our boats got damaged and our engines have problems, especially if they have been used for a long time, and we can't go home right away, especially if no one can see and help us. But even though we are experiencing such hardship and trials, we will continue in our work and will not be overcome by the difficulties of life. For our family is what gives us strength. Life as a fisherman is very hard, sometimes our income is not enough to provide for the family's needs.\n\nShow love for your father and be like us, for we sacrifice a lot for our family and children. We should not be ashamed of our livelihood but we should be proud of it because this supports us to live.\n"
     },
     {
       "slug": "susan-alamodin",
@@ -1644,7 +1644,7 @@ export const contentMap: Record<string, Array<Record<string, unknown>>> = {
       "featured_images": [
         "https://cdn.gdfi1988.org/gdfi-website-uploads/community-stories/s-alamodin.webp"
       ],
-      "body": "\r\nI am Susan Alamodin, fifty-nine years old, living in Bangaray San Pedro, Quinapondan Eastern Samar. I am a female fisherman and the women’s leader of our association. I am proud of my career as a fisherman. Every day I go with my husband and son to the sea to provide for our daily food and other necessities. What we catch are squid, shrimp, danggit [also known as rabbitfish] and sometimes we also catch crabs. In the few years we have been fishing there are days that we catch a lot but there are days when we have none. But we have to try every day for our family.\r\n\r\nWhat my husband and son do at sea, I can do too. I can tolerate the heat and cold for my family. My role is not limited to accompanying my husband and son to the sea, I also process our danggits so that we could sell them at a higher price and increase our income. Because I am also a leader in the women's association in our area, I also teach fish processing to help their families. I give time to teach and provide extra knowledge to working-women to help their husbands.\r\n\r\nI wish I could share my story, especially with women – that we can do whatever men can do, especially in employment. Women and men should be treated equally. I believe and I will prove that a woman can do what a man can do.\r\n"
+      "body": "\nI am Susan Alamodin, fifty-nine years old, living in Bangaray San Pedro, Quinapondan Eastern Samar. I am a female fisherman and the women’s leader of our association. I am proud of my career as a fisherman. Every day I go with my husband and son to the sea to provide for our daily food and other necessities. What we catch are squid, shrimp, danggit [also known as rabbitfish] and sometimes we also catch crabs. In the few years we have been fishing there are days that we catch a lot but there are days when we have none. But we have to try every day for our family.\n\nWhat my husband and son do at sea, I can do too. I can tolerate the heat and cold for my family. My role is not limited to accompanying my husband and son to the sea, I also process our danggits so that we could sell them at a higher price and increase our income. Because I am also a leader in the women's association in our area, I also teach fish processing to help their families. I give time to teach and provide extra knowledge to working-women to help their husbands.\n\nI wish I could share my story, especially with women – that we can do whatever men can do, especially in employment. Women and men should be treated equally. I believe and I will prove that a woman can do what a man can do.\n"
     }
   ]
 }
