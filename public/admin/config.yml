@@ -1,7 +1,8 @@
 backend:
   name: github
   repo: GDFI-Dev-Team/gdfi-website
-  base_url: https://sveltia-cms-auth.raki-rarufu-dev.workers.dev # handoff CMS authentication Cloudflare worker
+  branch: main
+  base_url: sveltia-cms-auth.gdfidev-43c.workers.dev 
 
   commit_messages:
     create: 'content: create {{collection}} "{{slug}}"'
