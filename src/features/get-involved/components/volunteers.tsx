@@ -55,8 +55,8 @@ export default function Volunteers() {
 
         <figure className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-lg m-0 order-1 lg:order-2">
           <Image
-            src="/feat-hero/hero-2.jpeg"
-            alt="Volunteer Opportunities"
+            src="https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-tree-planting-balangiga.webp"
+            alt="Mangrove Tree Planting in Balangiga"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"

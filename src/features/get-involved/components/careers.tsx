@@ -14,8 +14,8 @@ export default function Careers() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <figure className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-lg m-0">
           <Image
-            src="/feat-hero/hero-1.jpeg"
-            alt="Careers and Internships"
+            src="https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-rehabilitation.webp"
+            alt="Mangrove Rehabilitation"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"
