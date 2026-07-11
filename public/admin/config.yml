@@ -1,8 +1,7 @@
 backend:
   name: github
   repo: GDFI-Dev-Team/gdfi-website
-  branch: main
-  base_url: https://sveltia-cms-auth.gdfidev-43c.workers.dev # handoff CMS authentication Cloudflare worker
+  base_url: https://sveltia-cms-auth.raki-rarufu-dev.workers.dev # handoff CMS authentication Cloudflare worker
 
   commit_messages:
     create: 'content: create {{collection}} "{{slug}}"'
@@ -135,6 +134,7 @@ collections:
 
   - name: publications
     label: Research & Publications
+    label_singular: Research & Publication
     folder: content/resources/research-and-publications
     create: true
     fields:
@@ -188,7 +188,7 @@ collections:
 
   - name: programs
     label: Programs & Projects
-    label_singular: Program / Project
+    label_singular: Program & Project
     folder: content/our-works/programs-and-projects
     fields:
       - name: title
