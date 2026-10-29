@@ -1,5 +1,6 @@
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import Section from '@/components/ui/section'
 import { CORE_VALUES } from '../data/mission-vision-and-core-values'
 
@@ -9,12 +10,15 @@ export function CoreValues() {
       sectionClassName="bg-foreground/[0.03]"
       divClassName="flex flex-col items-center gap-6 md:gap-8"
     >
-      <Heading level={2}>Core Values</Heading>
+      <Reveal>
+        <Heading level={2}>Core Values</Heading>
+      </Reveal>
 
       <div className="grid w-full max-w-4xl grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4 md:gap-x-8">
-        {CORE_VALUES.map((value) => (
-          <div
+        {CORE_VALUES.map((value, index) => (
+          <Reveal
             key={value.label}
+            delay={index}
             className="flex flex-col items-center gap-4 text-center"
           >
             {/* Icon: SVG used as a mask so its color follows the theme token */}
@@ -35,7 +39,7 @@ export function CoreValues() {
             <Text size="lg" className="font-semibold">
               {value.label}
             </Text>
-          </div>
+          </Reveal>
         ))}
       </div>
     </Section>

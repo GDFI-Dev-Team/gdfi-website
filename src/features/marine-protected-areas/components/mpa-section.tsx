@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import MpaMap from './mpa-map'
+import Reveal from '@/components/ui/reveal'
 
 const clamp01 = (n: number) => Math.min(1, Math.max(0, n))
 const easeInOut = (t: number) =>
@@ -52,12 +53,12 @@ export default function MpaSection({
     >
       <div className="mx-auto grid max-w-7xl items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
         {/* Map — borderless, on the page background; only the figures show. */}
-        <div className="mx-auto aspect-square w-full max-w-md border-0 bg-background md:max-w-none">
+        <Reveal className="mx-auto aspect-square w-full max-w-md border-0 bg-background md:max-w-none">
           <MpaMap progress={progress} onToggle={toggle} className="h-full" />
-        </div>
+        </Reveal>
 
         {/* Description — right on desktop, below on mobile. */}
-        <div>{children}</div>
+        <Reveal delay={1}>{children}</Reveal>
       </div>
     </section>
   )

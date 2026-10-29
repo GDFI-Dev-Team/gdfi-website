@@ -1,6 +1,7 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import Image from 'next/image'
 import Link from 'next/link'
 import ShareButton from '@/components/ui/share-button'
@@ -119,7 +120,7 @@ export default async function WhatsHapenning() {
       aria-labelledby="our-latest-updates-heading"
       divClassName="flex flex-col gap-10"
     >
-      <div className="flex flex-col items-center gap-3 text-center">
+      <Reveal className="flex flex-col items-center gap-3 text-center">
         <Text
           size="lg"
           transform="uppercase"
@@ -134,21 +135,25 @@ export default async function WhatsHapenning() {
         >
           Latest Announcements
         </Heading>
-      </div>
+      </Reveal>
 
       <div className="flex flex-col gap-6">
-        <UpdateCard update={featured} featured />
+        <Reveal>
+          <UpdateCard update={featured} featured />
+        </Reveal>
         <ul className="hidden md:grid grid-cols-2 gap-6 lg:grid-cols-4 list-none p-0 m-0">
           {rest.map((update, index) => (
-            <li
+            <Reveal
+              as="li"
               key={update.slug}
+              delay={index}
               className={cn(
                 'flex flex-col',
                 index >= 2 ? 'hidden lg:flex' : '',
               )}
             >
               <UpdateCard update={update} className="h-full w-full" />
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>

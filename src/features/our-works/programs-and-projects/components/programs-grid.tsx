@@ -1,5 +1,6 @@
 import Pagination from '@/components/ui/pagination'
 import ProgramCard from './program-card'
+import Reveal from '@/components/ui/reveal'
 import { Program } from '@/lib/content/types'
 
 interface ProgramsGridProps {
@@ -19,8 +20,10 @@ export function ProgramsGrid({
     <>
       {items.length > 0 ? (
         <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 md:gap-6 lg:gap-8">
-          {items.map((program) => (
-            <ProgramCard key={program.slug} article={program} />
+          {items.map((program, index) => (
+            <Reveal key={program.slug} delay={index}>
+              <ProgramCard article={program} />
+            </Reveal>
           ))}
         </div>
       ) : (

@@ -86,14 +86,17 @@ export default function Hero({ programs }: { programs: Program[] }) {
           {slides.map((program, i) => (
             <div
               key={`${program.slug}-${i}`}
-              className="relative h-full w-full shrink-0"
+              className="relative h-full w-full shrink-0 overflow-hidden"
             >
               <Image
                 src={program['featured-img']}
                 alt={program.title}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                className={cn(
+                  'object-cover',
+                  i === 0 && 'animate-image-settle',
+                )}
                 priority={i === 0}
                 loading={i === 0 ? undefined : 'eager'}
               />
@@ -115,11 +118,11 @@ export default function Hero({ programs }: { programs: Program[] }) {
         >
           <Heading
             level={1}
-            className="animate-fade-up text-2xl text-text-standard leading-tight transition-colors duration-300 ease-[ease] [animation-delay:100ms] md:text-4xl lg:text-6xl"
+            className="animate-fade-up text-2xl text-text-standard leading-tight transition-colors duration-300 ease-[ease] [animation-delay:80ms] md:text-4xl lg:text-6xl"
           >
             {active.title}
           </Heading>
-          <Text className="line-clamp-3 max-w-prose animate-fade-up text-sm text-text-muted transition-colors duration-300 ease-[ease] [animation-delay:200ms] md:text-lg">
+          <Text className="line-clamp-3 max-w-prose animate-fade-up text-sm text-text-muted transition-colors duration-300 ease-[ease] [animation-delay:160ms] md:text-lg">
             {active['short-description']}
           </Text>
           <Link
@@ -127,7 +130,7 @@ export default function Hero({ programs }: { programs: Program[] }) {
             className={cn(
               buttonBase,
               buttonVariants.primary,
-              'mt-1 w-fit animate-fade-up gap-2 px-5 py-2.5 [animation-delay:300ms]',
+              'mt-1 w-fit animate-fade-up gap-2 px-5 py-2.5 [animation-delay:240ms]',
             )}
           >
             Read more
@@ -137,7 +140,7 @@ export default function Hero({ programs }: { programs: Program[] }) {
       )}
 
       {programs.length > 1 && (
-        <div className="relative z-30 flex gap-2 animate-fade-up [animation-delay:400ms]">
+        <div className="relative z-30 flex gap-2 animate-fade-up [animation-delay:320ms]">
           {programs.map((program, i) => (
             <button
               key={program.slug}

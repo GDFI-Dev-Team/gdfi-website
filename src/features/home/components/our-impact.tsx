@@ -1,6 +1,7 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import { getImpactStats } from '@/features/home/data/impact'
 
 export default function OurImpact() {
@@ -8,7 +9,7 @@ export default function OurImpact() {
 
   return (
     <Section sectionClassName="py-12 md:py-16">
-      <div className="mb-8 flex flex-col items-center text-center md:mb-12">
+      <Reveal className="mb-8 flex flex-col items-center text-center md:mb-12">
         <Text
           size="lg"
           transform="uppercase"
@@ -19,7 +20,7 @@ export default function OurImpact() {
         <Heading level={2} className="text-xl md:text-3xl lg:text-4xl">
           Conservation that adds up
         </Heading>
-      </div>
+      </Reveal>
 
       <div
         className="grid gap-x-2 md:gap-8"
@@ -27,9 +28,10 @@ export default function OurImpact() {
           gridTemplateColumns: `repeat(${stats.length}, minmax(0, 1fr))`,
         }}
       >
-        {stats.map((stat) => (
-          <div
+        {stats.map((stat, index) => (
+          <Reveal
             key={stat.label}
+            delay={index}
             className="flex flex-col items-center text-center"
           >
             <span className="font-display text-xl font-bold leading-none text-accent sm:text-3xl md:text-6xl">
@@ -38,7 +40,7 @@ export default function OurImpact() {
             <Text className="mt-1.5 max-w-[14ch] text-[10px] leading-tight text-foreground/70 sm:text-sm md:mt-3 md:text-base">
               {stat.label}
             </Text>
-          </div>
+          </Reveal>
         ))}
       </div>
     </Section>

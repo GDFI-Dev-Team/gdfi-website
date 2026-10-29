@@ -5,6 +5,7 @@ import { Landmark, Package, Info, Mail, Copy, Check } from 'lucide-react'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import { cn } from '@/lib/utils/cn-merge'
 import {
   CASH_DONATION_DETAILS,
@@ -53,17 +54,17 @@ function CopyButton({
 export default function SupportOptions() {
   return (
     <Section>
-      <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
+      <Reveal className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16 max-w-3xl mx-auto">
         <Heading level={2}>Support Us</Heading>
         <Text size="lg" className="leading-relaxed text-foreground/80">
           Whether through financial support or in-kind contributions, your
           generosity allows us to continue our ridge-to-reef conservation
           efforts.
         </Text>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start text-left">
-        <div className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-background p-8 md:p-10 shadow-sm">
+        <Reveal className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-background p-8 md:p-10 shadow-sm">
           <div className="flex items-center gap-4">
             <div className="bg-btn-primary/10 p-4 rounded-full shrink-0">
               <Landmark
@@ -142,9 +143,12 @@ export default function SupportOptions() {
               </a>
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-background p-8 md:p-10 shadow-sm">
+        <Reveal
+          delay={1}
+          className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-background p-8 md:p-10 shadow-sm"
+        >
           <div className="flex items-center gap-4">
             <div className="bg-btn-primary/10 p-4 rounded-full shrink-0">
               <Package
@@ -183,7 +187,7 @@ export default function SupportOptions() {
               ))}
             </address>
           </div>
-        </div>
+        </Reveal>
       </div>
     </Section>
   )

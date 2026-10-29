@@ -2,6 +2,7 @@ import { pillarsIcons } from '../data/_bundled-icons'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 
 const pillars = [
   {
@@ -24,7 +25,7 @@ const pillars = [
 export default function WhatWeDo() {
   return (
     <Section sectionClassName="bg-surface overflow-hidden">
-      <div className="mb-8 flex flex-col items-center text-center md:mb-12">
+      <Reveal className="mb-8 flex flex-col items-center text-center md:mb-12">
         <Text
           size="lg"
           transform="uppercase"
@@ -35,30 +36,32 @@ export default function WhatWeDo() {
         <Heading level={2} className="text-xl md:text-3xl lg:text-4xl">
           Our Core Pillars
         </Heading>
-      </div>
+      </Reveal>
 
-      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-6 max-sm:-mx-(--gutter) max-sm:px-[10%] sm:grid sm:grid-cols-3 sm:gap-8 md:gap-10 sm:overflow-visible sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {pillars.map((pillar) => (
-          <div
-            key={pillar.title}
-            className="group flex w-[80%] max-w-sm shrink-0 snap-center flex-col items-center rounded-2xl border border-border p-6 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg sm:w-auto sm:max-w-none sm:shrink md:p-8"
-          >
-            <span
-              aria-hidden="true"
-              className="flex size-16 shrink-0 items-center justify-center rounded-full bg-accent/30 text-foreground/30 transition-colors duration-200 md:size-20 [&>svg]:block [&>svg]:size-9 md:[&>svg]:size-11"
-              dangerouslySetInnerHTML={{ __html: pillar.icon }}
-            />
-            <div className="mt-4 min-w-0 md:mt-5">
-              <Heading level={4} className="text-base md:text-xl">
-                {pillar.title}
-              </Heading>
-              <Text className="mt-2 text-sm text-foreground/70 md:text-base">
-                {pillar.desc}
-              </Text>
+      <Reveal>
+        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-6 max-sm:-mx-(--gutter) max-sm:px-[10%] sm:grid sm:grid-cols-3 sm:gap-8 md:gap-10 sm:overflow-visible sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {pillars.map((pillar) => (
+            <div
+              key={pillar.title}
+              className="group flex w-[80%] max-w-sm shrink-0 snap-center flex-col items-center rounded-2xl border border-border p-6 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg sm:w-auto sm:max-w-none sm:shrink md:p-8"
+            >
+              <span
+                aria-hidden="true"
+                className="flex size-16 shrink-0 items-center justify-center rounded-full bg-accent/30 text-foreground/30 transition-colors duration-200 md:size-20 [&>svg]:block [&>svg]:size-9 md:[&>svg]:size-11"
+                dangerouslySetInnerHTML={{ __html: pillar.icon }}
+              />
+              <div className="mt-4 min-w-0 md:mt-5">
+                <Heading level={4} className="text-base md:text-xl">
+                  {pillar.title}
+                </Heading>
+                <Text className="mt-2 text-sm text-foreground/70 md:text-base">
+                  {pillar.desc}
+                </Text>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </Reveal>
     </Section>
   )
 }

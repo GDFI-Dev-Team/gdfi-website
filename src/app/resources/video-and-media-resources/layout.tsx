@@ -8,6 +8,7 @@ import FilterBar, {
 } from '@/components/ui/filter-bar'
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
+import Reveal from '@/components/ui/reveal'
 import FeaturedVideoSlideshow from '@/features/resources/video-and-media-resources/components/featured-video-slideshow'
 import { getAllVideos } from '@/features/resources/video-and-media-resources/data/videos'
 
@@ -42,12 +43,12 @@ export default function VideoResourcesLayout({
 
       {featuredVideos.length > 0 && (
         <Section sectionClassName="pb-0 md:pb-0">
-          <div className="flex flex-col">
+          <Reveal className="flex flex-col">
             <Heading level={2} className="mb-4">
               Featured
             </Heading>
             <FeaturedVideoSlideshow videos={featuredVideos} />
-          </div>
+          </Reveal>
         </Section>
       )}
 

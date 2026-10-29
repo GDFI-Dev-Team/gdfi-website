@@ -9,6 +9,7 @@ import {
 import { cn } from '@/lib/utils/cn-merge'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import Section from '@/components/ui/section'
 
 function TimelineItem({
@@ -99,24 +100,27 @@ export function HistoryTimeline() {
 
   return (
     <Section sectionClassName="bg-foreground/[0.02]">
-      <Heading level={2} className="mb-8 text-center md:mb-12 md:text-left">
-        Our History
-      </Heading>
+      <Reveal>
+        <Heading level={2} className="mb-8 text-center md:mb-12 md:text-left">
+          Our History
+        </Heading>
+      </Reveal>
 
       <div className="relative max-w-3xl">
         <div className="flex flex-col">
           {HISTORY_MILESTONES.map((milestone, index) => (
-            <TimelineItem
-              key={milestone.id}
-              milestone={milestone}
-              isOpen={openId === milestone.id}
-              isLast={index === HISTORY_MILESTONES.length - 1}
-              onToggle={() =>
-                setOpenId((prev) =>
-                  prev === milestone.id ? null : milestone.id,
-                )
-              }
-            />
+            <Reveal key={milestone.id} delay={index}>
+              <TimelineItem
+                milestone={milestone}
+                isOpen={openId === milestone.id}
+                isLast={index === HISTORY_MILESTONES.length - 1}
+                onToggle={() =>
+                  setOpenId((prev) =>
+                    prev === milestone.id ? null : milestone.id,
+                  )
+                }
+              />
+            </Reveal>
           ))}
         </div>
       </div>

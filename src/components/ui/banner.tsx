@@ -27,18 +27,21 @@ export default function Banner({
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="animate-image-settle object-cover object-center"
       />
       <div className="absolute inset-0 bg-linear-to-r from-hero-overlay/80 via-hero-overlay/30 via-25% to-transparent to-50% transition-[--hero-overlay] duration-300 ease-[ease] dark:from-hero-overlay/80 dark:via-hero-overlay/40" />
       <div className="absolute inset-0 bg-linear-to-t from-hero-overlay/80 via-hero-overlay/30 to-hero-overlay/10 transition-[--hero-overlay] duration-300 ease-[ease] dark:from-hero-overlay/30 dark:via-hero-overlay/20 dark:to-hero-overlay/10" />
       <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-hero-overlay/80 to-transparent transition-[--hero-overlay] duration-300 ease-[ease]" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-3 [text-shadow:0_1px_3px_rgb(0_0_0_/0.4)] md:gap-4">
-        <Breadcrumbs last={title} className={breadcrumbClassName} />
+        <Breadcrumbs
+          last={title}
+          className={cn('animate-fade-up', breadcrumbClassName)}
+        />
         <Heading
           level={1}
           className={cn(
-            'text-balance text-3xl text-text-standard leading-tight transition-colors duration-300 ease-[ease] md:text-4xl lg:text-6xl',
+            'animate-fade-up text-balance text-3xl text-text-standard leading-tight transition-colors duration-300 ease-[ease] [animation-delay:80ms] md:text-4xl lg:text-6xl',
             titleClassName,
           )}
         >
@@ -46,7 +49,7 @@ export default function Banner({
         </Heading>
         <Text
           className={cn(
-            'max-w-prose text-sm text-text-muted transition-colors duration-300 ease-[ease] md:text-lg',
+            'animate-fade-up max-w-prose text-sm text-text-muted transition-colors duration-300 ease-[ease] [animation-delay:160ms] md:text-lg',
             descriptionClassName,
           )}
         >

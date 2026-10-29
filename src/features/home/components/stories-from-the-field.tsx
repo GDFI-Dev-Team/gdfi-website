@@ -1,6 +1,7 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import Link from 'next/link'
 import CommunityStoriesCard from '@/features/updates/community-stories/components/cs-card'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
@@ -18,7 +19,7 @@ export default async function StoriesFromTheField() {
       sectionClassName="relative overflow-hidden bg-foreground/3"
       divClassName="flex flex-col gap-10"
     >
-      <div className="flex flex-col items-center gap-3 text-center">
+      <Reveal className="flex flex-col items-center gap-3 text-center">
         <Text
           size="lg"
           transform="uppercase"
@@ -33,17 +34,23 @@ export default async function StoriesFromTheField() {
         >
           Community Stories
         </Heading>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {stories.map((story, index) => (
-          <CommunityStoriesCard
+          <Reveal
             key={story.slug}
-            article={story}
+            delay={index}
             className={
-              index >= 2 ? 'hidden lg:flex' : index >= 1 ? 'hidden md:flex' : ''
+              index >= 2
+                ? 'hidden lg:block'
+                : index >= 1
+                  ? 'hidden md:block'
+                  : ''
             }
-          />
+          >
+            <CommunityStoriesCard article={story} />
+          </Reveal>
         ))}
       </div>
 

@@ -1,6 +1,7 @@
 import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import VideoCarousel from './videos-carousel'
 import { getAllVideos } from '@/features/resources/video-and-media-resources/data/videos'
 
@@ -13,7 +14,7 @@ export default function VoicesFromTheCoast() {
       sectionClassName="bg-foreground/3 overflow-hidden"
       divClassName="flex flex-col gap-10 items-center"
     >
-      <div className="flex flex-col items-center gap-3 text-center">
+      <Reveal className="flex flex-col items-center gap-3 text-center">
         <Text
           size="lg"
           transform="uppercase"
@@ -28,9 +29,11 @@ export default function VoicesFromTheCoast() {
         >
           Featured Interviews
         </Heading>
-      </div>
+      </Reveal>
 
-      <VideoCarousel videos={featuredVideos} />
+      <Reveal className="w-full">
+        <VideoCarousel videos={featuredVideos} />
+      </Reveal>
     </Section>
   )
 }

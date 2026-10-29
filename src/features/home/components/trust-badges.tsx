@@ -2,6 +2,7 @@ import Section from '@/components/ui/section'
 import Heading from '@/components/ui/heading'
 import Marquee from '@/components/ui/marquee'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import BadgeCard from './badge-card'
 import { getBadges } from '@/features/home/data/badges'
 
@@ -13,7 +14,7 @@ export default function TrustBadges() {
       aria-labelledby="trust-badges-heading"
       divClassName="flex flex-col gap-6 w-full"
     >
-      <div className="flex flex-col items-center gap-3 text-center">
+      <Reveal className="flex flex-col items-center gap-3 text-center">
         <Text
           size="lg"
           transform="uppercase"
@@ -28,7 +29,7 @@ export default function TrustBadges() {
         >
           Trust Badges
         </Heading>
-      </div>
+      </Reveal>
 
       <Marquee>
         {badges.map((badge, index) => (

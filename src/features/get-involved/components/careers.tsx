@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import { buttonBase, buttonVariants } from '@/components/ui/button'
 import Section from '@/components/ui/section'
 import { cn } from '@/lib/utils/cn-merge'
@@ -8,10 +9,15 @@ import { cn } from '@/lib/utils/cn-merge'
 export default function Careers() {
   return (
     <Section>
-      <Heading className="mb-8 text-center md:mb-12" level={2}>
-        Careers & Internships
-      </Heading>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <Reveal>
+        <Heading className="mb-8 text-center md:mb-12" level={2}>
+          Careers & Internships
+        </Heading>
+      </Reveal>
+      <Reveal
+        delay={1}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+      >
         <figure className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-lg m-0">
           <Image
             src="https://cdn.gdfi1988.org/gdfi-website-uploads/programs-and-projects/mangrove-rehabilitation.webp"
@@ -49,7 +55,7 @@ export default function Careers() {
             Email Your CV
           </a>
         </div>
-      </div>
+      </Reveal>
     </Section>
   )
 }

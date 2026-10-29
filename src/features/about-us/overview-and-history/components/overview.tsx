@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import Section from '@/components/ui/section'
 import { OVERVIEW_TEXT } from '../data/overview-and-history'
 
@@ -8,7 +9,7 @@ export function Overview() {
   return (
     <Section>
       {/* Intro: copy leads on the left, logo anchors the right */}
-      <div className="md:flex md:items-center md:justify-between md:gap-16">
+      <Reveal className="md:flex md:items-center md:justify-between md:gap-16">
         <div>
           <Heading level={2} className="text-center md:text-left">
             Overview
@@ -31,7 +32,7 @@ export function Overview() {
           className="hidden h-48 w-auto shrink-0 md:block"
           priority
         />
-      </div>
+      </Reveal>
     </Section>
   )
 }

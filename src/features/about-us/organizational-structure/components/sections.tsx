@@ -1,5 +1,6 @@
 import Heading from '@/components/ui/heading'
 import Section from '@/components/ui/section'
+import Reveal from '@/components/ui/reveal'
 import { PersonnelCard } from './personnel-card'
 import { Personnel } from '@/lib/content/types'
 
@@ -17,9 +18,9 @@ function OrgSection({
       maxWidth="6xl"
       sectionClassName={tinted ? 'bg-foreground/[0.02]' : undefined}
     >
-      <div className="mb-10 text-center md:mb-14">
+      <Reveal className="mb-10 text-center md:mb-14">
         <Heading level={2}>{title}</Heading>
-      </div>
+      </Reveal>
       {children}
     </Section>
   )
@@ -44,9 +45,9 @@ function PeopleGrid({
       className={`mx-auto flex w-full flex-wrap justify-center gap-x-4 gap-y-4 md:gap-x-8 md:gap-y-6 ${maxWidth}`}
     >
       {people.map((p, i) => (
-        <div key={`${p.name}-${i}`} className={slot}>
+        <Reveal key={`${p.name}-${i}`} delay={i} className={slot}>
           <PersonnelCard person={p} />
-        </div>
+        </Reveal>
       ))}
     </div>
   )

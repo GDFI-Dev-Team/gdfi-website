@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { VideoContent } from '@/lib/content/types'
 import VideoCard from './video-card'
+import Reveal from '@/components/ui/reveal'
 import VideoModal from './modal'
 import Pagination from '@/components/ui/pagination'
 
@@ -26,10 +27,15 @@ export default function VideoGallery({
       {videos.length > 0 ? (
         <>
           <ul className="flex flex-col gap-8 list-none p-0 m-0">
-            {videos.map((video) => (
-              <li key={video.slug} className="flex flex-col">
+            {videos.map((video, index) => (
+              <Reveal
+                as="li"
+                key={video.slug}
+                delay={index}
+                className="flex flex-col"
+              >
                 <VideoCard video={video} onPlay={setSelectedUrl} />
-              </li>
+              </Reveal>
             ))}
           </ul>
 

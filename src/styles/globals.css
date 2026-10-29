@@ -60,8 +60,11 @@
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 
   /* Animations */
-  --animate-fade-up: fade-up 0.5s ease-out both;
+  /* Shared by every entrance: fast start, long soft settle */
+  --ease-entrance: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-fade-up: fade-up 0.6s var(--ease-entrance) both;
   --animate-marquee: marquee 60s linear infinite;
+  --animate-image-settle: image-settle 1.4s var(--ease-entrance) both;
 }
 
 @keyframes marquee {
@@ -70,6 +73,17 @@
   }
   to {
     transform: translateX(var(--marquee-translate, -50%));
+  }
+}
+
+/* Hero/banner photo. Scale only — never opacity: it's the page's LCP element,
+   and fading it in would delay Largest Contentful Paint. */
+@keyframes image-settle {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
   }
 }
 
@@ -261,6 +275,51 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+
+/* Reveal — state is set by the <Reveal> component.
+   - load / enter: entrance plays from first paint in pure CSS, so it never
+     waits on JS and nothing stays hidden if JS fails.
+   - pending / shown: below-the-fold content, parked after hydration and
+     replayed on scroll.
+   An animation rather than a transition, so it never overrides an element's
+   own hover transitions. `backwards`, not `both`: no transform is left behind
+   afterwards, which would create a stacking context and trap hover tooltips
+   under neighbouring cards. */
+:root {
+  /* On first load, on-screen content waits for the hero/banner copy, which
+     enters on an 80ms rhythm (last element at 320ms) */
+  --reveal-load-offset: 320ms;
+}
+
+[data-reveal='load'],
+[data-reveal='enter'],
+[data-reveal='shown'] {
+  animation: fade-up 0.6s var(--ease-entrance) backwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal='load'] {
+  animation-delay: calc(var(--reveal-load-offset) + var(--reveal-delay, 0ms));
+}
+
+[data-reveal='pending'] {
+  opacity: 0;
+}
+
+/* Honour the OS "reduce motion" setting site-wide: animations and
+   transitions jump to their end state instead of playing. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Custom Leaflet style overrides to ensure clean markers and transitions */

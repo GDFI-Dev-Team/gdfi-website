@@ -1,5 +1,6 @@
 import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
+import Reveal from '@/components/ui/reveal'
 import Section from '@/components/ui/section'
 import {
   MISSION_TEXT,
@@ -12,12 +13,14 @@ export function MissionVisionCoreValues() {
   return (
     <Section sectionClassName="bg-foreground/[0.03]">
       <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
-        <MVCSlideshow
-          images={MISSION_VISION_IMAGES}
-          alt="Our mission and vision in action"
-        />
+        <Reveal>
+          <MVCSlideshow
+            images={MISSION_VISION_IMAGES}
+            alt="Our mission and vision in action"
+          />
+        </Reveal>
 
-        <div className="flex flex-col gap-8">
+        <Reveal delay={1} className="flex flex-col gap-8">
           <div className="flex flex-col gap-3">
             <Heading level={2}>Our Mission</Heading>
             <Text size="lg" className="leading-relaxed">
@@ -31,7 +34,7 @@ export function MissionVisionCoreValues() {
               {VISION_TEXT}
             </Text>
           </div>
-        </div>
+        </Reveal>
       </div>
     </Section>
   )

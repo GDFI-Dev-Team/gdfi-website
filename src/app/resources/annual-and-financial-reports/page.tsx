@@ -1,5 +1,6 @@
 import Banner from '@/components/ui/banner'
 import Section from '@/components/ui/section'
+import Reveal from '@/components/ui/reveal'
 import AnnualReportsShell from '@/features/resources/annual-and-financial-reports/components/ar-shell'
 import FilterBar from '@/components/ui/filter-bar'
 import YearRangeFilter from '@/components/ui/year-range-filter'
@@ -46,7 +47,9 @@ export default async function AnnualReportsPage({
       </Suspense>
 
       <Section>
-        <AnnualReportsShell reports={filtered} />
+        <Reveal>
+          <AnnualReportsShell reports={filtered} />
+        </Reveal>
       </Section>
     </div>
   )
