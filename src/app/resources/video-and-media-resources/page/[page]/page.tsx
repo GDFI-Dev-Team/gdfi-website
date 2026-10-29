@@ -1,3 +1,6 @@
+import { JsonLd, videosJsonLd } from '@/lib/seo/json-ld'
+import { Metadata } from 'next'
+import { buildPaginatedMetadata } from '@/lib/seo/metadata'
 import Heading from '@/components/ui/heading'
 import VideoGallery from '@/features/resources/video-and-media-resources/components/video-gallery'
 import {
@@ -21,6 +24,19 @@ interface PageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ page: string }>
+}): Promise<Metadata> {
+  const { page } = await params
+  return buildPaginatedMetadata(
+    '/resources/video-and-media-resources',
+    'Video & Media Resources',
+    page,
+  )
+}
+
 export default async function VideoResourcesPaginatedPage({
   params,
   searchParams,
@@ -39,6 +55,7 @@ export default async function VideoResourcesPaginatedPage({
 
   return (
     <>
+      <JsonLd data={videosJsonLd(items)} />
       <Heading level={2} className="mb-4">
         All Videos
       </Heading>

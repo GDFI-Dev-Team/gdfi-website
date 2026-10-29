@@ -10,13 +10,7 @@ import Text from '@/components/ui/text'
 import Image from 'next/image'
 import Button from '@/components/ui/button'
 import ShareButton from '@/components/ui/share-button'
-
-function getYouTubeId(url: string): string | null {
-  const m = url.match(
-    /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
-  )
-  return m ? m[1] : null
-}
+import { getYouTubeId } from '@/lib/utils/youtube'
 
 const AUTO_ADVANCE_MS = 7000
 

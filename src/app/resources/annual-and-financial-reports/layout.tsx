@@ -1,27 +1,13 @@
 import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Annual & Financial Reports',
   description:
     'Browse our tangible impacts through our yearly transparency reports.',
-  openGraph: {
-    title: 'Annual & Financial Reports',
-    description:
-      'Browse our tangible impacts through our yearly transparency reports.',
-    url: '/resources/annual-and-financial-reports',
-    images: [
-      {
-        url: '/nav-item-banner-images/annual-and-financial-reports.webp',
-        width: 1600,
-        height: 800,
-        alt: 'Browse our tangible impacts through our yearly transparency reports.',
-      },
-    ],
-  },
-  alternates: {
-    canonical: '/resources/annual-and-financial-reports',
-  },
-}
+  path: '/resources/annual-and-financial-reports',
+  image: '/og/annual-and-financial-reports.jpg',
+})
 
 export default function PublicationsLayout({
   children,
@@ -29,6 +15,6 @@ export default function PublicationsLayout({
   children: React.ReactNode
 }) {
   return (
-    <main className="flex-1 flex flex-col bg-foreground/3"> {children} </main>
+    <div className="flex-1 flex flex-col bg-foreground/3"> {children} </div>
   )
 }

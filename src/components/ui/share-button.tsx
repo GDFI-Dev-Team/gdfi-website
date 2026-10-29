@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom'
 import { Share2, Link2, Check } from 'lucide-react'
 import { SiFacebook, SiX } from '@icons-pack/react-simple-icons'
 import { cn } from '@/lib/utils/cn-merge'
+import { absoluteUrl } from '@/lib/seo/site'
 
 const MENU_WIDTH = 176
 const MENU_HEIGHT = 196
@@ -31,16 +32,9 @@ export default function ShareButton({
   const menuRef = useRef<HTMLDivElement>(null)
 
   const getUrl = useCallback((): string => {
-    const base = (
-      process.env.NEXT_PUBLIC_APP_URL ||
-      (typeof window !== 'undefined' ? window.location.origin : '')
-    ).replace(/\/$/, '')
-
-    if (url?.startsWith('http')) return url
-
     const path =
       url ?? (typeof window !== 'undefined' ? window.location.pathname : '/')
-    return `${base}${path.startsWith('/') ? '' : '/'}${path}`
+    return absoluteUrl(path)
   }, [url])
 
   const positionMenu = useCallback(() => {

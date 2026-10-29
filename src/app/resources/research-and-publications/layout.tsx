@@ -1,27 +1,13 @@
 import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Research & Publications',
   description:
     'Dive into the scientific insights that anchor our conservation strategies.',
-  openGraph: {
-    title: 'Research & Publications',
-    description:
-      'Dive into the scientific insights that anchor our conservation strategies.',
-    url: '/resources/research-and-publications',
-    images: [
-      {
-        url: '/nav-item-banner-images/research-and-publications.webp',
-        width: 2048,
-        height: 1024,
-        alt: 'Dive into the scientific insights that anchor our conservation strategies.',
-      },
-    ],
-  },
-  alternates: {
-    canonical: '/resources/research-and-publications',
-  },
-}
+  path: '/resources/research-and-publications',
+  image: '/og/research-and-publications.jpg',
+})
 
 export default function ResearchAndPublicationsLayout({
   children,
@@ -29,6 +15,6 @@ export default function ResearchAndPublicationsLayout({
   children: React.ReactNode
 }) {
   return (
-    <main className="flex-1 flex flex-col bg-foreground/3"> {children} </main>
+    <div className="flex-1 flex flex-col bg-foreground/3"> {children} </div>
   )
 }

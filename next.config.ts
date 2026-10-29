@@ -41,6 +41,12 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        // Duplicate of the MPA page, removed — keep old links/indexed URLs working
+        source: '/our-works/mpas',
+        destination: '/our-works/marine-protected-areas',
+        permanent: true,
+      },
+      {
         source: '/our-works',
         destination: '/our-works/programs-and-projects',
         permanent: false,

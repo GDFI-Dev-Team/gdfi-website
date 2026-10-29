@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo/metadata'
 import { Suspense } from 'react'
 import Banner from '@/components/ui/banner'
 import FilterBar, {
@@ -10,28 +11,13 @@ import Heading from '@/components/ui/heading'
 import FeaturedVideoSlideshow from '@/features/resources/video-and-media-resources/components/featured-video-slideshow'
 import { getAllVideos } from '@/features/resources/video-and-media-resources/data/videos'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Video & Media Resources',
   description:
     'Browse the different videos of Guiuan Development Foundation Inc.',
-  openGraph: {
-    title: 'Video & Media Resources',
-    description:
-      'Browse the different videos of Guiuan Development Foundation Inc.',
-    url: '/resources/video-and-media-resources',
-    images: [
-      {
-        url: '/nav-item-banner-images/video-and-media-resources.webp',
-        width: 2048,
-        height: 1536,
-        alt: 'Browse the different videos of Guiuan Development Foundation Inc.',
-      },
-    ],
-  },
-  alternates: {
-    canonical: '/resources/video-and-media-resources',
-  },
-}
+  path: '/resources/video-and-media-resources',
+  image: '/og/video-and-media-resources.jpg',
+})
 
 export default function VideoResourcesLayout({
   children,
@@ -41,7 +27,7 @@ export default function VideoResourcesLayout({
   const featuredVideos = getAllVideos().filter((v) => v.featured)
 
   return (
-    <main className="flex-1 flex flex-col bg-foreground/0.02">
+    <div className="flex-1 flex flex-col bg-foreground/0.02">
       <Banner
         title="Video & Media Resources"
         description="Browse the different videos of Guiuan Development Foundation Inc."
@@ -66,6 +52,6 @@ export default function VideoResourcesLayout({
       )}
 
       <Section>{children}</Section>
-    </main>
+    </div>
   )
 }

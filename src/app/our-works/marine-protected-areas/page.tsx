@@ -1,29 +1,15 @@
 import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo/metadata'
 import Banner from '@/components/ui/banner'
 import MpaShowcase from '@/features/marine-protected-areas/components/mpa-showcase'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Marine Protected Areas (MPAs)',
   description:
     'Safeguarding marine biodiversity through community-managed Marine Protected Areas.',
-  openGraph: {
-    title: 'Marine Protected Areas (MPAs)',
-    description:
-      'Safeguarding marine biodiversity through community-managed Marine Protected Areas.',
-    url: '/our-works/marine-protected-areas',
-    images: [
-      {
-        url: '/nav-item-banner-images/marine-protected-areas.webp',
-        width: 1650,
-        height: 1100,
-        alt: 'Marine Protected Areas (MPAs)',
-      },
-    ],
-  },
-  alternates: {
-    canonical: '/our-works/marine-protected-areas',
-  },
-}
+  path: '/our-works/marine-protected-areas',
+  image: '/og/marine-protected-areas.jpg',
+})
 
 export default function MpasPage() {
   return (

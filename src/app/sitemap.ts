@@ -1,8 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getCollectionMarkdownData } from '@/lib/content/markdown'
 import { ArticleContent } from '@/lib/content/types'
-
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+import { siteUrl as baseUrl } from '@/lib/seo/site'
 
 // Pagination views left-out
 const staticPaths = [

@@ -3,6 +3,9 @@ import { Montserrat, Lato } from 'next/font/google'
 import '../styles/globals.css'
 import { SiteHeader } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
+import { SITE_NAME, TITLE_TEMPLATE, siteUrl } from '@/lib/seo/site'
+import { DEFAULT_OG_IMAGE, baseOpenGraph } from '@/lib/seo/metadata'
+import { JsonLd, organizationJsonLd } from '@/lib/seo/json-ld'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -17,16 +20,18 @@ const lato = Lato({
   display: 'swap',
 })
 
+const HOME_TITLE = 'Guiuan Development Foundation | Coastal Conservation NGO'
+const HOME_DESCRIPTION =
+  'Since 1988, Guiuan Development Foundation (GDFI) has partnered with coastal communities in Eastern Samar to protect mangroves, marine protected areas and fisheries.'
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-  ),
+  metadataBase: new URL(siteUrl),
   title: {
-    template: '%s | Guiuan Development Foundation Inc.',
-    default: 'Guiuan Development Foundation Inc.',
+    template: TITLE_TEMPLATE,
+    default: HOME_TITLE,
   },
-  description: 'The official homepage of Guiuan Development Foundation Inc.',
-  applicationName: 'Guiuan Development Foundation Inc. Website',
+  description: HOME_DESCRIPTION,
+  applicationName: SITE_NAME,
   creator: 'Guiuan Development Foundation, Inc.',
   publisher: 'Guiuan Development Foundation, Inc.',
   category: 'Non-Government Organization',
@@ -41,32 +46,29 @@ export const metadata: Metadata = {
     apple: '/logo-images/logo.svg',
   },
   openGraph: {
+    ...baseOpenGraph,
     title: {
-      template: '%s | Guiuan Development Foundation Inc.',
-      default: 'Guiuan Development Foundation Inc.',
+      template: TITLE_TEMPLATE,
+      default: HOME_TITLE,
     },
-    description: 'The official homepage of Guiuan Development Foundation Inc.',
-    siteName: 'Guiuan Development Foundation Inc.',
+    description: HOME_DESCRIPTION,
     url: '/',
-    locale: 'en_PH',
-    type: 'website',
     images: [
       {
-        url: '/feat-hero/hero-1.jpeg',
-        width: 3750,
-        height: 1969,
-        alt: 'The official homepage of Guiuan Development Foundation Inc.',
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'GDFI field staff conducting an underwater survey from an outrigger boat',
       },
     ],
   },
+  // Card type only: Next fills twitter title/description/images from each
+  // page's openGraph, so inner pages never inherit the homepage's values.
   twitter: {
     card: 'summary_large_image',
-    title: {
-      template: '%s | Guiuan Development Foundation Inc.',
-      default: 'Guiuan Development Foundation Inc.',
-    },
-    description: 'The official homepage of Guiuan Development Foundation Inc.',
-    images: ['/feat-hero/hero-1.jpeg'],
+  },
+  verification: {
+    google: 'vq5UErL8UJLGVTgRD0lBwRKmayVP0h8yaj23FWkU_vA',
   },
 }
 
@@ -85,6 +87,7 @@ export default function RootLayout({
           etc.) inject attributes onto <body> after SSR, which otherwise trips
           React's hydration attribute-mismatch warning. */}
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <JsonLd data={organizationJsonLd()} />
         <SiteHeader />
         <main className="flex-1 flex flex-col">{children}</main>
         <Footer />

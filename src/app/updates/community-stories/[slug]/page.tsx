@@ -7,7 +7,7 @@ import {
   markdownToHtml,
 } from '@/lib/content/markdown'
 import { ArticleContent } from '@/lib/content/types'
-import { buildArticleMetadata } from '@/lib/content/metadata'
+import { buildArticleMetadata } from '@/lib/seo/metadata'
 
 export function generateStaticParams() {
   const articles = getCollectionMarkdownData<ArticleContent>(
@@ -31,7 +31,7 @@ export async function generateMetadata({
     return buildArticleMetadata(
       article,
       `/updates/community-stories/${slug}`,
-      '/nav-item-banner-images/community-stories.webp',
+      '/og/community-stories.jpg',
     )
   } catch {
     return {}

@@ -76,6 +76,14 @@ export const org = {
   founded: 1988,
   email: 'hello.gdfi@gmail.com',
   address: 'Guimbaolibot Avenue, Brgy. 10, Guiuan, Eastern Samar, 6809',
+  /** Structured form of `address`, used for schema.org PostalAddress. */
+  postalAddress: {
+    streetAddress: 'Guimbaolibot Avenue, Brgy. 10',
+    addressLocality: 'Guiuan',
+    addressRegion: 'Eastern Samar',
+    postalCode: '6809',
+    addressCountry: 'PH',
+  },
   mapUrl: 'https://maps.app.goo.gl/gF2VHxrbyNKbE9TA9',
   about:
     'A community-rooted foundation advancing sustainable development and coastal resource management across Eastern Samar.',

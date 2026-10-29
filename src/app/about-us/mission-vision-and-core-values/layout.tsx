@@ -1,32 +1,18 @@
 import type { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Mission, Vision & Core Values',
   description:
     'Discover the heart of our foundation and its drive to heal our environment.',
-  openGraph: {
-    title: 'Mission, Vision & Core Values',
-    description:
-      'Discover the heart of our foundation and its drive to heal our environment.',
-    url: '/about-us/mission-vision-and-core-values',
-    images: [
-      {
-        url: '/nav-item-banner-images/mission-vision-and-core-values.webp',
-        width: 2048,
-        height: 1024,
-        alt: 'Discover the heart of our foundation and its drive to heal our environment.',
-      },
-    ],
-  },
-  alternates: {
-    canonical: '/about-us/mission-vision-and-core-values',
-  },
-}
+  path: '/about-us/mission-vision-and-core-values',
+  image: '/og/mission-vision-and-core-values.jpg',
+})
 
 export default function OurPurposeLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return <main className="flex-1">{children}</main>
+  return <div className="flex-1">{children}</div>
 }

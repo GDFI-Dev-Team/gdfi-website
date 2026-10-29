@@ -8,13 +8,25 @@ import { cn } from '@/lib/utils/cn-merge'
 import Text from '@/components/ui/text'
 import Button from '@/components/ui/button'
 
-export default function ArticleImages({ images }: { images: string[] }) {
+/**
+ * @param title Used for alt text. The CMS stores images as bare URLs, so the
+ *              article title is the best description available.
+ */
+export default function ArticleImages({
+  images,
+  title,
+}: {
+  images: string[]
+  title: string
+}) {
   const [index, setIndex] = useState(0)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const isMultiple = images.length > 1
   const minSwipeDistance = 50
+  const altFor = (i: number) =>
+    isMultiple ? `${title} – photo ${i + 1} of ${images.length}` : title
 
   const nextSlide = useCallback(() => {
     setIndex((prev) => (prev + 1) % images.length)
@@ -90,7 +102,7 @@ export default function ArticleImages({ images }: { images: string[] }) {
               >
                 <Image
                   src={src}
-                  alt={`Article image ${i + 1}`}
+                  alt={altFor(i)}
                   fill
                   sizes="(min-width: 1024px) 896px, 100vw"
                   className="object-contain select-none"
@@ -192,7 +204,7 @@ export default function ArticleImages({ images }: { images: string[] }) {
             >
               <Image
                 src={images[index]}
-                alt={`Fullscreen image ${index + 1}`}
+                alt={altFor(index)}
                 fill
                 sizes="100vw"
                 className="object-contain select-none"

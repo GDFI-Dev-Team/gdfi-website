@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils/cn-merge'
+import { JsonLd, breadcrumbJsonLd } from '@/lib/seo/json-ld'
 
 export default function Breadcrumbs({
   last,
@@ -16,46 +17,52 @@ export default function Breadcrumbs({
 }) {
   const pathname = usePathname()
   const breadcrumbs = generateBreadcrumbs(pathname)
+  const structuredItems = breadcrumbs.map((b, i) =>
+    i === breadcrumbs.length - 1 ? { ...b, label: last } : b,
+  )
 
   return (
-    <nav
-      aria-label="Breadcrumb"
-      className={cn(
-        'hidden text-sm text-text-subtle transition-colors duration-300 ease-[ease] md:block',
-        className,
-      )}
-    >
-      <ol className="flex flex-wrap items-center gap-1.5">
-        {breadcrumbs.map((breadcrumb, index) => {
-          const isLast = index === breadcrumbs.length - 1
-          return (
-            <li key={breadcrumb.href} className="flex items-center gap-1.5">
-              {isLast ? (
-                <span
-                  aria-current="page"
-                  className="font-medium text-text-standard"
-                >
-                  {last}
-                </span>
-              ) : (
-                <Link
-                  href={breadcrumb.href}
-                  className="transition-colors hover:text-text-standard"
-                >
-                  {breadcrumb.label}
-                </Link>
-              )}
-              {!isLast && (
-                <ChevronRight
-                  size={14}
-                  className="text-text-faint"
-                  aria-hidden="true"
-                />
-              )}
-            </li>
-          )
-        })}
-      </ol>
-    </nav>
+    <>
+      <JsonLd data={breadcrumbJsonLd(structuredItems)} />
+      <nav
+        aria-label="Breadcrumb"
+        className={cn(
+          'hidden text-sm text-text-subtle transition-colors duration-300 ease-[ease] md:block',
+          className,
+        )}
+      >
+        <ol className="flex flex-wrap items-center gap-1.5">
+          {breadcrumbs.map((breadcrumb, index) => {
+            const isLast = index === breadcrumbs.length - 1
+            return (
+              <li key={breadcrumb.href} className="flex items-center gap-1.5">
+                {isLast ? (
+                  <span
+                    aria-current="page"
+                    className="font-medium text-text-standard"
+                  >
+                    {last}
+                  </span>
+                ) : (
+                  <Link
+                    href={breadcrumb.href}
+                    className="transition-colors hover:text-text-standard"
+                  >
+                    {breadcrumb.label}
+                  </Link>
+                )}
+                {!isLast && (
+                  <ChevronRight
+                    size={14}
+                    className="text-text-faint"
+                    aria-hidden="true"
+                  />
+                )}
+              </li>
+            )
+          })}
+        </ol>
+      </nav>
+    </>
   )
 }

@@ -7,13 +7,7 @@ import Heading from '@/components/ui/heading'
 import Text from '@/components/ui/text'
 import Image from 'next/image'
 import ShareButton from '@/components/ui/share-button'
-
-function getYouTubeId(url: string): string | null {
-  const m = url.match(
-    /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
-  )
-  return m ? m[1] : null
-}
+import { getYouTubeId } from '@/lib/utils/youtube'
 
 function toEmbedUrl(id: string): string {
   return `https://www.youtube.com/embed/${id}`

@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+import { buildPaginatedMetadata } from '@/lib/seo/metadata'
 import { notFound } from 'next/navigation'
 import { getPrograms } from '@/features/our-works/programs-and-projects/data/programs'
 import { PageProps } from '@/lib/content/types'
@@ -8,6 +10,19 @@ export const dynamicParams = false
 export async function generateStaticParams() {
   const { maxPage } = await getPrograms(1, {})
   return Array.from({ length: maxPage }, (_, i) => ({ page: String(i + 1) }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ page: string }>
+}): Promise<Metadata> {
+  const { page } = await params
+  return buildPaginatedMetadata(
+    '/our-works/programs-and-projects',
+    'Core Programs & Projects',
+    page,
+  )
 }
 
 export default async function ProgramsPageRoute({

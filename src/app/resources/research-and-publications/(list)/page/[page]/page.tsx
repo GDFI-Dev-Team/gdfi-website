@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+import { buildPaginatedMetadata } from '@/lib/seo/metadata'
 import { notFound } from 'next/navigation'
 import { getPublications } from '@/features/resources/research-and-publications/data/publications'
 import { PageProps } from '@/lib/content/types'
@@ -8,6 +10,19 @@ export const dynamicParams = false
 export function generateStaticParams() {
   const { maxPage } = getPublications(1, {})
   return Array.from({ length: maxPage }, (_, i) => ({ page: String(i + 1) }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ page: string }>
+}): Promise<Metadata> {
+  const { page } = await params
+  return buildPaginatedMetadata(
+    '/resources/research-and-publications',
+    'Research & Publications',
+    page,
+  )
 }
 
 export default async function PublicationsPageRoute({

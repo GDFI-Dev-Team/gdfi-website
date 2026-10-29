@@ -31,7 +31,7 @@ export default async function AnnualReportsPage({
   })
 
   return (
-    <main className="flex-1 flex flex-col bg-foreground/3">
+    <div className="flex-1 flex flex-col bg-foreground/3">
       <Banner
         title="Annual & Financial Reports"
         description="Browse our tangible impacts through our yearly transparency reports"
@@ -48,6 +48,6 @@ export default async function AnnualReportsPage({
       <Section>
         <AnnualReportsShell reports={filtered} />
       </Section>
-    </main>
+    </div>
   )
 }

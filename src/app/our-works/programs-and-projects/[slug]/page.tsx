@@ -9,7 +9,7 @@ import { ArticleContent, Program } from '@/lib/content/types'
 import { notFound } from 'next/navigation'
 import ArticleDetail from '@/components/ui/article-detail'
 import Text from '@/components/ui/text'
-import { buildArticleMetadata } from '@/lib/content/metadata'
+import { buildArticleMetadata } from '@/lib/seo/metadata'
 
 const BASE_PATH = '/our-works/programs-and-projects'
 
@@ -49,7 +49,7 @@ export async function generateMetadata({
     return buildArticleMetadata(
       programToArticle(program),
       `${BASE_PATH}/${slug}`,
-      '/nav-item-banner-images/programs-and-projects.webp',
+      '/og/programs-and-projects.jpg',
     )
   } catch {
     return {}

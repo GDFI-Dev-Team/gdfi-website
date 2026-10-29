@@ -14,6 +14,8 @@ import { getReadingTime } from '@/lib/content/reading-time'
 import { statusClass } from '@/features/our-works/programs-and-projects/data/programs'
 import { ArticleContent } from '@/lib/content/types'
 import { cn } from '@/lib/utils/cn-merge'
+import { JsonLd, articleJsonLd } from '@/lib/seo/json-ld'
+import { getArticleDescription } from '@/lib/seo/metadata'
 
 export default function ArticleDetail({
   article,
@@ -35,6 +37,14 @@ export default function ArticleDetail({
   const categories = article.tags ?? []
   return (
     <Section maxWidth="4xl" sectionClassName="pb-8 pt-28 md:pb-12 md:pt-32">
+      <JsonLd
+        data={articleJsonLd(
+          article,
+          `${basePath}/${article.slug}`,
+          getArticleDescription(article),
+          variant === 'announcements' ? 'NewsArticle' : 'Article',
+        )}
+      />
       <div className="mb-8">
         <Link
           href={basePath}
@@ -93,7 +103,10 @@ export default function ArticleDetail({
       </header>
 
       {/* Array slideshow */}
-      <ArticleImages images={article.featured_images ?? []} />
+      <ArticleImages
+        images={article.featured_images ?? []}
+        title={article.title}
+      />
 
       {children}
 

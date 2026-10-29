@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+import { buildPaginatedMetadata } from '@/lib/seo/metadata'
 import { notFound } from 'next/navigation'
 import { getCollectionMarkdownData } from '@/lib/content/markdown'
 import { paginateItems } from '@/lib/content/pagination'
@@ -19,6 +21,15 @@ export async function generateStaticParams() {
     CONTENT_LIMITS.announcements,
   )
   return Array.from({ length: totalPages }, (_, i) => ({ page: String(i + 1) }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ page: string }>
+}): Promise<Metadata> {
+  const { page } = await params
+  return buildPaginatedMetadata('/updates/announcements', 'Announcements', page)
 }
 
 export default async function AnnouncementsPageRoute({

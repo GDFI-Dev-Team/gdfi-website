@@ -1,3 +1,4 @@
+import { JsonLd, videosJsonLd } from '@/lib/seo/json-ld'
 import Heading from '@/components/ui/heading'
 import VideoGallery from '@/features/resources/video-and-media-resources/components/video-gallery'
 import { getVideosPage } from '@/features/resources/video-and-media-resources/data/videos'
@@ -18,6 +19,7 @@ export default async function VideoResourcesPage({ searchParams }: PageProps) {
 
   return (
     <>
+      <JsonLd data={videosJsonLd(items)} />
       <Heading level={2} className="mb-4">
         All Videos
       </Heading>
